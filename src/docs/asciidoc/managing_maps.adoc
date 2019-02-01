@@ -1,0 +1,92 @@
+
+[[managing-maps]]
+== Managing Maps
+
+You can see a list of all the maps in your cluster by clicking on the **Maps** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::MapGridView.png[Map Grid View]
+
+You can filter the maps shown and you can also sort the table by clicking on the column headers. Clicking on
+a map name will open a new page for monitoring that map instance on the right, as shown below.
+
+image::MonitoringMaps.png[Monitoring Maps]
+
+The below subsections explain the portions of this window.
+
+[[map-browser]]
+=== Map Browser
+
+Use the Map Browser tool to retrieve properties of the entries stored in the selected map. To open the Map Browser tool, click on the **Map Browser** button, located at the top right of the window. Once opened, the tool appears as a dialog, as shown below.
+
+image::MapBrowser.png[Map Browser]
+
+Once the key and the key's type are specified and the **Browse** button is clicked, the key's properties along with its value are listed.
+
+[[map-config]]
+=== Map Config
+
+Use the Map Config tool to set the selected map's attributes, such as the backup count, TTL, and eviction policy. To open the Map Config tool, click on the **Map Config** button, located at the top right of the window. Once opened, the tool appears as a dialog, as shown below.
+
+image::MapConfig.png[Map Config Tool]
+
+You can change any attribute and click the **Update** button to save your changes.
+
+[[map-monitoring]]
+=== Map Monitoring
+
+Besides the Map Browser and Map Config tools, the map monitoring page has monitoring options that are explained below. All of these options perform real-time monitoring.
+
+On top of the page, small charts monitor the entries, operations per second, memory usage, backup size, etc. of the selected map in real-time. The X-axis of all the charts show the current system time. You can select other small monitoring charts using the image:ChangeWindowIcon.jpg[change window] button at the top right of each chart. When you click the button, the monitoring options are listed, as shown below.
+
+image::MonitoringOptionsMap.png[alt=Monitoring Options for Map,{half-width}]
+
+When you click on a desired monitoring, the chart is loaded with the selected option. To open a chart as a separate dialog, click on the image:MaximizeChart.jpg[maximize] button placed at the top right of each chart. The monitoring charts below are available:
+
+* **Entries**: Monitors number of locally owned entries.
+* **Memory**: Monitors the total memory cost of locally owned entries.
+* **Backups**: Monitors number of backup entries.
+* **Backup Memory**: Monitors the total memory cost of backup entries.
+* **Hits**: Monitors number of hits (reads) of locally owned entries, including those which are no longer in the map (for example, may have been evicted). The number of hits may be inaccurate after a partition is migrated to a new owner member.
+* **Locks**: Monitors number of locally owned entries that are locked.
+* **Operations/s**: Monitors the total number of all operations performed on the map per second.
+* **Puts/s, Gets/s, Removes/s**: These three charts monitor the put, get and remove operations performed on the map per second.
+
+Under these charts are **Map Memory** and **Map Throughput** data tables. The Map Memory data table provides memory metrics distributed over members, as shown below.
+
+image::MapMemoryDataTable.png[Map Memory Data Table]
+
+From left to right, this table lists:
+
+* **Members**: The IP address and port of the member.
+* **Entries**: Number of entries owned by the member.
+* **Entry Memory**: Memory cost of owned entries in the member.
+* **Backups**: Number of backup entries held by the member.
+* **Backup Memory**: Memory cost of backup entries held by the member.
+* **Events**: Number of events received by the member.
+* **Hits**: Number of hits (reads) of the entries that are owned by the member, including those which are no longer in the map (for example, may have been evicted). The number of hits may be inaccurate after a partition is migrated to a new owner member.
+* **Locks**: Number of currently locked entries owned by the member.
+* **Dirty Entries**: Number of entries that the member owns and are dirty (updated but not persisted yet). In the cases where *MapStore* is enabled, these are the entries that are put to/removed from the map but not written to/removed from a database yet.
+
+You can ascend or descend the order of the listings by clicking on the column headings.
+
+Map Throughput data table provides information about the operations (get, put, remove) performed on each member in the map, as shown below.
+
+image::MapThroughputDataTable.png[Map Throughput Data Table]
+
+From left to right, this table lists:
+
+* **Members**: The IP address and port of the member.
+* **Puts/s**: Number of put operations per second on the member.
+* **Gets/s**: Number of get operations per second on the member.
+* **Removes/s**: Number of remove operations per second on the member.
+* **Avg Put Latency**: Average latency of put operations on the member.
+* **Avg Get Latency**: Average latency of get operations on the member.
+* **Avg Remove Latency**: Average latency of remove operations on the member.
+* **Max Put Latency**: Maximum latency of put operations on the member.
+* **Max Get Latency**: Maximum latency of get operations on the member.
+* **Max Remove Latency**: Maximum latency of remove operations on the member.
+
+You can select the time period in the combo box placed at the top right corner of the window, for which the table data will be shown. Available values are **Since Beginning**, **Last Minute**, **Last 10 Minutes** and **Last 1 Hour**.
+
+To ascend or descent the order of the listings, click on the column headings.

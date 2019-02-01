@@ -1,0 +1,266 @@
+
+[[administering-management-center]]
+== Administering Management Center
+
+Using the "Administration" menu item, you can change the state of your cluster, shut down it, update your Management Center license, add or edit users, and perform Rolling Upgrade or Hot Restart on your cluster. You can also update the URL of your Management Center, in case it is changed for any reason.
+
+When you click on the "Administration" menu item, the following page shows up:
+
+image::Administration.png[Administration Menu]
+
+NOTE: This menu item is available only to admin users.
+
+You can perform the aforementioned administrative tasks using the tabs on this page. Below sections explain each tab.
+
+[[cluster-state]]
+=== Cluster State
+
+The admin user can see and change the cluster state and shut down the cluster using the buttons listed in this page as shown below.
+
+image::ClusterState.png[Cluster State Operations]
+
+**Cluster States:**
+
+- **Active**: Cluster will continue to operate without any restriction. All operations are allowed. This is the default state of a cluster.
+
+- **No Migration**: Migrations (partition rebalancing) and backup replications are not allowed. Cluster will continue to operate without any restriction. All other operations are allowed.
+
+- **Frozen**: New members are not allowed to join, except the members left in **this** state or **Passive** state. All other operations except migrations are allowed and will operate without any restriction.
+
+- **Passive**: New members are not allowed to join, except the members left in **this** state or **Frozen** state. All operations, except the ones marked with `AllowedDuringPassiveState`, will be rejected immediately.
+
+- **In Transition**: Shows that the cluster state is in transition. This is a temporary and intermediate state. It is not allowed to set it explicitly.
+
+**Changing Cluster State**
+
+image::ChangeClusterState.png[Changing Cluster state]
+
+- Click the dropdown menu and choose the state to which you want your cluster to change. A pop-up will appear and stay on the screen until the state is successfully changed.
+
+image::ChangeClusterState-wait.png[Waiting the State Change]
+
+**Shutting Down the Cluster**
+
+- Click the **Shutdown** button. A pop-up will appear and stay on screen until the cluster is successfully shutdown.
+
+image::ShutdownCluster.png[Shutdown Cluster]
+
+If an exception occurs during the state change or shutdown operation on the cluster, this exception message will be shown on the screen as a notification.
+
+[[manage-license]]
+=== Manage License
+
+To update the Management Center license, you can open the **Manage License** tab and click **Update License** button and enter the new license code.
+
+image::License.png[alt=License,{half-width}]
+
+Alternatively a license can be provided using the system property `hazelcast.mc.license` (see <<starting-with-a-license, Starting with a License>> for details).
+
+[[socket-interceptor]]
+=== Socket Interceptor
+
+If the Hazelcast cluster is configured to use a socket interceptor, you need to configure a socket interceptor for Management
+Center as well. Enter the name of your socket interceptor class 
+and the configuration parameters. Then click on the **Configure Socket Interceptor** button to save your configuration and enable the socket interceptor.
+The class whose name you entered into the "Class Name" field needs to be on your classpath when you are starting Management Center. The configuration parameters you provide
+will be used to invoke the `init` method of your socket interceptor implementation if it has such a method.
+
+image::SocketInterceptor.png[Socket interceptor]
+
+Following is a sample socket interceptor class implementation:
+
+[source,java]
+----
+package com.example;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
+public class SampleSocketInterceptor {
+    // this method is optional
+    public void init(Map<String, String> parameters) {
+        // here goes the initialization logic for your socket interceptor    
+    }
+    
+    public void onConnect(Socket connectedSocket) throws IOException {
+        // socket interceptor logic
+        try {
+            OutputStream out = connectedSocket.getOutputStream();
+            InputStream in = connectedSocket.getInputStream();
+            int multiplyBy = 2;
+            while (true) {
+                int read = in.read();
+                if (read == 0) {
+                    break;
+                }
+                out.write(read * multiplyBy);
+                out.flush();
+            }
+        } catch (IOException e) {
+            throw e;
+        }
+    }
+}
+----
+
+A socket interceptor implementation needs to satisfy the following two conditions:
+
+. Have a no-argument constructor
+. Have a public `onConnect` method with the following signature:
++    
+[source,java]
+----
+void onConnect(Socket connectedSocket) throws IOException
+----
+    
+==== Disabling Socket Interceptor
+
+To disable the socket interceptor, you need to click the **Configure Socket Interceptor** button first and then click
+the **Disable** button on the dialog.
+
+[[change-url]]
+=== Change URL
+
+Hazelcast cluster members need to be configured with Management Center's URL before they are started. If Management
+Center's URL is changed for some reason, you can use this page to make Hazelcast members send their statistics to the
+new Management Center URL. However, this has the following caveats:
+
+1. This configuration change is not persistent. If a member is restarted without any updates to its configuration,
+it will go back to sending its statistics to the original URL
+2. If a new member joins the cluster, it will not know of the URL change, and will send its statistics to the URL that
+it's configured with.
+
+image::ChangeURL.png[alt=Change URL,{half-width}]
+
+To change the URL, enter the **Cluster Name** and **Password**, provide the IP address and port for one of the members,
+and specify the new Management Center URL in the **Server URL** field. If the cluster members are configured to use
+TLS/SSL for communicating between themselves, check the **SSL** box. Clicking the **Set URL** button will update the
+Management Center URL.
+
+[[users]]
+=== Users
+
+image::Users.png[Users]
+
+To add a user to the system, specify the username, e-mail and password in the **Add/Edit User** part of the page. If the user to be added will have administrator privileges, select **isAdmin** checkbox. **Permissions** field has the following checkboxes:
+
+* **Metrics Only**: If this permission is given to the user, only *Home*, *Documentation* and *Time Travel* items will be visible at the toolbar on that user's session. Also, the users with this permission cannot <<managing-maps, browse a map>> or a cache to see their contents, cannot update a <<managing-maps, map configuration>>, run a garbage collection and take a thread dump on a cluster member, or shutdown a member (please see <<monitoring-members, Monitoring Members>>).
+* **Read Only**: If this permission is given to the user, only *Home*, *Documentation* and *Time Travel* items will be visible at the toolbar at that user's session. Also, users with this permission cannot update a <<managing-maps, map configuration>>, run a garbage collection and take a thread dump on a cluster member, or shutdown a member (please see <<monitoring-members, Monitoring Members>>).
+* **Read/Write**: If this permission is given to the user, *Home*, *Scripting*, *Console*, *Documentation* and *Time Travel* items will be visible. The users with this permission can update a map configuration and perform operations on the members.
+
+After you enter/select all fields, click **Save** button to create the user. You will see the newly created user's username on the left side, in the **Users** part of the page.
+
+To edit or delete a user, select a username listed in the **Users**. Selected user information
+appears on the right side of the page. To update the user information, change the fields as desired
+and click the **Save** button. You can also change a user's password or delete the user account. To
+change the user's password, click the **Change Password** button. To delete the user from the system,
+click the **Delete** button. Note that changing the password of a user and deleting the user account
+both require you to enter your own password.
+
+[[rolling-upgrade]]
+=== Rolling Upgrade
+
+The admin user can upgrade the cluster version once all members of the cluster have been upgraded to the intended
+codebase version as described in the Rolling Upgrade Procedure section of the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#rolling-upgrade-procedure[Hazelcast IMDG Reference Manual].
+
+Open the **Rolling Upgrade** tab to perform a Rolling Upgrade and change the cluster's version.
+
+image::RollingUpgrade.png[RollingUpgradeMenu]
+
+Enter the group name/password of the cluster and the version you want to upgrade the cluster to, and click on
+the **Change Version** button.
+
+Once the operation succeeds, you will see the following notification:
+
+image::UpgradeClusterVersionSuccess.png[UpgradeClusterVersionSuccess]
+
+
+[[hot-restart]]
+=== Hot Restart
+
+Using the Hot Restart tab, you can perform force and partial start of the cluster and see the Hot Restart status of the cluster members. You can also take snapshots of the Hot Restart Store (Hot Backup). When you click on this tab, the following page is shown:
+
+image::HotRestartTab.png[Hot Restart Tab]
+
+Below sections explain each operation.
+
+==== Force Start
+
+Restart process cannot be completed if a member crashes permanently and cannot recover from the failure since it cannot start or it fails to load its own data. In that case, you can force the cluster to clean its persisted data and make a fresh start. This process is called **force start**.
+
+NOTE: Please see the http://docs.hazelcast.org/docs/latest-dev/manual/html-single/#force-start[Force Start] section in Hazelcast IMDG Reference Manual for more information on this operation.
+
+To perform a force start on the cluster, click on the **Force Start** button. A confirmation dialog appears as shown below.
+
+
+image::ForceStartConfirmation.png[Force Start Confirmation]
+
+
+Once you click on the "Force Start" button on this dialog, the cluster starts the force start process and the following progress dialog shows up while doing so. 
+
+image::ForceStart.png[Force Starting]
+
+This dialog stays on the screen until the operation is triggered. Once it is done, the success of force start operation is shown as a notice dialog, as shown below.
+
+
+image::ForceStartSuccessful.png[Force Start Success]
+
+
+If an exception occurs, this exception message will be showed on the screen as a notification.
+
+
+
+==== Partial Start
+
+When one or more members fail to start or have incorrect Hot Restart data (stale or corrupted data) or fail to load their Hot Restart data, cluster will become incomplete and restart mechanism cannot proceed. One solution is to use Force Start and make a fresh start with existing members, as explained above. Another solution is to do a partial start.
+
+Partial start means that the cluster will start with an incomplete set of members. Data belonging to the missing members will be assumed lost and Management Center will try to recover missing data using the restored backups. For example, if you have minimum two backups configured for all maps and caches, then a partial start up to two missing members will be safe against data loss. If there are more than two missing members or there are maps/caches with less than two backups, then data loss is expected.
+
+NOTE: Please see the http://docs.hazelcast.org/docs/latest-dev/manual/html-single/#partial-start[Partial Start] section in Hazelcast IMDG Reference Manual for more information on this operation and how to enable it.
+
+To perform a partial start on the cluster, click on the **Partial Start** button. A notice dialog appears as shown below.
+
+image::PartialStartTriggered.png[Partial Start Triggered]
+
+
+You can also see two fields related to Partial Start operation: "Remaining Data Load Time" and "Remaining Validation Time", as shown in the above screenshot.
+
+* **Remaining Validation Time**: When partial start is enabled, Hazelcast can perform a partial start automatically or manually, in case of some members are unable to restart successfully. Partial start proceeds automatically when some members fail to start and join to the cluster in `validation-timeout-seconds`, which you can configure. After this duration is passed, Hot Restart chooses to perform a partial start with the members present in the cluster. This field, i.e., "Remaining Validation Time" shows how much time is left to the automatic partial start, in seconds. You can always request a manual partial start, by clicking on the **Partial Start** button, before this duration passes.
+* **Remaining Data Load Time**: The other situation to decide to perform a partial start is failures during the data load phase. When Hazelcast learns the data loading result of all members which have passed the validation step, it automatically performs a partial start with the ones which have successfully restored their Hot Restart data. Please note that partial start does not expect every member to succeed in the data load step. It completes the process when it learns the data loading result for every member and there is at least one member which has successfully restored its Hot Restart data. Relatedly, if it cannot learn the data loading result of all members before `data-load-timeout-seconds` duration, it proceeds with the ones which have already completed the data load process. This field, i.e., "Remaining Data Load Time" shows how much time (in seconds) is left for Hazelcast to know at least one member has successfully restored its Hot Restart data and perform an automatic partial start.
+
+NOTE: Please see http://docs.hazelcast.org/docs/latest-dev/manual/html-single/#configuring-hot-restart[Configuring Hot Restart] for more information on the configuration elements `validation-timeout-seconds` and `data-load-timeout-seconds` mentioned above and how to configure them.
+
+
+NOTE: Force and partial start operations can also be performed using REST API and the script `cluster.sh`. Please refer to the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#using-rest-api-for-cluster-management[Using REST API for Cluster Management section] and http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#using-the-script-clustersh[Using the Script cluster.sh section] in Hazelcast IMDG Reference Manual.
+
+
+
+==== Hot Backup
+
+During Hot Restart operations you can take a snapshot of the Hot Restart data at a certain point in time. This is useful when you wish to bring up a new cluster with the same data or parts of the data. The new cluster can then be used to share load with the original cluster, to perform testing, quality assurance or reproduce an issue on the production data.
+
+Note that you must first configure the Hot Backup directory programmatically (using the method `setBackupDir()`) or declaratively (using the element `backup-dir`) to be able to take a backup of the Hot Restart data. Please see http://docs.hazelcast.org/docs/latest-dev/manual/html-single/#configuring-hot-backup[Configuring Hot Backup] section in Hazelcast IMDG Reference Manual.
+
+If the backup directory is configured, you can start to perform the backup by clicking on the **Hot Backup** button. Management Center will first ask you the cluster password as shown in the following dialog.
+
+image::HotBackupAskPassword.png[Hot Backup Ask Cluster Password]
+
+Once you entered the password correctly and click on the "Start" button on this dialog, you will see a notification dialog stating that the backup process starts. You can see the progress of the backup operation under the "Last Hot Backup Task Status" part of the page, as shown below.
+
+image::HotBackupProgress.png[Hot Backup Progress]
+
+
+
+==== Status Information
+
+At the bottom of "Hot Restart" tab, you can see the Hot Restart and Hot Backup statuses of cluster members, as shown below.
+
+image::StatusInformation.png[Status]
+
+You can see the status and progress of your Hot Backup operation under "Last Hot Backup Task Status". It can be IN_PROGRESS and SUCCESS/FAILURE according to the result of the operation.
+
+You can also see the status of Hot Restart operation of your cluster members, under "Hot Restart Status". It can be PENDING and SUCCESSFUL/FAILED according to the result of Hot Restart operation.
+
+

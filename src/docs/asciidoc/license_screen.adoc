@@ -1,0 +1,20 @@
+
+[[license-screen]]
+== License Information
+
+Using the "License" menu item, you can view the details of your cluster and Management Center licenses. An example screenshot is shown below.
+
+image::LicenseScreen.png[License Screen]
+
+It shows the expiration date, total licensed member count and type of cluster and Management Center licenses.
+
+For security reasons, the license key itself is not shown. Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of the key as a Base64 encoded string is shown.
+
+If there are any problems related to your cluster or Management Center license, "License" menu item will be highlighted with red exclamation points, as shown below.
+
+image::LicenseMenuItemProblem.png[alt=License Menu Item When There's a License Related Problem,width=173,height=376]
+
+In this case, please check this screen to see what the problem is. The following are the possible problems:
+* One or both of your licenses are expired.
+* You have cluster members which are more than the allowed count by the license.
+

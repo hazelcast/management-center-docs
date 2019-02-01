@@ -1,0 +1,6 @@
+static/
+vendor/
+build/
+.idea/
+.gradle/
+/*.iml

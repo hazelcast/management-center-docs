@@ -1,0 +1,9 @@
+[[browser-compatibility]]
+== Browser Compatibility
+
+Hazelcast Management Center is tested and works on the following browsers:
+
+* Chrome 65 and newer
+* Firefox 57 and newer
+* Safari 11 and newer
+* Internet Explorer 11 and newer

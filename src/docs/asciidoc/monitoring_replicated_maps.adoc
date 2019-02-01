@@ -1,0 +1,40 @@
+
+[[monitoring-replicated-maps]]
+== Monitoring Replicated Maps
+
+You can see a list of all the Replicated Maps in your cluster by clicking on the **Replicated Maps** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::ReplicatedMapGridView.png[Replicated Map Grid View]
+
+You can filter the Replicated Maps shown and you can also sort the table by clicking on the column headers. Clicking on
+a Replicated Map name will open a new page for monitoring that Replicate Map instance on the right, as shown below.
+
+image::MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
+
+In this page, you can monitor metrics and also re-configure the selected Replicated Map. All of the statistics are real-time monitoring statistics.
+
+When you click on a desired monitoring, the chart is loaded with the selected option. Also you can open the chart in new window.
+
+* **Entries**: Monitors number of entries of the Replicated Map.
+* **Operations/s**: Monitors number of all operations performed on the Replicated Map per second.
+* **Memory**: Monitors memory usage of the Replicated Map.
+* **Hits**: Monitors hit count of the Replicated Map.
+* **Puts/s, Gets/s, Removes/s**: These three charts monitor the put, get and remove operations performed on the selected Replicated Map per second.
+
+The Replicated Map Throughput Data Table provides information about operations (get, put, remove) performed on each member in the selected Replicated Map.
+
+image::ReplicatedMapThroughput.png[Replicated Map Throughput Data Table]
+
+From left to right, this table lists:
+
+* the IP address and port of each member,
+* the put, get, and remove operations on each member,
+* the average put, get, and remove latencies,
+* and the maximum put, get, and remove latencies on each member.
+
+You can select the period from the combo box placed at the top right corner of the window, in which the table data is shown. Available values are **Since Beginning**, **Last Minute**, **Last 10 Minutes** and **Last 1 Hour**.
+
+To ascend or descent the order of the listings, click on the column headings.
+
+

@@ -1,0 +1,40 @@
+
+
+[[getting-started]]
+== Getting Started
+
+If you have the open source edition of Hazelcast, Management Center can be used for at most 2 members in the cluster. To use it for more members, you need to have either a Management Center license, Hazelcast IMDG Enterprise license or Hazelcast IMDG Enterprise HD license. This license should be entered within the Management Center as described in the following paragraphs.
+
+NOTE: Even if you have a Hazelcast IMDG Enterprise or Enterprise HD license key and you set it as explained in the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#setting-the-license-key[Setting the License Key] section, you still need to enter this same license within the Management Center. Please see the following paragraphs to learn how you can enter your license.
+
+
+Once you browse to `http://localhost:8080/hazelcast-mancenter` and since you are going to use Management Center for the first time, the following dialog box appears.
+
+image::ConfigureSecurity.png[alt=Signing Up,{half-width}]
+
+NOTE: If you already configured security before, a login dialog box appears instead.
+
+It asks you to choose your security provider and create a username and password. Available security providers are Active Directory, LDAP and JAAS, which are described in the following sections.
+
+Once you press the **Save** button, your administrator account credentials are created and you can log in with your credentials.
+
+If you have more than one cluster that send statistics to Management Center, you can select a cluster to connect by clicking on its name from the list. Otherwise, you will connect to the only cluster that sends statistics automatically upon logging in.
+
+image::SelectCluster.png[alt=Select Cluster]
+
+NOTE: Management Center can be used without a license if the cluster that you want to monitor has at most 2 members.
+
+If you have a Management Center license or Hazelcast IMDG Enterprise license, you can enter it by clicking the **Administration** button on the left menu and opening the **Manage License** tab. Here you can enter your license key and press the **Update License** button, as shown below.
+
+image::ManageLicense.png[Providing License for Management Center]
+
+Note that a license can likewise be provided using the system property `hazelcast.mc.license` (see <<starting-with-a-license, Starting with a License>> for details).
+
+When you try to connect to a cluster that has more than 2 members without entering a license key or if your license key is expired, the following warning message is shown at the top.
+
+image::NodeLimitExceeded.png[Management Center License Warning]
+
+If you choose to continue without a license, please remember that Management Center works if your cluster has **at most** two members.
+
+Management Center creates a folder with the name `hazelcast-mancenter` under your `user/home` folder to save data files and above settings/license information. You can change the data folder by setting the `hazelcast.mancenter.home` system property. Please see the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#system-properties[System Properties section] to see the description of this property and to learn how to set a system property.
+

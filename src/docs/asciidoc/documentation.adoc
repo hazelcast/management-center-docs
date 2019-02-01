@@ -1,0 +1,5 @@
+
+[[documentation]]
+== Management Center Documentation
+
+To see the Management Center documentation (this Reference Manual), click on the **Documentation** button located at the toolbar. This Management Center manual will appear as a tab.

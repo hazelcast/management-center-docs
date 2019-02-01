@@ -1,0 +1,66 @@
+
+
+[[user-interface-overview]]
+== User Interface Overview
+
+Once the page is loaded after selecting a cluster, <<status-page, Status Page>> appears as shown below.
+
+image::StatusPage.png[Status Page]
+
+This page provides the fundamental properties of the selected cluster which are explained in the <<status-page, Status Page>> section. The page has a toolbar on the top and a menu on the left.
+
+[[toolbar]]
+=== Toolbar
+
+image::Toolbar.png[Management Center Toolbar]
+
+The toolbar has the following elements:
+
+* **Navigation Breadcrumb**: The leftmost element is the navigation breadcrumb that you can use to
+navigate to the previously opened pages. For example, while you're on the page where you're viewing a Map, you can click the **Maps** link to go back to the page where all Map instances are listed.
+* **Documentation**: Opens the Management Center documentation in a new browser tab.
+* **Time Travel**: Sees the cluster's situation at a time in the past. Please see the <<time-travel, Time Travel>> section.
+* **User name and last login time**: The current user's name and last login time is shown for security
+purposes.
+* **Cluster Selector**: Switches between clusters. When clicked, a drop down list of clusters appears.
+
+image::ChangingCluster.png[Changing Cluster]
+
+The user can select any cluster and once selected, the page immediately loads with the selected cluster's information.
+
+* **Logout**: Closes the current user's session.
+
+[[menu]]
+=== Menu
+
+The Home Page includes a menu on the left which lists the distributed data structures in the cluster, 
+cluster members and clients connected to the cluster (numbers in square brackets show the instance count for each entity), as shown below. 
+You can also see an overview state of your cluster, create alerts, execute codes and perform user/license operations using this menu:
+
+image::LeftMenu.png[Management Center Left Menu]
+
+NOTE: Distributed data structures will be shown there when the proxies are created for them.
+
+NOTE: WAN Replication button is only visible with Hazelcast IMDG Enterprise license.
+
+Below is the list of menu items with links to their explanations.
+
+* <<status-page, Status>>
+* <<monitoring-clients, Clients>>
+* <<monitoring-members, Members>>
+* <<administering-management-center, Administration>>
+* <<license-screen, License Screen>>
+* <<creating-alerts, Alerts>>
+* <<monitoring-wan-replication, WAN Replication>>
+* <<scripting, Scripting>>
+* <<console, Console>>
+* <<managing-maps, Maps>>
+* <<monitoring-replicated-maps, Replicated Maps>>
+* <<monitoring-caches, Caches>>
+* <<monitoring-multimaps, MultiMaps>>
+* <<monitoring-pn-counters, PN Counters>>
+* <<monitoring-flake-id-generators, ID Generators>>
+* <<monitoring-queues, Queues>>
+* <<monitoring-topics, Topics>>
+* <<monitoring-reliable-topics, Reliable Topics>>
+* <<monitoring-executors, Executors>>

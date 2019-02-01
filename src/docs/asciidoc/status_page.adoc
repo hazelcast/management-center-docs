@@ -1,0 +1,63 @@
+
+[[status-page]]
+== Status Page
+
+This is the first page appearing after logging in. It gives an overview of the connected cluster. The following subsections describe each portion of the page.
+
+[[memory-utilization]]
+=== Memory Utilization
+
+This part of the page provides information related to memory usages for each member, as shown below.
+
+image::MemoryUtilization.png[Memory Utilization]
+
+The first column lists the members with their IPs and ports. The next columns show the used and free memories out of the total memory reserved for Hazelcast usage, in real-time. The **Max. Heap** column lists the maximum memory capacity of each member and the **Heap Usage Percentage** column lists the percentage value of used memory out of the maximum memory. The **Used Heap** column shows the memory usage of members graphically. When you move the mouse cursor on a desired graph, you can see the memory usage at the time where the cursor is placed. Graphs under this column shows the memory usages approximately for the last 2 minutes.
+
+[[heap-memory-distribution]]
+=== Heap Memory Distribution
+
+This part of the page graphically provides the cluster wise breakdown of heap memory, as shown below. The blue area is the heap memory used by maps (including all owned/backup entires and any near cache usage). The dark yellow area is the heap memory used by both non-Hazelcast entities and all Hazelcast entities except the map (i.e. the heap memory used by all entities subtracted by the heap memory used by map). The green area is the free heap memory out of the whole cluster's total committed heap memory.
+
+image::HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
+
+In the above example, you can see 26.18% of the total heap memory is used by Hazelcast maps, 36.02% is used by both non-Hazelcast entities and all Hazelcast entities except the map and 37.80% of the total heap memory is free.
+
+[[map-memory-distribution]]
+=== Map Memory Distribution
+
+This part provides the percentage values of the memories used by each map, out of the total cluster memory reserved for all Hazelcast maps.
+
+image::MapMemoryDistribution.png[Memory Distribution of Map]
+
+In the above example, you can see 62.50% of the total map memory is used by **Map A** and 37.50% is used by **Map B**.
+
+[[cluster-state-and-health]]
+=== Cluster State/Health
+
+This part shows the current cluster state and the cluster's health. For more information on cluster states, see <<cluster-state, Cluster State>>. Cluster health shows how many migrations are taking place currently.
+
+image::ClusterStateAndHealth.png[Cluster State and Cluster Health]
+
+
+[[partition-distribution]]
+=== Partition Distribution
+
+This pie chart shows what percentage of partitions each cluster member has, as shown below.
+
+image::PartitionDistribution.png[Partition Distribution per Member]
+
+You can see each member's partition percentages by placing the mouse cursor on the chart. In the above example, you can see the member "127.0.0.1:5702" has 33.21% of the total partition count (which is 271 by default and configurable, please see the `hazelcast.partition.count` property explained in the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#system-properties[System Properties] section.
+
+NOTE: The partition distribution pie chart will show no information until you create your distributed objects. When you add new members to your cluster, there will be no partition migration since partitions do not exist yet. Once you connect to your cluster and, for example, create a map (using `hazelcastInstance.getMap()`), only then this pie chart starts to show partition distribution information.
+
+
+[[cpu-utilization]]
+=== CPU Utilization
+
+This part of the page provides load and utilization information for the CPUs for each cluster member, as shown below.
+
+image::CPUUtilization.png[CPU Utilization]
+
+The first column lists the members with their IPs and ports. The next columns list the system load averages on each member for the last 1, 5 and 15 minutes. These average values are calculated as the sum of the count of runnable entities running on and queued to the available CPUs averaged over the last 1, 5 and 15 minutes. This calculation is operating system specific, typically a damped time-dependent average. If system load average is not available, these columns show negative values.
+
+The last column (**Utilization(%)**) graphically shows the recent load on the CPUs. When you move the mouse cursor on a chart, you can see the CPU load at the time where the cursor is placed. Charts under this column shows the CPU loads approximately for the last 2 minutes. If recent CPU load is not available, you will see a negative value.
