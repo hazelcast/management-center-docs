@@ -36,5 +36,5 @@ image::NodeLimitExceeded.png[Management Center License Warning]
 
 If you choose to continue without a license, please remember that Management Center works if your cluster has **at most** two members.
 
-Management Center creates a folder with the name `hazelcast-mancenter` under your `user/home` folder to save data files and above settings/license information. You can change the data folder by setting the `hazelcast.mancenter.home` system property. Please see the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#system-properties[System Properties section] to see the description of this property and to learn how to set a system property.
+Management Center creates a folder with the name `hazelcast-mc` under your user's home folder to save data files and above settings/license information. You can change the data folder by setting the `hazelcast.mc.home` system property.
 

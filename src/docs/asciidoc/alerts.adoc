@@ -17,7 +17,7 @@ In this form, specify the e-mail address from which the notifications will be se
 
 After you provide the required information, click on the **Save Config** button. After a processing period (for a couple of seconds), the form will be closed if the configuration is created successfully. In this case, an e-mail will be sent to the e-mail address you provided in the form stating that the SMTP configuration is successful and e-mail alert system is created.
 
-If not, you will see an error message at the bottom of this form as shown below.   
+If not, you will see an error message at the bottom of this form as shown below.
 
 image::SMTPConfigFormWithError.png[SMTP Configuration Error]
 
@@ -38,7 +38,7 @@ You can create alerts when:
 
 When two or more criteria is specified they will be bound with the logical operator **AND**.
 
-On the next page, give a name for the filter. Then, select whether notification e-mails will be sent to the Management Center Admins using the **Send Email Alert** checkbox. Then, provide a time interval (in seconds) for which the e-mails with the **same notification content** will be sent using the **Email Interval (secs)** field.  Finally, select whether the alert data will be written to the disk (if checked, you can see the alert log at the folder */users/<your user>/hazelcast-mancenter{mancenter-version}*).
+On the next page, give a name for the filter. Then, select whether notification e-mails will be sent to the Management Center Admins using the **Send Email Alert** checkbox. Then, provide a time interval (in seconds) for which the e-mails with the **same notification content** will be sent using the **Email Interval (secs)** field.  Finally, select whether the alert data will be written to the disk (if checked, you can see the alert log at the folder */users/<your user>/hazelcast-mc*).
 
 Click on the **Save** button; your filter will be saved and put into the **Filters** part of the page. To edit the filter, click on the image:EditIcon.jpg[edit] icon. To delete it, click on the image:DeleteIcon.jpg[delete] icon.
 
@@ -52,7 +52,7 @@ image::DataAlert.png[Filter for Data Types]
 
 As the screen shown above shows, you will select an item from the left combo box, select the operator in the middle one, specify a value in the input field, and click on the **Add** button. You can create more than one criteria in this page; those will be bound by the logical operator **AND**.
 
-After you specify the criteria, click the **Next** button. On the next page, give a name for the filter. Then, select whether notification e-mails will be sent to the Management Center Admins using the **Send Email Alert** checkbox. Then, provide a time interval (in seconds) for which the e-mails with the **same notification content** will be sent using the **Email Interval (secs)** field.  Finally, select whether the alert data will be written to the disk (if checked, you can see the alert log at the folder */users/<your user>/hazelcast-mancenter{mancenter-version}*).
+After you specify the criteria, click the **Next** button. On the next page, give a name for the filter. Then, select whether notification e-mails will be sent to the Management Center Admins using the **Send Email Alert** checkbox. Then, provide a time interval (in seconds) for which the e-mails with the **same notification content** will be sent using the **Email Interval (secs)** field.  Finally, select whether the alert data will be written to the disk (if checked, you can see the alert log at the folder */users/<your user>/hazelcast-mc*).
 
 Click on the **Save** button; your filter will be saved and put into the **Filters** part of the page. To edit the filter, click on the image:EditIcon.jpg[edit] icon. To delete it, click on the image:DeleteIcon.jpg[delete] icon.
 
