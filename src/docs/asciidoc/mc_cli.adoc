@@ -1,0 +1,111 @@
+
+[[mc-cli]]
+== Management Center Command Line Tool
+
+The Management Center Command Line tool (MC CLI) allows you to update certain parts of the Management Center configuration by using its built-in commands. You can use the `mc-cli.sh` or `mc-cli.bat` script to run the MC CLI tool.
+
+NOTE: You must run the MC CLI tool on the same machine where the Management Center web application is deployed.
+
+=== Built-In Help
+
+In order to see all available commands, run the MC CLI script with no arguments as shown below.
+
+```bash
+./mc-cli.sh
+```
+
+As the result, you should see an output similar to below.
+
+```bash
+Hazelcast Management Center CLI tool 3.12.0
+Usage: mc-cli [-hV] [COMMAND]
+Command-line tool for interacting with Hazelcast Management Center.
+
+Global options are:
+  -h, --help      Show this help message and exit.
+  -V, --version   Print version information and exit.
+Commands:
+  create-user           Create a new user record in the default security
+                          provider.
+                        *Important notice* Make sure that Management Center web
+                          application is stopped (offline) before starting this
+                          command.
+
+  change-user-password  Change password for the given user record in the
+                          default security provider.
+                        *Important notice* Make sure that Management Center web
+                          application is stopped (offline) before starting this
+                          command.
+
+  update-ldap-password  Update LDAP service user's password that is stored in a
+                          Java KeyStore.
+```
+
+You can also get help for any command by using the `-h` (or `--help`) command line option. See the following example:
+
+```bash
+$ ./mc-cli.sh create-user -h
+Usage: mc-cli create-user [-hvV] [--password:sec=<passwordSec>] [-H=<homedir>]
+                          -n=<username> [-p=<password>] -r=<role>
+Create a new user record in the default security provider.
+*Important notice* Make sure that Management Center web application is stopped
+(offline) before starting this command.
+
+      --password:sec=<passwordSec>
+                         Password for the user record (a secure alternative to
+                           --password, with interactive prompt).
+  -h, --help             Show this help message and exit.
+  -H, --home=<homedir>   Optional path to Management Center home directory. By
+                           default ~/hazelcast-mc/ is used.
+  -n, --username=<username>
+                         Username for the user record.
+  -p, --password=<password>
+                         Password for the user record.
+  -r, --role=<role>      Roles for the user record. Valid values: readonly,
+                           readwrite, metricsonly, admin.
+  -v, --verbose          Show logs from Management Center and full stack trace of
+                           errors.
+  -V, --version          Print version information and exit.
+```
+
+=== Creating Users
+
+The `create-user` command creates a new user in the default security provider. Note that you must stop the Management Center web application before running this command.
+
+You can use this command for various scripting purposes. See https://github.com/hazelcast/hazelcast-docker-samples[Hazelcast Docker Code Samples] repository for an example of Docker image for Management Center container with a built-in user account.
+
+NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
+
+=== Changing User Password
+
+The `change-user-password` command resets the password of a specified user in the default security provider. Note that you must stop the Management Center web application before running this command.
+
+You can use this command as a recovery mechanism for the Management Center's administrator user account.
+
+NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
+
+[[update-ldap-password]]
+=== Updating LDAP Password
+
+The `update-ldap-password` command updates the encrypted LDAP password stored in the KeyStore. It expects information about the KeyStore such as its location and password and the new LDAP password that you want to use. See the <<password-encryption, LDAP Authentication section>> for more information on the encrypted LDAP passwords. After updating the LDAP password, you will need to click on the **Reload Security Config** button on the login page.
+
+=== Advanced Features
+
+MC CLI supports interactive options for secure processing of passwords. Those options are listed in the built-in help and have a `:sec` suffix in their names. When you use such option instead of a regular one, you will get a prompt to enter a value on the console. An example of the interactive option usage is shown below.
+
+```bash
+$ ./mc-cli.sh change-user-password --username=admin --password:sec
+Enter value for --password:sec (Password for the user record (a secure alternative to --password, with interactive prompt).): ********
+Successfully changed password for user 'admin'.
+```
+
+As you see in the above example, the password input is not echoed to the console since it is provided with the `:sec` suffix in the command.
+
+Another advanced feature of MC CLI is the support for argument files. When an argument beginning with the character `@` is encountered, it is treated as a path leading to a text file. The contents of that file are automatically expanded into the current command. An example of the argument file usage is shown below.
+
+```bash
+$ ./mc-cli.sh change-user-password @arg-file.txt
+Successfully changed password for user 'admin'.
+$ cat arg-file.txt
+-n=admin -p=mnb3c4s0
+```

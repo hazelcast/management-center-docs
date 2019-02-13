@@ -142,6 +142,8 @@ Management Center URL.
 [[users]]
 === Users
 
+NOTE: Certain user management operations are also available in MC CLI tool. Please see <<mc-cli, MC CLI section>> for more information.
+
 image::Users.png[Users]
 
 To add a user to the system, specify the username, e-mail and password in the **Add/Edit User** part of the page. If the user to be added will have administrator privileges, select **isAdmin** checkbox. **Permissions** field has the following checkboxes:

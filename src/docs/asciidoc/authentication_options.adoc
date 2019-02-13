@@ -192,6 +192,6 @@ NOTE: Make sure your KeyStore supports storing `SecretKey`s.
 [[updating-encrypted-passwords]]
 ==== Updating Encrypted Passwords
 
-You can use one of the `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts to update the encrypted LDAP password stored in the KeyStore. It will ask for information about the KeyStore such as its location and password. It will then ask for the new LDAP password that you want to use. After updating the LDAP password, you'll need to click **Reload Security Configuration** button on the main screen.
+You can use the `update-ldap-password` command in the MC CLI tool to update the encrypted LDAP password stored in the KeyStore. Please see this command's <<update-ldap-password, description>> for details.
 
 

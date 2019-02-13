@@ -84,6 +84,8 @@ include::clustered_rest.adoc[]
 
 include::clustered_jmx.adoc[]
 
+include::mc_cli.adoc[]
+
 include::documentation.adoc[]
 
 include::heap_size.adoc[]
