@@ -142,7 +142,7 @@ Management Center URL.
 [[users]]
 === Users
 
-NOTE: Certain user management operations are also available in MC CLI tool. Please see <<mc-cli, MC CLI section>> for more information.
+NOTE: Certain user management operations are also available in MC Conf tool. Please see <<mc-conf, MC Conf tool section>> for more information.
 
 image::Users.png[Users]
 

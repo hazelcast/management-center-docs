@@ -192,6 +192,6 @@ NOTE: Make sure your KeyStore supports storing `SecretKey`s.
 [[updating-encrypted-passwords]]
 ==== Updating Encrypted Passwords
 
-You can use the `update-ldap-password` command in the MC CLI tool to update the encrypted LDAP password stored in the KeyStore. Please see this command's <<update-ldap-password, description>> for details.
+You can use the `update-ldap-password` command in the MC Conf tool to update the encrypted LDAP password stored in the KeyStore. Please see this command's <<update-ldap-password, description>> for details.
 
 
