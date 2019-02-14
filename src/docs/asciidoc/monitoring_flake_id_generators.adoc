@@ -10,7 +10,8 @@ image::FlakeIdGenGridView.png[Flake ID Generator Grid View]
 You can filter the generators shown and you can also sort the table by clicking on the column headers. 
 The monitoring data available are:
 
-* **Operations per second**: Average number of times per second the generator created a batch of new IDs during the last timeslice
+* **Avg. Batch Requests:** Average count of batch requests coming from all the members to a generator, i.e., total batch requests from all members to a generator divided by the member count for that generator. 
+* **Avg. Batch Size:** Average size of the ID batches created by a generator, i.e., total number of IDs generated (the sum of IDs for all batches) for all members divided by the total count of batch requests coming from all members.
 
 Clicking on a generator name will open a new page for monitoring that specific generator instance, as shown below.
 
@@ -20,7 +21,8 @@ The table can likewise be sorted by clicking the column headers.
 It shows IP and port of the members that have a state for the specific generator named in the page's title.
 The monitoring data available are:
 
-* **Operations per second**: Average number of times per second the generator created a batch of new IDs on that member during the last timeslice
+* **Batch Requests:** Total count of batch requests to a generator by this member.
+* **Avg. Batch Size:** Average size of the ID batches created for this member, i.e., total number of IDs generated (the sum of IDs for all batches) for this member divided by the total count of batch requests coming from this member.
 
 NOTE: The operations per second is not the number of new IDs generated or used but the number of ID batches. 
 The batch size is configurable, usually it contains hundreds or thousands of IDs.
