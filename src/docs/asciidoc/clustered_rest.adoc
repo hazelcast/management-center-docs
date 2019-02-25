@@ -337,7 +337,11 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients/192.168
 	{
 	  "uuid":"6fae7af6-7a7c-4fa5-b165-cde24cf070f5",
 	  "address":"192.168.2.78:61708",
-	  "clientType":"JAVA"
+	  "clientType":"JAVA",
+	  "name":"hz.client_1",
+	  "labels": [
+	    "label1"
+	  ]
 	}
 ```
 
