@@ -16,7 +16,7 @@ The first column lists the members with their IPs and ports. The next columns sh
 [[heap-memory-distribution]]
 === Heap Memory Distribution
 
-This part of the page graphically provides the cluster wise breakdown of heap memory, as shown below. The blue area is the heap memory used by maps (including all owned/backup entires and any near cache usage). The dark yellow area is the heap memory used by both non-Hazelcast entities and all Hazelcast entities except the map (i.e. the heap memory used by all entities subtracted by the heap memory used by map). The green area is the free heap memory out of the whole cluster's total committed heap memory.
+This part of the page graphically provides the cluster wise breakdown of heap memory, as shown below. The blue area is the heap memory used by maps (including all owned/backup entries and any near cache usage). The dark yellow area is the heap memory used by both non-Hazelcast entities and all Hazelcast entities except the map (i.e. the heap memory used by all entities subtracted by the heap memory used by map). The green area is the free heap memory out of the whole cluster's total committed heap memory.
 
 image::HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
 
