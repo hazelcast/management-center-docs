@@ -26,20 +26,27 @@ Global options are:
   -h, --help      Show this help message and exit.
   -V, --version   Print version information and exit.
 Commands:
-  create-user           Create a new user record in the default security
-                          provider.
-                        *Important notice* Make sure that Management Center web
-                          application is stopped (offline) before starting this
-                          command.
+  create-user              Create a new user record in the default security
+                             provider.
+                           *Important notice* Make sure that Management Center
+                             web application is stopped (offline) before
+                             starting this command.
 
-  change-user-password  Change password for the given user record in the
-                          default security provider.
-                        *Important notice* Make sure that Management Center web
-                          application is stopped (offline) before starting this
-                          command.
+  change-user-password     Change password for the given user record in the
+                             default security provider.
+                           *Important notice* Make sure that Management Center
+                             web application is stopped (offline) before
+                             starting this command.
 
-  update-ldap-password  Update LDAP service user's password that is stored in a
-                          Java KeyStore.
+  update-ldap-password     Update LDAP service user's password that is stored
+                             in a Java KeyStore.
+
+  reset-security-provider  Reset current security provider and delete all
+                             built-in user records in the default security
+                             provider.
+                           *Important notice* Make sure that Management Center
+                             web application is stopped (offline) before
+                             starting this command.
 ```
 
 You can also get help for any command by using the `-h` (or `--help`) command line option. See the following example:
@@ -89,6 +96,14 @@ NOTE: If you have used a non-default Management Center home directory location, 
 === Updating LDAP Password
 
 The `update-ldap-password` command updates the encrypted LDAP password stored in the KeyStore. It expects information about the KeyStore such as its location and password and the new LDAP password that you want to use. See the <<password-encryption, LDAP Authentication section>> for more information on the encrypted LDAP passwords. After updating the LDAP password, you will need to click on the **Reload Security Config** button on the login page.
+
+=== Resetting Security Provider
+
+The `reset-security-provider` command resets current security provider used in the Management Center. For the default security provider it also deletes all built-in user accounts. Note that you must stop the Management Center web application before running this command.
+
+You can use this command as a recovery mechanism for the Management Center deployment in case if a non-default security provider is configured. In case of the default security provider, you can also use the `create-user` or `change-user-password` commands as the recovery mechanism.
+
+NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
 
 === Advanced Features
 
