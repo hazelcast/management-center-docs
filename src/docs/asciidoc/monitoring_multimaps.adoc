@@ -1,6 +1,6 @@
 
 [[monitoring-multimaps]]
-== Monitoring Multimaps
+== Monitoring MultiMaps
 
 You can see a list of all the MultiMaps in your cluster by clicking on the **MultiMaps** menu item on the left panel. A new 
 page is opened on the right, as shown below.

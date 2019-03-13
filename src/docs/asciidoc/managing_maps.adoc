@@ -52,14 +52,17 @@ When you click on a desired monitoring, the chart is loaded with the selected op
 * **Operations/s**: Monitors the total number of all operations performed on the map per second.
 * **Puts/s, Gets/s, Removes/s**: These three charts monitor the put, get and remove operations performed on the map per second.
 
-Under these charts are **Map Memory** and **Map Throughput** data tables. The Map Memory data table provides memory metrics distributed over members, as shown below.
+Under these charts are **Map Memory** and **Map Throughput** data tables. The Map Statistic Data Table provides statistics distributed over members, as shown below.
 
-image::MapMemoryDataTable.png[Map Memory Data Table]
+image::MapStatisticDataTable.png[Map Statistic Data Table]
 
 From left to right, this table lists:
 
 * **Members**: The IP address and port of the member.
 * **Entries**: Number of entries owned by the member.
+* **Gets**: Number of get operations received by the member.
+* **Puts**: Number of put operations received by the member.
+* **Removes**: Number of remove operations received by the member.
 * **Entry Memory**: Memory cost of owned entries in the member.
 * **Backups**: Number of backup entries held by the member.
 * **Backup Memory**: Memory cost of backup entries held by the member.
