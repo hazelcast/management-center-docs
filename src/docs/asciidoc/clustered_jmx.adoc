@@ -28,13 +28,13 @@ With embedded Jetty, you do not need to deploy your Management Center applicatio
 You can start Management Center application with Clustered JMX enabled as shown below.
 
 [subs="attributes"]
-```
+```bash
 java -Dhazelcast.mc.jmx.enabled=true -Dhazelcast.mc.jmx.port=9999 -Dcom.sun.management.jmxremote.ssl=false -jar {mc-war-file}
 ```
 
 Once Management Center starts, you should see a log similar to below.
 
-```
+```bash
 INFO: Management Center 3.3
 Jun 05, 2014 11:55:32 AM com.hazelcast.webmonitor.service.jmx.impl.JMXService
 INFO: Starting Management Center JMX Service on port :9999
@@ -59,7 +59,7 @@ parameters for your Management Center deployment.
 Following is an example on how to start Management Center with a TLS/SSL enabled Clustered JMX service on port 65432:
 
 [subs="attributes"]
-```
+```bash
 java -Dhazelcast.mc.jmx.enabled=true -Dhazelcast.mc.jmx.port=65432 -Dhazelcast.mc.jmx.ssl=true -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
@@ -85,7 +85,7 @@ System default will be used if none provided. You can find out the default by ca
 
 The management beans are exposed with the following object name format.
 
-```
+```plain
 ManagementCenter[`*cluster name*`]:type=<`*object type*`>,name=<`*object name*`>,member="<`*cluster member IP address*`>"
 ```
 
@@ -98,7 +98,7 @@ Object name starts with `ManagementCenter` prefix. Then it has the cluster name 
 
 A sample bean is shown below.
 
-```
+```plain
 ManagementCenter[dev]:type=Services,name=OperationService,member="192.168.2.79:5701"
 ```
 
@@ -233,6 +233,8 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** AvgRemoveLatency
 * Members
   ** `<Member Address>`
+    *** Uuid
+    *** CpMemberUuid
     *** ConnectedClientCount
     *** HeapFreeMemory
     *** HeapMaxMemory
@@ -413,14 +415,14 @@ Put the `.yml` file in the `extensions` folder in your New Relic installation. I
 After you set your extension, attach the New Relic Java agent and start Management Center as shown below.
 
 [subs="attributes"]
-```
+```bash
 java -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar {mc-war-file}
 ```
 
 If your logging level is set as FINER, you should see the log listing in the file `newrelic_agent.log`, which is located in the `logs` folder in your New Relic installation. Below is an example log listing.
 
-```
+```plain
 Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINE:
     JMX Service : querying MBeans (1)
 Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
@@ -466,14 +468,14 @@ For monitoring on AppDynamics, refer to http://docs.appdynamics.com/display/PRO1
 After installing AppDynamics agent, you can start Management Center as shown below.
 
 [subs="attributes"]
-```
+```bash
 java -javaagent:/path/to/javaagent.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar {mc-war-file}
 ```
 
 When Management Center starts, you should see the logs below.
 
-```
+```plain
 Started AppDynamics Java Agent Successfully.
 Hazelcast Management Center starting on port 8080 at path : /hazelcast-mancenter
 ```

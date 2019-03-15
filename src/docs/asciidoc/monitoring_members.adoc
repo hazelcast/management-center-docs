@@ -10,8 +10,7 @@ page is opened on the right, as shown below.
 
 image::MemberGridView.png[Member Grid View]
 
-You can filter the members shown and you can also sort the table by clicking on the column headers. Clicking on
-a member name will open a new page for monitoring that member on the right, as shown below.
+You can filter the members shown and you can also sort the table by clicking on the column headers. Members that participate in the CP Subsystem are marked with the CP icon. Clicking on a member name will open a new page for monitoring that member on the right, as shown below.
 
 image::MonitoringMembers.png[Monitoring Members]
 

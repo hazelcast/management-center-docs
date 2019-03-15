@@ -12,7 +12,7 @@ The Clustered REST API is exposed from Management Center to allow you to monitor
 
 To enable Clustered REST on your Management Center, pass the following system property at startup. This property is disabled by default.
 
-```
+```bash
 -Dhazelcast.mc.rest.enabled=true
 ```
 
@@ -36,14 +36,14 @@ Returns `-1` if no license is assigned.
 * *URL:* `/rest/license`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/license
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 {
   "licenseExpirationTime": 4099755599515
 }
@@ -59,15 +59,15 @@ This resource returns a list of clusters that are connected to the Management Ce
 * *URL:* `/rest/clusters`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-["dev","qa"]
+```json
+["dev", "qa"]
 ```
 
 === Cluster Resource
@@ -83,17 +83,17 @@ key assigned for the cluster. Returns `-1` for license expiration time if no lic
 * *URL:* `/rest/clusters/{clustername}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 {
-    "masterAddress":"192.168.2.78:5701",
-    "licenseExpirationTime": 4099755599515
+  "masterAddress": "192.168.2.78:5701",
+  "licenseExpirationTime": 4099755599515
 }
 ```
 
@@ -107,15 +107,20 @@ This resource returns a list of members belonging to the provided clusters.
 * *URL:* `/rest/clusters/{clustername}/members`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-["192.168.2.78:5701","192.168.2.78:5702","192.168.2.78:5703","192.168.2.78:5704"]
+```json
+[
+  "192.168.2.78:5701",
+  "192.168.2.78:5702",
+  "192.168.2.78:5703",
+  "192.168.2.78:5704"
+]
 ```
 
 === Member Resource
@@ -128,25 +133,27 @@ This resource returns information related to the provided member.
 * *URL:* `/rest/clusters/{clustername}/members/{member}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "cluster":"dev",
-	  "name":"192.168.2.78:5701",
-	  "maxMemory":129957888,
-	  "ownedPartitionCount":68,
-	  "usedMemory":60688784,
-	  "freeMemory":24311408,
-	  "totalMemory":85000192,
-	  "connectedClientCount":1,
-	  "master":true
-	}
+```json
+{
+  "cluster": "dev",
+  "name": "192.168.2.78:5701",
+  "uuid": "11adba52-e19d-4407-a9e9-e0a271cef14a",
+  "cpMemberUuid": "f5a8f8a4-f278-4a13-a23e-5accf5b02f42",
+  "maxMemory": 129957888,
+  "ownedPartitionCount": 68,
+  "usedMemory": 60688784,
+  "freeMemory": 24311408,
+  "totalMemory": 85000192,
+  "connectedClientCount": 1,
+  "master": true
+}
 ```
 
 ==== Retrieve Connection Manager Information
@@ -155,19 +162,19 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/connectionManager`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/connectionManager
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "clientConnectionCount":2,
-	  "activeConnectionCount":5,
-	  "connectionCount":5
-	}
+```json
+{
+  "clientConnectionCount": 2,
+  "activeConnectionCount": 5,
+  "connectionCount": 5
+}
 ```
 
 ==== Retrieve Operation Service Information
@@ -176,22 +183,22 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/operationService`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/operationService
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "responseQueueSize":0,
-	  "operationExecutorQueueSize":0,
-	  "runningOperationsCount":0,
-	  "remoteOperationCount":1,
-	  "executedOperationCount":461139,
-	  "operationThreadCount":8
-	}
+```json
+{
+  "responseQueueSize": 0,
+  "operationExecutorQueueSize": 0,
+  "runningOperationsCount": 0,
+  "remoteOperationCount": 1,
+  "executedOperationCount": 461139,
+  "operationThreadCount": 8
+}
 ```
 
 ==== Retrieve Event Service Information
@@ -200,19 +207,19 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/eventService`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/eventService
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "eventThreadCount":5,
-	  "eventQueueCapacity":1000000,
-	  "eventQueueSize":0
-	}
+```json
+{
+  "eventThreadCount": 5,
+  "eventQueueCapacity": 1000000,
+  "eventQueueSize": 0
+}
 ```
 
 ==== Retrieve Partition Service Information
@@ -221,18 +228,18 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/partitionService`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/partitionService
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "partitionCount":271,
-	  "activePartitionCount":68
-	}
+```json
+{
+  "partitionCount": 271,
+  "activePartitionCount": 68
+}
 ```
 
 ==== Retrieve Proxy Service Information
@@ -241,17 +248,17 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/proxyService`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/proxyService
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "proxyCount":8
-	}
+```json
+{
+  "proxyCount": 8
+}
 ```
 
 ==== Retrieve All Managed Executors
@@ -260,15 +267,15 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/managedExecutors`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701/managedExecutors
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-["hz:system","hz:scheduled","hz:client","hz:query","hz:io","hz:async"]
+```json
+["hz:system", "hz:scheduled", "hz:client", "hz:query", "hz:io", "hz:async"]
 ```
 
 ==== Retrieve a Managed Executor
@@ -277,7 +284,7 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *URL:* `/rest/clusters/{clustername}/members/{member}/managedExecutors/{managedExecutor}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168.2.78:5701
 	  /managedExecutors/hz:system
 ```
@@ -285,16 +292,16 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "name":"hz:system",
-	  "queueSize":0,
-	  "poolSize":0,
-	  "remainingQueueCapacity":2147483647,
-	  "maximumPoolSize":4,
-	  "completedTaskCount":12,
-	  "terminated":false
-	}
+```json
+{
+  "name": "hz:system",
+  "queueSize": 0,
+  "poolSize": 0,
+  "remainingQueueCapacity": 2147483647,
+  "maximumPoolSize": 4,
+  "completedTaskCount": 12,
+  "terminated": false
+}
 ```
 
 === Client Endpoints Resource
@@ -309,14 +316,14 @@ as it contains more detailed information about clients.
 * *URL:* `/rest/clusters/{clustername}/clients`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 ["192.168.2.78:61708"]
 ```
 
@@ -326,23 +333,23 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients
 * *URL:* `/rest/clusters/{clustername}/clients/{client}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients/192.168.2.78:61708
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "uuid":"6fae7af6-7a7c-4fa5-b165-cde24cf070f5",
-	  "address":"192.168.2.78:61708",
-	  "clientType":"JAVA",
-	  "name":"hz.client_1",
-	  "labels": [
-	    "label1"
-	  ]
-	}
+```json
+{
+  "uuid": "6fae7af6-7a7c-4fa5-b165-cde24cf070f5",
+  "address": "192.168.2.78:61708",
+  "clientType": "JAVA",
+  "name": "hz.client_1",
+  "labels": [
+    "label1"
+  ]
+}
 ```
 
 === Maps Resource
@@ -356,15 +363,15 @@ This resource returns a list of maps belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/maps`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/maps
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-["customers","orders"]
+```json
+["customers", "orders"]
 ```
 
 ==== Retrieve Map Information
@@ -373,40 +380,40 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/maps
 * *URL:* `/rest/clusters/{clustername}/maps/{mapName}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/maps/customers
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-      "cluster": "dev",
-      "name": "customers",
-      "ownedEntryCount": 5085,
-      "backupEntryCount": 5076,
-      "ownedEntryMemoryCost": 833940,
-      "backupEntryMemoryCost": 832464,
-      "heapCost": 1666668,
-      "lockedEntryCount": 2,
-      "dirtyEntryCount": 0,
-      "hits": 602,
-      "lastAccessTime": 1532689094579,
-      "lastUpdateTime": 1532689094576,
-      "creationTime": 1532688789256,
-      "putOperationCount": 5229,
-      "getOperationCount": 2162,
-      "removeOperationCount": 150,
-      "otherOperationCount": 3687,
-      "events": 10661,
-      "maxPutLatency": 48,
-      "maxGetLatency": 35,
-      "maxRemoveLatency": 18034,
-      "avgPutLatency": 0.5674125071715433,
-      "avgGetLatency": 0.2479185938945421,
-      "avgRemoveLatency": 5877.986666666667
-    }
+```json
+{
+  "cluster": "dev",
+  "name": "customers",
+  "ownedEntryCount": 5085,
+  "backupEntryCount": 5076,
+  "ownedEntryMemoryCost": 833940,
+  "backupEntryMemoryCost": 832464,
+  "heapCost": 1666668,
+  "lockedEntryCount": 2,
+  "dirtyEntryCount": 0,
+  "hits": 602,
+  "lastAccessTime": 1532689094579,
+  "lastUpdateTime": 1532689094576,
+  "creationTime": 1532688789256,
+  "putOperationCount": 5229,
+  "getOperationCount": 2162,
+  "removeOperationCount": 150,
+  "otherOperationCount": 3687,
+  "events": 10661,
+  "maxPutLatency": 48,
+  "maxGetLatency": 35,
+  "maxRemoveLatency": 18034,
+  "avgPutLatency": 0.5674125071715433,
+  "avgGetLatency": 0.2479185938945421,
+  "avgRemoveLatency": 5877.986666666667
+}
 ```
 
 === MultiMaps Resource
@@ -420,14 +427,14 @@ This resource returns a list of multimaps belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/multimaps`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/multimaps
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 ["customerAddresses"]
 ```
 
@@ -437,40 +444,40 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/multimaps
 * *URL:* `/rest/clusters/{clustername}/multimaps/{multimapname}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/multimaps/customerAddresses
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-      "cluster": "dev",
-      "name": "customerAddresses",
-      "ownedEntryCount": 4862,
-      "backupEntryCount": 4860,
-      "ownedEntryMemoryCost": 0,
-      "backupEntryMemoryCost": 0,
-      "heapCost": 0,
-      "lockedEntryCount": 1,
-      "dirtyEntryCount": 0,
-      "hits": 22,
-      "lastAccessTime": 1532689253314,
-      "lastUpdateTime": 1532689252591,
-      "creationTime": 1532688790593,
-      "putOperationCount": 5125,
-      "getOperationCount": 931,
-      "removeOperationCount": 216,
-      "otherOperationCount": 373570,
-      "events": 0,
-      "maxPutLatency": 8,
-      "maxGetLatency": 1,
-      "maxRemoveLatency": 18001,
-      "avgPutLatency": 0.3758048780487805,
-      "avgGetLatency": 0.11170784103114931,
-      "avgRemoveLatency": 1638.8472222222222
-    }
+```json
+{
+  "cluster": "dev",
+  "name": "customerAddresses",
+  "ownedEntryCount": 4862,
+  "backupEntryCount": 4860,
+  "ownedEntryMemoryCost": 0,
+  "backupEntryMemoryCost": 0,
+  "heapCost": 0,
+  "lockedEntryCount": 1,
+  "dirtyEntryCount": 0,
+  "hits": 22,
+  "lastAccessTime": 1532689253314,
+  "lastUpdateTime": 1532689252591,
+  "creationTime": 1532688790593,
+  "putOperationCount": 5125,
+  "getOperationCount": 931,
+  "removeOperationCount": 216,
+  "otherOperationCount": 373570,
+  "events": 0,
+  "maxPutLatency": 8,
+  "maxGetLatency": 1,
+  "maxRemoveLatency": 18001,
+  "avgPutLatency": 0.3758048780487805,
+  "avgGetLatency": 0.11170784103114931,
+  "avgRemoveLatency": 1638.8472222222222
+}
 ```
 
 === ReplicatedMaps Resource
@@ -484,14 +491,14 @@ This resource returns a list of replicated maps belonging to the provided cluste
 * *URL:* `/rest/clusters/{clustername}/replicatedmaps`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/replicatedmaps
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 ["replicated-map-1"]
 ```
 
@@ -501,35 +508,35 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/replicatedmaps
 * *URL:* `/rest/clusters/{clustername}/replicatedmaps/{replicatedmapname}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/replicatedmaps/replicated-map-1
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-      "cluster": "dev",
-      "name": "replicated-map-1",
-      "ownedEntryCount": 10955,
-      "ownedEntryMemoryCost": 394380,
-      "hits": 15,
-      "lastAccessTime": 1532689312581,
-      "lastUpdateTime": 1532689312581,
-      "creationTime": 1532688789493,
-      "putOperationCount": 11561,
-      "getOperationCount": 1051,
-      "removeOperationCount": 522,
-      "otherOperationCount": 355552,
-      "events": 6024,
-      "maxPutLatency": 1,
-      "maxGetLatency": 1,
-      "maxRemoveLatency": 1,
-      "avgPutLatency": 0.006400830377994983,
-      "avgGetLatency": 0.012369172216936251,
-      "avgRemoveLatency": 0.011494252873563218
-    }
+```json
+{
+  "cluster": "dev",
+  "name": "replicated-map-1",
+  "ownedEntryCount": 10955,
+  "ownedEntryMemoryCost": 394380,
+  "hits": 15,
+  "lastAccessTime": 1532689312581,
+  "lastUpdateTime": 1532689312581,
+  "creationTime": 1532688789493,
+  "putOperationCount": 11561,
+  "getOperationCount": 1051,
+  "removeOperationCount": 522,
+  "otherOperationCount": 355552,
+  "events": 6024,
+  "maxPutLatency": 1,
+  "maxGetLatency": 1,
+  "maxRemoveLatency": 1,
+  "avgPutLatency": 0.006400830377994983,
+  "avgGetLatency": 0.012369172216936251,
+  "avgRemoveLatency": 0.011494252873563218
+}
 ```
 
 
@@ -544,15 +551,15 @@ This resource returns a list of queues belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/queues`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/queues
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	["messages"]
+```json
+["messages"]
 ```
 
 ==== Retrieve Queue Information
@@ -561,30 +568,30 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/queues
 * *URL:* `/rest/clusters/{clustername}/queues/{queueName}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/queues/messages
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "cluster":"dev",
-	  "name":"messages",
-	  "ownedItemCount":55408,
-	  "backupItemCount":55408,
-	  "minAge":0,
-	  "maxAge":0,
-	  "aveAge":0,
-	  "numberOfOffers":55408,
-	  "numberOfRejectedOffers":0,
-	  "numberOfPolls":0,
-	  "numberOfEmptyPolls":0,
-	  "numberOfOtherOperations":0,
-	  "numberOfEvents":0,
-	  "creationTime":1403602694196
-	}
+```json
+{
+  "cluster": "dev",
+  "name": "messages",
+  "ownedItemCount": 55408,
+  "backupItemCount": 55408,
+  "minAge": 0,
+  "maxAge": 0,
+  "aveAge": 0,
+  "numberOfOffers": 55408,
+  "numberOfRejectedOffers": 0,
+  "numberOfPolls": 0,
+  "numberOfEmptyPolls": 0,
+  "numberOfOtherOperations": 0,
+  "numberOfEvents": 0,
+  "creationTime": 1403602694196
+}
 ```
 
 
@@ -599,14 +606,14 @@ This resource returns a list of topics belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/topics`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/topics
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 ["news"]
 ```
 
@@ -616,21 +623,21 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/topics
 * *URL:* `/rest/clusters/{clustername}/topics/{topicName}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/topics/news
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "cluster":"dev",
-	  "name":"news",
-	  "numberOfPublishes":56370,
-	  "totalReceivedMessages":56370,
-	  "creationTime":1403602693411
-	}
+```json
+{
+  "cluster": "dev",
+  "name": "news",
+  "numberOfPublishes": 56370,
+  "totalReceivedMessages": 56370,
+  "creationTime": 1403602693411
+}
 ```
 
 
@@ -644,14 +651,14 @@ This resource returns a list of executors belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/executors`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/executors
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
+```json
 ["order-executor"]
 ```
 
@@ -661,23 +668,23 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/executors
 * *URL:* `/rest/clusters/{clustername}/executors/{executorName}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/executors/order-executor
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-	  "cluster":"dev",
-	  "name":"order-executor",
-	  "creationTime":1403602694196,
-	  "pendingTaskCount":0,
-	  "startedTaskCount":1241,
-	  "completedTaskCount":1241,
-	  "cancelledTaskCount":0
-	}
+```json
+{
+  "cluster": "dev",
+  "name": "order-executor",
+  "creationTime": 1403602694196,
+  "pendingTaskCount": 0,
+  "startedTaskCount": 1241,
+  "completedTaskCount": 1241,
+  "cancelledTaskCount": 0
+}
 ```
 
 [[client-statistics-resource]]
@@ -692,26 +699,26 @@ This resource returns a list of clients belonging to the provided cluster.
 * *URL:* `/rest/clusters/{clustername}/clientStats`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clientStats
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	[
-      "f3b1e0e9-ea67-41b2-aba5-ea7480f02a93",
-      "cebf4dc9-852c-4605-a181-ffe1cca371a4",
-      "2371eed5-26e0-4470-92c1-41ea17110ef6",
-      "139990b3-fbc0-43a8-9c12-be53913333f7",
-      "d0364a1e-8665-46a8-af1d-be1af5580d07",
-      "7f337f8a-3538-4b5c-8ffc-9d4ae459e956",
-      "6ef9b6e5-5add-40d9-9319-ce502f55b5fc",
-      "fead3a99-19de-431c-9dd0-d6ecc4a4b9c8",
-      "e788e04e-2ded-4992-9d76-52c1973216e5",
-      "654fc9fb-c5c1-48a0-9b69-0c129fce860f"
-    ]
+```json
+[
+  "f3b1e0e9-ea67-41b2-aba5-ea7480f02a93",
+  "cebf4dc9-852c-4605-a181-ffe1cca371a4",
+  "2371eed5-26e0-4470-92c1-41ea17110ef6",
+  "139990b3-fbc0-43a8-9c12-be53913333f7",
+  "d0364a1e-8665-46a8-af1d-be1af5580d07",
+  "7f337f8a-3538-4b5c-8ffc-9d4ae459e956",
+  "6ef9b6e5-5add-40d9-9319-ce502f55b5fc",
+  "fead3a99-19de-431c-9dd0-d6ecc4a4b9c8",
+  "e788e04e-2ded-4992-9d76-52c1973216e5",
+  "654fc9fb-c5c1-48a0-9b69-0c129fce860f"
+]
 ```
 
 ==== Retrieve Detailed Client Statistics [GET] [/rest/clusters/{clustername}/clientStats/{clientUuid}]
@@ -720,105 +727,104 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clientStats
 * *URL:* `/rest/clusters/{clustername}/clientStats/{clientUuid}`
 * *Request:*
 +
-```
+```bash
 curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clientStats/2371eed5-26e0-4470-92c1-41ea17110ef6
 ```
 +
 * *Response:* `200` (application/json)
 * *Body:*
 +
-```
-	{
-      "type": "JAVA",
-      "name": "hz.client_7",
-      "address": "127.0.0.1:42733",
-      "clusterConnectionTimestamp": 1507874427419,
-      "enterprise": true,
-      "lastStatisticsCollectionTime": 1507881309434,
-      "osStats": {
-        "committedVirtualMemorySize": 12976173056,
-        "freePhysicalMemorySize": 3615662080,
-        "freeSwapSpaceSize": 8447324160,
-        "maxFileDescriptorCount": 1000000,
-        "openFileDescriptorCount": 191,
-        "processCpuTime": 252980000000,
-        "systemLoadAverage": 83.0,
-        "totalPhysicalMemorySize": 16756101120,
-        "totalSwapSpaceSize": 8447324160
+```json
+{
+  "type": "JAVA",
+  "name": "hz.client_7",
+  "address": "127.0.0.1:42733",
+  "clusterConnectionTimestamp": 1507874427419,
+  "enterprise": true,
+  "lastStatisticsCollectionTime": 1507881309434,
+  "osStats": {
+    "committedVirtualMemorySize": 12976173056,
+    "freePhysicalMemorySize": 3615662080,
+    "freeSwapSpaceSize": 8447324160,
+    "maxFileDescriptorCount": 1000000,
+    "openFileDescriptorCount": 191,
+    "processCpuTime": 252980000000,
+    "systemLoadAverage": 83.0,
+    "totalPhysicalMemorySize": 16756101120,
+    "totalSwapSpaceSize": 8447324160
+  },
+  "runtimeStats": {
+    "availableProcessors": 12,
+    "freeMemory": 135665432,
+    "maxMemory": 3724541952,
+    "totalMemory": 361234432,
+    "uptime": 6894992,
+    "usedMemory": 225569000
+  },
+  "nearCacheStats": {
+    "CACHE": {
+      "a-cache": {
+        "creationTime": 1507874429719,
+        "evictions": 0,
+        "hits": 0,
+        "misses": 50,
+        "ownedEntryCount": 0,
+        "expirations": 0,
+        "ownedEntryMemoryCost": 0,
+        "lastPersistenceDuration": 0,
+        "lastPersistenceKeyCount": 0,
+        "lastPersistenceTime": 0,
+        "lastPersistenceWrittenBytes": 0,
+        "lastPersistenceFailure": ""
       },
-      "runtimeStats": {
-        "availableProcessors": 12,
-        "freeMemory": 135665432,
-        "maxMemory": 3724541952,
-        "totalMemory": 361234432,
-        "uptime": 6894992,
-        "usedMemory": 225569000
+      "b.cache": {
+        "creationTime": 1507874429973,
+        "evictions": 0,
+        "hits": 0,
+        "misses": 50,
+        "ownedEntryCount": 0,
+        "expirations": 0,
+        "ownedEntryMemoryCost": 0,
+        "lastPersistenceDuration": 0,
+        "lastPersistenceKeyCount": 0,
+        "lastPersistenceTime": 0,
+        "lastPersistenceWrittenBytes": 0,
+        "lastPersistenceFailure": ""
+      }
+    },
+    "MAP": {
+      "other,map": {
+        "creationTime": 1507874428638,
+        "evictions": 0,
+        "hits": 100,
+        "misses": 50,
+        "ownedEntryCount": 0,
+        "expirations": 0,
+        "ownedEntryMemoryCost": 0,
+        "lastPersistenceDuration": 0,
+        "lastPersistenceKeyCount": 0,
+        "lastPersistenceTime": 0,
+        "lastPersistenceWrittenBytes": 0,
+        "lastPersistenceFailure": ""
       },
-      "nearCacheStats": {
-        "CACHE": {
-          "a-cache": {
-            "creationTime": 1507874429719,
-            "evictions": 0,
-            "hits": 0,
-            "misses": 50,
-            "ownedEntryCount": 0,
-            "expirations": 0,
-            "ownedEntryMemoryCost": 0,
-            "lastPersistenceDuration": 0,
-            "lastPersistenceKeyCount": 0,
-            "lastPersistenceTime": 0,
-            "lastPersistenceWrittenBytes": 0,
-            "lastPersistenceFailure": ""
-          },
-          "b.cache": {
-            "creationTime": 1507874429973,
-            "evictions": 0,
-            "hits": 0,
-            "misses": 50,
-            "ownedEntryCount": 0,
-            "expirations": 0,
-            "ownedEntryMemoryCost": 0,
-            "lastPersistenceDuration": 0,
-            "lastPersistenceKeyCount": 0,
-            "lastPersistenceTime": 0,
-            "lastPersistenceWrittenBytes": 0,
-            "lastPersistenceFailure": ""
-          }
-        },
-        "MAP": {
-          "other,map": {
-            "creationTime": 1507874428638,
-            "evictions": 0,
-            "hits": 100,
-            "misses": 50,
-            "ownedEntryCount": 0,
-            "expirations": 0,
-            "ownedEntryMemoryCost": 0,
-            "lastPersistenceDuration": 0,
-            "lastPersistenceKeyCount": 0,
-            "lastPersistenceTime": 0,
-            "lastPersistenceWrittenBytes": 0,
-            "lastPersistenceFailure": ""
-          },
-          "employee-map": {
-            "creationTime": 1507874427959,
-            "evictions": 0,
-            "hits": 100,
-            "misses": 50,
-            "ownedEntryCount": 0,
-            "expirations": 0,
-            "ownedEntryMemoryCost": 0,
-            "lastPersistenceDuration": 0,
-            "lastPersistenceKeyCount": 0,
-            "lastPersistenceTime": 0,
-            "lastPersistenceWrittenBytes": 0,
-            "lastPersistenceFailure": ""
-          }
-        }
-      },
-      "userExecutorQueueSize": 0,
-      "memberConnection": "ALL",
-      "version": "UNKNOWN"
+      "employee-map": {
+        "creationTime": 1507874427959,
+        "evictions": 0,
+        "hits": 100,
+        "misses": 50,
+        "ownedEntryCount": 0,
+        "expirations": 0,
+        "ownedEntryMemoryCost": 0,
+        "lastPersistenceDuration": 0,
+        "lastPersistenceKeyCount": 0,
+        "lastPersistenceTime": 0,
+        "lastPersistenceWrittenBytes": 0,
+        "lastPersistenceFailure": ""
+      }
     }
+  },
+  "userExecutorQueueSize": 0,
+  "memberConnection": "ALL",
+  "version": "UNKNOWN"
+}
 ```
-	
