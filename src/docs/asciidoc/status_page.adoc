@@ -32,10 +32,13 @@ image::MapMemoryDistribution.png[Memory Distribution of Map]
 In the above example, you can see 62.50% of the total map memory is used by **Map A** and 37.50% is used by **Map B**.
 
 [[cluster-state-and-health]]
-=== Cluster State/Health
+=== Cluster State/Health/Client Filtering
 
-This part shows the current cluster state and the cluster's health. For more information on cluster states, see <<cluster-state, Cluster State>>. Cluster health shows how many migrations are taking place currently.
+This part shows the current cluster state, the cluster's health and cluster client filtering status and type. For more information on cluster states, see <<cluster-state, Cluster State>>. Cluster health shows how many migrations are taking place currently. For more information on cluster client filtering, see <<changing-cluster-client-filtering, Changing Cluster Client Filtering>>.
 
+NOTE: Cluster client filtering is only available with Hazelcast IMDG license that includes the Cluster Client Filtering feature.
+
+// TODO update the image once FE support is ready
 image::ClusterStateAndHealth.png[Cluster State and Cluster Health]
 
 
