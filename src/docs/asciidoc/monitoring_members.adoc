@@ -71,7 +71,7 @@ The window titled **Partitions** shows which partitions are assigned to the sele
 - **OS: System Load Average**: System load average for the last minute. The system load average is the average over a period of time of this sum: (the number of runnable entities queued to the available processors) + (the number of runnable entities running on the available processors). The way in which the load average is calculated is operating system specific but it is typically a damped time-dependent average.
 
 - **OS: System CPU Load**:
-Recent CPU usage for the whole system. This is a double with a value from 0.0 to 1.0. A value of 0.0 means that all CPUs were idle during the recent period of time observed, while a value of 1.0 means that all CPUs were actively running 100% of the time during the recent period being observed.
+Recent CPU usage for the whole system represented as a percentage value. `0%` means that all CPUs were idle during the recent period of time observed, while `100%` means that all CPUs were actively running during the recent period being observed.
 
 NOTE: These descriptions may vary according to the JVM version or vendor.
 
