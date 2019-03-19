@@ -107,65 +107,65 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
 
 * **ManagementCenter**
 * ManagementCenter
-** LicenseExpirationTime
+  ** LicenseExpirationTime
 * **ManagementCenter[`<ClusterName>`]**
 * `<ClusterName>`
-** MasterAddress
-** LicenseExpirationTime
+  ** MasterAddress
+  ** LicenseExpirationTime
 * ClientStats
-** `<Client UUID>`
-*** HeapUsedMemory
-*** HeapFreeMemory
-*** HeapMaxMemory
-*** HeapTotalMemory
-*** ClientName
-*** AvailableProcessors
-*** Uptime
-*** Enterprise
-*** MemberConnection
-*** ClusterConnectionTimestamp
-*** LastStatisticsCollectionTime
-*** UserExecutorQueueSize
-*** CommittedVirtualMemorySize
-*** FreePhysicalMemorySize
-*** FreeSwapSpaceSize
-*** MaxFileDescriptorCount
-*** OpenFileDescriptorCount
-*** ProcessCpuTime
-*** SystemLoadAverage
-*** TotalPhysicalMemorySize
-*** TotalSwapSpaceSize
-*** Version
-*** Address
-*** Type
-*** CACHE
-  **** `<Cache Name>`
-    ***** Evictions
-    ***** Expirations
-    ***** Hits
-    ***** Misses
-    ***** OwnedEntryCount
-    ***** OwnedEntryMemoryCost
-    ***** LastPersistenceDuration
-    ***** LastPersistenceKeyCount
-    ***** LastPersistenceTime
-    ***** LastPersistenceWrittenBytes
-    ***** LastPersistenceFailure
-    ***** CreationTime
-*** MAP
-  **** `<Map Name>`
-    ***** Evictions
-    ***** Expirations
-    ***** Hits
-    ***** Misses
-    ***** OwnedEntryCount
-    ***** OwnedEntryMemoryCost
-    ***** LastPersistenceDuration
-    ***** LastPersistenceKeyCount
-    ***** LastPersistenceTime
-    ***** LastPersistenceWrittenBytes
-    ***** LastPersistenceFailure
-    ***** CreationTime
+  ** `<Client UUID>`
+    *** HeapUsedMemory
+    *** HeapFreeMemory
+    *** HeapMaxMemory
+    *** HeapTotalMemory
+    *** ClientName
+    *** AvailableProcessors
+    *** Uptime
+    *** Enterprise
+    *** MemberConnection
+    *** ClusterConnectionTimestamp
+    *** LastStatisticsCollectionTime
+    *** UserExecutorQueueSize
+    *** CommittedVirtualMemorySize
+    *** FreePhysicalMemorySize
+    *** FreeSwapSpaceSize
+    *** MaxFileDescriptorCount
+    *** OpenFileDescriptorCount
+    *** ProcessCpuTime
+    *** SystemLoadAverage
+    *** TotalPhysicalMemorySize
+    *** TotalSwapSpaceSize
+    *** Version
+    *** Address
+    *** Type
+    *** CACHE
+      **** `<Cache Name>`
+        ***** Evictions
+        ***** Expirations
+        ***** Hits
+        ***** Misses
+        ***** OwnedEntryCount
+        ***** OwnedEntryMemoryCost
+        ***** LastPersistenceDuration
+        ***** LastPersistenceKeyCount
+        ***** LastPersistenceTime
+        ***** LastPersistenceWrittenBytes
+        ***** LastPersistenceFailure
+        ***** CreationTime
+    *** MAP
+      **** `<Map Name>`
+        ***** Evictions
+        ***** Expirations
+        ***** Hits
+        ***** Misses
+        ***** OwnedEntryCount
+        ***** OwnedEntryMemoryCost
+        ***** LastPersistenceDuration
+        ***** LastPersistenceKeyCount
+        ***** LastPersistenceTime
+        ***** LastPersistenceWrittenBytes
+        ***** LastPersistenceFailure
+        ***** CreationTime
 * Clients
   ** `<Client Address>`
    *** Address
@@ -376,12 +376,21 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** CreationTime
     *** PublishOperationCount
     *** ReceiveOperationCount
-* Flake ID Generators
+* FlakeIdGenerators
   ** `<Generator Name>`
     *** Cluster
     *** Name
     *** Time 
     *** OpsPerSec (per member)    
+* WanConfigs
+  ** `<Wan Replication Config>`
+    *** Cluster
+    *** Name
+    *** TargetGroupSet
+    *** getTime(`<Publisher ID>`)
+    *** getOutboundQueueSize(`<Publisher ID>`)
+    *** getTotalPublishedEventCount(`<Publisher ID>`)
+    *** getTotalPublishLatency(`<Publisher ID>`)
 
 
 === Integrating with New Relic
