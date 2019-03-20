@@ -38,7 +38,6 @@ This part shows the current cluster state, the cluster's health and cluster clie
 
 NOTE: Cluster client filtering is only available with Hazelcast IMDG license that includes the Cluster Client Filtering feature.
 
-// TODO update the image once FE support is ready
 image::ClusterStateAndHealth.png[Cluster State and Cluster Health]
 
 

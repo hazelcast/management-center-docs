@@ -17,13 +17,11 @@ opened on the right, as shown below. The page has two tabs: **Connection** and *
 default. This tab shows the list of all the clients. See the <<changing-cluster-client-filtering, Changing Cluster Client Filtering section>>
 for the Filter tab's description.
 
-// TODO update the image once FE support is ready
 image::ClientGridView.png[Client Grid View]
 
 You can filter the clients shown and you can also sort the table by clicking on the column headers. Clicking on
 a client name will open a new page for monitoring that client on the right, as shown below.
 
-// TODO update the image once FE support is ready
 image::MonitoringClientDetailed.png[Monitoring Client Detailed]
 
 The **Heap Memory Utilization** chart shows the memory usage on the selected client with three different metrics
@@ -145,8 +143,7 @@ NOTE: The Filter tab is only available with Hazelcast IMDG license that includes
 The **Filter** tab includes **Cluster Client Filtering** status, **Cluster Client Filter Settings** and **Client Filtering
 Lists** sections, as shown below.
 
-// TODO update the image once FE support is ready
-image::ClientGridView.png[Client Grid View]
+image::ClientFilteringView.png[Client Filtering View]
 
 The **Cluster Client Filtering** status section describes if there is a deployed client filtering list available to all cluster
 members (**Enabled** status), or if the feature is disabled for the cluster and the members allow any clients (**Disabled** status).
@@ -162,7 +159,6 @@ copied into the deployed client filtering list and made available for all cluste
 their status (**List Status** must be **Active**) and type (**List Type** must match the value of the **Client Filter Type**
 selection).
 
-// The ref doc link for IMDG is not working yet
 Once a cluster member receives the deployed client filtering list from the Management Center, it immediately applies the list to
 all currently connected clients and then uses it for newly connecting clients. Blacklisted clients may connect to another cluster
 if they are configured to support blue-green deployment. Please see the
@@ -179,14 +175,12 @@ The **Client Filtering Lists** section allows creation, editing and deletion of 
 filtering list, you need to click the **Add New List** button, which will open the Create List form, as shown below. Once you
 enter all fields and entries for the new list, click the **Save** button to save your modifications.
 
-// TODO update the image once FE support is ready
-image::ClientGridView.png[Client Grid View]
+image::ClientFilteringAddList.png[Add Client Filtering List]
 
 To modify an existing client filtering list, you need to click the **Edit** button, which will open the Edit List form,
 as shown below.
 
-// TODO update the image once FE support is ready
-image::ClientGridView.png[Client Grid View]
+image::ClientFilteringEditList.png[Edit Client Filtering List]
 
 To delete an existing client filtering list, you need to click the **Delete** button and confirm your action in the opened dialog.
 
