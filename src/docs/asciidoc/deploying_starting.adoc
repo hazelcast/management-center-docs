@@ -124,6 +124,17 @@ By default, HTTP port is disabled when you enable TLS. If you want to have an op
 -Dhazelcast.mc.tls.enableHttpPort=true
 ```
 
+[[enabling-health-check-endpoint]]
+=== Enabling Health Check Endpoint
+
+When running Management Center from the command line, you can enable the Health Check endpoint. This endpoint responds with `200 OK` HTTP status code once Management Center web application has started. The endpoint is available on port `<Management Center HTTP port> + 1` with context path `<Management Center context path>/health` (by default, its URL is `http://localhost:8081/hazelcast-mancenter/health`). Note that HTTP protocol is always used for the Health Check endpoint, independently of TLS/SSL settings, and no additional authentication is enforced for it.
+
+If you want to enable the Health Check endpoint, use the following command line argument:
+
+```
+-Dhazelcast.mc.healthCheck.enable=true
+```
+
 [[mutual-authentication]]
 === Mutual Authentication
 
