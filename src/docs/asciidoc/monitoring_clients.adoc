@@ -177,6 +177,12 @@ enter all fields and entries for the new list, click the **Save** button to save
 
 image::ClientFilteringAddList.png[Add Client Filtering List]
 
+The following formats of list entry values are supported:
+
+* For the IP Address entry type you can specify IP address (IPv4 or IPv6) with optional range characters (`\*` and `-`) instead of any byte group. For instance, `10.3.10.\*` refers to IPs between `10.3.10.0` and `10.3.10.255`. The `10.3.10.4-18` refers to IPs between `10.3.10.4` and `10.3.10.18` (4 and 18 included).
+* For the Label entry type you can specify any string with optional wildcard characters (`\*`). For instance, `green*` refers to any label values that start with the `green` string.
+* For the Instance Name entry type you can specify any string with optional wildcard characters (`\*`). For instance, `*-client` refers to any label values that end with the `-client` string.
+
 To modify an existing client filtering list, you need to click the **Edit** button, which will open the Edit List form,
 as shown below.
 
