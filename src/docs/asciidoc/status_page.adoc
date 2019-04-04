@@ -22,15 +22,6 @@ image::HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
 
 In the above example, you can see 26.18% of the total heap memory is used by Hazelcast maps, 36.02% is used by both non-Hazelcast entities and all Hazelcast entities except the map and 37.80% of the total heap memory is free.
 
-[[map-memory-distribution]]
-=== Map Memory Distribution
-
-This part provides the percentage values of the memories used by each map, out of the total cluster memory reserved for all Hazelcast maps.
-
-image::MapMemoryDistribution.png[Memory Distribution of Map]
-
-In the above example, you can see 62.50% of the total map memory is used by **Map A** and 37.50% is used by **Map B**.
-
 [[cluster-state-and-health]]
 === Cluster State/Health/Client Filtering
 
