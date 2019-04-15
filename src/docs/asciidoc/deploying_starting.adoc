@@ -19,8 +19,8 @@ NOTE: Starting with version 3.10, you need Java Runtime Environment 1.8 or later
 
 Here are the steps.
 
-- Download the latest Hazelcast Management Center ZIP from http://www.hazelcast.org/download/ under Management Center section. The ZIP contains the `{mc-war-file}` file under the directory `hazelcast-management-center-{mancenter-version}`.
-- You can directly start `{mc-war-file}` file from the command line. The following command will start Hazelcast Management Center on port 8080 with context path 'hazelcast-mancenter' (`http://localhost:8080/hazelcast-mancenter`).
+* Download the latest Hazelcast Management Center ZIP from http://www.hazelcast.org/download/ under Management Center section. The ZIP contains the `{mc-war-file}` file under the directory `hazelcast-management-center-{mancenter-version}`.
+* You can directly start `{mc-war-file}` file from the command line. The following command starts Hazelcast Management Center on the port `8080` with the `hazelcast-mancenter` context path (`\http://localhost:8080/hazelcast-mancenter`):
 
 [subs="attributes"]
 ```
@@ -93,9 +93,9 @@ Following is an example on how to start Management Center with  TLS/SSL enabled 
 java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
-You can access Management Center from the following HTTPS URL on port 8443: `https://localhost:8443/hazelcast-mancenter`
+You can access Management Center from the following HTTPS URL on port 8443: `\https://localhost:8443/hazelcast-mancenter`
 
-On the member side, you need to configure the Management Center URL as `https://localhost:8443/hazelcast-mancenter` and also set the following JVM arguments when starting the member:
+On the member side, you need to configure the Management Center URL as `\https://localhost:8443/hazelcast-mancenter` and also set the following JVM arguments when starting the member:
 
 ```
 -Djavax.net.ssl.trustStore=path to your trustStore -Djavax.net.ssl.trustStorePassword=yourpassword
@@ -127,7 +127,7 @@ By default, HTTP port is disabled when you enable TLS. If you want to have an op
 [[enabling-health-check-endpoint]]
 === Enabling Health Check Endpoint
 
-When running Management Center from the command line, you can enable the Health Check endpoint. This endpoint responds with `200 OK` HTTP status code once Management Center web application has started. The endpoint is available on port `<Management Center HTTP port> + 1` with context path `<Management Center context path>/health` (by default, its URL is `http://localhost:8081/hazelcast-mancenter/health`). Note that HTTP protocol is always used for the Health Check endpoint, independently of TLS/SSL settings, and no additional authentication is enforced for it.
+When running Management Center from the command line, you can enable the Health Check endpoint. This endpoint responds with `200 OK` HTTP status code once Management Center web application has started. The endpoint is available on port `<Management Center HTTP port> + 1` with context path `<Management Center context path>/health` (by default, its URL is `\http://localhost:8081/hazelcast-mancenter/health`). Note that HTTP protocol is always used for the Health Check endpoint, independently of TLS/SSL settings, and no additional authentication is enforced for it.
 
 If you want to enable the Health Check endpoint, use the following command line argument:
 
@@ -306,7 +306,7 @@ keytool -import -noprompt -trustcacerts -alias <AliasName> -file <certificateFil
 [[connecting-hazelcast-members-to-management-center]]
 === Connecting Members to Management Center
 
-After you perform the above steps, make sure that `http://localhost:8080/hazelcast-mancenter` is up.
+After you perform the above steps, make sure that `\http://localhost:8080/hazelcast-mancenter` is up.
 
 Configure your Hazelcast members by adding the URL of your web application to your `hazelcast.xml`. Hazelcast members will send their states to this URL.
 
@@ -396,7 +396,7 @@ HazelcastInstance hz = Hazelcast.newHazelcastInstance(config);
 
 NOTE: For the protocol property, we recommend you to provide SSL or TLS with its version information, e.g., TLSv1.2. Note that if you write only SSL or TLS, your application will choose the SSL or TLS version according to your Java version.
 
-Now you can start your Hazelcast cluster, browse to `http://localhost:8080/hazelcast-mancenter` or `https://localhost:sslPortNumber/hazelcast-mancenter` (depending on installation) and setup your administrator account explained in the <<getting-started, Getting Started chapter>>.
+Now you can start your Hazelcast cluster, browse to `\http://localhost:8080/hazelcast-mancenter` or `\https://localhost:sslPortNumber/hazelcast-mancenter` (depending on installation) and setup your administrator account explained in the <<getting-started, Getting Started chapter>>.
 
 ==== Communication Between Members and Management Center
 
