@@ -3,29 +3,49 @@
 == Monitoring WAN Replication
 
 
-WAN Replication schemes are listed under the **WAN Replication** menu item on the left. When you click on a scheme, a new page for monitoring the targets which that scheme has appears on the right, as shown below.
+WAN Replication schemes are listed under the **WAN Replication**
+menu item on the left. When you click on a scheme, a new page
+for monitoring the targets which that scheme has appears on the right, as shown below.
 
 image::WanPublisherStats.png[Monitoring WAN Replication]
 
-In this page, you see **WAN Replication Operations Table** for each target which belongs to this scheme. One of the example tables is shown below.
+In this page, you see **WAN Replication Operations Table** for
+each target which belongs to this scheme. One of the example tables is shown below.
 
 image::WanTargetTable.png[WAN Replication Operations Table]
 
 * **Connected**: Status of the member connection to the target.
-* **Events Published per Second**: Number of published events per second. Please see the paragraph below.
-* **Average Event Latency**: Average latency of sending a record to the target from this member. Please see the paragraph below.
-* **Outbound Queue Size**: Number of records waiting in the queue to be sent to the target.
-* **Action**: Pause, stop or resume replication of a member's records. You can also clear the event queues in a member using the "Clear Queues" action.  For instance, if you know that the target cluster is being shut down, decommissioned, put out of use and it will never come back, you may additionally clear the WAN queues to release the consumed heap after the publisher has been switched. Or, when a failure happens and queues are not replicated anymore, you could manually clear the queues using, again the "Clear Queues" action.
+* **Events Published per Second**: Number of published events
+per second. Please see the paragraph below.
+* **Average Event Latency**: Average latency of sending a record
+to the target from this member. Please see the paragraph below.
+* **Outbound Queue Size**: Number of records waiting in the queue
+to be sent to the target.
+* **Action**: Pause, stop or resume replication of a member's
+records. You can also clear the event queues in a member using
+the "Clear Queues" action.  For instance, if you know that the
+target cluster is being shut down, decommissioned, put out of use
+and it will never come back, you may additionally clear the WAN queues
+to release the consumed heap after the publisher has been switched. Or,
+when a failure happens and queues are not replicated anymore, you could
+manually clear the queues using, again the "Clear Queues" action.
 * **State**: Shows current state of the WAN publisher on a member. See
-<<changing-wan-publisher-state, Changing WAN Publisher State>> for the list of possible WAN publisher states.
+<<changing-wan-publisher-state, Changing WAN Publisher State>> for the
+list of possible WAN publisher states.
 
 
-**Events Published per Second** and **Average Event Latency** are based on the following internal statistics:
+**Events Published per Second** and **Average Event Latency** are
+based on the following internal statistics:
 
-* Total published event count (TBEC): Total number of events that are successfully sent to the target cluster since the start-up of the member.
-* Total latency (TL): Grand total of each event's waiting time in the queue, including network transmit and receiving ACK from the target.
+* Total published event count (TBEC): Total number of events that
+are successfully sent to the target cluster since the start-up of the member.
+* Total latency (TL): Grand total of each event's waiting time in
+the queue, including network transmit and receiving ACK from the target.
 
-Each member sends these two statistics to the Management Center at intervals of 3 seconds (update interval). Management Center derives **Events Published per Second** and **Average Event Latency** from these statistics as formulated below:
+Each member sends these two statistics to the Management Center at
+intervals of 3 seconds (update interval). Management Center derives
+**Events Published per Second** and **Average Event Latency** from
+these statistics as formulated below:
 
 Events Published per Second = (Current TBEC - Previous TBEC) / Update Interval
 
@@ -36,15 +56,20 @@ Average Event Latency = (Current TL - Previous TL) / (Current TBEC - Previous TB
 
 A WAN publisher can be in one of the following states:
 
-* `REPLICATING` (default): State where both enqueuing new events is allowed, enqueued events are replicated to the
+* `REPLICATING` (default): State where both enqueuing new events is
+allowed, enqueued events are replicated to the
 target cluster.
-* `PAUSED`: State where new events are enqueued but they are dequeued. Some events which have been dequeued before
-the state was switched may still be replicated to the target cluster but further events will not be
+* `PAUSED`: State where new events are enqueued but they are dequeued.
+Some events which have been dequeued before
+the state was switched may still be replicated to the target cluster
+but further events will not be
 replicated.
-* `STOPPED`: State where neither new events are enqueued nor dequeued. As with the `PAUSED` state, some events might
+* `STOPPED`: State where neither new events are enqueued nor dequeued.
+As with the `PAUSED` state, some events might
 still be replicated after the publisher has switched to this state.
 
-You can change a WAN publisher's state by clicking the `Change State` dropdown button on top right hand corner of
+You can change a WAN publisher's state by clicking the `Change State`
+dropdown button on top right hand corner of
 the WAN Replication Operations Table.
 
 image::ChangingWanPublisherState.png[Changing WAN Publisher State]
@@ -53,28 +78,40 @@ image::ChangingWanPublisherState.png[Changing WAN Publisher State]
 [[wan-sync]]
 === WAN Sync
 
-You can initiate a synchronization operation on an IMap for a specific target cluster. This operation is useful if
-two remote clusters lost their synchronization due to WAN queue overflow or in restart scenarios.
+You can initiate a synchronization operation on an IMap for a specific
+target cluster. This operation is useful if
+two remote clusters lost their synchronization due to WAN queue overflow
+or in restart scenarios.
 
 Hazelcast provides the following synchronization options:
 
-. Default WAN  synchronization operation: It sends all the data of an IMap to a target cluster to align the state of target IMap with the source IMap. See https://docs.hazelcast.org/docs/3.11/manual/html-single/#synchronizing-wan-target-cluster[here] for more information.
+. Default WAN  synchronization operation: It sends all the data of an
+IMap to a target cluster to align the state of target IMap with the
+source IMap. See https://docs.hazelcast.org/docs/3.11/manual/html-single/#synchronizing-wan-target-cluster[here]
+for more information.
 . WAN synchronization using https://en.wikipedia.org/wiki/Merkle_tree[Merkle trees]: To
-initiate this type of synchronization, you need to configure the cluster members. See
-the http://docs.hazelcast.org/docs/3.11/manual/html-single/index.html#delta-wan-synchronization[Delta WAN Synchronization section] in Hazelcast IMDG Reference Manual for details about configuring them. Make sure you meet https://docs.hazelcast.org/docs/3.11/manual/html-single/index.html#requirements[all the requirements] to use Delta WAN Synchronization and do the configuration on both the source and target clusters.
+initiate this type of synchronization, you need to configure the
+cluster members. See
+the http://docs.hazelcast.org/docs/3.11/manual/html-single/index.html#delta-wan-synchronization[Delta WAN Synchronization section]
+in Hazelcast IMDG Reference Manual for details about configuring them. Make
+sure you meet https://docs.hazelcast.org/docs/3.11/manual/html-single/index.html#requirements[all the requirements]
+to use Delta WAN Synchronization and do the configuration on both the source and target clusters.
 
 
-To initiate WAN Sync, open the **WAN Replication** menu item on the left and navigate to the **Sync**
+To initiate WAN Sync, open the **WAN Replication** menu item on the left
+and navigate to the **Sync**
 tab.
 
 image::WanSyncTab.png[WAN Sync Tab]
 
-Click **Start** button to open the dialog, enter the target details for the sync operation
+Click **Start** button to open the dialog, enter the target details for
+the sync operation
 and click **Sync** to start the operation.
 
 image::WanSyncDialog.png[WAN Sync Dialog]
 
-You can also use the "All Maps" option in the above dialog if you want to synchronize all the maps in source and target cluster.
+You can also use the "All Maps" option in the above dialog if you want
+to synchronize all the maps in source and target cluster.
 
 You can see the progress of the operation once you initiate it.
 
@@ -83,8 +120,10 @@ image::WanSyncProgress.png[WAN Sync Progress]
 [[wan-consistency-check]]
 === WAN Consistency Check
 
-You can check if an IMap is in sync with a specific target cluster. Click **Check** button to open the dialog, enter
-the target details for the consistency check operation and click **Check Consistency** to start the operation.
+You can check if an IMap is in sync with a specific target cluster.
+Click **Check** button to open the dialog, enter
+the target details for the consistency check operation and click
+**Check Consistency** to start the operation.
 
 image::WanConsistencyCheckDialog.png[WAN Consistency Check Dialog]
 
@@ -92,10 +131,14 @@ You can see the progress of the operation once you initiate it.
 
 image::WanConsistencyCheckProgress.png[WAN Consistency Check Progress]
 
-NOTE: You need to use Merkle trees for WAN synchronization to be able to check for the consistency between two
-clusters. You need to configure the Merkle trees on both the source and target clusters. If you do not configure it for the source
-cluster, consistency check will be ignored. If it's enabled for the source cluster but not for the target cluster,
-all entries will be reported as if they need a sync because a sync operation will be a full sync in the absence of
+NOTE: You need to use Merkle trees for WAN synchronization to be able
+to check for the consistency between two
+clusters. You need to configure the Merkle trees on both the source and
+target clusters. If you do not configure it for the source
+cluster, consistency check will be ignored. If it's enabled for the
+source cluster but not for the target cluster,
+all entries will be reported as if they need a sync because a sync
+operation will be a full sync in the absence of
 Merkle trees.
 
 image::WanConsistencyCheckIgnored.png[WAN Consistency Check Ignored]
@@ -103,15 +146,20 @@ image::WanConsistencyCheckIgnored.png[WAN Consistency Check Ignored]
 [[add-temporary-wan-replication-config]]
 === Add Temporary WAN Replication Configuration
 
-You can add a temporary WAN replication configuration dynamically to a cluster. It is useful for having one-off
+You can add a temporary WAN replication configuration dynamically to a
+cluster. It is useful for having one-off
 WAN sync operations. The added configuration has two caveats:
 
 * It is not persistent, so it will not survive a member restart.
-* It cannot be used as a target for regular WAN replication. It can only be used for WAN sync.
+* It cannot be used as a target for regular WAN replication. It can only
+be used for WAN sync.
 
 image::AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
 
-See the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#wan-replication[WAN Replication section] in Hazelcast IMDG Reference Manual for details about the fields and their possible values.
+See the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#wan-replication[WAN Replication section]
+in Hazelcast IMDG Reference Manual for details about the fields and their possible values.
 
-After clicking the **Add Configuration** button, the new WAN replication configuration is added to the cluster.
-You can see the new configuration when you try to initiate a WAN sync operation as described in the previous section.
+After clicking the **Add Configuration** button, the new WAN replication configuration
+is added to the cluster.
+You can see the new configuration when you try to initiate a WAN sync operation as
+described in the previous section.

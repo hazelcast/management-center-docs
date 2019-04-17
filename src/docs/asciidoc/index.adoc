@@ -55,33 +55,13 @@ include::user_interface.adoc[]
 
 include::status_page.adoc[]
 
-include::monitoring_caches.adoc[]
-
-include::managing_maps.adoc[]
-
-include::monitoring_replicated_maps.adoc[]
-
-include::monitoring_queues.adoc[]
-
-include::monitoring_topics.adoc[]
-
-include::monitoring_reliable_topics.adoc[]
-
-include::monitoring_multimaps.adoc[]
-
-include::monitoring_executors.adoc[]
-
-include::monitoring_wan_replication.adoc[]
-
 include::monitoring_members.adoc[]
 
 include::monitoring_clients.adoc[]
 
-include::monitoring_pn_counters.adoc[]
+include::monitoring_data_structures.adoc[]
 
-include::monitoring_flake_id_generators.adoc[]
-
-include::monitoring_locks.adoc[]
+include::monitoring_wan_replication.adoc[]
 
 include::scripting.adoc[]
 

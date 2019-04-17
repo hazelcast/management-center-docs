@@ -1,0 +1,601 @@
+
+[[monitoring-data-structures]]
+== Monitoring Data Structures
+
+This chapter provides information on how
+you can monitor the Hazelcast data structures
+in your cluster.
+
+[[managing-maps]]
+=== Maps
+
+You can see a list of all the maps in your cluster
+by clicking on the **Maps** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::MapGridView.png[Map Grid View]
+
+You can filter the maps shown and you can also sort
+the table by clicking on the column headers. Clicking
+on
+a map name will open a new page for monitoring that map
+instance on the right, as shown below.
+
+image::MonitoringMaps.png[Monitoring Maps]
+
+The below subsections explain the portions of this window.
+
+[[map-browser]]
+==== Map Browser
+
+Use the Map Browser tool to retrieve properties of the
+entries stored in the selected map. To open the Map Browser
+tool, click on the **Map Browser** button, located at the
+top right of the window. Once opened, the tool appears as a
+dialog, as shown below.
+
+image::MapBrowser.png[Map Browser]
+
+Once the key and the key's type are specified and the **Browse**
+button is clicked, the key's properties along with its value are
+listed.
+
+[[map-config]]
+==== Map Config
+
+Use the Map Config tool to set the selected map's attributes, such
+as the backup count, TTL, and eviction policy. To open the Map Config
+tool, click on the **Map Config** button, located at the top right of
+the window. Once opened, the tool appears as a dialog, as shown below.
+
+image::MapConfig.png[Map Config Tool]
+
+You can change any attribute and click the **Update** button to save
+your changes.
+
+[[map-monitoring]]
+==== Map Monitoring
+
+Besides the Map Browser and Map Config tools, the map monitoring
+page has monitoring options that are explained below. All of these options perform real-time monitoring.
+
+On top of the page, small charts monitor the entries, operations
+per second, memory usage, backup size, etc. of the selected map
+in real-time. The X-axis of all the charts show the current
+system time. You can select other small monitoring charts using
+the image:ChangeWindowIcon.jpg[change window] button at the top
+right of each chart. When you click the button, the monitoring
+options are listed, as shown below.
+
+image::MonitoringOptionsMap.png[alt=Monitoring Options for Map,{half-width}]
+
+When you click on a desired monitoring, the chart is loaded with
+the selected option. To open a chart as a separate dialog, click
+on the image:MaximizeChart.jpg[maximize] button placed at the top
+right of each chart. The monitoring charts below are available:
+
+* **Entries**: Monitors number of locally owned entries.
+* **Memory**: Monitors the total memory cost of locally owned entries.
+* **Backups**: Monitors number of backup entries.
+* **Backup Memory**: Monitors the total memory cost of backup entries.
+* **Hits**: Monitors number of hits (reads) of locally owned entries,
+including those which are no longer in the map (for example, may have
+been evicted). The number of hits may be inaccurate after a partition
+is migrated to a new owner member.
+* **Locks**: Monitors number of locally owned entries that are locked.
+* **Operations/s**: Monitors the total number of all operations
+performed on the map per second.
+* **Puts/s, Gets/s, Removes/s**: These three charts monitor the
+put, get and remove operations performed on the map per second.
+
+Under these charts are **Map Memory** and **Map Throughput** data
+tables. The Map Statistic Data Table provides statistics distributed
+over members, as shown below.
+
+image::MapStatisticDataTable.png[Map Statistic Data Table]
+
+From left to right, this table lists:
+
+* **Members**: The IP address and port of the member.
+* **Entries**: Number of entries owned by the member.
+* **Gets**: Number of get operations received by the member.
+* **Puts**: Number of put operations received by the member.
+* **Removes**: Number of remove operations received by the member.
+* **Entry Memory**: Memory cost of owned entries in the member.
+* **Backups**: Number of backup entries held by the member.
+* **Backup Memory**: Memory cost of backup entries held by the member.
+* **Events**: Number of events received by the member.
+* **Hits**: Number of hits (reads) of the entries that are owned by
+the member, including those which are no longer in the map (for
+example, may have been evicted). The number of hits may be inaccurate
+after a partition is migrated to a new owner member.
+* **Locks**: Number of currently locked entries owned by the member.
+* **Dirty Entries**: Number of entries that the member owns and are
+dirty (updated but not persisted yet). In the cases where *MapStore*
+is enabled, these are the entries that are put to/removed from the
+map but not written to/removed from a database yet.
+
+You can ascend or descend the order of the listings by clicking on
+the column headings.
+
+Map Throughput data table provides information about the operations
+(get, put, remove) performed on each member in the map, as shown below.
+
+image::MapThroughputDataTable.png[Map Throughput Data Table]
+
+From left to right, this table lists:
+
+* **Members**: The IP address and port of the member.
+* **Puts/s**: Number of put operations per second on the member.
+* **Gets/s**: Number of get operations per second on the member.
+* **Removes/s**: Number of remove operations per second on the member.
+* **Avg Put Latency**: Average latency of put operations on the member.
+* **Avg Get Latency**: Average latency of get operations on the member.
+* **Avg Remove Latency**: Average latency of remove operations on the member.
+* **Max Put Latency**: Maximum latency of put operations on the member.
+* **Max Get Latency**: Maximum latency of get operations on the member.
+* **Max Remove Latency**: Maximum latency of remove operations on the member.
+
+You can select the time period in the combo box placed at the top
+right corner of the window, for which the table data will be
+shown. Available values are **Since Beginning**, **Last Minute**,
+**Last 10 Minutes** and **Last 1 Hour**.
+
+To ascend or descent the order of the listings, click on the
+column headings.
+
+[[monitoring-caches]]
+=== Caches
+
+You can see a list of all the caches in your cluster by
+clicking on the **Caches** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::CacheGridView.png[Cache Grid View]
+
+You can filter the caches shown and you can also sort the table
+by clicking on the column headers. Clicking on
+the cache name will open a new page for monitoring that cache
+instance on the right, as shown below.
+
+image::MonitoringCaches.png[Monitoring Caches]
+
+On top of the page, four charts monitor the **Gets**, **Puts**,
+**Removals** and **Evictions** in real-time. The X-axis of all the
+charts show the current system time. To open a chart as a separate
+dialog, click on the image:MaximizeChart.jpg[maximize] button placed
+at the top right of each chart.
+
+Under these charts is the Cache Statistics Data Table. From left to
+right, this table lists the IP addresses and ports of each member,
+and the entry, get, put, removal, eviction, and hit and miss counts
+per second in real-time.
+
+You can ascend or descend the order of the listings in each column
+by clicking on column headings.
+
+Under the Cache Statistics Data Table, there is Cache Throughput
+Data Table.
+
+From left to right, this table lists:
+
+* the IP address and port of each member,
+* the put/s, get/s and remove/s operation rates on each member.
+
+You can select the period in the combo box placed at the top right
+corner of the window, for which the table data will be shown. Available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+NOTE: You need to enable the statistics for caches to monitor them
+in the Management Center. Use the `<statistics-enabled>` element or
+`setStatisticsEnabled()` method in declarative or programmatic
+configuration, respectively, to enable the statistics. Please refer
+to the http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#jcache-declarative-configuration[JCache Declarative Configuration] section for more information.
+
+
+[[monitoring-replicated-maps]]
+=== Replicated Maps
+
+You can see a list of all the Replicated Maps in your cluster
+by clicking on the **Replicated Maps** menu item on the left
+panel. A new page is opened on the right, as shown below.
+
+image::ReplicatedMapGridView.png[Replicated Map Grid View]
+
+You can filter the Replicated Maps shown and you can also
+sort the table by clicking on the column headers. Clicking on
+a Replicated Map name will open a new page for monitoring
+that Replicate Map instance on the right, as shown below.
+
+image::MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
+
+In this page, you can monitor metrics and also re-configure
+the selected Replicated Map. All of the statistics are real-time
+monitoring statistics.
+
+When you click on a desired monitoring, the chart is loaded with
+the selected option. Also you can open the chart in new window.
+
+* **Entries**: Monitors number of entries of the Replicated Map.
+* **Operations/s**: Monitors number of all operations performed on
+the Replicated Map per second.
+* **Memory**: Monitors memory usage of the Replicated Map.
+* **Hits**: Monitors hit count of the Replicated Map.
+* **Puts/s, Gets/s, Removes/s**: These three charts monitor the put,
+get and remove operations performed on the selected Replicated Map per second.
+
+The Replicated Map Throughput Data Table provides information about
+operations (get, put, remove) performed on each member in the selected
+Replicated Map.
+
+image::ReplicatedMapThroughput.png[Replicated Map Throughput Data Table]
+
+From left to right, this table lists:
+
+* the IP address and port of each member,
+* the put, get, and remove operations on each member,
+* the average put, get, and remove latencies,
+* and the maximum put, get, and remove latencies on each member.
+
+You can select the period from the combo box placed at the top
+right corner of the window, in which the table data is shown.
+Available values are **Since Beginning**, **Last Minute**,
+**Last 10 Minutes** and **Last 1 Hour**.
+
+To ascend or descent the order of the listings, click on the
+column headings.
+
+
+[[monitoring-multimaps]]
+=== MultiMaps
+
+You can see a list of all the MultiMaps in your cluster by clicking
+on the **MultiMaps** menu item on the left panel. A new 
+page is opened on the right, as shown below.
+
+image::MultiMapGridView.png[MultiMap Grid View]
+
+You can filter the MultiMaps shown and you can also sort the
+table by clicking on the column headers. Clicking on
+a MultiMap name will open a new page for monitoring that
+MultiMap instance on the right.
+
+MultiMap is a specialized map where you can associate a key
+with multiple values. This monitoring option is similar to the
+**Maps** option: the same monitoring charts and data tables monitor
+MultiMaps. The differences are that you cannot browse the MultiMaps
+and re-configure it. Please see the <<managing-maps, Managing Maps>>.
+
+[[monitoring-queues]]
+=== Queues
+
+You can see a list of all the queues in your cluster by clicking
+on the **Queues** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::QueueGridView.png[Queue Grid View]
+
+You can filter the queues shown and you can also sort the table
+by clicking on the column headers. Clicking on
+a queue name will open a new page for monitoring that queue
+instance on the right, as shown below.
+
+image::MonitoringQueues.png[Monitoring Queues]
+
+On top of the page, small charts monitor the size, offers and
+polls of the selected queue in real-time. The X-axis of all the
+charts shows the current system time. To open a chart as a separate
+dialog, click on the image:MaximizeChart.jpg[maximize] button
+placed at the top right of each chart. The monitoring charts below are available:
+
+* **Items**: Monitors the size of the queue. Y-axis is the entry count.
+* **Offers**: Monitors the offers sent to the selected queue.
+Y-axis is the offer count.
+* **Polls**: Monitors the polls sent to the selected queue.
+Y-axis is the poll count.
+
+Under these charts are **Queue Statistics** and **Queue Operation
+Statistics** tables. The Queue Statistics table provides item
+and backup item counts in the queue and age statistics of items
+and backup items at each member, as shown below.
+
+image::QueueStatistics.png[Queue Statistics]
+
+From left to right, this table lists the IP address and port,
+items and backup items on the queue of each member, and maximum,
+minimum and average age of items in the queue. The order of the
+listings in each column can be ascended or descended by clicking
+on the column headings.
+
+Queue Operations Statistics table provides information about the
+operations (offers, polls, events) performed on the queues, as shown below.
+
+image::QueueOperationStatistics.png[Queue Operation Statistics]
+
+From left to right, this table lists the IP address and port of
+each member, and counts of offers, rejected offers, polls, poll misses and events.
+
+You can select the period in the combo box placed at the top
+right corner of the window to show the table data. Available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+Click on the column headings to ascend or descend the order of
+the listings.
+
+[[monitoring-topics]]
+=== Topics
+
+You can see a list of all the topics in your cluster by clicking
+on the **Topics** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::TopicGridView.png[Topic Grid View]
+
+You can filter the topics shown and you can also sort the table by
+clicking on the column headers. Clicking on
+a topic name will open a new page for monitoring that topic instance
+on the right, as shown below.
+
+image::MonitoringTopics.png[Monitoring Topics]
+
+On top of the page, two charts monitor the **Publishes** and
+**Receives** in real-time. They show the published and received
+message counts of the cluster, the members of which are subscribed
+to the selected topic. The X-axis of both charts show the current
+system time. To open a chart as a separate dialog, click on the
+image:MaximizeChart.jpg[maximize] button placed at the top right
+of each chart.
+
+Under these charts is the Topic Operation Statistics table. From
+left to right, this table lists the IP addresses and ports of each
+member, and counts of the messages published and received per second
+in real-time. You can select the period in the combo box placed at
+top right corner of the table to show the table data. The available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+Click on the column heading to ascend or descend the order of
+the listings.
+
+[[monitoring-reliable-topics]]
+=== Reliable Topics
+
+You can see a list of all the Reliable Topics in your cluster by
+clicking on the **Reliable Topics** menu item on the left panel.
+A new
+page is opened on the right, as shown below.
+
+image::ReliableTopicGridView.png[Reliable Topic Grid View]
+
+You can filter the Reliable Topics shown and you can also sort
+the table by clicking on the column headers. Clicking on
+a Reliable Topic name will open a new page for monitoring that
+Reliable Topic instance on the right, as shown below.
+
+image::MonitoringReliableTopics.png[Monitoring Reliable Topics]
+
+On top of the page, two charts monitor the **Publishes** and
+**Receives** in real-time. They show the published and received
+message counts of the cluster, the members of which are subscribed
+to the selected reliable topic. The X-axis of both charts show
+the current system time. To open a chart as a separate dialog,
+click on the image:MaximizeChart.jpg[maximize] button placed at
+the top right of each chart.
+
+Under these charts is the Reliable Topic Operation Statistics table.
+From left to right, this table lists the IP addresses and ports of
+each member, and counts of the messages published and received per
+second in real-time. You can select the period in the combo box placed
+at top right corner of the table to show the table data. The available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+Click on the column heading to ascend or descend the order of the listings.
+
+[[monitoring-executors]]
+=== Executors
+
+You can see a list of all the Executors in your cluster by clicking
+on the **Executors** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::ExecutorGridView.png[Executor Grid View]
+
+You can filter the Executors shown and you can also sort the table
+by clicking on the column headers. Clicking on
+an Executor name will open a new page for monitoring that Executor
+instance on the right, as shown below.
+
+image::MonitoringExecutors.png[Monitoring Executors]
+
+On top of the page, small charts monitor the pending, started,
+completed, etc. executors in real-time. The X-axis of all the charts
+shows the current system time. You can select other small monitoring
+charts using the image:ChangeWindowIcon.jpg[change window] button
+placed at the top right of each chart. Click the button to list the
+monitoring options, as shown below.
+
+image::MonitoringOptionsExecutor.png[alt=Monitoring Options for Executor,{half-width}]
+
+When you click on a desired monitoring, the chart loads with the
+selected option. To open a chart as a separate dialog, click on the
+image:MaximizeChart.jpg[maximize] button placed at top right of each
+chart. The below monitoring charts are available:
+
+* **Pending**: Monitors the pending executors. Y-axis is the executor count.
+* **Started**: Monitors the started executors. Y-axis is the executor count.
+* **Start Lat. (msec.)**: Shows the latency when executors are started.
+Y-axis is the duration in milliseconds.
+* **Completed**: Monitors the completed executors. Y-axis is the executor count.
+* **Comp. Time (msec.)**: Shows the completion period of executors.
+Y-axis is the duration in milliseconds.
+
+Under these charts is the **Executor Operation Statistics**
+table, as shown below.
+
+image::ExecutorOperationStats.png[Executor Operation Statistics]
+
+From left to right, this table lists the IP address and port of
+members, the counts of pending, started and completed executors
+per second, and the execution time and average start latency of
+executors on each member. Click on the column heading to ascend
+or descend the order of the listings.
+
+[[monitoring-locks]]
+=== Monitoring Locks
+
+You can use the scripting feature of the Management Center to
+monitor the locks in your cluster. See the <<scripting, Scripting section>>
+to learn how to use this feature. 
+
+You can use the below scripts to retrieve various information
+about the locks in your cluster. 
+
+To find the number of active locks in your cluster, use the following script:
+
+[source,plain]
+----
+var findLocks = function() {
+    var lockstr = '';
+    var node = hazelcast.getCluster().getLocalMember();
+ 
+    var locks = hazelcast.node.nodeEngine.getService('hz:impl:lockService').getAllLocks();
+    return "Active Lock Count : " + locks.size();
+ 
+}
+ 
+findLocks();
+----
+
+To print the locks in your cluster, use the following script:
+
+[source,plain]
+----
+var findLocks = function() {
+        var lockStr = '';
+        var distributedObjects = hazelcast.getDistributedObjects();
+        for each(distributedObject in distributedObjects) {
+            if(distributedObject.getServiceName().equals("hz:impl:lockService")){
+                lockStr += distributedObject.getName() + '\n';
+            }
+ 
+        }
+        return lockStr;
+}
+ 
+findLocks();
+----
+
+To force unlock a lock in your cluster, use the following script:
+
+[source,plain]
+----
+var forceUnlock = function(lockName) {
+ 
+    hazelcast.getLock(lockName).forceUnlock();
+    return 'OK';
+ 
+}
+ 
+forceUnlock('your_Lock_Name');
+----
+
+To check if a lock is being hold by a member, use the following script:
+
+[source,plain]
+----
+var isLocked = function(lockName) {
+ 
+    var locked = hazelcast.getLock(lockName).isLocked();
+    return lockName + ' -> ' + locked;
+ 
+}
+ 
+isLocked('your_Lock_Name');
+----
+
+[[monitoring-pn-counters]]
+=== PN Counters
+
+You can see a list of all the PN counters in your cluster by
+clicking on the **Counters** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image::CounterGridView.png[Counter Grid View]
+
+You can filter the counters shown and you can also sort the
+table by clicking on the column headers.
+The monitoring data available are:
+
+* **Increment Operations/s**: Average number of times the counter
+was incremented per second during the last timeslice
+* **Decrement Operations/s**: Average number of times the counter
+was decremented per second during the last timeslice
+* **Number of Replicas**: The number of member instances that
+have a state for the counter
+
+Clicking on a counter name will open a new page for monitoring
+that specific counter instance, as shown below.
+
+image::MonitoringCounters.png[Monitoring Counters]
+
+The table can likewise be sorted by clicking the column headers.
+It shows IP and port of the members that have a state for
+the specific counter named in the page's title.
+The monitoring data available are:
+
+* **Increment Operations/s**: Average number of times the
+counter was incremented on that member per second during the last timeslice
+* **Decrement Operations/s**: Average number of times the
+counter was decremented on that member per second during the last timeslice
+* **Value**: The current value of the counter on that member.
+
+[[monitoring-flake-id-generators]]
+=== Flake ID Generators
+
+You can see a list of all Flake ID Generators in your
+cluster by clicking on the **ID Generators** menu item on
+the left panel. A new 
+page is opened on the right, as shown below.
+
+image::FlakeIdGenGridView.png[Flake ID Generator Grid View]
+
+You can filter the generators shown and you can also sort
+the table by clicking on the column headers. 
+The monitoring data available are:
+
+* **Avg. Batch Requests:** Average count of batch requests
+coming from all the members to a generator, i.e., total batch
+requests from all members to a generator divided by the member
+count for that generator. 
+* **Avg. Batch Size:** Average size of the ID batches created
+by a generator, i.e., total number of IDs generated (the sum
+of IDs for all batches) for all members divided by the total
+count of batch requests coming from all members.
+
+Clicking on a generator name will open a new page for
+monitoring that specific generator instance, as shown below.
+
+image::MonitoringFlakeIdGens.png[Monitoring Flake ID Generators]
+
+The table can likewise be sorted by clicking the column
+headers.
+It shows IP and port of the members that have a state for
+the specific generator named in the page's title.
+The monitoring data available are:
+
+* **Batch Requests:** Total count of batch requests to a
+generator by this member.
+* **Avg. Batch Size:** Average size of the ID batches
+created for this member, i.e., total number of IDs generated
+(the sum of IDs for all batches) for this member divided by
+the total count of batch requests coming from this member.
+
+NOTE: The operations per second is not the number of new IDs
+generated or used but the number of ID batches. 
+The batch size is configurable, usually it contains hundreds
+or thousands of IDs.
+A client uses all IDs from a batch before a new batch is requested.
+
