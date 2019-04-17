@@ -21,7 +21,6 @@ repositories {
 
 
 asciidoctor {
-    requires file('./multipage-html5-converter.rb')
 
     sources {
       include 'index.adoc'
