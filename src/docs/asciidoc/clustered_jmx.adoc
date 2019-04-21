@@ -49,10 +49,10 @@ image::ClusteredJMX.png[JMX]
 
 ==== Enabling TLS/SSL for Clustered JMX
 
-By default, Clustered JMX is served unencrypted. To enable TLS/SSL for Clustered JMX, use the following command line 
+By default, Clustered JMX is served unencrypted. To enable TLS/SSL for Clustered JMX, use the following command line
 parameters for your Management Center deployment.
 
-- `-Dhazelcast.mc.jmx.ssl=true` (default is false) 
+- `-Dhazelcast.mc.jmx.ssl=true` (default is false)
 - `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keyStore`
 - `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keyStore`
 
@@ -108,6 +108,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
 * **ManagementCenter**
 * ManagementCenter
   ** LicenseExpirationTime
+  ** Clusters
 * **ManagementCenter[`<ClusterName>`]**
 * `<ClusterName>`
   ** MasterAddress
@@ -368,7 +369,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** PoolSize
     *** QueueSize
     *** RemainingQueueCapacity
-    *** Terminated  
+    *** Terminated
 * Topics
   ** `<Topic Name>`
     *** Cluster
@@ -380,8 +381,8 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
   ** `<Generator Name>`
     *** Cluster
     *** Name
-    *** Time 
-    *** OpsPerSec (per member)    
+    *** Time
+    *** OpsPerSec (per member)
 * WanConfigs
   ** `<Wan Replication Config>`
     *** Cluster
