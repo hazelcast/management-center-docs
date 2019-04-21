@@ -41,6 +41,8 @@ clients, data structures, computing and WAN replication.
 
 include::browser_compatibility.adoc[]
 
+include::downloading_starting.adoc[]
+
 include::deploying_starting.adoc[]
 
 include::getting_started.adoc[]
