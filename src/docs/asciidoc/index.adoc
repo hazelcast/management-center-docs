@@ -43,13 +43,11 @@ include::browser_compatibility.adoc[]
 
 include::downloading_starting.adoc[]
 
-include::deploying_starting.adoc[]
+include::configuring.adoc[]
 
-include::getting_started.adoc[]
+include::connecting_members.adoc[]
 
-include::config_replacer.adoc[]
-
-include::using_tls_ssl_only.adoc[]
+include::launching_ui.adoc[]
 
 include::authentication_options.adoc[]
 

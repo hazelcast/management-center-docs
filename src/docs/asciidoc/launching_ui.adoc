@@ -1,7 +1,7 @@
 
 
 [[getting-started]]
-== Getting Started
+== Launching the Management Center User Interface
 
 If you have the open source edition of Hazelcast, Management Center can be used for at most three members in the cluster. To use it for more members, you need to have either a Management Center license, Hazelcast IMDG Enterprise license or Hazelcast IMDG Enterprise HD license. This license should be entered within the Management Center as described in the following paragraphs.
 
