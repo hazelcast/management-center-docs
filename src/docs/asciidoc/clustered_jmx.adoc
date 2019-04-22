@@ -53,8 +53,8 @@ By default, Clustered JMX is served unencrypted. To enable TLS/SSL for Clustered
 parameters for your Management Center deployment.
 
 - `-Dhazelcast.mc.jmx.ssl=true` (default is false)
-- `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keyStore`
-- `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keyStore`
+- `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keystore`
+- `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keystore`
 
 Following is an example on how to start Management Center with a TLS/SSL enabled Clustered JMX service on port 65432:
 
@@ -63,7 +63,7 @@ Following is an example on how to start Management Center with a TLS/SSL enabled
 java -Dhazelcast.mc.jmx.enabled=true -Dhazelcast.mc.jmx.port=65432 -Dhazelcast.mc.jmx.ssl=true -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
-NOTE: You can encrypt the keyStore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the keystore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
 
 Then you can use the following command to connect to the Clustered JMX service using JConsole with address `localhost:65432`:
 

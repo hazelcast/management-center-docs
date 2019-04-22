@@ -163,7 +163,7 @@ that are hard to guess.
 
 
 [[using-management-center-with-tlsssl-only]]
-=== Using Management Center with TLS/SSL Only
+==== Using Management Center with TLS/SSL Only
 
 To encrypt data transmitted over all channels of Management Center using TLS/SSL, make sure you do all of the following:
 
@@ -190,7 +190,9 @@ Following is an example on how to start Management Center with  TLS/SSL enabled 
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file}
+java -Dhazelcast.mc.tls.enabled=true
+-Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks
+-Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
 You can access Management Center from the following HTTPS URL on port 8443: `\https://localhost:8443/hazelcast-mancenter`
@@ -198,7 +200,8 @@ You can access Management Center from the following HTTPS URL on port 8443: `\ht
 On the member side, you need to configure the Management Center URL as `\https://localhost:8443/hazelcast-mancenter` and also set the following JVM arguments when starting the member:
 
 ```
--Djavax.net.ssl.trustStore=path to your trustStore -Djavax.net.ssl.trustStorePassword=yourpassword
+-Djavax.net.ssl.trustStore=path to your truststore
+-Djavax.net.ssl.trustStorePassword=yourpassword
 ```
 
 NOTE: If you plan to use a self-signed certificate, make sure to create a certificate with the hostname of the machine you will deploy Management Center on. Otherwise, you will see a line similar to the following in the member logs:
@@ -213,7 +216,7 @@ java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=/dir/to/certifi
 
 This will start Management Center on HTTPS port 443 with context path `/hazelcast-mancenter`.
 
-NOTE: You can encrypt the keyStore/trustStore passwords and pass them as command line arguments in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the keystore/truststore passwords and pass them as command line arguments in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
 
 [[enabling-http-port]]
 ===== Enabling HTTP Port
@@ -236,7 +239,7 @@ If a Hazelcast cluster is configured to use TLS for communication between its me
 keys are provided. System default will be used if none is provided. You can find out the default by calling the
 `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
 
-NOTE: You can encrypt the trustStore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the truststore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
 
 By default, JVM also checks for the validity of the hostname of the certificate. If this test fails, you will see a line similar to the following in the Management Center logs:
 
@@ -253,7 +256,7 @@ If you want to disable this check, you will need to start Management Center with
 [[mutual-authentication]]
 ==== Mutual Authentication
 
-Mutual authentication allows cluster members to have their keyStores and Management Center to have its trustStore so that Management Center can know which members it can trust. To enable mutual authentication, you need to use the following command line parameters when starting the Management Center:
+Mutual authentication allows cluster members to have their keystores and Management Center to have its truststore so that Management Center can know which members it can trust. To enable mutual authentication, you need to use the following command line parameters when starting the Management Center:
 
 ```
 -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED
@@ -262,20 +265,28 @@ Mutual authentication allows cluster members to have their keyStores and Managem
 And on the member side, you need to set the following JVM arguments when starting the member:
 
 ```
--Djavax.net.ssl.keyStore=path to your keyStore -Djavax.net.ssl.keyStorePassword=yourpassword
+-Djavax.net.ssl.keyStore=path to your keystore -Djavax.net.ssl.keyStorePassword=yourpassword
 ```
 
 Please see the below example snippet to see the full command to start Management Center:
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=path to your keyStore -Dhazelcast.mc.tls.keyStorePassword=password for your keyStore -Dhazelcast.mc.tls.trustStore=path to your trustStore -Dhazelcast.mc.tls.trustStorePassword=password for your trustStore -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED -jar {mc-war-file}
+java -Dhazelcast.mc.tls.enabled=true
+-Dhazelcast.mc.tls.keyStore=path to your keystore
+-Dhazelcast.mc.tls.keyStorePassword=password for your keystore
+-Dhazelcast.mc.tls.trustStore=path to your truststore
+-Dhazelcast.mc.tls.trustStorePassword=password for your truststore
+-Dhazelcast.mc.tls.mutualAuthentication=REQUIRED -jar {mc-war-file}
 ```
 
 And the full command to start the cluster member:
 
 ```
-java -Djavax.net.ssl.keyStore=path to your keyStore -Djavax.net.ssl.keyStorePassword=yourpassword -Djavax.net.ssl.trustStore=path to your trustStore -Djavax.net.ssl.trustStorePassword=yourpassword -jar hazelcast.jar
+java -Djavax.net.ssl.keyStore=path to your keystore
+-Djavax.net.ssl.keyStorePassword=yourpassword
+-Djavax.net.ssl.trustStore=path to your truststore
+-Djavax.net.ssl.trustStorePassword=yourpassword -jar hazelcast.jar
 ```
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
@@ -287,7 +298,7 @@ The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
 ===== Managing Mutual Authentication Enabled Clusters
 
 If mutual authentication is enabled for the cluster (as described {hz-refman}#mutual-authentication[here]),
-Management Center needs to have a keyStore to identify itself. For this, you need to start Management Center with the
+Management Center needs to have a keystore to identify itself. For this, you need to start Management Center with the
 following command line parameters:
 
 * `-Dhazelcast.mc.httpClient.tls.keyStore`: Path to the keystore.

@@ -39,7 +39,7 @@ Commands:
                              starting this command.
 
   update-ldap-password     Update LDAP service user's password that is stored
-                             in a Java KeyStore.
+                             in a Java keystore.
 
   reset-security-provider  Reset current security provider and delete all
                              built-in user records in the default security
@@ -95,7 +95,7 @@ NOTE: If you have used a non-default Management Center home directory location, 
 [[update-ldap-password]]
 === Updating LDAP Password
 
-The `update-ldap-password` command updates the encrypted LDAP password stored in the KeyStore. It expects information about the KeyStore such as its location and password and the new LDAP password that you want to use. See the <<password-encryption, LDAP Authentication section>> for more information on the encrypted LDAP passwords. After updating the LDAP password, you will need to click on the **Reload Security Config** button on the login page.
+The `update-ldap-password` command updates the encrypted LDAP password stored in the keystore. It expects information about the keystore such as its location and password and the new LDAP password that you want to use. See the <<password-encryption, LDAP Authentication section>> for more information on the encrypted LDAP passwords. After updating the LDAP password, you will need to click on the **Reload Security Config** button on the login page.
 
 === Resetting Security Provider
 
