@@ -2,37 +2,38 @@
 [[clustered-jmx-via-management-center]]
 == Clustered JMX via Management Center
 
-
 [blue]#Hazelcast IMDG Enterprise#
 
-Clustered JMX via Management Center allows you to monitor clustered statistics of distributed objects from a JMX interface.
-
+Clustered JMX via Management Center allows you to
+monitor clustered statistics of distributed objects
+from a JMX interface.
 
 === Configuring Clustered JMX
 
+In order to configure Clustered JMX, use the following
+command line parameters for your Management Center deployment.
 
-In order to configure Clustered JMX, use the following command line parameters for your Management Center deployment.
+* `-Dhazelcast.mc.jmx.enabled=true` (default is false)
+* `-Dhazelcast.mc.jmx.port=9000` (optional, default is 9999)
+* `-Dcom.sun.management.jmxremote.ssl=false`
+* `-Dhazelcast.mc.jmx.rmi.port=9001` (optional, default is 9998)
+* `-Dhazelcast.mc.jmx.host=localhost` (optional, default is server's host name)
 
-- `-Dhazelcast.mc.jmx.enabled=true` (default is false)
-- `-Dhazelcast.mc.jmx.port=9000` (optional, default is 9999)
-- `-Dcom.sun.management.jmxremote.ssl=false`
+With embedded Jetty, you do not need to deploy your
+Management Center application to any container or application server.
 
-Starting with Hazelcast Management Center 3.8.4, you can also use the following parameters:
-
-- `-Dhazelcast.mc.jmx.rmi.port=9001` (optional, default is 9998)
-- `-Dhazelcast.mc.jmx.host=localhost` (optional, default is server's host name)
-
-
-With embedded Jetty, you do not need to deploy your Management Center application to any container or application server.
-
-You can start Management Center application with Clustered JMX enabled as shown below.
+You can start Management Center application with
+Clustered JMX enabled as shown below.
 
 [subs="attributes"]
 ```bash
-java -Dhazelcast.mc.jmx.enabled=true -Dhazelcast.mc.jmx.port=9999 -Dcom.sun.management.jmxremote.ssl=false -jar {mc-war-file}
+java -Dhazelcast.mc.jmx.enabled=true
+-Dhazelcast.mc.jmx.port=9999
+-Dcom.sun.management.jmxremote.ssl=false -jar {mc-war-file}
 ```
 
-Once Management Center starts, you should see a log similar to below.
+Once Management Center starts, you should see a log
+similar to the one below:
 
 ```bash
 INFO: Management Center 3.3
@@ -40,32 +41,43 @@ Jun 05, 2014 11:55:32 AM com.hazelcast.webmonitor.service.jmx.impl.JMXService
 INFO: Starting Management Center JMX Service on port :9999
 ```
 
-You should be able to connect to Clustered JMX interface from the address `localhost:9999`.
+You should be able to connect to the Clustered JMX interface
+using the address `localhost:9999`.
 
-You can use `jconsole` or any other JMX client to monitor your Hazelcast Cluster. As a sample, below is the `jconsole` screenshot of the Clustered JMX hierarchy.
+You can use `jconsole` or any other JMX client to monitor your
+Hazelcast IMDG cluster. As an example, below is the `jconsole`
+screenshot of the Clustered JMX hierarchy.
 
 image::ClusteredJMX.png[JMX]
 
-
 ==== Enabling TLS/SSL for Clustered JMX
 
-By default, Clustered JMX is served unencrypted. To enable TLS/SSL for Clustered JMX, use the following command line
-parameters for your Management Center deployment.
+By default, Clustered JMX is served unencrypted. To enable
+TLS/SSL for Clustered JMX, use the following command line
+parameters for your Management Center deployment:
 
-- `-Dhazelcast.mc.jmx.ssl=true` (default is false)
-- `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keystore`
-- `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keystore`
+* `-Dhazelcast.mc.jmx.ssl=true` (default is false)
+* `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keystore`
+* `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keystore`
 
-Following is an example on how to start Management Center with a TLS/SSL enabled Clustered JMX service on port 65432:
+Following is an example on how to start Management Center
+with a TLS/SSL enabled Clustered JMX service on port 65432:
 
 [subs="attributes"]
 ```bash
-java -Dhazelcast.mc.jmx.enabled=true -Dhazelcast.mc.jmx.port=65432 -Dhazelcast.mc.jmx.ssl=true -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar {mc-war-file}
+java -Dhazelcast.mc.jmx.enabled=true
+-Dhazelcast.mc.jmx.port=65432
+-Dhazelcast.mc.jmx.ssl=true
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
-NOTE: You can encrypt the keystore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the keystore password and pass it as a
+command line argument in encrypted form for improved security.
+See the <<variable-replacers, Variable Replacers section>> for more information.
 
-Then you can use the following command to connect to the Clustered JMX service using JConsole with address `localhost:65432`:
+Then, you can use the following command to connect to the
+Clustered JMX service using JConsole with the address `localhost:65432`:
 
 ```
 jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl.trustStorePassword=trustpass
@@ -73,35 +85,39 @@ jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl
 
 ===== Additional TLS/SSL Configuration Options
 
-Following are some additional command line arguments that you can use to configure TLS/SSL for clustered JMX:
+The following are some additional command line arguments
+that you can use to configure TLS/SSL for clustered JMX:
 
-- `-Dhazelcast.mc.jmx.ssl.keyStoreType`: Type of the keystore. Its default value is JKS.
-- `-Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm`: Name of the algorithm based on which the authentication keys are provided.
-System default will be used if none provided. You can find out the default by calling
-`javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method.
+* `-Dhazelcast.mc.jmx.ssl.keyStoreType`: Type of the keystore. Its default
+value is JKS.
+* `-Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm`: Name of the algorithm based
+on which the authentication keys are provided.
+The system default is used if none is provided. You can find out the default by calling
+the `javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method.
 
 === Clustered JMX API
 
-
-The management beans are exposed with the following object name format.
+The management beans are exposed with the following object name format:
 
 ```plain
 ManagementCenter[`*cluster name*`]:type=<`*object type*`>,name=<`*object name*`>,member="<`*cluster member IP address*`>"
 ```
 
-Object name starts with `ManagementCenter` prefix. Then it has the cluster name in brackets followed by a colon. After that, `type`,`name` and `member` attributes follows, each separated with a comma.
+The object name starts with the `ManagementCenter` prefix. Then it has
+the cluster name in brackets followed by a colon. After that, `type`,
+`name` and `member` attributes follow, each separated with a comma.
 
-* `type` is the type of object. Values are `Clients`, `Executors`, `Maps`, `Members`, `MultiMaps`, `Queues`, `Counters`, `Services`, and `Topics`.
+* `type` is the type of object. Values are `Clients`, `Executors`,
+`Maps`, `Members`, `MultiMaps`, `Queues`, `Counters`, `Services`, and `Topics`.
 * `name` is the name of object.
-* `member` is the member address of object (only required if the statistics are local to the member).
-
+* `member` is the member address of object (only required if the
+statistics are local to the member).
 
 A sample bean is shown below.
 
 ```plain
 ManagementCenter[dev]:type=Services,name=OperationService,member="192.168.2.79:5701"
 ```
-
 
 Here is the list of attributes that are exposed from the Clustered JMX interface.
 
@@ -393,15 +409,16 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** getTotalPublishedEventCount(`<Publisher ID>`)
     *** getTotalPublishLatency(`<Publisher ID>`)
 
-
 === Integrating with New Relic
 
+Use the Clustered JMX interface to integrate Hazelcast Management Center
+with New Relic. To perform this integration, attach the New Relic Java agent
+and provide an extension file that describes which metrics will be sent to New Relic.
 
-Use the Clustered JMX interface to integrate Hazelcast Management Center with *New Relic*. To perform this integration, attach New Relic Java agent and provide an extension file that describes which metrics will be sent to New Relic.
+See http://docs.newrelic.com/docs/java/custom-jmx-instrumentation-by-yml[Custom JMX instrumentation by YAML]
+on the New Relic webpage.
 
-Please see http://docs.newrelic.com/docs/java/custom-jmx-instrumentation-by-yml[Custom JMX instrumentation by YAML] on the New Relic webpage.
-
-Below is an example Map monitoring `.yml` file for New Relic.
+The following is an example Map monitoring `.yml` file for New Relic:
 
 [source,plain]
 ----
@@ -420,9 +437,11 @@ jmx:
   - type: simple
 ----
 
-Put the `.yml` file in the `extensions` folder in your New Relic installation. If an `extensions` folder does not exist there, create one.
+Put the `.yml` file in the `extensions` directory in your New Relic
+installation. If an `extensions` directory does not exist there, create one.
 
-After you set your extension, attach the New Relic Java agent and start Management Center as shown below.
+After you set your extension, attach the New Relic Java agent and
+start Management Center as shown below.
 
 [subs="attributes"]
 ```bash
@@ -430,7 +449,9 @@ java -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar {mc-war-file}
 ```
 
-If your logging level is set as FINER, you should see the log listing in the file `newrelic_agent.log`, which is located in the `logs` folder in your New Relic installation. Below is an example log listing.
+If your logging level is set to `FINER`, you should see the log listing
+in the file `newrelic_agent.log`, which is located in the `logs` directory
+in your New Relic installation. The following is an example log listing:
 
 ```plain
 Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINE:
@@ -461,21 +482,26 @@ Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
     Recording JMX metric LastAccessTime : 1,401,962,426,811
 ```
 
-Then you can navigate to your New Relic account and create Custom Dashboards. Please see http://docs.newrelic.com/docs/dashboards-menu/creating-custom-dashboards[Creating custom dashboards].
+Then you can navigate to your New Relic account and create Custom Dashboards.
+See http://docs.newrelic.com/docs/dashboards-menu/creating-custom-dashboards[Creating custom dashboards].
 
-While you are creating the dashboard, you should see the metrics that you are sending to New Relic from Management Center in the **Metrics** section under the JMX folder.
-
+While you are creating the dashboard, you should see the metrics that
+you are sending to New Relic from Management Center in the **Metrics**
+section under the JMX directory.
 
 === Integrating with AppDynamics
 
+Use the Clustered JMX interface to integrate Hazelcast Management Center
+with *AppDynamics*. To perform this integration, attach the AppDynamics
+Java agent to the Management Center.
 
-Use the Clustered JMX interface to integrate Hazelcast Management Center with *AppDynamics*. To perform this integration, attach AppDynamics Java agent to the Management Center.
+For agent installation, see the
+http://docs.appdynamics.com/display/PRO14S/Install+the+App+Agent+for+Java[Install the App Agent for Java] page.
 
-For agent installation, refer to http://docs.appdynamics.com/display/PRO14S/Install+the+App+Agent+for+Java[Install the App Agent for Java] page.
+For monitoring on AppDynamics, see the
+http://docs.appdynamics.com/display/PRO14S/Monitor+JMX+MBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] page.
 
-For monitoring on AppDynamics, refer to http://docs.appdynamics.com/display/PRO14S/Monitor+JMX+MBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] page.
-
-After installing AppDynamics agent, you can start Management Center as shown below.
+After installing AppDynamics agent, you can start Management Center as shown below:
 
 [subs="attributes"]
 ```bash
@@ -483,7 +509,7 @@ java -javaagent:/path/to/javaagent.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar {mc-war-file}
 ```
 
-When Management Center starts, you should see the logs below.
+When Management Center starts, you should see the logs below:
 
 ```plain
 Started AppDynamics Java Agent Successfully.
