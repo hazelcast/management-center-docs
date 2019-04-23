@@ -17,8 +17,7 @@ image::MapGridView.png[Map Grid View]
 
 You can filter the maps shown and you can also sort
 the table by clicking on the column headers. Clicking
-on
-a map name will open a new page for monitoring that map
+on a map name opens a new page for monitoring that map
 instance on the right, as shown below.
 
 image::MonitoringMaps.png[Monitoring Maps]
@@ -96,7 +95,7 @@ image::MapStatisticDataTable.png[Map Statistic Data Table]
 
 From left to right, this table lists:
 
-* **Members**: The IP address and port of the member.
+* **Members**: IP address and port of the member.
 * **Entries**: Number of entries owned by the member.
 * **Gets**: Number of get operations received by the member.
 * **Puts**: Number of put operations received by the member.
@@ -125,7 +124,7 @@ image::MapThroughputDataTable.png[Map Throughput Data Table]
 
 From left to right, this table lists:
 
-* **Members**: The IP address and port of the member.
+* **Members**: IP address and port of the member.
 * **Puts/s**: Number of put operations per second on the member.
 * **Gets/s**: Number of get operations per second on the member.
 * **Removes/s**: Number of remove operations per second on the member.
@@ -136,7 +135,7 @@ From left to right, this table lists:
 * **Max Get Latency**: Maximum latency of get operations on the member.
 * **Max Remove Latency**: Maximum latency of remove operations on the member.
 
-You can select the time period in the combo box placed at the top
+You can select the time period in the combo box placed on the top
 right corner of the window, for which the table data will be
 shown. Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.
@@ -155,7 +154,7 @@ image::CacheGridView.png[Cache Grid View]
 
 You can filter the caches shown and you can also sort the table
 by clicking on the column headers. Clicking on
-the cache name will open a new page for monitoring that cache
+the cache name opens a new page for monitoring that cache
 instance on the right, as shown below.
 
 image::MonitoringCaches.png[Monitoring Caches]
@@ -205,7 +204,7 @@ image::ReplicatedMapGridView.png[Replicated Map Grid View]
 
 You can filter the Replicated Maps shown and you can also
 sort the table by clicking on the column headers. Clicking on
-a Replicated Map name will open a new page for monitoring
+a Replicated Map name opens a new page for monitoring
 that Replicate Map instance on the right, as shown below.
 
 image::MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
@@ -233,10 +232,10 @@ image::ReplicatedMapThroughput.png[Replicated Map Throughput Data Table]
 
 From left to right, this table lists:
 
-* the IP address and port of each member,
-* the put, get, and remove operations on each member,
-* the average put, get, and remove latencies,
-* and the maximum put, get, and remove latencies on each member.
+* IP address and port of each member
+* put, get, and remove operations on each member
+* average put, get, and remove latencies
+* maximum put, get, and remove latencies on each member.
 
 You can select the period from the combo box placed at the top
 right corner of the window, in which the table data is shown.
@@ -245,7 +244,6 @@ Available values are **Since Beginning**, **Last Minute**,
 
 To ascend or descent the order of the listings, click on the
 column headings.
-
 
 [[monitoring-multimaps]]
 === MultiMaps
@@ -258,7 +256,7 @@ image::MultiMapGridView.png[MultiMap Grid View]
 
 You can filter the MultiMaps shown and you can also sort the
 table by clicking on the column headers. Clicking on
-a MultiMap name will open a new page for monitoring that
+a MultiMap name opens a new page for monitoring that
 MultiMap instance on the right.
 
 MultiMap is a specialized map where you can associate a key
@@ -278,7 +276,7 @@ image::QueueGridView.png[Queue Grid View]
 
 You can filter the queues shown and you can also sort the table
 by clicking on the column headers. Clicking on
-a queue name will open a new page for monitoring that queue
+a queue name opens a new page for monitoring that queue
 instance on the right, as shown below.
 
 image::MonitoringQueues.png[Monitoring Queues]
@@ -335,7 +333,7 @@ image::TopicGridView.png[Topic Grid View]
 
 You can filter the topics shown and you can also sort the table by
 clicking on the column headers. Clicking on
-a topic name will open a new page for monitoring that topic instance
+a topic name opens a new page for monitoring that topic instance
 on the right, as shown below.
 
 image::MonitoringTopics.png[Monitoring Topics]
@@ -371,7 +369,7 @@ image::ReliableTopicGridView.png[Reliable Topic Grid View]
 
 You can filter the Reliable Topics shown and you can also sort
 the table by clicking on the column headers. Clicking on
-a Reliable Topic name will open a new page for monitoring that
+a Reliable Topic name opens a new page for monitoring that
 Reliable Topic instance on the right, as shown below.
 
 image::MonitoringReliableTopics.png[Monitoring Reliable Topics]
@@ -405,7 +403,7 @@ image::ExecutorGridView.png[Executor Grid View]
 
 You can filter the Executors shown and you can also sort the table
 by clicking on the column headers. Clicking on
-an Executor name will open a new page for monitoring that Executor
+an Executor name opens a new page for monitoring that Executor
 instance on the right, as shown below.
 
 image::MonitoringExecutors.png[Monitoring Executors]
@@ -530,13 +528,13 @@ table by clicking on the column headers.
 The monitoring data available are:
 
 * **Increment Operations/s**: Average number of times the counter
-was incremented per second during the last timeslice
+was incremented per second during the last timeslice.
 * **Decrement Operations/s**: Average number of times the counter
-was decremented per second during the last timeslice
-* **Number of Replicas**: The number of member instances that
-have a state for the counter
+was decremented per second during the last timeslice.
+* **Number of Replicas**: Number of member instances that
+have a state for the counter.
 
-Clicking on a counter name will open a new page for monitoring
+Clicking on a counter name opens a new page for monitoring
 that specific counter instance, as shown below.
 
 image::MonitoringCounters.png[Monitoring Counters]
@@ -550,7 +548,7 @@ The monitoring data available are:
 counter was incremented on that member per second during the last timeslice
 * **Decrement Operations/s**: Average number of times the
 counter was decremented on that member per second during the last timeslice
-* **Value**: The current value of the counter on that member.
+* **Value**: Current value of the counter on that member.
 
 [[monitoring-flake-id-generators]]
 === Flake ID Generators
@@ -575,7 +573,7 @@ by a generator, i.e., total number of IDs generated (the sum
 of IDs for all batches) for all members divided by the total
 count of batch requests coming from all members.
 
-Clicking on a generator name will open a new page for
+Clicking on a generator name opens a new page for
 monitoring that specific generator instance, as shown below.
 
 image::MonitoringFlakeIdGens.png[Monitoring Flake ID Generators]

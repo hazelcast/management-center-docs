@@ -1,7 +1,5 @@
-
 [[heap-size]]
 == Suggested Heap Size
-
 
 .For 2 Cluster Members
 |===
@@ -47,5 +45,3 @@
 | 1k 
 | 1k 
 |===
-
-

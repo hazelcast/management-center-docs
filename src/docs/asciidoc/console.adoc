@@ -38,7 +38,7 @@ The direction of this communication is from an ephemeral port
 number on the Management Center to the port number 5701
 (according to the above example) on the member.
 
-NOTE:  There is no configuration option to specify which
+NOTE: There is no configuration option to specify which
 outbound ports the Management Center will use; it picks on from
 the ephemeral port pool.  Note that, this can create an issue
 where a firewall is placed between the cluster and Management Center.

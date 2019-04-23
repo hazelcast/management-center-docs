@@ -2,13 +2,18 @@
 [[mc-conf]]
 == Management Center Configuration Tool
 
-The Management Center Configuration Tool (MC-Conf) is a command line tool that allows you to update certain parts of the Management Center configuration by using its built-in commands. You can use the `mc-conf.sh` or `mc-conf.bat` script to run the MC-Conf tool.
+The Management Center Configuration Tool (MC-Conf) is a command
+line tool that allows you to update certain parts of the Management Center
+configuration by using its built-in commands. You can use the `mc-conf.sh`
+or `mc-conf.bat` script to run the MC-Conf tool.
 
-NOTE: You must run the MC-Conf tool on the same machine where the Management Center web application is deployed.
+NOTE: You must run the MC-Conf tool on the same machine where the Management
+Center web application is deployed.
 
 === Built-In Help
 
-In order to see all available commands, run the MC-Conf script with no arguments as shown below.
+In order to see all available commands, run the MC-Conf script with no
+arguments as shown below.
 
 ```bash
 ./mc-conf.sh
@@ -23,101 +28,143 @@ Command line tool for interacting with Hazelcast Management Center
 configuration.
 
 Global options are:
-  -h, --help      Show this help message and exit.
-  -V, --version   Print version information and exit.
+-h, --help      Show this help message and exit.
+-V, --version   Print version information and exit.
+
 Commands:
-  create-user              Create a new user record in the default security
-                             provider.
-                           *Important notice* Make sure that Management Center
-                             web application is stopped (offline) before
-                             starting this command.
+create-user              
+           Create a new user record in the default security
+           provider.
+           *Important notice:* Make sure that Management Center
+                    web application is stopped (offline) before
+                    starting this command.
 
-  change-user-password     Change password for the given user record in the
-                             default security provider.
-                           *Important notice* Make sure that Management Center
-                             web application is stopped (offline) before
-                             starting this command.
+change-user-password     
+           Change password for the given user record in the
+           default security provider.
+           *Important notice:* Make sure that Management Center
+                    web application is stopped (offline) before
+                    starting this command.
 
-  update-ldap-password     Update LDAP service user's password that is stored
-                             in a Java keystore.
+update-ldap-password     
+           Update LDAP service user's password that is stored
+           in a Java keystore.
 
-  reset-security-provider  Reset current security provider and delete all
-                             built-in user records in the default security
-                             provider.
-                           *Important notice* Make sure that Management Center
-                             web application is stopped (offline) before
-                             starting this command.
+reset-security-provider
+           Reset current security provider and delete all
+           built-in user records in the default security
+           provider.
+           *Important notice:* Make sure that Management Center
+                     web application is stopped (offline) before
+                     starting this command.
 ```
 
-You can also get help for any command by using the `-h` (or `--help`) command line option. See the following example:
+You can also get help for any command by using the `-h` (or `--help`)
+command line option. See the following example:
 
 ```bash
 $ ./mc-conf.sh create-user -h
 Usage: mc-conf create-user [-hvV] [--password:sec=<passwordSec>] [-H=<homedir>]
                            -n=<username> [-p=<password>] -r=<role>
-Create a new user record in the default security provider.
-*Important notice* Make sure that Management Center web application is stopped
-(offline) before starting this command.
 
-  -H, --home=<homedir>   Optional path to Management Center home directory. By
-                           default ~/hazelcast-mc/ is used.
-  -n, --username=<username>
-                         Username for the user record.
-  -p, --password=<password>
-                         Password for the user record.
-      --password:sec=<passwordSec>
-                         Password for the user record (a secure alternative to
-                           --password, with interactive prompt).
-  -r, --role=<role>      Roles for the user record. Valid values: readonly,
-                           readwrite, metricsonly, admin.
-  -h, --help             Show this help message and exit.
-  -V, --version          Print version information and exit.
-  -v, --verbose          Show logs from Management Center and full stack trace of
-                           errors.
+            Create a new user record in the default security provider.
+            *Important notice:* Make sure that the Management Center web application is stopped
+                                (offline) before starting this command.
+
+-H, --home=<homedir>
+            Optional path to the Management Center home directory. By
+            default ~/hazelcast-mc/ is used.
+-n, --username=<username>
+            Username for the user record.
+-p, --password=<password>
+            Password for the user record.
+    --password:sec=<passwordSec>
+            Password for the user record (a secure alternative to
+            --password, with interactive prompt).
+-r, --role=<role>
+            Roles for the user record. Valid values: readonly,
+            readwrite, metricsonly, admin.
+-h, --help
+            Show this help message and exit.
+-V, --version
+            Print version information and exit.
+-v, --verbose
+            Show logs from the Management Center and full stack trace of
+            errors.
 ```
 
 === Creating Users
 
-The `create-user` command creates a new user in the default security provider. Note that you must stop the Management Center web application before running this command.
+The `create-user` command creates a new user in the default security
+provider. Note that you must stop the Management Center web application
+before running this command.
 
-You can use this command for various scripting purposes. See https://github.com/hazelcast/hazelcast-docker-samples[Hazelcast Docker Code Samples] repository for an example of Docker image for Management Center container with a built-in user account.
+You can use this command for various scripting purposes. See the
+https://github.com/hazelcast/hazelcast-docker-samples[Hazelcast Docker Code Samples]
+repository for an example of Docker image for the Management Center container with
+a built-in user account.
 
-NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
+NOTE: If you have used a non-default Management Center home directory location,
+you must provide the path to the home directory with the `-H` (or `--home`) option.
 
 === Changing User Password
 
-The `change-user-password` command resets the password of a specified user in the default security provider. Note that you must stop the Management Center web application before running this command.
+The `change-user-password` command resets the password of a specified user in
+the default security provider. Note that you must stop the Management Center
+web application before running this command.
 
-You can use this command as a recovery mechanism for the Management Center's administrator user account.
+You can use this command as a recovery mechanism for the Management Center's
+administrator user account.
 
-NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
+NOTE: If you have used a non-default Management Center home directory location,
+you must provide the path to the home directory with the `-H` (or `--home`) option.
 
 [[update-ldap-password]]
 === Updating LDAP Password
 
-The `update-ldap-password` command updates the encrypted LDAP password stored in the keystore. It expects information about the keystore such as its location and password and the new LDAP password that you want to use. See the <<password-encryption, LDAP Authentication section>> for more information on the encrypted LDAP passwords. After updating the LDAP password, you will need to click on the **Reload Security Config** button on the login page.
+The `update-ldap-password` command updates the encrypted LDAP password stored in
+the keystore. It expects information about the keystore such as its location and
+password and the new LDAP password that you want to use. See the
+<<password-encryption, LDAP Authentication section>> for more information on the
+encrypted LDAP passwords. After updating the LDAP password, you need to click
+on the **Reload Security Config** button on the login page.
 
 === Resetting Security Provider
 
-The `reset-security-provider` command resets current security provider used in the Management Center. For the default security provider it also deletes all built-in user accounts. Note that you must stop the Management Center web application before running this command.
+The `reset-security-provider` command resets current security provider used in
+the Management Center. For the default security provider it also deletes all
+built-in user accounts. Note that you must stop the Management Center web application
+before running this command.
 
-You can use this command as a recovery mechanism for the Management Center deployment in case if a non-default security provider is configured. In case of the default security provider, you can also use the `create-user` or `change-user-password` commands as the recovery mechanism.
+You can use this command as a recovery mechanism for the Management Center deployment
+in case if a non-default security provider is configured. In case of the default security
+provider, you can also use the `create-user` or `change-user-password`
+commands as the recovery mechanism.
 
-NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
+NOTE: If you have used a non-default Management Center home directory location, you must
+provide the path to the home directory with the `-H` (or `--home`) option.
 
 === Advanced Features
 
-MC-Conf supports interactive options for secure processing of passwords. Those options are listed in the built-in help and have a `:sec` suffix in their names. When you use such option instead of a regular one, you will get a prompt to enter a value on the console. An example of the interactive option usage is shown below.
+MC-Conf supports interactive options for secure processing of passwords. Those options
+are listed in the built-in help and have a `:sec` suffix in their names. When you use
+such option instead of a regular one, you will get a prompt to enter a value on the
+console. An example of the interactive option usage is shown below.
 
 ```bash
 $ ./mc-conf.sh change-user-password --username=admin --password:sec
-Enter value for --password:sec (Password for the user record (a secure alternative to --password, with interactive prompt).): ********
+Enter value for --password:sec (Password for the user record (a secure alternative
+to --password, with interactive prompt).): ********
 Successfully changed password for user 'admin'.
 ```
 
-As you see in the above example, the password input is not echoed to the console since it is provided with the `:sec` suffix in the command.
+As you see in the above example, the password input is not echoed to the console
+since it is provided with the `:sec` suffix in the command.
 
-Another advanced feature of MC-Conf is the support for argument files. When an argument beginning with the character `@` is encountered, it is treated as a path leading to a text file. The contents of that file are automatically expanded into the current command. An example of the argument file usage is shown below.
+Another advanced feature of MC-Conf is the support for argument files. When an
+argument beginning with the character `@` is encountered, it is treated as a path
+leading to a text file. The contents of that file are automatically expanded into
+the current command. An example of the argument file usage is shown below.
 
 ```bash
 $ ./mc-conf.sh change-user-password @arg-file.txt
