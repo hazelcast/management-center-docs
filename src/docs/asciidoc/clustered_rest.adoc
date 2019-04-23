@@ -2,15 +2,15 @@
 [[clustered-rest]]
 == Clustered REST via Management Center
 
-
 [blue]#Hazelcast IMDG Enterprise#
 
-
-The Clustered REST API is exposed from Management Center to allow you to monitor clustered statistics of distributed objects.
+The Clustered REST API is exposed from Management Center
+to allow you to monitor clustered statistics of distributed objects.
 
 === Enabling Clustered REST
 
-To enable Clustered REST on your Management Center, pass the following system property at startup. This property is disabled by default.
+To enable Clustered REST on your Management Center, pass the
+following system property at startup. This property is disabled by default.
 
 ```bash
 -Dhazelcast.mc.rest.enabled=true
@@ -18,21 +18,25 @@ To enable Clustered REST on your Management Center, pass the following system pr
 
 === Clustered REST API Root
 
-The entry point for Clustered REST API is `/rest/`.
+The entry point for the Clustered REST API is `/rest/`. This
+resource does not have any attributes.
 
-This resource does not have any attributes.
-
-NOTE: All parameters that are used in REST API URLs, like cluster names and distributed data structure names, must be
-https://en.wikipedia.org/wiki/Percent-encoding[URL encoded] when composing a valid request for Clustered REST.
-Such parameters are marked in braces (`{` and `}`) in URL description for each endpoint. As an example, `name.with/special@chars`
+NOTE: All parameters that are used in the REST API URLs, like
+cluster names and distributed data structure names, must be
+https://en.wikipedia.org/wiki/Percent-encoding[URL encoded] when composing
+a valid request for Clustered REST.
+Such parameters are marked in braces (`{` and `}`) in the URL description
+for each endpoint. As an example, `name.with/special@chars`
 parameter value would be encoded as `name.with%2Fspecial%40chars`.
 
-NOTE: All endpoints return HTTP status code 404 if no data about a cluster, member, client or data structure can be
+NOTE: All endpoints return HTTP status code 404 if no data
+about a cluster, member, client or data structure can be
 found in Management Center.
 
 ==== Retrieve Management Center License Expiration Time
 
-This endpoint returns the expiration time in milliseconds (since epoch) of the license key assigned for the Management Center.
+This endpoint returns the expiration time in milliseconds (since epoch)
+of the license key assigned for the Management Center.
 Returns `-1` if no license is assigned.
 
 * *Request Type:* GET
@@ -54,7 +58,8 @@ curl http://localhost:8083/hazelcast-mancenter/rest/license
 
 === Clusters Resource
 
-This resource returns a list of clusters that are connected to the Management Center.
+This resource returns a list of clusters that are connected to
+the Management Center.
 
 ==== Retrieve Clusters
 
@@ -79,7 +84,8 @@ This resource returns information related to the provided cluster name.
 
 ==== Retrieve Cluster Information
 
-This endpoint returns address of the master node and the expiration time in milliseconds (since epoch) of the license
+This endpoint returns address of the oldest cluster member and the expiration
+time in milliseconds (since epoch) of the license
 key assigned for the cluster. Returns `-1` for license expiration time if no license is assigned.
 
 * *Request Type:* GET
@@ -102,7 +108,7 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/
 
 === Members Resource
 
-This resource returns a list of members belonging to the provided clusters.
+This resource returns a list of the members belonging to the provided clusters.
 
 ==== Retrieve Members [GET] [/rest/clusters/{clustername}/members]
 
@@ -309,9 +315,10 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/members/192.168
 
 === Client Endpoints Resource
 
-This resource returns a list of client endpoints belonging to the provided cluster. Please consider using the newly
+This resource returns a list of the client endpoints belonging
+to the provided cluster. Consider using the newly
 added <<client-statistics-resource, Client Statistics Resource>>
-as it contains more detailed information about clients.
+as it contains more detailed information about the clients.
 
 ==== Retrieve List of Client Endpoints
 
@@ -358,7 +365,6 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients/192.168
 === Maps Resource
 
 This resource returns a list of maps belonging to the provided cluster.
-
 
 ==== Retrieve List of Maps
 
@@ -422,7 +428,6 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/maps/customers
 === MultiMaps Resource
 
 This resource returns a list of multimaps belonging to the provided cluster.
-
 
 ==== Retrieve List of MultiMaps
 
@@ -597,11 +602,9 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/queues/messages
 }
 ```
 
-
 === Topics Resource
 
 This resource returns a list of topics belonging to the provided cluster.
-
 
 ==== Retrieve List of Topics
 
@@ -642,7 +645,6 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/topics/news
   "creationTime": 1403602693411
 }
 ```
-
 
 === Executors Resource
 
@@ -694,7 +696,6 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/executors/order
 === Client Statistics Resource
 
 This resource returns a list of clients belonging to the provided cluster.
-
 
 ==== Retrieve List of Client UUIDs
 

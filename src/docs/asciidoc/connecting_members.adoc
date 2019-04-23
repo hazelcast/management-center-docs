@@ -1,9 +1,13 @@
 [[connecting-hazelcast-members-to-management-center]]
 == Connecting Members to Management Center
 
-After you perform the above steps, make sure that `\http://localhost:8080/hazelcast-mancenter` is up.
+After you start and/or configure the Management Center service
+as explained in the <<starting-the-management-center-service, Starting the Management Center Service>> and
+<<configuring-management-center, Configuring Management Center>> chapters, make sure that
+`\http://localhost:8080/hazelcast-mancenter` is up.
 
-Configure your Hazelcast members by adding the URL of your web application to your `hazelcast.xml`. Hazelcast members will send their states to this URL.
+Configure your Hazelcast members by adding the URL of your web application
+to your `hazelcast.xml`. Hazelcast IMDG cluster members send their states to this URL.
 
 [source,xml]
 ----
@@ -12,7 +16,7 @@ Configure your Hazelcast members by adding the URL of your web application to yo
 </management-center>
 ----
 
-You can configure it programmatically as follows.
+You can configure it programmatically as follows:
 
 ```
 Config config = new Config();
@@ -22,7 +26,9 @@ config.getManagementCenterConfig().setUrl("http://localhost:8080/hazelcast-mance
 HazelcastInstance hz = Hazelcast.newHazelcastInstance(config);
 ```
 
-If you enabled TLS/SSL on Management Center, then you will need to configure the members with the relevant keystore & trustore. In that case you expand the above configuration as follows.
+If you enabled TLS/SSL on Management Center, then you need to configure the
+members with the relevant keystore and truststore. In that case you expand the
+above configuration as follows:
 
 [source,xml]
 ----
@@ -43,19 +49,23 @@ If you enabled TLS/SSL on Management Center, then you will need to configure the
 </management-center>
 ----
 
-In the example above, Hazelcast's default SSL context factory (BasicSSLContextFactory) is used; you can also provide your own implementation of this factory.
+In the example above, Hazelcast's default SSL context factory
+(BasicSSLContextFactory) is used; you can also provide your own
+implementation of this factory.
 
 Here are the descriptions for the properties:
 
-* **keystore:** Path of your keystore file. Note that your keystore's type must be JKS.
+* **keystore:** Path to your keystore file. Note that your keystore's type must be JKS.
 * **keyStorePassword:** Password to access the key from your keystore file.
 * **keyManagerAlgorithm:** Name of the algorithm based on which the authentication keys are provided.
 * **keyStoreType:** The type of the keystore. Its default value is JKS.
-* **truststore:** Path of your truststore file. The file truststore is a keystore file that contains a collection of certificates trusted by your application. Its type should be JKS.
+* **truststore:** Path to your truststore file. The file truststore is a keystore file
+that contains a collection of certificates trusted by your application. Its type should be JKS.
 * **trustStorePassword:** Password to unlock the truststore file.
 * **trustManagerAlgorithm:** Name of the algorithm based on which the trust managers are provided.
 * **trustStoreType:** The type of the truststore. Its default value is JKS.
-* **protocol:** Name of the algorithm which is used in your TLS/SSL. Its default value is TLS. Available values are:
+* **protocol:** Name of the algorithm which is used in your TLS/SSL. Its default
+value is TLS. Available values are:
 ** SSL
 ** SSLv2
 ** SSLv3
@@ -89,21 +99,28 @@ config.setManagementCenterConfig(mcc);
 HazelcastInstance hz = Hazelcast.newHazelcastInstance(config);
 ----
 
-NOTE: For the protocol property, we recommend you to provide SSL or TLS with its version information, e.g., TLSv1.2. Note that if you write only SSL or TLS, your application will choose the SSL or TLS version according to your Java version.
+NOTE: For the protocol property, we recommend you to provide SSL or TLS with
+its version information, e.g., TLSv1.2. Note that if you write only SSL or TLS,
+your application chooses the SSL or TLS version according to your Java version.
 
-Now you can start your Hazelcast cluster, browse to `\http://localhost:8080/hazelcast-mancenter` or `\https://localhost:sslPortNumber/hazelcast-mancenter` (depending on installation) and setup your administrator account explained in the <<getting-started, Getting Started chapter>>.
+Now you can start your Hazelcast cluster, browse to `\http://localhost:8080/hazelcast-mancenter`
+or `\https://localhost:sslPortNumber/hazelcast-mancenter` (depending on installation) and
+setup your administrator account explained in the <<getting-started, Getting Started chapter>>.
 
 === Communication Between Members and Management Center
 
-Hazelcast cluster members and Management Center talk to each other for the following situations:
+Hazelcast IMDG cluster members and Management Center talk to each other
+for the following situations:
 
 . When the members send statistics
 . When the members perform operations that are waiting in the Management Center's queue
 . When the Management Center sends commands to the members
 
-This section describes the first two situations. For the third one, see the <<console, Executing Console Commands section>>.
+This section describes the first two situations. For the third one, see
+the <<console, Executing Console Commands section>>.
 
-Hazelcast members send their statistics to the Management Center by opening an HTTP connection as configured on the member side, as shown below:
+Hazelcast members send their statistics to Management Center by opening an
+HTTP connection as configured on the member side, as shown below:
 
 [source,xml]
 ----
@@ -114,6 +131,15 @@ Hazelcast members send their statistics to the Management Center by opening an H
 </hazelcast>
 ----
 
-This communication starts at an ephemeral port on the member and goes to the port 8080 of the Management Center. This connection can also be configured to have TLS/SSL in which case it typically uses the port 8443 on the Management Center.  See the previous section for more information on this.
+This communication starts at an ephemeral port on the member and goes to
+the port 8080 of Management Center. This connection can also be configured
+to have TLS/SSL in which case it typically uses the port 8443 on Management Center.
+See the previous section for more information on this.
 
-In addition to the statistics, the other communication path is when the members query the Management Center to see if there are any operations to be performed. The Management Center has a command queue, and the members open an HTTP connection to the Management Center for this purpose. If there are operations for a member, then it fetches those, runs the operations and then makes another HTTP request to the Management Center for putting the responses. As it is in sending the statistics, this communication also starts at an ephemeral port on the member and goes to the port 8080 of the Management Center.
+In addition to the statistics, the other communication path is when the members
+query Management Center to see if there are any operations to be performed.
+Management Center has a command queue, and the members open an HTTP connection to Management Center
+for this purpose. If there are operations for a member, then it fetches those, runs the
+operations and then makes another HTTP request to Management Center for putting the responses.
+As it is in sending the statistics, this communication also starts at an ephemeral port on
+the member and goes to the port 8080 of Management Center.

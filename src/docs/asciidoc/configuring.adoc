@@ -7,21 +7,27 @@ Management Center according to your needs.
 [[starting-with-a-license]]
 === Providing a License
 
-When starting Management Center from the command line, a license can be provided using the system property `hazelcast.mc.license`. For example by using the command line parameter:
+When starting Management Center from the command line, a
+license can be provided using the system property `hazelcast.mc.license`.
+For example by using the command line parameter:
 
 [subs="attributes,specialchars"]
 ```
 java -Dhazelcast.mc.license=<key> -jar {mc-war-file}
 ```
 
-When this option is used the license provided will take precedence over any license set and stored previously using the user interface.
-Previously stored licenses are not affected and will be used again when the Management Center is started without the `hazelcast.mc.license` property.
+When this option is used, the license provided takes precedence
+over any license set and stored previously using the user interface.
+Previously stored licenses are not affected and will be used again
+when the Management Center is started without the `hazelcast.mc.license` property.
 This also means no new license can be stored when the property is used.
 
 [[starting-with-an-extra-classpath]]
 === Providing an Extra Classpath
 
-You can also start the Management Center with an extra classpath entry (for example, when using JAAS authentication) by using the following command:
+You can also start the Management Center with an extra classpath
+entry (for example, when using JAAS authentication) by using the
+following command:
 
 [subs="attributes"]
 ```
@@ -38,7 +44,9 @@ java -cp "{mc-war-file};/path/to/an/extra.jar" Launcher 8080 hazelcast-mancenter
 [[configuring-update-interval]]
 === Configuring Update Interval
 
-You can set a frequency (in seconds) for which Management Center will take information from the Hazelcast cluster, using the `update-interval` attribute as shown below. Using this attribute is optional and its default value is 3 seconds.
+You can set a frequency (in seconds) for which Management Center
+retrieves information from the Hazelcast IMDG cluster, using the
+`update-interval` attribute as shown below:
 
 [source,xml]
 ----
@@ -47,41 +55,72 @@ You can set a frequency (in seconds) for which Management Center will take infor
 </management-center>
 ----
 
+Using this attribute is optional and its default value is 3 seconds.
+
 [[disk-usage-config]]
 === Configuring Disk Usage
 
-Starting with 3.10, the disk space used by Management Center is constrained to avoid exceeding available disk space. When the set limit is exceeded Management Center deals with this in two ways:
+The disk space used by Management Center is constrained to avoid
+exceeding available disk space. When the set limit is exceeded,
+Management Center deals with this in the following ways:
 
-* persisted statistics data is removed, starting with oldest (one month at a time)
-* persisted alerts are removed for filters that report further alerts
+* Persisted statistics data is removed, starting with the oldest (one month at a time).
+* Persisted alerts are removed for filters that report further alerts.
 
-Usually, either of the above automatically resolves the situation and makes room for new data.
-Depending on the disk usage configuration and the kind of data that contributes to exceeding the limit it can occur that the limit continues to be exceeded. In this case Management Center will not store new alerts or metrics data. Other data (like configurations and account information) is still stored as they hardly cause larger data volumes.
+Usually, either of the above automatically resolves the situation and
+makes room for new data. Depending on the disk usage configuration and
+the kind of data that contributes to exceeding the limit it can occur
+that the limit continues to be exceeded. In this case, Management Center does
+not store new alerts or metrics data. Other data (like configurations and account information)
+is still stored as they hardly cause larger data volumes.
 
 An active blockage is reported in the UI as an error notification, as shown below:
 
 image::DiskUsageError.png[Disk Usage Limit Error]
 
-However, storage operations will not explicitly fail or report errors since this would constantly cause interruptions and error logging - both in the UI and logs.
+However, storage operations do not explicitly fail or report errors since
+this would constantly cause interruptions and error logging both in the UI and logs.
 
-One way to resolve a blockage is deleting the data manually, e.g., deleting a filter that caused
-many alerts in the alerts view.
-Another way is to restart Management Center with a higher limit or in `purge` mode (if not used before).
+One way to resolve a blockage is deleting the data manually, e.g., deleting a
+filter that caused many alerts in the alerts view.
+Another way is to restart Management Center with a higher limit or
+in the `purge` mode (if not used before).
 
 You can use the following system properties to configure Management Center's disk usage control:
 
-* `-Dhazelcast.mc.disk.usage.mode`: Available values are `purge` and `block`. If the mode is `purge`, persisted statistics data is removed (as stated in the beginning of this section). If it is `block`, persisted statistics data is not removed. Its default value is `purge`.
-* `-Dhazelcast.mc.disk.usage.limit`: The _high water mark_ in `KB`, `MB` or `GB`. Its default value adapts to the available disk space and the space already used by database files. At a maximum it will default to `512MB` unless existing data already exceeds this maximum. In that case the already used space is used as limit. The minimal allowed limit is `2MB`.
-* `-Dhazelcast.mc.disk.usage.interval`: Specifies how often the disk usage is checked to see if it exceeds the limit (`hazelcast.mc.disk.usage.limit`). It is in milliseconds and its default value is `1000` milliseconds. Set values have to be in range of `50` to `5000` ms.
+* `-Dhazelcast.mc.disk.usage.mode`: Available values are `purge` and `block`.
+If the mode is `purge`, persisted statistics data is removed (as stated in
+the beginning of this section). If it is `block`, persisted statistics data
+is not removed. Its default value is `purge`.
+* `-Dhazelcast.mc.disk.usage.limit`: The _high water mark_ in `KB`, `MB` or `GB`.
+Its default value adapts to the available disk space and the space already used
+by database files. At a maximum it will default to `512MB` unless existing data
+already exceeds this maximum. In that case the already used space is used as limit.
+The minimal allowed limit is `2MB`.
+* `-Dhazelcast.mc.disk.usage.interval`: Specifies how often the disk usage is
+checked to see if it exceeds the limit (`hazelcast.mc.disk.usage.limit`). It is
+in milliseconds and its default value is `1000` milliseconds. Set values have to
+be in range of `50` to `5000` ms.
 
-It is important to understand that the limit given is a _soft_ limit, a _high water mark_. Management Center will act if it is exceeded but it might be exceeded by a margin between two measurements. Do not set it to the absolute maximum disk space available. A smaller interval increases accuracy but also performance overhead.
+It is important to understand that the limit given is a _soft_ limit, a _high water mark_.
+Management Center will act if it is exceeded but it might be exceeded by a
+margin between two measurements. Do not set it to the absolute maximum disk
+space available. A smaller interval increases accuracy but also performance overhead.
 
-In case of a misconfiguration of any of the three properties Management Center will log the problem and abort startup immediately.
+In case of a misconfiguration of any of the above three properties,
+Management Center logs the problem and aborts startup immediately.
 
 [[enabling-health-check-endpoint]]
 === Enabling Health Check Endpoint
 
-When running Management Center from the command line, you can enable the Health Check endpoint. This endpoint responds with `200 OK` HTTP status code once Management Center web application has started. The endpoint is available on port `<Management Center HTTP port> + 1` with context path `<Management Center context path>/health` (by default, its URL is `\http://localhost:8081/hazelcast-mancenter/health`). Note that HTTP protocol is always used for the Health Check endpoint, independently of TLS/SSL settings, and no additional authentication is enforced for it.
+When running Management Center from the command line, you can enable
+the Health Check endpoint. This endpoint responds with `200 OK` HTTP
+status code once Management Center web application has started. The
+endpoint is available on port `<Management Center HTTP port> + 1` with
+context path `<Management Center context path>/health` (by default, its
+URL is `\http://localhost:8081/hazelcast-mancenter/health`). Note that the
+HTTP protocol is always used for the Health Check endpoint, independently
+of TLS/SSL settings, and no additional authentication is enforced for it.
 
 If you want to enable the Health Check endpoint, use the following command line argument:
 
@@ -98,60 +137,94 @@ sessions for various aspects including timeouts and login/logout operations.
 [[configuring-session-timeout]]
 ==== Configuring Session Timeout
 
-If you have started Management Center from the command line by using the WAR file, by default, sessions that are inactive for
-30 minutes are invalidated. To change this, you can use the `-Dhazelcast.mc.session.timeout.seconds` command line parameter.
+If you have started Management Center from the command line
+by using the WAR file, by default, the sessions that are inactive for
+30 minutes are invalidated. To change this, you can use the
+`-Dhazelcast.mc.session.timeout.seconds` command line parameter.
 
-For example, the following command starts Management Center with a session timeout period of 1 minute:
+For example, the following command starts Management Center with
+a session timeout period of 1 minute:
 
 [subs="attributes"]
 ```
 java -Dhazelcast.mc.session.timeout.seconds=60 -jar {mc-war-file}
 ```
 
-If you have deployed Management Center on an application server/container, you can configure the default session timeout
-period of the application server/container to change the session timeout period for Management Center. If your server/container
-allows application specific configuration, you can use it to configure the session timeout period for Management Center.
+If you have deployed Management Center on an application
+server/container, you can configure the default session timeout
+period of the application server/container to change the session
+timeout period for Management Center. If your server/container
+allows application specific configuration, you can use it to configure
+the session timeout period for Management Center.
 
 [[enabling-multiple-simultaneous-login-attempts]]
 ==== Enabling Multiple Simultaneous Login Attempts
 
-Normally, a user account on Management Center can't be used from multiple locations at the same time. If you want to allow
-others to log in, when there's already someone logged in with the same username, you can start Management Center with
+Normally, a user account on Management Center can't be used from
+multiple locations at the same time. If you want to allow
+others to log in, when there's already someone logged in with the
+same username, you can start Management Center with
 the `-Dhazelcast.mc.allowMultipleLogin=true` command line parameter.
 
 [[disable-login-configuration]]
 ==== Disable Login Configuration
 
-In order to prevent password guessing attacks, logging in is disabled temporarily after a number of failed login attempts. When not configured explicitly, default values are used, i.e., logging in is disabled for 5 seconds when a username is failed to log in consecutively 3 times. During this 5 seconds of period, logging in will not be allowed even when the correct credentials are used. After 5 seconds, the user will be able to log in using the correct credentials.
+In order to prevent password guessing attacks, logging in is
+disabled temporarily after a number of failed login attempts. When
+not configured explicitly, the default values are used, i.e., logging
+in is disabled for 5 seconds when a username is failed to log in
+consecutively 3 times. During this 5 seconds of period, logging in is
+not allowed even when the correct credentials are used. After 5 seconds,
+the user will be able to log in using the correct credentials.
 
-Assuming the configuration with the default values, if the failed attempts continue (consecutively 3 times) after the period of disabled login passes, this time the disable period will be multiplied by 10
-and logging in will be disabled for 50 seconds; the whole process repeats itself until the user logs in successfully. By default, there's no upper limit to the disable period, but can be configured by using the `-Dhazelcast.mc.maxDisableLoginPeriod` parameter.
+Assuming the configuration with the default values, if the failed
+attempts continue (consecutively 3 times) after the period of disabled
+login passes, this time the disable period is multiplied by 10:
+logging in is disabled for 50 seconds. The whole process repeats
+itself until the user logs in successfully. By default, there's no upper
+limit to the disable period, but can be configured by using the
+`-Dhazelcast.mc.maxDisableLoginPeriod` parameter.
 
 Here is a scenario, in the given order, with the default values:
 
 . You try to login with your credentials consecutively 3 times but failed.
 . Logging in is disabled and you have to wait for 5 seconds.
 . After 5 seconds have passed, logging in is enabled.
-. You try to login with your credentials consecutively 3 times but again failed.
-. Logging in is disabled again and this time you have to wait for 50 seconds until your next login attempt.
-. And so on; each 3 consecutive login failures will cause the disable period to be multiplied by 10.
+. You try to login with your credentials consecutively 3 times but again
+failed.
+. Logging in is disabled again and this time you have to wait for 50
+seconds until your next login attempt.
+. And so on; each 3 consecutive login failures causes the disable
+period to be multiplied by 10.
 
-You can configure the number of failed login attempts, initial and maximum duration of the disabled login and the multiplier using the following command line parameters:
+You can configure the number of failed login attempts, initial
+and maximum duration of the disabled login and the multiplier
+using the following command line parameters:
 
-* `-Dhazelcast.mc.failedAttemptsBeforeDisableLogin`: Number of failed login attempts that cause the logging in to be disabled temporarily. Default value is `3`.
-* `-Dhazelcast.mc.initialDisableLoginPeriod`: Initial duration for the disabled login in seconds. Default value is `5`.
-* `-Dhazelcast.mc.disableLoginPeriodMultiplier`: Multiplier used for extending the disable period in case the failed login attempts continue after disable period passes. Default value is `10`.
-* `-Dhazelcast.mc.maxDisableLoginPeriod`: Maximum amount of time for the disable login period.  This parameter does not have a default value. By default, disabled login period is not limited.
+* `-Dhazelcast.mc.failedAttemptsBeforeDisableLogin`: Number of failed
+login attempts that cause the logging in to be disabled temporarily. Default
+value is `3`.
+* `-Dhazelcast.mc.initialDisableLoginPeriod`: Initial duration for the disabled
+login in seconds. Default value is `5`.
+* `-Dhazelcast.mc.disableLoginPeriodMultiplier`: Multiplier used for extending
+the disable period in case the failed login attempts continue after disable
+period passes. Default value is `10`.
+* `-Dhazelcast.mc.maxDisableLoginPeriod`: Maximum amount of time for the disable
+login period.  This parameter does not have a default value. By default,
+disabled login period is not limited.
 
 
 [[forcing-logout-on-multiple-simultaneous-login-attempts]]
 ==== Forcing Logout on Multiple Simultaneous Login Attempts
 
-If you haven't allowed multiple simultaneous login attempts explicitly, the first user to login with a username stays
-logged in until that username explicitly logs out or its session expires. In the meantime, no one else can login with the same
-username. If you want to force logout for the first user and let the newcomer login, you need to start Management
-Center with the `-Dhazelcast.mc.forceLogoutOnMultipleLogin=true` command line parameter.
-
+If you haven't allowed multiple simultaneous login attempts explicitly,
+the first user to login with a username stays
+logged in until that username explicitly logs out or its session expires.
+In the meantime, no one else can login with the same
+username. If you want to force logout for the first user and let the
+newcomer login, you need to start Management
+Center with the `-Dhazelcast.mc.forceLogoutOnMultipleLogin=true` command
+line parameter.
 
 [[configuring-and-enabling-security]]
 === Configuring and Enabling Security
@@ -161,32 +234,43 @@ Management Center with TLS/SSL and mutual authentication.
 You will also learn how to force the users to specify passwords
 that are hard to guess.
 
-
 [[using-management-center-with-tlsssl-only]]
 ==== Using Management Center with TLS/SSL Only
 
-To encrypt data transmitted over all channels of Management Center using TLS/SSL, make sure you do all of the following:
+To encrypt data transmitted over all channels of Management Center
+using TLS/SSL, make sure you do all of the following:
 
-* Deploy Management Center on a TLS/SSL enabled container or start it from the command line with TLS/SSL enabled. See <<deploying-and-starting, Installing Management Center>>.
-** Another option is to place Management Center behind a TLS-enabled reverse proxy. In that case, make sure your reverse proxy sets the necessary HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
-* Enable TLS/SSL communication to Management Center for your Hazelcast cluster. See <<connecting-hazelcast-members-to-management-center, Connecting Hazelcast members to Management Center>>.
-* If you're using Clustered JMX on Management center, enable TLS/SSL for it. See <<clustered-jmx-via-management-center, Enabling TLS/SSL for Clustered JMX>>.
-* If you're using LDAP authentication, make sure you use LDAPS or enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
+* Deploy Management Center on a TLS/SSL enabled container or start it from
+the command line with TLS/SSL enabled. See
+<<deploying-and-starting, Installing Management Center>>.
+** Another option is to place Management Center behind a TLS-enabled
+reverse proxy. In that case, make sure your reverse proxy sets the necessary
+HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
+* Enable TLS/SSL communication to Management Center for your Hazelcast
+cluster. See <<connecting-hazelcast-members-to-management-center, Connecting Hazelcast members to Management Center>>.
+* If you're using Clustered JMX on Management center, enable TLS/SSL
+for it. See <<clustered-jmx-via-management-center, Enabling TLS/SSL for Clustered JMX>>.
+* If you're using LDAP authentication, make sure you use LDAPS or
+enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
 
 [[enabling-tslssl-when-starting-with-war-file]]
 ==== Enabling TLS/SSL When Starting with WAR File
 
-When you start Management Center from the command line, it will serve the pages unencrypted by using "http", by default. To enable TLS/SSL, use the following command line parameters when starting the Management Center:
+When you start Management Center from the command line, it serves
+the pages unencrypted by using "http", by default. To enable TLS/SSL,
+use the following command line parameters when starting the Management Center:
 
-* `-Dhazelcast.mc.tls.enabled`: Specifies whether the TLS/SSL is enabled. Its default value is false (disabled).
+* `-Dhazelcast.mc.tls.enabled`: Specifies whether TLS/SSL is enabled. Its default value is false (disabled).
 * `-Dhazelcast.mc.tls.keyStore`: Path to the keystore.
 * `-Dhazelcast.mc.tls.keyStorePassword`: Password of the keystore.
 * `-Dhazelcast.mc.tls.trustStore`: Path to the truststore.
 * `-Dhazelcast.mc.tls.trustStorePassword`: Password of the truststore.
 
-You can leave the truststore and truststore password values empty to use the system JVM's own truststore.
+You can leave the truststore and truststore password values empty to use
+the system JVM's own truststore.
 
-Following is an example on how to start Management Center with  TLS/SSL enabled from the command line:
+The following is an example on how to start Management Center with
+TLS/SSL enabled from the command line:
 
 [subs="attributes"]
 ```
@@ -195,33 +279,50 @@ java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
-You can access Management Center from the following HTTPS URL on port 8443: `\https://localhost:8443/hazelcast-mancenter`
+You can access Management Center from the following HTTPS URL on
+port 8443: `\https://localhost:8443/hazelcast-mancenter`.
 
-On the member side, you need to configure the Management Center URL as `\https://localhost:8443/hazelcast-mancenter` and also set the following JVM arguments when starting the member:
+On the member side, you need to configure the Management Center URL
+as `\https://localhost:8443/hazelcast-mancenter` and also set the
+following JVM arguments when starting the member:
 
 ```
 -Djavax.net.ssl.trustStore=path to your truststore
 -Djavax.net.ssl.trustStorePassword=yourpassword
 ```
 
-NOTE: If you plan to use a self-signed certificate, make sure to create a certificate with the hostname of the machine you will deploy Management Center on. Otherwise, you will see a line similar to the following in the member logs:
-`javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative names matching IP address 127.0.0.1 found`
+NOTE: If you plan to use a self-signed certificate, make sure
+to create a certificate with the hostname of the machine you will
+deploy Management Center on. Otherwise, you will see a line similar
+to the following in the member logs:
 
-To override the HTTPS port, you can give it as the second argument when starting Management Center. For example:
+```
+javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:
+No subject alternative names matching IP address 127.0.0.1 found
+```
+
+To override the HTTPS port, you can give it as the second argument when
+starting Management Center. For example:
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file} 80 443 hazelcast-mancenter
+java -Dhazelcast.mc.tls.enabled=true
+-Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks
+-Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file} 80 443 hazelcast-mancenter
 ```
 
-This will start Management Center on HTTPS port 443 with context path `/hazelcast-mancenter`.
+This starts Management Center on HTTPS port 443 with context path `/hazelcast-mancenter`.
 
-NOTE: You can encrypt the keystore/truststore passwords and pass them as command line arguments in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the keystore/truststore passwords and pass them
+as command line arguments in encrypted form for improved security.
+See the <<variable-replacers, Variable Replacers section>> for more information.
 
 [[enabling-http-port]]
 ===== Enabling HTTP Port
 
-By default, HTTP port is disabled when you enable TLS. If you want to have an open HTTP port that redirects to the HTTPS port, use the following command line argument:
+By default, HTTP port is disabled when you enable TLS. If you want to
+have an open HTTP port that redirects to the HTTPS port, use the following
+command line argument:
 
 ```
 -Dhazelcast.mc.tls.enableHttpPort=true
@@ -230,24 +331,39 @@ By default, HTTP port is disabled when you enable TLS. If you want to have an op
 [[managing-tls-enabled-clusters]]
 ===== Managing TLS Enabled Clusters
 
-If a Hazelcast cluster is configured to use TLS for communication between its members using a self-signed certificate, Management Center will not be able to perform some of the operations that use the cluster's HTTP endpoints (such as shutting down a member or getting the thread dump of a member). This is so because self-signed certificates are not trusted by default by the JVM. For these operations to work, you need to configure a `truststore` containing the public key of the self-signed certificate when starting the JVM of Management Center using the following command line parameters:
+If a Hazelcast cluster is configured to use TLS for communication between
+its members using a self-signed certificate, Management Center will not be
+able to perform some of the operations that use the cluster's HTTP endpoints
+(such as shutting down a member or getting the thread dump of a member). This is
+so because self-signed certificates are not trusted by default by the JVM. For
+these operations to work, you need to configure a truststore containing the public
+key of the self-signed certificate when starting the JVM of Management Center using
+the following command line parameters:
 
 * `-Dhazelcast.mc.httpClient.tls.trustStore`: Path to the truststore.
 * `-Dhazelcast.mc.httpClient.tls.trustStorePassword`: Password of the truststore.
-* `-Dhazelcast.mc.httpClient.tls.trustStoreType`: Type of the truststore. Its default value is JKS.
-* `-Dhazelcast.mc.httpClient.tls.trustManagerAlgorithm`: Name of the algorithm based on which the authentication
-keys are provided. System default will be used if none is provided. You can find out the default by calling the
+* `-Dhazelcast.mc.httpClient.tls.trustStoreType`: Type of the truststore. Its default
+value is JKS.
+* `-Dhazelcast.mc.httpClient.tls.trustManagerAlgorithm`: Name of the algorithm
+based on which the authentication keys are provided. System default is used
+if none is provided. You can find out the default by calling the
 `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
 
-NOTE: You can encrypt the truststore password and pass it as a command line argument in encrypted form for improved security. See <<variable-replacers, Variable Replacers>> for more information.
+NOTE: You can encrypt the truststore password and pass it as a command line
+argument in encrypted form for improved security. See the
+<<variable-replacers, Variable Replacers section>> for more information.
 
-By default, JVM also checks for the validity of the hostname of the certificate. If this test fails, you will see a line similar to the following in the Management Center logs:
+By default, JVM also checks for the validity of the hostname of the
+certificate. If this test fails, you will see a line similar to the
+following in the Management Center logs:
 
 ```
-javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative names matching IP address 127.0.0.1 found
+javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:
+No subject alternative names matching IP address 127.0.0.1 found
 ```
 
-If you want to disable this check, you will need to start Management Center with the following command line parameter:
+If you want to disable this check, start Management Center with
+the following command line parameter:
 
 ```
 -Dhazelcast.mc.disableHostnameVerification=true
@@ -256,19 +372,23 @@ If you want to disable this check, you will need to start Management Center with
 [[mutual-authentication]]
 ==== Mutual Authentication
 
-Mutual authentication allows cluster members to have their keystores and Management Center to have its truststore so that Management Center can know which members it can trust. To enable mutual authentication, you need to use the following command line parameters when starting the Management Center:
+Mutual authentication allows cluster members to have their keystores
+and Management Center to have its truststore so that Management Center can know
+which members it can trust. To enable mutual authentication, you need to use the
+following command line parameters when starting Management Center:
 
 ```
 -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED
 ```
 
-And on the member side, you need to set the following JVM arguments when starting the member:
+On the member side, you need to set the following JVM
+arguments when starting the member:
 
 ```
 -Djavax.net.ssl.keyStore=path to your keystore -Djavax.net.ssl.keyStorePassword=yourpassword
 ```
 
-Please see the below example snippet to see the full command to start Management Center:
+See the below example snippet to see the full command to start Management Center:
 
 [subs="attributes"]
 ```
@@ -291,61 +411,81 @@ java -Djavax.net.ssl.keyStore=path to your keystore
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
 
-* `REQUIRED`: If the cluster member does not provide a keystore or the provided keys are not included in  Management Center's truststore, the cluster member will not be authenticated.
-* `OPTIONAL`: If the cluster member does not provide a keystore, it will be authenticated. But if the cluster member provides keys that are not included in Management Center's truststore, the cluster member will not be authenticated.
+* `REQUIRED`: If the cluster member does not provide a keystore or
+the provided keys are not included in the Management Center's truststore,
+the cluster member will not be authenticated.
+* `OPTIONAL`: If the cluster member does not provide a keystore, it will
+be authenticated. But if the cluster member provides keys that are not included
+in Management Center's truststore, the cluster member will not be authenticated.
 
 [[managing-mutual-authentication-enabled-clusters]]
 ===== Managing Mutual Authentication Enabled Clusters
 
 If mutual authentication is enabled for the cluster (as described {hz-refman}#mutual-authentication[here]),
-Management Center needs to have a keystore to identify itself. For this, you need to start Management Center with the
+Management Center needs to have a keystore to identify itself.
+For this, you need to start Management Center with the
 following command line parameters:
 
 * `-Dhazelcast.mc.httpClient.tls.keyStore`: Path to the keystore.
 * `-Dhazelcast.mc.httpClient.tls.keyStorePassword`: Password of the keystore.
 * `-Dhazelcast.mc.httpClient.tls.keyStoreType`: Type of the keystore. Its default value is JKS.
 * `-Dhazelcast.mc.httpClient.tls.keyManagerAlgorithm`: Name of the algorithm based on which the authentication
-keys are provided. System default will be used if none provided. You can find out the default by calling
+keys are provided. System default is used if none is provided. You can find out the default by calling the
 `javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method.
 
 [[excluding-specific-tlsssl-procotols]]
 ===== Excluding Specific TLS/SSL Protocols
 
-When you enable TLS on the Management Center, it will support the clients connecting with any of the TLS/SSL protocols that the JVM supports by default. In order to disable specific protocols, you need to set the `-Dhazelcast.mc.tls.excludeProtocols` command line argument to a comma separated list of protocols to be excluded from the list of supported protocols. For example, to allow only TLSv1.2, you need to add the following command line argument when starting the Management Center:
+When you enable TLS on the Management Center, it will support the clients
+connecting with any of the TLS/SSL protocols that the JVM supports by default.
+In order to disable specific protocols, you need to set the `-Dhazelcast.mc.tls.excludeProtocols`
+command line argument to a comma separated list of protocols to be excluded from the
+list of supported protocols. For example, to allow only TLSv1.2, you need to add
+the following command line argument when starting the Management Center:
 
 ```
 -Dhazelcast.mc.tls.excludeProtocols=SSLv3,SSLv2Hello,TLSv1,TLSv1.1
 ```
 
-When you specify the above argument, you should see a line similar to the following in the Management Center log:
+When you specify the above argument, you should see a line similar
+to the following in the Management Center log:
 
 ```
-2017-06-21 12:35:54.856:INFO:oejus.SslContextFactory:Enabled Protocols [TLSv1.2] of [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+2017-06-21 12:35:54.856:INFO:oejus.SslContextFactory:Enabled Protocols
+[TLSv1.2] of [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
 ```
 
 [[using-a-dictionary-to-prevent-weak-passwords]]
 ==== Using a Dictionary to Prevent Weak Passwords
 
-In order to prevent certain words from being included in the user passwords, you can start the Management Center
-with `-Dhazelcast.mc.security.dictionary.path` command line parameter which points to a text file that contains a word
-on each line. As a result, the user passwords will not contain any dictionary words, making them harder to guess.
+In order to prevent certain words from being included in the user
+passwords, you can start the Management Center with `-Dhazelcast.mc.security.dictionary.path`
+command line parameter which points to a text file that contains a word
+on each line. As a result, the user passwords will not contain any dictionary
+words, making them harder to guess.
 
-The words in the dictionary need to be at least 3 characters long in order to be used for checking the passwords. The shorter
-words will be ignored to prevent them from blocking the usage of many password combinations. You can configure
-the minimum length of words by starting the Management Center with `-Dhazelcast.mc.security.dictionary.minWordLength`
+The words in the dictionary need to be at least three characters long in order to
+be used for checking the passwords. The shorter
+words are ignored to prevent them from blocking the usage of many password
+combinations. You can configure
+the minimum length of words by starting the Management Center with
+`-Dhazelcast.mc.security.dictionary.minWordLength`
 command line parameter and setting it to a number.
 
-An example to start the Management Center using the aforementioned parameters is shown below:
+An example to start the Management Center using the aforementioned parameters
+is shown below:
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt -Dhazelcast.mc.security.dictionary.minWordLength=3 -jar {mc-war-file}
+java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt
+-Dhazelcast.mc.security.dictionary.minWordLength=3 -jar {mc-war-file}
 ```
 
 [[configuring-logging]]
 === Configuring Logging
 
-Management Center uses https://logback.qos.ch/[Logback] for its logging. By default, it uses the following configuration:
+Management Center uses https://logback.qos.ch/[Logback] for its logging.
+By default, it uses the following configuration:
 
 [source,xml]
 ----
@@ -366,10 +506,12 @@ Management Center uses https://logback.qos.ch/[Logback] for its logging. By defa
 </configuration>
 ----
 
-To change the logging configuration, you can create a custom Logback configuration file and start Management Center with
+To change the logging configuration, you can create a custom
+Logback configuration file and start Management Center with
 the `-Dlogback.configurationFile` option pointing to your configuration file.
 
-For example, you can create a file named `logback-custom.xml` with the following content and set logging level to `DEBUG`.
+For example, you can create a file named `logback-custom.xml` with the following
+content and set logging level to `DEBUG`.
 To use this file as the logging configuration, you need to start Management Center with the
 `-Dlogback.configurationFile=/path/to/your/logback-custom.xml` command line parameter:
 
@@ -396,64 +538,79 @@ To use this file as the logging configuration, you need to start Management Cent
 [[variable-replacers]]
 === Using Variable Replacers
 
-Variable replacers are used to replace custom strings during loading the configuration, either passed as command line
- arguments or as part of a configuration file, such as `ldap.properties` or `jaas.properties`. They can be used to mask
-sensitive information such as usernames and passwords. Of course their usage is not limited to security related
-information.
+Variable replacers are used to replace custom strings during loading
+the configuration, either passed as command line
+ arguments or as part of a configuration file, such as `ldap.properties` or
+`jaas.properties`. They can be used to mask
+sensitive information such as usernames and passwords. Of course their
+usage is not limited to security related information.
 
-Variable replacers implement the interface `com.hazelcast.webmonitor.configreplacer.spi.ConfigReplacer` and they are
-configured via the following command line arguments:
+Variable replacers implement the interface `com.hazelcast.webmonitor.configreplacer.spi.ConfigReplacer`
+and they are configured via the following command line arguments:
 
 * `-Dhazelcast.mc.configReplacer.class`: Full class name of the replacer.
-* `-Dhazelcast.mc.configReplacer.failIfValueMissing`: Specifies whether the loading configuration process stops when a
-replacement value is missing. It is an optional attribute and its default value is true.
-* Additional command line arguments specific to each replacer implementation. All of the properties for the built-in
+* `-Dhazelcast.mc.configReplacer.failIfValueMissing`: Specifies whether the loading
+configuration process stops when a replacement value is missing. It is an optional
+attribute and its default value is `true`.
+* Additional command line arguments specific to each replacer implementation.
+All of the properties for the built-in
 replacers are explained in the upcoming sections.
 
-The following replacer classes are provided by Hazelcast as example implementations of the `ConfigReplacer` interface.
+The following replacer classes are provided by Hazelcast as example
+implementations of the `ConfigReplacer` interface.
 Note that you can also implement your own replacers.
 
 * `EncryptionReplacer`
 * `PropertyReplacer`
 
-Each example replacer is explained in the below sections.
+Each example replacer is explained in the following sections.
 
 ==== EncryptionReplacer
 
-This example `EncryptionReplacer` replaces encrypted variables by its plain form. The secret key for
-encryption/decryption is generated from a password which can be a value in a file and/or environment specific values,
+This example `EncryptionReplacer` replaces the encrypted variables with
+its plain form. The secret key for encryption/decryption is generated from a
+password which can be a value in a file and/or environment specific values,
 such as MAC address and actual user data.
 
-Its full class name is `com.hazelcast.webmonitor.configreplacer.EncryptionReplacer` and the replacer prefix is `ENC`.
-Here are the properties used to configure this example replacer:
+Its full class name is `com.hazelcast.webmonitor.configreplacer.EncryptionReplacer`
+and the replacer prefix is `ENC`. Here are the properties used to configure
+this example replacer:
 
-* `hazelcast.mc.configReplacer.prop.cipherAlgorithm`: Cipher algorithm used for the encryption/decryption. Its default value is AES.
-* `hazelcast.mc.configReplacer.prop.keyLengthBits`: Length (in bits) of the secret key to be generated. Its default value is 128.
-* `hazelcast.mc.configReplacer.prop.passwordFile`: Path to a file whose content should be used as a part of the encryption password. When the property
-is not provided no file is used as a part of the password. Its default value is null.
-* `hazelcast.mc.configReplacer.prop.passwordNetworkInterface`: Name of network interface whose MAC address should be used as a part of the
-encryption password. When the property is not provided no network interface property is used as a part of the password.
+* `hazelcast.mc.configReplacer.prop.cipherAlgorithm`: Cipher algorithm used for
+the encryption/decryption. Its default value is AES.
+* `hazelcast.mc.configReplacer.prop.keyLengthBits`: Length (in bits) of the
+secret key to be generated. Its default value is 128.
+* `hazelcast.mc.configReplacer.prop.passwordFile`: Path to a file whose content
+should be used as a part of the encryption password. When the property
+is not provided, no file is used as a part of the password. Its default value is null.
+* `hazelcast.mc.configReplacer.prop.passwordNetworkInterface`: Name of the network interface
+whose MAC address should be used as a part of the encryption password. When the
+property is not provided no network interface property is used as a part of the password.
 Its default value is null.
-* `hazelcast.mc.configReplacer.prop.passwordUserProperties`: Specifies whether the current user properties (`user.name` and `user.home`) should be used
+* `hazelcast.mc.configReplacer.prop.passwordUserProperties`: Specifies whether
+the current user properties (`user.name` and `user.home`) should be used
 as a part of the encryption password. Its default value is true.
-* `hazelcast.mc.configReplacer.prop.saltLengthBytes`: Length (in bytes) of a random password salt. Its default value is 8.
-* `hazelcast.mc.configReplacer.prop.secretKeyAlgorithm`:  Name of the secret-key algorithm to be associated with the generated secret key. Its default
+* `hazelcast.mc.configReplacer.prop.saltLengthBytes`: Length (in bytes) of a
+random password salt. Its default value is 8.
+* `hazelcast.mc.configReplacer.prop.secretKeyAlgorithm`:  Name of the secret key
+algorithm to be associated with the generated secret key. Its default
 value is AES.
-* `hazelcast.mc.configReplacer.prop.secretKeyFactoryAlgorithm`: Algorithm used to generate a secret key from a password. Its default value is
+* `hazelcast.mc.configReplacer.prop.secretKeyFactoryAlgorithm`: Algorithm used
+to generate a secret key from a password. Its default value is
 PBKDF2WithHmacSHA256.
-* `hazelcast.mc.configReplacer.prop.securityProvider`: Name of a Java Security Provider to be used for retrieving the configured secret key factory and
+* `hazelcast.mc.configReplacer.prop.securityProvider`: Name of a Java Security
+Provider to be used for retrieving the configured secret key factory and
 the cipher. Its default value is null.
 
-NOTE: Older Java versions may not support all the algorithms used as defaults. Please use the property values supported
-your Java version.
+NOTE: Older Java versions may not support all the algorithms used as defaults.
+Use the property values supported by your Java version.
 
+As a usage example, let's create a password file and generate the encrypted strings out
+of this file as shown below:
 
-As a usage example, let's create a password file and generate the encrypted strings out of this file.
-
-1 -  Create the password file: `echo '/Za-uG3dDfpd,5.-' > /opt/master-password`
-
-2 -  Define the encrypted variables:
-
+. Create the password file: `echo '/Za-uG3dDfpd,5.-' > /opt/master-password`
+. Define the encrypted variables:
++
 [subs="attributes"]
 ```
 java -cp {mc-war-file} \
@@ -466,33 +623,35 @@ Output:
 
 $ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}
 ```
-
-3 - Configure the replacer and provide the encrypted variables as command line arguments while starting Management Center:
++
+. Configure the replacer and provide the encrypted variables as command
+line arguments while starting Management Center:
 
 [subs="attributes"]
 ```
 java \
-    -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
-    -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
-    -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
-    -Dhazelcast.mc.tls.enabled=true \
-    -Dhazelcast.mc.tls.keyStore=/opt/mancenter.keystore \
-    -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
-    -jar {mc-war-file}
+-Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
+-Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
+-Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
+-Dhazelcast.mc.tls.enabled=true \
+-Dhazelcast.mc.tls.keyStore=/opt/mancenter.keystore \
+-Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
+-jar {mc-war-file}
 ```
 
 ==== PropertyReplacer
 
-The `PropertyReplacer` replaces variables by properties with the given name. Usually the system properties are used,
-e.g., `${user.name}`.
+`PropertyReplacer` replaces variables by properties with the given name.
+Usually the system properties are used, e.g., `${user.name}`.
 
-Its full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer` and the replacer prefix is empty string ("").
-
+Its full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer`
+and the replacer prefix is empty string ("").
 
 ==== Implementing Custom Replacers
 
-You can also provide your own replacer implementations. All replacers have to implement the three methods that have
- the same signatures as the methods of the following interface:
+You can also provide your own replacer implementations. All replacers
+have to implement the three methods that have the same signatures as
+the methods of the following interface:
 
 ```
 import java.util.Properties;
