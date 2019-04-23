@@ -2,7 +2,7 @@
 [[deploying-and-starting]]
 == Getting Started
 
-To start using Management Center:
+To start using the Management Center:
 
 . download the Hazelcast IMDG or Management Center package
 . start the Management Center service
@@ -19,7 +19,7 @@ having the same version with IMDG.
 There may be times when a new Management Center version is released before a new
 version of Hazelcast IMDG. In that case, you may download the new Management Center
 from its https://hazelcast.org/download/#management-center[download page] as a
-separate package. Note that, Management Center is compatible with
+separate package. Note that, the Management Center is compatible with
 Hazelcast IMDG cluster members having the same or the previous minor version.
 For example, Hazelcast Management Center version 3.12.x works with Hazelcast IMDG
 cluster members having version 3.11.x or 3.12.x.
@@ -68,7 +68,7 @@ disk usage, update interval or logging.
 ==== Deploying to Application Server
 
 Instead of starting at the command line, you can
-deploy Management Center to your application server (Tomcat, Jetty, etc.).
+deploy the Management Center to your application server (Tomcat, Jetty, etc.).
 
 If you have deployed `{mc-war-file}` in your already-SSL-enabled web
 container, configure `hazelcast.xml` as follows, before starting

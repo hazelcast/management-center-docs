@@ -2,7 +2,7 @@
 [[creating-alerts]]
 == Creating Alerts
 
-You can use the alerts feature of Management Center to receive alerts
+You can use the alerts feature of the Management Center to receive alerts
 and/or e-mail notifications by creating filters. In these filters,
 you can specify various criteria for the cluster members or data structures. When
 the specified criteria are met for a filter, the related alert is shown
@@ -13,8 +13,8 @@ page shown below appears.
 
 image::Alerts.png[Creating Alerts]
 
-If you want to enable Management Center to send e-mail notifications
-to the Management Center Admin users, you need to configure the SMTP server.
+If you want to enable the Management Center to send e-mail notifications
+to its admin users, you need to configure the SMTP server.
 To do this, click on the **Create STMP Config** button shown above. The form shown
 below appears.
 

@@ -7,7 +7,7 @@ Management Center according to your needs.
 [[starting-with-a-license]]
 === Providing a License
 
-When starting Management Center from the command line, a
+When starting the Management Center from the command line, a
 license can be provided using the system property `hazelcast.mc.license`.
 For example by using the command line parameter:
 
@@ -44,7 +44,7 @@ java -cp "{mc-war-file};/path/to/an/extra.jar" Launcher 8080 hazelcast-mancenter
 [[configuring-update-interval]]
 === Configuring Update Interval
 
-You can set a frequency (in seconds) for which Management Center
+You can set a frequency (in seconds) for which the Management Center
 retrieves information from the Hazelcast IMDG cluster, using the
 `update-interval` attribute as shown below:
 
@@ -60,9 +60,9 @@ Using this attribute is optional and its default value is 3 seconds.
 [[disk-usage-config]]
 === Configuring Disk Usage
 
-The disk space used by Management Center is constrained to avoid
+The disk space used by the Management Center is constrained to avoid
 exceeding available disk space. When the set limit is exceeded,
-Management Center deals with this in the following ways:
+the Management Center deals with this in the following ways:
 
 * Persisted statistics data is removed, starting with the oldest (one month at a time).
 * Persisted alerts are removed for filters that report further alerts.
@@ -70,7 +70,7 @@ Management Center deals with this in the following ways:
 Usually, either of the above automatically resolves the situation and
 makes room for new data. Depending on the disk usage configuration and
 the kind of data that contributes to exceeding the limit it can occur
-that the limit continues to be exceeded. In this case, Management Center does
+that the limit continues to be exceeded. In this case, the Management Center does
 not store new alerts or metrics data. Other data (like configurations and account information)
 is still stored as they hardly cause larger data volumes.
 
@@ -83,10 +83,10 @@ this would constantly cause interruptions and error logging both in the UI and l
 
 One way to resolve a blockage is deleting the data manually, e.g., deleting a
 filter that caused many alerts in the alerts view.
-Another way is to restart Management Center with a higher limit or
+Another way is to restart the Management Center with a higher limit or
 in the `purge` mode (if not used before).
 
-You can use the following system properties to configure Management Center's disk usage control:
+You can use the following system properties to configure the Management Center's disk usage control:
 
 * `-Dhazelcast.mc.disk.usage.mode`: Available values are `purge` and `block`.
 If the mode is `purge`, persisted statistics data is removed (as stated in
@@ -103,19 +103,19 @@ in milliseconds and its default value is `1000` milliseconds. Set values have to
 be in range of `50` to `5000` ms.
 
 It is important to understand that the limit given is a _soft_ limit, a _high water mark_.
-Management Center will act if it is exceeded but it might be exceeded by a
+The Management Center will act if it is exceeded but it might be exceeded by a
 margin between two measurements. Do not set it to the absolute maximum disk
 space available. A smaller interval increases accuracy but also performance overhead.
 
 In case of a misconfiguration of any of the above three properties,
-Management Center logs the problem and aborts startup immediately.
+the Management Center logs the problem and aborts startup immediately.
 
 [[enabling-health-check-endpoint]]
 === Enabling Health Check Endpoint
 
-When running Management Center from the command line, you can enable
+When running the Management Center from the command line, you can enable
 the Health Check endpoint. This endpoint responds with `200 OK` HTTP
-status code once Management Center web application has started. The
+status code once the Management Center web application has started. The
 endpoint is available on port `<Management Center HTTP port> + 1` with
 context path `<Management Center context path>/health` (by default, its
 URL is `\http://localhost:8081/hazelcast-mancenter/health`). Note that the
@@ -137,12 +137,12 @@ sessions for various aspects including timeouts and login/logout operations.
 [[configuring-session-timeout]]
 ==== Configuring Session Timeout
 
-If you have started Management Center from the command line
+If you have started the Management Center from the command line
 by using the WAR file, by default, the sessions that are inactive for
 30 minutes are invalidated. To change this, you can use the
 `-Dhazelcast.mc.session.timeout.seconds` command line parameter.
 
-For example, the following command starts Management Center with
+For example, the following command starts the Management Center with
 a session timeout period of 1 minute:
 
 [subs="attributes"]
@@ -150,20 +150,20 @@ a session timeout period of 1 minute:
 java -Dhazelcast.mc.session.timeout.seconds=60 -jar {mc-war-file}
 ```
 
-If you have deployed Management Center on an application
+If you have deployed the Management Center on an application
 server/container, you can configure the default session timeout
 period of the application server/container to change the session
-timeout period for Management Center. If your server/container
+timeout period for the Management Center. If your server/container
 allows application specific configuration, you can use it to configure
-the session timeout period for Management Center.
+the session timeout period for the Management Center.
 
 [[enabling-multiple-simultaneous-login-attempts]]
 ==== Enabling Multiple Simultaneous Login Attempts
 
-Normally, a user account on Management Center can't be used from
+Normally, a user account on the Management Center can't be used from
 multiple locations at the same time. If you want to allow
 others to log in, when there's already someone logged in with the
-same username, you can start Management Center with
+same username, you can start the Management Center with
 the `-Dhazelcast.mc.allowMultipleLogin=true` command line parameter.
 
 [[disable-login-configuration]]
@@ -229,7 +229,7 @@ line parameter.
 [[configuring-and-enabling-security]]
 === Configuring and Enabling Security
 
-This section provides information on how to use and manage
+This section provides information on how to use and manage the
 Management Center with TLS/SSL and mutual authentication.
 You will also learn how to force the users to specify passwords
 that are hard to guess.
@@ -237,18 +237,18 @@ that are hard to guess.
 [[using-management-center-with-tlsssl-only]]
 ==== Using Management Center with TLS/SSL Only
 
-To encrypt data transmitted over all channels of Management Center
+To encrypt data transmitted over all channels of the Management Center
 using TLS/SSL, make sure you do all of the following:
 
-* Deploy Management Center on a TLS/SSL enabled container or start it from
+* Deploy the Management Center on a TLS/SSL enabled container or start it from
 the command line with TLS/SSL enabled. See
-<<deploying-and-starting, Installing Management Center>>.
-** Another option is to place Management Center behind a TLS-enabled
+<<deploying-and-starting, Installing the Management Center>>.
+** Another option is to place the Management Center behind a TLS-enabled
 reverse proxy. In that case, make sure your reverse proxy sets the necessary
 HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
-* Enable TLS/SSL communication to Management Center for your Hazelcast
-cluster. See <<connecting-hazelcast-members-to-management-center, Connecting Hazelcast members to Management Center>>.
-* If you're using Clustered JMX on Management center, enable TLS/SSL
+* Enable TLS/SSL communication to the Management Center for your Hazelcast
+cluster. See <<connecting-hazelcast-members-to-management-center, Connecting Hazelcast members to the Management Center>>.
+* If you're using Clustered JMX on the Management center, enable TLS/SSL
 for it. See <<clustered-jmx-via-management-center, Enabling TLS/SSL for Clustered JMX>>.
 * If you're using LDAP authentication, make sure you use LDAPS or
 enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
@@ -256,7 +256,7 @@ enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
 [[enabling-tslssl-when-starting-with-war-file]]
 ==== Enabling TLS/SSL When Starting with WAR File
 
-When you start Management Center from the command line, it serves
+When you start the Management Center from the command line, it serves
 the pages unencrypted by using "http", by default. To enable TLS/SSL,
 use the following command line parameters when starting the Management Center:
 
@@ -269,7 +269,7 @@ use the following command line parameters when starting the Management Center:
 You can leave the truststore and truststore password values empty to use
 the system JVM's own truststore.
 
-The following is an example on how to start Management Center with
+The following is an example on how to start the Management Center with
 TLS/SSL enabled from the command line:
 
 [subs="attributes"]
@@ -279,7 +279,7 @@ java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file}
 ```
 
-You can access Management Center from the following HTTPS URL on
+You can access the Management Center from the following HTTPS URL on
 port 8443: `\https://localhost:8443/hazelcast-mancenter`.
 
 On the member side, you need to configure the Management Center URL
@@ -293,7 +293,7 @@ following JVM arguments when starting the member:
 
 NOTE: If you plan to use a self-signed certificate, make sure
 to create a certificate with the hostname of the machine you will
-deploy Management Center on. Otherwise, you will see a line similar
+deploy the Management Center on. Otherwise, you will see a line similar
 to the following in the member logs:
 
 ```
@@ -302,7 +302,7 @@ No subject alternative names matching IP address 127.0.0.1 found
 ```
 
 To override the HTTPS port, you can give it as the second argument when
-starting Management Center. For example:
+starting the Management Center. For example:
 
 [subs="attributes"]
 ```
@@ -311,7 +311,7 @@ java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-war-file} 80 443 hazelcast-mancenter
 ```
 
-This starts Management Center on HTTPS port 443 with context path `/hazelcast-mancenter`.
+This starts the Management Center on HTTPS port 443 with context path `/hazelcast-mancenter`.
 
 NOTE: You can encrypt the keystore/truststore passwords and pass them
 as command line arguments in encrypted form for improved security.
@@ -332,12 +332,12 @@ command line argument:
 ===== Managing TLS Enabled Clusters
 
 If a Hazelcast cluster is configured to use TLS for communication between
-its members using a self-signed certificate, Management Center will not be
+its members using a self-signed certificate, the Management Center will not be
 able to perform some of the operations that use the cluster's HTTP endpoints
 (such as shutting down a member or getting the thread dump of a member). This is
 so because self-signed certificates are not trusted by default by the JVM. For
 these operations to work, you need to configure a truststore containing the public
-key of the self-signed certificate when starting the JVM of Management Center using
+key of the self-signed certificate when starting the JVM of the Management Center using
 the following command line parameters:
 
 * `-Dhazelcast.mc.httpClient.tls.trustStore`: Path to the truststore.
@@ -362,7 +362,7 @@ javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:
 No subject alternative names matching IP address 127.0.0.1 found
 ```
 
-If you want to disable this check, start Management Center with
+If you want to disable this check, start the Management Center with
 the following command line parameter:
 
 ```
@@ -373,9 +373,9 @@ the following command line parameter:
 ==== Mutual Authentication
 
 Mutual authentication allows cluster members to have their keystores
-and Management Center to have its truststore so that Management Center can know
+and the Management Center to have its truststore so that the Management Center can know
 which members it can trust. To enable mutual authentication, you need to use the
-following command line parameters when starting Management Center:
+following command line parameters when starting the Management Center:
 
 ```
 -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED
@@ -388,7 +388,7 @@ arguments when starting the member:
 -Djavax.net.ssl.keyStore=path to your keystore -Djavax.net.ssl.keyStorePassword=yourpassword
 ```
 
-See the below example snippet to see the full command to start Management Center:
+See the below example snippet to see the full command to start the Management Center:
 
 [subs="attributes"]
 ```
@@ -416,14 +416,14 @@ the provided keys are not included in the Management Center's truststore,
 the cluster member will not be authenticated.
 * `OPTIONAL`: If the cluster member does not provide a keystore, it will
 be authenticated. But if the cluster member provides keys that are not included
-in Management Center's truststore, the cluster member will not be authenticated.
+in the Management Center's truststore, the cluster member will not be authenticated.
 
 [[managing-mutual-authentication-enabled-clusters]]
 ===== Managing Mutual Authentication Enabled Clusters
 
 If mutual authentication is enabled for the cluster (as described {hz-refman}#mutual-authentication[here]),
-Management Center needs to have a keystore to identify itself.
-For this, you need to start Management Center with the
+the Management Center needs to have a keystore to identify itself.
+For this, you need to start the Management Center with the
 following command line parameters:
 
 * `-Dhazelcast.mc.httpClient.tls.keyStore`: Path to the keystore.
@@ -484,7 +484,7 @@ java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt
 [[configuring-logging]]
 === Configuring Logging
 
-Management Center uses https://logback.qos.ch/[Logback] for its logging.
+The Management Center uses https://logback.qos.ch/[Logback] for its logging.
 By default, it uses the following configuration:
 
 [source,xml]
@@ -507,12 +507,12 @@ By default, it uses the following configuration:
 ----
 
 To change the logging configuration, you can create a custom
-Logback configuration file and start Management Center with
+Logback configuration file and start the Management Center with
 the `-Dlogback.configurationFile` option pointing to your configuration file.
 
 For example, you can create a file named `logback-custom.xml` with the following
 content and set logging level to `DEBUG`.
-To use this file as the logging configuration, you need to start Management Center with the
+To use this file as the logging configuration, you need to start the Management Center with the
 `-Dlogback.configurationFile=/path/to/your/logback-custom.xml` command line parameter:
 
 [source,xml]
@@ -625,7 +625,7 @@ $ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}
 ```
 +
 . Configure the replacer and provide the encrypted variables as command
-line arguments while starting Management Center:
+line arguments while starting the Management Center:
 
 [subs="attributes"]
 ```

@@ -15,7 +15,7 @@ the left panel. Below is a sample view with the `help` command executed.
 
 image::Console.png[Console]
 
-Management Center sends commands to one of the cluster members; for this,
+The Management Center sends commands to one of the cluster members; for this,
 it makes an HTTP request to the REST endpoint on that member. As you can see in the above screenshot,
 the console screen shows the IP address of the member which receives the console commands.
 Basically, it connects to the port that member listens to,
@@ -39,6 +39,6 @@ number on the Management Center to the port number 5701
 (according to the above example) on the member.
 
 NOTE:  There is no configuration option to specify which
-outbound ports Management Center will use; it picks on from
+outbound ports the Management Center will use; it picks on from
 the ephemeral port pool.  Note that, this can create an issue
 where a firewall is placed between the cluster and Management Center.

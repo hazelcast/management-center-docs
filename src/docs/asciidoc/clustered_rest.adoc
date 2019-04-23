@@ -4,7 +4,7 @@
 
 [blue]#Hazelcast IMDG Enterprise#
 
-The Clustered REST API is exposed from Management Center
+The Clustered REST API is exposed from the Management Center
 to allow you to monitor clustered statistics of distributed objects.
 
 === Enabling Clustered REST
@@ -31,7 +31,7 @@ parameter value would be encoded as `name.with%2Fspecial%40chars`.
 
 NOTE: All endpoints return HTTP status code 404 if no data
 about a cluster, member, client or data structure can be
-found in Management Center.
+found in the Management Center.
 
 ==== Retrieve Management Center License Expiration Time
 

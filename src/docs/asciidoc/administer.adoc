@@ -83,7 +83,7 @@ Center as well. Enter the name of your socket interceptor class
 and the configuration parameters. Then click on the **Configure Socket
 Interceptor** button to save your configuration and enable the socket interceptor.
 The class whose name you entered into the "Class Name" field needs to be
-on your classpath when you are starting Management Center. The configuration
+on your classpath when you are starting the Management Center. The configuration
 parameters you provide
 will be used to invoke the `init` method of your socket interceptor
 implementation if it has such a method.
@@ -147,7 +147,7 @@ the **Disable** button on the dialog.
 [[change-url]]
 === Change URL
 
-Hazelcast IMDG cluster members need to be configured with Management Center's
+Hazelcast IMDG cluster members need to be configured with the Management Center's
 URL before they are started. If Management
 Center's URL is changed for some reason, you can use this page to make
 Hazelcast members send their statistics to the
@@ -290,7 +290,7 @@ members, as explained above. Another solution is to do a partial start.
 
 Partial start means that the cluster will start with an incomplete set of
 members. Data belonging to the missing members is assumed lost and
-Management Center tries to recover the missing data using the restored
+the Management Center tries to recover the missing data using the restored
 backups. For example, if you have minimum two backups configured for all
 the maps and caches, then a partial start up to two missing members is
 safe against data loss. If there are more than two missing members or there
@@ -356,7 +356,7 @@ http://docs.hazelcast.org/docs/latest-dev/manual/html-single/#configuring-hot-ba
 in the Hazelcast IMDG Reference Manual.
 
 If the backup directory is configured, you can start to perform the backup by
-clicking on the **Hot Backup** button. Management Center first asks
+clicking on the **Hot Backup** button. The Management Center first asks
 the cluster password as shown in the following dialog.
 
 image::HotBackupAskPassword.png[Hot Backup Ask Cluster Password]

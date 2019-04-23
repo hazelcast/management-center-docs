@@ -22,7 +22,7 @@ command line parameters for your Management Center deployment.
 With embedded Jetty, you do not need to deploy your
 Management Center application to any container or application server.
 
-You can start Management Center application with
+You can start the Management Center application with
 Clustered JMX enabled as shown below.
 
 [subs="attributes"]
@@ -32,7 +32,7 @@ java -Dhazelcast.mc.jmx.enabled=true
 -Dcom.sun.management.jmxremote.ssl=false -jar {mc-war-file}
 ```
 
-Once Management Center starts, you should see a log
+Once the Management Center starts, you should see a log
 similar to the one below:
 
 ```bash
@@ -60,7 +60,7 @@ parameters for your Management Center deployment:
 * `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keystore`
 * `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keystore`
 
-Following is an example on how to start Management Center
+The following is an example on how to start the Management Center
 with a TLS/SSL enabled Clustered JMX service on port 65432:
 
 [subs="attributes"]
@@ -411,7 +411,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
 
 === Integrating with New Relic
 
-Use the Clustered JMX interface to integrate Hazelcast Management Center
+Use the Clustered JMX interface to integrate the Hazelcast Management Center
 with New Relic. To perform this integration, attach the New Relic Java agent
 and provide an extension file that describes which metrics will be sent to New Relic.
 
@@ -441,7 +441,7 @@ Put the `.yml` file in the `extensions` directory in your New Relic
 installation. If an `extensions` directory does not exist there, create one.
 
 After you set your extension, attach the New Relic Java agent and
-start Management Center as shown below.
+start the Management Center as shown below.
 
 [subs="attributes"]
 ```bash
@@ -486,12 +486,12 @@ Then you can navigate to your New Relic account and create Custom Dashboards.
 See http://docs.newrelic.com/docs/dashboards-menu/creating-custom-dashboards[Creating custom dashboards].
 
 While you are creating the dashboard, you should see the metrics that
-you are sending to New Relic from Management Center in the **Metrics**
+you are sending to New Relic from the Management Center in the **Metrics**
 section under the JMX directory.
 
 === Integrating with AppDynamics
 
-Use the Clustered JMX interface to integrate Hazelcast Management Center
+Use the Clustered JMX interface to integrate the Hazelcast Management Center
 with *AppDynamics*. To perform this integration, attach the AppDynamics
 Java agent to the Management Center.
 
@@ -501,7 +501,7 @@ http://docs.appdynamics.com/display/PRO14S/Install+the+App+Agent+for+Java[Instal
 For monitoring on AppDynamics, see the
 http://docs.appdynamics.com/display/PRO14S/Monitor+JMX+MBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] page.
 
-After installing AppDynamics agent, you can start Management Center as shown below:
+After installing AppDynamics agent, you can start the Management Center as shown below:
 
 [subs="attributes"]
 ```bash
@@ -509,7 +509,7 @@ java -javaagent:/path/to/javaagent.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar {mc-war-file}
 ```
 
-When Management Center starts, you should see the logs below:
+When the Management Center starts, you should see the logs below:
 
 ```plain
 Started AppDynamics Java Agent Successfully.
