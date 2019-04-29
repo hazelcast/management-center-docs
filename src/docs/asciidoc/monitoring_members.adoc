@@ -130,6 +130,6 @@ selected member. A notification stating that the GC execution was
 successful will be shown.
 * **Thread Dump**: Press this button to take a thread dump of the
 selected member and show it as a separate dialog to the user.
-* **Shutdown Node**: Press this button to shutdown the selected member.
+* **Shutdown Member**: Press this button to shutdown the selected member.
 * **Promote Member**: Only shown for lite members. Press this button
 to promote a lite member to a data member.
