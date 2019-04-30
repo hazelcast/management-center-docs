@@ -87,13 +87,15 @@ performed on the map per second.
 * **Puts/s, Gets/s, Removes/s**: These three charts monitor the
 put, get and remove operations performed on the map per second.
 
-Under these charts are **Map Memory** and **Map Throughput** data
-tables. The Map Statistic Data Table provides statistics distributed
+Under these charts are **Map Statistics**, **Map Throughput**
+and **Near Cache** data tables.
+
+[[map-statistics]]**Map Statistic Data Table** provides statistics distributed
 over members, as shown below.
 
 image::MapStatisticDataTable.png[Map Statistic Data Table]
 
-From left to right, this table lists:
+From left to right, this table lists the following:
 
 * **Members**: IP address and port of the member.
 * **Entries**: Number of entries owned by the member.
@@ -117,12 +119,12 @@ map but not written to/removed from a database yet.
 You can ascend or descend the order of the listings by clicking on
 the column headings.
 
-Map Throughput data table provides information about the operations
+[[map-throughput]]**Map Throughput Data Table** provides information about the operations
 (get, put, remove) performed on each member in the map, as shown below.
 
 image::MapThroughputDataTable.png[Map Throughput Data Table]
 
-From left to right, this table lists:
+From left to right, this table lists the following:
 
 * **Members**: IP address and port of the member.
 * **Puts/s**: Number of put operations per second on the member.
@@ -142,6 +144,22 @@ shown. Available values are **Since Beginning**, **Last Minute**,
 
 To ascend or descent the order of the listings, click on the
 column headings.
+
+[[near-cache-data]]**Near Cache Data Table** provides information about the Near
+Caches, if available, on each member, as shown below.
+
+image::NearCacheDataTable.png[Near Cache Data Table]
+
+From left to right, this table lists the following:
+
+* **Members**: IP address and port of the members which have Near Caches defined for
+the maps.
+* **Entries**: Count of the entries in each Near Cache.
+* **Entry Memory**: Memory cost of the entries in each Near Cache.
+* **Hits**: Count of the entries read from the Near Cache.
+* **Misses**: Count of the entries which cannot be found in the Near Cache
+when requested to read.
+* **Ratio**: Hits/Misses ratio.
 
 [[monitoring-caches]]
 === Caches
