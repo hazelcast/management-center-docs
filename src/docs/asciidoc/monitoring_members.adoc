@@ -22,19 +22,37 @@ member on the right, as shown below.
 
 image::MonitoringMembers.png[Monitoring Members]
 
-The **CPU Utilization** chart shows the percentage
-of CPU usage on the selected member. The **Memory
-Utilization** chart shows the memory usage on the
+[[member-operations]]You can perform the following operations on the selected member
+using the buttons located at the top left of the page:
+
+* **Run GC**: Executes garbage collection on the
+selected member. A notification stating that the GC execution was
+successful is shown.
+* **Thread Dump**: Takes a thread dump of the
+selected member and shows it in a separate dialog.
+* **Shutdown Member**: Shuts down the selected member.
+* **Promote Member**: It is only shown for the lite members.
+When pressed, the lite member becomes a data member.
+
+Next to the above operation buttons, you can see the informative buttons
+as described below:
+
+* **Number of Owned Partitions**: Shows how many partitions are assigned
+to the selected member.
+* **Member Version**: Shows the Hazelcast IMDG cluster version which
+the selected member belongs to.
+
+[[utilization-charts]]The **CPU Utilization** chart shows the percentage
+of CPU usage on the selected member. The **Heap/Memory
+Utilization** charts show the memory usage on the
 selected member with three different metrics
 (maximum, used and total memory). You can open
-both of these charts as separate windows using
-the image:ChangeWindowIcon.jpg[change window] button
-placed at top right of each chart; this gives you
+each chart as a separate dialog using
+the image:MaximizeChart.jpg[maximize] button
+placed at top right of them; this gives you
 a clearer view of the chart.
 
-The window titled **Partitions** shows which
-partitions are assigned to the selected member.
-**Runtime** is a dynamically updated window tab
+[[runtime]]**Runtime** is a dynamically updated window tab
 showing the processor number, the start and up
 times, and the maximum, total and free memory
 sizes of the selected member. These values are
@@ -110,7 +128,7 @@ Next to the **Runtime** tab, the **Properties** tab shows the system
 properties. The **Member Configuration** window shows the XML
 configuration of the connected Hazelcast cluster.
 
-The **List of Slow Operations** gives an overview of detected slow
+[[slow-operations]]The **List of Slow Operations** gives an overview of detected slow
 operations which occurred on that member. The data is collected by the
 http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#slowoperationdetector[SlowOperationDetector].
 
@@ -121,15 +139,3 @@ detailed information about each slow invocation of this operation.
 
 image::SlowOperationDetail.png[Slow Operations Details]
 
-Besides the aforementioned monitoring charts and windows, you can also
-perform operations on the selected member through this page. The operation
-buttons are located at the top right of the page, as explained below:
-
-* **Run GC**: Press this button to execute garbage collection on the
-selected member. A notification stating that the GC execution was
-successful will be shown.
-* **Thread Dump**: Press this button to take a thread dump of the
-selected member and show it as a separate dialog to the user.
-* **Shutdown Member**: Press this button to shutdown the selected member.
-* **Promote Member**: Only shown for lite members. Press this button
-to promote a lite member to a data member.
