@@ -12,7 +12,7 @@ include::attributes.adoc[]
 :stylesheet: stylesheets/hazelcast.css
 :toc: left
 :toclevels: 4
-:toc-title!:
+:toc-title:
 :docinfo: shared
 
 image::logo.png[]

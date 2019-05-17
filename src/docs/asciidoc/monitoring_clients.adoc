@@ -68,7 +68,7 @@ for the statistics is collected from the client.
 client user executor.
 * **Labels**: List of client labels.
 
-[[runtime]]Next to the **General** tab, the **Runtime** tab shows the
+[[run-time]]Next to the **General** tab, the **Runtime** tab shows the
 processor number, uptime, and maximum,
 total and free memory sizes of the selected client. These
 values are collected from the default MXBeans provided by the
