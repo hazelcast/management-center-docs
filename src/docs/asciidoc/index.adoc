@@ -1,4 +1,6 @@
 include::attributes.adoc[]
+= Hazelcast Management Center Reference Manual
+Version {mancenter-version}
 :icons: font
 :idprefix:
 :idseparator: -
@@ -12,13 +14,9 @@ include::attributes.adoc[]
 :stylesheet: stylesheets/hazelcast.css
 :toc: left
 :toclevels: 4
-:toc-title:
+:toc-title: Table of Contents
 :docinfo: shared
 
-image::logo.png[]
-
-== Management Center Reference Manual
-Version {mancenter-version}
 
 Welcome to the Reference Manual of Hazelcast
 IMDG Management Center. This document provides
