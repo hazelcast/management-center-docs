@@ -17,23 +17,14 @@ Version {mancenter-version}
 :toc-title: Table of Contents
 :docinfo: shared
 
-
 Welcome to the Reference Manual of Hazelcast
-IMDG Management Center. This document provides
-information on the usage of the Management Center.
+IMDG Management Center. This manual includes concepts and instructions
+to guide you on how to use Management Center to
+monitor your Hazelcast IMDG Cluster.
 
-Hazelcast Management Center enables you to monitor
-and manage your cluster members running Hazelcast IMDG.
-In addition to monitoring the overall state of your
-clusters, you can also analyze and browse your data
-structures in detail, update map configurations and
-take thread dumps from the members. You can run scripts
-(JavaScript, Groovy, etc.) and commands on your members
-with its scripting and console modules.
+:numbered!:
 
-See the https://docs.hazelcast.org/docs/latest/manual/html-single/[Hazelcast IMDG Reference Manual] for all Hazelcast
-IMDG topics including the clusters and their operations,
-clients, data structures, computing and WAN replication.
+include::preface.adoc[]
 
 :numbered:
 
