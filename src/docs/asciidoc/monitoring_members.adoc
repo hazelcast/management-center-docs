@@ -124,8 +124,10 @@ the recent period being observed.
 
 NOTE: These descriptions may vary according to the JVM version or vendor.
 
-Next to the **Runtime** tab, the **Properties** tab shows the system
-properties. The **Member Configuration** window shows the XML
+[[member-properties]]Next to the **Runtime** tab, the **Properties** tab shows the system
+properties.
+
+The **Member Configuration** window shows the XML
 configuration of the connected Hazelcast cluster.
 
 [[slow-operations]]The **List of Slow Operations** gives an overview of detected slow

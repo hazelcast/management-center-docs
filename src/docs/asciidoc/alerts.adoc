@@ -13,7 +13,7 @@ page shown below appears.
 
 image::Alerts.png[Creating Alerts]
 
-If you want to enable the Management Center to send e-mail notifications
+[[create-smtp-config]]If you want to enable the Management Center to send e-mail notifications
 to its admin users, you need to configure the SMTP server.
 To do this, click on the **Create STMP Config** button shown above. The form shown
 below appears.
