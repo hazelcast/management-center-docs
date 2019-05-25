@@ -218,7 +218,7 @@ The following formats of list entry values are supported:
 
 * For the IP Address entry type you can specify IP address (IPv4 or
 IPv6) with optional range characters (`\*` and `-`) instead of any
-byte group. For instance, `10.3.10.\*` refers to IPs between `10.3.10.0`
+byte group. For instance, `10.3.10.*` refers to IPs between `10.3.10.0`
 and `10.3.10.255`. The `10.3.10.4-18` refers to IPs between `10.3.10.4`
 and `10.3.10.18` (4 and 18 included).
 * For the Label entry type you can specify any string with optional
