@@ -51,9 +51,6 @@ Support is provided via the following channels:
 * https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
 (propose features and discuss your ideas with the team)
 
-For information on the commercial support for Hazelcast Management Center, please see
-https://hazelcast.com/pricing/hazelcast-jet-annual-subscription-plans[this page on hazelcast.com].
-
 === Release Notes
 
 See the https://docs.hazelcast.org/docs/management-center/rn/index.html[Release Notes] document
