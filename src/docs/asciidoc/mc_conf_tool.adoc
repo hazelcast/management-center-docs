@@ -93,6 +93,7 @@ Usage: mc-conf create-user [-hvV] [--password:sec=<passwordSec>] [-H=<homedir>]
             errors.
 ```
 
+[[mc-conf-create-user]]
 === Creating Users
 
 The `create-user` command creates a new user in the default security
@@ -119,7 +120,7 @@ administrator user account.
 NOTE: If you have used a non-default Management Center home directory location,
 you must provide the path to the home directory with the `-H` (or `--home`) option.
 
-[[update-ldap-password]]
+[[mc-conf-update-ldap-password]]
 === Updating LDAP Password
 
 The `update-ldap-password` command updates the encrypted LDAP password stored in

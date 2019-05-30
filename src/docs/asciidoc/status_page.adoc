@@ -33,18 +33,25 @@ the free heap memory out of the whole cluster's total committed heap memory.
 
 image::HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
 
-In the above example, you can see 26.18% of the total heap memory
-is used by Hazelcast IMDG maps, 36.02% is used by both non-Hazelcast entities
-and all Hazelcast entities except the map and 37.80% of the total heap memory is free.
+In the above example, you can see about 3% of the total heap memory
+is used by Hazelcast IMDG maps, about 30% is used by both non-Hazelcast entities
+and all Hazelcast entities except the map and the rest of the total heap memory is free.
+You can see the exact percentages by placing the mouse cursor on the chart.
 
 [[cluster-state-and-health]]
-=== Cluster State/Health/Client Filtering
+=== Cluster State/Health/Client Filtering/CP Subsystem
 
-This part shows the current cluster state, the cluster's health and cluster
-client filtering status and type. For more information on cluster states,
-see the <<cluster-state, Cluster State section>>. Cluster health shows how
-many migrations are taking place currently. For more information on the cluster client
-filtering, see the <<changing-cluster-client-filtering, Changing Cluster Client Filtering section>>.
+This part has the following status indicator elements:
+
+* **Cluster State:** Shows the current cluster state. For more information on
+cluster states, see the <<cluster-state, Cluster State section>>.
+* **Cluster Health:** Shows how many migrations are taking place currently.
+* **Cluster Filtering:** Shows values for the current cluster client filtering
+status and type. For more information on the cluster client filtering, see the
+<<changing-cluster-client-filtering, Changing Cluster Client Filtering section>>.
+* **CP Subsystem:** Shows the https://docs.hazelcast.org/docs/latest/manual/html-single/index.html#cp-subsystem[CP subsystem]
+status. For more information on the CP subsystem support in the Management Center,
+see the <<cp-subsystem, CP Subsystem section>>.
 
 NOTE: Cluster client filtering is only available with Hazelcast IMDG license that
 includes the Cluster Client Filtering feature.
@@ -54,22 +61,22 @@ image::ClusterStateAndHealth.png[Cluster State and Cluster Health]
 [[partition-distribution]]
 === Partition Distribution
 
-This pie chart shows what percentage of partitions each cluster member has, as shown below:
+This chart shows what percentage of partitions each cluster member has, as shown below:
 
 image::PartitionDistribution.png[Partition Distribution per Member]
 
 You can see each member's partition percentages by placing the mouse cursor on the
-chart. In the above example, you can see the member "127.0.0.1:5702" has 33.21% of
+chart. In the above example, you can see that each member has about 33.3% of
 the total partition count (which is 271 by default and configurable; see the `hazelcast.partition.count`
 property explained in the
 http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#system-properties[System Properties section] in
 the Hazelcast IMDG Reference Manual).
 
-NOTE: The partition distribution pie chart does not show any information
+NOTE: The partition distribution chart does not show any information
 until you create your distributed objects. When you add new members to your cluster,
 there will be no partition migration since partitions do not exist yet. Once you connect
 to your cluster and, for example, create a map (using `hazelcastInstance.getMap()`),
-only then this pie chart starts to show partition distribution information.
+only then this chart starts to show partition distribution information.
 
 [[cpu-utilization]]
 === CPU Utilization
@@ -90,4 +97,4 @@ The last column (**Utilization(%)**) graphically shows the recent load on the CP
 When you move the mouse cursor on a chart, you can see the CPU load at the time
 where the cursor is placed. The charts under this column shows the CPU loads
 approximately for the last 2 minutes. If recent CPU load is not available,
-you will see a negative value.
+you will see **N/A** values.

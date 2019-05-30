@@ -1,6 +1,24 @@
 [[authentication-options]]
 == Authentication Options
 
+[[default-authentication]]
+=== Default Authentication
+
+You can use the default security provider for authentication/authorization
+on the Management Center. In this case, the user accounts are stored in the
+Management Center's database.
+
+image::ConfigureSecurity.png[alt=Default Security Provider Configuration,{half-width}]
+
+Provide the details in this form for the default security provider:
+
+* **Username:** Username for the initial administrator user account.
+* **Password, Confirm Password:** Password for the initial administrator user account.
+
+NOTE: You can also use the `create-user` command in the MC Conf tool to configure
+the default security provider without any UI interactions. See this command's
+<<mc-conf-create-user, description>> for details.
+
 [[active-directory-authentication]]
 === Active Directory Authentication
 
@@ -279,4 +297,4 @@ NOTE: Make sure your keystore supports storing `SecretKey`s.
 
 You can use the `update-ldap-password` command in the MC Conf tool to update
 the encrypted LDAP password stored in the keystore. See this command's
-<<update-ldap-password, description>> for details.
+<<mc-conf-update-ldap-password, description>> for details.

@@ -22,9 +22,9 @@ image::ConfigureSecurity.png[alt=Signing Up,{half-width}]
 NOTE: If you already configured security before, a login dialog box appears instead.
 
 It asks you to choose your security provider and create a username and password.
-Available security providers are Active Directory, LDAP and JAAS, which are described in the following sections.
+Available security providers are Default, Active Directory, LDAP and JAAS, which are described in the following sections.
 
-Once you press the **Save** button, your administrator account credentials are created
+Once you press the **Save** button, your security provider configuration is saved
 and you can log in with your credentials.
 
 If you have more than one cluster that send statistics to the Management Center, you can
