@@ -28,8 +28,8 @@ you can click on the **Maps** link to go back to the page where all map instance
 See the <<time-travel, Time Travel section>>.
 * **User name and last login time**: The current user's name and last login time
 is shown for security purposes.
-* **Cluster Selector**: Switches between the clusters. When clicked on, a drop
-down list of clusters appears.
+* **Cluster Selector**: Switches between the clusters. When clicked on, a dropdown
+list of clusters appears.
 
 image::ChangingCluster.png[Changing Cluster]
 

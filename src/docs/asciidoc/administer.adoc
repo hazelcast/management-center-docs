@@ -439,6 +439,7 @@ dialog appears as shown below.
 image::CPPromoteDialog.png[Promote Member to CP Confirmation]
 
 It asks you to choose one of AP members, i.e., one of the members that do not participate in the CP subsystem.
+Note that lite members are not shown in the dropdown list as lite members do not store data.
 Once you press the **Promote** button, the CP subsystem starts the promote operation for the given member.
 
 **Remove CP Member**
