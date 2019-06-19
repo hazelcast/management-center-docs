@@ -70,6 +70,8 @@ include::clustered_jmx.adoc[]
 
 include::mc_conf_tool.adoc[]
 
+include::phone_home.adoc[]
+
 include::documentation.adoc[]
 
 include::heap_size.adoc[]
