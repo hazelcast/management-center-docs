@@ -4,7 +4,7 @@
 Hazelcast uses phone home data to learn about usage of Hazelcast Management Center.
 
 Hazelcast Management Center instances initially call our phone home server 30 minutes
-after they are started and once every 24 hours thereafter."
+after they are started and once every 24 hours thereafter.
 
 **What is sent in?**
 
@@ -18,7 +18,7 @@ The following information is sent in a phone home:
 ** If TLS is enabled, whether mutual authentication is enabled or not
 * Whether Management Center is deployed on an application server or used in standalone mode
 ** If not in standalone mode, type of the application server
-* Number of users
+* Number of users (if the default security provider is used)
 * Number of clusters
 * Management Center uptime
 * Minimum and maximum cluster sizes
