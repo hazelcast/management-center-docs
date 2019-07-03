@@ -491,7 +491,6 @@ By default, it uses the following configuration:
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -519,8 +518,6 @@ To use this file as the logging configuration, you need to start the Management 
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -530,6 +527,48 @@ To use this file as the logging configuration, you need to start the Management 
     </appender>
 
     <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
+----
+
+==== Enabling Audit Logging
+
+You may enable additional security audit logging by setting the `hazelcast.mc.auditlog.enabled`
+system property to `true`. Log entries from the audit logging will be marked with
+the `hazelcast.auditlog` logging category.
+
+To write security audit logging into separate rolling log files, you can use a similar Logback configuration file:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AUDIT_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.home}/mc-logs/audit.log</file>
+        <!-- daily rollover with last 30 days history -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${user.home}/mc-logs/audit.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <logger level="INFO" name="hazelcast.auditlog">
+        <appender-ref ref="AUDIT_FILE"/>
+    </logger>
+
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
