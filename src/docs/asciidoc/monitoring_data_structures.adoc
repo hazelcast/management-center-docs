@@ -87,8 +87,8 @@ performed on the map per second.
 * **Puts/s, Gets/s, Removes/s**: These three charts monitor the
 put, get and remove operations performed on the map per second.
 
-Under these charts are **Map Statistics**, **Map Throughput**
-and **Near Cache** data tables.
+Under these charts are **Map Statistics**, **Map Throughput**,
+ **Member Near Cache**, and **Client Near Cache** data tables.
 
 [[map-statistics]]**Map Statistic Data Table** provides statistics distributed
 over the members, as shown below.
@@ -142,17 +142,17 @@ right corner of the window, for which the table data will be
 shown. Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.
 
-To ascend or descent the order of the listings, click on the
+To ascend or descend the order of the listings, click on the
 column headings.
 
-[[near-cache-data]]**Near Cache Data Table** provides information about the Near
+[[member-near-cache-data]]**Member Near Cache Data Table** provides information about the Member Near
 Caches, if available, on each member, as shown below.
 
-image::NearCacheDataTable.png[Near Cache Data Table]
+image::MemberNearCacheDataTable.png[Member Near Cache Data Table]
 
 From left to right, this table lists the following:
 
-* **Members**: IP address and port of the members which have Near Caches defined for
+* **Members**: IP address and port of the member which has Near Caches defined for
 the maps.
 * **Entries**: Count of the entries in each Near Cache.
 * **Entry Memory**: Memory cost of the entries in each Near Cache.
@@ -160,6 +160,33 @@ the maps.
 * **Misses**: Count of the entries which cannot be found in the Near Cache
 when requested to read.
 * **Ratio**: Hits/Misses ratio.
+
+To ascend or descend the order of the listings, click on the
+column headings.
+
+[[map-client-near-cache-data]]**Client Near Cache Data Table** provides information about the Client Near
+Caches Stats, if available, on each client that has near cache enabled for this map, as shown below.
+Currently, you need to enable the statistics for clients to see them here.
+Please refer to <<monitoring_clients.adoc#monitoring-clients, Monitoring Clients>> for details.
+
+image::ClientNearCacheDataTable.png[Maps Client Near Cache Data Table]
+
+From left to right, this table lists the following:
+
+* **Client Name**: Name of the client instance which has Near Cache defined for the map.
+* **Client Type**: Type of the client.
+* **Client Version**: Version of the client.
+* **Client UUID**: Client unique identifier.
+* **Evictions**: Number of evictions of Near Cache entries owned by the client.
+* **Expirations**: Number of TTL and max-idle expirations of Near Cache entries owned by the client.
+* **Hits**: Number of hits (reads) of Near Cache entries owned by the client.
+* **Misses**: Number of misses of Near Cache entries owned by the client.
+* **Effectiveness**: Hits/total reads ratio.
+* **Owned Entry Count**: Number of Near Cache entries owned by the client.
+* **Owned Entry Memory Cost**: Memory cost of Near Cache entries owned by the client.
+
+To ascend or descend the order of the listings, click on the
+column headings.
 
 [[monitoring-caches]]
 === Caches
@@ -183,10 +210,10 @@ charts show the current system time. To open a chart as a separate
 dialog, click on the image:MaximizeChart.jpg[maximize] button placed
 at the top right of each chart.
 
-Under these charts are **Cache Statistics** and **Cache Throughput**
+Under these charts are **Cache Statistics**, **Cache Throughput**, and **Client Near Cache**
 data tables.
 
-[[cache-statistics]]Cache Statistics Data Table
+[[cache-statistics]]**Cache Statistics Data Table**
 provides the selected cache's statistics distributed
 over the members, as shown below.
 
@@ -204,7 +231,10 @@ requested to read.
 * **Avg Get/Put Time**: Average elapsed time for the get and put operations for the
 cache on each member.
 
-[[cache-throughput]]Cache Throughput Data Table provides information about the
+To ascend or descend the order of the listings, click on the
+column headings.
+
+[[cache-throughput]]**Cache Throughput Data Table** provides information about the
 operations (get, put, remove) performed on each member for the selected
 cache.
 
@@ -222,6 +252,30 @@ and **Last 1 Hour**.
 
 You can ascend or descend the order of the listings in each column
 by clicking on column headings.
+
+[[cache-client-near-cache-data]]**Client Near Cache Data Table** provides information about the Client Near
+Caches Stats, if available, on each client that has near cache enabled for this cache, as shown below.
+Currently, you need to enable the statistics for clients to see them here.
+Please refer to <<monitoring_clients.adoc#monitoring-clients, Monitoring Clients>> for details.
+
+image::ClientNearCacheDataTable.png[Caches Client Near Cache Data Table]
+
+From left to right, this table lists the following:
+
+* **Client Name**: Name of the client instance which has Near Cache enabled for the map.
+* **Client Type**: Type of the client.
+* **Client Version**: Version of the client.
+* **Client UUID**: Client unique identifier.
+* **Evictions**: Number of evictions of Near Cache entries owned by the client.
+* **Expirations**: Number of TTL and max-idle expirations of Near Cache entries owned by the client.
+* **Hits**: Number of hits (reads) of Near Cache entries owned by the client.
+* **Misses**: Number of misses of Near Cache entries owned by the client.
+* **Effectiveness**: Hits/total reads ratio.
+* **Owned Entry Count**: Number of Near Cache entries owned by the client.
+* **Owned Entry Memory Cost**: Memory cost of Near Cache entries owned by the client.
+
+To ascend or descend the order of the listings, click on the
+column headings.
 
 NOTE: You need to enable the statistics for caches to monitor them
 in the Management Center. Use the `<statistics-enabled>` element or
@@ -298,14 +352,14 @@ right corner of the window, in which the table data is shown.
 Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.
 
-To ascend or descent the order of the listings, click on the
+To ascend or descend the order of the listings, click on the
 column headings.
 
 [[monitoring-multimaps]]
 === MultiMaps
 
 You can see a list of all the MultiMaps in your cluster by clicking
-on the **MultiMaps** menu item on the left panel. A new 
+on the **MultiMaps** menu item on the left panel. A new
 page is opened on the right, as shown below.
 
 image::MultiMapGridView.png[MultiMap Grid View]
@@ -504,10 +558,10 @@ or descend the order of the listings.
 
 You can use the scripting feature of the Management Center to
 monitor the locks in your cluster. See the <<scripting, Scripting section>>
-to learn how to use this feature. 
+to learn how to use this feature.
 
 You can use the below scripts to retrieve various information
-about the locks in your cluster. 
+about the locks in your cluster.
 
 To find the number of active locks in your cluster, use the following script:
 
@@ -516,12 +570,12 @@ To find the number of active locks in your cluster, use the following script:
 var findLocks = function() {
     var lockstr = '';
     var node = hazelcast.getCluster().getLocalMember();
- 
+
     var locks = hazelcast.node.nodeEngine.getService('hz:impl:lockService').getAllLocks();
     return "Active Lock Count : " + locks.size();
- 
+
 }
- 
+
 findLocks();
 ----
 
@@ -536,11 +590,11 @@ var findLocks = function() {
             if(distributedObject.getServiceName().equals("hz:impl:lockService")){
                 lockStr += distributedObject.getName() + '\n';
             }
- 
+
         }
         return lockStr;
 }
- 
+
 findLocks();
 ----
 
@@ -549,12 +603,12 @@ To force unlock a lock in your cluster, use the following script:
 [source,plain]
 ----
 var forceUnlock = function(lockName) {
- 
+
     hazelcast.getLock(lockName).forceUnlock();
     return 'OK';
- 
+
 }
- 
+
 forceUnlock('your_Lock_Name');
 ----
 
@@ -563,12 +617,12 @@ To check if a lock is being hold by a member, use the following script:
 [source,plain]
 ----
 var isLocked = function(lockName) {
- 
+
     var locked = hazelcast.getLock(lockName).isLocked();
     return lockName + ' -> ' + locked;
- 
+
 }
- 
+
 isLocked('your_Lock_Name');
 ----
 
@@ -613,19 +667,19 @@ counter was decremented on that member per second during the last timeslice
 
 You can see a list of all Flake ID Generators in your
 cluster by clicking on the **ID Generators** menu item on
-the left panel. A new 
+the left panel. A new
 page is opened on the right, as shown below.
 
 image::FlakeIdGenGridView.png[Flake ID Generator Grid View]
 
 You can filter the generators shown and you can also sort
-the table by clicking on the column headers. 
+the table by clicking on the column headers.
 The monitoring data available are:
 
 * **Avg. Batch Requests:** Average count of batch requests
 coming from all the members to a generator, i.e., total batch
 requests from all members to a generator divided by the member
-count for that generator. 
+count for that generator.
 * **Avg. Batch Size:** Average size of the ID batches created
 by a generator, i.e., total number of IDs generated (the sum
 of IDs for all batches) for all members divided by the total
@@ -650,7 +704,7 @@ created for this member, i.e., total number of IDs generated
 the total count of batch requests coming from this member.
 
 NOTE: The operations per second is not the number of new IDs
-generated or used but the number of ID batches. 
+generated or used but the number of ID batches.
 The batch size is configurable, usually it contains hundreds
 or thousands of IDs.
 A client uses all IDs from a batch before a new batch is requested.

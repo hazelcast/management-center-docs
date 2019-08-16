@@ -50,8 +50,7 @@ for each piece of information:
 * **Name**: Name of the client instance.
 * **Address**: Local IP address of the client that is used for
 connecting to members.
-* **Type**: Type of the client. Java client is the only
-supported client type at the moment.
+* **Type**: Type of the client.
 * **Enterprise**: Yes, if the client is an Hazelcast IMDG
 Enterprise client.
 * **Member Connection**: Shows to which member a client is
