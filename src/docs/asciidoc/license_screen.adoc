@@ -28,3 +28,10 @@ The following are the possible problems:
 * The count of your cluster members is more than the
 allowed count by the license.
 
+If the license of Management Center or cluster expires in 30 days or less, or has already expired,
+a warning will appear in the upper right corner once a day. 
+Warning will contain time remaining until license expires or how long the license is expired .
+There will also be a button that will redirect you to the license page when clicked.
+An example screenshot is shown below.
+
+image::LicenseExpirationAlert.png[License Expiration Alert]
