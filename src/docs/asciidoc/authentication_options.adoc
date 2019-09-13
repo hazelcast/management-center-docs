@@ -34,6 +34,13 @@ Provide the details in this form for your Active Directory server:
 * **URL:** URL of your Active Directory server, including the
 schema (`ldap://` or `ldaps://`) and port.
 * **Domain:** Domain of your organization on Active Directory.
+* **User Search Filter:** LDAP search filter expression to search
+for the users. `{0}` will be replaced with `username@domain` and
+`{1}` will be replaced with only the `username`. You can use both
+placeholders, only one of them or none in your search filter. For
+example, `(&(objectClass=user)(userPrincipalName={0}))` searches
+for a username that matches with the `userPrincipalName` attribute
+and member of the object class `user`.
 * **Admin Group(s):** Members of this group and its nested groups
 have admin privileges on the Management Center. To use more
 than one group, separate them with a semicolon (;).
