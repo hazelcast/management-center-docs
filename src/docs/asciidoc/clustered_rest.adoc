@@ -358,7 +358,9 @@ curl http://localhost:8083/hazelcast-mancenter/rest/clusters/dev/clients/192.168
   "name": "hz.client_1",
   "labels": [
     "label1"
-  ]
+  ],
+  "ipAddress": "192.168.2.78",
+  "canonicalHostName": "localhost"
 }
 ```
 

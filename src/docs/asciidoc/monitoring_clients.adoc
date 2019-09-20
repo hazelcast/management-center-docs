@@ -29,6 +29,12 @@ for the Filter tab's description.
 
 image::ClientGridView.png[Client Grid View]
 
+By default, hostname of the client is shown in the address
+column. You can change it to show its IP address or its
+canonical hostname instead by using the **Address Type**
+combo box. Note that this will also cause the client details
+page to show the IP address or the canonical hostname.
+
 You can filter the clients shown and you can also sort the
 table by clicking on the column headers. Clicking on
 a client name will open a new page for monitoring that client

@@ -186,10 +186,12 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
 * Clients
   ** `<Client Address>`
    *** Address
-   *** ClientType
-   *** Uuid
+   *** CanonicalHostName
    *** ClientName
+   *** ClientType
+   *** IpAddress
    *** Labels
+   *** Uuid
 * Executors
   ** `<Executor Name>`
     *** Cluster
