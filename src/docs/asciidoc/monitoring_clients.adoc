@@ -35,6 +35,12 @@ canonical hostname instead by using the **Address Type**
 combo box. Note that this will also cause the client details
 page to show the IP address or the canonical hostname.
 
+NOTE: Your IMDG member's version needs to be 3.12.3 or
+newer to be able to see the IP address or the canonical hostname.
+For older versions, this information is not available and `N/A`
+is shown instead. Client version is not important and can be an
+older version.
+
 You can filter the clients shown and you can also sort the
 table by clicking on the column headers. Clicking on
 a client name will open a new page for monitoring that client
