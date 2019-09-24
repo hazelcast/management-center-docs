@@ -53,6 +53,8 @@ use more than one group, separate them with a semicolon (;).
 * **Metrics-only Group(s):** Members of this group and its nested
 groups have the privilege to see only the metrics on Management
 Center. To use more than one group, separate them with a semicolon (;).
+* **Nested Group Search:** Disable if you have a large LDAP group structure
+and it takes a long time to query all nested groups during login.
 * **Test Username:** Username to test the Active Directory configuration
 with. Note that this value will not be saved and only be used for testing
 the Active Directory configuration.
@@ -211,6 +213,8 @@ the `uid` attribute.
 * **Group Search Filter:** LDAP search filter expression to search for
 the groups. For example, `uniquemember={0}` searches for a group that
 matches with the `uniquemember` attribute.
+* **Nested Group Search:** Disable if you have a large LDAP group structure
+and it takes a long time to query all nested groups during login.
 
 NOTE: Values for **Admin**, **User**, **Read-only** and **Metrics-Only** group names must
 be given as plain names. They should not contain any LDAP attributes such
