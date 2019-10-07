@@ -100,4 +100,7 @@ Click on the **Save** button; your filter will be saved and put into the **Filte
 part of the page. To edit the filter, click on the image:EditIcon.jpg[edit] icon.
 To delete it, click on the image:DeleteIcon.jpg[delete] icon.
 
+=== Troubleshooting
 
+In case the e-mail notifications do not arrive, you can turn on verbose logging by
+passing the `-Dhazelcast.mc.mail.debug=true` command line parameter.
