@@ -103,4 +103,5 @@ To delete it, click on the image:DeleteIcon.jpg[delete] icon.
 === Troubleshooting
 
 In case the e-mail notifications do not arrive, you can turn on verbose logging by
-passing the `-Dhazelcast.mc.mail.debug=true` command line parameter.
+passing the `-Dhazelcast.mc.mail.debug=true` command line parameter. Note that the
+e-mail debugging output is written into stdout directly, bypassing Logback logger.
