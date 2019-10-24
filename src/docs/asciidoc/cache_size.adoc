@@ -1,0 +1,52 @@
+[[cache_size]]
+== Configuring the maximum cache size
+
+You can configure the maximum size of the cache containing timestamped cluster states using the
+`hazelcast.mc.cache.max.size` system property. This value is `768` by default. Decreasing this limit can
+significantly lower the heap usage of Management Center in cases when the cluster contains a lot of maps.
+
+=== Approximate heap usages
+
+The tables below list reference data about the heap usage of Management Center, depending on the cluster member
+count, map count in each member, and `hazelcast.mc.cache.max.size` setting.
+
+.Heap usages with 2 cluster members
+|===
+| `hazelcast.mc.cache.max.size` | 2000 maps | 4000 maps | 6000 maps
+
+| 256
+| 440 Mb
+| 810 Mb
+| 1170 Mb
+
+| 512
+| 800 Mb
+| 1530 Mb
+| 2260 Mb
+
+| 768
+| 1150 Mb
+| 2240 Mb
+| 3320 Mb
+|===
+
+
+.Heap usages with 10 cluster members
+|===
+| `hazelcast.mc.cache.max.size` | 2000 maps | 4000 maps | 6000 maps
+
+| 256
+| 1750 Mb
+| 3560 Mb
+| 5290 Mb
+
+| 512
+| 3530 Mb
+| 6960 Mb
+| 10030 Mb
+
+| 768
+| 4340 Mb
+| 9770 Mb
+|
+|===

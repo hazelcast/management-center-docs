@@ -74,7 +74,7 @@ include::phone_home.adoc[]
 
 include::documentation.adoc[]
 
-include::heap_size.adoc[]
+include::cache_size.adoc[]
 
 include::migration_guides.adoc[]
 
