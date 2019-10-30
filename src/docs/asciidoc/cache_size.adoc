@@ -12,41 +12,44 @@ count, map count in each member, and `hazelcast.mc.cache.max.size` setting.
 
 .Heap usages with 2 cluster members
 |===
-| `hazelcast.mc.cache.max.size` | 2000 maps | 4000 maps | 6000 maps
+| `hazelcast.mc.cache.max.size` | 2,000 maps | 4,000 maps | 6,000 maps
 
 | 256
 | 440 Mb
 | 810 Mb
-| 1170 Mb
+| 1,170 Mb
 
 | 512
 | 800 Mb
-| 1530 Mb
-| 2260 Mb
+| 1,530 Mb
+| 2,260 Mb
 
 | 768
-| 1150 Mb
-| 2240 Mb
-| 3320 Mb
+| 1,150 Mb
+| 2,240 Mb
+| 3,320 Mb
 |===
 
 
 .Heap usages with 10 cluster members
 |===
-| `hazelcast.mc.cache.max.size` | 2000 maps | 4000 maps | 6000 maps
+| `hazelcast.mc.cache.max.size` | 2,000 maps | 4,000 maps | 6,000 maps
 
 | 256
-| 1750 Mb
-| 3560 Mb
-| 5290 Mb
+| 1,750 Mb
+| 3,560 Mb
+| 5,290 Mb
 
 | 512
-| 3530 Mb
-| 6960 Mb
-| 10030 Mb
+| 3,530 Mb
+| 6,960 Mb
+| 10,030 Mb
 
 | 768
-| 4340 Mb
-| 9770 Mb
+| 4,340 Mb
+| 9,770 Mb
 |
 |===
+
+It is not recommended to change the cache size unless the cluster has a large number of maps which may cause Management Center to run out of heap memory.
+Setting too low a value for `hazelcast.mc.cache.max.size` can be detrimental to the level of detail shown within Management Center, especially when it comes to graphs.
