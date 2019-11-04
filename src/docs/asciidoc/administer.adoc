@@ -178,7 +178,7 @@ See the <<default-authentication, Default Authentication section>> for more info
 
 image::Users.png[Users]
 
-To add a user to the system, specify the username, e-mail and password in the
+To add a user to the system, specify the username, email and password in the
 **Add/Edit User** part of the page. If the user to be added will have administrator
 privileges, select the **isAdmin** checkbox. The **Permissions** field has the following checkboxes:
 

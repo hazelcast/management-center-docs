@@ -3,33 +3,36 @@
 == Creating Alerts
 
 You can use the alerts feature of the Management Center to receive alerts
-and/or e-mail notifications by creating filters. In these filters,
+and/or email notifications by creating filters. In these filters,
 you can specify various criteria for the cluster members or data structures. When
 the specified criteria are met for a filter, the related alert is shown
-as a pop-up message on the top right of the page or sent as an e-mail.
+as a pop-up message on the top right of the page or sent as an email.
 
 Once you click on the **Alerts** button located on the left panel, the
 page shown below appears.
 
 image::Alerts.png[Creating Alerts]
 
-[[create-smtp-config]]If you want to enable the Management Center to send e-mail notifications
+[[create-smtp-config]]If you want to enable the Management Center to send email notifications
 to its admin users, you need to configure the SMTP server.
 To do this, click on the **Create STMP Config** button shown above. The form shown
 below appears.
 
 image::CreateSMTPConfig.png[Create SMTP Configuration]
 
-In this form, specify the e-mail address from which the notifications
-will be sent and also its password. Then, provide the SMTP server host
-address and port. Finally, check the **TLS Connection** checkbox if the
-connection is secured by TLS (Transport Layer Security).
+In this form, specify the email address from which the notifications
+will be sent and also its password. You can set a separate SMTP email for authenticating
+with the server and a "From" email which will be used as the sender email of the outgoing notifications,
+if these are different (if they are the same, then you can leave the "From" email empty).
+
+Then, provide the SMTP server host address and port. Finally, check the **TLS Connection**
+checkbox if the connection is secured by TLS (Transport Layer Security).
 
 After you provide the required information, click on the **Save Config** button.
 After a processing period (for a couple of seconds), the form closes if
-the configuration is created successfully. In this case, an e-mail is sent
-to the e-mail address you provided in the form stating that the SMTP configuration
-is successful and the e-mail alert system is created.
+the configuration is created successfully. In this case, an email is sent
+to the email address you provided in the form stating that the SMTP configuration
+is successful and the email alert system is created.
 
 If not, you will see an error message at the bottom of this form as shown below.
 
@@ -58,8 +61,8 @@ You can create alerts when:
 When two or more criteria is specified they will be bound with the logical operator **AND**.
 
 On the next page, give a name for the filter. Then, select whether the notification
-e-mails will be sent to the Management Center Admins using the **Send Email
-Alert** checkbox. Then, provide a time interval (in seconds) for which the e-mails
+emails will be sent to the Management Center Admins using the **Send Email
+Alert** checkbox. Then, provide a time interval (in seconds) for which the emails
 with the **same notification content** will be sent using the **Email Interval (secs)**
 field.  Finally, select whether the alert data will be written to the disk (if checked,
 you can see the alert log in the directory */users/<your user>/hazelcast-mc*).
@@ -89,9 +92,9 @@ click on the **Add** button. You can create more than one criteria in this page;
 those will be bound by the logical operator **AND**.
 
 After you specify the criteria, click on the **Next** button. On the next page, give a
-name for the filter. Then, select whether the notification e-mails will be sent to the
+name for the filter. Then, select whether the notification emails will be sent to the
 Management Center Admins using the **Send Email Alert** checkbox. Then, provide a
-time interval (in seconds) for which the e-mails with the **same notification content**
+time interval (in seconds) for which the emails with the **same notification content**
 will be sent using the **Email Interval (secs)** field. Finally, select whether the
 alert data will be written to the disk (if checked, you can see the alert log in the
 directory */users/<your user>/hazelcast-mc*).
@@ -102,6 +105,6 @@ To delete it, click on the image:DeleteIcon.jpg[delete] icon.
 
 === Troubleshooting
 
-In case the e-mail notifications do not arrive, you can turn on verbose logging by
+In case the email notifications do not arrive, you can turn on verbose logging by
 passing the `-Dhazelcast.mc.mail.debug=true` command line parameter. Note that the
-e-mail debugging output is written into stdout directly, bypassing Logback logger.
+email debugging output is written into stdout directly, bypassing Logback logger.

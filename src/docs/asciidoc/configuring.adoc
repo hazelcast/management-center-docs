@@ -574,6 +574,18 @@ To write security audit logging into separate rolling log files, you can use a s
 </configuration>
 ----
 
+[[configuring-smtp-timeouts]]
+=== Configuring SMTP Timeouts
+
+You can configure the SMTP timeout for the outgoing email alerts using the following system properties:
+
+* `-Dhazelcast.mc.mail.connectiontimeout` sets the socket connection timeout for initiating the
+SMTP session, in milliseconds. Its default value is 7000.
+* `-Dhazelcast.mc.mail.timeout` sets the socket read timeout during the session, in milliseconds.
+Its default value is 7000.
+
+
+
 [[variable-replacers]]
 === Using Variable Replacers
 
