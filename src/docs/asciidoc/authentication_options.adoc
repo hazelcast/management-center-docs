@@ -72,6 +72,10 @@ previous section. If you want to update your settings afterwards, you
 need to update `ldap.properties` file and click **Reload Security Config**
 button on the login page.
 
+NOTE: You can use the `hazelcast.mc.ldap.timeout` system property to
+specify both connect and read timeout values for Active Directory search
+queries. It is in milliseconds and its default value is `3000` milliseconds.
+
 [[jaas-authentication]]
 === JAAS Authentication
 
@@ -224,6 +228,10 @@ Once configured, LDAP settings are saved in a file named `ldap.properties`
 under the `hazelcast-mc` directory mentioned in the previous section. If you
 want to update your settings afterwards, you need to update the `ldap.properties`
 file and click on the **Reload Security Config** button on the login page.
+
+NOTE: You can use the `hazelcast.mc.ldap.timeout` system property to
+specify connect and read timeout values for LDAP search queries.
+It is in milliseconds and its default value is `3000` milliseconds.
 
 [[ldap-ssl]]
 ==== Enabling TLS/SSL for LDAP
