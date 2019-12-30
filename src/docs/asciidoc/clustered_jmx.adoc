@@ -408,6 +408,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** TargetGroupSet
     *** getTime(`<Publisher ID>`)
     *** getOutboundQueueSize(`<Publisher ID>`)
+    *** getMaxOutboundQueueSize(`<Publisher ID>`)
     *** getTotalPublishedEventCount(`<Publisher ID>`)
     *** getTotalPublishLatency(`<Publisher ID>`)
 
