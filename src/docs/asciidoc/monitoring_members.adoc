@@ -13,6 +13,11 @@ page is opened on the right, as shown below.
 
 image::MemberGridView.png[Member Grid View]
 
+NOTE: You may see a warning icon with exclamation mark in the list
+when your runtime or hardware configuration does not follow the performance
+recommendations. See {hz-ops-guide}[IMDG Deployment and Operations Guide]
+for more information.
+
 You can filter the members shown and you can also
 sort the table by clicking on the column headers.
 Members that participate in the
