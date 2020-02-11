@@ -4,11 +4,11 @@
 
 Use this menu item to monitor each cluster
 member and perform operations like running
-garbage collection (GC) and taking a thread dump. 
+garbage collection (GC) and taking a thread dump.
 
 You can see a list of all the members in your
 cluster by clicking on the **Members** menu item
-on the left panel. A new 
+on the left panel. A new
 page is opened on the right, as shown below.
 
 image::MemberGridView.png[Member Grid View]
@@ -17,6 +17,8 @@ NOTE: You may see a warning icon with exclamation mark in the list
 when your runtime or hardware configuration does not follow the performance
 recommendations. See {hz-ops-guide}[IMDG Deployment and Operations Guide]
 for more information.
+
+image::MemberGridViewWarning.png[Member Grid View with Warnings]
 
 You can filter the members shown and you can also
 sort the table by clicking on the column headers.
