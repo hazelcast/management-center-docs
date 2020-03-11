@@ -253,6 +253,13 @@ for it. See <<clustered-jmx-via-management-center, Enabling TLS/SSL for Clustere
 * If you're using LDAP authentication, make sure you use LDAPS or
 enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
 
+NOTE: You can configure how Management Center treats `X-Forwarded-*`
+headers using the system property `hazelcast.mc.forwarded.requests.enabled`.
+If its value is set to `true`, Management Center accepts and treats them
+as set by a reverse proxy in front of it, otherwise, they are ignored.
+Its default value is `true`.
+
+
 [[enabling-tslssl-when-starting-with-war-file]]
 ==== Enabling TLS/SSL When Starting with WAR File
 
