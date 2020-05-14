@@ -32,8 +32,9 @@ clients, data structures, computing and WAN replication.
 [[licensing]]
 === Licensing
 
-Hazelcast Management Center and this Reference Manual are free and provided
-under the Apache License, Version 2.0.
+This Reference Manual is free and provided under the Apache License, Version 2.0.
+
+Hazelcast Management Center requires either a Management Center license or Hazelcast IMDG Enterprise license or Hazelcast IMDG Enterprise HD license. It also has a free version which lets you to monitor your cluster having up to three IMDG members.
 
 [[trademarks]]
 === Trademarks
