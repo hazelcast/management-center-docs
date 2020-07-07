@@ -488,6 +488,19 @@ java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt
 -Dhazelcast.mc.security.dictionary.minWordLength=3 -jar {mc-war-file}
 ```
 
+[[including-excluding-specific-cipher-suites]]
+==== Including and/or Excluding Specific Cipher Suites
+
+When you configure TLS you also can provide which cipher suites Management Center can use
+for establishing TLS connection. You can include cipher suites with `-Dhazelcast.mc.include.cipher.suites`
+and exclude with `-Dhazelcast.mc.exclude.cipher.suites` system properties during
+Management Center startup. You can use the exact cipher suite name or a regular expression.
+For example:
+```
+"-Dhazelcast.mc.include.cipher.suites=^SSL_.*$"
+"-Dhazelcast.mc.exclude.cipher.suites=^.*_(MD5|SHA|SHA1)$,^TLS_RSA_.*$,^.*_NULL_.*$"
+```
+
 [[configuring-logging]]
 === Configuring Logging
 
@@ -806,4 +819,3 @@ public interface ConfigReplacer {
     String getReplacement(String maskedValue);
 }
 ```
-
