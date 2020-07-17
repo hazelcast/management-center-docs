@@ -317,3 +317,47 @@ NOTE: Make sure your keystore supports storing `SecretKey`s.
 You can use the `update-ldap-password` command in the MC Conf tool to update
 the encrypted LDAP password stored in the keystore. See this command's
 <<mc-conf-update-ldap-password, description>> for details.
+
+[[saml-authentication]]
+=== SAML Authentication
+
+You can use SAML single sign-on with Management Center. In the "Configure Security"
+page, select **SAML** from the "Security Provider" combo box, and the following form
+page appears:
+
+image::ConfigureSAML.png[SAML Configuration]
+
+Provide the details in this form for SAML:
+
+* **Relying Party Identifier:** The application-defined unique identifier that is
+the intended audience of the SAML assertion. This is most often the Service Provider
+ Entity ID of your application.
+* **Post Back URL:** URL of the Management Center SAML assertion consumer, including schema
+(`http://` or `https://`) and port. Assertion consumer is located under the path `/saml/sso`
+so you should append `/saml/sso` to the Management Center URL. Your Identity Provider should
+have access to this URL as it will post back SAML responses to it. For example, if Management
+Center and the Identity Provider are on the same machine, you would enter
+“http://127.0.0.1:8080/hazelcast-mancenter/saml/sso”.
+* **Group Attribute:** Name of the attribute that contains group of the user.
+* **Identity Provider Metadata:** Your Identity Provider's metadata in XML format.
+* **Group Name Separator:** Separator for the group names in case the group
+attribute value contains more than one group.
+* **Admin Group(s):** Members of this group have admin privileges on the Management Center. To use more
+than one group, separate them with the group name separator you have configured.
+* **User Group(s):** Members of this group have read and write privileges on the Management Center.
+To use more than one group, separate them with the group name separator you have configured.
+* **Read-only User Group(s):** Members of this group have only read privilege on the Management
+Center. To use more than one group, separate them with the group name separator you have configured.
+* **Metrics-only Group(s):** Members of this group have the privilege to see only the metrics
+on the Management Center. To use more than one group, separate them with the group name separator
+you have configured.
+
+NOTE: If the user has more than one authority, Management Center uses the highest one.
+
+Once you configure SAML, a button for single sign-on will be shown in the login page. Clicking it will
+start the SAML single sign-on process. If you don't have an existing session with your Identity Provider,
+you will be taken to the login page of your Identity Provider. Once you log into your Identity Provider,
+you will be redirected back to Management Center as a logged in user.
+
+NOTE: If your Identity Provider needs service provider metadata XML, you can use the following URL
+to view/download it once you configure SAML: “http://<MC URL>/hazelcast-mancenter/saml/metadata”.
