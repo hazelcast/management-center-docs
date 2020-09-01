@@ -573,7 +573,7 @@ image::ExecutorOperationStats.png[Executor Operation Statistics]
 
 From left to right, this table lists the IP address and port of
 members, the counts of pending, started and completed executors
-per second, and the execution time and average start latency of
+per second, and the total execution time and average start latency of
 executors on each member. Click on the column heading to ascend
 or descend the order of the listings.
 
