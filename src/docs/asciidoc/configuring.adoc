@@ -251,7 +251,9 @@ cluster. See <<connecting-hazelcast-members-to-management-center, Connecting Haz
 * If you're using Clustered JMX on the Management center, enable TLS/SSL
 for it. See <<clustered-jmx-via-management-center, Enabling TLS/SSL for Clustered JMX>>.
 * If you're using LDAP authentication, make sure you use LDAPS or
-enable the "Start TLS" field. See <<ldap-authentication, LDAP Authentication>>.
+enable the "Start TLS" field. See <<ldap-ssl, LDAP Authentication>>.
+* If you're using Active Directory authentication, make sure you use Java's
+truststore related system properties. See <<ad-ssl, Active Directory Authentication>>.
 
 NOTE: You can configure how Management Center treats `X-Forwarded-*`
 headers using the system property `hazelcast.mc.forwarded.requests.enabled`.

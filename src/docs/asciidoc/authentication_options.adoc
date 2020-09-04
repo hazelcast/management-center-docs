@@ -233,6 +233,18 @@ NOTE: You can use the `hazelcast.mc.ldap.timeout` system property to
 specify connect and read timeout values for LDAP search queries.
 It is in milliseconds and its default value is `3000` milliseconds.
 
+[[ad-ssl]]
+==== Enabling TLS/SSL for Active Directory
+
+If your Active Directory service is using TLS/SSL protocol,
+use the following command line
+parameters for your Management Center deployment:
+
+* `-Djavax.net.ssl.trustStore`: Path to the truststore.
+* `-Djavax.net.ssl.trustStorePassword`: Password of the truststore.
+
+These properties override the cacerts with your own truststore.
+
 [[ldap-ssl]]
 ==== Enabling TLS/SSL for LDAP
 
