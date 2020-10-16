@@ -51,5 +51,5 @@ count, map count in each member, and `hazelcast.mc.cache.max.size` setting.
 |
 |===
 
-It is not recommended to change the cache size unless the cluster has a large number of maps which may cause Management Center to run out of heap memory.
+It is not recommended to change the cache size unless the cluster has a large number of distributed data structures which may cause Management Center to run out of heap memory.
 Setting too low a value for `hazelcast.mc.cache.max.size` can be detrimental to the level of detail shown within Management Center, especially when it comes to graphs.
