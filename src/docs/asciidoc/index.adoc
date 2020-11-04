@@ -78,4 +78,6 @@ include::cache_size.adoc[]
 
 include::migration_guides.adoc[]
 
+include::automated_security_scan.adoc[]
+
 

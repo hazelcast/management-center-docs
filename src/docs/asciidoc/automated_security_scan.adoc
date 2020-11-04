@@ -1,0 +1,9 @@
+[appendix]
+== Automated Security Scanning
+
+When you scan Management Center artifacts, your tool might warn you about the following
+vulnerabilities. Management Center security is *not* affected by them as it doesn't use
+the affected features.
+
+* https://nvd.nist.gov/vuln/detail/CVE-2016-1000027[CVE-2016-1000027]
+
