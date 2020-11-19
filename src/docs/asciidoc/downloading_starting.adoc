@@ -94,5 +94,5 @@ keytool -import -noprompt -trustcacerts -alias <AliasName> -file <certificateFil
 ==== Using Scripts in the Package
 
 As another option, you can use the `start.bat` or `start.sh` scripts,
-which come with the download package, to start the Management Center.
+which come with the download package in `bin/` folder, to start the Management Center.
 You can find these scripts under the extracted directory. 
