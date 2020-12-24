@@ -5,7 +5,7 @@
 The Management Center Configuration Tool (MC-Conf) is a command
 line tool that allows you to update certain parts of the Management Center
 configuration by using its built-in commands. You can use the `mc-conf.sh`
-or `mc-conf.bat` script to run the MC-Conf tool from the `/bin/` folder.
+or `mc-conf.bat` script to run the MC-Conf tool.
 
 NOTE: You must run the MC-Conf tool on the same machine where the Management
 Center web application is deployed.
@@ -16,7 +16,7 @@ In order to see all available commands, run the MC-Conf script with no
 arguments as shown below.
 
 ```bash
-./bin/mc-conf.sh
+./mc-conf.sh
 ```
 
 As the result, you should see an output similar to below.
