@@ -7,3 +7,9 @@ the affected features.
 
 * https://nvd.nist.gov/vuln/detail/CVE-2016-1000027[CVE-2016-1000027]
 
+Management Center security is *not* affected by the following H2DB vulnerabilities as it
+uses a custom version of H2DB which is patched against these vulnerabilities.
+
+* https://nvd.nist.gov/vuln/detail/CVE-2018-10054[CVE-2018-10054]
+* https://nvd.nist.gov/vuln/detail/CVE-2018-14335[CVE-2018-14335]
+
