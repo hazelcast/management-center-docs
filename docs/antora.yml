@@ -1,0 +1,10 @@
+name: imdg
+title: Hazelcast Management Center
+version: latest-dev
+asciidoc:
+  attributes:
+    javasource: ROOT:example$
+    page-toclevels: 1
+    page-ghissue: https://github.com/SerdarO/mc-docs/issues/new
+nav:
+- modules/ROOT/nav.adoc

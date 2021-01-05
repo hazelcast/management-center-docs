@@ -1,0 +1,29 @@
+= Connecting to the Clusters
+[[connecting-hazelcast-members-to-management-center]]
+
+After you start and/or configure the Management Center service
+as explained in the xref:getting-started.adoc#starting-the-management-center-service[Starting the Management Center Service] and
+xref:configuring.adoc[Configuring the Management Center] chapters, make sure that
+`\http://localhost:8080` is up.
+
+To connect the Management Center to your clusters, you have two options
+to be performed in Management Center:
+
+1. You can provide the IP addresses or hostnames of one or more IMDG and Jet members.
+2. Or, you can upload a configuration file in XML or YAML format.
+Management Center starts a client for each of IMDG and Jet clusters. This configuration file
+is for that Management Center client. See xref:managing-clusters.adoc#creating-a-cluster-configuration-by-uploading-file[here] for details on this configuration file.
+You can think of Management Center as a client connecting to the Hazelcast IMDG and Jet clusters.
+
+If you enabled TLS/SSL on a Hazelcast cluster, then you need to perform the 2.
+step listed above, i.e., upload a configuration file. This configuration file needs
+to contain the parameters same as the ones you provide in the case when a client
+connects to a TLS/SSL enabled Hazelcast cluster. See link:https://docs.hazelcast.org/docs/latest-dev/manual/html-single/#tlsssl[here^] for details on TLS/SSL configurations.
+
+NOTE: When connecting to multiple clusters from the same Management Center, please ensure that the
+cluster names are unique.  Management Center does not support simultaneous connections to more than
+one cluster with the same cluster name.
+
+NOTE: If the cluster uses
+link:https://docs.hazelcast.org/docs/latest-dev/manual/html-single/#advanced-network-configuration[Advanced Network],
+then the provided member address should be the client address of the member.

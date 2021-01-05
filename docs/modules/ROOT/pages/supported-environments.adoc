@@ -1,0 +1,24 @@
+= Supported Environments
+[[supported-environments]]
+
+You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
+
+Management Center uses RocksDB library to store metrics
+data on disk. Because of that dependency, macOS users have to be on at least 10.15
+version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
+installed. Otherwise, you can use the official Management Center docker image.
+
+== IMDG/Jet Compatibility
+
+We officially support any IMDG 4.y and Jet 4.3.z version.
+
+[[browser-compatibility]]
+== Browser Compatibility
+
+Hazelcast Management Center is tested and works on the following browsers:
+
+* Last two versions of Chrome at the time of release
+* Last two versions of Firefox at the time of release
+* Latest Safari
+* Internet Explorer 11
+* Latest Microsoft Edge
