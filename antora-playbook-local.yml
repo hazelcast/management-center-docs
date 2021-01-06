@@ -23,8 +23,6 @@ asciidoc:
     jet-refman: https://docs.hazelcast.org/docs/jet/latest/manual/
     hz-ops-guide: https://hazelcast.com/resources/hazelcast-deployment-operations-guide/
     docs-archive: 'https://hazelcast.org/imdg/download/archives/'
-    mc-jar-file: hazelcast-management-center-{page-component-display-version}.jar
-    mc-war-file: hazelcast-management-center-{page-component-display-version}.war
     half-width: width=50%,scaledwidth=50%
-  extensions:
-    - ./lib/tabs-block.js
+#  extensions:
+#    - ./lib/tabs-block.js

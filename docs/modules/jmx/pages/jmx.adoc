@@ -1,0 +1,6 @@
+= Clustered JMX
+[[clustered-jmx-via-management-center]]
+
+Clustered JMX via Management Center allows you to
+monitor clustered statistics of distributed objects
+from a JMX interface.

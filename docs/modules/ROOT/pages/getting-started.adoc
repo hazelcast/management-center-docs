@@ -26,20 +26,20 @@ You have the following options to start the Management Center service:
 
 * Start Hazelcast Management Center from the command line.
 * Use the scripts that come with the download package.
-* Deploy the file `{mc-war-file}` on your Java application server/servlet container.
+* Deploy the file `hazelcast-management-center-{page-component-display-version}.war` on your Java application server/servlet container.
 
 [[starting-with-jar-file]]
 === Using the Command Line
 
 After you downloaded, extract the Hazelcast IMDG or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{page-component-display-version}`,
-contains the `{mc-jar-file}` file.
+contains the `hazelcast-management-center-{page-component-display-version}.jar` file.
 
 You can start this file directly from the command line using the following command:
 
 [subs="attributes"]
 ```
-java -jar {mc-jar-file}
+java -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 The above command starts the  Hazelcast Management Center service on
@@ -54,11 +54,11 @@ context path:
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar {mc-jar-file}
+java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
-You can access it by opening `http://localhost:8083/hazelcast-mc` in your browser.
+You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
 
 Then, you need to let Management Center know the Hazelcast IMDG member addresses
 as explained in the xref:connecting-members.adoc[Connecting to the Clusters chapter].

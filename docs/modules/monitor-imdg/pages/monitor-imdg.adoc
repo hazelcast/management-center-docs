@@ -1,0 +1,4 @@
+= Monitoring an IMDG Cluster
+
+This chapter details the monitoring and administering of
+an IMDG cluster using Management Center.

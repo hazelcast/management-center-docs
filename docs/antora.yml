@@ -1,6 +1,6 @@
-name: imdg
+name: management-center
 title: Hazelcast Management Center
-version: latest-dev
+version: 4.2020.12
 asciidoc:
   attributes:
     javasource: ROOT:example$

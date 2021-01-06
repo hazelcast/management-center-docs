@@ -1,0 +1,87 @@
+= Managing Licenses
+
+You can manage the following types of licenses
+in Management Center:
+
+* License for Management Center
+* License for your Hazelcast product
+
+[[management-center-license]]
+== Management Center License
+
+Using the "License" menu item under the "Management Center" parent
+menu heading, you can view the
+details of your Management Center license.
+An example screenshot is shown below.
+
+image:ROOT:MCLicense.png[License Screen]
+
+It shows the expiration date, total licensed member
+count and type of your Management Center license.
+
+For security reasons, the license key itself is not shown.
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+the key as a Base64 encoded string is shown.
+
+If there are any problems related to your Management Center
+license, "License" menu item is highlighted with red
+exclamation points. In this case, please check this
+screen to see what the problem is.
+The following are the possible problems:
+
+* Your Management Center license is expired.
+* The count of your cluster members is more than the
+allowed count by the license.
+
+If the Management Center license expires in 30 days or less, or has already expired,
+a warning will appear in the upper right corner once a day. 
+Warning will contain time remaining until license expires or how long the license is expired.
+There will also be two buttons - the first one with label "Show License" will redirect you to the license page, 
+the second one with label "Dismiss Alert" will dismiss the alert.
+An example screenshot is shown below.
+
+image:ROOT:LicenseExpirationAlert.png[License Expiration Alert]
+
+To update the Management Center license, you can open the **Manage License**
+tab and click on the **Update License** button and enter the new license code.
+
+image:ROOT:License.png[alt=License,{half-width}]
+
+Alternatively, a license can be provided using the `hazelcast.mc.license`
+system property (see the xref:configuring.adoc#starting-with-a-license[Starting with a License section] for details).
+
+[[license-screen]]
+== Cluster License
+
+Using the "License" menu item under the "Cluster" parent
+menu heading, you can view the
+details of your cluster's license (Hazelcast IMDG license).
+An example screenshot is shown below.
+
+image:ROOT:ClusterLicense.png[License Screen]
+
+It shows the expiration date, total licensed member
+count and type of your Hazelcast IMDG license.
+
+For security reasons, the license key itself is not shown.
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+the key as a Base64 encoded string is shown.
+
+If there are any problems related to your cluster
+license, "License" menu item is highlighted with red
+exclamation points. In this case, please check this
+screen to see what the problem is.
+The following are the possible problems:
+
+* Your Hazelcast IMDG license is expired.
+* The count of your cluster members is more than the
+allowed count by the license.
+
+If the cluster license expires in 30 days or less, or has already expired,
+a warning will appear in the upper right corner once a day, similar
+to the one for the Management Center license. 
+Warning will contain time remaining until license expires or how long the license is expired.
+There will also be two buttons - the first one with label "Show License" will redirect you to the license page, 
+the second one with label "Dismiss Alert" will dismiss the alert.
+
+

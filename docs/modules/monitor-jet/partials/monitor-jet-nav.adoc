@@ -1,0 +1,4 @@
+* xref:monitor-jet:monitor-jet.adoc[]
+** xref:monitor-jet:dashboard.adoc[]
+** xref:monitor-jet:jobs.adoc[]
+** xref:monitor-jet:snapshots.adoc[]

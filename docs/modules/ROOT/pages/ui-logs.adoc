@@ -1,0 +1,23 @@
+= User Interface Logs
+
+Using the "UI Logs" page of the "Settings" menu,
+you can see the log entries related to the Management
+Center user interface. This page looks like the following:
+
+image:ROOT:SettingsUILogs.png[User Interface Logs]
+
+This is basically useful to make the troubleshooting easier
+related to the issues in the user interface. You can see the
+timestamp and type of each log entry.
+
+You can reorder the entries by their timestamps any types, and
+also filter them by giving a keyword to the `Data` field such as
+"auth", "map" and "session".
+
+You can pause the log flow using the `Pause` button,
+copy the log entries to the clipboard using the `Copy` button
+(so that the entries can be examined in detail)
+and resume the flow using the `Resume` button on the page.
+
+NOTE: You may only need to share the information in these logs
+if requested by the Hazelcast's support team.

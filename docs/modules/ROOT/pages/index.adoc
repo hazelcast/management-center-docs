@@ -4,6 +4,8 @@ Welcome to the Hazelcast Management Center Reference Manual.
 This manual includes concepts and instructions
 to guide you on how to use Management Center to
 monitor your Hazelcast IMDG and Jet Clusters.
+This Reference Manual can also be found in the Management Center
+user interface, when you click on the **Documentation** button located at the toolbar.
 
 [[naming]]
 == Naming
@@ -35,8 +37,8 @@ under the Apache License, Version 2.0.
 Hazelcast Management Center requires either of the following:
 
 * Management Center license
+* Hazelcast IMDG Pro license
 * Hazelcast IMDG Enterprise license
-* Hazelcast IMDG Enterprise HD license
 * Hazelcast Jet Enterprise license
 
 It also has a free version which lets you to monitor your clusters having up to three

@@ -1,0 +1,43 @@
+= Prometheus Exporter
+[[management-center-prometheus-exporter]]
+
+Hazelcast Management Center can expose the metrics collected from cluster members to https://prometheus.io/[Prometheus]. This
+feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+
+Prometheus can be configured to scrape Management Center in `prometheus.yml` as follows:
+
+```yaml
+scrape_configs:
+  - job_name: 'HZ MC'
+    # scheme defaults to 'http'.
+    static_configs:
+    - targets: ['localhost:8080'] # replace this address with the network address of Hazelcast Management Center
+```
+
+
+After starting Prometheus with this configuration, all metrics will be exported to Prometheus with the `hz_` prefix. The metrics
+are also available via the https://docs.hazelcast.org/docs/latest/manual/html-single/index.html#jmx-2[member JMX API].
+With the default configuration, Management Center exports all metrics reported by the cluster members. Since it can be overly
+verbose for some usecases, the metrics can be filtered with the `hazelcast.mc.prometheusExporter.filter.metrics.included`
+or the `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties, both being comma-separated lists of
+metric names.
+
+Example of starting Management Center with specifying the metrics exported to Prometheus:
+```
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
+  -jar hazelcast-management-center-{page-component-display-version}.jar
+```
+
+Example of starting Management Center with specifying the metrics to be excluded from the Prometheus export:
+
+```
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
+  -jar hazelcast-management-center-{page-component-display-version}.jar
+```
+
+NOTE: Prometheus connects via the same IP and port as the Management Center web interface.
+
+NOTE: If you want to visualize the Prometheus metrics using Grafana, then you can start with
+https://grafana.com/grafana/dashboards/13183[this dashboard].

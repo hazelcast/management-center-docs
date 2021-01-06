@@ -23,7 +23,7 @@ For example by using the command line parameter:
 
 [subs="attributes,specialchars"]
 ```
-java -Dhazelcast.mc.license=<key> -jar {mc-jar-file}
+java -Dhazelcast.mc.license=<key> -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 When this option is used, the license provided takes precedence
@@ -41,14 +41,14 @@ following command:
 
 [subs="attributes"]
 ```
-java -cp "{mc-jar-file}:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+java -cp "hazelcast-management-center-{page-component-display-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ```
 
 On Windows, the command becomes as follows (semicolon instead of colon):
 
 [subs="attributes"]
 ```bash
-java -cp "{mc-jar-file};/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+java -cp "hazelcast-management-center-{page-component-display-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ```
 
 [[client-config]]
@@ -93,7 +93,7 @@ is `1000`.
 == Configuring Disk Usage
 
 You can control the disk space used by the Management Center to avoid exceeding
-available disk space. That can be done by configuring the xref:metrics-persistence.adoc[Metrics Persistence].
+available disk space. That can be done by configuring the xref:metric-persistence.adoc[Metrics Persistence].
 
 You can use the `hazelcast.mc.metrics.disk.ttl.days` system property
 to configure the Management Center's metrics persistence. This property
@@ -146,7 +146,7 @@ a session timeout period of 1 minute:
 
 [subs="attributes"]
 ```
-java -Dhazelcast.mc.session.timeout.seconds=60 -jar {mc-jar-file}
+java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 If you have deployed the Management Center on an application
@@ -247,7 +247,7 @@ HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
 * Enable TLS/SSL communication to the Management Center for your Hazelcast
 cluster. See the xref:connecting-members.adoc[Connecting Members chapter].
 * If you're using Clustered JMX on the Management center, enable TLS/SSL
-for it. See xref:clustered-jmx:clustered-jmx.adoc[Enabling TLS/SSL for Clustered JMX section].
+for it. See xref:jmx:jmx.adoc[Enabling TLS/SSL for Clustered JMX section].
 * If you're using LDAP authentication, make sure you use LDAPS or
 enable the "Start TLS" field. See the xref:launching:auth-options.adoc[LDAP Authentication section].
 * If you're using Active Directory authentication, make sure you use Java's
@@ -282,7 +282,7 @@ TLS/SSL enabled from the command line:
 ```
 java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar {mc-jar-file}
+-Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 You can access the Management Center from the following HTTPS URL on
@@ -316,7 +316,7 @@ java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks \
      -Dhazelcast.mc.tls.keyStorePassword=yourpassword \
      -Dhazelcast.mc.https.port=443 \
-     -jar {mc-jar-file}
+     -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 This starts the Management Center on HTTPS port 443.
@@ -398,7 +398,7 @@ java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.trustStore=path to your truststore \
      -Dhazelcast.mc.tls.trustStorePassword=password for your truststore \
      -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED \
-     -jar {mc-jar-file}
+     -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
@@ -489,7 +489,7 @@ is shown below:
 ```
 java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar {mc-jar-file}
+     -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 [[including-excluding-specific-cipher-suites]]
@@ -820,7 +820,7 @@ of this file as shown below:
 +
 [subs="attributes"]
 ```
-java -cp {mc-jar-file} \
+java -cp hazelcast-management-center-{page-component-display-version}.jar \
      -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
      -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
      com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
@@ -843,7 +843,7 @@ java \
  -Dhazelcast.mc.tls.enabled=true \
  -Dhazelcast.mc.tls.keyStore=/opt/mc.keystore \
  -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
- -jar {mc-jar-file}
+ -jar hazelcast-management-center-{page-component-display-version}.jar
 ```
 
 === PropertyReplacer
