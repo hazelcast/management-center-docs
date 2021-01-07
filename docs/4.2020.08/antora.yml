@@ -1,0 +1,6 @@
+name: management-center
+title: Hazelcast Management Center
+version: 4.2020.08
+asciidoc:
+  attributes:    
+    page-ghissue: https://github.com/SerdarO/mc-docs/issues/new
