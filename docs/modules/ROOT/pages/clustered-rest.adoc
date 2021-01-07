@@ -82,7 +82,7 @@ and the cluster type (`IMDG` or `JET`). It returns `-1` for license expiration t
 if no license is assigned.
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}`
+* URL: `/rest/clusters/<clustername>`
 * Request:
 +
 ```bash
@@ -105,7 +105,7 @@ curl http://localhost:8080/rest/clusters/dev/
 This resource returns a list of the members belonging to the provided clusters.
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members`
+* URL: `/rest/clusters/<clustername>/members`
 * Request:
 +
 ```bash
@@ -141,7 +141,7 @@ See the following example responses for each of the above.
 [[member-info]]*Retrieving Member Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}`
+* URL: `/rest/clusters/<clustername>/members/<member>`
 * Request:
 +
 ```bash
@@ -170,7 +170,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701
 [[conn-mgr]]*Retrieving Connection Manager Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/connectionManager`
+* URL: `/rest/clusters/<clustername>/members/<member>/connectionManager`
 * Request:
 +
 ```bash
@@ -191,7 +191,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/connectio
 [[opr-svc]]*Retrieving Operation Service Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/operationService`
+* URL: `/rest/clusters/<clustername>/members/<member>/operationService`
 * Request:
 +
 ```bash
@@ -215,7 +215,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/operation
 [[event-svc]]*Retrieving Event Service Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/eventService`
+* URL: `/rest/clusters/<clustername>/members/<member>/eventService`
 * Request:
 +
 ```bash
@@ -236,7 +236,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/eventServ
 [[partition-svc]]*Retrieving Partition Service Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/partitionService`
+* URL: `/rest/clusters/<clustername>/members/<member>/partitionService`
 * Request:
 +
 ```bash
@@ -256,7 +256,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/partition
 [[proxy-svc]]*Retrieving Proxy Service Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/proxyService`
+* URL: `/rest/clusters/<clustername>/members/<member>/proxyService`
 * Request:
 +
 ```bash
@@ -277,7 +277,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/proxyServ
 [[mgd-execs]]*Retrieving the list of all Managed Executors:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/managedExecutors`
+* URL: `/rest/clusters/<clustername>/members/<member>/managedExecutors`
 * Request:
 +
 ```bash
@@ -295,7 +295,7 @@ curl http://localhost:8080/rest/clusters/dev/members/192.168.2.78:5701/managedEx
 *Retrieving information of a single Managed Executor:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/members/{member}/managedExecutors/{managedExecutor}`
+* URL: `/rest/clusters/<clustername>/members/<member>/managedExecutors/<managedExecutor>`
 * Request:
 +
 ```bash
@@ -327,7 +327,7 @@ as it contains more detailed information about the clients.
 *Retrieving the list of Client Endpoints:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/clients`
+* URL: `/rest/clusters/<clustername>/clients`
 * Request:
 +
 ```bash
@@ -344,7 +344,7 @@ curl http://localhost:8080/rest/clusters/dev/clients
 *Retrieving Client Endpoint Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/clients/{client}`
+* URL: `/rest/clusters/<clustername>/clients/<client>`
 * Request:
 +
 ```bash
@@ -375,7 +375,7 @@ This resource returns a list of maps belonging to the provided cluster.
 *Retrieving the list of Maps:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/maps`
+* URL: `/rest/clusters/<clustername>/maps`
 * Request:
 +
 ```bash
@@ -392,7 +392,7 @@ curl http://localhost:8080/rest/clusters/dev/maps
 *Retrieving Map Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/maps/{mapName}`
+* URL: `/rest/clusters/<clustername>/maps/<mapname>`
 * Request:
 +
 ```bash
@@ -441,7 +441,7 @@ This resource returns a list of multimaps belonging to the provided cluster.
 *Retrieving the list of MultiMaps:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/multimaps`
+* URL: `/rest/clusters/<clustername>/multimaps`
 * Request:
 +
 ```bash
@@ -458,7 +458,7 @@ curl http://localhost:8080/rest/clusters/dev/multimaps
 *Retrieving MultiMap Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/multimaps/{multimapname}`
+* URL: `/rest/clusters/<clustername>/multimaps/<multimapname>`
 * Request:
 +
 ```bash
@@ -504,7 +504,7 @@ This resource returns a list of replicated maps belonging to the provided cluste
 *Retrieving the list of Replicated Maps:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/replicatedmaps`
+* URL: `/rest/clusters/<clustername>/replicatedmaps`
 * Request:
 +
 ```bash
@@ -521,7 +521,7 @@ curl http://localhost:8080/rest/clusters/dev/replicatedmaps
 *Retrieving Replicated Map Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/replicatedmaps/{replicatedmapname}`
+* URL: `/rest/clusters/<clustername>/replicatedmaps/<replicatedmapname>`
 * Request:
 +
 ```bash
@@ -562,7 +562,7 @@ This resource returns a list of caches belonging to the provided cluster.
 *Retrieving the list of Caches:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/caches`
+* URL: `/rest/clusters/<clustername>/caches`
 * Request:
 +
 ```bash
@@ -579,7 +579,7 @@ curl http://localhost:8080/rest/clusters/dev/caches
 *Retrieving Cache Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/caches/{cacheName}`
+* URL: `/rest/clusters/<clustername>/caches/<cachename>`
 * Request:
 +
 ```bash
@@ -616,7 +616,7 @@ This resource returns a list of queues belonging to the provided cluster.
 *Retrieving the list of Queues:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/queues`
+* URL: `/rest/clusters/<clustername>/queues`
 * Request:
 +
 ```bash
@@ -633,7 +633,7 @@ curl http://localhost:8080/rest/clusters/dev/queues
 *Retrieving Queue Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/queues/{queueName}`
+* URL: `/rest/clusters/<clustername>/queues/{queuename>`
 * Request:
 +
 ```bash
@@ -669,7 +669,7 @@ This resource returns a list of topics and reliable topics belonging to the prov
 *Retrieving the list of Topics:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/topics`
+* URL: `/rest/clusters/<clustername>/topics`
 * Request:
 +
 ```bash
@@ -686,7 +686,7 @@ curl http://localhost:8080/rest/clusters/dev/topics
 *Retrieving Topic Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/topics/{topicName}`
+* URL: `/rest/clusters/<clustername>/topics/{topicname>`
 * Request:
 +
 ```bash
@@ -709,7 +709,7 @@ curl http://localhost:8080/rest/clusters/dev/topics/news
 *Retrieving the list of Reliable Topics:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/reliabletopics`
+* URL: `/rest/clusters/<clustername>/reliabletopics`
 * Request:
 +
 ```bash
@@ -726,7 +726,7 @@ curl http://localhost:8080/rest/clusters/dev/reliabletopics
 *Retrieving Reliable Topic Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/reliabletopics/{reliableTopicName}`
+* URL: `/rest/clusters/<clustername>/reliabletopics/<reliableTopicname>`
 * Request:
 +
 ```bash
@@ -753,7 +753,7 @@ This resource returns a list of executors belonging to the provided cluster.
 *Retrieving the list of Executors:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/executors`
+* URL: `/rest/clusters/<clustername>/executors`
 * Request:
 +
 ```bash
@@ -770,7 +770,7 @@ curl http://localhost:8080/rest/clusters/dev/executors
 *Retrieving Executor Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/executors/{executorName}`
+* URL: `/rest/clusters/<clustername>/executors/<executorname>`
 * Request:
 +
 ```bash
@@ -801,7 +801,7 @@ This resource returns a list of PN counters belonging to the provided cluster.
 *Retrieving the list of PN Counters:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/pncounters`
+* URL: `/rest/clusters/<clustername>/pncounters`
 * Request:
 +
 ```bash
@@ -818,7 +818,7 @@ curl http://localhost:8080/rest/clusters/dev/pncounters
 *Retrieving PN Counter Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/pncounters/{pnCounterName}`
+* URL: `/rest/clusters/<clustername>/pncounters/<pnCountername>`
 * Request:
 +
 ```bash
@@ -855,7 +855,7 @@ This resource returns a list of flake ID generators belonging to the provided cl
 *Retrieving the list of Flake ID Generators:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/flakeidgenerators`
+* URL: `/rest/clusters/<clustername>/flakeidgenerators`
 * Request:
 +
 ```bash
@@ -872,7 +872,7 @@ curl http://localhost:8080/rest/clusters/dev/flakeidgenerators
 *Retrieving Flake ID Generator Information:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/flakeidgenerators/{flakeIdGeneratorName}`
+* URL: `/rest/clusters/<clustername>/flakeidgenerators/{flakeIdGeneratorname>`
 * Request:
 +
 ```bash
@@ -908,7 +908,7 @@ This resource returns a list of clients belonging to the provided cluster.
 *Retrieving the list of Client UUIDs:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/clientStats`
+* URL: `/rest/clusters/<clustername>/clientStats`
 * Request:
 +
 ```bash
@@ -936,7 +936,7 @@ curl http://localhost:8080/rest/clusters/dev/clientStats
 *Retrieving Detailed Client Statistics:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/clientStats/{clientUuid}`
+* URL: `/rest/clusters/<clustername>/clientStats/<clientUuid>`
 * Request:
 +
 ```bash
@@ -1015,7 +1015,7 @@ This resource returns information of a WAN replicated cluster's publisher.
 *Retrieving WAN Publisher Statistics:*
 
 * Request Type: `GET`
-* URL: `/rest/clusters/{clustername}/wanStats/{wanReplication}/publishers/{publisher}`
+* URL: `/rest/clusters/<clustername>/wanStats/<wanReplication>/publishers/<publisher>`
 * Request:
 +
 ```bash
