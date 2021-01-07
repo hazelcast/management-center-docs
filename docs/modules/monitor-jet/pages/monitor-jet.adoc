@@ -1,4 +1,0 @@
-= Monitoring a Jet Cluster
-
-This chapter details the monitoring and administering of
-a Jet cluster using Management Center.

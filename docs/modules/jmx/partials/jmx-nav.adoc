@@ -1,5 +1,0 @@
-* xref:jmx:jmx.adoc[]
-** xref:jmx:configuring.adoc[]
-** xref:jmx:jmx-api.adoc[]
-** xref:jmx:new-relic.adoc[]
-** xref:jmx:appdynamics.adoc[]
