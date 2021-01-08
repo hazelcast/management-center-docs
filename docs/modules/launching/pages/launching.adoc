@@ -17,7 +17,7 @@ described in the previous chapters, browse to `\http://localhost:8080` on your
 preferred browser. Since
 you are going to use the Management Center for the first time, the following page appears:
 
-image:ROOT:ConfigureSecurity.png[alt=Signing Up,{half-width}, align="center"]
+image:ROOT:ConfigureSecurity.png[alt=Signing Up, align="center"]
 
 NOTE: If you already configured security before, a login page appears instead.
 

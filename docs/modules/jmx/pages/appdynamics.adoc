@@ -12,16 +12,16 @@ http://docs.appdynamics.com/display/PRO14S/Monitor+JMX+MBeans#MonitorJMXMBeans-U
 
 After installing AppDynamics agent, you can start the Management Center as shown below:
 
-[subs="attributes"]
-```bash
+[source,bash,subs="attributes+"]
+----
 java -javaagent:/path/to/javaagent.jar \
      -Dhazelcast.mc.jmx.enabled=true \
      -Dhazelcast.mc.jmx.port=9999 -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 When the Management Center starts, you should see the logs below:
 
-```plain
+```
 Started AppDynamics Java Agent Successfully.
 Hazelcast Management Center starting on port 8080 at path : /
 ```

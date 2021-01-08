@@ -37,10 +37,10 @@ contains the `hazelcast-management-center-{page-component-display-version}.jar` 
 
 You can start this file directly from the command line using the following command:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 The above command starts the  Hazelcast Management Center service on
 the port `8080` with the root context path (`\http://localhost:8080`).
@@ -52,10 +52,10 @@ You can use `-Dhazelcast.mc.http.port` and `-Dhazelcast.mc.contextPath`
 command line options to start Management Center on a different port and
 context path:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
 You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
