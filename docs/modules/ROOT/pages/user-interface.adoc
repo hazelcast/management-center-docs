@@ -15,7 +15,7 @@ The user interface has a toolbar on the top and a menu on the left.
 [[toolbar]]
 == Toolbar
 
-image:ROOT:Toolbar.png[Management Center Toolbar, {half-width}]
+image:ROOT:Toolbar.png[Management Center Toolbar]
 
 The toolbar has the following elements:
 

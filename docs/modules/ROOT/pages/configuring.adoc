@@ -21,10 +21,10 @@ When starting the Management Center from the command line, a
 license can be provided using the system property `hazelcast.mc.license`.
 For example by using the command line parameter:
 
-[subs="attributes,specialchars"]
-```
+[source,bash,subs="attributes+",specialchars"]
+----
 java -Dhazelcast.mc.license=<key> -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 When this option is used, the license provided takes precedence
 over any license set and stored previously using the user interface.
@@ -39,17 +39,17 @@ You can also start the Management Center with an extra classpath
 entry (for example, when using JAAS authentication) by using the
 following command:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -cp "hazelcast-management-center-{page-component-display-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-```
+----
 
 On Windows, the command becomes as follows (semicolon instead of colon):
 
-[subs="attributes"]
-```bash
+[source,bash,subs="attributes+"]
+----
 java -cp "hazelcast-management-center-{page-component-display-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-```
+----
 
 [[client-config]]
 == Configuring the Client Used by Management Center
@@ -144,10 +144,10 @@ by using the JAR file, by default, the sessions that are inactive for
 For example, the following command starts the Management Center with
 a session timeout period of 1 minute:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 If you have deployed the Management Center on an application
 server/container, you can configure the default session timeout
@@ -278,12 +278,12 @@ the system JVM's own truststore.
 The following is an example on how to start the Management Center with
 TLS/SSL enabled from the command line:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks
 -Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 You can access the Management Center from the following HTTPS URL on
 port 8443: `\https://localhost:8443`.
@@ -310,14 +310,14 @@ No subject alternative names matching IP address 127.0.0.1 found
 To override the HTTPS port, you can use the `-Dhazelcast.mc.https.port`
 command line option when starting the Management Center. For example:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks \
      -Dhazelcast.mc.tls.keyStorePassword=yourpassword \
      -Dhazelcast.mc.https.port=443 \
      -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 This starts the Management Center on HTTPS port 443.
 
@@ -392,14 +392,14 @@ you need to use the following command line parameters when starting the Manageme
 
 See the below snippet to see the full command to start the Management Center:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.trustStore=path to your truststore \
      -Dhazelcast.mc.tls.trustStorePassword=password for your truststore \
      -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED \
      -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
 
@@ -485,12 +485,12 @@ command line parameter and setting it to a number.
 An example to start the Management Center using the aforementioned parameters
 is shown below:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3 \
      -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 [[including-excluding-specific-cipher-suites]]
 === Including and/or Excluding Specific Cipher Suites
@@ -818,8 +818,8 @@ of this file as shown below:
 . Create the password file: `echo '/Za-uG3dDfpd,5.-' > /opt/master-password`
 . Define the encrypted variables:
 +
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java -cp hazelcast-management-center-{page-component-display-version}.jar \
      -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
      -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
@@ -829,13 +829,13 @@ java -cp hazelcast-management-center-{page-component-display-version}.jar \
 Output:
 
 $ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}
-```
+----
 +
 . Configure the replacer and provide the encrypted variables as command
 line arguments while starting the Management Center:
 
-[subs="attributes"]
-```
+[source,bash,subs="attributes+"]
+----
 java \
  -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
  -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
@@ -844,7 +844,7 @@ java \
  -Dhazelcast.mc.tls.keyStore=/opt/mc.keystore \
  -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
  -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 === PropertyReplacer
 
@@ -860,7 +860,8 @@ You can also provide your own replacer implementations. All replacers
 have to implement the three methods that have the same signatures as
 the methods of the following interface:
 
-```
+[source,java]
+----
 import java.util.Properties;
 
 public interface ConfigReplacer {
@@ -868,5 +869,5 @@ public interface ConfigReplacer {
     String getPrefix();
     String getReplacement(String maskedValue);
 }
-```
+----
 

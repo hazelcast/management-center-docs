@@ -45,7 +45,7 @@ image:ROOT:LicenseExpirationAlert.png[License Expiration Alert]
 To update the Management Center license, you can open the **Manage License**
 tab and click on the **Update License** button and enter the new license code.
 
-image:ROOT:License.png[alt=License,{half-width}]
+image:ROOT:License.png[alt=License]
 
 Alternatively, a license can be provided using the `hazelcast.mc.license`
 system property (see the xref:configuring.adoc#starting-with-a-license[Starting with a License section] for details).
