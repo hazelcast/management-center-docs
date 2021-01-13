@@ -166,7 +166,7 @@ _1 minute_, _5 minutes_, _30 minutes_ and _60 minutes_.
 Currently, the table shows overall Near Cache effectiveness, calculated as hits/total reads ratio.
 
 NOTE: You need to enable the statistics for clients to see them here.
-See the xref:monitoring-clients.adoc[Monitoring Clients section] for details.
+See the xref:monitor-clients.adoc[Monitoring Clients section] for details.
 
 image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 

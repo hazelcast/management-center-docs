@@ -341,7 +341,7 @@ Java keystore instead of the local database.
 
 NOTE: You can also encrypt the password, and provide it in an encrypted form,
 when configuring LDAP security provider.
-See the xref:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
+See the xref:ROOT:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
 
 [[providing-a-master-key-for-encryption]]
 ==== Providing a Master Key for Encryption
@@ -388,7 +388,7 @@ NOTE: Make sure your keystore supports storing `SecretKey`s.
 
 You can use the `update-ldap-password` command in the MC Conf tool to update
 the encrypted LDAP password stored in the keystore. See this command's
-xref:mc-conf.adoc#mc-conf-update-ldap-password[description] for details.
+xref:ROOT:mc-conf.adoc#mc-conf-update-ldap-password[description] for details.
 
 [[saml-authentication]]
 == SAML Authentication
