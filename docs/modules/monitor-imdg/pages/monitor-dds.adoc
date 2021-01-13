@@ -174,7 +174,7 @@ image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 **Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this map, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
-See the xref:monitoring-clients.adoc[Monitoring Clients section] for details.
+See the xref:monitor-clients.adoc[Monitoring Clients section] for details.
 
 image:ROOT:ClientNearCacheDataTable.png[Maps Client Near Cache Data Table]
 

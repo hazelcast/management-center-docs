@@ -30,11 +30,11 @@ The password you enter should match the following criteria:
 * It should not contain a 3-character or longer sequence of letters following or preceeding each other, e.g., "abc" or "fed".
 * It should not contain a 3-character or longer sequence of digits following or preceeding each other, e.g., "123" or "987".
 * It should not match any of the words listed in the dictionary (you can find more details
-in the xref:configuring.adoc#using-a-dictionary-to-prevent-weak-passwords[Using a Dictionary to Prevent Weak Passwords section]).
+in the xref:ROOT:configuring.adoc#using-a-dictionary-to-prevent-weak-passwords[Using a Dictionary to Prevent Weak Passwords section]).
 
 NOTE: You can also use the `create-user` command in the MC Conf tool to configure
 the default security provider without any UI interactions. See this command's
-xref:mc-conf.adoc#mc-conf-create-user[description] for details.
+xref:ROOT:mc-conf.adoc#mc-conf-create-user[description] for details.
 
 [[active-directory-authentication]]
 == Active Directory Authentication
@@ -109,7 +109,7 @@ After a successful import, the file will be renamed as `importedSecurityHotReloa
 Alternatively, you can use MC-Conf tool's `security reset` and `active-directory configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop the Management Center service for this configuration option.
-See the xref:mc-conf.adoc[Management Center Configuration Tool section] for more information.
+See the xref:ROOT:mc-conf.adoc[Management Center Configuration Tool section] for more information.
 
 [[ad-ssl]]
 === Enabling TLS/SSL for Active Directory
@@ -303,7 +303,7 @@ After a successful import, the file will be renamed as `importedSecurityHotReloa
 Alternatively, you can use MC-Conf tool's `security reset` and `active-directory configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop the Management Center service for this configuration option.
-See the xref:mc-conf.adoc[Management Center Configuration Tool section] for more information.
+See the xref:ROOT:mc-conf.adoc[Management Center Configuration Tool section] for more information.
 
 [[ldap-ssl]]
 === Enabling TLS/SSL for LDAP
