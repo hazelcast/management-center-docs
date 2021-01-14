@@ -8,7 +8,7 @@ content:
     start_path: docs
 ui: 
   bundle:
-    url: https://github.com/JakeSCahill/hazelcast-docs-ui/releases/download/v1.1.13/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
+    url: https://github.com/JakeSCahill/hazelcast-docs-ui/releases/download/v1.1.18/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
     snapshot: true
 asciidoc:
   attributes:
@@ -23,6 +23,3 @@ asciidoc:
     jet-refman: https://docs.hazelcast.org/docs/jet/latest/manual/
     hz-ops-guide: https://hazelcast.com/resources/hazelcast-deployment-operations-guide/
     docs-archive: 'https://hazelcast.org/imdg/download/archives/'
-    half-width: width=50%,scaledwidth=50%
-#  extensions:
-#    - ./lib/tabs-block.js
