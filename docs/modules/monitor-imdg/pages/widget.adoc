@@ -19,7 +19,7 @@ image:ROOT:WidgetLegend.png[alt=Widget with Legend, align="center"]
 Widget works in two modes - current and historical. It fetches current data in the current mode
 and historical data in the historical mode.
 
-The current mode is always available. The historical mode requires xref:metric-persistence.adoc[Metrics Persistence] to be enabled.
+The current mode is always available. The historical mode requires xref:ROOT:metric-persistence.adoc[Metrics Persistence] to be enabled.
 
 The input on the bottom controls what data is displayed. The input is disabled if only current data is available.
 You can select any arbitrary point in the past to see the historical data from that period. You can drag

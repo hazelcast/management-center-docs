@@ -20,7 +20,7 @@ It shows the expiration date, total licensed member
 count and type of your Management Center license.
 
 For security reasons, the license key itself is not shown.
-Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your Management Center
@@ -64,7 +64,7 @@ It shows the expiration date, total licensed member
 count and type of your Hazelcast IMDG license.
 
 For security reasons, the license key itself is not shown.
-Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your cluster

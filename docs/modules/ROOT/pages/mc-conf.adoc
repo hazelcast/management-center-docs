@@ -46,7 +46,7 @@ When you choose a specific subcommand from the list above, you can see all tasks
 See the following example:
 
 ```
-$ ./mc-conf.sh user
+./mc-conf.sh user
 Usage: mc-conf user [-hV] TASK
 Manage Default Security Provider Users
   -h, --help      Show this help message and exit.
@@ -69,7 +69,7 @@ You can also get specific help for any task by using the `-h` (or `--help`)
 command line option. See the following example:
 
 ```bash
-$ ./mc-conf.sh user create -h
+./mc-conf.sh user create -h
 Usage: mc-conf user create [-hvV] [-p[=<password>]] [-H=<homedir>]
                            -n=<username> -r=<role>
 Create a new user record in the default security provider.
@@ -223,7 +223,7 @@ When you use this option without providing a value, you will get a prompt to ent
 An example of the interactive option usage is shown below.
 
 ```bash
-$ ./mc-conf.sh user update-password --username=admin --password
+./mc-conf.sh user update-password --username=admin --password
 Enter value for --password (Password for the user record. Provide value directly,
 or use without value to enter securely with interactive prompt.): ********
 Successfully changed password for user 'admin'.
@@ -239,8 +239,8 @@ leading to a text file. The contents of that file are automatically expanded int
 the current task. An example of the argument file usage is shown below.
 
 ```bash
-$ ./mc-conf.sh user update-password @arg-file.txt
+./mc-conf.sh user update-password @arg-file.txt
 Successfully changed password for user 'admin'.
-$ cat arg-file.txt
+cat arg-file.txt
 --username=admin --password=mnb3c4s0
 ```

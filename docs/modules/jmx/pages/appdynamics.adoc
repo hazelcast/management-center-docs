@@ -5,10 +5,10 @@ with *AppDynamics*. To perform this integration, attach the AppDynamics
 Java agent to the Management Center.
 
 For agent installation, see the
-http://docs.appdynamics.com/display/PRO14S/Install+the+App+Agent+for+Java[Install the App Agent for Java] page.
+http://docs.appdynamics.com/display/PRO14S/Install%2Bthe%2BApp%2BAgent%2Bfor%2BJava[Install the App Agent for Java] page.
 
 For monitoring on AppDynamics, see the
-http://docs.appdynamics.com/display/PRO14S/Monitor+JMX+MBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] page.
+http://docs.appdynamics.com/display/PRO14S/Monitor%2BJMX%2BMBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] page.
 
 After installing AppDynamics agent, you can start the Management Center as shown below:
 
