@@ -6,14 +6,14 @@ feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled
 
 Prometheus can be configured to scrape Management Center in `prometheus.yml` as follows:
 
-```yaml
+[source,yaml]
+----
 scrape_configs:
   - job_name: 'HZ MC'
     # scheme defaults to 'http'.
     static_configs:
     - targets: ['localhost:8080'] # replace this address with the network address of Hazelcast Management Center
-```
-
+----
 
 After starting Prometheus with this configuration, all metrics will be exported to Prometheus with the `hz_` prefix. The metrics
 are also available via the {imdg-docs}#jmx-2[member JMX API].
@@ -23,19 +23,22 @@ or the `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properti
 metric names.
 
 Example of starting Management Center with specifying the metrics exported to Prometheus:
-```
+
+[source,bash,subs="attributes+"]
+----
 java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
   -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 Example of starting Management Center with specifying the metrics to be excluded from the Prometheus export:
 
-```
+[source,bash,subs="attributes+"]
+----
 java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
   -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 NOTE: Prometheus connects via the same IP and port as the Management Center web interface.
 

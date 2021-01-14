@@ -62,8 +62,9 @@ Management Center uses the RocksDB native library under the hood for metrics per
 is extracted into the `java.io.tmpdir` directory. In case you run into any file system permission errors, you can override
 this default by setting the `ROCKSDB_SHAREDLIB_DIR` environment variable to the absolute path of an other directory. See the following example:
 
-```bash
+[source,bash,subs="attributes+"]
+----
 mkdir $HOME/tmp/rocksdb
 export ROCKSDB_SHAREDLIB_DIR="$(realpath $HOME/tmp/rocksdb)"
 java -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----

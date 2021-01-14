@@ -32,17 +32,17 @@ installation. If an `extensions` directory does not exist there, create one.
 After you set your extension, attach the New Relic Java agent and
 start the Management Center as shown below.
 
-[subs="attributes"]
-```bash
+[source,bash,subs="attributes+"]
+----
 java -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
     -Dhazelcast.mc.jmx.port=9999 -jar hazelcast-management-center-{page-component-display-version}.jar
-```
+----
 
 If your logging level is set to `FINER`, you should see the log listing
 in the file `newrelic_agent.log`, which is located in the `logs` directory
 in your New Relic installation. The following is an example log listing:
 
-```plain
+```
 Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINE:
     JMX Service : querying MBeans (1)
 Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
