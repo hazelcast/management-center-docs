@@ -35,9 +35,9 @@ entities and all Hazelcast entities except the map, i.e., the heap memory used
 by all entities subtracted by the heap memory used by map. The red area is
 the free heap memory out of the whole cluster's total committed heap memory.
 
-image:ROOT:HeapMemoryDistribution.png[Heap Memory Distribution of Cluster, {half-width}]
+image:ROOT:HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
 
-image:ROOT:HeapMemoryDistributionLegend.png[Heap Memory Distribution of Cluster Legend, {half-width}]
+image:ROOT:HeapMemoryDistributionLegend.png[Heap Memory Distribution of Cluster Legend]
 
 In the above example, you can see a small amount of the total heap memory
 is used by Hazelcast IMDG maps, about 25% is used by both non-Hazelcast entities
@@ -55,7 +55,7 @@ cluster states, see the xref:cluster-administration.adoc#cluster-state[Cluster S
 * **Cluster Filtering:** Shows values for the current cluster client filtering
 status and type. For more information on the cluster client filtering, see the
 xref:client-filtering.adoc[Changing Cluster Client Filtering section].
-* **CP Subsystem:** Shows the {hz-refman}#cp-subsystem[CP subsystem^]
+* **CP Subsystem:** Shows the {hz-refman}#cp-subsystem[CP subsystem]
 status. For more information on the CP subsystem support in the Management Center,
 see the xref:cluster-administration.adoc#cp-subsystem[CP Subsystem section].
 
@@ -69,9 +69,9 @@ image:ROOT:ClusterStateAndHealth.png[Cluster State and Cluster Health]
 
 This chart shows what percentage of partitions each cluster member has, as shown below:
 
-image:ROOT:PartitionDistribution.png[Partition Distribution per Member, {half-width}]
+image:ROOT:PartitionDistribution.png[Partition Distribution per Member]
 
-image:ROOT:PartitionDistributionLegend.png[Partition Distribution per Member Legend, {half-width}]
+image:ROOT:PartitionDistributionLegend.png[Partition Distribution per Member Legend]
 
 You can see each member's partition percentages by placing the mouse cursor on the
 chart. In the above example, you can see that two members out of three share
@@ -92,7 +92,7 @@ only then this chart starts to show partition distribution information.
 This part of the page provides load and utilization information for
 the CPUs for each cluster member, as shown below:
 
-image:ROOT:CPUUtilization.png[CPU Utilization, {half-width}]
+image:ROOT:CPUUtilization.png[CPU Utilization]
 
 The first column lists the members with their IPs and ports. The next
 columns list the system load averages on each member for the current moment, last 1 and 5 minutes.

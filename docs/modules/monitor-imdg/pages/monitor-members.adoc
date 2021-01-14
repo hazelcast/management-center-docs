@@ -145,7 +145,7 @@ configuration of the connected Hazelcast cluster.
 
 [[slow-operations]]The **List of Slow Operations** gives an overview of detected slow
 operations which occurred on that member. The data is collected by the
-http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#slowoperationdetector[SlowOperationDetector].
+{hz-refman}#slowoperationdetector[SlowOperationDetector].
 
 image:ROOT:ListOfSlowOperations.png[List of Slow Operations]
 

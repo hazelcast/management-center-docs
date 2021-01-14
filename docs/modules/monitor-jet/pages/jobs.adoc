@@ -101,7 +101,7 @@ image:ROOT:dag.png[alt=DAG Visualization]
 
 It shows information about the selected vertex on the Job Visualization section.
 
-image:ROOT:vertex.png[alt=Vertex Details,{half-width}]
+image:ROOT:vertex.png[alt=Vertex Details]
 
 **Parallelism::**
 
@@ -183,7 +183,7 @@ out of your control as event time.
 
 It shows information about the selected edge on the Job Visualization section.
 
-image:ROOT:edge.png[alt=Edge Details,{half-width}]
+image:ROOT:edge.png[alt=Edge Details]
 
 **Items Flow:**
 

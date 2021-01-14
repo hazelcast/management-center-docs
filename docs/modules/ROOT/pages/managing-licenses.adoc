@@ -20,7 +20,7 @@ It shows the expiration date, total licensed member
 count and type of your Management Center license.
 
 For security reasons, the license key itself is not shown.
-Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your Management Center
@@ -45,7 +45,7 @@ image:ROOT:LicenseExpirationAlert.png[License Expiration Alert]
 To update the Management Center license, you can open the **Manage License**
 tab and click on the **Update License** button and enter the new license code.
 
-image:ROOT:License.png[alt=License,{half-width}]
+image:ROOT:License.png[alt=License]
 
 Alternatively, a license can be provided using the `hazelcast.mc.license`
 system property (see the xref:configuring.adoc#starting-with-a-license[Starting with a License section] for details).
@@ -64,7 +64,7 @@ It shows the expiration date, total licensed member
 count and type of your Hazelcast IMDG license.
 
 For security reasons, the license key itself is not shown.
-Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256] hash of
+Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your cluster
