@@ -25,7 +25,7 @@ Hazelcast Management Center is delivered with Hazelcast IMDG. It can
 also be downloaded as a separate package from the
 https://hazelcast.org/download/#management-center[hazelcast.org] website.
 
-See the {hz-refman}[Hazelcast IMDG Reference Manual]
+See the {imdg-docs}[Hazelcast IMDG Reference Manual]
 for all Hazelcast IMDG topics including the clusters and their operations,
 clients, data structures, computing and WAN replication.
 

@@ -87,7 +87,7 @@ Hazelcast provides the following synchronization options:
 
 . Default WAN  synchronization operation: It sends all the data of an
 IMap to a target cluster to align the state of target IMap with the
-source IMap. See {hz-refman}#synchronizing-wan-clusters[Synchronizing WAN Clusters]
+source IMap. See {imdg-docs}#synchronizing-wan-clusters[Synchronizing WAN Clusters]
 for more information.
 . WAN synchronization using https://en.wikipedia.org/wiki/Merkle_tree[Merkle trees]: To
 initiate this type of synchronization, you need to configure the

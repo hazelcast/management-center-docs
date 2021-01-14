@@ -16,7 +16,7 @@ scrape_configs:
 
 
 After starting Prometheus with this configuration, all metrics will be exported to Prometheus with the `hz_` prefix. The metrics
-are also available via the {hz-refman}#jmx-2[member JMX API].
+are also available via the {imdg-docs}#jmx-2[member JMX API].
 With the default configuration, Management Center exports all metrics reported by the cluster members. Since it can be overly
 verbose for some usecases, the metrics can be filtered with the `hazelcast.mc.prometheusExporter.filter.metrics.included`
 or the `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties, both being comma-separated lists of

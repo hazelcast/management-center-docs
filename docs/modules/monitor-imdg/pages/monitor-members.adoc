@@ -14,7 +14,7 @@ image:ROOT:MemberGridView.png[Member Grid View]
 
 NOTE: You may see a warning icon with exclamation mark in the list
 when your runtime or hardware configuration does not follow the performance
-recommendations. See {hz-ops-guide}[IMDG Deployment and Operations Guide]
+recommendations. See {imdg-ops-guide}[IMDG Deployment and Operations Guide]
 for more information.
 
 image:ROOT:MemberGridViewWarning.png[Member Grid View with Warnings]
@@ -22,7 +22,7 @@ image:ROOT:MemberGridViewWarning.png[Member Grid View with Warnings]
 You can filter the members shown and you can also
 sort the table by clicking on the column headers.
 Members that participate in the
-{hz-refman}#cp-subsystem[CP subsystem]
+{imdg-docs}#cp-subsystem[CP subsystem]
 are marked with the CP icon. Clicking on a member
 name opens a new page for monitoring that
 member on the right, as shown below.
@@ -42,7 +42,7 @@ selected member and shows it in a separate dialog.
 When pressed, the lite member becomes a data member.
 
 NOTE: Shutdown member operation requires enabled REST API in the IMDG cluster. See the
-{hz-refman}#rest-client[IMDG documentation]
+{imdg-docs}#rest-client[IMDG documentation]
 for more information.
 
 Next to the above operation buttons, you can see the informative buttons
@@ -145,7 +145,7 @@ configuration of the connected Hazelcast cluster.
 
 [[slow-operations]]The **List of Slow Operations** gives an overview of detected slow
 operations which occurred on that member. The data is collected by the
-{hz-refman}#slowoperationdetector[SlowOperationDetector].
+{imdg-docs}#slowoperationdetector[SlowOperationDetector].
 
 image:ROOT:ListOfSlowOperations.png[List of Slow Operations]
 

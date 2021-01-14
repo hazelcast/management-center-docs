@@ -412,7 +412,7 @@ the client will not be authenticated.
 [[managing-mutual-authentication-enabled-clusters]]
 ==== Managing Mutual Authentication Enabled Clusters
 
-If mutual authentication is enabled for the cluster (as described {hz-refman}#mutual-authentication[here]),
+If mutual authentication is enabled for the cluster (as described {imdg-docs}#mutual-authentication[here]),
 the Management Center needs to have a keystore to identify itself.
 For this, you need to start the Management Center with the
 following command line parameters:

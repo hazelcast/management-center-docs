@@ -54,7 +54,7 @@ listed.
 If you are using a serialization mechanism other than standard Java
 serialization for storing values in your map, you need to
 configure the client that Management Center uses for connecting to the
-cluster (as described {hz-refman}#serialization[here]). Note that if you
+cluster (as described {imdg-docs}#serialization[here]). Note that if you
 have any custom classes, you need to add the JAR containing them
 to Management Center's classpath before starting it as described in
 the xref:ROOT:configuring.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath section]. In case the value stored in the map is not a `String`
