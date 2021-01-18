@@ -3,4 +3,4 @@ title: Hazelcast Management Center
 version: 4.0.2
 asciidoc:
   attributes:    
-    page-ghissue: https://github.com/SerdarO/mc-docs/issues/new
+    page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
