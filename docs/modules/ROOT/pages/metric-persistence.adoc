@@ -4,7 +4,7 @@
 Your clusters collect and report metrics data for the connected Management Center.
 Metrics data includes various number of time series, such as CPU load, memory consumption,
 and operation counters.
-See the {imdg-docs}#metrics[Metrics section] of the Hazelcast IMDG Reference Manual
+See the xref:imdg:management:metrics.adoc[Metrics section] of the Hazelcast IMDG Reference Manual
 for details about configuring metrics collection.
 
 By default, Management Center persists the collected metrics on disk.
