@@ -22,7 +22,7 @@ image:ROOT:MemberGridViewWarning.png[Member Grid View with Warnings]
 You can filter the members shown and you can also
 sort the table by clicking on the column headers.
 Members that participate in the
-{imdg-docs}#cp-subsystem[CP subsystem]
+xref:imdg:cp-subsystem:cp-subsystem.adoc[CP subsystem]
 are marked with the CP icon. Clicking on a member
 name opens a new page for monitoring that
 member on the right, as shown below.
@@ -42,7 +42,7 @@ selected member and shows it in a separate dialog.
 When pressed, the lite member becomes a data member.
 
 NOTE: Shutdown member operation requires enabled REST API in the IMDG cluster. See the
-{imdg-docs}#rest-client[IMDG documentation]
+xref:imdg:clients:rest.adoc[IMDG documentation]
 for more information.
 
 Next to the above operation buttons, you can see the informative buttons
@@ -145,7 +145,7 @@ configuration of the connected Hazelcast cluster.
 
 [[slow-operations]]The **List of Slow Operations** gives an overview of detected slow
 operations which occurred on that member. The data is collected by the
-{imdg-docs}#slowoperationdetector[SlowOperationDetector].
+xref:imdg:performance:slowoperationdetector.adoc[SlowOperationDetector].
 
 image:ROOT:ListOfSlowOperations.png[List of Slow Operations]
 

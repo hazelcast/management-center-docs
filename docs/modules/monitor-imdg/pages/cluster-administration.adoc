@@ -228,11 +228,11 @@ to the result of Hot Restart operation.
 [[cp-subsystem]]
 == CP Subsystem
 
-NOTE: CP subsystem management operations require enabled REST API in the IMDG cluster. See the {imdg-docs}#rest-client[IMDG documentation]
+NOTE: CP subsystem management operations require enabled REST API in the IMDG cluster. See the xref:imdg:clients:rest.adoc[IMDG documentation]
 for more information.
 
 The **CP Subsystem** tab can be used to monitor overall status of the
-{imdg-docs}#cp-subsystem[CP subsystem]
+xref:imdg:cp-subsystem:cp-subsystem.adoc[CP subsystem]
 in the current cluster and perform certain management operations.
 
 image:ROOT:CPSubsystemTab.png[Status]
@@ -258,7 +258,7 @@ members are missing.
 members are missing.
 
 The **CP Members (Accessible/Configured)** field shows the current count of accessible CP members and the
-{imdg-docs}#cp-subsystem-configuration[configured CP members count].
+xref:imdg:cp-subsystem:configuration.adoc#cp-subsystem-configuration[configured CP members count].
 
 NOTE: You may promote additional members or remove inaccessible CP members,
 so the total count of members that participate in the CP subsystem may be greater or less than the
