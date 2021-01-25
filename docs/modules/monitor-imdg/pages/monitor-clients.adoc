@@ -44,7 +44,7 @@ image:ROOT:MonitoringClientDetailed.png[Monitoring Client Detailed]
 [[client-heap-memory]]The **Heap Memory Utilization** chart shows the memory usage
 on the selected client with three different metrics
 (maximum, used and total memory) represented by different colors. You can open this
-chart as a separate window using the image:MaximizeChart.png[maximize]
+chart as a separate window using the image:ROOT:MaximizeChart.png[maximize]
 button placed at top right of it; this gives you a
 clearer view of the chart.
 
