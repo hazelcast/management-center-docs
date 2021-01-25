@@ -6,7 +6,7 @@ This chapter details how a IMDG cluster can be queried with SQL using Management
 You can use the SQL browser for this purpose, which can be opened using
 the "SQL Browser" menu item under the "Cluster" parent menu heading:
 
-image:ROOT:SQLBrowserMenu.png[SQLBrowserMenu]
+image:ROOT:SQLBrowserMenu.png[SQLBrowserMenu,scaledwidth="50%"]
 
 Once you select the SQL Browser menu item, the browser opens as shown below:
 

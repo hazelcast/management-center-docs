@@ -61,7 +61,7 @@ Utilization** charts show the memory usage on the
 selected member with three different metrics
 (maximum, used and total memory). You can open
 each chart as a separate dialog using
-the image:MaximizeChart.png[maximize] button
+the image:ROOT:MaximizeChart.png[maximize] button
 placed at top right of them; this gives you
 a clearer view of the chart.
 

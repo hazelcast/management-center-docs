@@ -636,9 +636,7 @@ types:
 |Event Category| Log Type/Description
 
 | Management Center Configuration Logs
-|
-
-* `MC-0001 [Config]`: Metrics Persistence is enabled.
+|* `MC-0001 [Config]`: Metrics Persistence is enabled.
 * `MC-0002 [Config]`: Metrics Persistence is disabled.
 * `MC-0003 [Config]`: User is created.
 * `MC-0004 [Config]`: User is edited.
@@ -647,9 +645,7 @@ types:
 * `MC-0009 [Config]`: License is set.
 
 | Cluster Configuration Logs
-|
-
-* `MC-1001 [Cluster Config]`: Map's configuration is changed.
+|* `MC-1001 [Cluster Config]`: Map's configuration is changed.
 * `MC-1003 [Cluster Config]`: Cluster's state is changed.
 * `MC-1004 [Cluster Config]`: Cluster is shut down.
 * `MC-1005 [Cluster Config]`: Member is shut down.
@@ -657,56 +653,40 @@ types:
 * `MC-1007 [Cluster Config]`: Cluster version is changed.
 
 | Authentication Logs
-|
-
-* `MC-2001 [Auth]`: User logs in.
+|* `MC-2001 [Auth]`: User logs in.
 * `MC-2002 [Auth]`: User logs out.
 * `MC-2003 [Auth]`: Login failures.
 
 | Scripting Logs
-|
-
-* `MC-3001 [Script]`: Script is executed on a member.
+|* `MC-3001 [Script]`: Script is executed on a member.
 
 | Console Logs
-|
-
-* `MC-4001 [Console]`: Console command is executed on the cluster.
+|* `MC-4001 [Console]`: Console command is executed on the cluster.
 
 | Map/Cache Logs
-|
-
-* `MC-5001 [Browser]`: User browses through a map screen in Management Center.
+|* `MC-5001 [Browser]`: User browses through a map screen in Management Center.
 * `MC-5002 [Browser]`: User browses through a cache screen in Management Center.
 
 | Hot Restart Logs
-|
-
-* `MC-6001 [Hot Restart]`: Force start is run.
+|* `MC-6001 [Hot Restart]`: Force start is run.
 * `MC-6002 [Hot Restart]`: Partial start is run.
 * `MC-6003 [Hot Restart]`: Hot Restart backup operation is triggered.
 * `MC-6004 [Hot Restart]`: Hot Restart backup operation is interrupted.
 
 | WAN Replication Logs
-|
-
-* `MC-7001 [WAN]`: WAN configuration is added.
+|* `MC-7001 [WAN]`: WAN configuration is added.
 * `MC-7002 [WAN]`: WAN consistency check operation is run.
 * `MC-7003 [WAN]`: WAN synchronization on a map is run.
 * `MC-7004 [WAN]`: State of the WAN publisher is changed.
 * `MC-7005 [WAN]`: Clear operation for the WAN events queue is run.
 
 | CP Subsystem Logs
-|
-
-* `MC-8001 [CP Subsystem]`: Member is promoted to be a CP subsystem member.
+|* `MC-8001 [CP Subsystem]`: Member is promoted to be a CP subsystem member.
 * `MC-8002 [CP Subsystem]`: Member is removed from CP subsystem.
 * `MC-8003 [CP Subsystem]`: CP subsystem is reset.
 
 |Jet Logs
-|
-
-* `MC-9001 [Jet]`: Jet job is restarted.
+|* `MC-9001 [Jet]`: Jet job is restarted.
 * `MC-9002 [Jet]`: Jet job is suspended.
 * `MC-9003 [Jet]`: Jet job is resumed.
 * `MC-9004 [Jet]`: Jet job is cancelled.
