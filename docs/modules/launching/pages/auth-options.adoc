@@ -2,19 +2,19 @@
 [[authentication-options]]
 
 As mentioned above, available security providers are
-Default, Active Directory, LDAP and JAAS. They are
+Local, Active Directory, LDAP and JAAS. They are
 described in the following sections.
 
-[[default-authentication]]
-== Default Authentication
+[[local-authentication]]
+== Local Authentication
 
-You can use the default security provider for authentication/authorization
+You can use the Local security provider for authentication/authorization
 on the Management Center. In this case, the user accounts are stored in the
 Management Center's database.
 
 image:ROOT:ConfigureSecurity.png[alt=Default Security Provider Configuration, align="center"]
 
-Provide the details in this form for the default security provider:
+Provide the details in this form for the Local security provider:
 
 * **Username:** Username for the initial administrator user account.
 * **Password, Confirm Password:** Password for the initial administrator user account.
@@ -33,7 +33,7 @@ The password you enter should match the following criteria:
 in the xref:ROOT:configuring.adoc#using-a-dictionary-to-prevent-weak-passwords[Using a Dictionary to Prevent Weak Passwords section]).
 
 NOTE: You can also use the `create-user` command in the MC Conf tool to configure
-the default security provider without any UI interactions. See this command's
+the Local security provider without any UI interactions. See this command's
 xref:ROOT:mc-conf.adoc#mc-conf-create-user[description] for details.
 
 [[active-directory-authentication]]
@@ -460,6 +460,12 @@ requests to this URL. For example, if Management
 Center and the OpenID provider are on the same machine, you would enter
 “http://127.0.0.1:8080/oidc/auth”.
 * **Groups Claim Name:** Name of the claim that contains group(s) of the user.
+* **JWS Algorithm:** JWS algorithm to use.
+* **UserInfo Request HTTP Method:** HTTP method to use for sending a UserInfo request. Either `GET` or `POST`.
+Default value is  `GET`. Note that IBM MCM requires this to be `POST`.
+* **Send Client Info in Token Request:** Whether Management Center should send client ID and client secret
+as extra parameters in the token request. "No" by default. Note that IBM MCM requires these extra
+parameters in its token endpoint, so it should be "Yes" when deployed there.
 * **Admin Group(s):** Members of this group have admin privileges on the Management Center. To use more
 than one group, separate them with the group name separator you have configured.
 * **User Group(s):** Members of this group have read and write privileges on the Management Center.

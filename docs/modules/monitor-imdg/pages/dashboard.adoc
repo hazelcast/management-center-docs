@@ -52,7 +52,7 @@ This part has the following status indicator elements:
 * **Cluster State:** Shows the current cluster state. For more information on
 cluster states, see the xref:cluster-administration.adoc#cluster-state[Cluster State section].
 * **Cluster Health:** Shows how many migrations are taking place currently.
-* **Cluster Filtering:** Shows values for the current cluster client filtering
+* **Client Filtering:** Shows values for the current cluster client filtering
 status and type. For more information on the cluster client filtering, see the
 xref:client-filtering.adoc[Changing Cluster Client Filtering section].
 * **CP Subsystem:** Shows the xref:imdg:cp-subsystem:cp-subsystem.adoc[CP subsystem]

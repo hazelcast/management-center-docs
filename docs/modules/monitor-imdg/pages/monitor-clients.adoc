@@ -167,7 +167,7 @@ The **Filter** tab includes **Cluster Client Filtering** status,
 **Cluster Client Filter Settings** and **Client Filtering
 Lists** sections, as shown below.
 
-image::ClientFilteringView.png[Client Filtering View]
+image:ROOT:ClientFilteringView.png[Client Filtering View]
 
 The **Cluster Client Filtering** status section describes if there
 is a deployed client filtering list available to all cluster
@@ -194,7 +194,7 @@ selection).
 Once a cluster member receives the deployed client filtering list
 from the Management Center, it immediately applies the list to
 all currently connected clients and then uses it for newly connecting
-clients. Blacklisted clients may connect to another cluster
+clients. Deny-listed clients may connect to another cluster
 if they are configured to support blue-green deployment. Please see the
 xref:imdg:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery section]
 in the Hazelcast IMDG Reference Manual for more information.
@@ -204,13 +204,17 @@ the Management Center, those members keep using the last client
 list applied to them.
 
 The deploy action in the Cluster Client Filter Settings section is
-available by clicking on the **Deployed/Deploy Changes**
-button. This button also describes if there were any changes in client
+available by clicking on the **Deploy Changes** button. 
+The button is disabled if there are no changes in client
 filtering lists that would lead to changes in the deployed
-client filtering list as the result of the deploy (**Deploy Changes**
-label), or there were no such changes (**Deployed** label).
+client filtering list as the result of the deploy.
 
-The **Client Filtering Lists** section allows creation, editing and
+There is also the **Summary** button. By clicking on the button a modal appears.
+It shows a summary of what the effect of the deployed config will be.
+
+image:ROOT:ClientFilteringDeploySummary.png[Deploy Summary]
+
+The **Client Filter Lists** section allows creation, editing and
 deletion of the client filtering lists. To create a new client
 filtering list, you need to click the **Add New List** button, which
 will open the Create List form, as shown below. Once you
@@ -244,3 +248,60 @@ To delete an existing client filtering list, you need to click the
 
 NOTE: Any modifications made in the Client Filtering Lists section
 will become available to members only after the deploy action.
+
+NOTE: Deploying an empty allow list disconnects all clients.
+
+[[changing-cluster-client-filtering-example]]
+== Example Client Filtering
+
+In this section we show how you can deploy your filtering list for better understanding.
+In the beginning, the client filtering feature is disabled and there are no filter lists.
+
+image:ROOT:ClientFilteringExampleStep1.png[Example Step 1]
+
+Let's create a new filter list:
+* We click the **New List** button and a screen with two forms appears.
+* We fill the first form as follows:
+** Filter Name: 'Example_allow_list'
+** Filter Status: 'Active'
+** Filter Type: 'Allow-list'
+* Next we want to add two IP addresses to our soon-to-be allow-list.
+To achieve this we need to fill the second form twice:
+** First entry:
+*** Type: 'IP Address'
+*** Value: '1.2.3.4'
+* We hit the **Add Entry** button.
+** Second entry:
+*** Type: 'IP Address'
+***Value: '5.6.7.8'
+* Again, we hit the **Add Entry** button.
+
+image:ROOT:ClientFilteringExampleStep2.png[Example Step 2]
+
+To save our brand new allow-list we hit the **Save** button. The allow-list is saved and we are redirected 
+to client filtering overview as shown on the image bellow.
+
+image:ROOT:ClientFilteringExampleStep3.png[Example Step 3]
+
+In the **Client Filter Lists** we can see that our list has
+a grey background, meaning it is not in use right now.
+When we change **Filter Status** value to 'Enabled' and select **Filter Type**
+as 'Allow-list', we are able to deploy our new allow-list; the **Deploy Changes** and **Summary** buttons
+are enabled and our allow-list has a little cross 
+in the **Deploy** column.
+
+image:ROOT:ClientFilteringExampleStep4.png[Example Step 4]
+
+Before deploying our allow-list, let's check what will be deployed
+by clicking on the **Summary** button.
+After the click, a modal opens; we can see that it contains our changes (two IP addresses, **1.2.3.4** and **5.6.7.8**).
+
+image:ROOT:ClientFilteringExampleStep5.png[Example Step 5]
+
+Finally, let's deploy our changes by clicking the **Deploy Changes** button. 
+After a brief moment, we have our allow-list deployed.
+The **Deploy Changes** and **Summary** buttons become disabled again and our
+list has no cross in the **Deploy** column
+as there are no changes to be deployed.
+
+image:ROOT:ClientFilteringExampleStep6.png[Example Step 6]
