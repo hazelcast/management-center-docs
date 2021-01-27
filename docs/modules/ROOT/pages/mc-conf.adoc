@@ -32,7 +32,7 @@ Global options are:
   -V, --version   Print version information and exit.
 Commands:
   cluster           Manage Cluster Connection Configs
-  user              Manage Default Security Provider Users
+  user              Manage Local Security Provider Users
   ldap              Manage LDAP Security Provider
   active-directory  Manage Active Directory Security Provider
   jaas              Manage JAAS Security Provider
@@ -48,16 +48,16 @@ See the following example:
 ```
 ./mc-conf.sh user
 Usage: mc-conf user [-hV] TASK
-Manage Default Security Provider Users
+Manage Local Security Provider Users
   -h, --help      Show this help message and exit.
   -V, --version   Print version information and exit.
 Commands:
-  create           Create a new user record in the default security provider.
+  create           Create a new user record in the Local security provider.
                    *Important notice* Make sure that Management Center web
                      application is stopped (offline) before starting this
                      task.
 
-  update-password  Change password for the given user record in the default
+  update-password  Change password for the given user record in the Local
                      security provider.
                    *Important notice* Make sure that Management Center web
                      application is stopped (offline) before starting this
@@ -72,7 +72,7 @@ command line option. See the following example:
 ./mc-conf.sh user create -h
 Usage: mc-conf user create [-hvV] [-p[=<password>]] [-H=<homedir>]
                            -n=<username> -r=<role>
-Create a new user record in the default security provider.
+Create a new user record in the Local security provider.
 *Important notice* Make sure that Management Center web application is stopped
 (offline) before starting this task.
 
@@ -104,7 +104,7 @@ NOTE: If you have used a non-default Management Center home directory location, 
 [[mc-conf-create-user]]
 == Creating Users
 
-The `user create` task creates a new user in the default security
+The `user create` task creates a new user in the Local security
 provider. Note that you must stop the Management Center web application
 before running this task.
 
@@ -120,7 +120,7 @@ NOTE: If you're on Linux or MacOS devices and provide value directly to `mc-conf
 == Changing User Password
 
 The `user update-password` task resets the password of a specified user in
-the default security provider. Note that you must stop the Management Center
+the Local security provider. Note that you must stop the Management Center
 web application before running this task.
 
 You can use this task as a recovery mechanism for the Management Center's
@@ -197,12 +197,12 @@ NOTE: If you have used a non-default Management Center home directory location, 
 == Resetting Security Provider
 
 The `security reset` task resets current security provider used in
-the Management Center. For the default security provider it also deletes all
+the Management Center. For the Local security provider it also deletes all
 built-in user accounts. Note that you must stop the Management Center web application
 before running this task.
 
-You can use this task as a recovery mechanism for the Management Center deployment in case if a non-default security provider is configured.
-In case of the default security provider, you can also use the `user create` or `user update-password`
+You can use this task as a recovery mechanism for the Management Center deployment in case if a non-Local security provider is configured.
+In case of the Local security provider, you can also use the `user create` or `user update-password`
 task as the recovery mechanism.
 
 NOTE: If you have used a non-default Management Center home directory location, then you must

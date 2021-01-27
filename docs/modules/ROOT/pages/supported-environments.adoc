@@ -10,7 +10,9 @@ installed. Otherwise, you can use the official Management Center docker image.
 
 == IMDG/Jet Compatibility
 
-We officially support any IMDG 4.y and Jet 4.3.z version.
+We officially support any IMDG 4.y version that was released
+before this Management Center version
+and any Jet 4.3.z version.
 
 [[browser-compatibility]]
 == Browser Compatibility

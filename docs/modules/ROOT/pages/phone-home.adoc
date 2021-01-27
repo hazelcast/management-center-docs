@@ -11,14 +11,14 @@ after they are started and once every 24 hours thereafter.
 The following information is sent in a phone home:
 
 * Hazelcast Management Center version
-* Authentication provider used (Default, LDAP, ActiveDirectory, JAAS)
+* Authentication provider used (Local, LDAP, ActiveDirectory, JAAS)
 * Whether clustered REST is enabled or not
 * Whether clustered JMX is enabled or not
 * Whether TLS is enabled or not
 ** If TLS is enabled, whether mutual authentication is enabled or not
 * Whether Management Center is deployed on an application server or used in standalone mode
 ** If not in standalone mode, type of the application server
-* Number of users (if the default security provider is used)
+* Number of users (if the Local security provider is used)
 * Number of clusters
 * Management Center uptime
 * Minimum and maximum cluster sizes

@@ -60,7 +60,8 @@ java -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=65432
 -Dhazelcast.mc.jmx.ssl=true
 -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-display-version}.jar
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+-jar hazelcast-management-center-{page-component-display-version}.jar
 ----
 
 NOTE: You can encrypt the keystore password and pass it as a
@@ -73,6 +74,32 @@ Clustered JMX service using JConsole with the address `localhost:65432`:
 [source,bash]
 ----
 jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl.trustStorePassword=trustpass
+----
+
+=== Enabling TLS Mutual Authentication for Clustered JMX
+
+In order to secure the Clustered JMX interface, you can use
+the following command line parameters to enable TLS mutual
+authentication:
+
+* `-Dhazelcast.mc.jmx.mutualAuthentication=true` (default is false)
+* `-Dhazelcast.mc.jmx.ssl.trustStore=path to your truststore`
+* `-Dhazelcast.mc.jmx.ssl.trustStorePassword=password for your truststore`
+
+The following is an example on how to start Management Center
+with a TLS mutual authentication enabled Clustered JMX service on port 65432:
+
+[source,bash]
+----
+java -Dhazelcast.mc.jmx.enabled=true
+-Dhazelcast.mc.jmx.port=65432
+-Dhazelcast.mc.jmx.ssl=true
+-Dhazelcast.mc.jmx.mutualAuthentication=true
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+-Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks
+-Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
+-jar hazelcast-management-center-{page-component-display-version}.jar
 ----
 
 === Additional TLS/SSL Configuration Options

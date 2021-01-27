@@ -1,8 +1,8 @@
 = Managing Users
 [[users]]
 
-NOTE: User management is only available for the default security provider.
-See the xref:launching:auth-options.adoc#default-authentication[Default Authentication section] for more information.
+NOTE: User management is only available for the Local security provider.
+See the xref:launching:auth-options.adoc#local-authentication[Local Authentication section] for more information.
 
 image:ROOT:Users.png[Users]
 
