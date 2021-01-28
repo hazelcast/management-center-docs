@@ -85,7 +85,7 @@ for the details. Clicking on the `Select` button and
 selecting a cluster in the cluster selector (located at the toolbar)
 have the same functionality.
 
-=== Creating a Cluster Configuration by Uploading File
+== Creating a Cluster Configuration by Uploading File
 
 Alternatively, you can upload a configuration file for the
 Management Center client created for your IMDG cluster. For this,
