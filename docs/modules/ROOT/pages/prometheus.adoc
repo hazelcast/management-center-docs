@@ -40,7 +40,27 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
   -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
-NOTE: Prometheus connects via the same IP and port as the Management Center web interface.
+By default, Prometheus connects via the same IP and port as the Management Center web interface. It is possible to
+override the port number using the `-Dhazelcast.mc.prometheusExporter.port` system property. For example if MC is started
+with the following command:
+
+[source,bash,subs="attributes+"]
+----
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.port=2222 \
+  -jar hazelcast-management-center-{page-component-version}.jar
+----
+
+Then the prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the
+prometheus configuration:
+
+[source,yaml]
+----
+scrape_configs:
+  - job_name: 'HZ MC'
+    static_configs:
+    - targets: ['localhost:2222']
+----
 
 NOTE: If you want to visualize the Prometheus metrics using Grafana, then you can start with
 https://grafana.com/grafana/dashboards/13183[this dashboard].
