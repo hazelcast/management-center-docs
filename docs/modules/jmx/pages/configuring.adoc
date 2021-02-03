@@ -19,7 +19,7 @@ Clustered JMX enabled as shown below.
 ----
 java -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=9999
--Dcom.sun.management.jmxremote.ssl=false -jar hazelcast-management-center-{page-component-display-version}.jar
+-Dcom.sun.management.jmxremote.ssl=false -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
 Once the Management Center starts, you should see a log
@@ -60,7 +60,7 @@ java -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=65432
 -Dhazelcast.mc.jmx.ssl=true
 -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-display-version}.jar
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
 NOTE: You can encrypt the keystore password and pass it as a

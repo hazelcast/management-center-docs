@@ -1,4 +1,4 @@
-= Hazelcast Management Center Reference Manual {page-component-display-version}
+= Hazelcast Management Center Reference Manual {page-component-version}
 [[preface]]
 
 Welcome to the Hazelcast Management Center Reference Manual.
