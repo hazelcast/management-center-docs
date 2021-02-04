@@ -51,7 +51,7 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
   -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
-Then the prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the
+Then the Prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the
 prometheus configuration:
 
 [source,yaml]
