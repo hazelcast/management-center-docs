@@ -41,8 +41,8 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
 ----
 
 By default, Prometheus connects via the same IP and port as the Management Center web interface. It is possible to
-override the port number using the `-Dhazelcast.mc.prometheusExporter.port` system property. For example if MC is started
-with the following command:
+override the port number using the `-Dhazelcast.mc.prometheusExporter.port` system property. Let's say you have
+started Management Center as shown below:
 
 [source,bash,subs="attributes+"]
 ----
@@ -51,8 +51,8 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
   -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
-Then the Prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the
-prometheus configuration:
+Then, the Prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the
+Prometheus configuration as below:
 
 [source,yaml]
 ----
