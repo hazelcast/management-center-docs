@@ -155,7 +155,7 @@ be used for WAN sync.
 
 image:ROOT:AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
 
-See the xref:imdg:wan.adoc[WAN Replication section]
+See the xref:imdg:wan:wan.adoc[WAN Replication section]
 in Hazelcast IMDG Reference Manual for details about the fields and their possible values.
 
 After clicking the **Add Configuration** button, the new WAN replication configuration

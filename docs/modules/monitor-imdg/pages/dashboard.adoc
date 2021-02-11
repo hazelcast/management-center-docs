@@ -76,7 +76,7 @@ image:ROOT:PartitionDistributionLegend.png[Partition Distribution per Member Leg
 You can see each member's partition percentages by placing the mouse cursor on the
 chart. In the above example, you can see that two members out of three share
 the total partition count (which is 271 by default and configurable; see the `hazelcast.partition.count`
-property explained in the xref:imdg:system-properties.adoc[System Properties appendix] of
+property explained in the xref:imdg:ROOT:system-properties.adoc[System Properties appendix] of
 the Hazelcast IMDG Reference Manual).
 
 NOTE: The partition distribution chart does not show any information
