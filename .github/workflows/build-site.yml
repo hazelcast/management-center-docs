@@ -4,7 +4,7 @@ name: Build production site
 
 on:
   push:
-    branches: [ main, '*.z', archive ]
+    branches: [ main, archive ]
     tags: 
       - v*
 
