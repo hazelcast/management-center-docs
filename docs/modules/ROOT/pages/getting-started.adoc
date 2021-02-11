@@ -108,7 +108,7 @@ image:ROOT:DashboardPage.png[Dashboard]
 
 See the xref:launching:launching.adoc[Launching the Management Center User Interface chapter] for more details.
 
-Also see link:https://docs.hazelcast.org/docs/latest-dev/manual/html-single/#starting-the-member-and-client[here^] and link:https://jet-start.sh/docs/get-started/installation[here^] for information on starting the IMDG and Jet clusters, respectively.
+Also see xref:imdg:ROOT:starting-members-clients.adoc[here] and link:{jet-docs}docs/get-started/installation[here^] for information on starting the IMDG and Jet clusters, respectively.
 
 You also have the **Dev Mode** option for development or evaluation purposes that provides
 quick access to Management Center without requiring any security credentials. See
