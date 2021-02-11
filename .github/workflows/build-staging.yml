@@ -4,9 +4,7 @@ name: Build staging site
 
 on:
   pull_request:
-    branches: [ main, v*, archive ]
-  push:
-    branches: [ main, v*, archive ]
+    branches: [ main, '*.z', archive ]
 
 jobs:
   dispatch:
