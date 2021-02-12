@@ -32,7 +32,7 @@ The documentation build process is triggered whenever you push a new tag to this
 
 This section guides you through the steps for releasing documentation for patch releases.
 
-. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.1.1, name the branch 4.2020.12.
+. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch 4.2020.12.
 +
 TIP: For guidance on writing content, see the {url-contribute}[contribution guidelines].
 
