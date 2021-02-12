@@ -1,6 +1,6 @@
 name: management-center
 title: Hazelcast Management Center
-version: 4.2021.02-SNAPSHOT
+version: 4.2021.04-SNAPSHOT
 prerelease: true
 asciidoc:
   attributes:
