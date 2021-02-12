@@ -84,7 +84,7 @@ version: 4.2021.02
 
 . If you are releasing a new `latest-dev` version, in the `antora.yml` file of the `main` branch, increment the `version` field to the `latest-dev` version. For example, `4.2021.02-SNAPSHOT` becomes `4.2021.03-SNAPSHOT`.
 
-. In the `develop` branch of the `hazelcast/management-center-docs` repository, submit a pull request to update the `_redirects` file with the new versions of Management Center.
+. In the `develop` branch of the `hazelcast/hazelcast-docs` repository, submit a pull request to update the `_redirects` file with the new versions of Management Center.
 +
 NOTE: This file is where we alias the `latest-dev` and `latest` paths in URLs.
 +
