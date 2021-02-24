@@ -51,5 +51,9 @@ count, map count in each member, and `hazelcast.mc.cache.max.size` setting.
 |
 |===
 
+NOTE: When the cluster has a lot of connected clients (especially with Near Caches) or the number of other data structures is significant, these will consume additional heap space. In this case, you need to adjust `hazelcast.mc.cache.max.size` accordingly. The above reference numbers were taken by benchmarking a cluster with no clients and no distributed objects other than maps.
+
+NOTE: In cases when adjusting `hazelcast.mc.cache.max.size` is not sufficient, you may consider turning off statistics collection for some of your distributed objects with their respective `"statistics-enabled"` configuration settings, so that Management Center stores less data in-memory.
+
 It is not recommended to change the cache size unless the cluster has a large number of distributed data structures which may cause Management Center to run out of heap memory.
 Setting too low a value for `hazelcast.mc.cache.max.size` can be detrimental to the level of detail shown within Management Center, especially when it comes to graphs.
