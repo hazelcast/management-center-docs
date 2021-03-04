@@ -148,7 +148,7 @@ provide the path to the home directory with the `-H` (or `--home`) option.
 === Configuring Time Travel
 
 The `configure-time-travel` command enables or disables time travel for Management Center.
-When enabled, Management Center will persist metrics that it has received from the cluster
+When enabled, Management Center persists metrics that it has received from the cluster
 to the local disk.
 
 NOTE: If you have used a non-default Management Center home directory location, you must
