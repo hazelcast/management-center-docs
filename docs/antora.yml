@@ -1,7 +1,6 @@
 name: management-center
 title: Hazelcast Management Center
 version: 4.2021.03
-prerelease: true
 asciidoc:
   attributes:
     javasource: ROOT:example$
