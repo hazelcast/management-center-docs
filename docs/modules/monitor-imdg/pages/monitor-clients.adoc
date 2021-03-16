@@ -261,6 +261,7 @@ In the beginning, the client filtering feature is disabled and there are no filt
 image:ROOT:ClientFilteringExampleStep1.png[Example Step 1]
 
 Let's create a new filter list:
+
 * We click the **New List** button and a screen with two forms appears.
 * We fill the first form as follows:
 ** Filter Name: 'Example_allow_list'
