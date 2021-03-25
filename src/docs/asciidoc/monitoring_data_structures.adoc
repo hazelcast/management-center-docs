@@ -43,7 +43,7 @@ listed.
 ==== Map Config
 
 Use the Map Config tool to set the selected map's attributes, such
-as the backup count, TTL, and eviction policy. To open the Map Config
+as the backup count, TTL, max size policy and eviction policy. To open the Map Config
 tool, click on the **Map Config** button, located at the top right of
 the window. Once opened, the tool appears as a dialog, as shown below.
 
