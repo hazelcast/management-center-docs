@@ -38,6 +38,8 @@ include::monitor-jet:partial$monitor-jet-nav.adoc[]
 
 * xref:mc-conf.adoc[]
 
+* xref:high-availability.adoc[]
+
 * xref:phone-home.adoc[]
 
 * xref:troubleshooting.adoc[]
