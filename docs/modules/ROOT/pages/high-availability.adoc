@@ -1,0 +1,36 @@
+= High Availability Setup
+[[high_availability]]
+
+Multiple Management Center instances can connect to the same cluster to ensure availability and eliminate a single
+point of failure for management and monitoring purposes.
+
+NOTE: Multiple Management Center instances are independent of each other and don't form a cluster of Management Center
+instances.
+
+This has the following implications:
+
+ . It's up to you to maintain consistent configurations on all Management Center instances. Only Client Filtering
+configuration is synchronized among Management Center instances.
+ . Inconsistencies in the reported metrics are possible, for instance if one of the instances goes down for some time.
+ . HTTP sessions are not shared between Management Center instances. Load balancing options are limited to:
+ * sticky session;
+ * round-robin with Basic Auth;
+
+[[client-filtering-synchronization]]
+== Client Filtering Synchronization
+Client filtering configuration for a cluster is synchronized among all Management Center instances connected to the
+cluster. The synchronization happens on the *deploy* action (**Deploy Changes** button). It is in line with the general
+client filtering modifications, where *lists modification* and *deploy* are separate actions.
+
+NOTE: The "deploy" action on a Management Center instance overrides the client filtering configuration including the
+not yet deployed changes for this cluster on another instance and vice versa.
+
+When Management Center connects to a cluster that already has some client filtering configuration
+deployed, then Management Center saves the client filtering configuration from the cluster to the local persistent
+storage. The previous configuration stored in Management Center is overwritten.'
+
+When another Management Center instance deploys a new client filtering configuration, then a message "Client filtering
+configuration was updated by another Management Center instance" is displayed and blocks "Client Filter Settings" and
+"Client Filter Lists" are automatically refreshed.
+
+image:ROOT:ClientFilteringUpdated.png[Client Filtering Updated]
