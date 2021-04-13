@@ -4,14 +4,15 @@
 Multiple Management Center instances can connect to the same cluster to ensure availability and eliminate a single
 point of failure for management and monitoring purposes.
 
-NOTE: Multiple Management Center instances are independent and don't form a cluster.
+NOTE: Multiple Management Center instances are independent of each other and don't form a cluster of Management Center
+instances.
 
 This has the following implications:
 
  . It's up to the user to maintain consistent configurations on all Management Center instances. Only Client Filtering
 configuration is synchronized among Management Center instances.
  . Inconsistencies in reported metrics are possible, for instance if one of the instances goes down for some time.
- . Every Management Center instance has its own HTTP session. Load balancing options are limited to:
+ . HTTP sessions are not shared between Management Center instances. Load balancing options are limited to:
  * sticky session;
  * round-robin with Basic Auth;
 
