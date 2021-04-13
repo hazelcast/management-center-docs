@@ -540,7 +540,7 @@ or descend the order of the listings.
 == Locks
 
 You can use the scripting feature of the Management Center to
-monitor the locks in your cluster. See the <<scripting, Scripting section>>
+monitor the locks in your cluster. See the xref:scripting.adoc[Scripting section]
 to learn how to use this feature.
 
 You can use the below scripts to retrieve various information
