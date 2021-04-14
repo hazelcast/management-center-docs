@@ -53,6 +53,66 @@ curl http://localhost:8080/rest/license
 }
 ```
 
+== Health Check
+
+This resource returns a list of health info for all clusters configured on the Management Center. See
+xref:clustered-rest.adoc#cluster-resource[Cluster Resource] section for detailed explanation on the returned
+information.
+
+* Request Type: `GET`
+* URL: `/rest/health`
+* Request:
++
+```bash
+curl http://localhost:8080/rest/health
+```
++
+* Response: `200` (application/json)
+* Body:
++
+
+```json
+[
+    {
+      "cluster": "Cluster A",
+      "connection": "Active",
+      "state": "ACTIVE",
+      "safe": true,
+      "partitionMigrationQueueSize": 0,
+      "members": 3,
+      "clusterType": "IMDG",
+      "numberOfConnectedClients": 120,
+      "masterAddress": "192.168.1.24:5701",
+      "licenseExpirationTime": 4099755599515
+    },
+    {
+      "cluster": "Cluster B",
+      "connection": "Error",
+      "state": null,
+      "safe": null,
+      "partitionMigrationQueueSize": null,
+      "members": null,
+      "clusterType": null,
+      "numberOfConnectedClients": null,
+      "masterAddress": null,
+      "licenseExpirationTime": null
+    },
+    {
+      "cluster": "Cluster C",
+      "connection": "Disabled",
+      "state": null,
+      "safe": null,
+      "partitionMigrationQueueSize": null,
+      "members": null,
+      "clusterType": null,
+      "numberOfConnectedClients": null,
+      "masterAddress": null,
+      "licenseExpirationTime": null
+    }
+]
+```
+
+
 == Clusters Resource
 
 This resource returns a list of clusters that are connected to
@@ -73,13 +133,27 @@ curl http://localhost:8080/rest/clusters
 ["dev", "qa"]
 ```
 
+[#cluster-resource]
 == Cluster Resource
 
-This resource returns information related to the provided cluster name;
-address of the oldest cluster member, the expiration
-time in milliseconds (since epoch) of the license key assigned for the cluster
-and the cluster type (`IMDG` or `JET`). It returns `-1` for license expiration time
-if no license is assigned.
+This resource returns information related to the provided cluster name:
+
+* name of the cluster
+* cluster connection status (`Active`, `Error` or `Disabled`)
+* state of the cluster
+* whether the cluster is safe (i.e. whether it has any ongoing partition migrations)
+* partition migration queue size (sum of partition migration queue sizes of all cluster members)
+* number of members
+* the cluster type (`IMDG` or `JET`).It returns `null` for license expiration time if no license is assigned.
+* number of connected clients (excluding any Management Center clients)
+* address of the oldest cluster member
+* the expiration time in milliseconds (since epoch) of the license key assigned for the cluster
+
+NOTE: Fields other than the name of the cluster and cluster connection status are returned as `null` if there's an error
+connecting to the cluster (i.e. connection status is `Error`) or connection to the cluster is disabled (i.e. connection
+status is `Disabled`).
+
+Following is an example that shows how to get this resource.
 
 * Request Type: `GET`
 * URL: `/rest/clusters/<clustername>`
@@ -92,11 +166,19 @@ curl http://localhost:8080/rest/clusters/dev/
 * Response: `200` (application/json)
 * Body:
 +
+
 ```json
 {
-  "masterAddress": "192.168.2.78:5701",
-  "licenseExpirationTime": 4099755599515,
-  "clusterType": "IMDG"
+  "cluster": "dev",
+  "connection": "Active",
+  "state": "ACTIVE",
+  "safe": true,
+  "partitionMigrationQueueSize": 0,
+  "members": 3,
+  "clusterType": "IMDG",
+  "numberOfConnectedClients": 120,
+  "masterAddress": "192.168.1.24:5701",
+  "licenseExpirationTime": 4099755599515
 }
 ```
 
