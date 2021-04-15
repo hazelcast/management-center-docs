@@ -1,8 +1,9 @@
 = Configuring Management Center
 [[configuring]]
 
-This chapter explains how you can configure Hazelcast
-Management Center according to your needs.
+This chapter explains how you can configure Hazelcast Management Center according to your needs
+if you are running it without Docker. For the Docker configuration please see
+link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
 The communication between
 the IMDG/Jet cluster members and the Management Center instance is based

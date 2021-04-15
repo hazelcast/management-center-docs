@@ -1,7 +1,14 @@
 = Getting Started
 [[deploying-and-starting]]
 
-To start using the Management Center:
+The easiest way to start using Management Center is to run the official Management Center docker image.
+[source,bash,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 hazelcast/management-center
+----
+Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
+
+To start using the Management Center without Docker:
 
 . download the Hazelcast Management Center package
 . start the Management Center service
