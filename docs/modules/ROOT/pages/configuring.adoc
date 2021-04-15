@@ -615,6 +615,16 @@ rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.rolling.ref=RollingFile
 ----
 
+=== Skipping lock file check
+
+When you run the `mc-conf.sh` (or `mc-conf.bat`), the script checks if there is any running Management Center instance by looking for a lock file called `mc.lock` in the Management Center home directory, and exits with an error if the file exists. You can turn this behavior off by passing the `-Dhazelcast.mc.lock.skip=true` system property. Example:
+
+[source,bash]
+----
+export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
+./mc-conf.sh ...
+----
+
 === Enabling Audit Logging
 
 You may enable additional security audit logging by using the `-Dhazelcast.mc.auditlog.enabled=true`
