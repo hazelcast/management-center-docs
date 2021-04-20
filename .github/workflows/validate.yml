@@ -4,7 +4,11 @@ name: Check for dead links
 
 on:
   pull_request:
+<<<<<<< HEAD
     branches: [main, archive]
+=======
+    branches: [main, 'v/*', archived-versions]
+>>>>>>> 7422afd... Update workflow and readme
   workflow_dispatch:
 
 jobs:
