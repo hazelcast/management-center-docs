@@ -7,10 +7,10 @@ content:
     branches: HEAD
     start_path: docs
   - url: https://github.com/hazelcast/imdg-docs
-    branches: [master, v*]
+    branches: [master, v/*]
     start_path: docs
   - url: https://github.com/hazelcast/imdg-docs
-    branches: [archive]
+    branches: [archived-versions]
     start_paths: docs/*
 ui: 
   bundle:

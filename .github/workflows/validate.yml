@@ -4,7 +4,7 @@ name: Check for dead links
 
 on:
   pull_request:
-    branches: [main, v*, archive]
+    branches: [main, 'v/*', archived-versions]
   workflow_dispatch:
 
 jobs:
