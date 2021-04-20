@@ -22,19 +22,15 @@ This section describes some important information about how this repository is s
 
 - The component name, version, and start page are configured in each branch's `antora.yml` file.
 - The navigation for all modules is stored in the ROOT module's `nav.adoc` file.
-- The {url-playbook}[docs site playbook] instructs Antora to automatically build the site using content in the `main` branch as well as any tags that are prefixed with *v*.
+- The {url-playbook}[docs site playbook] instructs Antora to automatically build the site using content in the `main` branch as well as any branches that are prefixed with `v/`.
 
 == Release Workflow
 
-Documentation for new releases is hosted in versioned tags that are prefixed with `v`. For example, content for the `4.2020.12` version is hosted in the `v4.2020.12` tag. The `latest-dev` content is stored in the `main` branch
+Documentation for new releases is hosted in versioned branches that are prefixed with `v/`. For example, content for the `4.2020.12` version is hosted in the `v/4.2020.12` tag. The `latest-dev` content is stored in the `main` branch.
 
-The documentation build process is triggered whenever you push a new tag to this repository or commit to the `main` branch.
+The documentation build process is triggered whenever you create a new branch with the `v/` prefix, push to an existing `v/` branch, or push to the `main` branch.
 
-=== Patch Releases
-
-This section guides you through the steps for releasing documentation for patch releases.
-
-. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch 4.2020.12.
+. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch v/4.2020.12.
 +
 TIP: For guidance on writing content, see the {url-contribute}[contribution guidelines].
 
@@ -44,14 +40,12 @@ TIP: For guidance on writing content, see the {url-contribute}[contribution guid
 ----
 version: 4.2020.12
 ----
++
+NOTE: As soon as you push to this branch, GitHub will trigger a new build of the site, which will include your new content.
 
-. Tag the latest commit in your release branch with a `v` followed by the version number.
-
-. If you have made any changes since creating your release branch, merge those changes back into the `main` branch.
-
-. Delete your release branch.
-
-. If you are releasing a new latest version, in the `develop` branch of the `hazelcast/hazelcast-docs` repository, submit a pull request to update the `_redirects` file with your release version of Management Center.
+. If you are releasing a new `latest` version, submit a pull request to the `develop` branch of the link:{url-playbook}[`hazelcast/hazelcast-docs`] repository to do the following:
++
+- Update the `_redirects` file with your release version of IMDG.
 +
 NOTE: This file is where we alias the `latest` path in URLs.
 +
@@ -60,45 +54,38 @@ NOTE: This file is where we alias the `latest` path in URLs.
 # Redirect latest management center alias to the latest version
 /management-center/latest/*  /management-center/4.2020.12/:splat 200!
 ----
-
-The documentation site will now be built, including content from your tagged version.
-
-== Major and Minor  Releases
-
-This section guides you through the steps for releasing documentation for major and minor releases.
-
-. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2021.02, name the branch 4.2021.02.
 +
-TIP: For guidance on writing content, see the {url-contribute}[contribution guidelines].
-
-. In the `antora.yml` file of your release branch, update the `version` field with the version of Management Center that you are working on.
+- Update the `search-config.json` file with your release version of IMDG.
 +
-[source,yaml]
+NOTE: This file is where we specify which documentation version to index for the search.
++
+[source,json]
 ----
-version: 4.2021.02
+{
+  "index_name": "prod_hazelcast_docs",
+  "start_urls": [
+    {
+      "url": "https://docs.hazelcast.com/management-center/(?P<version>.*?)/",
+      "tags": [
+        "management-center"
+      ],
+      "variables": {
+        "version": ["4.2021.03"]
+      },
 ----
 
-. Tag the latest commit in your release branch with a `v` followed by the version number.
-
-. If you have made any changes since creating your release branch, merge those changes back into the `main` branch.
-
-. Delete your release branch.
-
-. If you are releasing a new `latest-dev` version, in the `antora.yml` file of the `main` branch, increment the `version` field to the `latest-dev` version. For example, `4.2021.02-SNAPSHOT` becomes `4.2021.03-SNAPSHOT`.
-
-. In the `develop` branch of the `hazelcast/hazelcast-docs` repository, submit a pull request to update the `_redirects` file with the new versions of Management Center.
+. If you are releasing a new `latest-dev` version, do the following:
++
+- In the `antora.yml` file of the `main` branch, increment the `version` field to the `latest-dev` version. For example, `4.2021.02-SNAPSHOT` becomes `4.2021.03-SNAPSHOT`.
+- In the `develop` branch of the link:{url-playbook}[`hazelcast/hazelcast-docs`] repository, submit a pull request to update the `_redirects` file with the new `latest-dev` version of Management Center.
 +
 NOTE: This file is where we alias the `latest-dev` and `latest` paths in URLs.
 +
 [source,bash]
 ----
-# Redirect latest management center alias to the latest version
-/management-center/latest/*  /management-center/4.2021.02/:splat 200!
 # Redirect latest-dev management center alias to the latest-dev version
 /management-center/latest-dev/*  /management-center/4.2021.03-SNAPSHOT/:splat 200!
 ----
-
-The documentation site will now be built, including content from your tagged version.
 
 == GitHub Actions
 
