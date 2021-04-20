@@ -1,6 +1,0 @@
-name: management-center
-title: Hazelcast Management Center
-version: 3.12.4
-asciidoc:
-  attributes:    
-    page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
