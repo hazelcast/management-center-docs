@@ -1,8 +1,9 @@
 = Configuring Management Center
 [[configuring]]
 
-This chapter explains how you can configure Hazelcast
-Management Center according to your needs.
+This chapter explains how you can configure Hazelcast Management Center according to your needs
+if you are running it without Docker. For the Docker configuration please see
+link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
 The communication between
 the IMDG/Jet cluster members and the Management Center instance is based
@@ -614,6 +615,18 @@ rootLogger.level=info
 rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.rolling.ref=RollingFile
 ----
+
+=== Skipping Lock File Check
+
+When you run `mc-conf.sh` or `mc-conf.bat`, the script checks if there is any running Management Center instance by looking for a lock file called `mc.lock` in the Management Center home directory, and exits with an error if the file exists. You can turn this behavior off by passing the `-Dhazelcast.mc.lock.skip=true` system property. Example:
+
+[source,bash]
+----
+export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
+./mc-conf.sh ...
+----
+
+NOTE: This feature can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, then the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file, unless the `hazelcast.mc.lock.skip` system property is set to `true`.
 
 === Enabling Audit Logging
 
