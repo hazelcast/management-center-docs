@@ -65,11 +65,11 @@ with a TLS/SSL enabled Clustered JMX service on port 65432:
 
 [subs="attributes"]
 ```bash
-java -Dhazelcast.mc.jmx.enabled=true
--Dhazelcast.mc.jmx.port=65432
--Dhazelcast.mc.jmx.ssl=true
--Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+java -Dhazelcast.mc.jmx.enabled=true \
+-Dhazelcast.mc.jmx.port=65432 \
+-Dhazelcast.mc.jmx.ssl=true \
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks \
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword \
 -jar {mc-war-file}
 ```
 
@@ -99,14 +99,14 @@ with a TLS mutual authentication enabled Clustered JMX service on port 65432:
 
 [subs="attributes"]
 ```bash
-java -Dhazelcast.mc.jmx.enabled=true
--Dhazelcast.mc.jmx.port=65432
--Dhazelcast.mc.jmx.ssl=true
--Dhazelcast.mc.jmx.mutualAuthentication=true
--Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
--Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks
--Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
+java -Dhazelcast.mc.jmx.enabled=true \
+-Dhazelcast.mc.jmx.port=65432 \
+-Dhazelcast.mc.jmx.ssl=true \
+-Dhazelcast.mc.jmx.mutualAuthentication=true \
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks \
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword \
+-Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks \
+-Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword \
 -jar {mc-jar-file}
 ```
 
