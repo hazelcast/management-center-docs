@@ -1,19 +1,19 @@
-= Config Healthcheck
+= Configuration Health Check
 [[config-healthcheck]]
 
-This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Config Healthcheck report compares and analyzes the effective member configurations across the cluster.
+This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Configuration Health Check report compares and analyzes the effective member configurations across the cluster.
 
-NOTE: Config Healthcheck is a licensed feature.
+NOTE: Configuration Health Check is a licensed feature.
 
 
-_Sample output of Config Healthcheck:_
+_Sample output of Configuration Health Check:_
 image:ROOT:ConfigHealthcheck.png[ConfigHealthcheck,scaledwidth="50%"]
 
-The Config Healthcheck performs the following checks:
+It performs the following checks:
  
  * if the maps, caches, queues, topics, reliable topics, serialization and security configuration sections are identical across members
- * if backup reads are disabled for maps with TTL-based eviction
- * if map query caches configured with batch updates have higher than 0 delay-seconds
- * if map and query cache indexes are redundant
- * if map using native memory have proper eviction configurations
- * if map custom attributes are unique per extractor
+ * if the backup reads are disabled for maps with TTL-based eviction
+ * if the map query caches configured with batch updates have higher than 0 delay-seconds
+ * if the map and query cache indexes are redundant
+ * if the maps using native memory have proper eviction configurations
+ * if the map custom attributes are unique per extractor
