@@ -98,15 +98,11 @@ To automate some elements of the build process, this repository includes the fol
 
 |validate-site.yml
 |Validates that all internal and external links are working
-|On a pull request to the `main`, `archive`, and `*.z` branches
-
-|build-staging.yml
-|Builds the staging documentation site by sending a build hook to Netlify (the hosting platform that we use)
-|On a pull request to the `main`, `archive`, and `*.z` branches
+|On a pull request to the `master`, `archive`, and `v/` branches
 
 |build-site.yml
 |Builds the production documentation site by sending a build hook to Netlify (the hosting platform that we use)
-|On a push to the `main` branch and any tags whose names start with `v`
+|On a push to the `master` branch and any `v/` branches
 |===
 
 == Contributing
