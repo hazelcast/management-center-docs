@@ -1,5 +1,5 @@
 = High Availability Setup
-[[high_availability]]
+[[high-availability]]
 
 Multiple Management Center instances can connect to the same cluster to ensure availability and eliminate a single
 point of failure for management and monitoring purposes.
