@@ -1,5 +1,5 @@
 = Config Healthcheck
-[[config_healthcheck]]
+[[config-healthcheck]]
 
 This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Config Healthcheck report compares and analyzes the effective member configurations across the cluster.
 
