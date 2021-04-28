@@ -30,11 +30,11 @@ Documentation for new releases is hosted in versioned branches that are prefixed
 
 The documentation build process is triggered whenever you create a new branch with the `v/` prefix, push to an existing `v/` branch, or push to the `main` branch.
 
-. When you are ready to release, create a new release branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch v/4.2020.12.
+. When you are ready to release, create a new maintenance branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch v/4.2020.12.
 +
 TIP: For guidance on writing content, see the {url-contribute}[contribution guidelines].
 
-. In the `antora.yml` file of your release branch, update the `version` field with the version of Management Center that you are working on.
+. In the `antora.yml` file of your maintenance branch, update the `version` field with the version of Management Center that you are working on.
 +
 [source,yaml]
 ----
