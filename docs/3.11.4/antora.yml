@@ -1,8 +1,8 @@
 name: management-center
 title: Hazelcast Management Center
-version: 3.11
+version: '3.11'
 display_version: '3.11'
 asciidoc:
   attributes:
-    full-version: 3.11.4   
+    full-version: '3.11.4 '  
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
