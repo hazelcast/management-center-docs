@@ -4,5 +4,5 @@ version: '3.12'
 display_version: '3.12'
 asciidoc:
   attributes:
-    full-version: '3.12.15'  
+    full-version: '3.12.16'  
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
