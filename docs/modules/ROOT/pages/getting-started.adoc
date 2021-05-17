@@ -17,14 +17,14 @@ To start using the Management Center without Docker:
 == Downloading Management Center
 
 Hazelcast Management Center is included in the Hazelcast IMDG download package.
-You can download it from the https://hazelcast.org/download/#imdg[download page]
+You can download it from the https://hazelcast.org/download/#hazelcast-imdg[download page]
 of Hazelcast's website.
 
 When a new Hazelcast IMDG version is released, it comes with a Management Center
 that is compatible with IMDG.
 There may be times when a new Management Center version is released before a new
 version of Hazelcast IMDG. In that case, you may download the new Management Center
-from its https://hazelcast.org/download/#management-center[download page] as a
+from its https://hazelcast.org/download/#hazelcast-management-center[download page] as a
 separate package.
 
 == Starting the Management Center Service
