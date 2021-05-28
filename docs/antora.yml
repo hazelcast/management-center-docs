@@ -1,5 +1,5 @@
 name: management-center
-title: Hazelcast Management Center
+title: Management Center
 version: 5.0-SNAPSHOT
 prerelease: true
 asciidoc:
