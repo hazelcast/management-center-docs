@@ -1,5 +1,5 @@
 name: management-center
-title: Hazelcast Management Center
+title: Management Center
 version: 4.2021.02
 asciidoc:
   attributes:
