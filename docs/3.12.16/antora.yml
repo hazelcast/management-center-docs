@@ -1,5 +1,5 @@
 name: management-center
-title: Hazelcast Management Center
+title: Management Center
 version: '3.12'
 display_version: '3.12'
 asciidoc:
