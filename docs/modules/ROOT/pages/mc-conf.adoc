@@ -10,6 +10,9 @@ NOTE: You must run the MC-Conf tool on the same machine where the Management Cen
 
 NOTE: The Management Center must not be running when changes are made via MC-Conf.
 
+NOTE: If you have used a non-default Management Center home directory location,
+then you must provide the path to the home directory with the `-H` (or `--home`) option.
+
 == Built-In Help
 
 In order to see all available commands, run the MC-Conf script with no
@@ -99,8 +102,6 @@ Note that you must stop the Management Center web application before running thi
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual cluster connection configuration through UI.
 
-NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
-
 [[mc-conf-create-user]]
 == Creating Users
 
@@ -113,8 +114,6 @@ https://github.com/hazelcast/hazelcast-docker-samples[Hazelcast Docker Code Samp
 repository for an example of Docker image for the Management Center container with
 a built-in user account.
 
-NOTE: If you have used a non-default Management Center home directory location, then you must provide the path to the home directory with the `-H` (or `--home`) option.
-
 NOTE: If you're on Linux or MacOS devices and provide value directly to `mc-conf`, please enclose password in single quotes like: `-p='mysecr3tp@s$word'`
 
 == Changing User Password
@@ -125,8 +124,6 @@ web application before running this task.
 
 You can use this task as a recovery mechanism for the Management Center's
 administrator user account.
-
-NOTE: If you have used a non-default Management Center home directory location, you must provide the path to the home directory with the `-H` (or `--home`) option.
 
 NOTE: If you're on Linux or MacOS devices and provide value directly to `mc-conf`, please enclose password in single quotes like: `-p='mysecr3tp@s$word'`
 
@@ -154,9 +151,6 @@ Note that if the keystore with such path doesn't exist, task fails.
 NOTE: You still need to properly configure Management Center to use keystore.
 See xref:launching:auth-options.adoc#password-encryption[LDAP Authentication section] for details on using the built-in and existing keystores.
 
-NOTE: If you have used a non-default Management Center home directory location,
-then you must provide the path to the home directory with the `-H` (or `--home`) option.
-
 [[mc-conf-update-ldap-password]]
 == Updating LDAP Password
 
@@ -174,8 +168,6 @@ Note that you must stop the Management Center web application before running thi
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
-NOTE: If you have used a non-default Management Center home directory location, then you must provide the path to the home directory with the `-H` (or `--home`) option.
-
 == Configuring JAAS Security Provider
 
 The `jaas configure` task configures the JAAS security provider.
@@ -183,16 +175,12 @@ Note that you must stop the Management Center web application before running thi
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
-NOTE: If you have used a non-default Management Center home directory location, then you must provide the path to the home directory with the `-H` (or `--home`) option.
-
 == Configuring Dev Mode Security Provider
 
 The `dev-mode` configure task configures the Dev Mode security provider.
 Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
-
-NOTE: If you have used a non-default Management Center home directory location, then you must provide the path to the home directory with the `-H` (or `--home`) option.
 
 == Resetting Security Provider
 
@@ -205,14 +193,16 @@ You can use this task as a recovery mechanism for the Management Center deployme
 In case of the Local security provider, you can also use the `user create` or `user update-password`
 task as the recovery mechanism.
 
-NOTE: If you have used a non-default Management Center home directory location, then you must
-provide the path to the home directory with the `-H` (or `--home`) option.
-
 == Enabling/Disabling Metrics Persistence
 
 The `set metrics-persistence-enabled` task lets you choose whether
-metrics should be persisted to disk or not. Note that you must stop the Management
-Center web application before running this task.
+metrics should be persisted to disk or not.
+
+== Hiding Sensitive Configuration Properties
+
+The `set sensitive-properties` task configures the sensitive properties that must not be shown in plain text in Management Center.
+`--hidden-properties` is a comma-separated list of member properties to be hidden in the member properties.
+`--masked-config-properties` is a comma-separated list of XPath expressions in the member configuration to be masked.
 
 == Advanced Features
 
