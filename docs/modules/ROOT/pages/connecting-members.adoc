@@ -31,11 +31,11 @@ then the provided member address should be the client address of the member.
 
 == Configuring Security on the Members
 
-NOTE: this section applies only to IMDG 4.2 and newer. If you use an older version, you can skip this configuration step.
+NOTE: This section applies only to IMDG 4.2 and newer. If you use an older version, you can skip this configuration step.
 
-If `security` is enabled in the member configurations, then the `management-permission` should be granted for the MC client. Also, in this case the client should authenticate itself, which means you need to set up the connection by uploading a configuration XMl (or YAML) file (see above).
+If `security` is enabled in the member configurations, then the `management-permission` should be granted for the Management Center client. Also, in this case the client should authenticate itself, which means you need to set up the connection by uploading a configuration XMl (or YAML): see xref:ROOT:managing-clusters.adoc#creating-a-cluster-configuration-by-uploading-file[here].
 
-Example member configuration:
+An example member configuration is shown below:
 
 ```xml
 <hazelcast xmlns="http://www.hazelcast.com/schema/config">
@@ -56,9 +56,9 @@ Example member configuration:
 
 ```
 
-Example client configuration:
+An example client configuration is shown below:
 
-```
+```xml
 <hazelcast-client xmlns="http://www.hazelcast.com/schema/client-config"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
