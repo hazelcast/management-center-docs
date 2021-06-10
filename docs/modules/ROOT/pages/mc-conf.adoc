@@ -98,7 +98,6 @@ Create a new user record in the Local security provider.
 == Configuring Cluster Connection
 
 The `cluster add` task adds a new connection configuration for a cluster.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual cluster connection configuration through UI.
 
@@ -164,21 +163,30 @@ on the **Reload Security Config** button on the login page.
 == Configuring Active Directory Security Provider
 
 The `active-directory configure` task configures the Active Directory security provider.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
 == Configuring JAAS Security Provider
 
 The `jaas configure` task configures the JAAS security provider.
-Note that you must stop the Management Center web application before running this task.
+
+You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
+
+== Configuring OpenID Connect Security Provider
+
+The `oidc configure` task configures the OpenID Connect security provider.
+
+You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
+
+== Configuring SAML Security Provider
+
+The `saml configure` task configures the SAML security provider.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
 == Configuring Dev Mode Security Provider
 
 The `dev-mode` configure task configures the Dev Mode security provider.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
