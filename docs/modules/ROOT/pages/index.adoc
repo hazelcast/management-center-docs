@@ -23,7 +23,7 @@ processing engine provided by Hazelcast, Inc.
 
 Hazelcast Management Center is delivered with Hazelcast IMDG. It can
 also be downloaded as a separate package from the
-https://hazelcast.org/download/#management-center[hazelcast.org] website.
+https://hazelcast.org/download/#hazelcast-management-center[hazelcast.org] website.
 
 See the {imdg-docs}[Hazelcast IMDG Reference Manual]
 for all Hazelcast IMDG topics including the clusters and their operations,
