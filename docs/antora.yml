@@ -1,7 +1,6 @@
 name: management-center
 title: Management Center
-version: 5.0-SNAPSHOT
-prerelease: true
+version: 4.2021.06
 asciidoc:
   attributes:
     javasource: ROOT:example$
