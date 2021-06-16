@@ -26,7 +26,6 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
 
 * **ManagementCenter**
 * ManagementCenter
-  ** ClusterType
   ** LicenseExpirationTime
   ** Clusters
 * **ManagementCenter[`<ClusterName>`]**

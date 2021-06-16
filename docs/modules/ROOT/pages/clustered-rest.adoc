@@ -80,7 +80,6 @@ curl http://localhost:8080/rest/health
       "safe": true,
       "partitionMigrationQueueSize": 0,
       "members": 3,
-      "clusterType": "IMDG",
       "numberOfConnectedClients": 120,
       "masterAddress": "192.168.1.24:5701",
       "licenseExpirationTime": 4099755599515
@@ -92,7 +91,6 @@ curl http://localhost:8080/rest/health
       "safe": null,
       "partitionMigrationQueueSize": null,
       "members": null,
-      "clusterType": null,
       "numberOfConnectedClients": null,
       "masterAddress": null,
       "licenseExpirationTime": null
@@ -104,7 +102,6 @@ curl http://localhost:8080/rest/health
       "safe": null,
       "partitionMigrationQueueSize": null,
       "members": null,
-      "clusterType": null,
       "numberOfConnectedClients": null,
       "masterAddress": null,
       "licenseExpirationTime": null
@@ -144,7 +141,6 @@ This resource returns information related to the provided cluster name:
 * `safe`: whether the cluster is safe, i.e., whether it has any ongoing partition migrations
 * `partitionMigrationQueueSize`: partition migration queue size (sum of partition migration queue sizes of all cluster members)
 * `members`: number of members
-* `clusterType`: the cluster type (`IMDG` or `JET`). It returns `null` for license expiration time if no license is assigned.
 * `numberOfConnectedClients`: number of connected clients (excluding any Management Center clients)
 * `masterAddress`: address of the oldest cluster member
 * `licenseExpirationTime`: the expiration time in milliseconds (since epoch) of the license key assigned for the cluster
@@ -175,7 +171,6 @@ curl http://localhost:8080/rest/clusters/dev/
   "safe": true,
   "partitionMigrationQueueSize": 0,
   "members": 3,
-  "clusterType": "IMDG",
   "numberOfConnectedClients": 120,
   "masterAddress": "192.168.1.24:5701",
   "licenseExpirationTime": 4099755599515
