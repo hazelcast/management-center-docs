@@ -21,7 +21,7 @@ The toolbar has the following elements:
 
 * **Docs**: Opens the Management Center documentation in a new browser tab.
 * **Console**: Opens the in-page console so that you can easily execute commands
-in your cluster. See the <<console, Executing Console Commands chapter>>. Note that
+in your cluster. See the xref:monitor-imdg:console.adoc[Executing Console Commands chapter]. Note that
 this top menu item appears only when you select a cluster to monitor.
 * **User name**: Shows the current user's name. When you hover your mouse cursor
 onto it, the user's last login time is shown as a tooltip, for security purposes.
