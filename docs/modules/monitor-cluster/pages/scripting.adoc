@@ -5,7 +5,7 @@ You can use the scripting feature of the Management Center to execute scripts
 on the cluster. Note that it's disabled by default and you need to enable it
 in your cluster's configuration. Please see the
 xref:imdg:management:management-center.adoc#toggle-scripting-support[Toggle Scripting Support section]
-in the Hazelcast IMDG Reference Manual for details. Members list shows whether
+in the Hazelcast Reference Manual for details. Members list shows whether
 scripting is enabled or disabled for each member.
 
 image:ROOT:MemberGridView.png[Member Grid View]
@@ -50,7 +50,7 @@ employees.get("1"); // will return "John Doe"
 [[scripting-languages]]
 == Enabling Additional Scripting Languages
 
-IMDG members use the `javax.script.ScriptEngineManager` API for the execution of the script.
+Hazelcast members use the `javax.script.ScriptEngineManager` API for the execution of the script.
 Only the JavaScript script engine is available in most JVMs by default.
 To use a scripting language other than JavaScript on a member, you need to add the
 corresponding scripting engine in the classpath of that member. Here is an example of

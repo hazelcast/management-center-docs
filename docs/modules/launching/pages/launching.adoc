@@ -2,7 +2,7 @@
 [[getting-started]]
 
 If you have the open source edition of Hazelcast, the Management Center can be used
-for at most three IMDG and Jet members each. To use it for more members, you need
+for at most three Hazelcast members. To use it for more members, you need
 to have either a Management Center license, Hazelcast IMDG Pro license,
 Hazelcast IMDG Enterprise or Hazelcast Jet Enterprise license. The license should be entered within the
 Management Center as described in the following paragraphs.
@@ -34,7 +34,7 @@ your credentials or selected the development mode (Dev Mode):
 
 image:ROOT:StartingPage.png[alt=Starting Page, align="center"]
 
-Now, you can create the IMDG or Jet cluster configuration. See the xref:ROOT:managing-clusters.adoc[Managing Clusters chapter].
+Now, you can create the Hazelcast cluster configuration. See the xref:ROOT:managing-clusters.adoc[Managing Clusters chapter].
 
 If you have either of the aforementioned licenses, you can enter it
 by clicking on the **Administration** button on the left menu and opening the **Manage License** tab.

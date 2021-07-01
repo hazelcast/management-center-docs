@@ -80,7 +80,7 @@ whether the selected one is an IMDG cluster or a Jet one, and
 shows the related "Dashboard" page of that cluster. 
 
 The "Dashboard" page of the
-related cluster will load; see the xref:monitor-imdg:dashboard.adoc[Dashboard Page chapter]
+related cluster will load; see the xref:monitor-cluster:dashboard.adoc[Dashboard Page chapter]
 for the details. Clicking on the `Select` button and
 selecting a cluster in the cluster selector (located at the toolbar)
 have the same functionality.

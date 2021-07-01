@@ -14,7 +14,7 @@ image:ROOT:MemberGridView.png[Member Grid View]
 
 NOTE: You may see a warning icon with exclamation mark in the list
 when your runtime or hardware configuration does not follow the performance
-recommendations. See {imdg-ops-guide}[IMDG Deployment and Operations Guide]
+recommendations. See {imdg-ops-guide}[Hazelcast Deployment and Operations Guide]
 for more information.
 
 image:ROOT:MemberGridViewWarning.png[Member Grid View with Warnings]
@@ -41,8 +41,8 @@ selected member and shows it in a separate dialog.
 * **Promote Member**: It is only shown for the lite members.
 When pressed, the lite member becomes a data member.
 
-NOTE: Shutdown member operation requires enabled REST API in the IMDG cluster. See the
-xref:imdg:clients:rest.adoc[IMDG documentation]
+NOTE: Shutdown member operation requires enabled REST API in the Hazelcast cluster. See the
+xref:imdg:clients:rest.adoc[Hazelcast documentation]
 for more information.
 
 Next to the above operation buttons, you can see the informative buttons
@@ -50,7 +50,7 @@ as described below:
 
 * **Number of Owned Partitions**: Shows how many partitions are assigned
 to the selected member.
-* **Member Version**: Shows the Hazelcast IMDG cluster version which
+* **Member Version**: Shows the Hazelcast cluster version which
 the selected member belongs to.
 * **CP Member UUID**: Shows CP member UUID if the member participates
 in the CP subsystem of the cluster.

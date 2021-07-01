@@ -9,7 +9,7 @@ The communication between
 the IMDG/Jet cluster members and the Management Center instance is based
 on Hazelcast open binary client link:https://docs.hazelcast.org/docs/protocol/1.0-developer-preview/client-protocol-implementation-guide.html[protocol^]. The clusters that Management Center
 should connect to are configured within Management Center as described in the
-xref:connecting-members.adoc[Connecting Management Center to IMDG Members chapter].
+xref:connecting-members.adoc[Connecting Management Center to Hazelcast Members chapter].
 
 NOTE: In previous versions, the URL of the Management Center instance was
 configured within the `<hazelcast></hazelcast>` section of `hazelcast.xml`.
