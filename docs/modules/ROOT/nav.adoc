@@ -20,7 +20,7 @@ include::launching:partial$launching-nav.adoc[]
 
 * xref:managing-security-providers.adoc[]
 
-include::monitor-cluster:partial$monitor-cluster-nav.adoc[]
+include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
 
 * xref:sql-browser.adoc[]
 

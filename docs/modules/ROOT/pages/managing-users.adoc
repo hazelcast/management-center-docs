@@ -19,16 +19,16 @@ and perform operations on the members.
 * **Read**: If this permission is given to the user, only *Home* and
 *Documentation* items will be visible at the toolbar on
 that user's session. Also, the users with this permission cannot update a
-xref:monitor-cluster:monitor-dds.adoc#managing-maps[map configuration], run a garbage collection and take
+xref:monitor-imdg:monitor-dds.adoc#managing-maps[map configuration], run a garbage collection and take
 a thread dump on a cluster member, or shutdown a member (see the
-xref:monitor-cluster:monitor-members.adoc[Monitoring Members section]).
+xref:monitor-imdg:monitor-members.adoc[Monitoring Members section]).
 * **Metrics Only**: If this permission is given to the user, only *Home* and
 *Documentation* items will be visible at the toolbar on
 that user's session. Also, the users with this permission cannot
-xref:monitor-cluster:monitor-dds.adoc#managing-maps[browse a map] or a cache to see their contents, cannot
-update a xref:monitor-cluster:monitor-dds.adoc#map-config[map configuration], run a garbage collection
+xref:monitor-imdg:monitor-dds.adoc#managing-maps[browse a map] or a cache to see their contents, cannot
+update a xref:monitor-imdg:monitor-dds.adoc#map-config[map configuration], run a garbage collection
 and take a thread dump on a cluster member, or shutdown a member
-(see the xref:monitor-cluster:monitor-members.adoc[Monitoring Members section]).
+(see the xref:monitor-imdg:monitor-members.adoc[Monitoring Members section]).
 
 After you enter/select all the fields, click on the **Save** button to create the user.
 You will see the newly created user's username on the right side, in the
