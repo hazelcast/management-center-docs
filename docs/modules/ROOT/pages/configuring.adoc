@@ -6,7 +6,7 @@ if you are running it without Docker. For the Docker configuration please see
 link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
 The communication between
-the IMDG/Jet cluster members and the Management Center instance is based
+the Hazelcast cluster members and the Management Center instance is based
 on Hazelcast open binary client link:https://docs.hazelcast.org/docs/protocol/1.0-developer-preview/client-protocol-implementation-guide.html[protocol^]. The clusters that Management Center
 should connect to are configured within Management Center as described in the
 xref:connecting-members.adoc[Connecting Management Center to Hazelcast Members chapter].
@@ -698,14 +698,14 @@ types:
 * `MC-8002 [CP Subsystem]`: Member is removed from CP subsystem.
 * `MC-8003 [CP Subsystem]`: CP subsystem is reset.
 
-|Jet Logs
-|* `MC-9001 [Jet]`: Jet job is restarted.
-* `MC-9002 [Jet]`: Jet job is suspended.
-* `MC-9003 [Jet]`: Jet job is resumed.
-* `MC-9004 [Jet]`: Jet job is cancelled.
-* `MC-9005 [Jet]`: Jet snapshot is deleted.
-* `MC-9006 [Jet]`: Jet snapshot is exported.
-* `MC-9007 [Jet]`: Jet job is cancelled and snapshot is exported.
+|Streaming Job Logs
+|* `MC-9001 [Streaming]`: Job is restarted.
+* `MC-9002 [Streaming]`: Job is suspended.
+* `MC-9003 [Streaming]`: Job is resumed.
+* `MC-9004 [Streaming]`: Job is cancelled.
+* `MC-9005 [Streaming]`: Job snapshot is deleted.
+* `MC-9006 [Streaming]`: Job snapshot is exported.
+* `MC-9007 [Streaming]`: Job is cancelled and snapshot is exported.
 
 |===
 

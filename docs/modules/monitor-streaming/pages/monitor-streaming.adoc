@@ -1,0 +1,5 @@
+
+= Monitoring a Streaming Cluster
+
+This chapter details the monitoring and administering of
+a Hazelcast cluster with Streaming support using Management Center.

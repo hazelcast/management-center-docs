@@ -1,6 +1,6 @@
 = Snapshots
 
-This page provides an overview of the exported snapshots of the Hazelcast Jet
+This page provides an overview of the exported snapshots of the Hazelcast Streaming
 jobs. To create a new export, please refer to the <<job-management, Job Management>>
 section.
 

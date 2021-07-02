@@ -2,7 +2,7 @@
 [[user-interface-overview]]
 
 In this chapter, we briefly go over the toolbar and left menu items of the
-user interface itself, regardless of which cluster we monitor (IMDG or Jet).
+user interface itself, regardless of which cluster we monitor (streaming or not).
 For now, you can ignore the body content which shows the cluster data. Those are
 explained in the following chapters throughout this document.
 
@@ -43,24 +43,21 @@ execute commands and scripts, and perform user/license operations using this men
 
 image:ROOT:LeftMenu.png[Management Center Left Menu,170,750,align="center"]
 
-NOTE: WAN Replication button is only visible with the Hazelcast IMDG Enterprise license.
+NOTE: WAN Replication button is only visible with the Hazelcast Enterprise license.
 
 The menu consists of the following parent menu headings:
 
-* **MANAGEMENT CENTER**: Includes menu items to manage
-clusters, user and license operations, and examine the
-user interface logs.
-* **JET**: Includes menu items to export snapshots and
-manage Jet jobs.
 * **CLUSTER**: Includes menu items for general cluster
 operations, monitoring clients/cluster members and
 executing scripts/commands.
 * **STORAGE**: Includes menu items to monitor data structures
 such as the maps, caches and PN counters in your cluster.
-* **MESSAGING**: Includes menu items to monitor queues and
-topics in your cluster.
+* **STREAMING**: Includes menu items to export snapshots and
+manage streaming jobs.
 * **COMPUTE**: Includes the "Executors" menu item to monitor
 the executor services in your cluster.
+* **MESSAGING**: Includes menu items to monitor queues and
+topics in your cluster.
 
 NOTE: If you have not selected a cluster to monitor, only
 the "Management Center" menu items are shown in the user

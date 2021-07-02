@@ -35,7 +35,7 @@ image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 
 * `Cluster Name`: Enter the name of your cluster, which was defined when the cluster was created.
-(The default cluster name is `dev` for IMDG clusters and `jet` for Jet Clusters) 
+(The default cluster name is `dev` for Hazelcast clusters) 
 * `Cluster Config State`: Select "Enabled" to activate the cluster configuration.
 You can also select "Disabled" which will 
 create the cluster configuration in a deactivated state for use 
@@ -76,7 +76,7 @@ the icons on any cluster's box area in this page.
 
 To see the status of a cluster, click on its
 `Select` button. Management Center internally decides
-whether the selected one is an IMDG cluster or a Jet one, and
+whether the selected one supports streaming, and
 shows the related "Dashboard" page of that cluster. 
 
 The "Dashboard" page of the
@@ -88,7 +88,7 @@ have the same functionality.
 == Creating a Cluster Configuration by Uploading File
 
 Alternatively, you can upload a configuration file for the
-Management Center client created for your IMDG cluster. For this,
+Management Center client created for your Hazelcast cluster. For this,
 click on the `Upload Config File` button which is seen after
 you click on the "Add Cluster Config" button. 
 
@@ -101,7 +101,7 @@ image:ROOT:UploadConfigFile.png[alt=Upload Config File]
 The name of your cluster will be automatically generated
 as specified in the configuration file you upload. As mentioned
 before in the xref:connecting-members.adoc[Connecting Members chapter],
-you can think of Management Center as a client that connects to your IMDG cluster you create. Therefore,
+you can think of Management Center as a client that connects to your Hazelcast cluster you create. Therefore,
 this configuration file is a well-known `hazelcast.client` in XML or YAML language.
 
 Here is an example configuration file:

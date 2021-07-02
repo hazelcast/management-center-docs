@@ -55,13 +55,13 @@ system property (see the xref:configuring.adoc#starting-with-a-license[Starting 
 
 Using the "License" menu item under the "Cluster" parent
 menu heading, you can view the
-details of your cluster's license (Hazelcast IMDG license).
+details of your cluster's license (Hazelcast Enterprise license).
 An example screenshot is shown below.
 
 image:ROOT:ClusterLicense.png[License Screen]
 
 It shows the expiration date, total licensed member
-count and type of your Hazelcast IMDG license.
+count and type of your Hazelcast Enterprise license.
 
 For security reasons, the license key itself is not shown.
 Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
@@ -73,7 +73,7 @@ exclamation points. In this case, please check this
 screen to see what the problem is.
 The following are the possible problems:
 
-* Your Hazelcast IMDG license is expired.
+* Your Hazelcast Enterprise license is expired.
 * The count of your cluster members is more than the
 allowed count by the license.
 

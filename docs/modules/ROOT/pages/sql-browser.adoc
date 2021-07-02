@@ -1,7 +1,7 @@
 = SQL Browser
 [[sql_browser]]
 
-This chapter details how a IMDG cluster can be queried with SQL using Management Center.
+This chapter details how a Hazelcast cluster can be queried with SQL using Management Center.
 
 You can use the SQL browser for this purpose, which can be opened using
 the "SQL Browser" menu item under the "Cluster" parent menu heading:

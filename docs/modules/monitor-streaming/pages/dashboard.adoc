@@ -1,10 +1,10 @@
 = Dashboard Page
-[[jet-dashboard-page]]
+[[streaming-dashboard-page]]
 
 This page gives an overview
-of the connected Jet cluster, as shown below:
+of the connected Streaming cluster, as shown below:
 
-image:ROOT:JetDashboard.png[Jet Dashboard]
+image:ROOT:StreamingDashboard.png[Streaming Dashboard]
 
 The following subsections describe each portion of the page.
 

@@ -3,11 +3,10 @@
 
 If you have the open source edition of Hazelcast, the Management Center can be used
 for at most three Hazelcast members. To use it for more members, you need
-to have either a Management Center license, Hazelcast IMDG Pro license,
-Hazelcast IMDG Enterprise or Hazelcast Jet Enterprise license. The license should be entered within the
+to have a Hazelcast Enterprise license. The license should be entered within the
 Management Center as described in the following paragraphs.
 
-NOTE: Even if you have IMDG Enterprise, IMDG Enterprise HD or Jet Enterprise license key, and
+NOTE: Even if you have a Hazelcast Enterprise license key, and
 you set it as explained in the xref:imdg:installation:using-enterprise-edition.adoc#setting-the-license-key[Setting the License Key section],
 you still need to enter this same license within the Management Center.
 See the following paragraphs to learn how you can do this.

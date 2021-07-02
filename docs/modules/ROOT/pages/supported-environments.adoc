@@ -8,9 +8,9 @@ data on disk. Because of that dependency, macOS users have to be on at least 10.
 version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
 installed. Otherwise, you can use the official Management Center docker image.
 
-== IMDG/Jet Compatibility
+== Hazelcast Compatibility
 
-We officially support any IMDG 4.y version that was released
+We officially support Hazelcast 5.0.x, any IMDG 4.y version that was released
 before this Management Center version
 and any Jet 4.3.z version.
 

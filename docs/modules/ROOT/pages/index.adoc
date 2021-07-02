@@ -4,7 +4,7 @@
 Welcome to the Hazelcast Management Center Reference Manual.
 This manual includes concepts and instructions
 to guide you on how to use Management Center to
-monitor your Hazelcast IMDG and Jet Clusters.
+monitor your Hazelcast clusters.
 This Reference Manual can also be found in the Management Center
 user interface, when you click on the **Documentation** button located at the toolbar.
 
@@ -12,21 +12,19 @@ user interface, when you click on the **Documentation** button located at the to
 == Naming
 
 * *Hazelcast Management Center* or *Management Center* refers to
-the Hazelcast IMDG and Jet cluster monitoring tool provided by Hazelcast, Inc.
-* *Hazelcast IMDG* or just *Hazelcast* refers to the Hazelcast in-memory
+the Hazelcast cluster monitoring tool provided by Hazelcast, Inc.
+* *Hazelcast* refers to the Hazelcast in-memory
 data grid middleware. *Hazelcast* is also the name of the company
-(Hazelcast, Inc.) providing Hazelcast IMDG and Hazelcast Jet.
-* *Hazelcast Jet* or *Jet* refers to the distributed data
-processing engine provided by Hazelcast, Inc.
+(Hazelcast, Inc.).
 
-== Hazelcast IMDG
+== Hazelcast
 
-Hazelcast Management Center is delivered with Hazelcast IMDG. It can
+Hazelcast Management Center is delivered with Hazelcast. It can
 also be downloaded as a separate package from the
 https://hazelcast.org/download/#hazelcast-management-center[hazelcast.org] website.
 
-See the {imdg-docs}[Hazelcast IMDG Reference Manual]
-for all Hazelcast IMDG topics including the clusters and their operations,
+See the {imdg-docs}[Hazelcast Reference Manual]
+for all Hazelcast topics including the clusters and their operations,
 clients, data structures, computing and WAN replication.
 
 [[licensing]]
@@ -35,15 +33,9 @@ clients, data structures, computing and WAN replication.
 This Reference Manual is free and provided
 under the Apache License, Version 2.0.
 
-Hazelcast Management Center requires either of the following:
-
-* Management Center license
-* Hazelcast IMDG Pro license
-* Hazelcast IMDG Enterprise license
-* Hazelcast Jet Enterprise license
-
+Hazelcast Management Center requires a Hazelcast Enterprise license.
 It also has a free version which lets you to monitor your clusters having up to three
-IMDG and Jet members each.
+Hazelcast cluster members.
 
 [[trademarks]]
 == Trademarks
@@ -62,7 +54,7 @@ Support is provided via the following channels:
 * https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
 (propose features and discuss your ideas with the team)
 * https://slack.hazelcast.com/[Hazelcast Community Slack]
-(discuss anything related to Hazelcast IMDG, Jet and Management Center with other
+(discuss anything related to Hazelcast and Management Center with other
 Hazelcast users and Hazelcast developers)
 
 == Release Notes
