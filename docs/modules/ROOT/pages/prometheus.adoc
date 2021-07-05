@@ -68,8 +68,13 @@ https://grafana.com/grafana/dashboards/13183[this dashboard].
 
 == Authentication
 
-Starting from Management Center 5.0, the Prometheus Exporter supports basic authentication, so that the scrape endpoint can be
-secured. You can set it up by running the `mc-conf.sh set prometheus-auth <my-user> <my-pass>`, then you need to configure Prometheus as follows:
+Starting from Management Center 5.0, the Prometheus Exporter supports basic authentication, to secure the scrape endpoint. 
+
+First, you need to set it up using the following MC-Conf command:
+
+`mc-conf.sh set prometheus-auth <my-user> <my-pass>`
+
+Then, you need to configure Prometheus as follows:
 
 [source,yaml]
 ----
