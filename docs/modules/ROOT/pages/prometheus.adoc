@@ -64,3 +64,29 @@ scrape_configs:
 
 NOTE: If you want to visualize the Prometheus metrics using Grafana, then you can start with
 https://grafana.com/grafana/dashboards/13183[this dashboard].
+
+
+== Authentication
+
+Starting from Management Center 5.0, the Prometheus Exporter supports basic authentication, to secure the scrape endpoint. 
+
+First, you need to set it up using the following MC-Conf command:
+
+`mc-conf.sh set prometheus-auth <my-user> <my-pass>`
+
+Then, you need to configure Prometheus as follows:
+
+[source,yaml]
+----
+  - job_name: 'HZ MC'
+    static_configs:
+    - targets: ['localhost:8080']
+    basic_auth:
+      username: my-user
+      password: my-pass
+
+----
+
+
+
+You can reset the authentication with the `mc-conf.sh security reset` command, which will also delete all users from the database.
