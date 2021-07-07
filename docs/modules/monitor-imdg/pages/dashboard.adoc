@@ -13,12 +13,12 @@ for each member, as shown below:
 image:ROOT:MemoryUtilization.png[Memory Utilization]
 
 The first column lists the members with their IPs and ports. The next columns
-show the used and free memories out of the total memory reserved for Hazelcast IMDG
+show the used and free memories out of the total memory reserved for Hazelcast 
 usage, in real-time. The **Committed Heap** column lists the Java Heap memory capacity
 of each member, and the **Heap Usage** column lists the percentage value of used
 memory out of the committed heap memory. The **Used Heap** column shows how much
 the Java Heap memory is used of members graphically. The **Committed Native Memory**
-column lists the Java Off Heap memory reserved by Hazelcast IMDG member, and the
+column lists the Java Off Heap memory reserved by the Hazelcast member, and the
 **Used Native Memory** column shows how much Java Off Heap memory is used by members.
 When you move the mouse cursor on a desired graph, you can see the memory usage at
 the time point where the cursor is placed. Graphs under this column show the memory
@@ -40,7 +40,7 @@ image:ROOT:HeapMemoryDistribution.png[Heap Memory Distribution of Cluster]
 image:ROOT:HeapMemoryDistributionLegend.png[Heap Memory Distribution of Cluster Legend]
 
 In the above example, you can see a small amount of the total heap memory
-is used by Hazelcast IMDG maps, about 25% is used by both non-Hazelcast entities
+is used by Hazelcast maps, about 25% is used by both non-Hazelcast entities
 and all Hazelcast entities except the map and the rest of the total heap memory is free.
 You can see the exact percentages by placing the mouse cursor on the chart.
 
@@ -59,7 +59,7 @@ xref:monitor-clients.adoc#changing-cluster-client-filtering[Changing Cluster Cli
 status. For more information on the CP subsystem support in the Management Center,
 see the xref:cluster-administration.adoc#cp-subsystem[CP Subsystem section].
 
-NOTE: Cluster client filtering is only available with Hazelcast IMDG license that
+NOTE: Cluster client filtering is only available with Hazelcast license that
 includes the Cluster Client Filtering feature.
 
 image:ROOT:ClusterStateAndHealth.png[Cluster State and Cluster Health]
@@ -77,7 +77,7 @@ You can see each member's partition percentages by placing the mouse cursor on t
 chart. In the above example, you can see that two members out of three share
 the total partition count (which is 271 by default and configurable; see the `hazelcast.partition.count`
 property explained in the xref:imdg:ROOT:system-properties.adoc[System Properties appendix] of
-the Hazelcast IMDG Reference Manual).
+the Hazelcast documentation).
 
 NOTE: The partition distribution chart does not show any information
 until you create your distributed objects. When you add new members to your cluster,

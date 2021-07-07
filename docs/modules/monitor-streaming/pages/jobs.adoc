@@ -1,6 +1,6 @@
 = Jobs
 
-This page provides a general overview of the jobs in a Hazelcast Jet cluster.
+This page provides a general overview of the jobs in a Hazelcast cluster with Streaming support.
 
 image:ROOT:jobs.png[Jobs]
 
@@ -150,13 +150,13 @@ information for each of them.
 * [[latency]]**latency:** Time difference between the wall-clock
 time and the last forwarded watermark (“event time, time of the stream”).
 Multiple factors contribute to the total latency:
-** **latency in the external system**; events arrive already delayed to Jet source
+** **latency in the external system**; events arrive already delayed to Stream source
 ** **allowed lag**; if you allow for some time to wait
 for delayed events, watermarks will always be delayed by this
 lag. Note that the actual output might not be delayed.
 ** **event-to-event interval**; if there is a time period
 between two events, the event time “stops” for that time. In
-other words, until a new event comes, Jet thinks the current
+other words, until a new event comes, Hazelcast thinks the current
 time is the time of the last event. As “current event time”
 is tracked independently for each partition, this can be the
 major source of skew. If your events are irregular, you might
@@ -168,7 +168,7 @@ event arrives.
 ** **time to execute map/filter stages**; they contribute
 with the latency of the async call or with the time to execute
 CPU-heavy sync call.
-** **internal processing latency of Jet**; typically
+** **internal processing latency of Hazelcast**; typically
 very low: 1 or 2 milliseconds. It can be higher if the network is slow, system
 is overloaded, if there are many vertices in the job or many
 jobs, which causes lot of switching, etc.

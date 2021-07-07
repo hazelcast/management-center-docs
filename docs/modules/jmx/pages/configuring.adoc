@@ -36,7 +36,7 @@ You should be able to connect to the Clustered JMX interface
 using the address `localhost:9999`.
 
 You can use `jconsole` or any other JMX client to monitor your
-Hazelcast IMDG cluster. As an example, below is the `jconsole`
+Hazelcast cluster. As an example, below is the `jconsole`
 screenshot of the Clustered JMX hierarchy.
 
 image:ROOT:ClusteredJMX.png[JMX]

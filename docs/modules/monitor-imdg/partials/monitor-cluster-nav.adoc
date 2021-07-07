@@ -1,4 +1,4 @@
-* xref:monitor-imdg:monitor-imdg.adoc[]
+* xref:monitor-imdg:monitor-cluster.adoc[]
 ** xref:monitor-imdg:dashboard.adoc[]
 ** xref:monitor-imdg:widget.adoc[]
 ** xref:monitor-imdg:monitor-members.adoc[]

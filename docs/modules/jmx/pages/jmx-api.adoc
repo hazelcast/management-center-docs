@@ -298,7 +298,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
     *** OutboundQueueSize
     *** TotalPublishedEventCount
     *** TotalPublishLatency
-* Jobs (present only if it's a Jet cluster)
+* Jobs (present only if the cluster supports streaming)
   ** `<Job ID>`
     *** CompletionTime
     *** ConfigJson
@@ -357,7 +357,7 @@ Here is the list of attributes that are exposed from the Clustered JMX interface
         ***** Skew
         ***** TotalIn
         ***** TotalOut
-* ExportedJobSnapshots (present only if it's a Jet cluster)
+* ExportedJobSnapshots (present only if the cluster supports streaming)
   ** `<Snapshot Name>`
     *** CreationTime
     *** JobId

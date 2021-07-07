@@ -16,14 +16,14 @@ To start using the Management Center without Docker:
 
 == Downloading Management Center
 
-Hazelcast Management Center is included in the Hazelcast IMDG download package.
+Hazelcast Management Center is included in the Hazelcast download package.
 You can download it from the https://hazelcast.org/download/#hazelcast-imdg[download page]
 of Hazelcast's website.
 
-When a new Hazelcast IMDG version is released, it comes with a Management Center
-that is compatible with IMDG.
+When a new Hazelcast version is released, it comes with a Management Center
+that is compatible with Hazelcast.
 There may be times when a new Management Center version is released before a new
-version of Hazelcast IMDG. In that case, you may download the new Management Center
+version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.org/download/#hazelcast-management-center[download page] as a
 separate package.
 
@@ -38,7 +38,7 @@ You have the following options to start the Management Center service:
 [[starting-with-jar-file]]
 === Using the Command Line
 
-After you downloaded, extract the Hazelcast IMDG or Management Center package.
+After you downloaded, extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{page-component-version}`,
 contains the `hazelcast-management-center-{page-component-version}.jar` file.
 
@@ -67,7 +67,7 @@ java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -ja
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
 You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
 
-Then, you need to let Management Center know the Hazelcast IMDG member addresses
+Then, you need to let Management Center know the Hazelcast cluster member addresses
 as explained in the xref:connecting-members.adoc[Connecting to the Clusters chapter].
 
 For the options you can provide when starting with the
@@ -94,7 +94,7 @@ You can find these scripts under the extracted directory.
 After the above steps are completed, let's quickly open the
 Management Center user interface with the default settings.
 
-Assuming that you have started your Hazelcast IMDG and Jet clusters
+Assuming that you have started your Hazelcast clusters
 each including a single
 member on your local machine (`localhost`) and started the Management Center service on `\http://localhost:8080`,
 follow the below instructions:
@@ -103,19 +103,16 @@ follow the below instructions:
 . Select `Dev Mode` as the security provider, and click `Save` (note: this configuration is not recommended for production
 environments).
 . Login with your newly created credentials, and "Manage Clusters" page appears.
-. Click on the "Add Cluster Config" button to connect Management Center to your IMDG cluster:
+. Click on the "Add Cluster Config" button to connect Management Center to your Hazelcast cluster:
 .. Click on the `Save` button after
-providing your IMDG cluster's name and member address (`localhost`).
-. Again, click on the "Add Cluster Config" button to connect Management Center to your Jet cluster:
-.. Click on the `Save` button after
-providing your Jet cluster's name (use the default `jet`) and member address (`localhost`).
+providing your Hazelcast cluster's name and member address (`localhost`).
 . On the "Manage Cluster" page, click on the `Select` button for a desired cluster to monitor it; the dashboard of your cluster appears as shown below:
 
 image:ROOT:DashboardPage.png[Dashboard]
 
 See the xref:launching:launching.adoc[Launching the Management Center User Interface chapter] for more details.
 
-Also see xref:imdg:ROOT:starting-members-clients.adoc[here] and link:{jet-docs}docs/get-started/installation[here^] for information on starting the IMDG and Jet clusters, respectively.
+Also see xref:imdg:ROOT:starting-members-clients.adoc[here] and link:{jet-docs}docs/get-started/installation[here^] for information on starting the Hazelcast clusters, respectively.
 
 You also have the **Dev Mode** option for development or evaluation purposes that provides
 quick access to Management Center without requiring any security credentials. See

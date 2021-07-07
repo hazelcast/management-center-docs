@@ -13,7 +13,7 @@ statistics before starting your clients. This can be done
 by setting the `hazelcast.client.statistics.enabled` system
 property to `true` on the *client*. Please see the
 xref:imdg:clients:java.adoc#client-system-properties[Client System Properties section]
-in the Hazelcast IMDG Reference Manual for more information.
+in the Hazelcast documentation for more information.
 After you enable the client statistics, you can monitor your
 clients using the Management Center.
 
@@ -56,7 +56,7 @@ for each piece of information:
 * **Address**: Local IP address of the client that is used for
 connecting to members.
 * **Type**: Type of the client.
-* **Enterprise**: Yes, if the client is an Hazelcast IMDG
+* **Enterprise**: Yes, if the client is an Hazelcast 
 Enterprise client.
 * **Member Connection**: Shows to which member a client is
 currently connected to. Please note that *ALL* means a client
@@ -155,12 +155,12 @@ the client statistics are collected and sent to the cluster,
 using the system property  `hazelcast.client.statistics.period.seconds`.
 See the
 xref:imdg:clients:java.adoc#client-system-properties[System Properties section]
-in the Hazelcast IMDG Reference Manual for more information.
+in the Hazelcast documentation for more information.
 
 [[changing-cluster-client-filtering]]
 == Changing Cluster Client Filtering
 
-NOTE: The Filter tab is only available with Hazelcast IMDG license
+NOTE: The Filter tab is only available with Hazelcast license
 that includes the Cluster Client Filtering feature.
 
 The **Filter** tab includes **Cluster Client Filtering** status,
@@ -198,7 +198,7 @@ clients. Deny-listed clients may connect to another cluster
 if they are configured to support blue-green deployment. If they are not,
 they shut down when denied access to the cluster. Please see the
 xref:imdg:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery section]
-in the Hazelcast IMDG Reference Manual for more information.
+in the Hazelcast documentation for more information.
 
 NOTE: If some of the cluster members are not reachable from
 the Management Center, those members keep using the last client
