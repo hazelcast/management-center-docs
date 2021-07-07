@@ -66,7 +66,7 @@ cluster, this exception message is shown on the screen as a notification.
 The admin user can upgrade the cluster version once all members of
 the cluster have been upgraded to the intended
 codebase version as described in the Rolling Upgrade Procedure section
-of the xref:imdg:installation:rolling-upgrades.adoc#rolling-upgrade-procedure[Hazelcast Reference Manual].
+of the xref:imdg:installation:rolling-upgrades.adoc#rolling-upgrade-procedure[Hazelcast documentation].
 
 Open the **Rolling Upgrade** tab to perform a Rolling Upgrade
 and change the cluster's version.
@@ -100,7 +100,7 @@ its own data. In that case, you can force the cluster to clean its persisted
 data and make a fresh start. This process is called **force start**.
 
 NOTE: See the xref:imdg:storage:hot-restart-persistence.adoc#force-start[Force Start section]
-in the Hazelcast Reference Manual for more information on this operation.
+in the Hazelcast documentation for more information on this operation.
 
 To perform a force start on the cluster, click on the **Force Start** button.
 A confirmation dialog appears as shown below.
@@ -139,7 +139,7 @@ safe against data loss. If there are more than two missing members or there
 are maps/caches with less than two backups, then data loss is expected.
 
 NOTE: See the xref:imdg:storage:hot-restart-persistence.adoc#partial-start[Partial Start section]
-in the Hazelcast Reference Manual for more information on this
+in the Hazelcast documentation for more information on this
 operation and how to enable it.
 
 To perform a partial start on the cluster, click on the **Partial Start**
@@ -174,14 +174,14 @@ shows how much time (in seconds) is left for Hazelcast to know at least one memb
 has successfully restored its Hot Restart data and perform an automatic partial start.
 
 NOTE: See the xref:imdg:storage:hot-restart-persistence.adoc#configuring-hot-restart[Configuring Hot Restart section]
-in the Hazelcast Reference Manual for more information on the configuration elements `validation-timeout-seconds`
+in the Hazelcast documentation for more information on the configuration elements `validation-timeout-seconds`
 and `data-load-timeout-seconds` mentioned above and how to configure them.
 
 NOTE: Force and partial start operations can also be performed using the REST
 API and the script `cluster.sh`. See the
 xref:imdg:management:cluster-utilities.adoc#using-rest-api-for-cluster-management[Using REST API for Cluster Management section]
 and xref:imdg:management:cluster-utilities.adoc#using-the-script-cluster-sh[Using the Script cluster.sh section]
-in the Hazelcast Reference Manual.
+in the Hazelcast documentation.
 
 === Hot Backup
 
@@ -195,7 +195,7 @@ Note that you must first configure the Hot Backup directory programmatically
 (using the method `setBackupDir()`) or declaratively (using the element `backup-dir`)
 to be able to take a backup of the Hot Restart data. See the
 xref:imdg:storage:hot-restart-persistence.adoc#configuring-hot-backup[Configuring Hot Backup section]
-in the Hazelcast Reference Manual.
+in the Hazelcast documentation.
 
 If the backup directory is configured, you can start to perform the backup by
 clicking on the **Hot Backup** button. The Management Center first asks

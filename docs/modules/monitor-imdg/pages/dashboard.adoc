@@ -77,7 +77,7 @@ You can see each member's partition percentages by placing the mouse cursor on t
 chart. In the above example, you can see that two members out of three share
 the total partition count (which is 271 by default and configurable; see the `hazelcast.partition.count`
 property explained in the xref:imdg:ROOT:system-properties.adoc[System Properties appendix] of
-the Hazelcast Reference Manual).
+the Hazelcast documentation).
 
 NOTE: The partition distribution chart does not show any information
 until you create your distributed objects. When you add new members to your cluster,

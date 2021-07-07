@@ -93,7 +93,7 @@ for more information.
 initiate this type of synchronization, you need to configure the
 cluster members. See
 the xref:imdg:wan:advanced-features.adoc#delta-wan-synchronization[Delta WAN Synchronization section]
-in Hazelcast Reference Manual for details about configuring them. Make
+in Hazelcast documentation for details about configuring them. Make
 sure you meet synchronizing-wan-clusters#requirements-for-delta-wan-sync[all the requirements]
 to use Delta WAN Synchronization and do the configuration on both the source and target clusters.
 
@@ -156,7 +156,7 @@ be used for WAN sync.
 image:ROOT:AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
 
 See the xref:imdg:wan:wan.adoc[WAN Replication section]
-in Hazelcast Reference Manual for details about the fields and their possible values.
+in Hazelcast documentation for details about the fields and their possible values.
 
 After clicking the **Add Configuration** button, the new WAN replication configuration
 is added to the cluster.
