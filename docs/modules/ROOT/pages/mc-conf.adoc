@@ -63,6 +63,17 @@ Commands:
                      application is stopped (offline) before starting this
                      task.
 
+  issue-token      Issue a token for the given user in the Local security
+                     provider.
+                   *Important notice* Make sure that Management Center web
+                     application is stopped (offline) before starting this
+                     task.
+
+  revoke-tokens    Revoke all auth tokens for the given user.
+                   *Important notice* Make sure that Management Center web
+                     application is stopped (offline) before starting this
+                     task.
+
 ```
 
 You can also get specific help for any task by using the `-h` (or `--help`)
@@ -95,7 +106,6 @@ Create a new user record in the Local security provider.
 == Configuring Cluster Connection
 
 The `cluster add` task adds a new connection configuration for a cluster.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual cluster connection configuration through UI.
 
@@ -105,8 +115,7 @@ NOTE: If you have used a non-default Management Center home directory location, 
 == Creating Users
 
 The `user create` task creates a new user in the Local security
-provider. Note that you must stop the Management Center web application
-before running this task.
+provider.
 
 You can use this task for various scripting purposes. See the
 https://github.com/hazelcast/hazelcast-docker-samples[Hazelcast Docker Code Samples]
@@ -120,8 +129,7 @@ NOTE: If you're on Linux or MacOS devices and provide value directly to `mc-conf
 == Changing User Password
 
 The `user update-password` task resets the password of a specified user in
-the Local security provider. Note that you must stop the Management Center
-web application before running this task.
+the Local security provider.
 
 You can use this task as a recovery mechanism for the Management Center's
 administrator user account.
@@ -130,10 +138,25 @@ NOTE: If you have used a non-default Management Center home directory location, 
 
 NOTE: If you're on Linux or MacOS devices and provide value directly to `mc-conf`, please enclose password in single quotes like: `-p='mysecr3tp@s$word'`
 
+[[mc-conf-issue-token]]
+== Issuing User Auth Token
+
+The `user issue-token` task issues an auth token for a specified user in
+the Local security provider. The token inherits authorities (roles) from the user. The created token is displayed in the output:
+----
+Successfully issued a token for user 'test_user'.
+Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
+Label: 'test_user_2021-07-07T17:24 EEST'
+----
+
+== Revoking User Auth Tokens
+
+The `user revoke-tokens` task revokes (deletes) all auth tokens for a specified user. This task works for users from all security providers,
+not only the Local one.
+
 == Configuring LDAP Security Provider
 
 The `ldap configure` task configures the LDAP security provider.
-Note that you must stop the Management Center web application, before running this task.
 
 You can use this task for various scripting purposes and automatically configuring Management Center without the need for a manual security provider configuration through UI.
 
@@ -170,7 +193,6 @@ on the **Reload Security Config** button on the login page.
 == Configuring Active Directory Security Provider
 
 The `active-directory configure` task configures the Active Directory security provider.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
@@ -179,7 +201,6 @@ NOTE: If you have used a non-default Management Center home directory location, 
 == Configuring JAAS Security Provider
 
 The `jaas configure` task configures the JAAS security provider.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
@@ -188,7 +209,6 @@ NOTE: If you have used a non-default Management Center home directory location, 
 == Configuring Dev Mode Security Provider
 
 The `dev-mode` configure task configures the Dev Mode security provider.
-Note that you must stop the Management Center web application before running this task.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
@@ -198,8 +218,7 @@ NOTE: If you have used a non-default Management Center home directory location, 
 
 The `security reset` task resets current security provider used in
 the Management Center. For the Local security provider it also deletes all
-built-in user accounts. Note that you must stop the Management Center web application
-before running this task.
+built-in user accounts. It deletes all user auth tokens.
 
 You can use this task as a recovery mechanism for the Management Center deployment in case if a non-Local security provider is configured.
 In case of the Local security provider, you can also use the `user create` or `user update-password`
