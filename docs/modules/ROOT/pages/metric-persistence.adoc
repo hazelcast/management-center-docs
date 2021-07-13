@@ -2,14 +2,14 @@
 [[metrics-persistence]]
 
 Your clusters collect and report metrics data for the connected Management Center.
-Metrics data includes various number of time series, such as CPU load, memory consumption,
+Metrics data includes a various number of time series, such as CPU load, memory consumption,
 and operation counters.
 See the xref:imdg:management:metrics.adoc[Metrics section] of the Hazelcast documentation
 for details about configuring metrics collection.
 
-Management Center metrics persistence accumulating collected metrics into minute buckets (data points of same time series for 1 minute).
-It allows us to compress data to use less disk space.
-That minute buckets are stored in-memory for 70 seconds.
+Management Center metrics persistence accumulates collected metrics into minute buckets (data points of same time series for 1 minute).
+It allows you to compress data and spare disk space.
+These minute buckets are stored in memory for 70 seconds.
 
 Management Center background metrics persistence thread runs every 10 seconds and stores accumulated minute buckets on disk.
 You can configure the xref:configuring.adoc#disk-usage-config[Time-to-Live] setting to control how long metrics data points are stored on disk.
@@ -18,7 +18,7 @@ By default, Management Center stores metrics data for one day.
 Management Center stores the metrics in a database file, under the Management Center home directory on the disk.
 The data files can be found in the `<User‘s Home Directory>/hazelcast-mc/metrics`
 directory, e.g., `/home/someuser/hazelcast-mc/metrics`.
-This directory can be changed using the `hazelcast.mc.home` property on the server where Management Center is running.
+The home directory can be changed using the `hazelcast.mc.home` property on the server where Management Center is running.
 
 You may see the following warning messages in the Management Center log:
 
@@ -27,8 +27,11 @@ Detected slow background persistence runs: 6 runs took 61000 ms. Consider decrea
 ....
 
 This message indicates that for the last minute Management Center tried to persist more metrics than underlying persistent storage or disk throughput.
-If this message keeps showing up in log, please consider decreasing count of collected metrics on cluster side.
-If this recommendation is ignored, Management Center will be using more JVM heap space, in order to keep both already accumulated minute buckets, and those are accumulating at the moment, so you may have to increase the maximum heap size in JVM.
+
+If this message keeps showing up in the log, please consider decreasing the count of collected metrics on the cluster side.
+E.g., change the `statistics-enabled` configuration attributes of distributed data structures to `false`.
+
+If this recommendation is ignored, Management Center will be using more JVM heap space, in order to keep both already accumulated minute buckets, and those that are accumulating at the moment, so you may have to increase the maximum heap size in JVM.
 
 NOTE: Each in-memory minute bucket takes around 0.5 KB of memory.
 
@@ -36,15 +39,15 @@ NOTE: Each in-memory minute bucket takes around 0.5 KB of memory.
 
 **Metrics Persistence** allows you to check the status of the cluster at a time in the past.
 
-You can go back in time using the date picker on the left corners of charts and check your cluster's situation at the selected time.
-All the data structures and members can be monitored as if you are using the Management Center normally (charts and data tables for each data structure and members).
+You can go back in time using the date picker on the left corners of the charts and check your cluster's state at the selected time.
+All the data structures and members can be monitored as if you are using the Management Center normally (charts and data tables for each data structure and member).
 
 You can press the Now button next to the date picker to see the latest data.
 Note that this will only show you the latest data on a chart and not cause the other charts and data tables to refresh.
 
 == Metrics Persistence diagnostics
 
-Each hour since Management Center start you will see following info message in the log:
+Each hour since Management Center start you will see the following info message in the log:
 
 ....
 Known time series: 10959
@@ -65,13 +68,13 @@ Data point memory compression ratio: 32.25
 
 It provides some basic persistence statistics and active configuration.
 All time values logged in HH:mm:ss.SSS format.
-`Data point memory compression ratio` shows how many times less on disk space is used than in-memory.
+`Data point memory compression ratio` shows how many times less disk space is used than in-memory.
 
 == Configuring RocksDB temporary directory
 
 Management Center uses the RocksDB native library under the hood for metrics persistence. By default, the RocksDB binary
 is extracted into the `java.io.tmpdir` directory. In case you run into any file system permission errors, you can override
-this default by setting the `ROCKSDB_SHAREDLIB_DIR` environment variable to the absolute path of an other directory. See the following example:
+this default by setting the `ROCKSDB_SHAREDLIB_DIR` environment variable to the absolute path of another directory. See the following example:
 
 [source,bash,subs="attributes+"]
 ----
