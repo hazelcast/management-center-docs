@@ -112,6 +112,14 @@ The `cluster add` task adds a new connection configuration for a cluster.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual cluster connection configuration through UI.
 
+To add a cluster configuration, you can provide the client configuration (XML or YAML) as shown below (assuming you are in the Management Center
+installation directory on your terminal):
+
+[source,plain]
+----
+./bin/mc-conf.sh cluster add --client-config=./hazelcast-client.xml
+----
+
 [[mc-conf-create-user]]
 == Creating Users
 
