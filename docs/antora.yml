@@ -1,6 +1,7 @@
 name: management-center
 title: Management Center
 version: 5.0-BETA-1
+prerelease: true
 asciidoc:
   attributes:
     javasource: ROOT:example$
