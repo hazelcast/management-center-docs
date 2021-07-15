@@ -4,34 +4,32 @@
 Your clusters collect and report metrics data for the connected Management Center.
 Metrics data includes a various number of time series, such as CPU load, memory consumption,
 and operation counters.
-See the xref:imdg:management:metrics.adoc[Metrics section] of the Hazelcast documentation
+See the xref:hazelcast:maintain-cluster:monitoring.adoc[Metrics section] of the Hazelcast documentation
 for details about configuring metrics collection.
 
-Management Center metrics persistence accumulates collected metrics into minute buckets (data points of same time series for 1 minute).
-It allows you to compress data and spare disk space.
-These minute buckets are stored in memory for 70 seconds.
+To save memory and improve performance, Management Center groups metrics into one-minute buckets before compressing them and saving them to disk.
+These persisted metrics are stored in the `<User‘s Home Directory>/hazelcast-mc/metrics`
+folder for one day.
 
-Management Center background metrics persistence thread runs every 10 seconds and stores accumulated minute buckets on disk.
-You can configure the xref:configuring.adoc#disk-usage-config[Time-to-Live] setting to control how long metrics data points are stored on disk.
-By default, Management Center stores metrics data for one day.
+If you want to store persisted metrics in a different folder, set the `hazelcast.mc.home` property on the server where Management Center is running.
 
-Management Center stores the metrics in a database file, under the Management Center home directory on the disk.
-The data files can be found in the `<User‘s Home Directory>/hazelcast-mc/metrics`
-directory, e.g., `/home/someuser/hazelcast-mc/metrics`.
-The home directory can be changed using the `hazelcast.mc.home` property on the server where Management Center is running.
+If you want to store persisted metrics for a different amount of time, use the xref:configuring.adoc#disk-usage-config[Time-to-Live] setting.
 
-You may see the following warning messages in the Management Center log:
+To persist metrics, Management Center starts a metrics-persistence thread that checks for one-minute buckets every 10 seconds.
+To allow for late metrics due to poor connection or other errors, the metrics-persistence thread waits until one-minute buckets are 70 seconds old.
+This way, one-minute buckets have a 10-second threshold in which late data may be saved to disk.
 
-....
-Detected slow background persistence runs: 6 runs took 61000 ms. Consider decreasing count of collected metrics.
-....
+For example:
 
-This message indicates that for the last minute Management Center tried to persist more metrics than underlying persistent storage or disk throughput.
-
-If this message keeps showing up in the log, please consider decreasing the count of collected metrics on the cluster side.
-E.g., change the `statistics-enabled` configuration attributes of distributed data structures to `false`.
-
-If this recommendation is ignored, Management Center will be using more JVM heap space, in order to keep both already accumulated minute buckets, and those that are accumulating at the moment, so you may have to increase the maximum heap size in JVM.
+. Management Center receives the first chunk of metrics at 9:00:00 AM.
+. A one-minute bucket is created for each metric type (CPU load, memory consumption, etc) in memory and each bucket's timestamp is set to 9:00:00 AM.
+At this point nothing is saved to disk.
+. The next chunk of metrics is received at 9:00:03 AM.
+No new minute buckets are created, only the new metrics are added to the existing one-minute buckets.
+. The first metrics-persistence thread run starts at 9:00:10 AM.
+The thread didn’t find any minute buckets that are 70 seconds old.
+Still, nothing is stored on disk.
+. At 9:01:10 AM, the metrics-persistence thread stores the compressed one-minute buckets on disk.
 
 NOTE: Each in-memory minute bucket takes around 0.5 KB of memory.
 
@@ -46,6 +44,19 @@ You can press the Now button next to the date picker to see the latest data.
 Note that this will only show you the latest data on a chart and not cause the other charts and data tables to refresh.
 
 == Metrics Persistence diagnostics
+
+You may see the following warning messages in the Management Center log:
+
+....
+Detected slow background persistence runs: 6 runs took 61000 ms. Consider decreasing count of collected metrics.
+....
+
+This message indicates that for the last minute Management Center tried to persist more metrics than underlying persistent storage or disk throughput.
+
+If this message keeps showing up in the log, please consider decreasing the count of collected metrics on the cluster side.
+E.g., change the `statistics-enabled` configuration attributes of distributed data structures to `false`.
+
+If this recommendation is ignored, Management Center will be using more JVM heap space, in order to keep both already accumulated minute buckets, and those that are accumulating at the moment, so you may have to increase the maximum heap size in JVM.
 
 Each hour since Management Center start you will see the following info message in the log:
 
