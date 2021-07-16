@@ -153,6 +153,10 @@ Successfully issued a token for user 'test_user'.
 Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
 Label: 'test_user_2021-07-07T17:24 EEST'
 ----
+There is an option to get the token in JSON format by specifying `--output-format=json`. The output looks like the following:
+----
+{"token":"Eh5stkVgdFy9pne6sf0M6a8q6B21wu5FM31eMTcROFg","username":"test_user","label":"test_user_2021-07-16T16:27 EEST"}
+----
 
 == Revoking User Auth Tokens
 
