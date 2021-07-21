@@ -54,7 +54,7 @@ cluster states, see the xref:cluster-administration.adoc#cluster-state[Cluster S
 * **Cluster Health:** Shows how many migrations are taking place currently.
 * **Client Filtering:** Shows values for the current cluster client filtering
 status and type. For more information on the cluster client filtering, see the
-xref:monitor-clients.adoc#changing-cluster-client-filtering[Changing Cluster Client Filtering section].
+xref:client-filtering.adoc[Changing Cluster Client Filtering section].
 * **CP Subsystem:** Shows the xref:imdg:cp-subsystem:cp-subsystem.adoc[CP subsystem]
 status. For more information on the CP subsystem support in the Management Center,
 see the xref:cluster-administration.adoc#cp-subsystem[CP Subsystem section].
