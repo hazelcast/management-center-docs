@@ -4,6 +4,9 @@ version: 4.2021.03
 asciidoc:
   attributes:
     javasource: ROOT:example$
+    # Used for search results
+    page-latest-supported-imdg: 4.2
+    page-latest-supported-hazelcast: ''
     page-toclevels: 1
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
 nav:
