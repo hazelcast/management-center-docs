@@ -230,7 +230,7 @@ You can use this task for various scripting purposes, and automatically configur
 
 The `security reset` task resets current security provider used in
 the Management Center. For the Local security provider it also deletes all
-built-in user accounts. It deletes all user auth tokens.
+the existing user accounts. It deletes all user auth tokens.
 
 You can use this task as a recovery mechanism for the Management Center deployment in case if a non-Local security provider is configured.
 In case of the Local security provider, you can also use the `user create` or `user update-password`
