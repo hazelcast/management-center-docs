@@ -35,6 +35,11 @@ You have the following options to start the Management Center service:
 * Use the scripts that come with the download package.
 * Deploy the file `hazelcast-management-center-{page-component-version}.war` on your Java application server/servlet container.
 
+For all the starting options you can preconfigure a cluster in Management Center by setting the following environment variables:
+
+* `HZ_MC_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
+* `HZ_MC_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
+
 [[starting-with-jar-file]]
 === Using the Command Line
 
