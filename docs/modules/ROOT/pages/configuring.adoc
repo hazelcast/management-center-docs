@@ -128,6 +128,19 @@ If you want to enable the Health Check endpoint, use the following command line 
 -Dhazelcast.mc.healthCheck.enable=true
 ```
 
+== Restricting the Bind Address
+
+You can configure the bind address for Management Center so that it is not reachable on any network address
+using the `-Dhazelcast.mc.hostAddress` system property. Example:
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{page-component-version}.jar
+----
+
+With this setting, Management Center will be reachable on `http://127.0.1.1:8080` but won't listen on
+`http://127.0.0.1:8080`.
+
 [[configuring-sessions]]
 == Configuring Sessions
 
