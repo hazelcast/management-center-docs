@@ -1,13 +1,11 @@
 name: management-center
 title: Management Center
-version: 5.0-SNAPSHOT
-prerelease: true
+version: 5.0-BETA-2
 asciidoc:
   attributes:
     javasource: ROOT:example$
-    # Used for search results
     page-latest-supported-imdg: 4.2
-    page-latest-supported-hazelcast: ''
+    page-latest-supported-hazelcast: ""
     page-toclevels: 1
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
 nav:
