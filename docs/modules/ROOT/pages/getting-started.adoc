@@ -27,6 +27,16 @@ version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.org/download/#hazelcast-management-center[download page] as a
 separate package.
 
+== System requirements
+
+Most Linux distributions are supported, assuming that glibc 2.12+ is installed.
+
+Experimental support for AIX is provided as well, with the following prerequisites:
+ * AIX version is 7.2 or newer
+ * [AIX Toolbox](https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview) is installed
+ * JRE 1.8 or newer is installed
+ * libsnappy 1.8.0 or newer is installed
+
 == Starting the Management Center Service
 
 You have the following options to start the Management Center service:
