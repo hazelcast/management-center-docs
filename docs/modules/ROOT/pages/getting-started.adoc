@@ -27,7 +27,7 @@ version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.org/download/#hazelcast-management-center[download page] as a
 separate package.
 
-== System requirements
+== System Requirements
 
 Most Linux distributions are supported, assuming that glibc 2.12 or newer is installed.
 
