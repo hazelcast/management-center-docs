@@ -96,10 +96,30 @@ is `1000`.
 You can control the disk space used by the Management Center to avoid exceeding
 available disk space. That can be done by configuring the xref:metric-persistence.adoc[Metrics Persistence].
 
-You can use the `hazelcast.mc.metrics.disk.ttl.days` system property
+You can use the `hazelcast.mc.metrics.disk.ttl.duration` system property
 to configure the Management Center's metrics persistence. This property
 specifies Time-to-Live (TTL) setting for each record in the metrics persistence.
-It is in days and its default value is `1`.
+It is in ISO-8601-based durations format that supports days, hours, minutes, seconds and its default value is `P1D`.
+
+[TIP]
+====
+`hazelcast.mc.metrics.disk.ttl.duration` can be expressed using the following format, where `(n)` is replaced by the value for each of the date and time elements that follow the `(n)`:
+
+`P(n)DT(n)H(n)M(n)S`, where
+
+- `P` is the duration designator (referred to as "period"), and is always placed at the beginning of the duration.
+- `D` is the day designator that follows the value for the number of days.
+- `T` is the time designator that precedes the time components.
+- `H` is the hour designator that follows the value for the number of hours.
+- `M` is the minute designator that follows the value for the number of minutes.
+- `S` is the second designator that follows the value for the number of seconds.
+
+For example:
+
+`P4DT12H30M5S`
+
+Represents a duration of four days, twelve hours, thirty minutes, and five seconds.
+====
 
 It is important to understand that the TTL setting acts as a _soft_ limit and
 gives you an indirect control over Management Center disk usage. The final
