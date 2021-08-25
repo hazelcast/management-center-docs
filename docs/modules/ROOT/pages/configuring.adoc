@@ -99,7 +99,7 @@ available disk space. That can be done by configuring the xref:metric-persistenc
 You can use the `hazelcast.mc.metrics.disk.ttl.duration` system property
 to configure the Management Center's metrics persistence. This property
 specifies Time-to-Live (TTL) setting for each record in the metrics persistence.
-It is in ISO-8601-based durations format that supports days, hours, minutes, seconds and its default value is `P1D`.
+It is in ISO-8601-based durations format that supports days, hours, minutes, seconds and its default value is `P1D` (one day).
 
 [TIP]
 ====
