@@ -18,7 +18,9 @@ following system property at startup. This property is disabled by default.
 The entry point for the Clustered REST API is `/rest/`. This
 resource does not have any attributes.
 
-NOTE: All requests to Clustered REST API must be authenticated.
+NOTE: All requests to Clustered REST API must be authenticated.  
+If the request is not authenticated, a `UNAUTHORIZED: No bearer token provided.` 
+message will be shown.
 
 NOTE: All parameters that are used in the REST API URLs, like
 cluster names and distributed data structure names, must be
@@ -39,7 +41,8 @@ request must include the following header:
 
 * Authorization: Bearer <user_auth_token>
 
-An auth token for user can be issued by this xref:ROOT:mc-conf.adoc#mc-conf-issue-token[command].
+An auth token for user can be issued by using the xref:ROOT:mc-conf.adoc#mc-conf-issue-token[mc-conf] command.
+
 In `Dev Mode` no `Authorization` header is required.
 
 == Retrieving Management Center License Expiration Time
