@@ -27,9 +27,7 @@ similar to the one below:
 
 [source,bash]
 ----
-INFO: Management Center 3.3
-Jun 05, 2014 11:55:32 AM com.hazelcast.webmonitor.service.jmx.impl.JMXService
-INFO: Starting Management Center JMX Service on port :9999
+2021-09-09 22:34:19,333 [ INFO] [ForkJoinPool.commonPool-worker-19] [c.h.w.s.j.i.JMXServiceImpl]: Starting Management Center JMX Service on port: 9999
 ----
 
 You should be able to connect to the Clustered JMX interface
