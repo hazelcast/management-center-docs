@@ -4,9 +4,6 @@
 == Horizontal Scrollbar in Tables when Using macOS
 
 macOS automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
-See below for an example view:
-
-image:ROOT:MacOSScrollBar.png[MacOS Scroll Bar]
 
 The scrollbar should hide shortly after you stop scrolling. This is the default behavior and it shouldn't
 cause any inconvenience. However, if you still want to change it, address "Show scroll bars" section of the

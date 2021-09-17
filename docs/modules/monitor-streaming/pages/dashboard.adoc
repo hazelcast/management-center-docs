@@ -1,4 +1,5 @@
 = Dashboard Page
+:page-aliases: monitor-jet:dashboard.adoc
 [[streaming-dashboard-page]]
 
 This page gives an overview

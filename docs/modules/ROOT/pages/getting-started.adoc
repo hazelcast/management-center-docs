@@ -6,7 +6,7 @@
 The easiest way to start using Management Center is to run the official Management Center Docker image.
 [source,bash,subs="attributes+"]
 ----
-docker run --rm -p 8080:8080 hazelcast/management-center
+docker run --rm -p 8080:8080 hazelcast/management-center:{page-component-version}
 ----
 Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
@@ -14,13 +14,13 @@ Please see more details at link:https://hub.docker.com/r/hazelcast/management-ce
 
 To start using the Management Center without Docker:
 
-. download the Hazelcast Management Center package
-. start the Management Center service
-. launch the Management Center user interface.
+. Download the Hazelcast Management Center package.
+. Start the Management Center service.
+. Launch the Management Center user interface.
 
 Hazelcast Management Center is included in the Hazelcast download package.
 You can download it from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-imdg[download page]
-of Hazelcast's website.
+of the Hazelcast website.
 
 When a new version of Hazelcast is released, it comes with a compatible version of Management Center.
 
@@ -57,7 +57,7 @@ For all the starting options you can preconfigure a cluster in Management Center
 [[starting-with-jar-file]]
 === Using the Command Line
 
-After you downloaded, extract the Hazelcast or Management Center package.
+Extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{page-component-version}`,
 contains the `hazelcast-management-center-{page-component-version}.jar` file.
 
@@ -68,11 +68,7 @@ You can start this file directly from the command line using the following comma
 java -jar hazelcast-management-center-{page-component-version}.jar
 ----
 
-The above command starts the  Hazelcast Management Center service on
-the port `8080` with the root context path (`\http://localhost:8080`).
-
-NOTE: From Management Center 4.0 onwards, the default context path changed from
-`hazelcast-mancenter` to the root context path.
+The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
 
 You can use `-Dhazelcast.mc.http.port` and `-Dhazelcast.mc.contextPath`
 command line options to start Management Center on a different port and
@@ -90,8 +86,8 @@ The next step is to let Management Center know the Hazelcast cluster member addr
 as explained in the xref:connecting-members.adoc[Connecting to the Clusters chapter].
 
 For the options you can provide when starting with the
-command line, see the xref:configuring.adoc[Configuring Management Center chapter].
-In that chapter, you can learn about topics including how to start with a
+command line, see xref:configuring.adoc[Configuring Management Center].
+For example, you can learn about topics including how to start with a
 license or extra classpath, how to configure the security,
 disk usage, update interval or logging.
 
@@ -110,27 +106,27 @@ You can find these scripts under the extracted directory.
 
 == Quick Launch
 
-After the above steps are completed, let's quickly open the
-Management Center user interface with the default settings.
+After the above steps are completed, let's quickly open
+Management Center with the default settings.
 
 Assuming that you have started your Hazelcast clusters each including a single member on 
-your local machine (`localhost`) and started the Management Center service on `\http://localhost:8080`,
+your local machine (localhost) and started the Management Center service on `\http://localhost:8080`,
 follow the below instructions:
 
 . Go to `\http://localhost:8080` using your preferred browser.
-+. Select `Dev Mode` as the security provider, and click `Enable` (note: this configuration is not recommended for production
++. Select *Dev Mode* as the security provider, and click *Enable* (note: this configuration is not recommended for production
 environments as it skips the requirement for login credentials)
-. This will take you to the "Cluster Connections" page.  Click on the blue "+" button to define the connection Management Center will use to your Hazelcast cluster:
-.. Fill in the "Cluster Name" (this needs to be an exact match.  `dev` is the default Cluster name)
+. This will take you to the *Cluster Connections* page.  Click on the blue *+* button to define the connection Management Center will use to your Hazelcast cluster:
+.. Fill in the *Cluster Name* (this needs to be an exact match.  `dev` is the default Cluster name)
 .. Fill in one or more of the members' address details.  If the cluster is running on your laptop, then this will be `localhost`.
-.. Click on the `Connect` button to save the configuration and connect to the cluster.
-. On the "Cluster Connections" page, click the `View Cluster` button to go to that clusyer's dashboard as shown below:
+.. Click on the *Connect* button to save the configuration and connect to the cluster.
+. On the *Cluster Connections* page, click the *View Cluster* button to go to that cluster's dashboard as shown below:
 
 image:ROOT:DashboardPage.png[Dashboard]
 
-See the xref:launching:launching.adoc[Launching the Management Center User Interface chapter] for more details.
+See xref:launching:launching.adoc[Launching the Management Center User Interface] for more details.
 
-See xref:imdg:ROOT:starting-members-clients.adoc[Starting Members and Clients] for information on starting the Hazelcast clusters.
+See the xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:install-hazelcast.adoc[Hazelcast documentation] for information on starting Hazelcast clusters.
 
 Further details on the **Dev Mode** option for development or evaluation purposes that provides quick access to Management Center without requiring any security credentials, see
 the xref:launching:dev-mode.adoc[Dev Mode section] for details.

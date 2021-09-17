@@ -4,8 +4,6 @@
 NOTE: User management is only available for the Local security provider.
 See the xref:launching:auth-options.adoc#local-authentication[Local Authentication section] for more information.
 
-image:ROOT:Users.png[Users]
-
 To add a user to the system, specify the username, e-mail and password in the
 **Add/Edit User** part of the page. Then provide the user's
 privilege status using the checkboxes under `Permissions`:
