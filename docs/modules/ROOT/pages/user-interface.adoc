@@ -28,7 +28,7 @@ onto it, the user's last login time is shown as a tooltip, for security purposes
 * **Cluster Selector**: Switches between the clusters. When clicked on, a dropdown
 list of available clusters appears. You can select any cluster; once selected, the page immediately
 loads with the selected cluster's information. This selector
-has the same functionality as selecting a cluster in the "Manage Clusters" menu
+has the same functionality as selecting a cluster in the *Manage Clusters* menu
 of the user interface.
 * **Logout**: Closes the current user's session.
 
@@ -47,20 +47,20 @@ NOTE: WAN Replication button is only visible with the Hazelcast Enterprise licen
 
 The menu consists of the following parent menu headings:
 
-* **CLUSTER**: Includes menu items for general cluster
+* **Cluster**: Includes menu items for general cluster
 operations, monitoring clients/cluster members and
 executing scripts/commands.
-* **STORAGE**: Includes menu items to monitor data structures
+* **Storage**: Includes menu items to monitor data structures
 such as the maps, caches and PN counters in your cluster.
-* **STREAMING**: Includes menu items to export snapshots and
+* **Streaming**: Includes menu items to export snapshots and
 manage streaming jobs.
-* **COMPUTE**: Includes the "Executors" menu item to monitor
+* **Compute**: Includes the *Executors* menu item to monitor
 the executor services in your cluster.
-* **MESSAGING**: Includes menu items to monitor queues and
+* **Messaging**: Includes menu items to monitor queues and
 topics in your cluster.
 
 NOTE: If you have not selected a cluster to monitor, only
-the "Management Center" menu items are shown in the user
+the *Management Center* menu items are shown in the user
 interface.
 
 The following sections describe each menu item from top to bottom.

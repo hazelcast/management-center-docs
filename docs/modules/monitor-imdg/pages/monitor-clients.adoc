@@ -12,7 +12,7 @@ seeing the full information, you need to enable the client
 statistics before starting your clients. This can be done
 by setting the `hazelcast.client.statistics.enabled` system
 property to `true` on the *client*. Please see the
-xref:imdg:clients:java.adoc#client-system-properties[Client System Properties section]
+xref:{page-latest-supported-hazelcast}@hazelcast:clients:java.adoc#client-system-properties[Client System Properties section]
 in the Hazelcast documentation for more information.
 After you enable the client statistics, you can monitor your
 clients using the Management Center.
@@ -154,5 +154,5 @@ NOTE: Please note that you can configure the time interval for which
 the client statistics are collected and sent to the cluster,
 using the system property  `hazelcast.client.statistics.period.seconds`.
 See the
-xref:imdg:clients:java.adoc#client-system-properties[System Properties section]
+xref:{page-latest-supported-hazelcast}@hazelcast:clients:java.adoc#client-system-properties[System Properties section]
 in the Hazelcast documentation for more information.

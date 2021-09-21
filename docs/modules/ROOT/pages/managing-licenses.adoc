@@ -9,7 +9,7 @@ in Management Center:
 [[management-center-license]]
 == Management Center License
 
-Using the "License" menu item under the "Management Center" parent
+Using the *License* menu item under the *Management Center* parent
 menu heading, you can view the
 details of your Management Center license.
 An example screenshot is shown below.
@@ -24,7 +24,7 @@ Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your Management Center
-license, "License" menu item is highlighted with red
+license, *License* menu item is highlighted with red
 exclamation points. In this case, please check this
 screen to see what the problem is.
 The following are the possible problems:
@@ -36,8 +36,8 @@ allowed count by the license.
 If the Management Center license expires in 30 days or less, or has already expired,
 a warning will appear in the upper right corner once a day. 
 Warning will contain time remaining until license expires or how long the license is expired.
-There will also be two buttons - the first one with label "Show License" will redirect you to the license page, 
-the second one with label "Dismiss Alert" will dismiss the alert.
+There will also be two buttons - the first one with label *Show License* will redirect you to the license page, 
+the second one with label *Dismiss Alert* will dismiss the alert.
 An example screenshot is shown below.
 
 image:ROOT:LicenseExpirationAlert.png[License Expiration Alert]
@@ -53,7 +53,7 @@ system property (see the xref:configuring.adoc#starting-with-a-license[Starting 
 [[license-screen]]
 == Cluster License
 
-Using the "License" menu item under the "Cluster" parent
+Using the *License* menu item under the *Cluster* parent
 menu heading, you can view the
 details of your cluster's license (Hazelcast Enterprise license).
 An example screenshot is shown below.
@@ -68,7 +68,7 @@ Instead, https://en.wikipedia.org/wiki/SHA-2[SHA-256^] hash of
 the key as a Base64 encoded string is shown.
 
 If there are any problems related to your cluster
-license, "License" menu item is highlighted with red
+license, *License* menu item is highlighted with red
 exclamation points. In this case, please check this
 screen to see what the problem is.
 The following are the possible problems:
@@ -81,7 +81,7 @@ If the cluster license expires in 30 days or less, or has already expired,
 a warning will appear in the upper right corner once a day, similar
 to the one for the Management Center license. 
 Warning will contain time remaining until license expires or how long the license is expired.
-There will also be two buttons - the first one with label "Show License" will redirect you to the license page, 
-the second one with label "Dismiss Alert" will dismiss the alert.
+There will also be two buttons - the first one with label *Show License* will redirect you to the license page, 
+the second one with label *Dismiss Alert* will dismiss the alert.
 
 
