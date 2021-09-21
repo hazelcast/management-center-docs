@@ -109,7 +109,10 @@ Here is an example configuration file:
 .Example hazelcast-client.xml file
 [source,xml]
 ----
-<hazelcast-client>
+<hazelcast-client xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
+                  http://www.hazelcast.com/schema/client-config/hazelcast-client-config-5.0.xsd">
     <cluster-name>dev</cluster-name>
     <network>
         <cluster-members>
