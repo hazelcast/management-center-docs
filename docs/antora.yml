@@ -1,7 +1,9 @@
 name: management-center
 title: Management Center
-version: 5.0
-prerelease: true
+# Version in the URL
+version: '5.0'
+# Version in the version selector (we display only the latest major.minor version)
+display_version: '5.0'
 asciidoc:
   attributes:
     javasource: ROOT:example$
