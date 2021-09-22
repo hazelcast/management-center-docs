@@ -7,8 +7,8 @@ display_version: '5.0'
 asciidoc:
   attributes:
     javasource: ROOT:example$
-    page-latest-supported-imdg: 4.2
-    page-latest-supported-hazelcast: 5.0
+    page-latest-supported-imdg: '4.2'
+    page-latest-supported-hazelcast: '5.0'
     page-toclevels: 1
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
 nav:
