@@ -47,4 +47,4 @@ one hundred executed queries. Each row contains **Execution Time**,
 **Execution Status** and **Query** values. You can re-execute any query from the
 history by pushing a button in the **Execute** column.
 
-image:ROOT:SQLBrowserHistoryTab.png[SQLBrowserHistoryTab]
+image:ROOT:SQLBrowserHistoryTab.png[A history of executed queries]
