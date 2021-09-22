@@ -1,8 +1,8 @@
 = Snapshots
+:page-aliases: monitor-jet:snapshots.adoc
 
 This page provides an overview of the exported snapshots of the Hazelcast Streaming
-jobs. To create a new export, please refer to the <<job-management, Job Management>>
-section.
+jobs. To create a new export, see xref:jobs.adoc#job-management[Job Management].
 
 image:ROOT:snapshots.png[Snapshots]
 

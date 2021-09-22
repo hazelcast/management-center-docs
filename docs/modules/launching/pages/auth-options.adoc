@@ -42,7 +42,7 @@ xref:ROOT:mc-conf.adoc#mc-conf-create-user[description] for details.
 You can use your existing Active Directory server for
 authentication/authorization on the Management Center. In the
 "Configure Security" page, select **Active Directory** from
-the "Security Provider" combo box, and the following form page appears:
+the *Security Provider* combo box, and the following form page appears:
 
 image:ROOT:ConfigureAD.png[Active Directory Configuration, align="center"]
 
@@ -52,10 +52,10 @@ Provide the details in this form for your Active Directory server:
 schema (`ldap://` or `ldaps://`) and port.
 * **Domain:** Domain of your organization on Active Directory.
 * **User Search Filter:** LDAP search filter expression to search
-for the users. `{0}` will be replaced with `username@domain` and
-`{1}` will be replaced with only the `username`. You can use both
+for the users. `\{0\}` will be replaced with `username@domain` and
+`\{1\}` will be replaced with only the `username`. You can use both
 placeholders, only one of them or none in your search filter. For
-example, `(&(objectClass=user)(userPrincipalName={0}))` searches
+example, `(&(objectClass=user)(userPrincipalName=\{0\}))` searches
 for a username that matches with the `userPrincipalName` attribute
 and member of the object class `user`.
 * **Admin Group(s):** Members of this group and its nested groups
@@ -133,7 +133,7 @@ if none is provided. You can find out the default by calling the
 
 You can use your own `javax.security.auth.spi.LoginModule` implementation
 for authentication/authorization on the Management Center. In the "Configure Security"
-page, select **JAAS** from the "Security Provider" combo box, and the following
+page, select **JAAS** from the *Security Provider* combo box, and the following
 page appears:
 
 image:ROOT:ConfigureJAAS.png[JAAS Configuration, align="center"]
@@ -235,8 +235,8 @@ public class SampleLoginModule implements LoginModule {
 == LDAP Authentication
 
 You can use your existing LDAP server for authentication/authorization on the
-Management Center. In the "Configure Security" page, select **LDAP** from
-the "Security Provider" combo box, and the following form page appears:
+Management Center. In the *Configure Security* page, select **LDAP** from
+the *Security Provider* combo box, and the following form page appears:
 
 image:ROOT:ConfigureLDAP.png[LDAP Configuration, align="center"]
 
@@ -263,10 +263,10 @@ have the privilege to see only the metrics on the Management Center.
 To use more than one group, separate them with a semicolon (;).
 * **Start TLS:** Enable if your LDAP server uses **Start TLS** operation.
 * **User Search Filter:** LDAP search filter expression to search for
-the users. For example, `uid={0}` searches for a username that matches with
+the users. For example, `uid=\{0\}` searches for a username that matches with
 the `uid` attribute.
 * **Group Search Filter:** LDAP search filter expression to search for
-the groups. For example, `uniquemember={0}` searches for a group that
+the groups. For example, `uniquemember=\{0\}` searches for a group that
 matches with the `uniquemember` attribute.
 * **Nested Group Search:** Disable if you have a large LDAP group structure
 and it takes a long time to query all nested groups during login.
@@ -399,7 +399,7 @@ xref:ROOT:mc-conf.adoc#mc-conf-update-ldap-password[description] for details.
 == SAML Authentication
 
 You can use SAML single sign-on with Management Center. In the "Configure Security"
-page, select **SAML** from the "Security Provider" combo box, and the following form
+page, select **SAML** from the *Security Provider* combo box, and the following form
 page appears:
 
 image:ROOT:ConfigureSAML.png[SAML Configuration]
@@ -443,7 +443,7 @@ to view/download it once you configure SAML: “http://<MC URL>/saml/metadata”
 == OpenID Connect Authentication
 
 You can use OpenID Connect single sign-on with Management Center. In the "Configure Security"
-page, select **OpenID Connect** from the "Security Provider" combo box, and the following form
+page, select **OpenID Connect** from the *Security Provider* combo box, and the following form
 page appears:
 
 image:ROOT:ConfigureOIDC.png[OpenID Connect Configuration]
@@ -469,8 +469,8 @@ Center and the OpenID provider are on the same machine, you would enter
 * **UserInfo Request HTTP Method:** HTTP method to use for sending a UserInfo request. Either `GET` or `POST`.
 Default value is  `GET`. Note that IBM MCM requires this to be `POST`.
 * **Send Client Info in Token Request:** Whether Management Center should send client ID and client secret
-as extra parameters in the token request. "No" by default. Note that IBM MCM requires these extra
-parameters in its token endpoint, so it should be "Yes" when deployed there.
+as extra parameters in the token request. *No* by default. Note that IBM MCM requires these extra
+parameters in its token endpoint, so it should be *Yes* when deployed there.
 * **Admin Group(s):** Members of this group have admin privileges on the Management Center. To use more
 than one group, separate them with the group name separator you have configured.
 * **User Group(s):** Members of this group have read and write privileges on the Management Center.

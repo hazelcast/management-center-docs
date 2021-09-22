@@ -11,15 +11,15 @@ image:ROOT:StartingPage.png[alt=Starting Page, align="center"]
 If you are using Management Center for the first time,
 you need to add your cluster's configuration using this page
 You can always go to this page during your Management Center usage
-by clicking on the "Manage Clusters"
-menu item under the "Management Center" parent
+by clicking on the *Manage Clusters*
+menu item under the *Management Center* parent
 menu heading.
 
 To start monitoring your cluster you have already created
 (on your local machine, another development environment,
 etc.) you need to first define a cluster
 configuration to connect Management Center to your cluster.
-After you click on the "Add Cluster Config" button
+After you click on the *Add Cluster Config* button
 shown in the above screenshot,
 you can do this by either of the following options:
 
@@ -28,7 +28,7 @@ you can do this by either of the following options:
 
 == Creating a Cluster Configuration Using Form
 
-Click on the "Add Cluster Config" button as seen in
+Click on the *Add Cluster Config* button as seen in
 the above screenshot. The following page appears:
 
 image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
@@ -36,21 +36,21 @@ image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 * `Cluster Name`: Enter the name of your cluster, which was defined when the cluster was created.
 (The default cluster name is `dev` for Hazelcast clusters) 
-* `Cluster Config State`: Select "Enabled" to activate the cluster configuration.
-You can also select "Disabled" which will 
+* `Cluster Config State`: Select *Enabled* to activate the cluster configuration.
+You can also select *Disabled* which will 
 create the cluster configuration in a deactivated state for use 
 at a later time. Disabled cluster configurations are ignored until enabled.
 * `Member Addresses`: Give the cluster members' addresses (one or preferably more)
 in the form of `hostname`, `hostname:port`, `IP address` or `IP address:port`.
 If no port is provided, the system tries the ports through 5701 and 5703 in a random order.
-Type the member address and press enter (or return) to make it visible in the "Member Addresses" field.
+Type the member address and press enter (or return) to make it visible in the *Member Addresses* field.
 
 NOTE: As soon as Management Center connects to one of the members,
 it will auto-discover the other members of the cluster.
 It is recommended to enter more than one member address in case that member
 in the configuration is no longer available in the future.
 
-Click on the `Save` button and the "Manage Clusters" page loads
+Click on the *Save* button and the *Manage Clusters* page loads
 with the new cluster configuration added, as shown below:
 
 image:ROOT:ClusterConfAdded.png[alt=Cluster Configuration Added]
@@ -75,13 +75,13 @@ You can edit or delete a cluster configuration using
 the icons on any cluster's box area in this page.
 
 To see the status of a cluster, click on its
-`Select` button. Management Center internally decides
+*Select* button. Management Center internally decides
 whether the selected one supports streaming, and
-shows the related "Dashboard" page of that cluster. 
+shows the related *Dashboard* page of that cluster. 
 
-The "Dashboard" page of the
+The *Dashboard* page of the
 related cluster will load; see the xref:monitor-imdg:dashboard.adoc[Dashboard Page chapter]
-for the details. Clicking on the `Select` button and
+for the details. Clicking on the *Select* button and
 selecting a cluster in the cluster selector (located at the toolbar)
 have the same functionality.
 
@@ -89,8 +89,8 @@ have the same functionality.
 
 Alternatively, you can upload a configuration file for the
 Management Center client created for your Hazelcast cluster. For this,
-click on the `Upload Config File` button which is seen after
-you click on the "Add Cluster Config" button. 
+click on the *Upload Config File* button which is seen after
+you click on the *Add Cluster Config* button. 
 
 This is the recommended method for more complex configurations.
 
@@ -109,7 +109,10 @@ Here is an example configuration file:
 .Example hazelcast-client.xml file
 [source,xml]
 ----
-<hazelcast-client>
+<hazelcast-client xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
+                  http://www.hazelcast.com/schema/client-config/hazelcast-client-config-5.0.xsd">
     <cluster-name>dev</cluster-name>
     <network>
         <cluster-members>
@@ -120,13 +123,13 @@ Here is an example configuration file:
 </hazelcast-client>
 ----
 
-You can simply drag this file onto the `Cluster Config File` box in this page,
-or find it using the `browse` link in the same box.
+You can simply drag this file onto the *Cluster Config File* box in this page,
+or find it using the *browse* link in the same box.
 
-Select "Enabled" in the `Cluster Config State` combobox to activate the configuration.
-You can also select "Disabled" just to create the configuration and use it
+Select *Enabled* in the *Cluster Config State* combobox to activate the configuration.
+You can also select *Disabled* just to create the configuration and use it
 at a later time. In this case, the configuration is ignored until enabled.
 
 You can always go back to the form page (explained in the previous section)
-by clicking on the `Add via Form` on this page.
+by clicking on the *Add via Form* on this page.
 

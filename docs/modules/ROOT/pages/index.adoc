@@ -1,12 +1,11 @@
-= Hazelcast Management Center Reference Manual {page-component-version}
+= Hazelcast Management Center {page-component-version}
 [[preface]]
 
-Welcome to the Hazelcast Management Center Reference Manual.
+Welcome to the Hazelcast Management Center.
 This manual includes concepts and instructions
 to guide you on how to use Management Center to
 monitor your Hazelcast clusters.
-This Reference Manual can also be found in the Management Center
-user interface, when you click on the **Documentation** button located at the toolbar.
+You can also find links to relevant sections of this documentation in the Management Center.
 
 [[naming]]
 == Naming
@@ -14,46 +13,45 @@ user interface, when you click on the **Documentation** button located at the to
 * *Hazelcast Management Center* or *Management Center* refers to
 the Hazelcast cluster monitoring tool provided by Hazelcast, Inc.
 * *Hazelcast* refers to the Hazelcast in-memory
-data grid middleware. *Hazelcast* is also the name of the company
+data grid and batch/stream processing software. *Hazelcast* is also the name of the company
 (Hazelcast, Inc.).
 
 == Hazelcast
 
 Hazelcast Management Center is delivered with Hazelcast. It can
 also be downloaded as a separate package from the
-https://hazelcast.org/download/#hazelcast-management-center[hazelcast.org] website.
+link:https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[hazelcast.com website].
 
-See the {imdg-docs}[Hazelcast documentation]
-for all Hazelcast topics including the clusters and their operations,
-clients, data structures, computing and WAN replication.
+See the xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:quickstart.adoc[Hazelcast documentation]
+for all Hazelcast topics including deploying and managing clusters,
+clients, data structures, computing, and WAN replication.
 
 [[licensing]]
 == Licensing
 
-This Reference Manual is free and provided
-under the Apache License, Version 2.0.
+All documentation is available under the terms of a link:https://creativecommons.org/licenses/by-nc-sa/3.0/[Creative Commons License].
 
-Hazelcast Management Center requires a Hazelcast Enterprise license.
-It also has a free version which lets you to monitor your clusters having up to three
-Hazelcast cluster members.
+You can monitor a cluster with up to three members for free.
+
+To monitor larger clusters, you need a Hazelcast Enterprise license.
 
 [[trademarks]]
 == Trademarks
 
 Hazelcast is a registered trademark of Hazelcast, Inc. All other
-trademarks in this manual are held by their respective owners.
+trademarks in the documentation are held by their respective owners.
 
 [[getting-help]]
 == Getting Help
 
 Support is provided via the following channels:
 
-* xref:troubleshooting.adoc[Troubleshooting chapter] of this guide
+* xref:troubleshooting.adoc[Troubleshooting page] of this guide
 * https://stackoverflow.com/questions/tagged/hazelcast[Stack Overflow]
-(ask a question on how to use Management Center properly and troubleshoot your setup)
+(ask a question about how to use Management Center properly and troubleshoot your setup)
 * https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
 (propose features and discuss your ideas with the team)
-* https://slack.hazelcast.com/[Hazelcast Community Slack]
+* https://slack.hazelcast.com/[Hazelcast community Slack]
 (discuss anything related to Hazelcast and Management Center with other
 Hazelcast users and Hazelcast developers)
 

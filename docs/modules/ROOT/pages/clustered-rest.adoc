@@ -48,7 +48,7 @@ request must include the following header:
 
 An auth token for user can be issued by using the xref:ROOT:mc-conf.adoc#mc-conf-issue-token[mc-conf] command.
 
-In `Dev Mode` no `Authorization` header is required.
+In *Dev Mode* no `Authorization` header is required.
 
 == Retrieving Management Center License Expiration Time
 

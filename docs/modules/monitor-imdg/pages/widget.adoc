@@ -31,7 +31,7 @@ In the historical mode it requests 5 minutes of data up to the selected time poi
 
 image:ROOT:WidgetTimeSelection.png[alt=Time Selection, align="center"]
 
-When the historical mode is activated, the bottom input displays the selected time point. You can press the "Now" button
+When the historical mode is activated, the bottom input displays the selected time point. You can press the *Now* button
 to switch back to the current mode.
 
 image:ROOT:WidgetHistorical.png[alt=Historical mode, align="center"]

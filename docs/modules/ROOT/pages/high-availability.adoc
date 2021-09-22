@@ -22,7 +22,7 @@ Client filtering configuration for a cluster is synchronized among all Managemen
 cluster. The synchronization happens on the *deploy* action (**Deploy Changes** button). It is in line with the general
 client filtering modifications, where *lists modification* and *deploy* are separate actions.
 
-NOTE: The "deploy" action on a Management Center instance overrides the client filtering configuration including the
+NOTE: The *deploy* action on a Management Center instance overrides the client filtering configuration including the
 not yet deployed changes for this cluster on another instance and vice versa.
 
 When Management Center connects to a cluster that already has some client filtering configuration
