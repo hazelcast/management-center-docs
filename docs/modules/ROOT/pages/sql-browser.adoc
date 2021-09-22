@@ -4,7 +4,7 @@
 This chapter details how a Hazelcast cluster can be queried with SQL using Management Center. (Please see the xref:hazelcast:sql/sql-statements.adoc[SQL Statements section] of the Hazelcast documentation for details about SQL queries.)
 
 You can use the SQL browser for this purpose, which can be opened using
-the "SQL Browser" menu item found in the top menu.
+the *SQL Browser* menu item found in the top menu.
 
 Once you select the SQL Browser menu item, the browser opens as shown below:
 
