@@ -40,7 +40,7 @@ On the **JSON View** tab, you can see the same data represented in JSON format.
 You can click on the **Copy to Clipboard** button in the top right corner to copy
 the result into your clipboard.
 
-image:ROOT:SQLBrowserJSONView.png[SQLBrowserJSONView]
+image:ROOT:SQLBrowserJSONView.png[JSON query results]
 
 On the **History** tab, you can see the history of query execution. It holds last
 one hundred executed queries. Each row contains **Execution Time**,
