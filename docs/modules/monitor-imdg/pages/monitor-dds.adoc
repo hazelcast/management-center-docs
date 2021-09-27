@@ -54,7 +54,7 @@ listed.
 If you are using a serialization mechanism other than standard Java
 serialization for storing values in your map, you need to
 configure the client that Management Center uses for connecting to the
-cluster (as described xref:imdg:serialization:serialization.adoc[here]). Note that if you
+cluster (as described xref:{page-latest-supported-hazelcast}@hazelcast:serialization:serialization.adoc[here]). Note that if you
 have any custom classes, you need to add the JAR containing them
 to Management Center's classpath before starting it as described in
 the xref:ROOT:configuring.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath section]. In case the value stored in the map is not a `String`
@@ -298,7 +298,7 @@ NOTE: You need to enable the statistics for caches to monitor them
 in the Management Center. Use the `<statistics-enabled>` element or
 `setStatisticsEnabled()` method in declarative or programmatic
 configuration, respectively, to enable the statistics. Please refer
-to the xref:imdg:jcache:setup.adoc#jcache-declarative-configuration[JCache Declarative Configuration]
+to the xref:{page-latest-supported-hazelcast}@hazelcast:jcache:setup.adoc#jcache-declarative-configuration[JCache Declarative Configuration]
 section for more information.
 
 [[monitoring-replicated-maps]]

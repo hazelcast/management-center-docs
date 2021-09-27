@@ -96,10 +96,30 @@ is `1000`.
 You can control the disk space used by the Management Center to avoid exceeding
 available disk space. That can be done by configuring the xref:metric-persistence.adoc[Metrics Persistence].
 
-You can use the `hazelcast.mc.metrics.disk.ttl.days` system property
+You can use the `hazelcast.mc.metrics.disk.ttl.duration` system property
 to configure the Management Center's metrics persistence. This property
 specifies Time-to-Live (TTL) setting for each record in the metrics persistence.
-It is in days and its default value is `1`.
+It is in ISO-8601-based durations format that supports days, hours, minutes, seconds and its default value is `P1D` (one day).
+
+[TIP]
+====
+`hazelcast.mc.metrics.disk.ttl.duration` can be expressed using the following format, where `(n)` is replaced by the value for each of the date and time elements that follow the `(n)`:
+
+`P(n)DT(n)H(n)M(n)S`, where
+
+- `P` is the duration designator (referred to as "period"), and is always placed at the beginning of the duration.
+- `D` is the day designator that follows the value for the number of days.
+- `T` is the time designator that precedes the time components.
+- `H` is the hour designator that follows the value for the number of hours.
+- `M` is the minute designator that follows the value for the number of minutes.
+- `S` is the second designator that follows the value for the number of seconds.
+
+For example:
+
+`P4DT12H30M5S`
+
+Represents a duration of four days, twelve hours, thirty minutes, and five seconds.
+====
 
 It is important to understand that the TTL setting acts as a _soft_ limit and
 gives you an indirect control over Management Center disk usage. The final
@@ -127,6 +147,19 @@ If you want to enable the Health Check endpoint, use the following command line 
 ```
 -Dhazelcast.mc.healthCheck.enable=true
 ```
+
+== Restricting the Bind Address
+
+You can configure the bind address for Management Center so that it is not reachable on any network address
+using the `-Dhazelcast.mc.hostAddress` system property. Example:
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{page-component-version}.jar
+----
+
+With this setting, Management Center will be reachable on `http://127.0.1.1:8080` but won't listen on
+`http://127.0.0.1:8080`.
 
 [[configuring-sessions]]
 == Configuring Sessions
@@ -250,7 +283,7 @@ cluster. See the xref:connecting-members.adoc[Connecting Members chapter].
 * If you're using Clustered JMX on the Management center, enable TLS/SSL
 for it. See xref:jmx:jmx.adoc[Enabling TLS/SSL for Clustered JMX section].
 * If you're using LDAP authentication, make sure you use LDAPS or
-enable the "Start TLS" field. See the xref:launching:auth-options.adoc[LDAP Authentication section].
+enable the *Start TLS* field. See the xref:launching:auth-options.adoc[LDAP Authentication section].
 * If you're using Active Directory authentication, make sure you use Java's
 truststore related system properties. See the xref:launching:auth-options.adoc[Active Directory Authentication section].
 
@@ -413,7 +446,7 @@ the client will not be authenticated.
 [[managing-mutual-authentication-enabled-clusters]]
 ==== Managing Mutual Authentication Enabled Clusters
 
-If mutual authentication is enabled for the cluster (as described {imdg-docs}#mutual-authentication[here]),
+If mutual authentication is enabled for the cluster,
 the Management Center needs to have a keystore to identify itself.
 For this, you need to start the Management Center with the
 following command line parameters:
@@ -680,11 +713,11 @@ types:
 |* `MC-5001 [Browser]`: User browses through a map screen in Management Center.
 * `MC-5002 [Browser]`: User browses through a cache screen in Management Center.
 
-| Hot Restart Logs
-|* `MC-6001 [Hot Restart]`: Force start is run.
-* `MC-6002 [Hot Restart]`: Partial start is run.
-* `MC-6003 [Hot Restart]`: Hot Restart backup operation is triggered.
-* `MC-6004 [Hot Restart]`: Hot Restart backup operation is interrupted.
+| Persistence Logs
+|* `MC-6001 [Persistence]`: Force start is run.
+* `MC-6002 [Persistence]`: Partial start is run.
+* `MC-6003 [Persistence]`: Hot backup operation is triggered.
+* `MC-6004 [Persistence]`: Hot backup operation is interrupted.
 
 | WAN Replication Logs
 |* `MC-7001 [WAN]`: WAN configuration is added.

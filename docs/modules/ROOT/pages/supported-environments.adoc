@@ -10,9 +10,7 @@ installed. Otherwise, you can use the official Management Center docker image.
 
 == Hazelcast Compatibility
 
-We officially support Hazelcast 5.0.x, any IMDG 4.y version that was released
-before this Management Center version
-and any Jet 4.3.z version.
+We officially support Hazelcast 5.0.x and Hazelcast IMDG 4.2.x.
 
 [[browser-compatibility]]
 == Browser Compatibility

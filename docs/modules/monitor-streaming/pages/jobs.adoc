@@ -1,4 +1,5 @@
 = Jobs
+:page-aliases: monitor-jet:jobs.adoc
 
 This page provides a general overview of the jobs in a Hazelcast cluster with Streaming support.
 
@@ -54,8 +55,8 @@ image:ROOT:job-lifecycle.png[Job Lifecycle]
 
 NOTE: You need to be an admin user to execute any of the actions below.
 
-* **Suspend:** Suspends the running job, only visible when the job is in the `RUNNING` state.
-* **Resume:** Resumes the suspended job, only visible when the job is in the `SUSPENDED` state.
+* **Suspend:** Suspends the running job, only visible when the job is in the *Running* state.
+* **Resume:** Resumes the suspended job, only visible when the job is in the *Suspended* state.
 * **Cancel:** Stops the execution of the job.
 * **Restart:** Stops the execution of the job and starts a new execution for it.
 * **Export Snapshot:** Initiates a named snapshot export; exported snapshots can be managed via xref:snapshots.adoc[snapshots] view.

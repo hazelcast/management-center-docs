@@ -18,14 +18,14 @@ You can think of Management Center as a client connecting to the Hazelcast clust
 If you enabled TLS/SSL on a Hazelcast cluster, then you need to perform the 2.
 step listed above, i.e., upload a configuration file. This configuration file needs
 to contain the parameters same as the ones you provide in the case when a client
-connects to a TLS/SSL enabled Hazelcast cluster. See xref:imdg:security:tls-ssl.adoc[here] for details on TLS/SSL configurations.
+connects to a TLS/SSL enabled Hazelcast cluster. See xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[here] for details on TLS/SSL configurations.
 
 NOTE: When connecting to multiple clusters from the same Management Center, please ensure that the
 cluster names are unique.  Management Center does not support simultaneous connections to more than
 one cluster with the same cluster name.
 
 NOTE: If the cluster uses
-xref:imdg:clusters:advanced-network-configuration.adoc[Advanced Network],
+xref:{page-latest-supported-hazelcast}@hazelcast:clusters:network-configuration.adoc[Advanced Network],
 then the provided member address should be the client address of the member.
 
 

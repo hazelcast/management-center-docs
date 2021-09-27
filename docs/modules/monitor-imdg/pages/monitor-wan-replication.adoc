@@ -1,39 +1,52 @@
 = Monitoring WAN Replication
 [[monitoring-wan-replication]]
 
-WAN replication schemes are listed under the **WAN Replication**
-menu item on the left. When you click on a scheme, a new page
+**Monitoring WAN Replication** feature can be accessed by clicking the corresponding menu item under the "Cluster" parent
+menu heading. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc#synchronizing-wan-clusters[WAN Replication]
+for additional information about the Hazelcast feature. When you click on the scheme, a new page
 for monitoring the targets which that scheme has appears on the right, as shown below:
 
-image:ROOT:WanPublisherStats.png[Monitoring WAN Replication]
+image:ROOT:WanReplication.png[Monitoring WAN Replication]
 
-In this page, you see the **WAN Replication Operations Table** for
-each target which belongs to this scheme. One of the example tables is shown below:
+In this page, you see the **WAN Replication Configurations** that contain replication publishers.
 
-image:ROOT:WanTargetTable.png[WAN Replication Operations Table]
+* **Name**: Name of the WAN replication config.
+* **State**: Current state of the WAN replication or publisher. See
+<<changing-wan-publisher-state, Changing WAN Publisher State>> for the
+list of possible WAN publisher states.
+* **Members**: Count of WAN publishers on the cluster members. +
+Members = (Cluster Members) * (WAN publishers).
+* **Max Queue Fill Ratio**: Maximum value of **Outbound Queue Fill Ratio** among the publishers.
+* **Total Queue**: Sum of **Outbound Queue Size** from the publishers.
 
-* **Connected**: Status of the member connection to the target.
-"Yes" means that the member is sending WAN events to the target and
-connected to it. "No" means the member is not sending WAN events to
-the target due to, e.g., having not enough events to be sent and other
-members are already sending the events in hand.
-* **Events Published per Second**: Number of published events
-per second. Please see the paragraph below.
-* **Average Event Latency**: Average latency of sending a record
-to the target from this member. Please see the paragraph below.
-* **Outbound Queue Size**: Number of records waiting in the queue
-to be sent to the target.
+You can click on the replication config to see the replication publishers:
+
+image:ROOT:WanReplicationPublishers.png[WAN Replication Publishers]
+
+You can click on **Show details** to see detailed information about the corresponding replication publisher:
+
+image:ROOT:WanPublisherStats.png[WAN Replication Publisher Stats]
+
+* **Member**: Hazelcast cluster member that has a WAN publisher.
 * **Action**: Pause, stop or resume replication of a member's
 records. You can also clear the event queues in a member using
-the "Clear Queues" action.  For instance, if you know that the
+the *Clear Queues* action.  For instance, if you know that the
 target cluster is being shut down, decommissioned, put out of use
 and it will never come back, you may additionally clear the WAN queues
 to release the consumed heap after the publisher has been switched. Or,
 when a failure happens and queues are not replicated anymore, you could
-manually clear the queues using, again the "Clear Queues" action.
+manually clear the queues using, again the *Clear Queues* action.
 * **State**: Shows current state of the WAN publisher on a member. See
 <<changing-wan-publisher-state, Changing WAN Publisher State>> for the
 list of possible WAN publisher states.
+* **Events Published per Second**: Number of published events
+per second. Please see the paragraph below.
+* **Average Event Latency**: Average latency of sending a record
+to the target from this member. Please see the paragraph below.
+* **Outbound Queue Fill Ratio**: Percentage of how filled the outbound queue is. +
+Outbound Queue Fill Ratio = (Outbound Queue Size / Outbound Queue Capacity) * 100
+* **Outbound Queue Size**: Number of records waiting in the queue
+to be sent to the target.
 
 **Events Published per Second** and **Average Event Latency** are
 based on the following internal statistics:
@@ -52,28 +65,31 @@ Events Published per Second = (Current TBEC - Previous TBEC) / Update Interval
 
 Average Event Latency = (Current TL - Previous TL) / (Current TBEC - Previous TBEC)
 
+NOTE: **Outbound Queue Fill Ratio** is only available for Hazelcast 5+ clusters.
+**Outbound Queue Fill Ratio** may briefly go over 100% as the outbound queue may be overflown.
+
 [[changing-wan-publisher-state]]
 == Changing WAN Publisher State
 
 A WAN publisher can be in one of the following states:
 
-* `REPLICATING` (default): State where both enqueuing new events is
+* *Replicating* (default): State where both enqueuing new events is
 allowed, enqueued events are replicated to the
 target cluster.
-* `PAUSED`: State where new events are enqueued but they are not dequeued.
+* *Paused*: State where new events are enqueued but they are not dequeued.
 Some events which have been dequeued before
 the state was switched may still be replicated to the target cluster
 but further events will not be
 replicated.
-* `STOPPED`: State where neither new events are enqueued nor dequeued.
-As with the `PAUSED` state, some events might
+* *Stopped*: State where neither new events are enqueued nor dequeued.
+As with the *Paused* state, some events might
 still be replicated after the publisher has switched to this state.
+* *Mixed*: Applicable only to a replication or a publisher, not applicable to a publisher member.
+State when members do not have the same state. For instance two members are replicating
+and one member is paused.
 
-You can change a WAN publisher's state by clicking the `Change State`
-dropdown button on top right hand corner of
-the WAN Replication Operations Table.
-
-image:ROOT:ChangingWanPublisherState.png[Changing WAN Publisher State]
+You can change a WAN publisher's state by clicking the *Change State*
+dropdown button on top right corner of the WAN Publisher Table.
 
 [[wan-sync]]
 == WAN Sync
@@ -87,46 +103,46 @@ Hazelcast provides the following synchronization options:
 
 . Default WAN  synchronization operation: It sends all the data of an
 IMap to a target cluster to align the state of target IMap with the
-source IMap. See xref:imdg:wan:advanced-features.adoc#synchronizing-wan-clusters[Synchronizing WAN Clusters]
+source IMap. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:advanced-features.adoc#synchronizing-wan-clusters[Synchronizing WAN Clusters]
 for more information.
 . WAN synchronization using https://en.wikipedia.org/wiki/Merkle_tree[Merkle trees]: To
 initiate this type of synchronization, you need to configure the
 cluster members. See
-the xref:imdg:wan:advanced-features.adoc#delta-wan-synchronization[Delta WAN Synchronization section]
-in Hazelcast documentation for details about configuring them. Make
-sure you meet synchronizing-wan-clusters#requirements-for-delta-wan-sync[all the requirements]
+the xref:{page-latest-supported-hazelcast}@hazelcast:wan:advanced-features.adoc#delta-wan-synchronization[Delta WAN Synchronization section]
+in Hazelcast documentation for details about configuring them. Make sure
+you meet xref:{page-latest-supported-hazelcast}@hazelcast:wan:advanced-features.adoc#requirements-for-delta-wan-sync[all the requirements]
 to use Delta WAN Synchronization and do the configuration on both the source and target clusters.
 
 To initiate WAN Sync, open the **WAN Replication** menu item on the left
-and navigate to the **Sync**
-tab.
+and navigate to the **Sync** tab.
 
 image:ROOT:WanSyncTab.png[WAN Sync Tab]
 
-Click **Start** button to open the dialog, enter the target details for
-the sync operation
+Select *Endpoint*(replication config), *Target*(publisher), and one or many *Maps*
 and click **Sync** to start the operation.
 
-image:ROOT:WanSyncDialog.png[WAN Sync Dialog]
+image:ROOT:WanSyncConfig.png[WAN Sync Config]
 
-You can also use the "All Maps" option in the above dialog if you want
+You can also use the "Select All" option in the Maps dropdown if you want
 to synchronize all the maps in source and target cluster.
 
-You can see the progress of the operation once you initiate it.
+You can see the WAN Sync status entry in the table below once you initiate the sync:
 
-image:ROOT:WanSyncProgress.png[WAN Sync Progress]
+image:ROOT:WanSyncOperation.png[WAN Sync Operation]
+
+You can see the progress of the sync if you click on *See details*:
 
 [[wan-consistency-check]]
 === WAN Consistency Check
 
 You can check if an IMap is in sync with a specific target cluster.
-Click **Check** button to open the dialog, enter
-the target details for the consistency check operation and click
-**Check Consistency** to start the operation.
+Configure the same options as for the WAN Sync and click
+**CHECK** to start the operation. +
+You can see the WAN Sync status entry in the table below once you initiate the sync:
 
-image:ROOT:WanConsistencyCheckDialog.png[WAN Consistency Check Dialog]
+image:ROOT:WanConsistencyCheckOperation.png[WAN Consistency Check Operation]
 
-You can see the progress of the operation once you initiate it.
+You can see the details of the consistency check if you click on *See details*:
 
 image:ROOT:WanConsistencyCheckProgress.png[WAN Consistency Check Progress]
 
@@ -155,10 +171,10 @@ be used for WAN sync.
 
 image:ROOT:AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
 
-See the xref:imdg:wan:wan.adoc[WAN Replication section]
+See the xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc[WAN Replication section]
 in Hazelcast documentation for details about the fields and their possible values.
 
-After clicking the **Add Configuration** button, the new WAN replication configuration
+After clicking the **ADD CONFIGURATION** button, the new WAN replication configuration
 is added to the cluster.
 You can see the new configuration when you try to initiate a WAN sync operation as
 described in the previous section.
