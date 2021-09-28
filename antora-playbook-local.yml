@@ -2,6 +2,7 @@ site:
   title: Documentation
   url: http:localhost:5000
   start_page: management-center::index.adoc
+  robots: disallow
   keys:
     google_analytics: 'GTM-MQ59XD6'
     docsearch_id: 'QK2EAH8GB0'
