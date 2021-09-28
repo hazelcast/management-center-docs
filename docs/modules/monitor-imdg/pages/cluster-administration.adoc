@@ -16,7 +16,7 @@ Go to *Administration* > *Cluster State* and select a state from the dropdown me
 
 image:ROOT:ChangeClusterState.png[Changing Cluster state]
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:management:cluster-utilities.adoc#managing-cluster-and-member-states[Hazelcast documentation] to learn more about cluster states.
+See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Hazelcast documentation] to learn more about cluster states.
 
 == Shutting Down the Cluster
 
