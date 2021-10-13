@@ -6,7 +6,7 @@
 The easiest way to start using Management Center is to run the official Management Center Docker image.
 [source,bash,subs="attributes+"]
 ----
-docker run --rm -p 8080:8080 hazelcast/management-center:{page-component-version}
+docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 ----
 Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
@@ -47,7 +47,7 @@ You have the following options to start the Management Center service:
 
 * Start Hazelcast Management Center from the command line.
 * Use the scripts that come with the download package.
-* Deploy the file `hazelcast-management-center-{page-component-version}.war` on your Java application server/servlet container.
+* Deploy the file `hazelcast-management-center-{full-version}.war` on your Java application server/servlet container.
 
 For all the starting options you can preconfigure a cluster in Management Center by setting the following environment variables:
 
@@ -58,14 +58,14 @@ For all the starting options you can preconfigure a cluster in Management Center
 === Using the Command Line
 
 Extract the Hazelcast or Management Center package.
-The extracted directory, i.e., `hazelcast-management-center-{page-component-version}`,
-contains the `hazelcast-management-center-{page-component-version}.jar` file.
+The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
+contains the `hazelcast-management-center-{full-version}.jar` file.
 
 You can start this file directly from the command line using the following command:
 
 [source,bash,subs="attributes+"]
 ----
-java -jar hazelcast-management-center-{page-component-version}.jar
+java -jar hazelcast-management-center-{full-version}.jar
 ----
 
 The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
@@ -76,7 +76,7 @@ context path:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{page-component-version}.jar
+java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{full-version}.jar
 ----
 
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.

@@ -1,4 +1,4 @@
-= Hazelcast Management Center {page-component-version}
+= Hazelcast Management Center {full-version}
 [[preface]]
 
 Welcome to the Hazelcast Management Center.
