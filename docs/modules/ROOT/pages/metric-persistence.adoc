@@ -91,5 +91,5 @@ this default by setting the `ROCKSDB_SHAREDLIB_DIR` environment variable to the 
 ----
 mkdir $HOME/tmp/rocksdb
 export ROCKSDB_SHAREDLIB_DIR="$(realpath $HOME/tmp/rocksdb)"
-java -jar hazelcast-management-center-{page-component-version}.jar
+java -jar hazelcast-management-center-{full-version}.jar
 ----

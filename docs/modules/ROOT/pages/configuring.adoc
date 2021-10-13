@@ -24,7 +24,7 @@ For example by using the command line parameter:
 
 [source,bash,subs="attributes+",specialchars"]
 ----
-java -Dhazelcast.mc.license=<key> -jar hazelcast-management-center-{page-component-version}.jar
+java -Dhazelcast.mc.license=<key> -jar hazelcast-management-center-{full-version}.jar
 ----
 
 When this option is used, the license provided takes precedence
@@ -42,14 +42,14 @@ following command:
 
 [source,bash,subs="attributes+"]
 ----
-java -cp "hazelcast-management-center-{page-component-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ----
 
 On Windows, the command becomes as follows (semicolon instead of colon):
 
 [source,bash,subs="attributes+"]
 ----
-java -cp "hazelcast-management-center-{page-component-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ----
 
 [[client-config]]
@@ -155,7 +155,7 @@ using the `-Dhazelcast.mc.hostAddress` system property. Example:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{page-component-version}.jar
+java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{full-version}.jar
 ----
 
 With this setting, Management Center will be reachable on `http://127.0.1.1:8080` but won't listen on
@@ -180,7 +180,7 @@ a session timeout period of 1 minute:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{page-component-version}.jar
+java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
 ----
 
 If you have deployed the Management Center on an application
@@ -316,7 +316,7 @@ TLS/SSL enabled from the command line:
 ----
 java -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar hazelcast-management-center-{page-component-version}.jar
+-Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar hazelcast-management-center-{full-version}.jar
 ----
 
 You can access the Management Center from the following HTTPS URL on
@@ -350,7 +350,7 @@ java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks \
      -Dhazelcast.mc.tls.keyStorePassword=yourpassword \
      -Dhazelcast.mc.https.port=443 \
-     -jar hazelcast-management-center-{page-component-version}.jar
+     -jar hazelcast-management-center-{full-version}.jar
 ----
 
 This starts the Management Center on HTTPS port 443.
@@ -432,7 +432,7 @@ java -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.trustStore=path to your truststore \
      -Dhazelcast.mc.tls.trustStorePassword=password for your truststore \
      -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED \
-     -jar hazelcast-management-center-{page-component-version}.jar
+     -jar hazelcast-management-center-{full-version}.jar
 ----
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
@@ -523,7 +523,7 @@ is shown below:
 ----
 java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar hazelcast-management-center-{page-component-version}.jar
+     -jar hazelcast-management-center-{full-version}.jar
 ----
 
 [[including-excluding-specific-cipher-suites]]
@@ -846,7 +846,7 @@ of this file as shown below:
 +
 [source,bash,subs="attributes+"]
 ----
-java -cp hazelcast-management-center-{page-component-version}.jar \
+java -cp hazelcast-management-center-{full-version}.jar \
      -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
      -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
      com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
@@ -869,7 +869,7 @@ java \
  -Dhazelcast.mc.tls.enabled=true \
  -Dhazelcast.mc.tls.keyStore=/opt/mc.keystore \
  -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
- -jar hazelcast-management-center-{page-component-version}.jar
+ -jar hazelcast-management-center-{full-version}.jar
 ----
 
 === PropertyReplacer
