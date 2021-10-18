@@ -10,6 +10,8 @@ endif::[]
 :url-playbook: {url-org}/hazelcast-docs
 :url-staging: https://infallible-gates-b7fd92.netlify.app/
 :url-cc: https://creativecommons.org/licenses/by-nc-sa/3.0/
+:url-hz-docs: {url-org}/hz-docs
+:url-mc-docs: {url-org}/management-center-docs
 
 image:https://img.shields.io/badge/Build-Staging-yellow[link="{url-staging}"]
 
@@ -27,66 +29,124 @@ This section describes some important information about how this repository is s
 
 == Release Workflow
 
-Documentation for new releases is hosted in versioned branches that are prefixed with `v/`. For example, content for the `4.2020.12` version is hosted in the `v/4.2020.12` tag. The `latest-dev` content is stored in the `main` branch.
+Documentation for new releases is hosted in versioned branches that are prefixed with `v/`. The `latest-dev` content (snapshot content) is stored in the `main` branch.
 
-The documentation build process is triggered whenever you create a new branch with the `v/` prefix, push to an existing `v/` branch, or push to the `main` branch.
+We support documentation for the latest patch releases of minor versions. For example, content for the `5.0` version is hosted in the `v/5.0` branch. This branch contains content for the latest patch release of version 5.0.
 
-. When you are ready to release, create a new maintenance branch from the `main` branch and name it with the full version number that you are releasing. For example, if you are releasing version 4.2020.12, name the branch v/4.2020.12.
-+
-TIP: For guidance on writing content, see the {url-contribute}[contribution guidelines].
+=== Snapshot Releases
 
-. In the `antora.yml` file of your maintenance branch, update the `version` field with the version of Management Center that you are working on.
-+
-[source,yaml]
-----
-version: 4.2020.12
-----
-+
-NOTE: As soon as you push to this branch, GitHub will trigger a new build of the site, which will include your new content.
+Add the new snapshot version to the following:
 
-. If you are releasing a new `latest` version, submit a pull request to the `develop` branch of the link:{url-playbook}[`hazelcast/hazelcast-docs`] repository to do the following:
-+
-- Update the `_redirects` file with your release version of IMDG.
-+
-NOTE: This file is where we alias the `latest` path in URLs.
-+
-[source,bash]
-----
-# Redirect latest management center alias to the latest version
-/management-center/latest/*  /management-center/4.2020.12/:splat 200!
-----
-+
-- Update the `search-config.json` file with your release version of IMDG.
-+
-NOTE: This file is where we specify which documentation version to index for the search.
-+
-[source,json]
-----
+[cols="1m,1m,1m,1m"]
+|===
+|Repository|Branch|File|Fields
+
+|{url-mc-docs}[management-center-docs]
+|main
+|docs/antora.yml
+a|
+- `version`
+- `display_version`
+- `full-version`
+
+|{url-playbook}[hazelcast-docs]
+a|`main` and `develop`
+|_redirects
+|/management-center/latest-dev/*
+
+|
+|
+|search-config.json
+a| Where the current latest snapshot is used
+
+- `start_urls.tags`
+- `start_urls.variables.version`
+
+|{url-hz-docs}[hz-docs]
+|main
+|docs/antora.yml
+|asciidoc.attributes.page-latest-supported-mc
+
+|===
+
+=== Latest Releases
+
+Add the `major.minor` version to the following:
+
+[cols="1m,1m,1m,1m"]
+|===
+|Repository|Branch|File|Fields
+
+|{url-mc-docs}[management-center-docs]
+|v/{major.minor version}
+|docs/antora.yml
+a|
+- `version`
+- `display_version`
+
+|{url-playbook}[hazelcast-docs]
+a|`main` and `develop`
+|_redirects
+|/hazelcast/latest/*
+
+|
+|
+|search-config.json
+a| Create a new  object in the `start_urls` array.
+
+``
 {
-  "index_name": "prod_hazelcast_docs",
-  "start_urls": [
-    {
-      "url": "https://docs.hazelcast.com/management-center/(?P<version>.*?)/",
-      "tags": [
-        "management-center"
-      ],
-      "variables": {
-        "version": ["4.2021.03"]
-      },
-----
+  "url": "https://docs.hazelcast.com/management-center/(?P<version>.*?)/",
+  "tags": [
+    "management-center-{major.minor version}"
+  ],
+  "variables": {
+    "version": ["{major.minor version}"]
+  },
+  "selectors_key": "mc"
+}
+``
 
-. If you are releasing a new `latest-dev` version, do the following:
+|{url-hz-docs}[hz-docs]
+a|The `v/{version}` branch where `version` is the value of the `asciidoc.attributes.page-latest-supported-hazelcast` field in the `docs/antora.yml` file of the `management-center-docs` repository
+|docs/antora.yml
+|asciidoc.attributes.page-latest-supported-mc
+
+|===
+
+Add the full version `major.minor.patch` to the following:
+
+[cols="1m,1m,1m"]
+|===
+|Repository|File|Fields
+
+|{url-mc-docs}[management-center-docs]
+|docs/antora.yml
+a|
+- `full-version`
+|===
+
+=== Patch Releases
+
+In the `v/` branch for the minor version whose patch you are releasing, update the `asciidoc.attributes.full-version` field in the `antora.yml` file to the new patch version. For example, if you are releasing version 5.0.3, find the `v/5.0` branch and update the `asciidoc.attributes.full-version` field in the `antora.yml` file with 5.0.3.
+
+NOTE: As soon as you push content to this branch, GitHub will trigger a new build of the site, which will include your new content.
+
+=== Creating Release Branches
+
+. If you are releasing a new major version, create a release branch from the `main` branch.
 +
-- In the `antora.yml` file of the `main` branch, increment the `version` field to the `latest-dev` version. For example, `4.2021.02-SNAPSHOT` becomes `4.2021.03-SNAPSHOT`.
-- In the `develop` branch of the link:{url-playbook}[`hazelcast/hazelcast-docs`] repository, submit a pull request to update the `_redirects` file with the new `latest-dev` version of Management Center.
+For example, if you are releasing version 5.1, create a new release branch named `5.1` from the `main` branch.
+
+. Update the fields mentioned in <<latest-releases, Latest Releases>>.
+
+. When you are ready to release, create a maintentance branch from the release branch.
 +
-NOTE: This file is where we alias the `latest-dev` and `latest` paths in URLs.
+NOTE: As soon as you push the maintenance branch to the repository, GitHub will trigger a new build of the site, which will include your new content.
+
+. Make sure to delete the release branch.
 +
-[source,bash]
-----
-# Redirect latest-dev management center alias to the latest-dev version
-/management-center/latest-dev/*  /management-center/4.2021.03-SNAPSHOT/:splat 200!
-----
+For example, if you released version `5.1`, delete the `5.1` branch. This step helps to keep the repository clean of release branches.
 
 == GitHub Actions
 
