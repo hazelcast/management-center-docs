@@ -1,13 +1,13 @@
-= Configuration Health Check
-[[config-healthcheck]]
+= Health Check
+[[healthcheck]]
 
-This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Configuration Health Check report compares and analyzes the effective member configurations across the cluster.
+This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Health Check report compares and analyzes the effective member configurations across the cluster.
 
-NOTE: Configuration Health Check is a licensed feature.
+NOTE: Health Check is a licensed feature.
 
 
-_Sample output of Configuration Health Check:_
-image:ROOT:ConfigHealthcheck.png[ConfigHealthcheck,scaledwidth="50%"]
+_Sample output of Health Check:_
+image:ROOT:Healthcheck.png[Healthcheck,scaledwidth="50%"]
 
 It performs the following checks:
  
@@ -17,10 +17,9 @@ It performs the following checks:
  * if the map and query cache indexes are redundant
  * if the maps using native memory have proper eviction configurations
  * if the map custom attributes are unique per extractor
-
+ * if the member operating system metrics are available
 
 == Periodically running the Health Check
-
 
 Starting from version 5.0, Management Center periodically runs the Health Check report, and displays the number of problems
 found in a warning on the UI. This behavior can be disabled by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
