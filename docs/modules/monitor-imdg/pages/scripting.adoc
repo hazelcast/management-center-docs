@@ -11,6 +11,8 @@ in your cluster's configuration. See the
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Toggle Scripting Support] for details. The member list shows whether
 scripting is enabled or disabled for each member.
 
+NOTE: Scripting is currently unsupported for Java 15 and newer. These versions of Java do not come with a JavaScript engine, which is necessary for this feature to work.
+
 image:ROOT:MemberGridView.png[Member Grid View]
 
 == Scripting in JavaScript
