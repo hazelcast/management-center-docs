@@ -2,18 +2,23 @@
 [[scripting]]
 
 You can use the scripting feature of the Management Center to execute scripts
-on the cluster. Note that it's disabled by default and you need to enable it
-in your cluster's configuration. Please see the
-xref:{page-latest-supported-hazelcast}@hazelcast:security:management-center.adoc#toggle-scripting-support[Toggle Scripting Support section]
-in the Hazelcast documentation for details. Members list shows whether
+on the cluster.
+
+== Before you Begin
+
+Scripting is disabled by default and you need to enable it
+in your cluster's configuration. See the
+xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Toggle Scripting Support] for details. The member list shows whether
 scripting is enabled or disabled for each member.
 
 NOTE: Scripting is currently unsupported for Java 15 and newer. These versions of Java do not come with a JavaScript engine, which is necessary for this feature to work.
 
 image:ROOT:MemberGridView.png[Member Grid View]
 
+== Scripting in JavaScript
+
 To use this feature, click on the **Scripting** menu item
-on the left panel. Once selected, the scripting feature opens as shown below.
+on the left panel.
 
 image:ROOT:Scripting.png[Scripting]
 
@@ -53,9 +58,9 @@ employees.get("1"); // will return "John Doe"
 == Enabling Additional Scripting Languages
 
 Hazelcast members use the `javax.script.ScriptEngineManager` API for the execution of the script.
-Only the JavaScript script engine is available in most JVMs by default.
+Only the JavaScript engine is available in most JVMs by default.
 To use a scripting language other than JavaScript on a member, you need to add the
-corresponding scripting engine in the classpath of that member. Here is an example of
+corresponding scripting engine to the classpath of that member. Here is an example of
 Maven configuration for several scripting engines:
 
 ```xml
