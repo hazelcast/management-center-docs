@@ -29,6 +29,24 @@ version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page] as a
 separate package.
 
+== Using SNAPSHOT versions
+
+If you need to use the most recent development version of Management Center, then you can run it by using the `latest-snapshot`
+tag in Docker:
+[source,bash,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 hazelcast/management-center:latest-snapshot
+----
+
+Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip .
+
+In these cases, it can be useful to query the build information to be able to tell what revision are you using.
+
+=== Obtaining Management Center build information
+
+You can query the build information of a running Management Center instance by opening `{mc-base-url}/api/buildInfo`. It will.
+return the Management Center version metadata in JSON format.
+
 == System Requirements
 
 Most Linux distributions are supported, assuming that glibc 2.12 or newer is installed.
