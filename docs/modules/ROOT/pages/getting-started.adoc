@@ -42,7 +42,7 @@ Alternatively, you can download it from https://download.hazelcast.com/managemen
 
 In these cases, it can be useful to query the build information to be able to tell what revision are you using.
 
-=== Obtaining Management Center build information
+=== Getting Build Information
 
 You can find version metadata about a running instance of Management Center at the following endpoint: `{mc-base-url}/api/buildInfo`.
 
