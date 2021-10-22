@@ -35,7 +35,7 @@ If you need to use the most recent development version of Management Center, the
 tag in Docker:
 [source,bash,subs="attributes+"]
 ----
-docker run --rm -p 8080:8080 hazelcast/management-center:latest-snapshot
+docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
 ----
 
 Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip .
