@@ -1,6 +1,10 @@
 = Troubleshooting
 [[troubleshooting]]
 
+== Cluster connection failure reasons
+
+Management Center logs all cluster connection failures, their reasons and retry attempts to `hz-client.log` in `hazelcast.mc.home` directory.
+
 == Horizontal Scrollbar in Tables when Using macOS
 
 macOS automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
