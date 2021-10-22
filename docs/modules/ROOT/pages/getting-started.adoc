@@ -44,7 +44,9 @@ In these cases, it can be useful to query the build information to be able to te
 
 === Obtaining Management Center build information
 
-You can query the build information of a running Management Center instance by opening `{mc-base-url}/api/buildInfo`. It will.
+You can find version metadata about a running instance of Management Center at the following endpoint: `{mc-base-url}/api/buildInfo`.
+
+This endpoint returns JSON.
 return the Management Center version metadata in JSON format.
 
 == Starting the Management Center Service
