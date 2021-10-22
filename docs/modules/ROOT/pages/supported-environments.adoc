@@ -22,3 +22,15 @@ Hazelcast Management Center is tested and works on the following browsers:
 * Latest Safari
 * Internet Explorer 11
 * Latest Microsoft Edge
+
+== System Requirements
+
+Most Linux distributions are supported, assuming that glibc 2.12 or newer is installed.
+
+Experimental support for AIX is provided as well, with the following prerequisites:
+
+* AIX version is 7.2 or newer
+* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
+* glibc version is 2.17 or newer
+* JRE 1.8 or newer is installed
+* libsnappy 1.8.0 or newer is installed

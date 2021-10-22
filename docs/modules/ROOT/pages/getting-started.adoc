@@ -29,17 +29,24 @@ version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page] as a
 separate package.
 
-== System Requirements
+== Using SNAPSHOT versions
 
-Most Linux distributions are supported, assuming that glibc 2.12 or newer is installed.
+If you need to use the most recent development version of Management Center, then you can run it by using the `latest-snapshot`
+tag in Docker:
+[source,bash,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
+----
 
-Experimental support for AIX is provided as well, with the following prerequisites:
+Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip .
 
-* AIX version is 7.2 or newer
-* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
-* glibc version is 2.17 or newer
-* JRE 1.8 or newer is installed
-* libsnappy 1.8.0 or newer is installed
+In these cases, it can be useful to query the build information to be able to tell what revision are you using.
+
+=== Getting Build Information
+
+You can find version metadata about a running instance of Management Center at the following endpoint: `{mc-base-url}/api/buildInfo`.
+
+This endpoint returns JSON.
 
 == Starting the Management Center Service
 
