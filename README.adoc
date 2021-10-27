@@ -8,7 +8,10 @@ endif::[]
 :url-contribute: https://github.com/hazelcast/hazelcast-docs/blob/develop/.github/CONTRIBUTING.adoc
 :url-ui: {url-org}/hazelcast-docs-ui
 :url-playbook: {url-org}/hazelcast-docs
-:url-staging: https://develop--nifty-wozniak-71a44b.netlify.app/home/index.html
+:url-staging: https://frosty-curran-1fc0c4.netlify.app/
+:url-cc: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+image:https://img.shields.io/badge/Build-Staging-yellow[link="{url-staging}"]
 
 This repository contains the Antora components for the Hazelcast Management Center documentation.
 
