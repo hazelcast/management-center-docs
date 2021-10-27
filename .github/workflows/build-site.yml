@@ -4,13 +4,7 @@ name: Build production site
 
 on:
   push:
-<<<<<<< HEAD
-    branches: [ main, archive ]
-    tags: 
-      - v*
-=======
     branches: [ main, 'v/*', archived-versions ]
->>>>>>> 7422afd... Update workflow and readme
 
 jobs:
   dispatch:
