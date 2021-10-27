@@ -1,0 +1,33 @@
+site:
+  title: Documentation
+  url: https://frosty-curran-1fc0c4.netlify.app
+  start_page: management-center::index.adoc
+  robots: disallow
+  keys:
+    google_analytics: 'GTM-MQ59XD6'
+    docsearch_id: 'QK2EAH8GB0'
+    docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
+    docsearch_index: 'prod_hazelcast_docs'
+content:
+  sources: 
+  - url: .
+    branches: HEAD
+    start_path: docs
+ui: 
+  bundle:
+    url: https://github.com/hazelcast/hazelcast-docs-ui/releases/download/v2.1/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
+    snapshot: true
+asciidoc:
+  attributes:
+    page-pagination: true
+    idprefix: ''
+    idseparator: '-'
+    page-survey: https://www.surveymonkey.co.uk/r/NYGJNF9
+    imdg-javadoc: https://docs.hazelcast.org/docs/latest-dev/javadoc
+    imdg-samples: https://github.com/hazelcast/hazelcast-code-samples
+    imdg-core: https://github.com/hazelcast/hazelcast/tree/master/hazelcast/src/main/java/com/hazelcast
+    imdg-ops-guide: https://hazelcast.com/resources/hazelcast-deployment-operations-guide/
+    jet-docs: https://jet-start.sh/
+    docs-archive: 'https://hazelcast.org/imdg/download/archives/'
+  extensions:
+    - ./lib/tabs-block.js
