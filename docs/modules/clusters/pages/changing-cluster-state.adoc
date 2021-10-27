@@ -1,0 +1,26 @@
+= Changing the Cluster State
+:description: Cluster states determine what cluster operations are available. By changing the state of a cluster, you can grant or restrict cluster operations such as migrations as well as change the behavior of those operations.
+
+{description}
+
+You may want to change a cluster's state to do the following: 
+
+- Add multiple new members to the cluster without triggering repartitioning after each member joins.
+- Perform maintenance on a cluster without triggering repartitioning.
+
+== Before you Begin
+
+You must be an admin user to use this feature.
+
+You should already understand the concept of cluster states. For details about cluster states, see the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Hazelcast Platform documentation].
+
+== Change the State of a Cluster
+
+To change a cluster's state, go to *Administration* > *Cluster State* and select a state from the dropdown menu.
+
+image:ROOT:ChangeClusterState.png[Changing Cluster state]
+
+== Next Steps
+
+After changing the state of a cluster, you may want to shut it down and perform maintenance on it. To shut down a cluster, see xref:shutting-down-cluster.adoc[].
+

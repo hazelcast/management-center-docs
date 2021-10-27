@@ -1,44 +1,56 @@
-= Cluster Administration
-[[administering-management-center]]
+= Administration
+:description: You can use the Administration menu item to manage Hazelcast clusters.
 
-On the *Administration* page, you can change the
-state of a cluster, shut it down, update the Management Center
-license, trigger a rolling upgrade, or handle clusters with persisted data.
+You can use the *Administration* menu item to manage Hazelcast clusters.
 
-image:ROOT:Administration.png[Administration Menu]
+From this menu item, you can do the following:
+
+- xref:changing-cluster-state.adoc[Change the state of a cluster]
+- Shut down a cluster
+- View details about a cluster's license
+- Trigger a rolling upgrade
+- Manage clusters that have persistence enabled
+- Manage CP members
 
 NOTE: This menu item is available only to admin users.
 
-[[cluster-state]]
-== Changing the Cluster State
 
-Go to *Administration* > *Cluster State* and select a state from the dropdown menu.
 
-image:ROOT:ChangeClusterState.png[Changing Cluster state]
+== Shutting Down a Cluster
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Hazelcast documentation] to learn more about cluster states.
+Maintaining a cluster often requires shutting down clusters to make changes take effect.
 
-== Shutting Down the Cluster
-
-Go to *Administration* > *Cluster State* and click *Shutdown*.
+To gracefully shut down a member, go to *Administration* > *Cluster State* and click *Shutdown*.
 
 [[rolling-upgrade]]
 == Triggering a Rolling Upgrade
 
-. Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#rolling-upgrade-procedure[Hazelcast documentation].
+NOTE: You need an Enterprise license to use this feature.
+
+A rolling upgrade allows you to upgrade all running cluster members to a new version of Hazelcast without interrupting the operation of the cluster. For version compatibility guarantees, see the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#hazelcast-members-compatibility-guarantees[Hazelcast Platform documentation].
+
+=== Before you Begin
+
+- Upgrade Management Center to the new version.
++
+TIP: Management Center is compatible with the previous minor version of Hazelcast. For example, Management Center 5.2 works with both Hazelcast 5.1 and 5.2. To change your cluster version to 5.2, you need Management Center 5.2.
+
+- Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#rolling-upgrade-procedure[Hazelcast Platform documentation].
+
+== Trigger a Rolling Upgrade
 
 . Go to *Administration* > *Rolling Upgrade* and click *Upgrade Cluster*.
 +
 image:ROOT:RollingUpgrade.png[RollingUpgradeMenu]
 
-When the cluster is upgraded, you will see the following notification:
+When the cluster version is upgraded, you will see the following notification:
 
 image:ROOT:UpgradeClusterVersionSuccess.png[UpgradeClusterVersionSuccess]
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc[Hazelcast documentation] to learn more about rolling upgrades.
-
 [[hot-restart]]
-== Working with Persistence
+== Managing Clusters with Persistence Enabled
+
+NOTE: You need an Enterprise license to use this feature.
 
 In the *Persistence* tab, you can do the following:
 
@@ -47,7 +59,7 @@ In the *Persistence* tab, you can do the following:
 - See the status of cluster members.
 - Create backups of data in the peristence store (hot backup).
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence.adoc[Hazelcast documentation] to learn more about these topics.
+See the xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence.adoc[Hazelcast Platform documentation] to learn more about these topics.
 
 === Triggering a Force Start
 
@@ -70,6 +82,8 @@ the Management Center tries to recover the missing data using the restored
 backups. For example, if you have minimum two backups configured for all maps and caches, then a partial start up to two missing members is
 safe against data loss. If there are more than two missing members or there
 are maps/caches with fewer than two backups, then data loss is expected.
+
+
 
 To trigger a partial start, your cluster must be configured with one of the following xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-cluster-data-recovery-policy[`cluster-data-recovery-policy`
 option]:
@@ -177,6 +191,6 @@ image:ROOT:CPRestartDialog.png[Restart CP Subsystem Confirmation]
 
 Once you press the **Restart** button, CP subsystem proceeds with the restart operation.
 
-WARNING: The CP subsystem restart operation is **NOT** idempotent and multiple invocations can break the
-whole system! After using this dialog, you must observe the system to see if the restart process is
+WARNING: The CP subsystem restart operation is **not** idempotent and multiple invocations can break the
+whole system. After using this dialog, you must observe the system to see if the restart process is
 successfully completed or failed before starting this operation again.

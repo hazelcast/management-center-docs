@@ -1,5 +1,5 @@
 = Monitoring Members
-[[monitoring-members]]
+:page-aliases: monitor-imdg:monitor-members.adoc
 
 Use this menu item to monitor each cluster
 member and perform operations like running

@@ -1,5 +1,5 @@
 = Health Check
-[[healthcheck]]
+:page-aliases: ROOT:healthcheck.adoc
 
 This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Health Check report compares and analyzes the effective member configurations across the cluster.
 

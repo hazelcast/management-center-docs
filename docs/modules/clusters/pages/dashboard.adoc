@@ -1,5 +1,5 @@
 = Dashboard Page
-[[dashboard-page]]
+:page-aliases: monitor-imdg:monitor-cluster.adoc
 
 This is the first page appearing after logging in. It gives an overview
 of the connected cluster. The following subsections describe each portion of the page.

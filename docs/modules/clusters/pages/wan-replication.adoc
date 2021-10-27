@@ -1,5 +1,5 @@
 = Monitoring WAN Replication
-[[monitoring-wan-replication]]
+:page-aliases: monitor-imdg:monitor-wan-replication.adoc
 
 **Monitoring WAN Replication** feature can be accessed by clicking the corresponding menu item under the "Cluster" parent
 menu heading. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc#synchronizing-wan-clusters[WAN Replication]
