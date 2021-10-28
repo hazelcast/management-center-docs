@@ -38,7 +38,7 @@ tag in Docker:
 docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
 ----
 
-Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip .
+Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip  or https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz .
 
 In these cases, it can be useful to query the build information to be able to tell what revision are you using.
 
