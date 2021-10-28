@@ -16,7 +16,7 @@ Go to *Administration* > *Cluster State* and select a state from the dropdown me
 
 image:ROOT:ChangeClusterState.png[Changing Cluster state]
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:management:cluster-utilities.adoc#managing-cluster-and-member-states[Hazelcast documentation] to learn more about cluster states.
+See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Hazelcast documentation] to learn more about cluster states.
 
 == Shutting Down the Cluster
 
@@ -124,7 +124,6 @@ image:ROOT:CPSubsystemTab.png[Status]
 The **Status** field shows a summary of the current CP subsystem status. It may have one of
 the following values:
 
-* **CP Subsystem is not supported by this cluster:** Shown for Hazelcast clusters with version prior to 3.12.
 * **CP Subsystem is not enabled:** Shown if CP subsystem is not enabled for the current cluster.
 * **All CP members are accessible:** Shown if there are at least the same amount of accessible CP members
 as the configured CP member count.

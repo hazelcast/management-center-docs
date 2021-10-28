@@ -24,7 +24,7 @@ include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
 
 * xref:sql-browser.adoc[]
 
-* xref:config-healthcheck.adoc[]
+* xref:healthcheck.adoc[]
 
 * xref:metric-persistence.adoc[]
 

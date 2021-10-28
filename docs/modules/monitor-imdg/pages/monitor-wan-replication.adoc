@@ -27,7 +27,7 @@ You can click on **Show details** to see detailed information about the correspo
 
 image:ROOT:WanPublisherStats.png[WAN Replication Publisher Stats]
 
-* **Member**: Hazelcast cluster member that has a WAN publisher.
+* **Member**: Hazelcast cluster member that has a WAN publisher. Icon shows connection state (red - disconnected / green - connected]).
 * **Action**: Pause, stop or resume replication of a member's
 records. You can also clear the event queues in a member using
 the *Clear Queues* action.  For instance, if you know that the
