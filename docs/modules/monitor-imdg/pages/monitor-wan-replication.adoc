@@ -118,7 +118,7 @@ and navigate to the **Sync** tab.
 
 image:ROOT:WanSyncTab.png[WAN Sync Tab]
 
-Select *Endpoint*(replication config), *Target*(publisher), and one or many *Maps*
+Select *Endpoint*(replication config), *Target*(publisher), and one or more *Maps*(configured with the selected replication)
 and click **Sync** to start the operation.
 
 image:ROOT:WanSyncConfig.png[WAN Sync Config]
