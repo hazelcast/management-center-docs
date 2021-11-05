@@ -1,196 +1,24 @@
 = Administration
 :description: You can use the Administration menu item to manage Hazelcast clusters.
+:page-aliases: monitor-imdg:cluster-administration.adoc
 
 You can use the *Administration* menu item to manage Hazelcast clusters.
+
+NOTE: This menu item is available only to admin users.
 
 From this menu item, you can do the following:
 
 - xref:changing-cluster-state.adoc[Change the state of a cluster]
-- Shut down a cluster
-- View details about a cluster's license
-- Trigger a rolling upgrade
-- Manage clusters that have persistence enabled
-- Manage CP members
+- xref:shutting-down-cluster.adoc[Shut down a cluster]
+- xref:cluster-license.adoc[View details about a cluster's license]
+- xref:triggering-rolling-upgrade.adoc[Trigger a rolling upgrade]
+- xref:persistence.adoc[Manage clusters that have persistence enabled]
+- xref:cp-subsystem.adoc[Manage CP members]
 
-NOTE: This menu item is available only to admin users.
 
 
 
-== Shutting Down a Cluster
 
-Maintaining a cluster often requires shutting down clusters to make changes take effect.
 
-To gracefully shut down a member, go to *Administration* > *Cluster State* and click *Shutdown*.
 
-[[rolling-upgrade]]
-== Triggering a Rolling Upgrade
 
-NOTE: You need an Enterprise license to use this feature.
-
-A rolling upgrade allows you to upgrade all running cluster members to a new version of Hazelcast without interrupting the operation of the cluster. For version compatibility guarantees, see the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#hazelcast-members-compatibility-guarantees[Hazelcast Platform documentation].
-
-=== Before you Begin
-
-- Upgrade Management Center to the new version.
-+
-TIP: Management Center is compatible with the previous minor version of Hazelcast. For example, Management Center 5.2 works with both Hazelcast 5.1 and 5.2. To change your cluster version to 5.2, you need Management Center 5.2.
-
-- Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#rolling-upgrade-procedure[Hazelcast Platform documentation].
-
-== Trigger a Rolling Upgrade
-
-. Go to *Administration* > *Rolling Upgrade* and click *Upgrade Cluster*.
-+
-image:ROOT:RollingUpgrade.png[RollingUpgradeMenu]
-
-When the cluster version is upgraded, you will see the following notification:
-
-image:ROOT:UpgradeClusterVersionSuccess.png[UpgradeClusterVersionSuccess]
-
-[[hot-restart]]
-== Managing Clusters with Persistence Enabled
-
-NOTE: You need an Enterprise license to use this feature.
-
-In the *Persistence* tab, you can do the following:
-
-- Trigger a force start.
-- Trigger a partial start.
-- See the status of cluster members.
-- Create backups of data in the peristence store (hot backup).
-
-See the xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence.adoc[Hazelcast Platform documentation] to learn more about these topics.
-
-=== Triggering a Force Start
-
-The restart process cannot be completed if a member crashes permanently and
-cannot recover from a failure since it cannot start or it fails to load
-its own data. In that case, you can force the cluster to clean its persisted
-data and make a fresh start. This process is called _force start_.
-
-To trigger a force start, click *Force Start* and confirm that you want to continue by clicking *Confirm* in the dialog.
-
-If everything goes well, a success message is displayed.
-
-If an exception occurs, an error notification is displayed.
-
-=== Triggering a Partial Start
-
-Partial start allows a cluster to start with an incomplete set of
-members. Data belonging to the missing members is assumed lost and
-the Management Center tries to recover the missing data using the restored
-backups. For example, if you have minimum two backups configured for all maps and caches, then a partial start up to two missing members is
-safe against data loss. If there are more than two missing members or there
-are maps/caches with fewer than two backups, then data loss is expected.
-
-
-
-To trigger a partial start, your cluster must be configured with one of the following xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-cluster-data-recovery-policy[`cluster-data-recovery-policy`
-option]:
-
-- `PARTIAL_RECOVERY_MOST_RECENT`
-- `PARTIAL_RECOVERY_MOST_COMPLETE`
-
-To perform a partial start on the cluster, click on the **Partial Start**
-button. A notice dialog appears.
-
-You can also see two fields related to Partial Start operation:
-*Remaining Data Load Time* and *Remaining Validation Time*.
-
-*Remaining Data Load Time* is a countdown from the value configured in the xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-data-load-timeout-seconds[`data-load-timeout-seconds`] configuration option.
-
-*Remaining Validation Time* is a countdown from the value configured in the xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-validation-timeout-seconds[`validation-timeout-seconds`] configuration option.
-
-=== Creating Backups of Persisted Data
-
-You can take a snapshot of the persistence store at a certain point in time. This is useful when you
-wish to bring up a new cluster with the same data or parts of the data.
-The new cluster can then be used to share load with the original cluster,
-to perform testing, quality assurance or reproduce an issue on the production data.
-
-If the backup directory is configured, you can trigger the backup by
-clicking *Hot Backup*.
-
-You can see the progress of the backup operation under the *Last Hot Backup Task Status* field.
-
-=== Status Information
-
-At the bottom of *Persistence* tab, you can see the following statuses of cluster members:
-
-- *Last Hot Backup Task Status*
-
-- *Persistence Status*
-
-[[cp-subsystem]]
-== CP Subsystem
-
-NOTE: CP subsystem management operations require enabled REST API in the Hazelcast cluster. See the xref:{page-latest-supported-hazelcast}@hazelcast:clients:rest.adoc[Hazelcast documentation]
-for more information.
-
-The **CP Subsystem** tab can be used to monitor overall status of the
-xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[CP subsystem]
-in the current cluster and perform certain management operations.
-
-image:ROOT:CPSubsystemTab.png[Status]
-
-=== Monitoring CP Subsystem
-
-The **Status** field shows a summary of the current CP subsystem status. It may have one of
-the following values:
-
-* **CP Subsystem is not enabled:** Shown if CP subsystem is not enabled for the current cluster.
-* **All CP members are accessible:** Shown if there are at least the same amount of accessible CP members
-as the configured CP member count.
-* **CP Subsystem warning: one CP member is not accessible:** Shown if there is one missing
-CP member and the minority count in the CP subsystem is greater than 1. For example, this value is shown
-when there are 6 accessible CP members and the configured count is 7. In this example, the minority
-count is 3 members and the majority count is 4 members.
-* **CP Subsystem alert:  multiple CP members are not accessible:** Shown if there are multiple missing
-CP members, but their count is less than the minority.
-* **CP Subsystem error: minority of the CP members are not accessible:** Shown if the minority of CP
-members are missing.
-* **CP Subsystem error: majority of the CP members are not accessible:** Shown if the majority of CP
-members are missing.
-
-The **CP Members (Accessible/Configured)** field shows the current count of accessible CP members and the
-xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:configuration.adoc#cp-subsystem-configuration[configured CP members count].
-
-NOTE: You may promote additional members or remove inaccessible CP members,
-so the total count of members that participate in the CP subsystem may be greater or less than the
-configured CP member count. As the Status field considers the configured CP member count as the total
-CP member count, it should be treated only as a basic health indicator for the CP subsystem.
-
-=== Promoting Members to CP Subsystem
-
-To promote one of the AP members to become a CP member, click on the **Promote** button. A confirmation
-dialog appears as shown below.
-
-image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
-
-It asks you to choose one of AP members, i.e., one of the members that do not participate in the CP subsystem.
-Note that lite members are not shown in the dropdown list as lite members do not store data.
-Once you press the **Promote** button, the CP subsystem starts the promote operation for the given member.
-
-=== Removing CP Members
-
-To remove one of the inaccessible CP members from the CP subsystem, click on the **Remove** button. A confirmation
-dialog appears as shown below.
-
-image:ROOT:CPRemoveDialog.png[Remove CP Member Confirmation]
-
-It asks you to choose one of the members that is not connected to the Management Center, but is known by
-the cluster's CP subsystem. Once you press the **Remove** button, the CP subsystem starts the remote
-operation for the given member.
-
-=== Restarting the CP Subsystem
-
-To wipe and restart the whole CP subsystem of the cluster, click on the **Restart** button. A confirmation
-dialog appears as shown below.
-
-image:ROOT:CPRestartDialog.png[Restart CP Subsystem Confirmation]
-
-Once you press the **Restart** button, CP subsystem proceeds with the restart operation.
-
-WARNING: The CP subsystem restart operation is **not** idempotent and multiple invocations can break the
-whole system. After using this dialog, you must observe the system to see if the restart process is
-successfully completed or failed before starting this operation again.

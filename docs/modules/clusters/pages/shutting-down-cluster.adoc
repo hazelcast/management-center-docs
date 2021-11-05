@@ -1,6 +1,18 @@
-= Shutting Down a Cluster
-:description: Maintaining a cluster often requires shutting down and restarting clusters to make changes take effect. You can shut down a whole Hazelcast cluster in Management Center with one button.
+= Shutting Down Members and Clusters
+:description: Maintaining a cluster often requires shutting down and restarting members to make changes take effect. You can shut down a whole Hazelcast cluster or individual members in Management Center with one button.
 
 {description}
 
+== Shut Down a Cluster
+
 To gracefully shut down a cluster, go to *Administration* > *Cluster State* and click *Shutdown*.
+
+== Shut Down a Member
+
+To gracefully shut down a member:
+
+. Go to *Members*.
+
+. Click a member's row in the table.
+
+. Click *Shutdown* in the top right-hand corner.

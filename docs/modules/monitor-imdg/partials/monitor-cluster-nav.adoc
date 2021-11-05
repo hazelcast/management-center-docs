@@ -1,13 +1,6 @@
-* xref:monitor-imdg:monitor-cluster.adoc[]
-** xref:monitor-imdg:dashboard.adoc[]
-** xref:monitor-imdg:widget.adoc[]
-** xref:monitor-imdg:monitor-members.adoc[]
-** xref:monitor-imdg:monitor-clients.adoc[]
-** xref:monitor-imdg:client-filtering.adoc[]
-** xref:monitor-imdg:monitor-dds.adoc[]
-** xref:monitor-imdg:monitor-wan-replication.adoc[]
-** xref:monitor-imdg:scripting.adoc[]
-** xref:monitor-imdg:console.adoc[]
-** xref:monitor-imdg:cluster-administration.adoc[]
+* xref:monitor-imdg:widget.adoc[]
+* xref:monitor-imdg:monitor-dds.adoc[]
+* xref:monitor-imdg:scripting.adoc[]
+* xref:monitor-imdg:console.adoc[]
 
 

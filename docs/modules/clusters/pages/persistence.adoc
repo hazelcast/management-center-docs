@@ -1,0 +1,48 @@
+= Persistence
+:description: You can use the Persistence tab of the Administration menu item to manage Hazelcast clusters that have persistence enabled.
+:page-enterprise: true
+
+You can use the *Persistence* tab of the *Administration* menu item to manage Hazelcast clusters that have persistence enabled.
+
+[[hot-restart]]
+
+NOTE: You need an Enterprise license to use this feature.
+
+This page is available only to admin users.
+
+.Persistence fields
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Cluster Status
+|The start status of a cluster that has persistence enabled. After a cluster-wide restart, the start status can be one of the following:
+
+* *Succeeded*: The cluster is up and running in an `ACTIVE` state.
+* *In-Progress*: The cluster is missing members and cannot yet restart. The cluster is in a `PASSIVE` state.
+
+|Force-Start Cluster
+|Trigger a force-start. See xref:triggering-force-start.adoc[].
+
+|Partial-Start Cluster
+|Trigger a partial-start. See xref:triggering-partial-start.adoc[].
+
+|Hot Backup
+|Trigger a partial-start. See xref:triggering-hot-backup.adoc[].
+
+|Data Recovery Policy
+|The data recovery policy that's configured in the cluster's xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-cluster-data-recovery-policy[`cluster-data-recovery-policy`] configuration option.
+
+|Remaining Data Load Time
+|A countdown from the value configured in the cluster's xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-data-load-timeout-seconds[`data-load-timeout-seconds`] configuration option.
+
+|Remaining Validation Time
+|A countdown from the value configured in the cluster's xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-validation-timeout-seconds[`validation-timeout-seconds`] configuration option.
+|===
+
+== Related Resources
+
+See the following topics in the Platform documentation:
+
+- xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence.adoc[Persistence]
+- xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Cluster States]

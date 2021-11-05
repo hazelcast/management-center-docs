@@ -1,26 +1,12 @@
-= Health Check
+= Running a Config Healthcheck
+:description: You can generate a healthcheck report to analyze all member configurations in a cluster. 
 :page-aliases: ROOT:healthcheck.adoc
 
-This feature can be accessed by clicking the corresponding menu item under the "Cluster" parent menu heading. The Health Check report compares and analyzes the effective member configurations across the cluster.
+{description}
 
-NOTE: Health Check is a licensed feature.
+image:ROOT:Healthcheck.png[Healthcheck]
 
-
-_Sample output of Health Check:_
-image:ROOT:Healthcheck.png[Healthcheck,scaledwidth="50%"]
-
-It performs the following checks:
- 
- * if the maps, caches, queues, topics, reliable topics, serialization and security configuration sections are identical across members
- * if the backup reads are disabled for maps with TTL-based eviction
- * if the map query caches configured with batch updates have higher than 0 delay-seconds
- * if the map and query cache indexes are redundant
- * if the maps using native memory have proper eviction configurations
- * if the map custom attributes are unique per extractor
- * if the member operating system metrics are available
-
-== Periodically running the Health Check
-
-Starting from version 5.0, Management Center periodically runs the Health Check report, and displays the number of problems
-found in a warning on the UI. This behavior can be disabled by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
+Management Center automatically runs the healthcheck report at certain intervals. You can disable automatic runs by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
 system property to `false`.
+
+To manually run a healthcheck, go to *Config Healthcheck* and click *Re-Run Healthcheck*.

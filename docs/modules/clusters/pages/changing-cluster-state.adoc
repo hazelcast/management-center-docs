@@ -10,9 +10,9 @@ You may want to change a cluster's state to do the following:
 
 == Before you Begin
 
-You must be an admin user to use this feature.
+You should already understand the concept of cluster states. For details about cluster states, see xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[] in the Platform documentation.
 
-You should already understand the concept of cluster states. For details about cluster states, see the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[Hazelcast Platform documentation].
+You must be an admin user to use this feature.
 
 == Change the State of a Cluster
 
@@ -23,4 +23,6 @@ image:ROOT:ChangeClusterState.png[Changing Cluster state]
 == Next Steps
 
 After changing the state of a cluster, you may want to shut it down and perform maintenance on it. To shut down a cluster, see xref:shutting-down-cluster.adoc[].
+
+To trigger a hot backup of the persistence store, see xref:triggering-hot-backup.adoc[].
 
