@@ -677,7 +677,7 @@ An example log entry looks like the following:
 The following table lists the current log categories along with their
 types:
 
-[cols="2a,5a"]
+[cols="20%a,80%a"]
 |===
 |Event Category| Log Type/Description
 
