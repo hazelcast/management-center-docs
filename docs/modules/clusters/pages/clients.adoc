@@ -226,12 +226,11 @@ the member (JVM) is running.
 The system load average is the average over a period
 of time of this sum:
 
-[stem]
-++++
+```
 (the number of runnable entities queued to the
 available processors) + (the number of runnable
 entities running on the available processors)
-++++
+```
 
 The way in which the
 load average is calculated is differently, depending on the operating system, but it is typically a damped time-dependent average.
