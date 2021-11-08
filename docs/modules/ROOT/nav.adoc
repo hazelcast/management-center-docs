@@ -50,3 +50,9 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
 
+
+* Data Structures
++
+--
+include::data-structures:partial$nav.adoc[]
+--

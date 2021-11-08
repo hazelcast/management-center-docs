@@ -1,0 +1,24 @@
+= Overview
+:description: You can monitor the data structures in your cluster using the Storage, Compute, and Messaging menus in the Management Center.
+
+{description} From these menus, you can see the statistics for the following data structures.
+
+Under the *Storage* menu:
+
+* xref:data-structures:map.adoc[Map]. Here, you can also set the selected map's attributes.
+* xref:data-structures:cache.adoc[Cache]
+* xref:data-structures:replicated-map.adoc[Replicated Map]
+* xref:data-structures:multimap.adoc[MultiMap]
+* xref:data-structures:lock.adoc[Lock]
+* xref:data-structures:flake-id-gen.adoc[Flake ID Generator]
+* xref:data-structures:pn-counter.adoc[PN Counter]
+
+Under the *Compute* menu:
+
+* xref:data-structures:executor.adoc[Executor]
+
+Under the *Messaging* menu:
+
+* xref:data-structures:queue.adoc[Queue]
+* xref:data-structures:topic.adoc[Topic]
+* xref:data-structures:reliable-topic.adoc[Reliable Topic]
