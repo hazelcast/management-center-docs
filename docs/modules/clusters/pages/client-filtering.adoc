@@ -138,6 +138,27 @@ To delete an entire filter list:
 
 . Click *Delete this list and deploy* in the top-right corner.
 
+[[client-filtering-synchronization]]
+== Client Filtering Synchronization
+
+If you have multiple instances of Management Center connected to the same clusters, the clusters' client filtering configuration is synchronized among all those Management Center instances. This synchronization is triggered by the following actions:
+
+* Clicking on the **Deploy Configuration** button.
+* Creating, updating, or deleting a list that is active and matches the deployed type (*Allow-list* or *Deny-list*).
+
+NOTE: These actions override the client filtering configuration
+on other instances of Management Center that are connected to the same cluster.
+
+When Management Center connects to a cluster that already has some client filtering configuration
+deployed, Management Center saves the client filtering configuration from the cluster to the local persistent
+storage. The previous configuration stored in Management Center is overwritten.
+
+When another Management Center instance deploys a new client filtering configuration, then a message "Client filtering
+configuration was updated by another Management Center instance" is displayed and the *Client Filtering Settings* and
+*Filter Lists* data is automatically refreshed.
+
+image:ROOT:ClientFilteringUpdated.png[Client Filtering Updated]
+
 == Related Resources
 
 See
