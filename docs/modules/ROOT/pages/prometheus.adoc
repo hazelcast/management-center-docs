@@ -2,7 +2,7 @@
 [[management-center-prometheus-exporter]]
 
 Hazelcast Management Center can expose the metrics collected from cluster members to https://prometheus.io/[Prometheus^]. This
-feature can be turned on by setting the xref:system-properties.adoc#hazelcast-mc-prometheusexporter-enabled[`hazelcast.mc.prometheusExporter.enabled` system property] to `true`.
+feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
 
 Prometheus can be configured to scrape Management Center in `prometheus.yml` as follows:
 

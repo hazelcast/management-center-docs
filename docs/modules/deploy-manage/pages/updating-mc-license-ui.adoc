@@ -1,5 +1,5 @@
 = Updating an Enterprise License for Management Center
-:description: You can use the UI to update a license.
+:description: You can use the UI to update an Enterprise license for Management Center.
 
 An Enterprise license must be installed on Management Center to access Enterprise features and display metrics for more than three cluster members. 
 
