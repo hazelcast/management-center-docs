@@ -2,6 +2,8 @@
 :description: Create filter lists that define which clients are allowed to connect to the cluster.
 :page-enterprise: true
 
+NOTE: You need an Enterprise license to use this feature.
+
 [[changing-cluster-client-filtering]]
 
 You can use the *Client Filtering* menu item to create filter lists that define which clients are allowed to connect to the cluster:
