@@ -1,0 +1,41 @@
+= Cluster Connections
+:description: You can connect Management Center to multiple clusters and remove connections when you no longer need them.
+:page-aliases: ROOT:connecting-members.adoc
+
+To connect Management Center to a Hazelcast cluster, you need to configure at least the name of the cluster and the addresses of one or more members.
+
+To configure these settings, you can use one of the following options:
+
+- xref:connecting-to-clusters-ui.adoc[Connect to a cluster from the web UI].
+- Preconfigure Management Center to connect to a cluster on start:
+
+** xref:connecting-to-clusters-mc-conf.adoc[`mc-conf` tool]
+** <<environment-variables,Environment variables>>
+
+== Connecting to Clusters with TLS Enabled
+
+If a Hazelcast cluster is configured to use TLS, you need to configure the truststore on Management Center, using a client configuration file.
+
+To configure Management Center with a client configuration file, use one of the following options:
+
+- xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[UI].
+
+- xref:connecting-to-clusters-mc-conf.adoc[`mc-conf` tool]
+
+For more information about configuring a client configuration file for TLS, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc#tlsssl-for-hazelcast-clients[TLS for Hazelcast Clients] in the Platform documentation.
+
+== Environment Variables
+
+If you use the terminal to start Management Center for example by executing the JAR file or the `mc start` script, you can set the following environment variables:
+
+[cols="20%m,80%a"]
+|===
+|Variable|Description
+
+|MC_DEFAULT_CLUSTER_MEMBERS
+|A comma-separated list of cluster member addresses.
+
+|MC_DEFAULT_CLUSTER
+|The cluster name. Default: `dev`.
+
+|===

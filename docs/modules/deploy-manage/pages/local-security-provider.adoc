@@ -1,0 +1,209 @@
+= Local Security Provider
+:description: You can use the local security provider to control authentication and authorization in Management Center. With this security provider, user accounts are stored in Management Center's database.
+
+{description}
+
+== Setting Up the Local Security Provider
+
+To set up the local security provider, you need to create an admin user, using either the UI or the `mc-conf` tool.
+
+[tabs] 
+====
+UI::
++
+--
+
+To set up the local security provider in the UI, go to *Settings* > *Security Providers* > *Local*.
+
+--
+mc-conf::
++
+--
+To set up the local security provider with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+
+.Linux and macOS
+```bash
+./mc-conf.sh user create -n <username> -r admin -p 
+```
+
+.Windows
+```bash
+./mc-conf.bat user create -n <username> -r admin -p 
+```
+--
+====
+
+* **Username:** Username for the initial administrator user account.
+* **Password:** Password for the initial administrator user account.
+
+Passwords *must* include the following:
+
+* Minimum of 8 characters
+* At least one letter
+* At least one digit
+* At least one special character, which is not a letter, digit or space
+
+Passwords *must not* include the following:
+
+* The username
+* Two or more of the same letter following each other.
+* A 3-character or longer sequence of letters following or preceeding each other such as "abc" or "fed".
+* A 3-character or longer sequence of digits following or preceeding each other such as "123" or "987".
+
+== Creating Users
+
+To create additional users, admin users can use the UI or you can use the `mc-conf` tool.
+
+When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
+[tabs] 
+====
+UI::
++
+--
+
+To set up the local security provider in the UI, go to *Settings* > *Security Providers* > *Local*.
+
+--
+mc-conf::
++
+--
+To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username.
+
+.Linux and macOS
+```bash
+./mc-conf.sh user create -n <username> -r admin -p 
+```
+
+.Windows
+```bash
+./mc-conf.bat user create -n <username> -r admin -p 
+```
+--
+====
+
+== Using a Dictionary to Prevent Weak User Passwords
+
+To prevent certain words from being included in user
+passwords, you can use a dictionary.
+
+. Create a text file that contains the words that you want to prevent.
++
+Each word must be on a new line and must contain at least three characters.
+
+. Start Management Center with the `hazelcast.mc.security.dictionary.path`
+system property where the path points to your text file.
+
+Words that are shorter
+than four characters are ignored to avoid blocking too many password
+combinations. You can configure
+the minimum length of words by starting Management Center with the
+`hazelcast.mc.security.dictionary.minWordLength`
+system property.
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+     -Dhazelcast.mc.security.dictionary.minWordLength=3 \
+     -jar hazelcast-management-center-{full-version}.jar
+----
+
+== Changing User Passwords
+
+To change user passwords in the local security provider, admin users can use the UI or you can use the `mc-conf` tool.
+
+[tabs] 
+====
+UI::
++
+--
+
+. Go to *Settings* > *Users*.
+
+. Click *Edit* in the row of the user whose password you want to change.
+
+. Click *Change Password*.
+
+--
+mc-conf::
++
+--
+Use the following `mc-conf` command. Replace the `<username>` placeholder with your username.
+
+.Linux and macOS
+```bash
+./mc-conf.sh user update-password -n <username> -p
+
+```
+
+.Windows
+```bash
+./mc-conf.bat user update-password -n <username> -p
+```
+
+NOTE: If you're on Linux or macOS devices, enclose passwords in single quotes only if you use the `--password` option. If you use the `-p` flag, do not use single quotes in the interactive prompt.
+--
+====
+
+== Issuing User Auth Token
+
+To use the REST API, users in the local security provider need an auth token. Auth tokens inherit roles from the user. 
+
+To generate an auth token for users, you can do one of the following:
+
+- Use the `user issue-token` task of the `mc-conf` tool.
+- Send a `POST` request to the `/api/tokens` endpoint.
+
+To use the `mc-conf` tool, do the following:
+
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh user issue-token -n <username>
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user issue-token -n <username>
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user issue-token -n <username>
+----
+--
+====
+
+The created token is displayed in the output:
+
+```
+Successfully issued a token for user 'test_user'.
+Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
+Label: 'test_user_2021-07-07T17:24 EEST'
+```
+
+To use the `/api/tokens` endpoint, do the following. Replace the `<username>` and `<password>` placeholders with a user's username and password.
+
+[source,bash]
+----
+curl -u {<username>}:{<password>} -d '{"username":"<username>"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
+----
+
+To revoke all auth tokens for a user, use the `user revoke-tokens` task.
+
+This task works for users in all security providers,
+not only the local security provider.
+
+== Next Steps
+
+For details about the `mc-conf` tool, see xref:mc-conf.adoc[].

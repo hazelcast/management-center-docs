@@ -40,7 +40,7 @@ all currently connected clients and then uses it for newly connecting
 clients. Deny-listed clients may connect to another cluster
 if they are configured to support blue-green deployment. If they are not,
 they shut down when denied access to the cluster. Please see the
-xref:hazelcast:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery section]
+xref:{page-latest-supported-hazelcast}@hazelcast:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery section]
 in the Hazelcast documentation for more information.
 
 NOTE: If some of the cluster members are not reachable from

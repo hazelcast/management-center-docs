@@ -1,24 +1,24 @@
 = Phone Home
-[[phone-home]]
+:description: Hazelcast uses phone home data to learn about the usage of Hazelcast Management Center.
+:page-aliases: ROOT:phone-home.adoc
 
-Hazelcast uses phone home data to learn about usage of Hazelcast Management Center.
+{description}
 
-Hazelcast Management Center instances initially call our phone home server 30 minutes
-after they are started and once every 24 hours thereafter.
+Management Center sends data to the phone home server at `\http://phonehome.hazelcast.com/pingMc` 30 minutes after it's started and once every 24 hours thereafter.
 
-**What is sent in?**
+== Data Sent in Phone Homes
 
 The following information is sent in a phone home:
 
-* Hazelcast Management Center version
-* Authentication provider used (Local, LDAP, ActiveDirectory, JAAS)
-* Whether clustered REST is enabled or not
-* Whether clustered JMX is enabled or not
-* Whether TLS is enabled or not
-** If TLS is enabled, whether mutual authentication is enabled or not
+* Version of Management Center
+* Security provider used (Local, LDAP, ActiveDirectory, JAAS)
+* Whether clustered REST is enabled
+* Whether clustered JMX is enabled
+* Whether TLS is enabled
+** If TLS is enabled, whether mutual authentication is enabled
 * Whether Management Center is deployed on an application server or used in standalone mode
 ** If not in standalone mode, type of the application server
-* Number of users (if the Local security provider is used)
+* Number of users (if the local security provider is used)
 * Number of clusters
 * Management Center uptime
 * Minimum and maximum cluster sizes
@@ -39,10 +39,6 @@ For each user login, we store the following information and send it in a phone h
 * Screen height and width
 * Window height and width
 
-**Disabling Phone Homes:**
+== Disabling Phone Homes
 
-Set the `hazelcast.mc.phone.home.enabled` system property to false on the Java command line.
-
-**Phone Home URL:**
-
-\http://phonehome.hazelcast.com/pingMc
+Set the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` system property] to `false`.

@@ -2,7 +2,7 @@
 [[management-center-prometheus-exporter]]
 
 Hazelcast Management Center can expose the metrics collected from cluster members to https://prometheus.io/[Prometheus^]. This
-feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+feature can be turned on by setting the xref:system-properties.adoc#hazelcast-mc-prometheusexporter-enabled[`hazelcast.mc.prometheusExporter.enabled` system property] to `true`.
 
 Prometheus can be configured to scrape Management Center in `prometheus.yml` as follows:
 
@@ -68,11 +68,11 @@ https://grafana.com/grafana/dashboards/13183[this dashboard].
 
 == Authentication
 
-Starting from Management Center 5.0, the Prometheus Exporter supports basic authentication, to secure the scrape endpoint. 
+The Prometheus Exporter supports basic authentication, to secure the scrape endpoint. 
 
-First, you need to set it up using the following MC-Conf command:
+First, you need to set it up using the following `mc-conf` task:
 
-`mc-conf.sh set prometheus-auth <my-user> <my-pass>`
+`set prometheus-auth <my-user> <my-pass>`
 
 Then, you need to configure Prometheus as follows:
 
@@ -87,6 +87,4 @@ Then, you need to configure Prometheus as follows:
 
 ----
 
-
-
-You can reset the authentication with the `mc-conf.sh security reset` command, which will also delete all users from the database.
+You can reset the authentication with the `security reset` task, which will also delete all users from the database.

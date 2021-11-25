@@ -1,0 +1,72 @@
+= Connecting to a Cluster with the mc-conf Tool
+:description: You can preconfigure the client connection to a cluster before you start Management Center, using the `mc-conf` tool.
+
+Management Center starts a Hazelcast client for each cluster that it is connected to. You can preconfigure the client connection to a cluster before you start Management Center, using the `mc-conf` tool.
+
+To connect Management Center to a Hazelcast cluster, using the `mc-conf` tool, you have two options:
+
+- Provide the cluster name and member addresses.
+- Provide the path to a client configuration file in XML or YAML format. (Recommended for more complex configurations.)
++
+NOTE: If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to configure the client TLS settings. For more information about TLS configuration, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[TLS] in the Platform documentation.
+
+== Before you Begin
+
+Make sure that Management Center is not running. If you execute a CLI command while Management Center is running, you will see the following error: `Could not lock home directory`.
+
+For a getting started guide, see xref:mc-conf.adoc[].
+
+== Configuring a Cluster Connection
+
+. To provide the cluster name and member addresses, use the following:
++
+```bash
+./mc-conf.sh cluster add -cn={cluster name} -ma={member addresses}
+```
++
+You should see the following:
++
+```
+Successfully removed Cluster Config.
+```
+
+. To provide the path to a client configuration file, use the following:
++
+```bash
+./mc-conf.sh cluster add --client-config={path to file}
+```
++
+You should see the following:
++
+```
+Successfully removed Cluster Config.
+```
++
+For help creating a client configuration file, see the link:https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-client-full-example.xml[full example references on GitHub]
+
+
+. Start Management Center.
+
+To connect to another cluster, you can repeat these steps.
+
+NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
+
+== Removing a Cluster Connection
+
+To remove an existing connection to a cluster, use the following:
+
+```bash
+./mc-conf.sh cluster remove -cn={cluster name}
+```
+
+You should see the following:
+
+```
+Successfully removed Cluster Config.
+```
+
+== Next Steps
+
+For the full reference of `mc-cli`, see xref:mc-conf.adoc[]
+
+You can also use the CLI to preconfigure a security provider, including dev mode. This allows you to automate the setup of Management Center without needing to interact with the UI.

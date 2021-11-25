@@ -1,0 +1,24 @@
+= Security Providers
+:description: You can use security providers to authenticate users in Management Center and allow them to log into user accounts.
+:page-aliases: launching:auth-options.adoc, launching:dev-mode.adoc, ROOT:managing-security-providers.adoc
+
+{description}
+
+Management Center comes with the following security providers:
+
+- xref:dev-mode.adoc[*Dev mode*]: No login required. One admin user.
+- xref:local-security-provider.adoc[*Local*]: Manage user logins and authentication in Management Center.
++
+TIP: You can create and manage users both in the Management Center UI and with the `mc-conf` tool only if you use the local security provider.
+- xref:active-directory.adoc[*Active Directory*]: Use an existing Active Directory server for user authentication and authorization.
+- xref:jaas.adoc[*JAAS*]: Use your own `javax.security.auth.spi.LoginModule` implementation
+for user authentication and authorization.
+- xref:ldap.adoc[*LDAP*]: Use an existing Active Directory server for user authentication and authorization.
+- xref:saml.adoc[*SAML*]: Use SAML single sign-on with Management Center.
+- xref:openid.adoc[*OpenID Connect*]: Use OpenID Connect single sign-on with Management Center.
+
+You can select dev mode as a security provider only when you first launch Management Center. To configure all other security providers, go to *Settings* > *Security Providers*.
+
+image::ROOT:SecurityProviders.png[Security Providers tab in Management Center settings]
+
+If you're looking to switch from one security provider to another, see xref:switching-security-provider.adoc[].

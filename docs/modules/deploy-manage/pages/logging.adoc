@@ -1,0 +1,233 @@
+= Logging
+:description: You can customize the content of logs as well as enable audit logging.
+
+{description}
+
+Management Center uses https://logging.apache.org/log4j/2.x/[Log4j 2]
+for its logging. By default, Management Center prints all logs except audit logs to standard output. This behavior is defined by the following Log4j 2 configuration file:
+
+[source,properties]
+----
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %d [%highlight{%5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
+appender.console.filter.threshold.type = ThresholdFilter
+appender.console.filter.threshold.level = ${sys:hazelcast.mc.log.level:-all}
+
+logger.hazelcast.name = com.hazelcast
+logger.hazelcast.level = ${sys:hazelcast.mc.log.level:-error}
+logger.hazelcast.additivity = false
+logger.hazelcast.appenderRef.rolling.ref = STDOUT
+
+logger.mc.name = com.hazelcast.webmonitor
+logger.mc.level = ${sys:hazelcast.mc.log.level:-info}
+logger.mc.additivity = false
+logger.mc.appenderRef.rolling.ref = STDOUT
+
+logger.jetty.name = org.eclipse.jetty
+logger.jetty.level = ${sys:hazelcast.mc.log.level:-warn}
+logger.jetty.additivity = false
+logger.jetty.appenderRef.rolling.ref = STDOUT
+
+logger.spring.name = org.springframework
+logger.spring.level = ${sys:hazelcast.mc.log.level:-warn}
+logger.spring.additivity = false
+logger.spring.appenderRef.rolling.ref = STDOUT
+
+logger.hibernatevalidator.name = org.hibernate.validator
+logger.hibernatevalidator.level = ${sys:hazelcast.mc.log.level:-warn}
+logger.hibernatevalidator.additivity = false
+logger.hibernatevalidator.appenderRef.rolling.ref = STDOUT
+
+logger.flywaydb.name = org.flywaydb
+logger.flywaydb.level = ${sys:hazelcast.mc.log.level:-warn}
+logger.flywaydb.additivity = false
+logger.flywaydb.appenderRef.rolling.ref = STDOUT
+
+logger.hikari.name = com.zaxxer.hikari
+logger.hikari.level = ${sys:hazelcast.mc.log.level:-warn}
+logger.hikari.additivity = false
+logger.hikari.appenderRef.rolling.ref = STDOUT
+
+# Otherwise every resolved exception is logged
+logger.springerror.name = org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver
+logger.springerror.level = ${sys:hazelcast.mc.log.level:-error}
+logger.springerror.additivity = false
+logger.springerror.appenderRef.rolling.ref = STDOUT
+
+rootLogger.level = ${sys:hazelcast.mc.log.level:-info}
+rootLogger.appenderRef.stdout.ref = STDOUT
+----
+
+== Changing the Log Level
+
+To change the logging level for all loggers, start
+Management Center with the `hazelcast.mc.log.level` system property. For example, to use the debug logging level, start Management Center with the following line:
+
+```bash
+-Dhazelcast.mc.log.level=debug
+```
+
+== Customizing the Logging Configuraton
+
+To further customize the logging configuration, you can create a custom
+Log4j configuration file and start Management Center with
+the `log4j.configurationFile` system property.
+
+For example, you can create a file named `log4j2-custom.properties` with the following
+content and set logging level to `DEBUG`.
+To use this file as the logging configuration, you would start Management Center with the
+`-Dlog4j.configurationFile=/path/to/your/log4j2-custom.properties` command line parameter:
+
+[source,properties]
+----
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %d [%highlight{%5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
+appender.console.filter.threshold.type = ThresholdFilter
+appender.console.filter.threshold.level = ${sys:hazelcast.mc.log.level:-all}
+
+rootLogger.level = debug
+rootLogger.appenderRef.stdout.ref = STDOUT
+----
+
+To write log messages into rolling log files, you can use a similar Log4j configuration file:
+
+[source,properties]
+----
+appender.console.type=Console
+appender.console.name=STDOUT
+appender.console.layout.type=PatternLayout
+appender.console.layout.pattern=%d [%highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
+
+appender.rolling.type=RollingFile
+appender.rolling.name=RollingFile
+appender.rolling.fileName=${sys:user.home}/mc-logs/mc.log
+appender.rolling.filePattern=${sys:user.home}/mc-logs/mc.%d{yyyy-MM-dd}.log
+appender.rolling.layout.type=PatternLayout
+appender.rolling.layout.pattern=%d [%5p] [%t] [%c{.1}]: %m%n
+appender.rolling.policies.type = Policies
+appender.rolling.policies.time.type = TimeBasedTriggeringPolicy
+
+rootLogger.level=info
+rootLogger.appenderRef.stdout.ref=STDOUT
+rootLogger.appenderRef.rolling.ref=RollingFile
+----
+
+== Audit Logging
+
+To make it easier to examine suspicious activity and troubleshoot issues, you can use audit logging to keep a record of events that happen in Management Center such as user logins.
+
+To enable audit logging, start Management Center with the xref:system-properties.adoc#hazelcast-mc-auditlog-enabled[`hazelcast.mc.auditlog.enabled` system property] set to `true`.
+
+Log entries from the audit logging will be marked with the
+`hazelcast.auditlog` logging category, abbreviated as `h.auditlog` in logs.
+
+An example log entry looks like the following:
+
+```
+2020-10-13 09:57:54,803 [ INFO] [qtp973576304-35] [h.auditlog]: MC-2001 [Auth]:User logged in:{username=JohnHallaign}
+```
+
+`MC-2001 [Auth]` you see in this example represents the log's type.
+
+=== Audit Logging Event Types
+
+The following table lists the current log categories along with their
+types:
+
+[cols="2a,5a"]
+|===
+|Event Category| Log Type/Description
+
+| Management Center Configuration Logs
+|* `MC-0001 [Config]`: Metrics Persistence is enabled.
+* `MC-0002 [Config]`: Metrics Persistence is disabled.
+* `MC-0003 [Config]`: User is created.
+* `MC-0004 [Config]`: User is edited.
+* `MC-0005 [Config]`: User's password is changed.
+* `MC-0006 [Config]`: User is deleted.
+* `MC-0009 [Config]`: License is set.
+
+| Cluster Configuration Logs
+|* `MC-1001 [Cluster Config]`: Map's configuration is changed.
+* `MC-1003 [Cluster Config]`: Cluster's state is changed.
+* `MC-1004 [Cluster Config]`: Cluster is shut down.
+* `MC-1005 [Cluster Config]`: Member is shut down.
+* `MC-1006 [Cluster Config]`: Lite member is promoted.
+* `MC-1007 [Cluster Config]`: Cluster version is changed.
+
+| Authentication Logs
+|* `MC-2001 [Auth]`: User logs in.
+* `MC-2002 [Auth]`: User logs out.
+* `MC-2003 [Auth]`: Login failures.
+
+| Scripting Logs
+|* `MC-3001 [Script]`: Script is executed on a member.
+
+| Console Logs
+|* `MC-4001 [Console]`: Console command is executed on the cluster.
+
+| Map/Cache Logs
+|* `MC-5001 [Browser]`: User browses through a map screen in Management Center.
+* `MC-5002 [Browser]`: User browses through a cache screen in Management Center.
+
+| Persistence Logs
+|* `MC-6001 [Persistence]`: Force start is run.
+* `MC-6002 [Persistence]`: Partial start is run.
+* `MC-6003 [Persistence]`: Hot backup operation is triggered.
+* `MC-6004 [Persistence]`: Hot backup operation is interrupted.
+
+| WAN Replication Logs
+|* `MC-7001 [WAN]`: WAN configuration is added.
+* `MC-7002 [WAN]`: WAN consistency check operation is run.
+* `MC-7003 [WAN]`: WAN synchronization on a map is run.
+* `MC-7004 [WAN]`: State of the WAN publisher is changed.
+* `MC-7005 [WAN]`: Clear operation for the WAN events queue is run.
+
+| CP Subsystem Logs
+|* `MC-8001 [CP Subsystem]`: Member is promoted to be a CP subsystem member.
+* `MC-8002 [CP Subsystem]`: Member is removed from CP subsystem.
+* `MC-8003 [CP Subsystem]`: CP subsystem is reset.
+
+|Streaming Job Logs
+|* `MC-9001 [Streaming]`: Job is restarted.
+* `MC-9002 [Streaming]`: Job is suspended.
+* `MC-9003 [Streaming]`: Job is resumed.
+* `MC-9004 [Streaming]`: Job is cancelled.
+* `MC-9005 [Streaming]`: Job snapshot is deleted.
+* `MC-9006 [Streaming]`: Job snapshot is exported.
+* `MC-9007 [Streaming]`: Job is cancelled and snapshot is exported.
+
+|===
+
+=== Writing Audit Logs to Rolling Files
+
+To write audit logs to separate rolling log files, you can use a Log4j configuration file such as the following:
+
+[source,properties]
+----
+appender.console.type=Console
+appender.console.name=STDOUT
+appender.console.layout.type=PatternLayout
+appender.console.layout.pattern=%d [%highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
+
+appender.audit.type=RollingFile
+appender.audit.name=AuditFile
+appender.audit.fileName=${sys:user.home}/mc-logs/audit.log
+appender.audit.filePattern=${sys:user.home}/mc-logs/audit.%d{yyyy-MM-dd}.log
+appender.audit.layout.type=PatternLayout
+appender.audit.layout.pattern=%d [%5p] [%t] [%c{.1}]: %m%n
+appender.audit.policies.type = Policies
+appender.audit.policies.time.type = TimeBasedTriggeringPolicy
+
+logger.audit.name=hazelcast.auditlog
+logger.audit.level=info
+logger.audit.additivity=false
+logger.audit.appenderRef.audit.ref=AuditFile
+
+rootLogger.level=info
+rootLogger.appenderRef.stdout.ref=STDOUT
+----

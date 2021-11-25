@@ -23,11 +23,8 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     page-survey: https://www.surveymonkey.co.uk/r/NYGJNF9
-    imdg-javadoc: https://docs.hazelcast.org/docs/latest-dev/javadoc
-    imdg-samples: https://github.com/hazelcast/hazelcast-code-samples
+    javadoc: https://docs.hazelcast.org/docs/latest-dev/javadoc
     imdg-core: https://github.com/hazelcast/hazelcast/tree/master/hazelcast/src/main/java/com/hazelcast
-    imdg-ops-guide: https://hazelcast.com/resources/hazelcast-deployment-operations-guide/
-    jet-docs: https://jet-start.sh/
     docs-archive: 'https://hazelcast.org/imdg/download/archives/'
   extensions:
     - ./lib/tabs-block.js

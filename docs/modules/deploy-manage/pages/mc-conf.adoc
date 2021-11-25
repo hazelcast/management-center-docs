@@ -1,0 +1,204 @@
+= Management Center Configuration Tool
+:page-aliases: ROOT:mc-conf.adoc
+:description: The Management Center Configuration Tool (mc-conf) is a command line tool that allows you to update certain parts of the Management Center configuration by using its built-in tasks.
+
+The Management Center Configuration Tool (`mc-conf`) is a command line tool that allows you to update the Management Center configuration without using the UI.
+
+This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed and Management Center must not be running while using the tool.
+
+== Getting Started
+
+To use the `mc-conf` tool, execute the `mc-conf` script in the `bin/` directory of the Management Center distribution. This script is available as a shell script (`mc-conf.sh`) for Linux and macOS or a batch file (`mc-conf.bat`) for Windows.
+
+. Make sure that Management Center is not running.
++
+You cannot use this tool while Management Center is running.
+
+. To see all available commands, execute the `mc-conf` script with no
+arguments.
++
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh 
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh 
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat 
+----
+--
+====
++
+TIP: If you've set a non-default home directory with the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` system property], you must provide the path to the home directory with the `-H` or `--home` options.
+
+. To see documentation for a specific command, enter the command, followed by the `-h` flag.
++
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh user -h
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user -h
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user -h
+----
+--
+====
+
+. To see documentation for a specific task, enter the command, followed by the task and the `-h` flag.
++
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh user create -h
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user create -h
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user create -h
+----
+--
+====
+
+== Commands
+
+The `mc-conf` tool comes with the following commands. Each command includes tasks that you can execute.
+
+[cols="20%m,80%"]
+|===
+|Command|Description
+
+|cluster
+|Manage cluster connections. See xref:connecting-to-clusters-mc-conf.adoc[].
+
+|user
+|Manage users in the default security provider. See xref:local-security-provider.adoc[]
+
+|ldap
+|Manage the LDAP security provider. See xref:ldap.adoc[]
+
+|active-directory
+|Manage the Active Directory security provider. See xref:active-directory.adoc[]
+
+|jaas
+|Manage the JAAS security provider. See xref:jaas.adoc[]
+
+|oidc
+|Manage the OpenID Connect security provider. See xref:openid.adoc[]
+
+|saml
+|Manage the SAML security provider. See xref:saml.adoc[]
+
+|security
+|Manage security providers. See xref:switching-security-provider.adoc[]
+
+|set
+|Change settings in Management Center.
+
+|get
+|Read settings from Management Center.
+
+|dev-mode
+|Manage the dev mode security provider. See xref:dev-mode.adoc[]
+
+|===
+
+== Skipping the Check for a Lock File
+
+When you execute `mc-conf.sh` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` system property].
+
+[source,bash]
+----
+export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
+./mc-conf.sh ...
+----
+
+This system property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
+
+== Hiding Sensitive Configuration in the UI
+
+The `set sensitive-properties` task configures the sensitive properties that must not be shown in plain text in Management Center.
+`--hidden-properties` is a comma-separated list of member properties to be hidden in the member properties.
+`--masked-config-properties` is a comma-separated list of XPath expressions in the member configuration to be masked.
+
+== Secure Interactive Prompt for Passwords
+
+By default, passwords are displayed in the console as you type. If you want to hide your password from the console, you can use a secure interactive prompt.
+
+To use a secure interactive prompt, enter the `password` option without providing a value. For example, instead of
+`--password=<password>`, use `--password`.
+
+When you use the `--password` option without providing a value, you will get a prompt to enter a value on the console.
+
+```bash
+./mc-conf.sh user update-password --username=admin --password
+Enter value for --password (Password for the user record. Provide value directly,
+or use without value to enter securely with interactive prompt.): ********
+Successfully changed password for user 'admin'.
+```
+
+As you see in the above example, the password input is not echoed to the console
+since it is provided with the secure interactive mode.
+
+== Argument Files
+
+When an
+argument beginning with the character `@` is encountered, it is treated as a path
+leading to a text file. The contents of that file are automatically expanded into
+the current task. An example of the argument file usage is shown below.
+
+```bash
+./mc-conf.sh user update-password @arg-file.txt
+Successfully changed password for user 'admin'.
+cat arg-file.txt
+--username=admin --password=mnb3c4s0
+```
+
+

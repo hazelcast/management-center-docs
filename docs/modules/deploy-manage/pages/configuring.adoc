@@ -1,0 +1,90 @@
+= Configuring Management Center
+:description: You can use various options to configure the Management Center instance as well as the client that Management Center uses to connect to and interact with Hazelcast clusters.
+
+{description}
+
+For example, you may want to configure the client to connect to certain Hazelcast members. You may also want to configure the home directory of the Management Center instance to customize where metrics and other configuration data is saved.
+
+== Where Management Center Saves Data
+
+By default, Management Center saves the following data in the `hazlecast-mc` directory of the user's home directory:
+
+- Configuration settings
+- Metrics
+- SQL queries that were run from the SQL browser
+
+You can configure Management Center to save this data in a different location, using the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` system property].
+
+== Ways to Configure Management Center
+
+You can either configure Management Center in the UI while it's running or preconfigure it in the terminal so that it starts with the settings you need.
+
+.Configuration methods for Managment Center
+[cols="20%a,80%a"]
+|===
+|Configuration method|Use case
+
+|UI
+|Configure a running instance of Management Center. Use this method for the following:
+
+- Managing connections to clusters
+- Setting a security provider
+- Setting and updating license keys
+- Managing users in the local security provider
+- Updating map configuration
+
+|xref:system-properties.adoc[System properties] and environment variables
+|Configure any aspect of Management Center on start from the command line, including client configuration, feature flags, JMX, and home directory.
+
+|xref:mc-conf.adoc[`mc-conf` tool]
+|Preconfigure Management Center before starting it. Use this method for the following:
+
+- Managing connections to clusters
+- Setting and updating security providers
+- Managing users
+- Setting system properties 
+
+|===
+
+=== Configuring the Client 
+
+Because Management Center connects to Hazelcast clusters as a client, you can configure it, using the following methods:
+
+- A client configuration file (XML or YAML):
+** xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[UI]
+** xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`mc-conf` tool]
+- xref:system-properties.adoc#client-config[System properties] (only the client connection strategy)
+
+However, Management Center does not allow you to override the following settings:
+
+- `instance-name`: Set to the name of the cluster.
+- `connection-strategy.async-start`: Set to `true` so that Management Center starts without waiting to get a cluster connection.
+- `connection-strategy.cluster-connect-timeout-millis`: Set to infinity so that Management Center
+never gives up trying to connect to the cluster.
+- `network.smart-routing`: Set to `true` so that Management Center will open connections to all
+members.
+
+=== Member-Side Configuration
+
+On a Hazelcast member, you can also use the `management-center` setting to enable or disable both scripting and the console. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
+
+[[starting-with-an-extra-classpath]]
+== Providing an Extra Classpath
+
+To start Management Center with an extra classpath
+entry, use the
+following command:
+
+[source,bash,subs="attributes+"]
+----
+java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+----
+
+On Windows, use a semicolon instead of colon:
+
+[source,bash,subs="attributes+"]
+----
+java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+----
+
+

@@ -44,7 +44,7 @@ In these cases, it can be useful to query the build information to be able to te
 
 === Getting Build Information
 
-You can find version metadata about a running instance of Management Center at the following endpoint: `{mc-base-url}/api/buildInfo`.
+You can find version metadata about a running instance of Management Center at the following endpoint: `/api/buildInfo`.
 
 This endpoint returns JSON.
 
