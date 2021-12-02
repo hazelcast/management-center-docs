@@ -17,9 +17,9 @@ Clustered JMX enabled as shown below.
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=9999
--Dcom.sun.management.jmxremote.ssl=false -jar hazelcast-management-center-{full-version}.jar
+-Dcom.sun.management.jmxremote.ssl=false
 ----
 
 Once the Management Center starts, you should see a log
@@ -56,12 +56,11 @@ with a TLS/SSL enabled Clustered JMX service on port 65432:
 
 [source,bash,subs="attributes"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=65432
 -Dhazelcast.mc.jmx.ssl=true
 -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
 -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
--jar hazelcast-management-center-{full-version}.jar
 ----
 
 NOTE: You can encrypt the keystore password and pass it as a
@@ -91,7 +90,7 @@ with a TLS mutual authentication enabled Clustered JMX service on port 65432:
 
 [source,bash]
 ----
-java -Dhazelcast.mc.jmx.enabled=true
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.port=65432
 -Dhazelcast.mc.jmx.ssl=true
 -Dhazelcast.mc.jmx.mutualAuthentication=true
@@ -99,7 +98,6 @@ java -Dhazelcast.mc.jmx.enabled=true
 -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
 -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks
 -Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
--jar hazelcast-management-center-{full-version}.jar
 ----
 
 === Additional TLS/SSL Configuration Options

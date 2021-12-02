@@ -34,8 +34,8 @@ start the Management Center as shown below.
 
 [source,bash,subs="attributes+"]
 ----
-java -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
-    -Dhazelcast.mc.jmx.port=9999 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
+    -Dhazelcast.mc.jmx.port=9999
 ----
 
 If your logging level is set to `FINER`, you should see the log listing

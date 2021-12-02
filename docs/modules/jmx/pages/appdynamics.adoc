@@ -14,9 +14,9 @@ After installing AppDynamics agent, you can start the Management Center as shown
 
 [source,bash,subs="attributes+"]
 ----
-java -javaagent:/path/to/javaagent.jar \
+mc-start.sh -javaagent:/path/to/javaagent.jar \
      -Dhazelcast.mc.jmx.enabled=true \
-     -Dhazelcast.mc.jmx.port=9999 -jar hazelcast-management-center-{full-version}.jar
+     -Dhazelcast.mc.jmx.port=9999
 ----
 
 When the Management Center starts, you should see the logs below:

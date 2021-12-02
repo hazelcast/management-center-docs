@@ -26,18 +26,16 @@ Example of starting Management Center with specifying the metrics exported to Pr
 
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
-  -jar hazelcast-management-center-{full-version}.jar
 ----
 
 Example of starting Management Center with specifying the metrics to be excluded from the Prometheus export:
 
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
 ----
 
 By default, Prometheus connects via the same IP and port as the Management Center web interface. It is possible to
@@ -46,9 +44,8 @@ started Management Center as shown below:
 
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.port=2222 \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.port=2222
 ----
 
 Then, the Prometheus endpoint will be available at `http://localhost:2222/metrics`, which should be reflected by the

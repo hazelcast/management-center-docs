@@ -24,7 +24,7 @@ For example by using the command line parameter:
 
 [source,bash,subs="attributes+",specialchars"]
 ----
-java -Dhazelcast.mc.license=<key> -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.license=<key>
 ----
 
 When this option is used, the license provided takes precedence
@@ -36,21 +36,19 @@ This also means no new license can be stored when the property is used.
 [[starting-with-an-extra-classpath]]
 == Providing an Extra Classpath
 
+Management Center is distributed with an empty `bin/user-lib/` directory. You can put your libraries into this library to use them
+from Management Center, so any jar file in this directory will be added to the classpath.
+
 You can also start the Management Center with an extra classpath
 entry (for example, when using JAAS authentication) by using the
 following command:
 
 [source,bash,subs="attributes+"]
 ----
-java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+export MC_CLASSPATH="/path/to/an/extra.jar"
+mc-start.sh
 ----
 
-On Windows, the command becomes as follows (semicolon instead of colon):
-
-[source,bash,subs="attributes+"]
-----
-java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-----
 
 [[client-config]]
 == Configuring the Client Used by Management Center
@@ -155,7 +153,7 @@ using the `-Dhazelcast.mc.hostAddress` system property. Example:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.hostAddress=127.0.1.1
 ----
 
 With this setting, Management Center will be reachable on `http://127.0.1.1:8080` but won't listen on
@@ -180,7 +178,7 @@ a session timeout period of 1 minute:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.session.timeout.seconds=60
 ----
 
 If you have deployed the Management Center on an application
@@ -274,7 +272,7 @@ To encrypt data transmitted over all channels of the Management Center
 using TLS/SSL, make sure you do all of the following:
 
 * Deploy the Management Center on a TLS/SSL enabled container or start it from
-the command line with TLS/SSL enabled. See the <<enabling-tslssl-when-starting-with-jar-file, Enabling TLS/SSL section>> below.
+the command line with TLS/SSL enabled. See the <<enabling-tslssl-when-starting-with-script, Enabling TLS/SSL section>> below.
 ** Another option is to place the Management Center behind a TLS-enabled
 reverse proxy. In that case, make sure your reverse proxy sets the necessary
 HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
@@ -293,7 +291,7 @@ If its value is set to `true`, Management Center accepts and treats them
 as set by a reverse proxy in front of it, otherwise, they are ignored.
 Its default value is `true`.
 
-[[enabling-tslssl-when-starting-with-jar-file]]
+[[enabling-tslssl-when-starting-with-script]]
 === Enabling TLS/SSL When Starting with JAR File
 
 When you start the Management Center from the command line, it serves
@@ -314,9 +312,9 @@ TLS/SSL enabled from the command line:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true
+mc-start.sh -Dhazelcast.mc.tls.enabled=true
 -Dhazelcast.mc.tls.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.tls.keyStorePassword=yourpassword -jar hazelcast-management-center-{full-version}.jar
+-Dhazelcast.mc.tls.keyStorePassword=yourpassword
 ----
 
 You can access the Management Center from the following HTTPS URL on
@@ -346,11 +344,10 @@ command line option when starting the Management Center. For example:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.keyStore=/dir/to/certificate.jks \
      -Dhazelcast.mc.tls.keyStorePassword=yourpassword \
-     -Dhazelcast.mc.https.port=443 \
-     -jar hazelcast-management-center-{full-version}.jar
+     -Dhazelcast.mc.https.port=443
 ----
 
 This starts the Management Center on HTTPS port 443.
@@ -428,11 +425,10 @@ See the below snippet to see the full command to start the Management Center:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.trustStore=path to your truststore \
      -Dhazelcast.mc.tls.trustStorePassword=password for your truststore \
-     -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED \
-     -jar hazelcast-management-center-{full-version}.jar
+     -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED
 ----
 
 The parameter `-Dhazelcast.mc.tls.mutualAuthentication` has two options:
@@ -521,9 +517,8 @@ is shown below:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-     -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+     -Dhazelcast.mc.security.dictionary.minWordLength=3 
 ----
 
 [[including-excluding-specific-cipher-suites]]
@@ -862,14 +857,12 @@ line arguments while starting the Management Center:
 
 [source,bash,subs="attributes+"]
 ----
-java \
- -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
+mc-start.sh -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
  -Dhazelcast.mc.configReplacer.prop.passwordFile=/opt/master-password \
  -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
  -Dhazelcast.mc.tls.enabled=true \
  -Dhazelcast.mc.tls.keyStore=/opt/mc.keystore \
- -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}' \
- -jar hazelcast-management-center-{full-version}.jar
+ -Dhazelcast.mc.tls.keyStorePassword='$ENC{wJxe1vfHTgg=:531:WkAEdSi//YWEbwvVNoU9mUyZ0DE49acJeaJmGalHHfA=}'
 ----
 
 === PropertyReplacer
