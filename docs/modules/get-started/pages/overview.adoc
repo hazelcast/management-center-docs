@@ -1,0 +1,131 @@
+= Overview
+[[overview]]
+
+Management Center is a tool to manage and monitor Hazelcast clusters.
+It features a graphical user interface that helps you to:
+
+* monitor the performance of your clusters
+* see statistical information about your members, clients and data structures
+* run SQL queries on your clusters
+* perform administrative tasks such as identifying and diagnosing issues in the clusters.
+
+You can enable the REST API to use REST calls to return the
+information presented in Management Center. You can also
+monitor cluster statistics from a JMX interface and Prometheus.
+
+== Requirements
+
+You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
+
+Management Center uses RocksDB library to store metrics
+data on disk. Because of that dependency, macOS users have to be on at least 10.15
+version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
+installed. Otherwise, you can use the official Management Center docker image.
+
+=== Hazelcast Compatibility
+
+Management Center supports Hazelcast 5.0.x and Hazelcast IMDG 4.2.x clusters.
+
+[[browser-compatibility]]
+=== Browser Compatibility
+
+Hazelcast Management Center is tested and works on the following browsers:
+
+* Last two versions of Chrome at the time of release
+* Last two versions of Firefox at the time of release
+* Latest Safari
+* Internet Explorer 11
+* Latest Microsoft Edge
+
+=== System Requirements
+
+Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
+
+Experimental support for AIX is provided as well, with the following prerequisites:
+
+* AIX version is 7.2 or newer
+* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
+* `glibc` version is 2.17 or newer
+* JRE 1.8 or newer is installed
+* `libsnappy` 1.8.0 or newer is installed
+
+== Licensing
+
+If you don't have a Management Center license, then it shows metrics for clusters up to three members.
+
+A valid Management Center license is required for:
+
+* Clustered JMX
+* Clustered REST (API)
+* Cluster Client Filtering
+* Prometheus Exporter
+
+And some Management Center features rely on your Hazelcast Platform's Enterprise capabilities:
+
+* WAN Replication
+* Persistence (Hot Restart)
+* Rolling Upgrade
+
+You need to have a valid license for your Hazelcast Platform to be able to manage and monitor the above.
+
+== Support
+
+Support is provided via the following channels:
+
+* xref:troubleshooting.adoc[Troubleshooting page] of this guide
+* https://stackoverflow.com/questions/tagged/hazelcast[Stack Overflow]
+(ask a question about how to use Management Center properly and troubleshoot your setup)
+* https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
+(propose features and discuss your ideas with the team)
+* https://slack.hazelcast.com/[Hazelcast community Slack]
+(discuss anything related to Hazelcast and Management Center with other
+Hazelcast users and Hazelcast developers)
+
+== Phone Home
+[[phone-home]]
+
+Hazelcast uses phone home data to learn about usage of Hazelcast Management Center.
+
+Hazelcast Management Center instances initially call our phone home server 30 minutes
+after they are started and once every 24 hours thereafter.
+
+**What is sent in?**
+
+The following information is sent in a phone home:
+
+* Hazelcast Management Center version
+* Authentication provider used (Local, LDAP, ActiveDirectory, JAAS)
+* Whether clustered REST is enabled or not
+* Whether clustered JMX is enabled or not
+* Whether TLS is enabled or not
+** If TLS is enabled, whether mutual authentication is enabled or not
+* Whether Management Center is deployed on an application server or used in standalone mode
+** If not in standalone mode, type of the application server
+* Number of users (if the Local security provider is used)
+* Number of clusters
+* Management Center uptime
+* Minimum and maximum cluster sizes
+* Minimum and maximum cluster versions
+* Total number of members
+* Size of the Hazelcast Management Center home directory
+* Hash value of Hazelcast Management Center license key
+* Environment Information:
+** Name of operating system
+** Version of installed Java
+
+For each user login, we store the following information and send it in a phone home:
+
+* Browser (Chrome, Firefox, IE etc.)
+* Browser major version
+* Operating system
+* Operating system version
+* Screen height and width
+* Window height and width
+
+**Disabling Phone Homes:**
+
+Set the `hazelcast.mc.phone.home.enabled` system property to false on the Java command line.
+
+**Phone Home URL:**
+
+\http://phonehome.hazelcast.com/pingMc

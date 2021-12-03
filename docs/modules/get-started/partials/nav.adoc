@@ -1,0 +1,8 @@
+** xref:get-started:overview.adoc[]
+** xref:get-started:install.adoc[]
+** Start a Local Management Center
+*** xref:get-started:start-opensource.adoc[]
+*** xref:get-started:start-enterprise.adoc[]
+** User Interface Overview
+*** xref:user-interface.adoc[Menu and Toolbar]
+*** xref:monitor-imdg:widget.adoc[]

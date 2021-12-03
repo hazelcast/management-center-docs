@@ -1,0 +1,56 @@
+= Enterprise
+[[enterprise]]
+
+This tutorial allows you to start a licensed Management Center using Docker. It covers the following steps:
+
+* Start a Hazelcast Enterprise cluster on which security is enabled (TLS) with five members
+* Start Management Center on your local and install the Enterprise license
+* Connect Management Center to the cluster
+* Create a map and query it using the SQL browser console
+* Monitor the map
+
+For convenience, the tutorial uses Docker for starting a Hazelcast cluster and Management Center.
+
+== Step 1. Start a Hazelcast Enterprise Cluster
+
+In this step, you will first create an Enterprise member with TLS enabled.
+
+. For this, a sample key material (self-signed certificate) must be created beforehand,
+using the following commands on your terminal:
++
+[source,shell]
+----
+mkdir keystore
+keytool -validity 365 -genkeypair -alias server -keyalg EC -keystore ./keystore/server.keystore -storepass 123456 -keypass 123456 -dname CN=localhost
+keytool -export -alias server -keystore ./keystore/server.keystore -storepass 123456 -file ./keystore/server.crt
+keytool -import -noprompt -alias server -keystore ./keystore/server.truststore -storepass 123456 -file ./keystore/server.crt
+----
+. After you saw `Certificate was added to keystore` log on the terminal, create
+a Docker network called `hazelcast-network`:
++
+[source,shell]
+----
+docker network create hazelcast-network
+----
+. To start a member with TLS enabled, run the following command:
++
+[source,shell]
+----
+docker run --name first-member --network hazelcast-network \
+    -e HZ_LICENSEKEY=<your Enterprise license key> \
+    -e HZ_NETWORK_SSL_ENABLED=true \
+    -v `pwd`/keystore:/keystore \
+    -e "JAVA_OPTS=-Djavax.net.ssl.keyStore=/keystore/server.keystore -Djavax.net.ssl.keyStorePassword=123456
+    -Djavax.net.ssl.trustStore=/keystore/server.truststore -Djavax.net.ssl.trustStorePassword=123456" \
+    -p 5701:5701 hazelcast/hazelcast-enterprise:5.0
+----
+. Start other four members by rerunning the above Docker command; change the value of `name` parameter as `second-member`, `third-member`, etc.
+and port (`p`) as `5702:5701`, `5703:5701`, etc.
+
+== Step 2. Start Management Center
+
+???
+
+
+
+
