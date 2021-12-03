@@ -72,7 +72,7 @@ You need to have a valid license for your Hazelcast Platform to be able to manag
 
 Support is provided via the following channels:
 
-* xref:troubleshooting.adoc[Troubleshooting page] of this guide
+* xref:ROOF:troubleshooting.adoc[Troubleshooting page] of this guide
 * https://stackoverflow.com/questions/tagged/hazelcast[Stack Overflow]
 (ask a question about how to use Management Center properly and troubleshoot your setup)
 * https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]

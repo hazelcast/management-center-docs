@@ -84,10 +84,10 @@ The above command starts Management Center on port `8083` and context path `haze
 You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
 
 The next step is to let Management Center know the Hazelcast cluster member addresses
-as explained in the xref:connecting-members.adoc[Connecting to the Clusters chapter].
+as explained in the xref:ROOT:connecting-members.adoc[Connecting to the Clusters chapter].
 
 For the options you can provide when starting with the
-command line, see xref:configuring.adoc[Configuring Management Center].
+command line, see xref:ROOT:configuring.adoc[Configuring Management Center].
 For example, you can learn about topics including how to start with a
 license or extra classpath, how to configure the security,
 disk usage, update interval or logging.
