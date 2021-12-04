@@ -3,54 +3,137 @@
 
 This tutorial allows you to start a licensed Management Center using Docker. It covers the following steps:
 
-* Start a Hazelcast Enterprise cluster on which security is enabled (TLS) with five members
-* Start Management Center on your local and install the Enterprise license
+* Start a Hazelcast Enterprise cluster
+* Start a local Management Center with TLS enabled
 * Connect Management Center to the cluster
-* Create a map and query it using the SQL browser console
-* Monitor the map
 
 For convenience, the tutorial uses Docker for starting a Hazelcast cluster and Management Center.
 
+== Before You Begin
+
+To complete this tutorial, you need the following:
+
+[cols="1a,1a"]
+|===
+|Prerequisites|Useful resources
+
+|Docker
+|
+link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac]
+
+link:https://docs.docker.com/engine/install/[Install Docker for Linux]
+
+link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Windows]
+
+|Trial license
+|https://trialrequest.hazelcast.com/[Hazelcast website]
+
+|Docker image for the full Hazelcast distribution
+|xref:get-started-enterprise.adoc[Install Hazelcast Enterprise]
+
+|Downloaded and extracted binary package of the Management Center distribution
+|xref:install.adoc#using-binary-packages[Install Management Center]
+
+|===
+
 == Step 1. Start a Hazelcast Enterprise Cluster
 
-In this step, you will first create an Enterprise member with TLS enabled.
+In this step, you create a four-member Enterprise cluster.
 
-. For this, a sample key material (self-signed certificate) must be created beforehand,
-using the following commands on your terminal:
-+
-[source,shell]
-----
-mkdir keystore
-keytool -validity 365 -genkeypair -alias server -keyalg EC -keystore ./keystore/server.keystore -storepass 123456 -keypass 123456 -dname CN=localhost
-keytool -export -alias server -keystore ./keystore/server.keystore -storepass 123456 -file ./keystore/server.crt
-keytool -import -noprompt -alias server -keystore ./keystore/server.truststore -storepass 123456 -file ./keystore/server.crt
-----
-. After you saw `Certificate was added to keystore` log on the terminal, create
-a Docker network called `hazelcast-network`:
+. Create a new Docker network called `hazelcast-network`.
 +
 [source,shell]
 ----
 docker network create hazelcast-network
 ----
-. To start a member with TLS enabled, run the following command:
++
+Docker networks make it easier for you to connect to your cluster and add other services that need to communicate with your cluster.
+. To start the first member, run the following Docker command on a terminal.
 +
 [source,shell]
 ----
-docker run --name first-member --network hazelcast-network \
-    -e HZ_LICENSEKEY=<your Enterprise license key> \
-    -e HZ_NETWORK_SSL_ENABLED=true \
-    -v `pwd`/keystore:/keystore \
-    -e "JAVA_OPTS=-Djavax.net.ssl.keyStore=/keystore/server.keystore -Djavax.net.ssl.keyStorePassword=123456
-    -Djavax.net.ssl.trustStore=/keystore/server.truststore -Djavax.net.ssl.trustStorePassword=123456" \
+docker run --network hazelcast-network \
+    -e HZ_LICENSEKEY=<your license key> \
+    -e HZ_CLUSTERNAME=hello-world \
+    -e HZ_JET_ENABLED=true \
     -p 5701:5701 hazelcast/hazelcast-enterprise:5.0
 ----
-. Start other four members by rerunning the above Docker command; change the value of `name` parameter as `second-member`, `third-member`, etc.
-and port (`p`) as `5702:5701`, `5703:5701`, etc.
++ 
+Note the `HZ_JET_ENABLED=true` variable; this enables the Jet engine since you are going to use SQL to create a map. 
+. Run the above Docker command in three other terminals, changing the port parameters as `5702:5701`, `5703:5701`, and `5704:5701`.
+
+You should see the cluster with four members is formed on the first member's terminal:
+
+[source,shell]
+----
+2021-12-03 10:26:16,118 [ INFO] [hz.flamboyant_satoshi.generic-operation.thread-2] [c.h.i.c.ClusterService]: [172.18.0.5]:5701 [hello-world] [5.0] 
+
+Members {size:4, ver:4} [
+	Member [172.18.0.2]:5701 - fb15e2b5-2b6f-4821-84c6-2274b85cc4cf
+	Member [172.18.0.3]:5701 - 2bdf46d4-14db-49d3-8d55-2509bddc38ae
+	Member [172.18.0.4]:5701 - 88e5e826-ced1-41fd-91e0-05b475a87886
+	Member [172.18.0.5]:5701 - 10b09c18-63f4-4076-81c7-eb0490c6ed1a this
+]
+
+2021-12-03 10:26:17,114 [ INFO] [main] [c.h.c.LifecycleService]: [172.18.0.5]:5701 [hello-world] [5.0] [172.18.0.5]:5701 is STARTED
+----
 
 == Step 2. Start Management Center
 
-???
+In this step, we are going to start a local Management Center service with TLS enabled.
+To be able to use TLS, a key material is required; we will use a self-signed certificate for this purpose.
 
+. Create a directory in which the certificate will reside.
++
+[source,shell]
+----
+mkdir keystore
+----
+. Create the key pairs.
++
+[source,shell]
+----
+keytool -validity 365 -genkeypair -alias server -keyalg EC -keystore ./keystore/server.keystore -storepass 123456 -keypass 123456 -dname CN=localhost
+----
+. Store the certificate in a file (`server.crt`).
++
+[source,shell]
+----
+keytool -export -alias server -keystore ./keystore/server.keystore -storepass 123456 -file ./keystore/server.crt
+----
+. Add the certificate to keystore.
++
+[source,shell]
+---- 
+keytool -import -noprompt -alias server -keystore ./keystore/server.truststore -storepass 123456 -file ./keystore/server.crt
+----
+. Your self-signed certificate is now ready to use. Go to the directory where you extracted the Management Center binary package
+and start Management Center.
++
+[source,shell]
+----
+java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=<path to the directory that contains the keystore directory>/keystore/server.keystore -Dhazelcast.mc.tls.keyStorePassword=123456 -jar hazelcast-management-center-5.0.jar
+----
 
+On the terminal, you should see a log message showing that Management Center is started.
 
+[source,shell]
+----
+Hazelcast Management Center successfully started at https://localhost:8443/
+----
 
+== Step 3. Connect Management Center to Cluster
+
+. On your preferred browser, go to \https://localhost:8443/ and enable the Dev Mode.
++
+NOTE: The browser may show the "Your connection is not secure" message. This is because of the
+self-signed certificate not being trusted by the browser. You can fix this by adding this certificate
+to the trusted certificates list of the browser (usually by clicking on "Not Secure" on the address bar and
+selecting "Always Trust" for the `localhost` listing).
+. You will see a "Connect" box on the screen; click on it and enter the cluster’s name (hello-world) and IP addresses of four members.
++
+image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cluster]
+. You should see the established connection between the secured Management Center and Enterprise cluster once the "Connect" button is hit:
++
+image:ROOT:mc-connects-ee-cluster.png[Management Center is connected]
+. From now on, you can work on Management Center as described in xref:open-source.adoc#step-3-create-a-map[creating a map] and xref:open-source.adoc#step-5-query-the-map[querying it].

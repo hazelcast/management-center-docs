@@ -1,9 +1,6 @@
 * Get Started
 include::get-started:partial$nav.adoc[]
 
-
-* xref:getting-started.adoc[]
-
 * xref:configuring.adoc[]
 
 include::launching:partial$launching-nav.adoc[]
