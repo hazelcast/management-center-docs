@@ -29,7 +29,7 @@ link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Wind
 |https://trialrequest.hazelcast.com/[Hazelcast website]
 
 |Docker image for the full Hazelcast distribution
-|xref:get-started-enterprise.adoc[Install Hazelcast Enterprise]
+|xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-enterprise.adoc[Install Hazelcast Enterprise]
 
 |Downloaded and extracted binary package of the Management Center distribution
 |xref:install.adoc#using-binary-packages[Install Management Center]
@@ -136,4 +136,4 @@ image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cl
 . You should see the established connection between the secured Management Center and Enterprise cluster once the "Connect" button is hit:
 +
 image:ROOT:mc-connects-ee-cluster.png[Management Center is connected]
-. From now on, you can work on Management Center as described in xref:open-source.adoc#step-3-create-a-map[creating a map] and xref:open-source.adoc#step-5-query-the-map[querying it].
+. From now on, you can work on Management Center as described in xref:start-opensource.adoc#step-3-create-a-map[creating a map] and xref:start-opensource.adoc#step-5-query-the-map[querying it].
