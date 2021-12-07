@@ -222,7 +222,7 @@ You can use this task for various scripting purposes, and automatically configur
 
 == Configuring Dev Mode Security Provider
 
-The `dev-mode` configure task configures the Dev Mode security provider.
+The `dev-mode configure` task configures the Dev Mode security provider.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without the need for a manual security provider configuration through UI.
 
