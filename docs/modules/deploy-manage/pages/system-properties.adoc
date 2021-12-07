@@ -174,6 +174,104 @@ login period in seconds. Default: `5`. See xref:sessions.adoc[].
 java -Dhazelcast.mc.initialDisableLoginPeriod=50 -jar hazelcast-management-center-{full-version}.jar
 ----
 
+|[[hazelcast-mc-jmx-enabled]]hazelcast.mc.jmx.enabled
+|Whether the clustered JMX service is enabled. Default: `false`. See xref:integrate:jmx.adoc[].
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.enabled=true -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-host]]hazelcast.mc.jmx.host
+|Hostname/IP address of the JMX host machine. This is used by the JMX client to connect back into JMX, so the given host must be accessible from the host machine that runs the JMX client. Default: Server's hostname.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.host=127.0.0.1 -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-mutualauthentication]]hazelcast.mc.jmx.mutualAuthentication
+|Whether mutual authentication is enabled for the JMX interface. Default: `false`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.mutualAuthentication=false -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-port]]hazelcast.mc.jmx.port
+|Port on which the clustered JMX service is exposed. Default: `9999`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.port=9000 -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-rmi-port]]hazelcast.mc.jmx.rmi.port
+|Port on which the Java process that you want to monitor listens for incoming connections from the client (Remote management applications) such as JConsole . For monitoring a local Java process, there is no need to specify the JMX RMI port number. Default: `9998`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.rmi.port=9001 -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl]]hazelcast.mc.jmx.ssl
+|Whether TLS/SSL is enabled for communication between the JMX interface and JMX clients. Default: `false`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl=true -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-keystore]]hazelcast.mc.jmx.ssl.keyStore
+|Path to a keystore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-keystorepassword]]hazelcast.mc.jmx.ssl.keyStorePassword
+|Password for the keystore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-truststore]]hazelcast.mc.jmx.ssl.trustStore
+|Path to a truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-truststorepassword]]hazelcast.mc.jmx.ssl.trustStorePassword
+|Password for the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-keystoretype]]hazelcast.mc.jmx.ssl.keyStoreType
+|Type of the keystore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.keyStoreType=JKS -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-jmx-ssl-keymanageralgorithm]]hazelcast.mc.jmx.ssl.keyManagerAlgorithm
+|Name of the algorithm based
+on which the authentication keys are provided. You can find out the default by calling
+the `javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method. Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=JKS -jar hazelcast-management-center-{full-version}.jar
+----
+
 |[[hazelcast-mc-ldap-timeout]]hazelcast.mc.ldap.timeout
 |Timeout in milliseconds for Active Directory and LDAP search queries. Default: `3000`.
 |
