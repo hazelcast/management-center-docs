@@ -11,7 +11,6 @@
 * xref:deploy-manage:security.adoc[Security]
 ** xref:deploy-manage:tls-security.adoc[]
 *** xref:deploy-manage:serving-https.adoc[]
-*** xref:deploy-manage:serve-mc-over-https.adoc[Tutorial]
 ** xref:deploy-manage:security-providers.adoc[]
 *** xref:deploy-manage:dev-mode.adoc[]
 *** xref:deploy-manage:active-directory.adoc[]
