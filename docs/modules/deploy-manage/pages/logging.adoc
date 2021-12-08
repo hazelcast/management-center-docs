@@ -63,7 +63,7 @@ rootLogger.appenderRef.stdout.ref = STDOUT
 == Changing the Log Level
 
 To change the logging level for all loggers, start
-Management Center with the `hazelcast.mc.log.level` system property. For example, to use the debug logging level, start Management Center with the following line:
+Management Center with the `hazelcast.mc.log.level` property. For example, to use the debug logging level, start Management Center with the following line:
 
 ```bash
 -Dhazelcast.mc.log.level=debug
@@ -73,7 +73,7 @@ Management Center with the `hazelcast.mc.log.level` system property. For example
 
 To further customize the logging configuration, you can create a custom
 Log4j configuration file and start Management Center with
-the `log4j.configurationFile` system property.
+the `log4j.configurationFile` property.
 
 For example, you can create a file named `log4j2-custom.properties` with the following
 content and set logging level to `DEBUG`.
@@ -120,7 +120,7 @@ rootLogger.appenderRef.rolling.ref=RollingFile
 
 To make it easier to examine suspicious activity and troubleshoot issues, you can use audit logging to keep a record of events that happen in Management Center such as user logins.
 
-To enable audit logging, start Management Center with the xref:system-properties.adoc#hazelcast-mc-auditlog-enabled[`hazelcast.mc.auditlog.enabled` system property] set to `true`.
+To enable audit logging, start Management Center with the xref:system-properties.adoc#hazelcast-mc-auditlog-enabled[`hazelcast.mc.auditlog.enabled` property] set to `true`.
 
 Log entries from the audit logging will be marked with the
 `hazelcast.auditlog` logging category, abbreviated as `h.auditlog` in logs.

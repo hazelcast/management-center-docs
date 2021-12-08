@@ -152,7 +152,7 @@ key persistence (when the pre-load feature is enabled).
 
 NOTE: Please note that you can configure the time interval for which
 the client statistics are collected and sent to the cluster,
-using the system property  `hazelcast.client.statistics.period.seconds`.
+using the property  `hazelcast.client.statistics.period.seconds`.
 See the
 xref:{page-latest-supported-hazelcast}@hazelcast:clients:java.adoc#client-system-properties[System Properties section]
 in the Hazelcast documentation for more information.

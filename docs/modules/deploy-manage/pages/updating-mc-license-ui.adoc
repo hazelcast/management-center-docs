@@ -36,4 +36,4 @@ xref:clusters:cluster-license.adoc[View the license that's installed on the Haze
 
 Use the REST API to xref:clustered-rest.adoc#retrieving-management-center-license-expiration-time[get details about license expiration times].
 
-Start Management Center with the xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` system property] to override any Management Center Enterprise license for Management Center that's already installed.
+Start Management Center with the xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] to override any Management Center Enterprise license for Management Center that's already installed.

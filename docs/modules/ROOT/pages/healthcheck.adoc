@@ -23,4 +23,4 @@ It performs the following checks:
 
 Starting from version 5.0, Management Center periodically runs the Health Check report, and displays the number of problems
 found in a warning on the UI. This behavior can be disabled by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
-system property to `false`.
+property to `false`.

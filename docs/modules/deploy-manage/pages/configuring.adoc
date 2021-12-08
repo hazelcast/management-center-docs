@@ -13,7 +13,7 @@ By default, Management Center saves the following data in the `hazlecast-mc` dir
 - Metrics
 - SQL queries that were run from the SQL browser
 
-You can configure Management Center to save this data in a different location, using the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` system property].
+You can configure Management Center to save this data in a different location, using the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` property].
 
 == Ways to Configure Management Center
 

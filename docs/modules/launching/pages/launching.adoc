@@ -41,7 +41,7 @@ Here you can enter your license key and press the **Update License** button, as 
 
 image:ROOT:ManageLicense.png[Providing License for Management Center]
 
-Note that a license can likewise be provided using the system property
+Note that a license can likewise be provided using the property
 `hazelcast.mc.license` (see the xref:ROOT:configuring.adoc#starting-with-a-license[Starting with a License section] for details).
 
 When you try to connect to a cluster that has more than three members without entering a license
@@ -54,7 +54,7 @@ works if your cluster has **at most** three members.
 
 The Management Center creates a folder with the name `hazelcast-mc` under your user's home
 folder to save data files and above settings/license information. You can change the data
-folder by setting the `hazelcast.mc.home` system property.
+folder by setting the `hazelcast.mc.home` property.
 
 Now, let's see the details of security provider configurations and Dev Mode
 in the following subsections.

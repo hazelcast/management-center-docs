@@ -2,7 +2,7 @@
 [[management-center-prometheus-exporter]]
 
 Hazelcast Management Center can expose the metrics collected from cluster members to https://prometheus.io/[Prometheus^]. This
-feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+feature can be turned on by setting the `hazelcast.mc.prometheusExporter.enabled` property to `true`.
 
 Prometheus can be configured to scrape Management Center in `prometheus.yml` as follows:
 
@@ -41,7 +41,7 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
 ----
 
 By default, Prometheus connects via the same IP and port as the Management Center web interface. It is possible to
-override the port number using the `-Dhazelcast.mc.prometheusExporter.port` system property. Let's say you have
+override the port number using the `-Dhazelcast.mc.prometheusExporter.port` property. Let's say you have
 started Management Center as shown below:
 
 [source,bash,subs="attributes+"]

@@ -43,7 +43,7 @@ If you want to use a self-signed certificate, do one of the following:
 - Create the certificate with the hostname of the machine you will
 deploy the Management Center on.
 
-- Disable hostname verification with the following system property:
+- Disable hostname verification with the following property:
 +
 ```
 -Dhazelcast.mc.disableHostnameVerification=true
@@ -61,7 +61,7 @@ When using a self-signed certificate, your browser may warn you that the connect
 == Overrriding the Default HTTPS port
 
 To override the HTTPS port, you can use the `hazelcast.mc.https.port`
-system property when starting the Management Center. For example:
+property when starting the Management Center. For example:
 
 [source,bash,subs="attributes+"]
 ----
@@ -78,7 +78,7 @@ This starts the Management Center on HTTPS port 443.
 == Redirecting the HTTP Port to HTTPS
 
 By default, the HTTP port is disabled when you enable TLS. If you want to
-have an open HTTP port that redirects to the HTTPS port, set the xref:system-properties.adoc#hazelcast-mc-tls-enablehttpport[`hazelcast.mc.tls.enableHttpPort` system property] to `true`.
+have an open HTTP port that redirects to the HTTPS port, set the xref:system-properties.adoc#hazelcast-mc-tls-enablehttpport[`hazelcast.mc.tls.enableHttpPort` property] to `true`.
 
 ```
 -Dhazelcast.mc.tls.enableHttpPort=true
@@ -92,7 +92,7 @@ To make sure that only authenticated HTTP clients such as web browsers or cURL c
 When mutual authentication is enabled, HTTP clients need to present their own TLS certificate to Management Center before they are allowed to connect. You can store trusted clients' TLS certificates in the Management Center truststore so that it can authenticate them.
 
 To enable mutual authentication,
-you need to use the following system property:
+you need to use the following property:
 
 ```properties
 hazelcast.mc.tls.mutualAuthentication=REQUIRED

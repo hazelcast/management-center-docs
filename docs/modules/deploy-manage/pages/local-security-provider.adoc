@@ -92,14 +92,14 @@ passwords, you can use a dictionary.
 Each word must be on a new line and must contain at least three characters.
 
 . Start Management Center with the `hazelcast.mc.security.dictionary.path`
-system property where the path points to your text file.
+property where the path points to your text file.
 
 Words that are shorter
 than four characters are ignored to avoid blocking too many password
 combinations. You can configure
 the minimum length of words by starting Management Center with the
 `hazelcast.mc.security.dictionary.minWordLength`
-system property.
+property.
 
 [source,bash,subs="attributes+"]
 ----

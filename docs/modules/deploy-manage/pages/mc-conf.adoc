@@ -45,7 +45,7 @@ Windows::
 --
 ====
 +
-TIP: If you've set a non-default home directory with the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` system property], you must provide the path to the home directory with the `-H` or `--home` options.
+TIP: If you've set a non-default home directory with the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` property], you must provide the path to the home directory with the `-H` or `--home` options.
 
 . To see documentation for a specific command, enter the command, followed by the `-h` flag.
 +
@@ -152,7 +152,7 @@ The `mc-conf` tool comes with the following commands. Each command includes task
 
 == Skipping the Check for a Lock File
 
-When you execute `mc-conf.sh` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` system property].
+When you execute `mc-conf.sh` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` property].
 
 [source,bash]
 ----
@@ -160,7 +160,7 @@ export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
 ./mc-conf.sh ...
 ----
 
-This system property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
+This property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
 
 == Hiding Sensitive Configuration in the UI
 

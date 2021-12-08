@@ -48,7 +48,7 @@ example, `(&(objectClass=user)(userPrincipalName=\{0\}))` searches
 for a username that matches with the `userPrincipalName` attribute
 and member of the object class `user`.
 +
-NOTE: You can use the xref:system-properties.adoc#hazelcast-mc-ldap-timeout[`hazelcast.mc.ldap.timeout` system property] to
+NOTE: You can use the xref:system-properties.adoc#hazelcast-mc-ldap-timeout[`hazelcast.mc.ldap.timeout` property] to
 specify both connect and read timeout values for Active Directory search
 queries. It is in milliseconds and its default value is `3000` milliseconds.
 * **Admin Groups:** Members of this group and its nested groups

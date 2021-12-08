@@ -7,7 +7,7 @@ to allow you to monitor clustered statistics of distributed objects.
 == Enabling Clustered REST
 
 To enable Clustered REST on your Management Center, pass the
-following system property at startup. This property is disabled by default.
+following property at startup. This property is disabled by default.
 
 ```bash
 -Dhazelcast.mc.rest.enabled=true

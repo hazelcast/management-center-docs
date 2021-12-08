@@ -41,4 +41,4 @@ For each user login, we store the following information and send it in a phone h
 
 == Disabling Phone Homes
 
-Set the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` system property] to `false`.
+Set the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` property] to `false`.

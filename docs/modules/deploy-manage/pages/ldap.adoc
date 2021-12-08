@@ -58,7 +58,7 @@ To use more than one group, separate them with a semicolon (;).
 the users. For example, `uid=\{0\}` searches for a username that matches with
 the `uid` attribute.
 +
-NOTE: You can use the xref:system-properties.adoc#hazelcast-mc-ldap-timeout[`hazelcast.mc.ldap.timeout` system property] to
+NOTE: You can use the xref:system-properties.adoc#hazelcast-mc-ldap-timeout[`hazelcast.mc.ldap.timeout` property] to
 specify connect and read timeout values for LDAP search queries.
 It is in milliseconds and its default value is `3000` milliseconds.
 * **Group Search Filter:** LDAP search filter expression to search for
@@ -194,7 +194,7 @@ Center. This option is less secure. You should clear the environment
 variable once you make sure you can log in with your LDAP credentials
 to minimize the security risk.
 * If you're starting Management Center from the command line, you can
-start it with the `hazelcast.mc.askKeyStorePassword` system property. Management Center
+start it with the `hazelcast.mc.askKeyStorePassword` property. Management Center
 asks for the keystore password upon start and uses it as a password
 for the keystore it creates. This option is more secure as it only stores
 the keystore password in memory.
@@ -202,7 +202,7 @@ the keystore password in memory.
 By default, the Management Center creates a Java keystore file under the
 Management Center home directory with the name `mc.jceks`. You can
 change the location of this file by using the
-`hazelcast.mc.keyStore.path` system property.
+`hazelcast.mc.keyStore.path` property.
 
 [[configuring-an-external-java-keystore]]
 === Configuring an External Java KeyStore
