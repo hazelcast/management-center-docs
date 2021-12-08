@@ -15,4 +15,5 @@ asciidoc:
     page-toclevels: 1
     page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
 nav:
-- modules/ROOT/nav.adoc
+  - modules/ROOT/nav.adoc
+display-version: 5.1-SNAPSHOT
