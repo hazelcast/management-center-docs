@@ -1,0 +1,5 @@
+* Integrate
+** xref:integrate:integrations.adoc[]
+** xref:integrate:prometheus-monitoring.adoc[]
+** xref:integrate:jmx.adoc[]
+*** xref:integrate:jmx-api.adoc[]
