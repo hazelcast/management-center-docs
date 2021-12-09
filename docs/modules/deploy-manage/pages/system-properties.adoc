@@ -106,6 +106,50 @@ EXCLUDE_CIPHER_SUITES
 java -Dhazelcast.mc.exclude.cipher.suites=^.*_(MD5\|SHA\|SHA1)$,^TLS_RSA_.*$,^.*_NULL_.*$ -jar hazelcast-management-center-{full-version}.jar
 ----
 
+|[[hazelcast-mc-existingkeystore-path]]hazelcast.mc.existingKeyStore.path
+
+EXISTING_KEYSTORE_PATH
+|Path to an existing keystore. You do not have to set this property if you use a Hardware Security Module (HSM).
+Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.existingKeyStore.path=/path/to/existing/keyStore.jceks -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-existingkeystore-pass]]hazelcast.mc.existingKeyStore.pass
+
+EXISTING_KEYSTORE_PASS
+|Password for the keystore. You do not have to set this property if you use a Hardware Security Module (HSM) that provides another means to access the keystore.
+Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.existingKeyStore.pass=somepass -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-existingkeystore-type]]hazelcast.mc.existingKeyStore.type
+
+EXISTING_KEYSTORE_TYPE
+|Type of the keystore.
+Default: `JCEKS`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.existingKeyStore.type=JCEKS -jar hazelcast-management-center-{full-version}.jar
+----
+
+|[[hazelcast-mc-existingkeystore-provider]]hazelcast.mc.existingKeyStore.provider
+
+EXISTING_KEYSTORE_PROVIDER
+|Provider of the keystore. If you use a Hardware Security Module (HSM), specify the class name of your HSM’s `java.security.Provider`` implementation.
+Default: System provider.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.existingKeyStore.provider=com.yourprovider.MyProvider -jar hazelcast-management-center-{full-version}.jar
+----
+
 |[[hazelcast-mc-failedattemptsbeforedisablelogin]]hazelcast.mc.failedAttemptsBeforeDisableLogin
 
 FAILED_ATTEMPTS_BEFORE_DISABLE_LOGIN
@@ -381,6 +425,16 @@ PERSISTENT_STORE_TTL_DURATION
 java -Dhazelcast.mc.metrics.disk.ttl.duration=P2D -jar hazelcast-management-center-{full-version}.jar
 ----
 
+|[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
+
+PERIODIC_HEALTHCHECK_ENABLED
+|Whether Management Center generates a regular healthcheck report. Default: `true`. See xref:clusters:healthcheck.adoc[].
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.periodic.healthcheck.enabled=true -jar hazelcast-management-center-{full-version}.jar
+----
+
 |[[hazelcast-mc-phone-home-enabled]]hazelcast.mc.phone.home.enabled
 
 PHONE_HOME_ENABLED
@@ -578,6 +632,16 @@ Default: `OPTIONAL`.
 java -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED -jar hazelcast-management-center-{full-version}.jar
 ----
 
+|[[hazelcast-mc-useexistingkeystore]]hazelcast.mc.useExistingKeyStore
+
+USE_EXISTING_KEYSTORE
+|Enables use of an existing keystore.
+Default: `false`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.useExistingKeyStore=true -jar hazelcast-management-center-{full-version}.jar
+----
 
 |===
 
