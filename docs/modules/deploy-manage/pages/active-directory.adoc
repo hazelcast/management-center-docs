@@ -85,7 +85,7 @@ not only the local security provider.
 
 [tabs]
 ====
-Linux::
+Linux and macOS::
 +
 --
 
@@ -95,16 +95,7 @@ Linux::
 ----
 
 --
-macOS::
-+
---
 
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
-
---
 Windows::
 +
 --

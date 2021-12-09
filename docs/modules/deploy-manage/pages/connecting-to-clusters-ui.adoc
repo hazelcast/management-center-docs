@@ -9,7 +9,9 @@ To connect Management Center to a Hazelcast cluster from the UI, you have two op
 - Use the form fields.
 - Upload a client configuration file in XML or YAML format. (Recommended for more complex configurations.)
 +
-NOTE: If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to configure the client TLS settings. For more information about client TLS configuration, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[TLS] in the Platform documentation.
+If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to configure the client TLS settings. For more information about client TLS configuration, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[TLS] in the Platform documentation.
+
+NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
 == Using the Form Fields
 [[creating-a-cluster-configuration-using-form]]
@@ -21,8 +23,6 @@ NOTE: If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to
 image::ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 . Enter the name of the cluster that you want to connect to.
-+
-NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
 . Enter the hostnames or IP adresses of cluster members that you want to connect to. Press *Enter* after each address to add it to the list.
 +
@@ -43,7 +43,7 @@ You will see the following:
 |Field|Description
 
 |State
-|Current state of the cluster. See
+|Current state of the cluster.
 
 |Safe Members
 |Total number of members in the cluster.
@@ -56,8 +56,6 @@ You will see the following:
 If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
 
 To connect to another cluster, you can repeat these steps.
-
-NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
 == Using a Client Configuration File
 [[creating-a-cluster-configuration-by-uploading-file]]
@@ -133,7 +131,7 @@ You will see the following:
 |Field|Description
 
 |State
-|Current state of the cluster. See
+|Current state of the cluster.
 
 |Safe Members
 |Total number of members in the cluster.
@@ -146,8 +144,6 @@ You will see the following:
 If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
 
 To connect to another cluster, you can repeat these steps with a different configuration file.
-
-NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
 == Removing a Cluster Connection
 

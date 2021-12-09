@@ -26,7 +26,7 @@ For more information about configuring a client configuration file for TLS, see 
 
 == Environment Variables
 
-If you use the terminal to start Management Center for example by executing the JAR file or the `mc start` script, you can set the following environment variables:
+If you use the terminal to start Management Center for example by executing the JAR file or a script, you can set the following environment variables:
 
 [cols="20%m,80%a"]
 |===

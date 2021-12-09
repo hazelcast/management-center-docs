@@ -27,7 +27,7 @@ For a getting started guide, see xref:mc-conf.adoc[].
 You should see the following:
 +
 ```
-Successfully removed Cluster Config.
+Successfully added Cluster Config.
 ```
 
 . To provide the path to a client configuration file, use the following:
@@ -39,7 +39,7 @@ Successfully removed Cluster Config.
 You should see the following:
 +
 ```
-Successfully removed Cluster Config.
+Successfully added Cluster Config.
 ```
 +
 For help creating a client configuration file, see the link:https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-client-full-example.xml[full example references on GitHub]

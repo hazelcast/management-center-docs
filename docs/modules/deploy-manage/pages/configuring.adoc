@@ -11,7 +11,6 @@ By default, Management Center saves the following data in the `hazlecast-mc` dir
 
 - Configuration settings
 - Metrics
-- SQL queries that were run from the SQL browser
 
 You can configure Management Center to save this data in a different location, using the xref:system-properties.adoc#hazelcast-mc-home[`hazelcast.mc.home` property].
 
@@ -33,7 +32,7 @@ You can either configure Management Center in the UI while it's running or preco
 - Managing users in the local security provider
 - Updating map configuration
 
-|xref:system-properties.adoc[System properties] and environment variables
+|xref:system-properties.adoc[System properties and environment variables]
 |Configure any aspect of Management Center on start from the command line, including client configuration, feature flags, JMX, and home directory.
 
 |xref:mc-conf.adoc[`mc-conf` tool]
@@ -66,7 +65,7 @@ members.
 
 === Member-Side Configuration
 
-On a Hazelcast member, you can also use the `management-center` setting to enable or disable both scripting and the console. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
+On a Hazelcast member, you can also use the `management-center` setting to enable or disable both scripting and the console as well as setting up trusted interfaces. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
 
 [[starting-with-an-extra-classpath]]
 == Providing an Extra Classpath
