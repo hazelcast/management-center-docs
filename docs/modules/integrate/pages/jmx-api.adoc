@@ -1,28 +1,28 @@
-= Clustered JMX API
+= Clustered JMX Objects and Attributes
+:description: Explore all available objects and attributes that are available with the clustered JMX interface.
 
-The management beans are exposed with the following object name format:
+The clustered JMX interface exposes metrics as objects that have attributes.
 
-```plain
-ManagementCenter[`*cluster name*`]:type=<`*object type*`>,name=<`*object name*`>,member="<`*cluster member IP address*`>"
-```
-
-The object name starts with the `ManagementCenter` prefix. Then it has
-the cluster name in brackets followed by a colon. After that, `type`,
-`name` and `member` attributes follow, each separated with a comma.
-
-* `type` is the type of object. Values are `Clients`, `Executors`,
-`Maps`, `Members`, `MultiMaps`, `Queues`, `Counters`, `Services`, and `Topics`.
-* `name` is the name of object.
-* `member` is the member address of object (only required if the
-statistics are local to the member).
-
-A sample bean is shown below.
+Objects take the following format:
 
 ```plain
-ManagementCenter[dev]:type=Services,name=OperationService,member="192.168.2.79:5701"
+ManagementCenter[cluster name]:type=<object type>,name=<object name>,member="<cluster member IP address>"
 ```
 
-Here is the list of attributes that are exposed from the Clustered JMX interface.
+- `type`: Type of object such as `Clients` or `Executors`.
+- `name`: Name of object such as the name of a certain `Executor` object.
+- `member`: Member address of the object (only required if the
+metrics are local to the member).
+
+For example, this object is for a map called `myMap`, which has attributes such as `BackupEntryCount` and `Hits`.
+
+```plain
+ManagementCenter[dev]:type=Maps,name=myMap"
+```
+
+== JMX Attributes
+
+These are the object attributes that are exposed by the clustered JMX interface.
 
 * **ManagementCenter**
 * ManagementCenter

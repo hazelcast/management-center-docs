@@ -1,0 +1,153 @@
+= Prometheus Monitoring
+:description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. By collecting cluster metrics in Prometheus you can monitor Hazelcast along with your other applications in the same monitoring tool.
+:page-aliases: ROOT:prometheus.adoc
+
+{description}
+
+== Enabling the Prometheus Exporter
+
+To start exposing metrics to Prometheus, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+
+Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus metrics path.
+
+NOTE: All metrics are exported with the `hz_` prefix.
+
+== Configuring Prometheus
+
+After enabling the Prometheus exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
+
+TIP: For guidance, see the link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config[Prometheus configuration docs].
+
+To allow Prometheus to scrape metrics from Management Center, set the `static_configs.targets` parameter to the URL of your Management Center instance.
+
+[source,yaml]
+----
+scrape_configs:
+  - job_name: 'HZ MC'
+    # scheme defaults to HTTP.
+    static_configs:
+    - targets: ['localhost:8080'] # replace this address with the network address of Hazelcast Management Center
+----
+
+=== Authenticating the Scrape Endpoint
+
+To secure the scrape endpoint, you can set up basic authentication.
+
+To set up basic authentication, use the `set prometheus-auth` task of the `mc-conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
+
+[tabs]
+====
+Linux and macOS::
++
+--
+```bash
+mc-conf.sh set prometheus-auth <my-user> <my-pass>
+```
+--
+Windows::
++
+--
+```bash
+mc-conf.bat set prometheus-auth <my-user> <my-pass>
+```
+--
+====
+
+Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML file:
+
+[source,yaml]
+----
+  - job_name: 'HZ MC'
+    static_configs:
+    - targets: ['localhost:8080']
+    basic_auth:
+      username: my-user
+      password: my-pass
+----
+
+=== Resetting the Authentication Credentials
+
+To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `mc-conf` tool.
+
+WARNING: This task will also delete all users from the database.
+
+[tabs]
+====
+Linux and macOS::
++
+--
+```bash
+mc-conf.sh security reset
+```
+--
+Windows::
++
+--
+```bash
+mc-conf.bat security reset
+```
+--
+====
+
+== Filtering Metrics
+
+By default, Management Center exports all metrics that are reported by the cluster.
+
+To filter the metrics that are exposed to the scrape endpoint, use the `hazelcast.mc.prometheusExporter.filter.metrics.included`
+and `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties.
+
+For example, this configuation exposes only the following metrics:
+
+- `hz_topic_totalReceivedMessages`
+- `hz_map_totalPutLatency`
+
+[source,bash,subs="attributes+"]
+----
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
+  -jar hazelcast-management-center-{full-version}.jar
+----
+
+This configuation exposes all metrics except the following:
+
+- `hz_os_systemLoadAverage,hz_memory_freeHeap`
+
+[source,bash,subs="attributes+"]
+----
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
+  -jar hazelcast-management-center-{full-version}.jar
+----
+
+== Overriding the Default Port
+
+By default, metrics are exposed on the same port as the Management Center web interface. To
+override the port number, use the `-Dhazelcast.mc.prometheusExporter.port` system property.
+
+[source,bash,subs="attributes+"]
+----
+java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.port=2222 \
+  -jar hazelcast-management-center-{full-version}.jar
+----
+
+In this example, the Prometheus endpoint will be available at `http://localhost:2222/metrics`. To allow Prometheus to scrape metrics from Management Center, make sure to set the `static_configs.targets` parameter to this port.
+
+[source,yaml]
+----
+scrape_configs:
+  - job_name: 'HZ MC'
+    static_configs:
+    - targets: ['localhost:2222']
+----
+
+== Visualizing Metrics in Grafana
+
+To visualize Prometheus metrics in Grafana, you can start with
+https://grafana.com/grafana/dashboards/13183[this dashboard].
+
+== Next Steps
+
+Learn more about the xref:deploy-and-manage:mc-conf.adoc[`mc-conf` tool].
+
+Explore xref:deploy-and-manage:system-properties.adoc[system properties] and their definitions.

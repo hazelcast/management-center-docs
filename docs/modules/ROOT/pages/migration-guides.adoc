@@ -23,4 +23,4 @@ via Management Center:
 * `-Dhazelcast.mc.jmx.rmi.port=9001`
 * `-Dhazelcast.mc.jmx.host=localhost`
 
-See the xref:jmx:jmx.adoc[Clustered JMX via Management Center chapter].
+See the xref:integrate:jmx.adoc[Clustered JMX via Management Center chapter].
