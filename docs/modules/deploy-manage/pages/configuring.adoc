@@ -30,7 +30,6 @@ You can either configure Management Center in the UI while it's running or preco
 - Setting a security provider
 - Setting and updating license keys
 - Managing users in the local security provider
-- Updating map configuration
 
 |xref:system-properties.adoc[System properties and environment variables]
 |Configure any aspect of Management Center on start from the command line, including client configuration, feature flags, JMX, and home directory.
