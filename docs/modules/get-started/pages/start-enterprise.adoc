@@ -126,7 +126,7 @@ Hazelcast Management Center successfully started at https://localhost:8443/
 
 == Step 3. Connect Management Center to Cluster
 
-. On your preferred browser, go to \https://localhost:8443/ and enable the Dev Mode.
+. In your preferred browser, go to \https://localhost:8443/ and enable *Dev Mode*.
 +
 NOTE: The browser may show the "Your connection is not secure" message. This is because of the
 self-signed certificate not being trusted by the browser. You can fix this by adding this certificate
