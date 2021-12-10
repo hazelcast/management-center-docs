@@ -122,7 +122,7 @@ image:ROOT:MapStatistics.png[Map Statistics]
 
 == Step 5. Query the Map
 
-Go to the SQL browser using **SQL Browser** link on top of the screen and select "my_distributed_map"
+Click *SQL Browser* in the toolbar and select *my_distributed_map*
 in the `select a map` field. The browser puts the map's name in the default `SELECT * FROM` SQL command.
 
 Click on the "Execute Query" button; the result should look like the following:
