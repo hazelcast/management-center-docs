@@ -108,7 +108,7 @@ Then put some data into the map:
 SINK INTO my_distributed_map VALUES
    ('1', 'John'),
    ('2', 'Mary'),
-   > ('3', 'Jane');
+   ('3', 'Jane');
 ----
 
 Exit the SQL shell with the `exit` command.
