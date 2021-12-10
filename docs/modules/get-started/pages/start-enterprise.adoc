@@ -1,5 +1,4 @@
 = Enterprise
-[[enterprise]]
 
 This tutorial allows you to start a licensed Management Center using Docker. It covers the following steps:
 
