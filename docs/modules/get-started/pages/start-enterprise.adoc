@@ -117,7 +117,7 @@ and start Management Center.
 java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=<path to the directory that contains the keystore directory>/keystore/server.keystore -Dhazelcast.mc.tls.keyStorePassword=123456 -jar hazelcast-management-center-5.0.jar
 ----
 
-On the terminal, you should see a log message showing that Management Center is started.
+In the terminal, you should see a log message showing that Management Center is started.
 
 [source,shell]
 ----
