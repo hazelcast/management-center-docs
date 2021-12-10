@@ -2,7 +2,7 @@
 [[overview]]
 
 Management Center is a tool for managing and monitoring Hazelcast clusters.
-It features a graphical user interface that helps you to:
+For example, with the graphical user interface (UI), you can do the following:
 
 * monitor the performance of your clusters
 * see statistical information about your members, clients and data structures
