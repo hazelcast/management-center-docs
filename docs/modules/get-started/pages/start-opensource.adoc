@@ -1,7 +1,7 @@
 = Open Source
 [[open-source]]
 
-This tutorial allows you to start Management Center using Docker when you intend to use it without
+In this tutorial, you'll learn how to start an open-source edition of Management Center, using Docker.
 a license. It covers the following steps:
 
 * Start a cluster with three members
