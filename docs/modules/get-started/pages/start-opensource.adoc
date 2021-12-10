@@ -107,7 +107,7 @@ Then put some data into the map:
 ----
 SINK INTO my_distributed_map VALUES
    ('1', 'John'),
-   > ('2', 'Mary'),
+   ('2', 'Mary'),
    > ('3', 'Jane');
 ----
 
