@@ -1,4 +1,4 @@
-= Install
+= Install Management Center
 [[install]]
 
 This section guides you to install Management Center using its Docker images or
