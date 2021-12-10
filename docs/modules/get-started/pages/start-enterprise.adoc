@@ -131,7 +131,7 @@ Hazelcast Management Center successfully started at https://localhost:8443/
 NOTE: The browser may show the "Your connection is not secure" message. This is because of the
 self-signed certificate not being trusted by the browser. You can fix this by adding this certificate
 to the trusted certificates list of the browser (usually by clicking on *Not Secure* in the address bar and
-selecting "Always Trust" for the `localhost` listing).
+selecting *Always Trust* for the `localhost` listing).
 . Click *Connect* and enter your cluster’s name and the IP addresses of all cluster members.
 +
 image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cluster]
