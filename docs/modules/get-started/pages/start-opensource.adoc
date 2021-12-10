@@ -47,7 +47,7 @@ image:ROOT:Cluster.png[Cluster is created]
 
 Use the following command:
 
-[source,shell]
+[source,shell,subs="attributes+"]
 ----
 docker run --rm -p 8080:8080 hazelcast/management-center:5.0
 ----
