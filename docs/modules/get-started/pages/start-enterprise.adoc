@@ -133,7 +133,8 @@ selecting "Always Trust" for the `localhost` listing).
 . Click *Connect* and enter your cluster’s name and the IP addresses of all cluster members.
 +
 image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cluster]
-. You should see the established connection between the secured Management Center and Enterprise cluster once the "Connect" button is hit:
++
+You should see the established connection between the secured Management Center and Enterprise cluster.
 +
 image:ROOT:mc-connects-ee-cluster.png[Management Center is connected]
 . From now on, you can work on Management Center as described in xref:start-opensource.adoc#step-3-create-a-map[creating a map] and xref:start-opensource.adoc#step-5-query-the-map[querying it].
