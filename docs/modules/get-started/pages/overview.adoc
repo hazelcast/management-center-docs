@@ -1,7 +1,7 @@
 = Overview
 [[overview]]
 
-Management Center is a tool to manage and monitor Hazelcast clusters.
+Management Center is a tool for managing and monitoring Hazelcast clusters.
 It features a graphical user interface that helps you to:
 
 * monitor the performance of your clusters
