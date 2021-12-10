@@ -89,6 +89,7 @@ To be able to use TLS, a key material is required; we will use a self-signed cer
 ----
 mkdir keystore
 ----
+
 . Create the key pairs.
 +
 [source,shell]
