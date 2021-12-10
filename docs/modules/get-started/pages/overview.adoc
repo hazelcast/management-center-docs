@@ -6,7 +6,7 @@ For example, with the graphical user interface (UI), you can do the following:
 
 * Monitor the performance of your clusters.
 * See statistical information about your members, clients, and data structures.
-* run SQL queries on your clusters
+* Execute SQL queries on your clusters.
 * perform administrative tasks such as identifying and diagnosing issues in the clusters.
 
 You can enable the REST API to use REST calls to return the
