@@ -107,6 +107,8 @@ keytool -export -alias server -keystore ./keystore/server.keystore -storepass 12
 ---- 
 keytool -import -noprompt -alias server -keystore ./keystore/server.truststore -storepass 123456 -file ./keystore/server.crt
 ----
++
+Your self-signed certificate is now ready to use. 
 . Go to the directory where you extracted the Management Center binary package
 and start Management Center.
 +
