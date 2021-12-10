@@ -29,7 +29,7 @@ Please see more details at link:https://hub.docker.com/r/hazelcast/management-ce
 == Using Binary Packages
 
 Hazelcast Management Center is included in the Hazelcast download package.
-You can download it from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-imdg[download page]
+You can download it from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-platform[download page]
 of the Hazelcast website.
 
 When a new version of Hazelcast is released, it comes with a compatible version of Management Center.
