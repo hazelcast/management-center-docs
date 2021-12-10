@@ -87,7 +87,7 @@ The next step is to let Management Center know the Hazelcast cluster member addr
 as explained in the xref:ROOT:connecting-members.adoc[Connecting to the Clusters chapter].
 
 For the options you can provide when starting with the
-command line, see xref:ROOT:configuring.adoc[Configuring Management Center].
+command line, see xref:deploy-and-manage:system-properties.adoc[].
 For example, you can learn about topics including how to start with a
 license or extra classpath, how to configure the security,
 disk usage, update interval or logging.
