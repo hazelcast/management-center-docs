@@ -115,7 +115,7 @@ Exit the SQL shell with the `exit` command.
 
 == Step 4. Monitor the Map
 
-Go to **Storage > Maps** in Management Center, and select `my_distributed_map`
+Go to *Storage* > *Maps* in Management Center, and select *my_distributed_map*
 from the list of maps. You can now see the statistics of your map:
 
 image:ROOT:MapStatistics.png[Map Statistics]
