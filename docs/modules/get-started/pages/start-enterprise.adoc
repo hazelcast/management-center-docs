@@ -130,7 +130,7 @@ NOTE: The browser may show the "Your connection is not secure" message. This is 
 self-signed certificate not being trusted by the browser. You can fix this by adding this certificate
 to the trusted certificates list of the browser (usually by clicking on "Not Secure" on the address bar and
 selecting "Always Trust" for the `localhost` listing).
-. You will see a "Connect" box on the screen; click on it and enter the cluster’s name (hello-world) and IP addresses of four members.
+. Click *Connect* and enter your cluster’s name and the IP addresses of all cluster members.
 +
 image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cluster]
 . You should see the established connection between the secured Management Center and Enterprise cluster once the "Connect" button is hit:
