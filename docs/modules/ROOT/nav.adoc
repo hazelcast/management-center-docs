@@ -28,6 +28,8 @@ include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
 include::clusters:partial$nav.adoc[]
 --
 
+include::integrate:partial$nav.adoc[]
+
 * xref:sql-browser.adoc[]
 
 * xref:healthcheck.adoc[]

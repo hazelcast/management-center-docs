@@ -23,6 +23,17 @@ image:ROOT:MonitoringMaps.png[Monitoring Maps]
 
 The below subsections explain the portions of this window.
 
+[[clear-map]]
+=== Clear Data
+
+Use Clear Data button to remove all entries from the map.
+
+image:ROOT:ClearMapData.png[Clear Map Data View]
+
+Button opens confirmation modal. Type the map name into text field to confirm clearing out the map data.
+
+image:ROOT:ClearMapDataConfirmation.png[Clear Map Data Confirmation]
+
 [[map-browser]]
 === Map Browser
 
