@@ -1,8 +1,7 @@
 = Open Source
 [[open-source]]
 
-In this tutorial, you'll learn how to start an open-source edition of Management Center, using Docker.
-a license. It covers the following steps:
+In this tutorial, you'll learn how to start an open-source edition of Management Center, using Docker. You'll complete the following steps:
 
 * Start a cluster with three members
 * Start Management Center in Dev Mode on your local
@@ -23,6 +22,9 @@ To complete this tutorial, you need the following:
 |===
 |Prerequisites|Useful resources
 
+|Requirements and Compatibilities
+|xref:get-started:overview.adoc#requirements[Requirements]
+
 |Docker
 |
 link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac]
@@ -31,19 +33,15 @@ link:https://docs.docker.com/engine/install/[Install Docker for Linux]
 
 link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Windows]
 
+|A running Hazelcast cluster
+|xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-docker.adoc[Start a Hazelcast Cluster]
+
 |Docker image for the Management Center distribution
 |xref:install.adoc#using-docker[Install Management Center]
 
 |===
 
-== Step 1. Start a Hazelcast Cluster
-
-See xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-docker#step-1-start-a-local-member[here] to start a local member and use xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-docker#step-5-scale-your-cluster[this step] to have a named cluster with three members. Once you complete the steps, you should have a cluster with the name `hello-world` in a Docker network called `hazelcast-network`.
-The output on your terminal should look like the following:
-
-image:ROOT:Cluster.png[Cluster is created]
-
-== Step 2. Start Management Center
+== Step 1. Start Management Center
 
 Use the following command:
 
@@ -66,7 +64,7 @@ image:ROOT:DevModeHomePage.png[Dev Mode Page]
 
 See xref:launching:dev-mode.adoc[Dev Mode] for details on the development mode.
 
-== Connect to the Cluster
+== Step 2. Connect to the Cluster
 
 Click on the "Connect" box seen in the above screenshot
 
@@ -89,9 +87,9 @@ See xref:monitor-imdg:dashboard.adoc[here] for the details of cluster dashboard 
 Let's create a map in the cluster and put some data in it using SQL.
 In a new terminal, use the following Docker command to switch to the SQL shell:
 
-[source,shell]
+[source,shell,subs="attributes+"]
 ----
-docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0 hz-cli --targets hello-world@172.18.0.2:5701 sql
+docker run --network hazelcast-network -it --rm hazelcast/hazelcast:{full-version} hz-cli --targets hello-world@172.18.0.2:5701 sql
 ----
 
 In the SQL shell, create the map called `my_distributed_map` with the following command:

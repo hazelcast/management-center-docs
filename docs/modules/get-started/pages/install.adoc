@@ -1,4 +1,4 @@
-= Install Management Center
+= Installing and Starting Management Center
 [[install]]
 
 This section guides you to install Management Center using its Docker images or
@@ -22,6 +22,12 @@ docker version
 [source,bash,subs="attributes+"]
 ----
 docker pull hazelcast/management-center:{full-version}
+----
+. Start the Management Center service
++
+[source,shell,subs:"attributes+"]
+----
+docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 ----
 
 Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
