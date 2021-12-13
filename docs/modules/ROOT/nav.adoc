@@ -1,8 +1,5 @@
-* xref:index.adoc[Hazelcast Management Center Reference Manual]
-
-* xref:supported-environments.adoc[]
-
-* xref:getting-started.adoc[]
+* Get Started
+include::get-started:partial$nav.adoc[]
 
 * xref:configuring.adoc[]
 
@@ -41,8 +38,6 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 * xref:mc-conf.adoc[]
 
 * xref:high-availability.adoc[]
-
-* xref:phone-home.adoc[]
 
 * xref:troubleshooting.adoc[]
 

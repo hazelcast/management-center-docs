@@ -1,0 +1,119 @@
+= Enterprise
+
+In this tutorial, you'll learn how to start a licensed Management Center, using Docker. You'll complete the following steps:
+
+* Start a Hazelcast Enterprise cluster
+* Start a local Management Center with TLS enabled
+* Connect Management Center to the cluster
+
+For convenience, the tutorial uses Docker for starting a Hazelcast cluster and Management Center.
+
+== Before You Begin
+
+To complete this tutorial, you need the following:
+
+[cols="1a,1a"]
+|===
+|Prerequisites|Useful resources
+
+|Requirements and Compatibilities
+|xref:get-started:overview.adoc#requirements[Requirements]
+
+|Docker
+|
+link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac]
+
+link:https://docs.docker.com/engine/install/[Install Docker for Linux]
+
+link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Windows]
+
+|Trial license
+|https://trialrequest.hazelcast.com/[Hazelcast website]
+
+|A running Hazelcast Enterprise cluster
+|xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:start-ee-cluster.adoc[Start a Hazelcast Enterprise Cluster]
+
+|Downloaded and extracted binary package of the Management Center distribution
+|xref:install.adoc#using-binary-packages[Install Management Center]
+
+|===
+
+== Step 1. Start Management Center
+
+In this step, you are going to start a local Management Center service with TLS enabled.
+To be able to use TLS, a key material is required; you will use a self-signed certificate for this purpose.
+
+. Create a directory in which the certificate will reside.
++
+[source,shell]
+----
+mkdir keystore
+----
+
+. Create the key pairs.
++
+[source,shell]
+----
+keytool -validity 365 -genkeypair -alias server -keyalg EC -keystore ./keystore/server.keystore -storepass 123456 -keypass 123456 -dname CN=localhost
+----
+. Store the certificate in a file (`server.crt`).
++
+[source,shell]
+----
+keytool -export -alias server -keystore ./keystore/server.keystore -storepass 123456 -file ./keystore/server.crt
+----
+. Add the certificate to keystore.
++
+[source,shell]
+---- 
+keytool -import -noprompt -alias server -keystore ./keystore/server.truststore -storepass 123456 -file ./keystore/server.crt
+----
++
+Your self-signed certificate is now ready to use. 
+. Go to the directory where you extracted the Management Center binary package
+and start Management Center.
++
+[source,shell,subs="attributes+"]
+----
+java -Dhazelcast.mc.tls.enabled=true -Dhazelcast.mc.tls.keyStore=<path to the directory that contains the keystore directory>/keystore/server.keystore -Dhazelcast.mc.tls.keyStorePassword=123456 -jar hazelcast-management-center-{full-version}.jar
+----
+
+In the terminal, you should see a log message showing that Management Center is started.
+
+[source,shell]
+----
+Hazelcast Management Center successfully started at https://localhost:8443/
+----
+
+== Step 2. Connect Management Center to Cluster
+
+. In your preferred browser, go to \https://localhost:8443/ and enable *Dev Mode*.
++
+NOTE: The browser may show the "Your connection is not secure" message. This is because of the
+self-signed certificate not being trusted by the browser. You can fix this by adding this certificate
+to the trusted certificates list of the browser (usually by clicking on *Not Secure* in the address bar and
+selecting *Always Trust* for the `localhost` listing).
+. Click *Connect* and enter your cluster’s name and the IP addresses of all cluster members.
++
+image:ROOT:connect-secured-mc.png[Connect Management Center to the Enterprise Cluster]
++
+You should see the established connection between the secured Management Center and Enterprise cluster.
++
+image:ROOT:mc-connects-ee-cluster.png[Management Center is connected]
+
+== Next Steps
+
+You can now work on Management Center as described in xref:start-opensource.adoc#step-3-create-a-map[creating a map] and xref:start-opensource.adoc#step-5-query-the-map[querying it].
+
+To explore the licensed features of Management Center, see the following:
+
+* xref:ROOT:clustered-rest.adoc[Clustered REST]
+* xref:jmx:jmx.adoc[Clustered JMX]
+* xref:monitor-imdg:client-filtering.adoc[Cluster Client Filtering]
+* xref:ROOT:prometheus.adoc[Prometheus Exporter]
+
+See also the following for the Management Center features that rely on your cluster's enterprise capabilities:
+
+* xref:monitor-imdg:monitor-wan-replication.adoc[WAN Replication]
+* xref:monitor-imdg:cluster-administration.adoc#hot-restart[Persistence]
+* xref:monitor-imdg:cluster-administration.adoc#rolling-upgrade[Rolling Upgrades]

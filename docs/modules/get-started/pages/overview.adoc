@@ -1,0 +1,82 @@
+= Overview
+[[overview]]
+
+Management Center is a tool for managing and monitoring Hazelcast clusters.
+For example, with the graphical user interface (UI), you can do the following:
+
+* Monitor the performance of your clusters.
+* See statistical information about your members, clients, and data structures.
+* Execute SQL queries on your clusters.
+* Perform administrative tasks such as identifying and diagnosing issues in clusters.
+
+You can enable the REST API to use REST calls to return the
+information presented in Management Center. You can also
+monitor cluster statistics from a JMX interface and Prometheus.
+
+== Requirements
+
+You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
+
+Management Center uses RocksDB library to store metrics
+data on disk. Because of that dependency, macOS users have to be on at least 10.15
+version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
+installed. Otherwise, you can use the official Management Center docker image.
+
+=== Hazelcast Compatibility
+
+Management Center supports Hazelcast 5.0.x and Hazelcast IMDG 4.2.x clusters.
+
+[[browser-compatibility]]
+=== Browser Compatibility
+
+Hazelcast Management Center is tested and works on the following browsers:
+
+* Last two versions of Chrome at the time of release
+* Last two versions of Firefox at the time of release
+* Latest Safari
+* Internet Explorer 11
+* Latest Microsoft Edge
+
+=== System Requirements
+
+Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
+
+Experimental support for AIX is provided as well, with the following prerequisites:
+
+* AIX version is 7.2 or newer
+* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
+* `glibc` version is 2.17 or newer
+* JRE 1.8 or newer is installed
+* `libsnappy` 1.8.0 or newer is installed
+
+== Licensing
+
+If you don't have a Management Center license, then it shows metrics for clusters up to three members.
+
+A valid Management Center license is required for:
+
+* Clustered JMX
+* Clustered REST (API)
+* Cluster Client Filtering
+* Prometheus Exporter
+
+And some Management Center features rely on your Hazelcast Platform's Enterprise capabilities:
+
+* WAN Replication
+* Persistence (Hot Restart)
+* Rolling Upgrade
+
+You need to have a valid license for your Hazelcast Platform to be able to manage and monitor the above.
+
+== Support
+
+Support is provided via the following channels:
+
+* xref:ROOT:troubleshooting.adoc[Troubleshooting page] of this guide
+* https://stackoverflow.com/questions/tagged/hazelcast[Stack Overflow]
+(ask a question about how to use Management Center properly and troubleshoot your setup)
+* https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
+(propose features and discuss your ideas with the team)
+* https://slack.hazelcast.com/[Hazelcast community Slack]
+(discuss anything related to Hazelcast and Management Center with other
+Hazelcast users and Hazelcast developers)
