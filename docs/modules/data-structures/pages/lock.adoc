@@ -8,6 +8,8 @@ to learn how to use this feature.
 You can use these JavaScript functions to retrieve various information
 about the locks in your cluster.
 
+== Finding Active Locks
+
 To find the number of active locks in your cluster, use the following script:
 
 [source,javascript]
@@ -23,6 +25,8 @@ var findLocks = function() {
 
 findLocks();
 ----
+
+== Printing Locks
 
 To print the locks in your cluster, use the following script:
 
@@ -43,6 +47,8 @@ var findLocks = function() {
 findLocks();
 ----
 
+== Unlocking Forcefully
+
 To force unlock a lock in your cluster, use the following script:
 
 [source,javascript]
@@ -56,6 +62,8 @@ var forceUnlock = function(lockName) {
 
 forceUnlock('your_Lock_Name');
 ----
+
+== Checking Locks
 
 To check if a lock is being hold by a member, use the following script:
 
