@@ -10,7 +10,7 @@ about the locks in your cluster.
 
 To find the number of active locks in your cluster, use the following script:
 
-[source,plain]
+[source,javascript]
 ----
 var findLocks = function() {
     var lockstr = '';
