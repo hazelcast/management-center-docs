@@ -5,7 +5,7 @@ You can use the scripting feature of the Management Center to
 monitor the locks in your cluster. See the xref:scripting.adoc[Scripting section]
 to learn how to use this feature.
 
-You can use the below scripts to retrieve various information
+You can use these JavaScript functions to retrieve various information
 about the locks in your cluster.
 
 To find the number of active locks in your cluster, use the following script:
