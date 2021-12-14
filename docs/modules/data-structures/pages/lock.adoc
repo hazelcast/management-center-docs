@@ -45,7 +45,7 @@ findLocks();
 
 To force unlock a lock in your cluster, use the following script:
 
-[source,plain]
+[source,javascript]
 ----
 var forceUnlock = function(lockName) {
 
