@@ -59,7 +59,7 @@ forceUnlock('your_Lock_Name');
 
 To check if a lock is being hold by a member, use the following script:
 
-[source,plain]
+[source,javascript]
 ----
 var isLocked = function(lockName) {
 
