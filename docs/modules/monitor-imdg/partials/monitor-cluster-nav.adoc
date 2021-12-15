@@ -2,5 +2,3 @@
 * xref:monitor-imdg:monitor-dds.adoc[]
 * xref:monitor-imdg:scripting.adoc[]
 * xref:monitor-imdg:console.adoc[]
-
-

@@ -1,8 +1,5 @@
-* xref:index.adoc[Hazelcast Management Center Reference Manual]
-
-* xref:supported-environments.adoc[]
-
-* xref:getting-started.adoc[]
+* Get Started
+include::get-started:partial$nav.adoc[]
 
 * xref:configuring.adoc[]
 
@@ -48,8 +45,6 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:high-availability.adoc[]
 
-* xref:phone-home.adoc[]
-
 * xref:troubleshooting.adoc[]
 
 * xref:migration-guides.adoc[Appendix A: Migration Guides]
@@ -58,3 +53,9 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
 
+
+* Data Structures
++
+--
+include::data-structures:partial$nav.adoc[]
+--
