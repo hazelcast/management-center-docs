@@ -31,6 +31,7 @@ include::integrate:partial$nav.adoc[]
 
 include::jmx:partial$jmx-nav.adoc[]
 
+* Jobs
 include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:prometheus.adoc[]
