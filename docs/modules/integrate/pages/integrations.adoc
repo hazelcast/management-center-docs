@@ -1,0 +1,10 @@
+= Integrations
+:description: Management Center provides integrations with Prometheus and JMX.
+
+{description}
+
+Use one of the following integrations to access cluster metrics:
+
+- xref:prometheus-monitoring.adoc[Prometheus]: Prometheus is an open-source systems monitoring and alerting toolkit.
+
+- xref:jmx.adoc[JMX]: Java Management Extensions (JMX) is a Java technology that supplies tools for managing and monitoring resources. Those resources are represented by objects called MBeans (managed beans).

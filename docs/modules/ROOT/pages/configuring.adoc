@@ -281,7 +281,7 @@ HTTP header (`X-Forwarded-Proto`) for resolving the correct protocol.
 * Enable TLS/SSL communication to the Management Center for your Hazelcast
 cluster. See the xref:connecting-members.adoc[Connecting Members chapter].
 * If you're using Clustered JMX on the Management center, enable TLS/SSL
-for it. See xref:jmx:jmx.adoc[Enabling TLS/SSL for Clustered JMX section].
+for it. See xref:integrate:jmx.adoc[Enabling TLS/SSL for Clustered JMX section].
 * If you're using LDAP authentication, make sure you use LDAPS or
 enable the *Start TLS* field. See the xref:launching:auth-options.adoc[LDAP Authentication section].
 * If you're using Active Directory authentication, make sure you use Java's

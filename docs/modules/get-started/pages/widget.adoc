@@ -1,5 +1,6 @@
 = Widget
 [[widget]]
+:page-aliases: monitor-imdg:widget.adoc
 
 Widget is a special component designed to inspect cluster metrics as graphs.
 It is used on the dashboard and on the details page of any data structure (with a few exceptions).
