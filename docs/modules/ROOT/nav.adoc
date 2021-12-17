@@ -45,3 +45,9 @@ include::troubleshoot:partial$troubleshooting-nav.adoc[]
 
 * xref:migration-guides.adoc[Appendix A: Migration Guides]
 
+* Data Structures
++
+--
+include::data-structures:partial$nav.adoc[]
+--
+
