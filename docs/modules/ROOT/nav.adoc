@@ -40,11 +40,8 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:high-availability.adoc[]
 
-* xref:troubleshooting.adoc[]
+* Troubleshooting
+include::troubleshoot:partial$troubleshooting-nav.adoc[]
 
 * xref:migration-guides.adoc[Appendix A: Migration Guides]
-
-* xref:ui-logs.adoc[Appendix B: User Interface Logs]
-
-* xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
 

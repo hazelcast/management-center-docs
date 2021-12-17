@@ -1,0 +1,32 @@
+= Hazelcast Clusters
+
+== Cluster Connection Failure Reasons
+
+Management Center logs all cluster connection failures, their reasons and retry attempts to `hz-client.log` in `hazelcast.mc.home` directory.
+
+== Running Garbage Collection
+
+Running a garbage collection means cleaning up a member's memory, e.g., removing the unused
+data structure objects. It is not recommended to run it unless instructed by the Hazelcast support team.
+
+To run garbage collection for a specific member, go to **Cluster** > **Members** and select
+the member in question. In the member details screen, you will see **Run GC**.
+
+image:run-gc.png[RUN GC button]
+
+Once you click the button, you will be asked to confirm. Note that this operation
+does not write information to a file, only cleans up the member's memory in the background.
+
+== Taking a Thread Dump
+
+Thread dumps may be useful to troubleshoot a member that is deadlocked or slow;
+they provide detailed information on threads, including the state for each thread.
+We recommend collecting and providing multiple thread dumps when submitting a support ticket.
+
+To take a thread dump for a member, go to **Cluster** > **Members** and select
+the member in question. In the member details screen, you will see **Thread Dump** next to **Run GC** 
+as shown in the above screenshot. This operation shows the collected thread dump in a separate dialog.
+
+image:thread-dump.png[Thread Dump]
+
+You can copy the content to the clipboard to include it in a file.

@@ -34,9 +34,9 @@ using the buttons located at the top left of the page:
 
 * **Run GC**: Executes garbage collection on the
 selected member. A notification stating that the GC execution was
-successful is shown.
+successful is shown. See xref:troubleshoot:hazelcast-clusters.adoc#running-garbage-collection[Running Garbage Collection].
 * **Thread Dump**: Takes a thread dump of the
-selected member and shows it in a separate dialog.
+selected member and shows it in a separate dialog. See xref:troubleshoot:hazelcast-clusters.adoc#taking-a-thread-dump[Taking a Thread Dump].
 * **Shutdown Member**: Shuts down the selected member.
 * **Promote Member**: It is only shown for the lite members.
 When pressed, the lite member becomes a data member.

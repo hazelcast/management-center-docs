@@ -1,0 +1,43 @@
+= Management Center
+:page-aliases: ROOT:automated-security-scan.adoc, ROOT:troubleshooting.adoc, ROOT:ui-logs.adoc
+
+== Automated Security Scanning
+
+When you scan Management Center artifacts, your tool might warn you about the following
+vulnerabilities. Management Center security is *not* affected by them. It uses a custom
+version of H2DB which is patched against these vulnerabilities.
+
+* https://nvd.nist.gov/vuln/detail/CVE-2018-10054[CVE-2018-10054^]
+* https://nvd.nist.gov/vuln/detail/CVE-2018-14335[CVE-2018-14335^]
+
+== Horizontal Scrollbar in Tables when Using macOS
+
+macOS automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
+
+The scrollbar should hide shortly after you stop scrolling. This is the default behavior and it shouldn't
+cause any inconvenience. However, if you still want to change it, address "Show scroll bars" section of the
+link:https://support.apple.com/guide/mac-help/change-general-preferences-mchlp1225/mac["Change General preferences on Mac" guide].
+
+== User Interface Logs
+
+Using the *UI Logs* page of the *Settings* menu,
+you can see the log entries related to the Management
+Center user interface. This page looks like the following:
+
+image:SettingsUILogs.png[User Interface Logs]
+
+This is basically useful to make the troubleshooting easier
+related to the issues in the user interface. You can see the
+timestamp and type of each log entry.
+
+You can reorder the entries by their timestamps any types, and
+also filter them by entering a keyword in the *Data* field such as
+"auth", "map" and "session".
+
+You can pause the log flow using the *Pause* button,
+copy the log entries to the clipboard using the *Copy* button
+(so that the entries can be examined in detail)
+and resume the flow using the *Resume* button on the page.
+
+NOTE: You may only need to share the information in these logs
+if requested by the Hazelcast's support team.
