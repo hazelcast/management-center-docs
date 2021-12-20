@@ -1,4 +1,4 @@
-= Hazelcast Clusters
+= Troubleshooting Hazelcast Clusters
 
 == Cluster Connection Failure Reasons
 
