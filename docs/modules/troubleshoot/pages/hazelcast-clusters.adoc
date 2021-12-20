@@ -1,4 +1,7 @@
 = Troubleshooting Hazelcast Clusters
+:description: Management Center writes logs for connection failures and allows to run garbage collection and to take thread dumps.
+
+{description} This section describes how to work with these operations to help identifying the issues in a Hazelcast cluster.
 
 == Logs for Cluster Connection Failures
 
