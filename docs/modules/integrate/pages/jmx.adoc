@@ -1,0 +1,206 @@
+= Clustered JMX
+:description: Management Center provides a clustered Java Management Extensions (JMX) monitoring service that you can use with any JMX monitoring application. JMX monitoring allows you to monitor clustered metrics of distributed Hazelcast objects from a JMX interface.
+:page-aliases: jmx:jmx.adoc jmx:appdynamics.adoc, jmx:new-relic.adoc, jmx:configuring.adoc
+
+{description}
+
+== Enabling Clustered JMX
+
+To enable the clustered JMX service, use the `hazelcast.mc.jmx.enabled` system property:
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.jmx.enabled=true \
+-Dcom.sun.management.jmxremote.ssl=false \ <1>
+-jar hazelcast-management-center-{full-version}.jar
+----
+
+<1> By default, clustered JMX is served unencrypted. This system property configures the remote JMX agent not to use SSL.
+
+After Management Center starts, you should see something like the following in the logs:
+
+[source,bash]
+----
+INFO: Management Center 3.3
+Jun 05, 2014 11:55:32 AM com.hazelcast.webmonitor.service.jmx.impl.JMXService
+INFO: Starting Management Center JMX Service on port :9000
+----
+
+You can connect to the clustered JMX interface
+using the address `localhost:9000`.
+
+To connect to the clustered JMX interface, you can use any JMX client such as JConsole.
+
+== Enabling TLS for Clustered JMX
+
+By default, clustered JMX is served unencrypted. To enable
+TLS/SSL for Clustered JMX, use the following system properties for your Management Center deployment:
+
+* `-Dhazelcast.mc.jmx.ssl=true`
+* `-Dhazelcast.mc.jmx.ssl.keyStore=path to your keystore`
+* `-Dhazelcast.mc.jmx.ssl.keyStorePassword=password for your keystore`
+
+The following is an example on how to start Management Center
+with a TLS/SSL enabled clustered JMX service on port 65432:
+
+[source,bash,subs="attributes"]
+----
+java -Dhazelcast.mc.jmx.enabled=true
+-Dhazelcast.mc.jmx.port=65432
+-Dhazelcast.mc.jmx.ssl=true
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+-jar hazelcast-management-center-{full-version}.jar
+----
+
+NOTE: You can encrypt the keystore password and pass it as a
+command line argument in encrypted form for improved security.
+See the xref:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
+
+Then, you can use the following command to connect to the
+clustered JMX service using JConsole with the address `localhost:65432`:
+
+[source,bash]
+----
+jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl.trustStorePassword=trustpass
+----
+
+=== Enabling TLS Mutual Authentication for Clustered JMX
+
+To secure the clustered JMX interface, you can use
+the following command line parameters to enable TLS mutual
+authentication:
+
+* `-Dhazelcast.mc.jmx.mutualAuthentication=true`
+* `-Dhazelcast.mc.jmx.ssl.trustStore=path to your truststore`
+* `-Dhazelcast.mc.jmx.ssl.trustStorePassword=password for your truststore`
+
+The following is an example on how to start Management Center
+with a TLS mutual authentication enabled Clustered JMX service on port 65432:
+
+[source,bash]
+----
+java -Dhazelcast.mc.jmx.enabled=true
+-Dhazelcast.mc.jmx.port=65432
+-Dhazelcast.mc.jmx.ssl=true
+-Dhazelcast.mc.jmx.mutualAuthentication=true
+-Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
+-Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+-Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks
+-Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
+-jar hazelcast-management-center-{full-version}.jar
+----
+
+== Integrating JMX with AppDynamics
+
+You can use the clustered JMX interface to integrate Management Center
+with *AppDynamics*. To perform this integration, attach the AppDynamics
+Java agent to Management Center.
+
+For agent installation, see
+http://docs.appdynamics.com/display/PRO14S/Install%2Bthe%2BApp%2BAgent%2Bfor%2BJava[Install the App Agent for Java] in the AppDynamics documentation.
+
+For monitoring on AppDynamics, see
+http://docs.appdynamics.com/display/PRO14S/Monitor%2BJMX%2BMBeans#MonitorJMXMBeans-UsingAppDynamicsforJMXMonitoring[Using AppDynamics for JMX Monitoring] in the AppDynamics documentation.
+
+After installing the AppDynamics agent, you can start Management Center:
+
+[source,bash,subs="attributes+"]
+----
+java -javaagent:/path/to/javaagent.jar \
+     -Dhazelcast.mc.jmx.enabled=true \
+     -jar hazelcast-management-center-{full-version}.jar
+----
+
+When the Management Center starts, you should see the logs below:
+
+```
+Started AppDynamics Java Agent Successfully.
+Hazelcast Management Center starting on port 8080 at path : /
+```
+
+== Integrating JMX with New Relic
+
+You can use the clustered JMX interface to integrate Management Center
+with New Relic. To perform this integration, attach the New Relic Java agent
+and provide an extension file that describes which metrics will be sent to New Relic.
+
+See http://docs.newrelic.com/docs/java/custom-jmx-instrumentation-by-yml[Custom JMX instrumentation by YAML]
+on the New Relic webpage.
+
+The following is an example Map monitoring YAML file for New Relic:
+
+[source,yaml]
+----
+name: Clustered JMX
+version: 1.0
+enabled: true
+
+jmx:
+- object_name: ManagementCenter[clustername]:type=Maps,name=mapname
+  metrics:
+  - attributes: PutOperationCount, GetOperationCount, RemoveOperationCount, Hits, BackupEntryCount, OwnedEntryCount, LastAccessTime, LastUpdateTime
+  - type: simple
+- object_name: ManagementCenter[clustername]:type=Members,name="member address in double quotes"
+  metrics:
+  - attributes: OwnedPartitionCount
+  - type: simple
+----
+
+Put the YAML file in the `extensions` directory in your New Relic
+installation. If an `extensions` directory does not exist there, create one.
+
+After you set your extension, attach the New Relic Java agent and
+start the Management Center as shown below.
+
+[source,bash,subs="attributes+"]
+----
+java -javaagent:/path/to/newrelic.jar -Dhazelcast.mc.jmx.enabled=true\
+    -Dhazelcast.mc.jmx.port=9999 -jar hazelcast-management-center-{full-version}.jar
+----
+
+If your logging level is set to `FINER`, you should see the log listing
+in the file `newrelic_agent.log`, which is located in the `logs` directory
+in your New Relic installation. The following is an example log listing:
+
+```
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINE:
+    JMX Service : querying MBeans (1)
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    JMX Service : MBeans query ManagementCenter[dev]:type=Members,
+    name="192.168.2.79:5701", matches 1
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric OwnedPartitionCount : 68
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    JMX Service : MBeans query ManagementCenter[dev]:type=Maps,name=orders,
+    matches 1
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric Hits : 46,593
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric BackupEntryCount : 1,100
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric OwnedEntryCount : 1,100
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric RemoveOperationCount : 0
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric PutOperationCount : 118,962
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric GetOperationCount : 0
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric LastUpdateTime : 1,401,962,426,811
+Jun 5, 2014 14:18:43 +0300 [72696 62] com.newrelic.agent.jmx.JmxService FINER:
+    Recording JMX metric LastAccessTime : 1,401,962,426,811
+```
+
+Then you can navigate to your New Relic account and create Custom Dashboards.
+See http://docs.newrelic.com/docs/dashboards-menu/creating-custom-dashboards[Creating custom dashboards].
+
+While you are creating the dashboard, you should see the metrics that
+you are sending to New Relic from the Management Center in the **Metrics**
+section under the JMX directory.
+
+== Next Steps
+
+See a list of all available xref:jmx-api.adoc[JMX attributes].
+
+Explore xref:deploy-and-manage:system-properties.adoc[system properties] and their definitions.
