@@ -1,4 +1,4 @@
-= Management Center
+= Troubleshooting Management Center
 :page-aliases: ROOT:automated-security-scan.adoc, ROOT:troubleshooting.adoc, ROOT:ui-logs.adoc
 
 == Automated Security Scanning
