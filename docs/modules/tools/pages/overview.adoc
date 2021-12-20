@@ -4,7 +4,7 @@ This chapter describes the usages of tools offered by Management Center:
 
 * xref:tools:sql-browser.adoc[SQL Browser] to run SQL queries and operate on the data structures
 * xref:tools:scripting.adoc[Scripting] to run scripts on the cluster using languages including
-JavaScript, Groovy, Ruby and Jython
+JavaScript, Groovy, Ruby and Python
 * xref:tools:clustered-rest.adoc[Clustered REST] to retrieve statistical cluster information using REST API
 * xref:tools:console.adoc[Console] to perform operations on the cluster's data structures by running single-line commands, mostly
 for development and testing purposes
