@@ -1,6 +1,6 @@
 = Troubleshooting Hazelcast Clusters
 
-== Cluster Connection Failure Reasons
+== Logs for Cluster Connection Failures
 
 Management Center logs all cluster connection failures, their reasons and retry attempts to `hz-client.log` in `hazelcast.mc.home` directory.
 
