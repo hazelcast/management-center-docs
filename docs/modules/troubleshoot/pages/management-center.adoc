@@ -1,7 +1,7 @@
 = Troubleshooting Management Center
 :page-aliases: ROOT:automated-security-scan.adoc, ROOT:troubleshooting.adoc, ROOT:ui-logs.adoc
 
-This section describes how to deal with common known issues and also how to take user interface logs of Management Center.
+This section describes how to deal with known issues and also how to read the user interface logs of Management Center.
 
 == Automated Security Scanning
 
