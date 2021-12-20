@@ -1,0 +1,19 @@
+= MultiMaps
+[[monitoring-multimaps]]
+
+You can see a list of all the MultiMaps in your cluster by clicking
+on the **MultiMaps** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:MultiMapGridView.png[MultiMap Grid View]
+
+You can filter the MultiMaps shown and you can also sort the
+table by clicking on the column headers. Clicking on
+a MultiMap name opens a new page for monitoring that
+MultiMap instance on the right.
+
+MultiMap is a specialized map where you can associate a key
+with multiple values. [[multimap-statistics]]This monitoring option is similar to the
+**Maps** option: the same monitoring charts and data tables monitor
+MultiMaps. The differences are that you cannot browse the MultiMaps
+and re-configure it. Please see the <<managing-maps, Managing Maps>>.

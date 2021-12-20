@@ -19,6 +19,12 @@ include::launching:partial$launching-nav.adoc[]
 
 include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
 
+* Clusters
++
+--
+include::clusters:partial$nav.adoc[]
+--
+
 include::integrate:partial$nav.adoc[]
 
 * xref:healthcheck.adoc[]
@@ -41,9 +47,16 @@ include::tools:partial$tools-nav.adoc[]
 
 * xref:troubleshooting.adoc[]
 
-* xref:migration-guides.adoc[Appendix A: Migration Guides]
+* Upgrade
+** xref:migration-guides.adoc[]
 
-* xref:ui-logs.adoc[Appendix B: User Interface Logs]
+* Release Notes
+include::release-notes:partial$rn-nav.adoc[]
 
-* xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
 
+
+* Data Structures
++
+--
+include::data-structures:partial$nav.adoc[]
+--

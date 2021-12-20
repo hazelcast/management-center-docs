@@ -1,0 +1,24 @@
+= Administration
+:description: You can use the Administration menu item to manage Hazelcast clusters.
+:page-aliases: monitor-imdg:cluster-administration.adoc
+
+You can use the *Administration* menu item to manage Hazelcast clusters.
+
+NOTE: This menu item is available only to admin users.
+
+From this menu item, you can do the following:
+
+- xref:changing-cluster-state.adoc[Change the state of a cluster]
+- xref:shutting-down-cluster.adoc[Shut down a cluster]
+- xref:cluster-license.adoc[View details about a cluster's license]
+- xref:triggering-rolling-upgrade.adoc[Trigger a rolling upgrade]
+- xref:persistence.adoc[Manage clusters that have persistence enabled]
+- xref:cp-subsystem.adoc[Manage CP members]
+
+
+
+
+
+
+
+
