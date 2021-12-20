@@ -7,7 +7,7 @@ to have a Hazelcast Enterprise license. The license should be entered within the
 Management Center as described in the following paragraphs.
 
 NOTE: Even if you have a Hazelcast Enterprise license key, and
-you set it as explained in the xref:hazelcast:deploy:using-enterprise-edition.adoc#setting-the-license-key[Setting the License Key section],
+you set it as explained in the xref:{page-latest-supported-hazelcast}@hazelcast:deploy:using-enterprise-edition.adoc#setting-the-license-key[Setting the License Key section],
 you still need to enter this same license within the Management Center.
 See the following paragraphs to learn how you can do this.
 

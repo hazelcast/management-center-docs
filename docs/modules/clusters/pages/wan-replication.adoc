@@ -1,41 +1,43 @@
-= Monitoring WAN Replication
-[[monitoring-wan-replication]]
+= WAN Replication
+:description: You can use the WAN Replication menu item to check the status of WAN replication, synchronize map and cache data structures across clusters, and add dynamic configuration for WAN replication.
+:page-aliases: monitor-imdg:monitor-wan-replication.adoc
+:page-enterprise: true
 
-**Monitoring WAN Replication** feature can be accessed by clicking the corresponding menu item under the "Cluster" parent
-menu heading. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc#synchronizing-wan-clusters[WAN Replication]
-for additional information about the Hazelcast feature. When you click on the scheme, a new page
-for monitoring the targets which that scheme has appears on the right, as shown below:
+You can use the *WAN Replication* menu item to check the status of WAN replication, synchronize map and cache data structures across clusters, and add dynamic configuration for WAN replication.
+
+NOTE: You need an Enterprise license to use this feature.
 
 image:ROOT:WanReplication.png[Monitoring WAN Replication]
 
-In this page, you see the **WAN Replication Configurations** that contain replication publishers.
+On this page, you see the **WAN Replication Configurations** that contain replication publishers.
 
 * **Name**: Name of the WAN replication config.
 * **State**: Current state of the WAN replication or publisher. See
 <<changing-wan-publisher-state, Changing WAN Publisher State>> for the
 list of possible WAN publisher states.
-* **Members**: Count of WAN publishers on the cluster members. +
+* **Members**: Count of WAN publishers on the cluster members.
++
 Members = (Cluster Members) * (WAN publishers).
 * **Max Queue Fill Ratio**: Maximum value of **Outbound Queue Fill Ratio** among the publishers.
 * **Total Queue**: Sum of **Outbound Queue Size** from the publishers.
 
-You can click on the replication config to see the replication publishers:
+To see the replication publishers, click on a replication config.
+
+To see detailed information about the corresponding replication publisher, click *Show details*.
 
 image:ROOT:WanReplicationPublishers.png[WAN Replication Publishers]
 
-You can click on **Show details** to see detailed information about the corresponding replication publisher:
+This page includes the following details:
 
-image:ROOT:WanPublisherStats.png[WAN Replication Publisher Stats]
-
-* **Member**: Hazelcast cluster member that has a WAN publisher. Icon shows connection state (red - disconnected / green - connected]).
+* **Member**: Hazelcast cluster member that has a WAN publisher. Icon shows connection state (red - disconnected / green - connected).
 * **Action**: Pause, stop or resume replication of a member's
 records. You can also clear the event queues in a member using
-the *Clear Queues* action.  For instance, if you know that the
-target cluster is being shut down, decommissioned, put out of use
+the *Clear Queues* action.  For example, if you know that the
+target cluster is being shut down, decommissioned, or put out of use
 and it will never come back, you may additionally clear the WAN queues
 to release the consumed heap after the publisher has been switched. Or,
 when a failure happens and queues are not replicated anymore, you could
-manually clear the queues using, again the *Clear Queues* action.
+manually clear the queues, using, the *Clear Queues* action.
 * **State**: Shows current state of the WAN publisher on a member. See
 <<changing-wan-publisher-state, Changing WAN Publisher State>> for the
 list of possible WAN publisher states.
@@ -65,7 +67,7 @@ Events Published per Second = (Current TBEC - Previous TBEC) / Update Interval
 
 Average Event Latency = (Current TL - Previous TL) / (Current TBEC - Previous TBEC)
 
-NOTE: **Outbound Queue Fill Ratio** is only available for Hazelcast 5+ clusters.
+NOTE: **Outbound Queue Fill Ratio** is only available for version 5 and later of Hazelcast Platform clusters.
 **Outbound Queue Fill Ratio** may briefly go over 100% as the outbound queue may be overflown.
 
 [[changing-wan-publisher-state]]
@@ -94,16 +96,15 @@ dropdown button on top right corner of the WAN Publisher Table.
 [[wan-sync]]
 == WAN Sync
 
-You can initiate a synchronization operation on an IMap for a specific
+You can initiate a synchronization operation on a map for a specific
 target cluster. This operation is useful if
 two remote clusters lost their synchronization due to WAN queue overflow
 or in restart scenarios.
 
 Hazelcast provides the following synchronization options:
 
-. Default WAN  synchronization operation: It sends all the data of an
-IMap to a target cluster to align the state of target IMap with the
-source IMap. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:advanced-features.adoc#synchronizing-wan-clusters[Synchronizing WAN Clusters]
+. Default WAN synchronization operation: It sends all the data of a map to a target cluster to align the state of the target map with the
+source map. See xref:{page-latest-supported-hazelcast}@hazelcast:wan:advanced-features.adoc#synchronizing-wan-clusters[Synchronizing WAN Clusters]
 for more information.
 . WAN synchronization using https://en.wikipedia.org/wiki/Merkle_tree[Merkle trees]: To
 initiate this type of synchronization, you need to configure the
@@ -123,19 +124,19 @@ and click **Sync** to start the operation.
 
 image:ROOT:WanSyncConfig.png[WAN Sync Config]
 
-You can also use the "Select All" option in the Maps dropdown if you want
+You can also use the *Select All* option in the Maps dropdown if you want
 to synchronize all the maps in source and target cluster.
 
 You can see the WAN Sync status entry in the table below once you initiate the sync:
 
 image:ROOT:WanSyncOperation.png[WAN Sync Operation]
 
-You can see the progress of the sync if you click on *See details*:
+You can see the progress of the sync if you click on *See details*.
 
 [[wan-consistency-check]]
 === WAN Consistency Check
 
-You can check if an IMap is in sync with a specific target cluster.
+You can check if a map is in sync with a specific target cluster.
 Configure the same options as for the WAN Sync and click
 **CHECK** to start the operation. +
 You can see the WAN Sync status entry in the table below once you initiate the sync:
@@ -171,10 +172,11 @@ be used for WAN sync.
 
 image:ROOT:AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
 
-See the xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc[WAN Replication section]
-in Hazelcast documentation for details about the fields and their possible values.
-
-After clicking the **ADD CONFIGURATION** button, the new WAN replication configuration
+After clicking the **Add Configuration** button, the new WAN replication configuration
 is added to the cluster.
 You can see the new configuration when you try to initiate a WAN sync operation as
 described in the previous section.
+
+== Related Resources
+
+For details about this feature, see xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc#synchronizing-wan-clusters[WAN Replication] in the Platform documentation. 
