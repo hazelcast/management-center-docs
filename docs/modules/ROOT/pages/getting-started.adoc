@@ -66,22 +66,13 @@ For all the starting options you can preconfigure a cluster in Management Center
 
 Extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
-contains a `bin/mc-start.sh` (or `bin/mc-start.cmd`) file.
+contains a `bin/mc-start.sh` (or `bin/mc-start.bat`) file.
 
 You can start this file directly from the command line using the following command:
-
-On Unix systems:
 
 [source,bash,subs="attributes+"]
 ----
 mc-start.sh
-----
-
-On Windows:
-
-[source,bash,subs="attributes+"]
-----
-mc-start.cmd
 ----
 
 The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).

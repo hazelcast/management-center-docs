@@ -41,24 +41,13 @@ from Management Center, so any jar file in this directory will be added to the c
 
 You can also start the Management Center with an extra classpath
 entry (for example, when using JAAS authentication) by using the
-following commands:
-
-On Unix systems:
+following command:
 
 [source,bash,subs="attributes+"]
 ----
-export MC_CLASSPATH="/path/to/an/extra.jar:/path/to/an/otherextra.jar"
+export MC_CLASSPATH="/path/to/an/extra.jar"
 mc-start.sh
 ----
-
-On Windows:
-
-[source,bash,subs="attributes+"]
-----
-SET MC_CLASSPATH="/path/to/an/extra.jar;/path/to/an/otherextra.jar"
-mc-start.cmd
-----
-
 
 
 [[client-config]]
