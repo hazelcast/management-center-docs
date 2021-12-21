@@ -8,7 +8,7 @@ Persisted metrics allow you to check the status of a cluster at a time in the pa
 
 == How Metrics are Persisted
 
-When Management Center receives metrics from a Hazelcast cluster, it groups them by type into one-minute buckets before compressing them and saving them to disk in the `hazelcast-mc/metrics` directory. For example, metrics for CPU load may go into one bucket, while metrics for memory consumption go into another bucket.
+When Management Center receives metrics from a Hazelcast cluster, it groups them by type into one-minute buckets before compressing them and saving them to disk in the `hazelcast-mc/metrics` directory. For example, metrics for CPU load goes into one bucket, while metrics for memory consumption go into another bucket.
 
 TIP: You can customize where metrics data is persisted. See xref:configuring.adoc[].
 
