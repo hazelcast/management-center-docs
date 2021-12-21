@@ -36,7 +36,7 @@ This also means no new license can be stored when the property is used.
 [[starting-with-an-extra-classpath]]
 == Providing an Extra Classpath
 
-Management Center is distributed with an empty `bin/user-lib/` directory. You can put your libraries into this library to use them
+Management Center is distributed with an empty `bin/user-lib/` directory. You can put your libraries into this directory to use them
 from Management Center, so any jar file in this directory will be added to the classpath.
 
 You can also start the Management Center with an extra classpath
