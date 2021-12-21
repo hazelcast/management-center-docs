@@ -1,0 +1,29 @@
+= 5.0.1 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.0 and 5.0.1 of Hazelcast Management Center.
+
+{description}
+
+== Enhancements
+
+* Redesigned Toast notifications. [MC-867]
+* Improved partition distribution display when there is no data. [MC-1052]
+* Updated documentation with info about how to run the latest Management Center SNAPSHOT. [MC-861]
+* Added a loading indicator to the SQL Browser map dropdown. [MC-1113]
+* SQL Browser is always enabled for Hazelcast 5.0+. [MC-1143]
+* Improved the wording for the top label on the Local Security Provider form. [MC-1049]
+* Changed the successful WAN replication link tick color from red to green. [MC-1123]
+* Added Healthcheck for the member OS metrics availability. [MC-1022]
+* Improved Partition Distribution colors. [MC-1105]
+* Added a tooltip for the warning sign next to the WAN replication member. [MC-1103]
+* Added logging for cluster connection failures and their reasons to a file `{hazelcast.mc.home}/hz-client.log`. [MC-1089]
+* Added an alphabetical sorting for the SQL Browser map dropdown. [MC-1057]
+
+== Fixes
+
+* Fixed a metrics consumption error that caused N/A metrics on the frontend [MC-1090]
+* Connect button is now shown right away on the Connect Cluster form. [MC-1142]
+* Cloud user role is hidden from Management Center. [MC-1140]
+* Added a scroll for the Top Bar if it doesn't fit the screen. [MC-1081]
+* Changed CP Subsystem status from "Not supported" to "Disabled". [MC-895]
+* Client entry button labels in the legend now do not cause overflow. [MC-99]
+* Fixed the WAN replication average event latency calculation. [MC-1127]

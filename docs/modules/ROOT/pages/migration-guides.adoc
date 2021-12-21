@@ -1,20 +1,21 @@
-= Migration Guides
+= Upgrading from Management Center 3.x 
+[[migration-guides]]
 
-This appendix provides information on compatibility related changes for Hazelcast Management Center releases.
+This section lists the changes for you to be aware when you have been using Management Center 3.x versions and want to use 5.x or newer ones.
 
-== Hazelcast Management Center 3.12.x
+== Changes in 3.12.x
 
 * Default home directory location has been changed from `<user-home>/hazelcast-mancenter-<version>` to `<user-home>/hazelcast-mc`.
 * Parameter to change home directory location has been changed from `hazelcast.mancenter.home` to `hazelcast.mc.home`.
 * The `UpdateLdapPassword` utility (available via `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts) has been merged into the MC Conf tool (available via the `mc-conf.sh` or `mc-conf.bat` scripts).
 
-== Hazelcast Management Center 3.10.x
+== Changes in 3.10.x
 
 * Hazelcast Management Center’s default URL has been changed from `localhost:8080/mancenter` to `localhost:8080/hazelcast-mancenter`.
 * Default home directory location has been changed from `<user-home>/mancenter-<version>` to `<user-home>/hazelcast-mancenter-<version>`.
 * Name of the WAR file has been changed from `mancenter-\{version}.war` to `hazelcast-mancenter-\{version}.war`.
 
-== Hazelcast Management Center 3.8.x
+== Changes in 3.8.x
 
 Starting with Management Center 3.8.4, you can
 use the following system properties for Clustered JMX

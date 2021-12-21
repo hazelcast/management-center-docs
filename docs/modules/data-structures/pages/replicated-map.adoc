@@ -1,0 +1,91 @@
+= Replicated Maps
+[[monitoring-replicated-maps]]
+
+You can see a list of all the Replicated Maps in your cluster
+by clicking on the **Replicated Maps** menu item on the left
+panel. A new page is opened on the right, as shown below.
+
+image:ROOT:ReplicatedMapGridView.png[Replicated Map Grid View]
+
+You can filter the Replicated Maps shown and you can also
+sort the table by clicking on the column headers. Clicking on
+a Replicated Map name opens a new page for monitoring
+that Replicated Map instance on the right, as shown below.
+
+image:ROOT:MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
+
+In this page, you can monitor metrics of the selected Replicated Map.
+The page shows two widgets that show various metrics of the Replicated Map.
+See the xref:widget.adoc[the Widget section] for more information.
+
+Under these charts are **Replicated Map Statistics** and **Replicated Map Throughput**
+data tables.
+
+[[replicated-map-statistics]]Replicated Map Statistics Table
+provides statistics distributed
+over the members, as shown below.
+
+image:ROOT:ReplicatedMapStatistics.png[Replicated Map Statistics Data Table]
+
+From left to right, this table lists the following:
+
+.Replicated Map Statistics fields
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Members
+|IP address and port of the member.
+
+|Entries
+|Number of entries in this Replicated Map owned by the member.
+
+|Gets/Puts/Removals
+|Number of the get/put/remove operations for this Replicated Map received by the member.
+
+|Entry Memory
+|Memory cost of the owned entries in the member.
+
+|Events
+|Number of the events received by the member.
+
+|Hits
+|Number of the reads performed for this Replicated Map's entries.
+
+|===
+
+[[replicated-map-throughput]]Replicated Map Throughput Table provides information about
+operations (get, put, remove) performed on each member in the selected
+Replicated Map.
+
+image:ROOT:ReplicatedMapThroughput.png[Replicated Map Throughput Data Table]
+
+From left to right, this table lists the following:
+
+.Replicated Map Throughput Statistics fields
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Member
+|IP address and port of each member
+
+|Puts/Gets/Removes
+|Put, get, and remove operation counts per second on each member
+
+|Avg. Put/Get/Remove Latencies
+|Average put, get, and remove latencies in milliseconds.
+
+|Max. Avg. Put/Get/Remove Latencies
+|Maximum average put, get, and remove latencies on each member in milliseconds.
+
+|===
+
+You can select the period from the combo box placed at the top
+right corner of the window, in which the table data is shown.
+Available values are **Since Beginning**, **Last Minute**,
+**Last 10 Minutes** and **Last 1 Hour**.
+
+To ascend or descend the order of the listings, click on the
+column headings.
+

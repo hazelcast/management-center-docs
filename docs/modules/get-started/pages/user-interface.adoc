@@ -1,5 +1,6 @@
 = User Interface Overview
 [[user-interface-overview]]
+:page-aliases: ROOT:user-interface.adoc
 
 In this chapter, we briefly go over the toolbar and left menu items of the
 user interface itself, regardless of which cluster we monitor (streaming or not).

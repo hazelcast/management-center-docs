@@ -1,8 +1,5 @@
-* xref:index.adoc[Hazelcast Management Center Reference Manual]
-
-* xref:supported-environments.adoc[]
-
-* xref:getting-started.adoc[]
+* Get Started
+include::get-started:partial$nav.adoc[]
 
 include::launching:partial$launching-nav.adoc[]
 
@@ -19,6 +16,12 @@ include::deploy-manage:partial$nav.adoc[]
 * Integrate
 +
 --
+* Clusters
++
+--
+include::clusters:partial$nav.adoc[]
+--
+
 include::integrate:partial$nav.adoc[]
 --
 
@@ -30,15 +33,23 @@ include::integrate:partial$nav.adoc[]
 
 include::jmx:partial$jmx-nav.adoc[]
 
+* Jobs
 include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * xref:prometheus.adoc[]
 
 * xref:troubleshooting.adoc[]
 
-* xref:migration-guides.adoc[Appendix A: Migration Guides]
+* Upgrade
+** xref:migration-guides.adoc[]
 
-* xref:ui-logs.adoc[Appendix B: User Interface Logs]
+* Release Notes
+include::release-notes:partial$rn-nav.adoc[]
 
-* xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
 
+
+* Data Structures
++
+--
+include::data-structures:partial$nav.adoc[]
+--
