@@ -78,7 +78,7 @@ the `log4j.configurationFile` property.
 For example, you can create a file named `log4j2-custom.properties` with the following
 content and set logging level to `DEBUG`.
 To use this file as the logging configuration, you would start Management Center with the
-`-Dlog4j.configurationFile=/path/to/your/log4j2-custom.properties` command line parameter:
+`-Dlog4j.configurationFile=/path/to/your/log4j2-custom.properties` command-line parameter:
 
 [source,properties]
 ----
@@ -143,8 +143,7 @@ types:
 |Event Category| Log Type/Description
 
 | Management Center Configuration Logs
-|* `MC-0001 [Config]`: Metrics Persistence is enabled.
-* `MC-0002 [Config]`: Metrics Persistence is disabled.
+|
 * `MC-0003 [Config]`: User is created.
 * `MC-0004 [Config]`: User is edited.
 * `MC-0005 [Config]`: User's password is changed.

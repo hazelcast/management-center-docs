@@ -52,7 +52,7 @@ This endpoint returns JSON.
 
 You have the following options to start the Management Center service:
 
-* Start Hazelcast Management Center from the command line.
+* Start Hazelcast Management Center from the command-line.
 * Use the scripts that come with the download package.
 * Deploy the file `hazelcast-management-center-{full-version}.war` on your Java application server/servlet container.
 
@@ -62,13 +62,13 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
 [[starting-with-jar-file]]
-=== Using the Command Line
+=== Using the command-line
 
 Extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
 contains the `hazelcast-management-center-{full-version}.jar` file.
 
-You can start this file directly from the command line using the following command:
+You can start this file directly from the command-line using the following command:
 
 [source,bash,subs="attributes+"]
 ----
@@ -78,7 +78,7 @@ java -jar hazelcast-management-center-{full-version}.jar
 The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
 
 You can use `-Dhazelcast.mc.http.port` and `-Dhazelcast.mc.contextPath`
-command line options to start Management Center on a different port and
+command-line options to start Management Center on a different port and
 context path:
 
 [source,bash,subs="attributes+"]
@@ -93,7 +93,7 @@ The next step is to let Management Center know the Hazelcast cluster member addr
 as explained in the xref:connecting-members.adoc[Connecting to the Clusters chapter].
 
 For the options you can provide when starting with the
-command line, see xref:configuring.adoc[Configuring Management Center].
+command-line, see xref:configuring.adoc[Configuring Management Center].
 For example, you can learn about topics including how to start with a
 license or extra classpath, how to configure the security,
 disk usage, update interval or logging.
@@ -101,7 +101,7 @@ disk usage, update interval or logging.
 [[deploying-to-application-server]]
 === Deploying to Application Server
 
-Instead of starting at the command line, you can
+Instead of starting at the command-line, you can
 deploy the Management Center to your application server (Tomcat, Jetty, etc.).
 
 [[starting-with-scripts]]

@@ -23,6 +23,12 @@ The following information is sent in a phone home:
 * Management Center uptime
 * Minimum and maximum cluster sizes
 * Minimum and maximum cluster versions
+* Metrics storage parameters
+* Whether the Prometheus exported is enabled
+* Whether Management Center is running in Docker
+* Healthcheck parameters
+* Console usage
+* SQL Browser usage
 * Total number of members
 * Size of the Hazelcast Management Center home directory
 * Hash value of Hazelcast Management Center license key

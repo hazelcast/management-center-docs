@@ -1,6 +1,6 @@
 = Variable Replacers
 
-Variable replacers are used to replace custom strings in configuration. You can use variable replacers in command line arguments
+Variable replacers are used to replace custom strings in configuration. You can use variable replacers in command-line arguments
 or the xref:mc-conf.adoc[`mc-conf` tool].
 
 For example, you can use variable replacers to mask sensitive information such as usernames and passwords.

@@ -32,7 +32,7 @@ You can either configure Management Center in the UI while it's running or preco
 - Managing users in the local security provider
 
 |xref:system-properties.adoc[System properties and environment variables]
-|Configure any aspect of Management Center on start from the command line, including client configuration, feature flags, JMX, and home directory.
+|Configure any aspect of Management Center on start from the command-line, including client configuration, feature flags, JMX, and home directory.
 
 |xref:mc-conf.adoc[`mc-conf` tool]
 |Preconfigure Management Center before starting it. Use this method for the following:

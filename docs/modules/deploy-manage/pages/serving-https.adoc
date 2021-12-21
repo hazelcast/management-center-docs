@@ -17,7 +17,7 @@ To enable TLS, you need to do the following:
 . If your Hazelcast clusters use mutual authentication, add the signed Management Center certificate to your cluster members' truststores, and restart them. See xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc#mutual-authentication[Mutual Authentication] in the Platform documentation.
 +
 TIP: To encrypt the truststore password and pass it
-as a command line argument in encrypted form, you can use variable replacers. See xref:{page-latest-supported-hazelcast}@hazelcast:configuration:variable-replacers.adoc[Variable Replacers] in the Platform documentation.
+as a command-line argument in encrypted form, you can use variable replacers. See xref:{page-latest-supported-hazelcast}@hazelcast:configuration:variable-replacers.adoc[Variable Replacers] in the Platform documentation.
 
 . Start Management Center with the following system properties:
 +
@@ -30,7 +30,7 @@ java -Dhazelcast.mc.tls.enabled=true \
 ----
 +
 TIP: To encrypt the keystore/truststore passwords and pass them
-as command line arguments in encrypted form, use xref:configuring.adoc#variable-replacers[variable replacers]. For a tutorial that uses replacers in context, see xref:serve-mc-over-https.adoc[].
+as command-line arguments in encrypted form, use xref:configuring.adoc#variable-replacers[variable replacers]. For a tutorial that uses replacers in context, see xref:serve-mc-over-https.adoc[].
 
 When TLS is enabled, you can access Management Center over HTTPS on port 8443: `\https://localhost:8443`.
 

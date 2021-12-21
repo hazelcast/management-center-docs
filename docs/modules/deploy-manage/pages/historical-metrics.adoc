@@ -1,10 +1,10 @@
 = Historical Metrics
 :page-aliases: ROOT:metric-persistence.adoc
-:description: Management Center persists metrics for one day so that you can view historical data for each cluster.
+:description: Management Center persists metrics so that you can view historical data for each cluster. You can customize how long data is persisted by changing the time-to-live (TTL).
 
 {description}
 
-These persisted metrics allow you to check the status of a cluster at a time in the past. Metrics include various time series data, including CPU load, memory consumption, and operation counters.
+Persisted metrics allow you to check the status of a cluster at a time in the past. Metrics include various time series data, including CPU load, memory consumption, and operation counters.
 
 == How Metrics are Persisted
 

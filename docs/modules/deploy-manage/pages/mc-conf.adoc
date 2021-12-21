@@ -1,8 +1,8 @@
 = Management Center Configuration Tool
 :page-aliases: ROOT:mc-conf.adoc
-:description: The Management Center Configuration Tool (mc-conf) is a command line tool that allows you to update certain parts of the Management Center configuration by using its built-in tasks.
+:description: The Management Center Configuration Tool (mc-conf) is a command-line tool that allows you to automate processes that require configuring Management Center, without using the UI.
 
-The Management Center Configuration Tool (`mc-conf`) is a command line tool that allows you to update the Management Center configuration without using the UI.
+The Management Center Configuration Tool (`mc-conf`) is a command-line tool that allows you to automate processes that require configuring Management Center, without using the UI.
 
 This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed and Management Center must not be running while using the tool.
 
@@ -19,15 +19,7 @@ arguments.
 +
 [tabs] 
 ====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh 
-----
---
-macOS::
+Linux and macOS::
 +
 --
 [source,bash]
@@ -51,15 +43,7 @@ TIP: If you've set a non-default home directory with the xref:system-properties.
 +
 [tabs] 
 ====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh user -h
-----
---
-macOS::
+Linux and macOS::
 +
 --
 [source,bash]
@@ -81,15 +65,7 @@ Windows::
 +
 [tabs] 
 ====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh user create -h
-----
---
-macOS::
+Linux and macOS::
 +
 --
 [source,bash]

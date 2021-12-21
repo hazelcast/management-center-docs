@@ -19,7 +19,7 @@ To set up the local security provider in the UI, go to *Settings* > *Security Pr
 mc-conf::
 +
 --
-To set up the local security provider with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
 
 .Linux and macOS
 ```bash

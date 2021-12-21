@@ -12,7 +12,7 @@ NOTE: The `/health` endpoint is always served over HTTP even if TLS/SSL is enabl
 - Serve the Management Center UI over HTTPS by doing one of the following:
 
 ** Start Management Center from
-the command line with TLS/SSL enabled. See xref:serving-https.adoc[].
+the command-line with TLS/SSL enabled. See xref:serving-https.adoc[].
 
 ** Deploy Management Center on a TLS/SSL-enabled container.
 

@@ -134,7 +134,7 @@ See xref:ROOT:mc-conf.adoc[] for more information.
 == Enabling TLS/SSL for Active Directory
 
 If your Active Directory service is using TLS/SSL protocol,
-use the following command line
+use the following command-line
 parameters for your Management Center deployment:
 
 * `-Dhazelcast.mc.ldap.ad.trustStore`: Path to the truststore. This

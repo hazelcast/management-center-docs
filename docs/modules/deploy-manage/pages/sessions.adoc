@@ -13,7 +13,7 @@ timeout period for the Management Center. If your server/container
 allows application specific configuration, you can use it to configure
 the session timeout period for the Management Center.
 
-If you started Management Center from the command line, by default, the sessions that are inactive for
+If you started Management Center from the command-line, by default, the sessions that are inactive for
 30 minutes are invalidated. To change this, you can use the
 xref:system-properties.adoc#hazelcast-mc-session-timeout-seconds[`hazelcast.mc.session.timeout.seconds` property]. For example, the following command starts Management Center with
 a session timeout period of 1 minute:

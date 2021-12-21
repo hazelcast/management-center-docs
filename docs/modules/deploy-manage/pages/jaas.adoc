@@ -146,15 +146,7 @@ not only the local security provider.
 
 [tabs] 
 ====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
---
-macOS::
+Linux and macOS::
 +
 --
 [source,bash]
