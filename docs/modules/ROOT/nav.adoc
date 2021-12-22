@@ -25,16 +25,18 @@ include::clusters:partial$nav.adoc[]
 include::integrate:partial$nav.adoc[]
 --
 
-* xref:sql-browser.adoc[]
-
 * xref:healthcheck.adoc[]
 
 * xref:clustered-rest.adoc[]
+* xref:metric-persistence.adoc[]
 
 include::jmx:partial$jmx-nav.adoc[]
 
 * Jobs
 include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
+
+* Tools
+include::tools:partial$tools-nav.adoc[]
 
 * xref:prometheus.adoc[]
 
