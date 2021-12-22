@@ -7,11 +7,8 @@ include::deploy-manage:partial$nav.adoc[]
 .Integrate
 include::integrate:partial$nav.adoc[]
 
-.Troubleshoot
-include::troubleshoot:partial$nav.adoc[]
-
-.Upgrade
-** xref:migration-guides.adoc[]
+.Tools
+include::tools:partial$nav.adoc[]
 
 .Clusters
 include::clusters:partial$nav.adoc[]
@@ -22,8 +19,11 @@ include::data-structures:partial$nav.adoc[]
 .Jobs
 include::monitor-streaming:partial$nav.adoc[]
 
-.Tools
-include::tools:partial$nav.adoc[]
+.Troubleshoot
+include::troubleshoot:partial$nav.adoc[]
+
+.Upgrade
+** xref:migration-guides.adoc[]
 
 .Release Notes
 include::release-notes:partial$nav.adoc[]
