@@ -70,19 +70,24 @@ contains a `bin/mc-start.sh` (or `bin/mc-start.cmd`) file.
 
 You can start this file directly from the command line using the following command:
 
-On Unix systems:
-
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh
+mc-start.sh 
 ----
+--
+Windows::
++
+[source,shell,subs="attributes+"]
+----
+mc-start.cmd 
+----
+====
 
-On Windows:
-
-[source,bash,subs="attributes+"]
-----
-mc-start.cmd
-----
 
 The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
 
