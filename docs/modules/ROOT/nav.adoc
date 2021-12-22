@@ -45,7 +45,8 @@ include::tools:partial$tools-nav.adoc[]
 
 * xref:high-availability.adoc[]
 
-* xref:troubleshooting.adoc[]
+* Troubleshooting
+include::troubleshoot:partial$troubleshooting-nav.adoc[]
 
 * Upgrade
 ** xref:migration-guides.adoc[]
@@ -54,9 +55,9 @@ include::tools:partial$tools-nav.adoc[]
 include::release-notes:partial$rn-nav.adoc[]
 
 
-
 * Data Structures
 +
 --
 include::data-structures:partial$nav.adoc[]
 --
+
