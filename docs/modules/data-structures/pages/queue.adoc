@@ -14,8 +14,8 @@ instance on the right, as shown below.
 
 image:ROOT:MonitoringQueues.png[Monitoring Queues]
 
-On top of the page, there are two widgets that show various metrics of the queue.
-See the xref:widget.adoc[the Widget section] for more information.
+On top of the page, there are two graphs that show various metrics of the queue.
+See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
 Under these charts are **Queue Statistics** and **Queue Throughput
 Statistics** tables.

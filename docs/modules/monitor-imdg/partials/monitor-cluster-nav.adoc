@@ -1,4 +1,0 @@
-* xref:monitor-imdg:widget.adoc[]
-* xref:monitor-imdg:monitor-dds.adoc[]
-* xref:monitor-imdg:scripting.adoc[]
-* xref:monitor-imdg:console.adoc[]

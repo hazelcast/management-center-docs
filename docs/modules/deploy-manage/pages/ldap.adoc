@@ -77,45 +77,6 @@ To create and manage additional users, you must configure them on the LDAP serve
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Issuing User Auth Token
-
-To use the REST API, users need an auth token. Auth tokens inherit roles from the user.
-
-To generate an auth token for a user, you need to send a `POST` request with the user's credentials and Management Center session to the `/api/tokens` endpoint.
-
-To revoke all auth tokens for a user, use the `user revoke-tokens` task.
-
-This task works for users in all security providers,
-not only the local security provider.
-
-[tabs] 
-====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
---
-macOS::
-+
---
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
---
-Windows::
-+
---
-[source,bash]
-----
-./mc-conf.bat user revoke-tokens -n <username>
-----
---
-====
-
 == Updating LDAP Settings
 
 Once configured, LDAP settings are saved in a local database managed by Management Center.
@@ -145,7 +106,7 @@ After a successful import, the file will be renamed as `importedSecurityHotReloa
 Alternatively, you can use the `mc-conf` tool's `security reset` and `ldap configure` tasks to
 configure the LDAP security provider from scratch,
 but you need to stop Management Center for this configuration option.
-See xref:ROOT:mc-conf.adoc[] for more information.
+See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 [[ldap-ssl]]
 == Enabling TLS/SSL for LDAP
@@ -181,7 +142,7 @@ Java keystore instead of the local database.
 
 NOTE: You can also encrypt the password, and provide it in an encrypted form,
 when configuring LDAP security provider.
-See the xref:ROOT:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
+See xref:deploy-manage:variable-replacers.adoc[] for more information.
 
 [[providing-a-master-key-for-encryption]]
 === Providing a Master Key for Encryption
@@ -193,7 +154,7 @@ set the `MC_KEYSTORE_PASS` environment variable before starting Management
 Center. This option is less secure. You should clear the environment
 variable once you make sure you can log in with your LDAP credentials
 to minimize the security risk.
-* If you're starting Management Center from the command-line, you can
+* If you're starting Management Center from the command line, you can
 start it with the `hazelcast.mc.askKeyStorePassword` property. Management Center
 asks for the keystore password upon start and uses it as a password
 for the keystore it creates. This option is more secure as it only stores

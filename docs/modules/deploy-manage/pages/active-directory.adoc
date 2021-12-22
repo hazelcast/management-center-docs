@@ -72,40 +72,6 @@ To create and manage additional users, you must configure them in Active Directo
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Issuing User Auth Token
-
-To use the REST API, users need an auth token. Auth tokens inherit roles from the user.
-
-To generate an auth token for a user, you need to send a `POST` request with the user's credentials and Management Center session to the `/api/tokens` endpoint.
-
-To revoke all auth tokens for a user, use the `user revoke-tokens` task.
-
-This task works for users in all security providers,
-not only the local security provider.
-
-[tabs]
-====
-Linux and macOS::
-+
---
-
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
-
---
-
-Windows::
-+
---
-[source,bash]
-----
-./mc-conf.bat user revoke-tokens -n <username>
-----
---
-====
-
 == Updating Active Directory Settings
 
 Once configured, Active Directory settings are saved in a local database managed by Management Center.
@@ -128,13 +94,13 @@ After a successful import, the file will be renamed as `importedSecurityHotReloa
 Alternatively, you can use the `mc-conf` tool's `security reset` and `active-directory configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop the Management Center service for this configuration option.
-See xref:ROOT:mc-conf.adoc[] for more information.
+See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 [[ad-ssl]]
 == Enabling TLS/SSL for Active Directory
 
 If your Active Directory service is using TLS/SSL protocol,
-use the following command-line
+use the following command line
 parameters for your Management Center deployment:
 
 * `-Dhazelcast.mc.ldap.ad.trustStore`: Path to the truststore. This

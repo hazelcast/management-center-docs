@@ -10,7 +10,7 @@ NOTE: The `/health` endpoint is always served over HTTP even if TLS/SSL is enabl
 - Serve the Management Center UI over HTTPS by doing one of the following:
 
 ** Start Management Center from
-the command-line with TLS/SSL enabled. See xref:serving-https.adoc[].
+the command line with TLS/SSL enabled. See xref:serving-https.adoc[].
 
 ** Deploy Management Center on a TLS/SSL-enabled container.
 
@@ -21,7 +21,7 @@ NOTE: Make sure your reverse proxy sets the `X-Forwarded-Proto` HTTP header to H
 
 - If your Hazelcast cluster uses TLS, configure Management Center with the necessary truststore information. You'll need to configure the truststore, using a client configuration file. See xref:cluster-connections.adoc[].
 
-- If you're using Clustered JMX in Management Center, enable TLS/SSL. See xref:jmx:jmx.adoc[Enabling TLS/SSL for Clustered JMX].
+- If you're using Clustered JMX in Management Center, enable TLS/SSL. See xref:integrate:jmx.adoc[Enabling TLS/SSL for Clustered JMX].
 
 - If you're using LDAP authentication, make sure you use LDAPS or
 enable the *Start TLS* field. See xref:deploy-manage:security-providers.adoc[LDAP Authentication].

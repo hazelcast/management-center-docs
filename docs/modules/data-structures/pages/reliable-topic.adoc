@@ -15,8 +15,8 @@ Reliable Topic instance on the right, as shown below.
 
 image:ROOT:MonitoringReliableTopics.png[Monitoring Reliable Topics]
 
-On top of the page, there are two widgets that show various metrics
-of the reliable topic. See the xref:widget.adoc[the Widget section] for more information.
+On top of the page, there are two graphs that show various metrics
+of the reliable topic. See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
 Under these charts is the Reliable Topic Operation Statistics table.
 From left to right, this table lists the IP addresses and ports of

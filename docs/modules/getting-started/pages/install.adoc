@@ -1,8 +1,12 @@
 = Installing and Starting Management Center
-[[install]]
+:page-aliases: ROOT:getting-started.adoc
+:description: This topic explains the options for installing and starting Management Center, using Docker or the binary packages.
 
-This section guides you to install Management Center using its Docker images or
-binary packages and start its service before you can launch the interface.
+{description}
+
+== Before you Begin
+
+xref:overview.adoc#requirements[Review the requirments] and make sure that you meet them.
 
 == Using Docker
 
@@ -45,12 +49,7 @@ version of Hazelcast. In that case, you may download the new Management Center
 from its https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page] as a
 separate package.
 
-If you choose to install Management Center using binary packages, you need to start the
-Management Center service before starting it as described below.
-
-=== Starting the Management Center Service
-
-You have the following options to start the Management Center service:
+If you choose to install Management Center using binary packages, you have the following options to start the Management Center service:
 
 * Start Hazelcast Management Center from the command line.
 * Use the scripts that come with the download package.
@@ -61,11 +60,17 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
+[[starting-with-scripts]]
+=== Using Scripts in the Package
+
+As another option, you can use the `mc-start.bat` or `mc-start.sh` scripts,
+which come with the download package in `bin/` folder, to start the Management Center. You can find these scripts under the extracted directory.
+
 [[starting-with-jar-file]]
-==== Using the Command Line
+=== Using the Command Line
 
 Extract the Hazelcast or Management Center package.
-The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
+The extracted directory (`hazelcast-management-center-{full-version}`)
 contains the `hazelcast-management-center-{full-version}.jar` file.
 
 You can start this file directly from the command line using the following command:
@@ -89,27 +94,11 @@ java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -ja
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
 You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
 
-The next step is to let Management Center know the Hazelcast cluster member addresses
-as explained in the xref:ROOT:connecting-members.adoc[Connecting to the Clusters chapter].
-
-For the options you can provide when starting with the
-command line, see xref:deploy-and-manage:system-properties.adoc[].
-For example, you can learn about topics including how to start with a
-license or extra classpath, how to configure the security,
-disk usage, update interval or logging.
-
 [[deploying-to-application-server]]
-==== Deploying to Application Server
+=== Deploying to Application Server
 
 Instead of starting at the command line, you can
 deploy the Management Center to your application server (Tomcat, Jetty, etc.).
-
-[[starting-with-scripts]]
-==== Using Scripts in the Package
-
-As another option, you can use the `start.bat` or `start.sh` scripts,
-which come with the download package in `bin/` folder, to start the Management Center.
-You can find these scripts under the extracted directory.
 
 == SNAPSHOT versions
 
@@ -125,6 +114,32 @@ Alternatively, you can download it from https://download.hazelcast.com/managemen
 or https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz .
 
 In these cases, it can be useful to query the build information to be able to tell what revision are you using.
-You can find version metadata about a running instance of Management Center at the following endpoint: `{mc-base-url}/api/buildInfo`.
+You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`.
 This endpoint returns JSON.
 
+== Next Steps
+
+For an end-to-end getting started, see xref:get-started.adoc[].
+
+To learn how to connect to a cluster, see xref:deploy-manage:cluster-connections.adoc[].
+
+To serve Management Center over HTTPS instead of HTTP, see xref:deploy-manage:serve-mc-over-https.adoc[].
+
+For the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].
+
+.Enterprise topics
+[%collapsible]
+====
+To explore the licensed features of Management Center, see the following:
+
+* xref:tools:clustered-rest.adoc[Clustered REST]
+* xref:integrate:jmx.adoc[Clustered JMX]
+* xref:clusters:client-filtering.adoc[Cluster Client Filtering]
+* xref:integrate:prometheus-monitoring.adoc[Prometheus Exporter]
+
+See also the following for the Management Center features that rely on your cluster's enterprise capabilities:
+
+* xref:clusters:wan-replication.adoc[WAN Replication]
+* xref:clusters:persistence.adoc[Persistence]
+* xref:clusters:triggering-rolling-upgrade[Rolling Upgrades]
+====

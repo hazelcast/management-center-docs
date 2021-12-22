@@ -1,7 +1,7 @@
 site:
   title: Documentation
   url: http:localhost:5000
-  start_page: management-center::index.adoc
+  start_page: getting-started:overview.adoc
   robots: disallow
   keys:
     docsearch_id: 'QK2EAH8GB0'

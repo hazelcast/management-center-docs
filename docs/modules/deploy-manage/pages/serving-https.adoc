@@ -3,7 +3,7 @@
 
 {description}
 
-To serve Management Center over HTTPS, you need to enable TLS in the Management Center configuration.
+To serve Management Center over HTTPS, you need to enable TLS in the Management Center configuration. This topic explains the options you have for serving Management Center over HTTPS. For a tutorial, see xref:serve-mc-over-https.adoc[].
 
 == Enabling TLS for Management Center
 
@@ -24,7 +24,7 @@ java -Dhazelcast.mc.tls.enabled=true \
 ----
 +
 TIP: To encrypt the keystore/truststore passwords and pass them
-as command-line arguments in encrypted form, use xref:configuring.adoc#variable-replacers[variable replacers].
+as command line arguments in encrypted form, see xref:variable-replacers.adoc[].
 
 When TLS is enabled, you can access Management Center over HTTPS on port 8443: `\https://localhost:8443`.
 

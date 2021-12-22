@@ -15,8 +15,8 @@ that Replicated Map instance on the right, as shown below.
 image:ROOT:MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
 
 In this page, you can monitor metrics of the selected Replicated Map.
-The page shows two widgets that show various metrics of the Replicated Map.
-See the xref:widget.adoc[the Widget section] for more information.
+The page shows two graphs that show various metrics of the Replicated Map.
+See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
 Under these charts are **Replicated Map Statistics** and **Replicated Map Throughput**
 data tables.

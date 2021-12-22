@@ -1,6 +1,6 @@
 = Overview
 
-This chapter describes the usages of tools offered by Management Center:
+This section describes the usages of tools offered by Management Center:
 
 * xref:tools:sql-browser.adoc[SQL Browser] to run SQL queries and operate on the data structures
 * xref:tools:scripting.adoc[Scripting] to run scripts on the cluster using languages including

@@ -2,7 +2,8 @@
 * xref:clusters:clients.adoc[Clients]
 * xref:clusters:client-filtering.adoc[Client Filtering]
 * xref:clusters:members.adoc[Members]
-* xref:clusters:administration.adoc[Administration]
+* Administration
+** xref:clusters:administration.adoc[Overview]
 ** xref:clusters:cluster-state.adoc[]
 *** xref:clusters:changing-cluster-state.adoc[]
 *** xref:clusters:shutting-down-cluster.adoc[]

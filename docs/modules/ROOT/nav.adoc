@@ -1,56 +1,30 @@
-* Get Started
-include::get-started:partial$nav.adoc[]
+.Get Started
+include::getting-started:partial$nav.adoc[]
 
-include::launching:partial$launching-nav.adoc[]
-
-* xref:user-interface.adoc[]
-
-include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
-
-* Deploy and Manage
-+
---
+.Deploy and Manage
 include::deploy-manage:partial$nav.adoc[]
---
 
-* Integrate
-+
---
-* Clusters
-+
---
-include::clusters:partial$nav.adoc[]
---
-
+.Integrate
 include::integrate:partial$nav.adoc[]
---
 
-* xref:healthcheck.adoc[]
+.Troubleshoot
+include::troubleshoot:partial$nav.adoc[]
 
-* xref:clustered-rest.adoc[]
-* xref:metric-persistence.adoc[]
-
-include::jmx:partial$jmx-nav.adoc[]
-
-* Jobs
-include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
-
-* Tools
-include::tools:partial$tools-nav.adoc[]
-
-* Troubleshooting
-include::troubleshoot:partial$troubleshooting-nav.adoc[]
-
-* Upgrade
+.Upgrade
 ** xref:migration-guides.adoc[]
 
-* Release Notes
-include::release-notes:partial$rn-nav.adoc[]
+.Clusters
+include::clusters:partial$nav.adoc[]
 
-
-* Data Structures
-+
---
+.Data Structures
 include::data-structures:partial$nav.adoc[]
---
+
+.Jobs
+include::monitor-streaming:partial$nav.adoc[]
+
+.Tools
+include::tools:partial$nav.adoc[]
+
+.Release Notes
+include::release-notes:partial$nav.adoc[]
 

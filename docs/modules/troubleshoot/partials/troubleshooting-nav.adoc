@@ -1,2 +1,0 @@
-** xref:troubleshoot:hazelcast-clusters.adoc[]
-** xref:troubleshoot:management-center.adoc[]

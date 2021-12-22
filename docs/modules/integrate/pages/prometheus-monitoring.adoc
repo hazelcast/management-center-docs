@@ -1,6 +1,7 @@
 = Prometheus Monitoring
 :description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. By collecting cluster metrics in Prometheus you can monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
+:page-enterprise: true
 
 {description}
 
@@ -148,6 +149,6 @@ https://grafana.com/grafana/dashboards/13183[this dashboard].
 
 == Next Steps
 
-Learn more about the xref:deploy-and-manage:mc-conf.adoc[`mc-conf` tool].
+Learn more about the xref:deploy-manage:mc-conf.adoc[`mc-conf` tool].
 
-Explore xref:deploy-and-manage:system-properties.adoc[system properties] and their definitions.
+Explore xref:deploy-manage:system-properties.adoc[system properties] and their definitions.

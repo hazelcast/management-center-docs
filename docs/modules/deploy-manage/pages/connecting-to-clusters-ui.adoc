@@ -20,7 +20,7 @@ NOTE: When connecting to multiple clusters from the same instance of Management 
 
 . Click *Connect* to start configuring a new connection.
 +
-image::ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
+image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 . Enter the name of the cluster that you want to connect to.
 
@@ -110,11 +110,11 @@ As soon as Management Center connects to one member, it will auto-discover the o
 
 . Click *Connect* to start configuring a new connection.
 +
-image::ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
+image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 . Go to the *Upload Client Config* tab.
 +
-image::ROOT:UploadConfigFile.png[alt=Upload Config File]
+image:ROOT:UploadConfigFile.png[alt=Upload Config File]
 
 . Either drag and drop your configuration file into the box or click to browse your file system.
 
@@ -149,13 +149,13 @@ To connect to another cluster, you can repeat these steps with a different confi
 
 To remove an existing connection to a cluster, go to *Cluster Connections* in the toolbar and click the *trash icon* above the name of the cluster that you want to disconnect from Management Center.
 
-image::ROOT:remove-connection.png[Trash icon above the name of a cluster called dev]
+image:ROOT:remove-connection.png[Trash icon above the name of a cluster called dev]
 
 == Editing a Cluster Connection
 
 To edit an existing connection, go to *Cluster Connections* in the toolbar and click the *configure icon* (next to the *trash icon*) above the name of the cluster.
 
-image::ROOT:edit-connection.png[Configure icon above the name of a cluster called dev]
+image:ROOT:edit-connection.png[Configure icon above the name of a cluster called dev]
 
 If you connected to the cluster from the form fields, you can edit the form.
 

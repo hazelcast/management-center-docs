@@ -76,8 +76,7 @@ serialization for storing values in your map, you need to
 configure the client that Management Center uses for connecting to the
 cluster (as described xref:{page-latest-supported-hazelcast}@hazelcast:serialization:serialization.adoc[here]). Note that if you
 have any custom classes, you need to add the JAR containing them
-to Management Center's classpath before starting it as described in
-the xref:ROOT:configuring.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath section]. In case the value stored in the map is not a `String`
+to Management Center's classpath before starting it as described in xref:deploy-manage:configuring.adoc#providing-an-extra-classpath[Providing an Extra Classpath]. In case the value stored in the map is not a `String`
 or of another Java primitive type, it is rendered as a JSON value as shown below:
 
 image:ROOT:MapBrowserWithCustomTypedValue.png[Map Browser with Custom Typed Value]
@@ -99,8 +98,8 @@ your changes.
 == Map Monitoring
 
 Besides the Map Browser and Map Config tools, the map monitoring
-page shows two widgets that show various metrics of the map.
-See the xref:widget.adoc[Widget section] for more information.
+page shows two graphs that show various metrics of the map.
+See the xref:getting-started:graphs.adoc[graph section] for more information.
 
 Under these charts are **Map Statistics**, **Map Throughput**,
  **Member Near Cache**, and **Client Near Cache** data tables.

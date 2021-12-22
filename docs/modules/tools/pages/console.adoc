@@ -1,22 +1,22 @@
 = Executing Console Commands
-[[console]]
+:description: The console feature enables you to execute commands on the cluster. For example, you can perform `put` and `get` operations on a map. 
 :page-aliases: monitor-imdg:console.adoc
 
-**Disclaimer: It is not recommended for production use.**
+{description}
 
-The Management Center has a console feature that enables you to
-execute commands on the cluster. For example, you can perform
-`put` and `get` operations on a map, after you set the namespace with
-the command `ns <name of your map>`. The same is valid for queues,
-topics and other data structures that can be monitored on the Management
-Center. To execute your command, type it into the field below the console
-and press **Enter**. Type `help` to see all the commands that you can use.
+WARNING: The console is not recommended for production use.
 
-Open a console window by clicking on the **Console** button located on
-the left panel or the one located at the top menu. You can also open it
-by using *ALT* + *T* keyboard shortcut on Windows/Linux and `Option + T` on
-macOS. Below is a sample view with the `help` command executed.
-
+. Open a console window by clicking on the **Console** button located on
+the left panel or the one located at the top menu.
++
+TIP: You can also open the console, using the kbd::[Alt + T] keyboard shortcut on Windows/Linux and kbd::[Option + T] on
+macOS.
++
 image:ROOT:Console.png[Console]
 
-NOTE: The Management Center Console does not support data structures with spaces or special characters in their names.
+. Set the namespace of a data structure, using
+the `ns <name of your data structure>` command.
++
+NOTE: The console does not support data structures with spaces or special characters in their names.
+
+To get help or a list of all possible commands, enter `help` in the console.

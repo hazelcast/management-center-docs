@@ -6,7 +6,7 @@
 
 Management Center comes with the following security providers:
 
-- xref:dev-mode.adoc[*Dev mode*]: No login required. One admin user.
+- xref:dev-mode.adoc[*Dev mode*]: No login required. One admin user. No authentication token needed to use the REST API.
 - xref:local-security-provider.adoc[*Local*]: Manage user logins and authentication in Management Center.
 +
 TIP: You can create and manage users both in the Management Center UI and with the `mc-conf` tool only if you use the local security provider.
@@ -19,6 +19,6 @@ for user authentication and authorization.
 
 You can select dev mode as a security provider only when you first launch Management Center. To configure all other security providers, go to *Settings* > *Security Providers*.
 
-image::ROOT:SecurityProviders.png[Security Providers tab in Management Center settings]
+image:ROOT:SecurityProviders.png[Security Providers tab in Management Center settings]
 
 If you're looking to switch from one security provider to another, see xref:switching-security-provider.adoc[].

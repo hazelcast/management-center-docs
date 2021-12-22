@@ -17,7 +17,7 @@ UI::
 
 To set up dev mode in the UI, click *Enable Dev Mode* when Management Center starts.
 
-image::ROOT:ConfigureSecurityDevMode.png[Dev Mode]
+image:ROOT:ConfigureSecurityDevMode.png[Dev Mode]
 
 --
 mc-conf::

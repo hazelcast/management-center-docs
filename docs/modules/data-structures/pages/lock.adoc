@@ -2,7 +2,7 @@
 [[monitoring-locks]]
 
 You can use the scripting feature of the Management Center to
-monitor the locks in your cluster. See the xref:scripting.adoc[Scripting section]
+monitor the locks in your cluster. See the xref:tools:scripting.adoc[Scripting section]
 to learn how to use this feature.
 
 You can use these JavaScript functions to retrieve various information

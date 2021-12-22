@@ -1,4 +1,4 @@
-= Overview
+= Management Center {full-version}
 [[overview]]
 
 Management Center is a tool for managing and monitoring Hazelcast clusters.
@@ -9,7 +9,7 @@ For example, with the graphical user interface (UI), you can do the following:
 * Execute SQL queries on your clusters.
 * Perform administrative tasks such as identifying and diagnosing issues in clusters.
 
-You can enable the REST API to use REST calls to return the
+You can also enable the REST API to use REST calls to return the
 information presented in Management Center. You can also
 monitor cluster statistics from a JMX interface and Prometheus.
 
@@ -51,7 +51,9 @@ Experimental support for AIX is provided as well, with the following prerequisit
 
 == Licensing
 
-If you don't have a Management Center license, then it shows metrics for clusters up to three members.
+If you don't have a license, you can use Management Center to monitor clusters of up to a maximum of three members.
+
+If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
 
 A valid Management Center license is required for:
 

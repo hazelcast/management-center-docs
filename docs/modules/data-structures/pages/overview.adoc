@@ -1,6 +1,7 @@
 = Overview
 :description: You can monitor the data structures in your cluster using the Storage, Compute, and Messaging menus in the Management Center.
 :page-aliases: monitor-imdg:monitor-dds.adoc
+
 {description} From these menus, you can see the statistics for the following data structures.
 
 Under the *Storage* menu:

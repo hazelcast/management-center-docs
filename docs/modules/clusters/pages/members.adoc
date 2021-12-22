@@ -18,7 +18,7 @@ image:ROOT:MemberGridView.png[Member Grid View]
 |Displays an info icon if the member is a CP member or a warning icon if the member's runtime or hardware setup does not conform to our production recommendations. Hover over the icon to see the tooltip. For a list of production recommendations, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:production-checklist.adoc[] in the Platform documentation. To monitor and manage the CP subsystem, see xref:cp-subsystem.adoc[].
 
 |Scripting
-|Whether scripting is enabled. See xref:monitor-imdg:scripting.adoc[]
+|Whether scripting is enabled. See xref:tools:scripting.adoc[]
 
 |Streaming
 |Whether the Jet engine is enabled. See xref:{page-latest-supported-hazelcast}@hazelcast:configuration:jet-configuration.adoc[] in the Platform documentation.
@@ -96,7 +96,7 @@ selected member. You can open
 each chart as a separate dialog using
 the maximize image:ROOT:MaximizeChart.png[maximize] button.
 
-To customize the data displayed in the graphs, see xref:monitor-imdg:widget.adoc[]
+To customize the data displayed in the graphs, see xref:getting-started:graphs.adoc[]
 
 === Runtime
 

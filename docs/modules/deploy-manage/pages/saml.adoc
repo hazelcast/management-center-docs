@@ -72,45 +72,6 @@ To create and manage additional users, you must register them with your identity
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Issuing User Auth Token
-
-To use the REST API, users need an auth token. Auth tokens inherit roles from the user.
-
-To generate an auth token for a user, you need to send a `POST` request with the user's credentials and Management Center session to the `/api/tokens` endpoint.
-
-To revoke all auth tokens for a user, use the `user revoke-tokens` task.
-
-This task works for users in all security providers,
-not only the local security provider.
-
-[tabs] 
-====
-Linux::
-+
---
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
---
-macOS::
-+
---
-[source,bash]
-----
-./mc-conf.sh user revoke-tokens -n <username>
-----
---
-Windows::
-+
---
-[source,bash]
-----
-./mc-conf.bat user revoke-tokens -n <username>
-----
---
-====
-
 == Next Steps
 
 For details about the `mc-conf` tool, see xref:mc-conf.adoc[].

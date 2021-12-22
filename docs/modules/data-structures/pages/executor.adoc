@@ -14,8 +14,8 @@ instance on the right, as shown below.
 
 image:ROOT:MonitoringExecutors.png[Monitoring Executors]
 
-On top of the page, there are two widgets that show various metrics of the Executor.
-See the xref:widget.adoc[the Widget section] for more information.
+On top of the page, there are two graphs that show various metrics of the Executor.
+See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
 image:ROOT:MonitoringOptionsExecutor.png[alt=Monitoring Options for Executor]
 

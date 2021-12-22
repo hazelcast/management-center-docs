@@ -78,7 +78,7 @@ the `log4j.configurationFile` property.
 For example, you can create a file named `log4j2-custom.properties` with the following
 content and set logging level to `DEBUG`.
 To use this file as the logging configuration, you would start Management Center with the
-`-Dlog4j.configurationFile=/path/to/your/log4j2-custom.properties` command-line parameter:
+`-Dlog4j.configurationFile=/path/to/your/log4j2-custom.properties` command line parameter:
 
 [source,properties]
 ----

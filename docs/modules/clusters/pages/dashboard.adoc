@@ -4,7 +4,7 @@
 
 {description}
 
-image::ROOT:dashboard.png[Cluster dashboard page]
+image:ROOT:DashboardPage.png[Cluster dashboard page]
 
 [[cluster-state-and-health]]
 == Cluster Status
@@ -83,7 +83,7 @@ To see the exact number of partitions owned by each member, see the xref:members
 
 == Graphs
 
-To customize the data displayed in the graphs, see xref:monitor-imdg:widget.adoc[].
+To customize the data displayed in the graphs, see xref:getting-started:graphs.adoc[].
 
 [[memory-utilization]]
 == Resources Utilization

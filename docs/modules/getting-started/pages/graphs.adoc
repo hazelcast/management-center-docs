@@ -1,32 +1,31 @@
-= Widget
-[[widget]]
-:page-aliases: monitor-imdg:widget.adoc
+= Graphs
+:page-aliases: monitor-imdg:widgets.adoc
+:description: Graphs are displayed on the dashboard and on the details page of any data structure (with a few exceptions). This page explains how to read graphs and customize their data points.
 
-Widget is a special component designed to inspect cluster metrics as graphs.
-It is used on the dashboard and on the details page of any data structure (with a few exceptions).
+{description}
 
 image:ROOT:Widget.png[alt=Widget, align="center"]
 
 == Legend
 
-Widget can display up to 12 graphs at the same time.
+Graphs can display up to 12 graphs at the same time.
 Legend allows you to adjust which graphs are visible and which ones are not.
 By default, all graphs are visible. A title of a hidden graph is displayed as struck through.
 
-image:ROOT:WidgetLegend.png[alt=Widget with Legend, align="center"]
+image:ROOT:WidgetLegend.png[]
 
 == Current and Historical Data
 
-Widget works in two modes - current and historical. It fetches current data in the current mode
+Graphs work in two modes - current and historical. It fetches current data in the current mode
 and historical data in the historical mode.
 
-The current mode is always available. The historical mode requires xref:ROOT:metric-persistence.adoc[Metrics Persistence] to be enabled.
+The current mode is always available. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled.
 
 The input on the bottom controls what data is displayed. The input is disabled if only current data is available.
 You can select any arbitrary point in the past to see the historical data from that period. You can drag
 the chart to adjust the time point.
 
-Widget shows up to 5 minutes of data.
+Graphs show up to 5 minutes of data.
 In the current mode it requests data in chunks every 5 seconds, and concatenates it.
 In the historical mode it requests 5 minutes of data up to the selected time point once.
 
@@ -39,10 +38,10 @@ image:ROOT:WidgetHistorical.png[alt=Historical mode, align="center"]
 
 == Presets
 
-Widget provides access to an extensive list of metrics
-and uses a selection of filters to show only relevant data matching a certain condition on the graph.
+Graphs providesaccess to an extensive list of metrics
+and use a selection of filters to show only relevant data matching a certain condition on the graph.
 A preset is a combination of metrics and a filter. You can add/edit new presets and remove the existing ones.
-Each widget is shipped with at least one default preset. You cannot edit or remove a default preset.
+Each graph is shipped with at least one default preset. You cannot edit or remove a default preset.
 
 The top dropdown shows the name of the preset and allows you to switch between them.
 The pencil button next to it opens an edit preset view. The plus button opens a new preset view.
@@ -64,7 +63,7 @@ Every metric is measured using some unit of measurement. You can select metrics 
 
 == Filters
 
-Widget supports the following types of filters:
+Graphs support the following types of filters:
 
 . Outliers (auto)
 . Peak Top 3
@@ -77,7 +76,7 @@ Widget supports the following types of filters:
 
 It works as follows:
 
-. Widget fetches individual member metrics for all members.
+. Graphs fetch individual member metrics for all members.
 . It finds a maximum/minimum (for Top 3 and Bottom 3 correspondingly) value in the list of data points for every member.
 . It shows top 3/bottom 3 graphs based on the maximum/minimum value.
 
@@ -89,7 +88,7 @@ image:ROOT:WidgetPeakFilter.png[alt=Peak Example, align="center"]
 
 It works as follows:
 
-. Widget fetches individual member metrics for all members.
+. Graphs fetch individual member metrics for all members.
 . It calculates an average value for the list of data points for every member.
 . It shows top 3/bottom 3 graphs based on the average value.
 
@@ -102,9 +101,9 @@ image:ROOT:WidgetAverageFilter.png[alt=Average Example, align="center"]
 
 It works as follows:
 
-. Widget fetches individual members metrics for all members.
+. Graphs fetch individual members metrics for all members.
 . It calculates an average value for the list of data points for every member.
-. Widget fetches a median aggregate for the selected metric.
+. Graphs fetch a median aggregate for the selected metric.
 . It calculates an average value for the median aggregate graph.
 . It shows the median aggregate graph as a dashed line.
 . If the average value for any member is greater than the average value for the median aggregate,
@@ -122,6 +121,6 @@ image:ROOT:WidgetOutliersFilter.png[alt=Outliers Example, align="center"]
 It works as follows:
 
 . You select the members.
-. Widget fetches individual member metrics for the selected members.
+. Graphs fetch individual member metrics for the selected members.
 . It calculates an average value for the list of data points for every member.
 . It shows the graphs for the selected metrics of the selected members.

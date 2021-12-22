@@ -1,54 +1,125 @@
 = Clustered REST
-[[clustered-rest]]
+:description: The clustered REST API can be enabled to allow you to monitor clustered statistics of distributed objects through HTTP endpoints.
 :page-aliases: ROOT:clustered-rest.adoc
+:page-enterprise: true
 
-The Clustered REST API is exposed from the Management Center
-to allow you to monitor clustered statistics of distributed objects.
+{description}
 
 == Enabling Clustered REST
 
-To enable Clustered REST on your Management Center, pass the
-following property at startup. This property is disabled by default.
+To enable clustered REST in Management Center, use the
+xref:deploy-manage:system-properties.adoc#hazelcast-mc-rest-enabled[`hazelcast.mc.rest.enabled` property] at startup. This property is disabled by default.
 
-```bash
--Dhazelcast.mc.rest.enabled=true
-```
+== Root Endpoint
 
-== Clustered REST API Root
-
-The entry point for the Clustered REST API is `/rest/`. This
+The entry point for the clustered REST API is `/rest`. This
 resource does not have any attributes.
 
-NOTE: All requests to Clustered REST API must be authenticated.  
-If the request is not authenticated, a `UNAUTHORIZED: No bearer token provided.` 
-message will be shown.
-
-NOTE: All parameters that are used in the REST API URLs, like
+All parameters that are used in the REST API URLs, like
 cluster names and distributed data structure names, must be
 https://en.wikipedia.org/wiki/Percent-encoding[URL encoded] when composing
-a valid request for Clustered REST.
+a valid request for clustered REST.
 Such parameters are marked in braces (`{` and `}`) in the URL description
 for each endpoint. As an example, `name.with/special@chars`
 parameter value would be encoded as `name.with%2Fspecial%40chars`.
 
-NOTE: All endpoints return HTTP status code 404 if no data
+All endpoints return HTTP status code 404 if no data
 about a cluster, member, client or data structure can be
 found in the Management Center.
 
-== OpenAPI definitions
+== Issuing User Authentication Tokens
 
-In addition to this documentation, the Clustered REST endpoints are also documented in OpenAPI format. This REST API documentation is accessible at the `/swagger-ui/index.html` endpoint. For example `\http://localhost:8080/swagger-ui/index.html`.
+Unless the security provider is set to dev mode, users need an authentication (auth) token to send requests to the REST API.
 
-== Clustered REST API Authentication
-
-Clustered REST API supports only Bearer Token authentication. It means every Clustered REST API
-request must include the following header:
+The auth token must be included in the following header:
 
 * Authorization: Bearer <user_auth_token>
 
-An auth token for user can be issued by using the xref:ROOT:mc-conf.adoc#mc-conf-issue-token[mc-conf] command.
+The way in which you generate an auth token depends on the security provider that you use. See xref:deploy-manage:security-providers.adoc[].
 
-In *Dev Mode* no `Authorization` header is required.
+NOTE: All auth tokens inherit roles from the user.
+
+[cols="1a,1a"]
+|===
+|Security Provider| Method for issuing tokens
+
+|Local Security Provider
+|
+Use the `user issue-token` task of the `mc-conf` tool.
+
+Send a `POST` request to the `/api/tokens` endpoint.
+
+|All other security providers other than dev mode
+|Send a `POST` request to the `/api/tokens` endpoint.
+|===
+
+To use the `/api/tokens` endpoint, do the following. Replace the `<username>` and `<password>` placeholders with a user's username and password.
+
+[source,bash]
+----
+curl -u {<username>}:{<password>} -d '{"username":"<username>"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
+----
+
+To use the `mc-conf` tool, do the following:
+
+[tabs] 
+====
+Linux and macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user issue-token -n <username>
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user issue-token -n <username>
+----
+--
+====
+
+The created token is displayed in the output:
+
+```
+Successfully issued a token for user 'test_user'.
+Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
+Label: 'test_user_2021-07-07T17:24 EEST'
+```
+
+== OpenAPI Definitions
+
+In addition to this documentation, the Clustered REST endpoints are also documented in OpenAPI format. This REST API documentation is accessible at the `/swagger-ui/index.html` endpoint. For example `\http://localhost:8080/swagger-ui/index.html`.
+
+=== Revoking Auth Tokens
+
+To revoke all auth tokens for a user, use the `user revoke-tokens` task.
+
+[tabs]
+====
+Linux and macOS::
++
+--
+
+[source,bash]
+----
+./mc-conf.sh user revoke-tokens -n <username>
+----
+
+--
+
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user revoke-tokens -n <username>
+----
+--
+====
 
 == Retrieving Management Center License Expiration Time
 
@@ -129,7 +200,6 @@ curl http://localhost:8080/rest/health
 ]
 ```
 
-
 == Clusters Resource
 
 This resource returns a list of clusters that are connected to
@@ -150,7 +220,6 @@ curl http://localhost:8080/rest/clusters
 ["dev", "qa"]
 ```
 
-[#cluster-resource]
 == Cluster Resource
 
 This resource returns information related to the provided cluster name:

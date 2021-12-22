@@ -14,8 +14,8 @@ instance on the right, as shown below.
 
 image:ROOT:MonitoringCaches.png[Monitoring Caches]
 
-On top of the page, there are two widgets that show various metrics of the cache.
-See the xref:widget.adoc[Widget section] for more information.
+On top of the page, there are two graphs that show various metrics of the cache.
+See the xref:getting-started:graphs.adoc[graph section] for more information.
 
 Under these charts are **Cache Statistics**, **Cache Throughput**, and **Client Near Cache**
 data tables.
@@ -94,7 +94,7 @@ image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 **Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this cache, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
-See the xref:monitor-clients.adoc[Monitoring Clients section] for details.
+See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
 
 image:ROOT:ClientNearCacheDataTable.png[Caches Client Near Cache Data Table]
 

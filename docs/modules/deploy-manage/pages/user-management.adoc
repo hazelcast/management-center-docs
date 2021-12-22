@@ -35,4 +35,4 @@ You can create new users and assign those users a role. The way in which you cre
 
 To use the REST API, users need an authentication token, unless you are an admin user and you are using dev mode.
 
-The way in which you generate an authentication token depends on your chosen security provider. See xref:security-providers.adoc[].
+The way in which you generate an authentication token depends on your chosen security provider. See xref:tools-clustered-rest.adoc[].

@@ -54,8 +54,8 @@ java -Dhazelcast.mc.jmx.enabled=true
 ----
 
 NOTE: You can encrypt the keystore password and pass it as a
-command-line argument in encrypted form for improved security.
-See the xref:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
+command line argument in encrypted form for improved security.
+See xref:deploy-manage:variable-replacers.adoc[] for more information.
 
 Then, you can use the following command to connect to the
 clustered JMX service using JConsole with the address `localhost:65432`:
@@ -68,7 +68,7 @@ jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl
 === Enabling TLS Mutual Authentication for Clustered JMX
 
 To secure the clustered JMX interface, you can use
-the following command-line parameters to enable TLS mutual
+the following command line parameters to enable TLS mutual
 authentication:
 
 * `-Dhazelcast.mc.jmx.mutualAuthentication=true`
@@ -203,4 +203,4 @@ section under the JMX directory.
 
 See a list of all available xref:jmx-api.adoc[JMX attributes].
 
-Explore xref:deploy-and-manage:system-properties.adoc[system properties] and their definitions.
+Explore xref:deploy-manage:system-properties.adoc[system properties] and their definitions.
