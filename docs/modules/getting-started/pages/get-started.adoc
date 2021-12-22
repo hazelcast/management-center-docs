@@ -48,7 +48,7 @@ docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 +
 You should see the following terminal log:
 +
-image:ROOT:MC-starts.png[Management Starts successfully]
+`Hazelcast Management Center successfully started at http://localhost:8080`
 
 . In a web browser, go to localhost:8080 and enable *Dev Mode*.
 +
