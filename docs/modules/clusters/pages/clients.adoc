@@ -1,6 +1,6 @@
 = Clients
 :description: You can use the Clients menu item to monitor all the clients that are connected to your Hazelcast cluster.
-[[monitoring-clients]]
+:page-aliases: monitor-imdg:monitor-clients.adoc
 
 You can use the **Clients** menu item to monitor all the clients that are connected to your Hazelcast cluster.
 
