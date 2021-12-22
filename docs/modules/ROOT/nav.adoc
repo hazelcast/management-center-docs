@@ -38,9 +38,8 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 * Tools
 include::tools:partial$tools-nav.adoc[]
 
-* xref:prometheus.adoc[]
-
-* xref:troubleshooting.adoc[]
+* Troubleshooting
+include::troubleshoot:partial$troubleshooting-nav.adoc[]
 
 * Upgrade
 ** xref:migration-guides.adoc[]
@@ -49,9 +48,9 @@ include::tools:partial$tools-nav.adoc[]
 include::release-notes:partial$rn-nav.adoc[]
 
 
-
 * Data Structures
 +
 --
 include::data-structures:partial$nav.adoc[]
 --
+
