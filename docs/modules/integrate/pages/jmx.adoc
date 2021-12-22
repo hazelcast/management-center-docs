@@ -1,6 +1,6 @@
 = Clustered JMX
 :description: Management Center provides a clustered Java Management Extensions (JMX) monitoring service that you can use with any JMX monitoring application. JMX monitoring allows you to monitor clustered metrics of distributed Hazelcast objects from a JMX interface.
-:page-aliases: jmx:jmx.adoc jmx:appdynamics.adoc, jmx:new-relic.adoc, jmx:configuring.adoc
+:page-aliases: jmx:jmx.adoc, jmx:appdynamics.adoc, jmx:new-relic.adoc, jmx:configuring.adoc
 
 {description}
 
