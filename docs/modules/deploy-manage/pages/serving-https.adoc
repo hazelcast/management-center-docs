@@ -1,10 +1,7 @@
 = Serving Management Center over HTTPS
 :description: Serving Management Center over HTTPS secures communication between Management Center and HTTP clients such as web browsers that are connected to it.
-:page-enterprise: true
 
 {description}
-
-NOTE: You need an Enterprise license to use this feature.
 
 To serve Management Center over HTTPS, you need to enable TLS in the Management Center configuration.
 
@@ -15,9 +12,6 @@ To enable TLS, you need to do the following:
 . Generate key pairs and a signed certificate. If you are using a self-signed certificate, see <<self-signed-certificates, Self-Signed Certificates>> on this page.
 
 . If your Hazelcast clusters use mutual authentication, add the signed Management Center certificate to your cluster members' truststores, and restart them. See xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc#mutual-authentication[Mutual Authentication] in the Platform documentation.
-+
-TIP: To encrypt the truststore password and pass it
-as a command-line argument in encrypted form, you can use variable replacers. See xref:{page-latest-supported-hazelcast}@hazelcast:configuration:variable-replacers.adoc[Variable Replacers] in the Platform documentation.
 
 . Start Management Center with the following system properties:
 +
@@ -30,7 +24,7 @@ java -Dhazelcast.mc.tls.enabled=true \
 ----
 +
 TIP: To encrypt the keystore/truststore passwords and pass them
-as command-line arguments in encrypted form, use xref:configuring.adoc#variable-replacers[variable replacers]. For a tutorial that uses replacers in context, see xref:serve-mc-over-https.adoc[].
+as command-line arguments in encrypted form, use xref:configuring.adoc#variable-replacers[variable replacers].
 
 When TLS is enabled, you can access Management Center over HTTPS on port 8443: `\https://localhost:8443`.
 
@@ -80,10 +74,6 @@ This starts the Management Center on HTTPS port 443.
 By default, the HTTP port is disabled when you enable TLS. If you want to
 have an open HTTP port that redirects to the HTTPS port, set the xref:system-properties.adoc#hazelcast-mc-tls-enablehttpport[`hazelcast.mc.tls.enableHttpPort` property] to `true`.
 
-```
--Dhazelcast.mc.tls.enableHttpPort=true
-```
-
 [[mutual-authentication]]
 == Mutual Authentication
 
@@ -92,12 +82,4 @@ To make sure that only authenticated HTTP clients such as web browsers or cURL c
 When mutual authentication is enabled, HTTP clients need to present their own TLS certificate to Management Center before they are allowed to connect. You can store trusted clients' TLS certificates in the Management Center truststore so that it can authenticate them.
 
 To enable mutual authentication,
-you need to use the following property:
-
-```properties
-hazelcast.mc.tls.mutualAuthentication=REQUIRED
-```
-
-== Next Steps
-
-Follow a quick tutorial to xref:serve-mc-over-https.adoc[set up HTTPS for Management Center, using a self-signed certificate].
+you need to use the xref:system-properties.adoc#hazelcast-mc-tls-mutualauthentication[`hazelcast.mc.tls.mutualAuthentication` property].

@@ -162,6 +162,10 @@ types:
 |* `MC-2001 [Auth]`: User logs in.
 * `MC-2002 [Auth]`: User logs out.
 * `MC-2003 [Auth]`: Login failures.
+* `MC-2004 [Auth]`: User authentication token is issued.
+* `MC-2005 [Auth]`: User authentication token is revoked.
+* `MC-2006 [Auth]`: User authentication token login failed.
+* `MC-2010 [Auth]`: Prometheus authentication failed.
 
 | Scripting Logs
 |* `MC-3001 [Script]`: Script is executed on a member.
@@ -172,6 +176,7 @@ types:
 | Map/Cache Logs
 |* `MC-5001 [Browser]`: User browses through a map screen in Management Center.
 * `MC-5002 [Browser]`: User browses through a cache screen in Management Center.
+* `MC-5003 [Browser]`: Map cleared.
 
 | Persistence Logs
 |* `MC-6001 [Persistence]`: Force start is run.

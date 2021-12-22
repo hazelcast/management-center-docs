@@ -1,5 +1,5 @@
 = User Management
-:description: Users in Management Center have roles that determine what permissions they have. For example, an admin user has access to all features, whereas a metrics-only user can only view metrics. To create and manage users, it depends on which security provider you are using.
+:description: Users in Management Center have roles that determine what permissions they have. For example, an admin user has access to all features, whereas a metrics-only user can only view metrics and can't see the data. To create and manage users, it depends on which security provider you are using.
 :page-aliases: ROOT:managing-users.adoc
 
 {description}

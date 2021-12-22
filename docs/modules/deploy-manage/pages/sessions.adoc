@@ -1,5 +1,5 @@
 = Securing User Sessions
-:description: To secure users' sessions, you can configure session timeouts and user login attempts.
+:description: To secure users' sessions, you can configure session timeouts and multiple user login attempts.
 
 {description}
 

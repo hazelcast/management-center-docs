@@ -1,7 +1,7 @@
 = Variable Replacers
+:description: Variable replacers are used to replace custom strings in configuration. You can use variable replacers in command-line arguments or the `mc-conf` tool.
 
-Variable replacers are used to replace custom strings in configuration. You can use variable replacers in command-line arguments
-or the xref:mc-conf.adoc[`mc-conf` tool].
+{description}
 
 For example, you can use variable replacers to mask sensitive information such as usernames and passwords.
 
@@ -19,19 +19,17 @@ The following replacer classes are provided by Hazelcast as example
 implementations of the `ConfigReplacer` interface.
 Note that you can also implement your own replacers.
 
-* `EncryptionReplacer`
-* `PropertyReplacer`
+* EncryptionReplacer
+* PropertyReplacer
 
 Each example replacer is explained in the following sections
 
 === EncryptionReplacer
 
-This example `EncryptionReplacer` replaces the encrypted variables with
+The EncryptionReplacer replaces the encrypted variables with
 its plain form. The secret key for encryption/decryption is generated from a
 password which can be a value in a file and/or environment specific values,
 such as MAC address and actual user data.
-
-TIP: To see an example of how you can use the encryption replacer, see xref:serve-mc-over-https.adoc[].
 
 The full class name is `com.hazelcast.webmonitor.configreplacer.EncryptionReplacer`
 and the replacer prefix is `ENC`. Here are the properties used to configure
@@ -68,7 +66,7 @@ Use the property values supported by your Java version.
 
 == PropertyReplacer
 
-`PropertyReplacer` replaces variables by properties with the given name.
+PropertyReplacer replaces variables by properties with the given name.
 Usually the system properties are used such as`${user.name}`.
 
 The full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer`
