@@ -1,5 +1,6 @@
 = Executing Console Commands
 [[console]]
+:page-aliases: monitor-imdg:console.adoc
 
 **Disclaimer: It is not recommended for production use.**
 

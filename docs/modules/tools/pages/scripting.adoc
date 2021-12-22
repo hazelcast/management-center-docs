@@ -1,5 +1,6 @@
 = Scripting
 [[scripting]]
+:page-aliases: monitor-imdg:scripting.adoc
 
 You can use the scripting feature of the Management Center to execute scripts
 on the cluster.

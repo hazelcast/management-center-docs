@@ -1,5 +1,6 @@
 = Clustered REST
 [[clustered-rest]]
+:page-aliases: ROOT:clustered-rest.adoc
 
 The Clustered REST API is exposed from the Management Center
 to allow you to monitor clustered statistics of distributed objects.
