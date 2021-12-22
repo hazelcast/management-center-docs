@@ -1,8 +1,10 @@
 = Management Center {full-version}
-[[overview]]
+:page-aliases: ROOT:index.adoc
+:description: Management Center is a tool for managing and monitoring Hazelcast clusters.
 
-Management Center is a tool for managing and monitoring Hazelcast clusters.
-For example, with the graphical user interface (UI), you can do the following:
+{description}
+
+Here are some example of what you can do with Management Center:
 
 * Monitor the performance of your clusters.
 * See statistical information about your members, clients, and data structures.
