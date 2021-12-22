@@ -62,7 +62,7 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
 [[starting-with-jar-file]]
-=== Using the command-line
+=== Using the Command-Line
 
 Extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
