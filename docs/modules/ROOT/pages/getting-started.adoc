@@ -61,19 +61,33 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
-[[starting-with-jar-file]]
+[[starting-with-start-script]]
 === Using the Command Line
 
 Extract the Hazelcast or Management Center package.
 The extracted directory, i.e., `hazelcast-management-center-{full-version}`,
-contains the `hazelcast-management-center-{full-version}.jar` file.
+contains a `bin/mc-start.sh` (or `bin/mc-start.cmd`) file.
 
 You can start this file directly from the command line using the following command:
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh 
 ----
+--
+Windows::
++
+[source,shell,subs="attributes+"]
+----
+mc-start.cmd 
+----
+====
+
 
 The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
 
@@ -83,7 +97,7 @@ context path:
 
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc'
 ----
 
 The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
