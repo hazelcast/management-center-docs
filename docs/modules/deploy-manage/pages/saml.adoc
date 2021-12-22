@@ -1,0 +1,116 @@
+= SAML
+:description: You can use SAML single sign-on with Management Center.
+
+{description}
+
+== Setting Up the SAML Security Provider
+
+To set up SAML, you need to configure settings either in the UI or the `mc-conf` tool.
+
+[tabs] 
+====
+UI::
++
+--
+Go to *Settings* > *Security Providers* > *SAML*.
+
+image:ROOT:ConfigureSAML.png[SAML Configuration]
+--
+mc-conf::
++
+--
+Use the `saml configure` task. For help, use the `-h` flag or see xref:mc-conf.adoc[].
+
+.Linux and macOS
+```bash
+./mc-conf.sh saml configure
+```
+
+.Windows
+```bash
+./mc-conf.bat saml configure 
+```
+--
+====
+
+* **Relying Party Identifier:** The application-defined unique identifier that is
+the intended audience of the SAML assertion. This is most often the Service Provider
+Entity ID of your application.
+* **Post Back URL:** URL of the Management Center SAML assertion consumer, including schema
+(`http://` or `https://`) and port. Assertion consumer is located under the path `/saml/sso`
+so you should append `/saml/sso` to the Management Center URL. Your Identity Provider should
+have access to this URL as it will post back SAML responses to it. For example, if Management
+Center and the Identity Provider are on the same machine, you would enter
+`\http://127.0.0.1:8080/saml/sso``.
+* **Group Attribute:** Name of the attribute that contains group of the user.
+* **Identity Provider Metadata:** Your Identity Provider's metadata in XML format.
+* **Group Name Separator:** Separator for the group names in case the group
+attribute value contains more than one group.
+* **Admin Groups:** Members of this group have admin privileges on the Management Center. To use more
+than one group, separate them with the group name separator you have configured.
+* **User Groups:** Members of this group have read and write privileges on the Management Center.
+To use more than one group, separate them with the group name separator you have configured.
+* **Read-only User Groups:** Members of this group have only read privilege on the Management
+Center. To use more than one group, separate them with the group name separator you have configured.
+* **Metrics-only Groups:** Members of this group have the privilege to see only the metrics
+on the Management Center. To use more than one group, separate them with the group name separator
+you have configured.
+
+NOTE: If the user has more than one authority, Management Center uses the highest one.
+
+Once you configure SAML, a button for single sign-on will be shown in the login page. Clicking it will
+start the SAML single sign-on process. If you don't have an existing session with your identity provider,
+you will be taken to the login page of your identity provider. Once you log into your identity provider,
+you will be redirected back to Management Center as a logged in user.
+
+NOTE: If your identity provider needs service provider metadata XML, you can use the `saml/metadata` endpoint
+to view/download it once you configure SAML. For example, `\http://localhost:8080/saml/metadata`.
+
+== Creating and Managing Users
+
+To create and manage additional users, you must register them with your identity provider.
+
+When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
+== Issuing User Auth Token
+
+To use the REST API, users need an auth token. Auth tokens inherit roles from the user.
+
+To generate an auth token for a user, you need to send a `POST` request with the user's credentials and Management Center session to the `/api/tokens` endpoint.
+
+To revoke all auth tokens for a user, use the `user revoke-tokens` task.
+
+This task works for users in all security providers,
+not only the local security provider.
+
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh user revoke-tokens -n <username>
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user revoke-tokens -n <username>
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user revoke-tokens -n <username>
+----
+--
+====
+
+== Next Steps
+
+For details about the `mc-conf` tool, see xref:mc-conf.adoc[].

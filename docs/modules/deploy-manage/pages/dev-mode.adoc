@@ -1,0 +1,45 @@
+= Dev Mode
+:description: Dev mode is a development security provider that allows you to evaluate Management Center without needing credentials for logging in or using the REST API.
+
+{description}
+
+Once you have enabled dev mode, you are automatically logged into Management Center as an admin user without needing to supply any credentials.
+
+== Setting Up Dev Mode
+
+To set up dev mode, you can use the UI or the `mc-conf` tool.
+
+[tabs] 
+====
+UI::
++
+--
+
+To set up dev mode in the UI, click *Enable Dev Mode* when Management Center starts.
+
+image::ROOT:ConfigureSecurityDevMode.png[Dev Mode]
+
+--
+mc-conf::
++
+--
+To set up dev mode with `mc-conf`, use the following command.
+
+You can use this task for various scripting purposes, and automatically configuring Management Center, without using the UI.
+
+.Linux and macOS
+```bash
+./mc-conf.sh dev-mode configure 
+```
+
+.Windows
+[source,bash]
+----
+./mc-conf.bat dev-mode configure
+----
+--
+====
+
+== Next Steps
+
+For details about the `mc-conf` tool, see xref:mc-conf.adoc[].

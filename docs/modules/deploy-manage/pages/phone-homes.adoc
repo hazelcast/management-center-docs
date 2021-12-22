@@ -1,0 +1,50 @@
+= Phone Home
+:description: Hazelcast uses phone home data to learn about the usage of Hazelcast Management Center.
+:page-aliases: ROOT:phone-home.adoc
+
+{description}
+
+Management Center sends data to the phone home server at `\http://phonehome.hazelcast.com/pingMc` 30 minutes after it's started and once every 24 hours thereafter.
+
+== Data Sent in Phone Homes
+
+The following information is sent in a phone home:
+
+* Version of Management Center
+* Security provider used (Local, LDAP, ActiveDirectory, JAAS)
+* Whether clustered REST is enabled
+* Whether clustered JMX is enabled
+* Whether TLS is enabled
+** If TLS is enabled, whether mutual authentication is enabled
+* Whether Management Center is deployed on an application server or used in standalone mode
+** If not in standalone mode, type of the application server
+* Number of users (if the local security provider is used)
+* Number of clusters
+* Management Center uptime
+* Minimum and maximum cluster sizes
+* Minimum and maximum cluster versions
+* Metrics storage parameters
+* Whether the Prometheus exported is enabled
+* Whether Management Center is running in Docker
+* Healthcheck parameters
+* Console usage
+* SQL Browser usage
+* Total number of members
+* Size of the Hazelcast Management Center home directory
+* Hash value of Hazelcast Management Center license key
+* Environment Information:
+** Name of operating system
+** Version of installed Java
+
+For each user login, we store the following information and send it in a phone home:
+
+* Browser (Chrome, Firefox, IE etc.)
+* Browser major version
+* Operating system
+* Operating system version
+* Screen height and width
+* Window height and width
+
+== Disabling Phone Homes
+
+Set the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` property] to `false`.

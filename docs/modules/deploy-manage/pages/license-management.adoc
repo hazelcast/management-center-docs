@@ -1,0 +1,29 @@
+= Enterprise Licenses
+:description: To use some features in Management Center, you need an Enterprise license.
+:page-aliases: ROOT:managing-licenses.adoc
+
+{description}
+
+== Licensed Features
+
+Management Center requires a valid Enterprise license for the following:
+
+* Clustered JMX
+* Clustered REST API
+* Client Filtering on the cluster
+* Prometheus exporter
+* Displaying metrics for more than three cluster members
+
+To use these features in Management Center, you must install (in Management Center) either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
+
+As well as these Management Center features, you need an Enterprise license for Hazelcast Platform on your cluster to use the following features in Management Center:
+
+* WAN Replication
+* Persistence (Hot Restart)
+* Rolling Upgrade
+
+== Next Steps
+
+To view details about an Enterprise license for Hazelcast Platform that's installed on your cluster, see xref:clusters:cluster-license.adoc[].
+
+To update an Enterprise license for Management Center, see xref:updating-mc-license-ui.adoc[].

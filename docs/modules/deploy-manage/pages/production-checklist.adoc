@@ -1,0 +1,44 @@
+= Production Checklist
+:description: Before going into production, you should have a high availability setup and a secure deployment of Management Center.
+:page-aliases: ROOT:high-availability
+
+Before going into production, you should review the following list of recommendations:
+
+- Set up a high availability deployment.
+
+- Secure Management Center.
+
+- For Docker deployments, persist the `hazelcast-mc` directory.
+
+== Setting Up High Availability Deployments
+[[high-availability]]
+
+When you have only a single instance of Management Center connected to your cluster, that instance is a single point of failure. If Management Center goes offline for any reason, you will not be able to use it to manage your cluster. To make your deployment more robust, you can connect multiple instances of Management Center to a cluster. This way, if one instance goes down, you will still have the others.
+
+Multiple Management Center instances are independent of each other and don't form a cluster of Management Center
+instances. This has the following implications:
+
+ - It's up to you to maintain consistent configurations on all Management Center instances. Only Client Filtering
+configuration is synchronized among Management Center instances.
+ - Inconsistencies in the reported metrics may occur if one of the instances goes down for some time.
+ - HTTP sessions are not shared between Management Center instances. Load balancing options are limited to sticky sessions or round-robin connections with basic authentication.
+
+Client filtering rules are synchronized among instances of Management Center that are connected to the same cluster. See xref:clusters:client-filtering.adoc#client-filtering-synchronization[Client Filtering Synchronization].
+
+== Securing Management Center
+
+Review the security documentation to make sure that Management Center is secure before going into production. See xref:security.adoc[].
+
+=== Disabling Scripting and Console
+
+Scripting engines give code access to the underlying system on the members (files and other resources) and run with the same permissions as the current user. And, the console allows users to interact with the cluster and bypass any cluster client permissions.
+
+For security, scripting and the console are disabled in the member configuration by default.
+
+If you enabled scripting or the console, be sure to disable it before going into production. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
+
+== Persisting Management Center Data in Docker
+
+When you upgrade Management Center with Docker, you will lose all configuration and metrics data unless you persist the `hazelcast-mc` directory before upgrading.
+
+See link:https://github.com/hazelcast/management-center-docker#mounting-management-center-home-directory[Mounting Management Center Home Directory] in the GitHub repository for the Management Center Docker image.

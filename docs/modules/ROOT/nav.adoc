@@ -1,24 +1,21 @@
 * Get Started
 include::get-started:partial$nav.adoc[]
 
-* xref:configuring.adoc[]
-
 include::launching:partial$launching-nav.adoc[]
-
-* xref:connecting-members.adoc[]
 
 * xref:user-interface.adoc[]
 
-* xref:managing-clusters.adoc[]
-
-* xref:managing-users.adoc[]
-
-* xref:managing-licenses.adoc[]
-
-* xref:managing-security-providers.adoc[]
-
 include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
 
+* Deploy and Manage
++
+--
+include::deploy-manage:partial$nav.adoc[]
+--
+
+* Integrate
++
+--
 * Clusters
 +
 --
@@ -26,9 +23,11 @@ include::clusters:partial$nav.adoc[]
 --
 
 include::integrate:partial$nav.adoc[]
+--
 
 * xref:healthcheck.adoc[]
 
+* xref:clustered-rest.adoc[]
 * xref:metric-persistence.adoc[]
 
 include::jmx:partial$jmx-nav.adoc[]
@@ -38,12 +37,6 @@ include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
 
 * Tools
 include::tools:partial$tools-nav.adoc[]
-
-* xref:prometheus.adoc[]
-
-* xref:mc-conf.adoc[]
-
-* xref:high-availability.adoc[]
 
 * Troubleshooting
 include::troubleshoot:partial$troubleshooting-nav.adoc[]

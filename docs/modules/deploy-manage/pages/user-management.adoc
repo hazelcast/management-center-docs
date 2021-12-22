@@ -1,0 +1,38 @@
+= User Management
+:description: Users in Management Center have roles that determine what permissions they have. For example, an admin user has access to all features, whereas a metrics-only user can only view metrics and can't see the data. To create and manage users, it depends on which security provider you are using.
+:page-aliases: ROOT:managing-users.adoc
+
+{description}
+
+== User Roles
+
+All users need one of the following roles:
+
+.User Roles
+[cols="20%s,80%a"]
+|===
+|Role|Permissions
+
+|Admin
+|Administrator privileges give users access to all features. Only admin users can update user's passwords, create new users, or manage Enterprise licenses.
+
+|User
+|Users have read and write access to Management Center.
+
+|Read-Only User
+|Users cannot do anything that requires write permissions such as updating map configurations, running garbage collection, triggering
+a thread dump on a cluster member, or shutting down members or clusters.
+
+|Metrics-Only User
+|Users can only view metrics that are displayed in Management Center.
+|===
+
+== New Users
+
+You can create new users and assign those users a role. The way in which you create new users depends on the security provider that you use to authenticate users in Management Center. See xref:security-providers.adoc[].
+
+== Authentication Tokens
+
+To use the REST API, users need an authentication token, unless you are an admin user and you are using dev mode.
+
+The way in which you generate an authentication token depends on your chosen security provider. See xref:security-providers.adoc[].

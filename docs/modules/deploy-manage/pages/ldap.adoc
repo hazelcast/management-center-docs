@@ -1,0 +1,238 @@
+= LDAP
+:description: You can use your existing LDAP server for authentication/authorization on the Management Center. 
+
+{description}
+
+== Setting Up the LDAP Security Provider
+
+To set up LDAP, you need to configure settings either in the UI or the `mc-conf` tool.
+
+[tabs] 
+====
+UI::
++
+--
+To set up the LDAP security provider in the UI, go to *Settings* > *Security Providers* > *LDAP*.
+
+image:ROOT:ConfigureLDAP.png[LDAP Configuration, align="center"]
+--
+mc-conf::
++
+--
+Use the `ldap configure` task. For help, use the `-h` flag or see xref:mc-conf.adoc[].
+
+.Linux and macOS
+```bash
+./mc-conf.sh ldap configure
+```
+
+.Windows
+[source,bash]
+----
+./mc-conf.bat ldap configure 
+----
+--
+====
+
+* **URL:** URL of your LDAP server, including schema
+(`ldap://` or `ldaps://`) and port.
+* **Distinguished name (DN) of user:** DN of a user that has admin
+privileges on the LDAP server. It is used to connect to the server
+when authenticating users.
+* **User DN:** DN to be used for searching users.
+* **Group DN:** DN to be used for searching groups.
+* **Admin Group(s):** Members of this group and its nested groups
+have admin privileges on the Management Center. To use more than one group,
+separate them with a semicolon (;).
+* **User Group(s):** Members of this group and its nested groups have
+read and write privileges on the Management Center. To use more than one
+group, separate them with a semicolon (;).
+* **Read-only User Group(s):** Members of this group and its nested groups
+have only read privilege on the Management Center. To use more than
+one group, separate them with a semicolon (;).
+* **Metrics-only Groups:** Members of this group and its nested groups
+have the privilege to see only the metrics on the Management Center.
+To use more than one group, separate them with a semicolon (;).
+* **Start TLS:** Enable if your LDAP server uses **Start TLS** operation.
+* **User Search Filter:** LDAP search filter expression to search for
+the users. For example, `uid=\{0\}` searches for a username that matches with
+the `uid` attribute.
++
+NOTE: You can use the xref:system-properties.adoc#hazelcast-mc-ldap-timeout[`hazelcast.mc.ldap.timeout` property] to
+specify connect and read timeout values for LDAP search queries.
+It is in milliseconds and its default value is `3000` milliseconds.
+* **Group Search Filter:** LDAP search filter expression to search for
+the groups. For example, `uniquemember=\{0\}` searches for a group that
+matches with the `uniquemember` attribute.
+* **Nested Group Search:** Disable if you have a large LDAP group structure
+and it takes a long time to query all nested groups during login.
+
+NOTE: Values for **Admin**, **User**, **Read-only** and **Metrics-Only** group names must
+be given as plain names. They should not contain any LDAP attributes such
+as `CN`, `OU` and `DC`.
+
+== Creating and Managing Users
+
+To create and manage additional users, you must configure them on the LDAP server.
+
+When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
+== Issuing User Auth Token
+
+To use the REST API, users need an auth token. Auth tokens inherit roles from the user.
+
+To generate an auth token for a user, you need to send a `POST` request with the user's credentials and Management Center session to the `/api/tokens` endpoint.
+
+To revoke all auth tokens for a user, use the `user revoke-tokens` task.
+
+This task works for users in all security providers,
+not only the local security provider.
+
+[tabs] 
+====
+Linux::
++
+--
+[source,bash]
+----
+./mc-conf.sh user revoke-tokens -n <username>
+----
+--
+macOS::
++
+--
+[source,bash]
+----
+./mc-conf.sh user revoke-tokens -n <username>
+----
+--
+Windows::
++
+--
+[source,bash]
+----
+./mc-conf.bat user revoke-tokens -n <username>
+----
+--
+====
+
+== Updating LDAP Settings
+
+Once configured, LDAP settings are saved in a local database managed by Management Center.
+If you need to update your settings afterwards, you need to provide the import properties file under `<hazelcast-mc>/import/securityHotReload.properties`, and then click on the **Reload Security Config** button on the login page.
+The `securityHotReload.properties` should contain the following properties:
+
+```
+url=<Ldap URL>
+username=<Distinguished name (DN) of user>
+password=<password>
+userDn=<User DN>
+groupDn<Group DN>
+startTls=<true|false>
+adminGroup=<Admin group(s). Use ';' to separate multiple groups>
+userGroup=<Read-write group(s). Use ';' to separate multiple groups>
+readonlyUserGroup<Read-only group(s). Use ';' to separate multiple groups>
+metricsOnlyGroup<Metrics-only group(s). Use ';' to separate multiple groups>
+userSearchFilter=<User Search Filter>
+groupSearchFilter=<Group Search Filter>
+nestedGroupSearch=<true|false>
+```
+
+NOTE: The **Reload Security Config** button will only appear
+when the `<hazelcast-mc>/import/securityHotReload.properties` file is present.
+After a successful import, the file will be renamed as `importedSecurityHotReload-<import_timestamp>.properties.bak`.
+
+Alternatively, you can use the `mc-conf` tool's `security reset` and `ldap configure` tasks to
+configure the LDAP security provider from scratch,
+but you need to stop Management Center for this configuration option.
+See xref:ROOT:mc-conf.adoc[] for more information.
+
+[[ldap-ssl]]
+== Enabling TLS/SSL for LDAP
+
+If your LDAP server is using `ldaps` (LDAP over SSL) protocol or the *Start TLS* operation, use the following system properties for your Management Center deployment:
+
+* `hazelcast.mc.ldap.ssl.trustStore`: Path to the truststore. This
+truststore needs to contain the public key of your LDAP server.
+* `hazelcast.mc.ldap.ssl.trustStorePassword`: Password of the truststore.
+* `hazelcast.mc.ldap.ssl.trustStoreType`: Type of the truststore. Its default value is JKS.
+* `hazelcast.mc.ldap.ssl.trustManagerAlgorithm`: Name of the algorithm
+based on which the authentication keys are provided. System default is used
+if none is provided. You can find out the default by calling the
+`javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
+
+[[password-encryption]]
+== Password Encryption
+
+By default, the password that you use in the LDAP configuration is stored in a plain text in a local database.
+This might pose a security risk.
+To store the LDAP password in an encrypted form, we offer the following options:
+
+* **Provide a keystore password:** This creates and manages a Java
+keystore under the Management Center home directory. The LDAP password
+is stored in this keystore in an encrypted form.
+* **Configure an external Java keystore:** This uses an existing Java
+keystore. This option might also be used to store the password in an HSM
+that provides a Java keystore API.
+
+In the case of using either one of the options, the LDAP password you enter
+on the initial configuration UI dialog will be stored in an encrypted form in a
+Java keystore instead of the local database.
+
+NOTE: You can also encrypt the password, and provide it in an encrypted form,
+when configuring LDAP security provider.
+See the xref:ROOT:configuring.adoc#variable-replacers[Variable Replacers section] for more information.
+
+[[providing-a-master-key-for-encryption]]
+=== Providing a Master Key for Encryption
+
+There are two ways to provide a master key for encryption:
+
+* If you deploy Management Center on an application server,
+set the `MC_KEYSTORE_PASS` environment variable before starting Management
+Center. This option is less secure. You should clear the environment
+variable once you make sure you can log in with your LDAP credentials
+to minimize the security risk.
+* If you're starting Management Center from the command-line, you can
+start it with the `hazelcast.mc.askKeyStorePassword` property. Management Center
+asks for the keystore password upon start and uses it as a password
+for the keystore it creates. This option is more secure as it only stores
+the keystore password in memory.
+
+By default, the Management Center creates a Java keystore file under the
+Management Center home directory with the name `mc.jceks`. You can
+change the location of this file by using the
+`hazelcast.mc.keyStore.path` property.
+
+[[configuring-an-external-java-keystore]]
+=== Configuring an External Java KeyStore
+
+If you don't want Management Center to create a keystore for you and
+use an existing one that you've created before (or an HSM), set the
+following system properties when starting Management Center:
+
+* `hazelcast.mc.useExistingKeyStore=true`: Enables use of an existing keystore.
+* `hazelcast.mc.existingKeyStore.path=/path/to/existing/keyStore.jceks`: Path
+to the keystore. You do not have to set it if you use an HSM.
+* `hazelcast.mc.existingKeyStore.pass=somepass`: Password for the keystore.
+You do not have to set it if HSM provides another means to unlock HSM.
+* `hazelcast.mc.existingKeyStore.type=JCEKS`: Type of the keystore.
+* `hazelcast.mc.existingKeyStore.provider=com.yourprovider.MyProvider`: Provider
+of the keystore. Leave empty to use the system provider. Specify the class name
+of your HSM's `java.security.Provider` implementation if you use an HSM.
+
+NOTE: Make sure your keystore supports storing secret keys.
+
+[[updating-encrypted-passwords]]
+== Updating Encrypted Passwords
+
+You can use the ` ldap update-password` task in the `mc-conf` tool to update
+the encrypted LDAP password stored in the keystore.
+
+This command expects information about the keystore such as its location and
+password and the new LDAP password that you want to use. After updating the LDAP password, you need to click
+on the **Reload Security Config** button on the Management Center login page.
+
+== Next Steps
+
+For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
