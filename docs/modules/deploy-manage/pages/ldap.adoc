@@ -142,7 +142,7 @@ NOTE: The **Reload Security Config** button will only appear
 when the `<hazelcast-mc>/import/securityHotReload.properties` file is present.
 After a successful import, the file will be renamed as `importedSecurityHotReload-<import_timestamp>.properties.bak`.
 
-Alternatively, you can use the `mc-conf` tool's `security reset` and `active-directory configure` tasks to
+Alternatively, you can use the `mc-conf` tool's `security reset` and `ldap configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop Management Center for this configuration option.
 See xref:ROOT:mc-conf.adoc[] for more information.

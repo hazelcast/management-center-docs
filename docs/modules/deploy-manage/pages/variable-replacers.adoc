@@ -1,9 +1,7 @@
 = Variable Replacers
-:description: Variable replacers are used to replace custom strings in configuration. You can use variable replacers in command-line arguments or the `mc-conf` tool.
+:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command-line arguments or the `mc-conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
 
 {description}
-
-For example, you can use variable replacers to mask sensitive information such as usernames and passwords.
 
 A variable to be replaced takes the following form:
 
@@ -13,27 +11,62 @@ $<prefix> {"<masked-value"}
 
 The `<prefix>` placeholder tells Management Center which replacer to use to replace in the value in the `<masked-value>` placeholder.
 
-== Built-in Replacers
-
 The following replacer classes are provided by Hazelcast as example
 implementations of the `ConfigReplacer` interface.
 Note that you can also implement your own replacers.
 
-* EncryptionReplacer
-* PropertyReplacer
+* <<EncryptionReplacer>>
+* <<PropertyReplacer>>
 
-Each example replacer is explained in the following sections
+== EncryptionReplacer
 
-=== EncryptionReplacer
+The EncryptionReplacer encrypts and decrypts values. The secret key for encryption/decryption is generated from a
+password which can be a value in a file and/or environment-specific values,
+such as a MAC address or user data.
 
-The EncryptionReplacer replaces the encrypted variables with
-its plain form. The secret key for encryption/decryption is generated from a
-password which can be a value in a file and/or environment specific values,
-such as MAC address and actual user data.
+To encrypt a value with the EncryptionReplacer, execute the Java file:
 
-The full class name is `com.hazelcast.webmonitor.configreplacer.EncryptionReplacer`
-and the replacer prefix is `ENC`. Here are the properties used to configure
-this example replacer:
+[source,bash,subs="attributes+"]
+----
+java -cp hazelcast-management-center-{full-version}.jar \ <1>
+     -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \ <2>
+     com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
+     "mc-test123" <3>
+----
+
+<1> Add the Management Center Java file to the classpath. This file contains the `EncryptionReplacer` class.
+<2> Tell the replacer not to use the current user properties to encrypt the variable. This way, you can execute this command from any user and the result will be the same. 
+<3> Pass the replacer the value that you want to encrypt.
+
+The output contains the encrypted value, prefixed with `$ENC`, which tells Management Center to use the EncryptionReplacer to decrypt the value.
+
+```
+$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}
+```
+
+To use the encrypted value as configuration input in Management Center, you need to provide the following properties:
+
+- xref:system-properties.adoc#hazelcast-mc-configreplacer-class[`hazelcast.mc.configReplacer.class`]
+- Any configuration properties that you used to generate the encrypted value.
+- Any property to take the encrypted value as input for the EncryptionReplacer to decrypt.
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.tls.enabled=true \
+-Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
+-Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
+-Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
+-Dhazelcast.mc.tls.keyStore=mc.keystore \
+-Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' \ <2>
+-jar hazelcast-management-center-{full-version}.jar
+----
+
+<1> Tell Management Center to use the encryption replacer to decrypt variables that are prefixed with `$ENC`.
+<2> Use the encrypted value as a keystore password.
+
+=== Configuration
+
+Use these properties to configure the EncryptionReplacer.
 
 * `hazelcast.mc.configReplacer.prop.cipherAlgorithm`: Cipher algorithm used for
 the encryption/decryption. Its default value is AES.
@@ -66,7 +99,7 @@ Use the property values supported by your Java version.
 
 == PropertyReplacer
 
-PropertyReplacer replaces variables by properties with the given name.
+The PropertyReplacer replaces variables by properties with the given name.
 Usually the system properties are used such as`${user.name}`.
 
 The full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer`

@@ -14,7 +14,7 @@ Management Center requires a valid Enterprise license for the following:
 * Prometheus exporter
 * Displaying metrics for more than three cluster members
 
-To use these features in Management Center, you can install either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
+To use these features in Management Center, you must install (in Management Center) either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
 
 As well as these Management Center features, you need an Enterprise license for Hazelcast Platform on your cluster to use the following features in Management Center:
 

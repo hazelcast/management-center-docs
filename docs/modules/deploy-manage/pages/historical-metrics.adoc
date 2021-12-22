@@ -37,23 +37,25 @@ you have in the connected clusters.
 
 == Persistence Logs
 
-Every hour, you will see the following info message in the logs:
+Every hour, you will see the following message in the logs:
 
 ```
-Known time series: 10959
-Tracked minute buckets: 4678
-Number of persistence runs: 11
-Total persistence run time: 00:00:00.093
-Max persistence run time: 00:00:00.065
-Average persistence run time: 00:00:00.008
-Last hour average persistence run time: 00:00:00.008
-Total persisted minute buckets: 1319
-Max persisted minute buckets per run: 1319
-Average persisted minute buckets per run: 119
-Last hour average persisted minute buckets per run: 119
-Persistent store TTL: 1 day(s)
-Persistent store size on disk: 13.9 MiB
-Data point memory compression ratio: 32.25
+Known time series
+Tracked minute buckets
+Number of persistence runs
+Total persistence run time
+Max persistence run time
+Average persistence run time
+Last hour average persistence run time
+Total persisted minute buckets
+Max persisted minute buckets per run
+Average persisted minute buckets per run
+Last hour average persisted minute buckets per run
+Total dropped data points that arrived when the target minute bucket is no longer tracked, but not yet released(persisted)
+Total evicted dangling minute series
+Persistent store TTL
+Persistent store size on disk
+Data point memory compression ratio
 ```
 
 These logs provide some basic persistence statistics and details about any active persistence configuration. All time values are logged in HH:mm:ss.SSS format.
