@@ -4,8 +4,6 @@
 
 {description}
 
-NOTE: You need an Enterprise license to use this feature.
-
 == Before you Begin
 
 Clusters must have a directory set in the `backup-dir` configuration option. See xref:{page-latest-supported-hazelcast}@hazelcast:storage:backing-up-persistence.adoc[] in the Platform documentation.

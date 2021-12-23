@@ -1,6 +1,7 @@
 = Running a Config Healthcheck
 :description: You can generate a healthcheck report to analyze all member configurations in a cluster. 
 :page-aliases: ROOT:healthcheck.adoc
+:page-enterprise: true
 
 {description}
 

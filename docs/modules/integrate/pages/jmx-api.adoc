@@ -1,5 +1,6 @@
 = Clustered JMX Objects and Attributes
 :description: Explore all available objects and attributes that are available with the clustered JMX interface.
+:page-enterprise: true
 
 The clustered JMX interface exposes metrics as objects that have attributes.
 

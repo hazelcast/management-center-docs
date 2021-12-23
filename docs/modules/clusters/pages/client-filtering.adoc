@@ -2,8 +2,6 @@
 :description: Create filter lists that define which clients are allowed to connect to the cluster.
 :page-enterprise: true
 
-NOTE: You need an Enterprise license to use this feature.
-
 [[changing-cluster-client-filtering]]
 
 You can use the *Client Filtering* menu item to create filter lists that define which clients are allowed to connect to the cluster:
@@ -14,8 +12,6 @@ If an allow-list contains entries and a deny-list does not, all clients except t
 - *Deny-list*: Clients that *are not allowed* to connect to the cluster.
 +
 If a deny-list contains entries and an allow-list does not, all clients except those in the deny-list are allowed access to the cluster.
-
-NOTE: You need an Enterprise license to use this feature.
 
 image:ROOT:ClientFilteringView.png[Client Filtering View]
 

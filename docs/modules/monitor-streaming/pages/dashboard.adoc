@@ -1,13 +1,12 @@
 = Dashboard Page
-:page-aliases: monitor-jet:dashboard.adoc
-[[streaming-dashboard-page]]
+:page-aliases: monitor-jet:dashboard.adoc, monitor-jet:monitor-jet.adoc, monitor-streaming:monitor-streaming.adoc
+:description: The *Streaming* dashboard gives you an overview of a connected cluster, which has Jet enabled.
 
-This page gives an overview
-of the connected Streaming cluster, as shown below:
+{description}
 
 image:ROOT:StreamingDashboard.png[Streaming Dashboard]
 
-The following subsections describe each portion of the page.
+The following subsections describe each section of the page.
 
 == Cluster
 

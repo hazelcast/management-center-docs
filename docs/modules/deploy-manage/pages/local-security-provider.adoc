@@ -101,12 +101,29 @@ the minimum length of words by starting Management Center with the
 `hazelcast.mc.security.dictionary.minWordLength`
 property.
 
+[tabs]
+====
+Linux and macOS::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-     -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar hazelcast-management-center-{full-version}.jar
+./mc-start.sh \
+  -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+  -Dhazelcast.mc.security.dictionary.minWordLength=3 
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+./mc-start.cmd \
+  -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+  -Dhazelcast.mc.security.dictionary.minWordLength=3 
+----
+--
+====
 
 == Changing User Passwords
 

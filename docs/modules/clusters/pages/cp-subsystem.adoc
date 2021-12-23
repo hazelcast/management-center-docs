@@ -1,6 +1,5 @@
 = CP Subsystem
 :description: You can use the CP Subsystem tab of the Administration menu item to manage and monitor the CP subsystem in a cluster.
-:page-enterprise: true
 
 You can use the *CP Subsystem* tab of the *Administration* menu item to manage and monitor the CP subsystem in a cluster.
 

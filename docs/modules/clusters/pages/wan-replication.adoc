@@ -5,8 +5,6 @@
 
 You can use the *WAN Replication* menu item to check the status of WAN replication, synchronize map and cache data structures across clusters, and add dynamic configuration for WAN replication.
 
-NOTE: You need an Enterprise license to use this feature.
-
 image:ROOT:WanReplication.png[Monitoring WAN Replication]
 
 On this page, you see the **WAN Replication Configurations** that contain replication publishers.

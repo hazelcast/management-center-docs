@@ -4,8 +4,6 @@
 
 {description}
 
-NOTE: You need an Enterprise license to use this feature.
-
 Partial-Start is a procedure where a cluster starts without all members.
 Data belonging to those missing members is assumed lost and Hazelcast tries
 to recover missing data, using the restored backups. For example, if you have a minimum of two backups configured for all maps, then having at most two missing members will be safe against data loss. If more

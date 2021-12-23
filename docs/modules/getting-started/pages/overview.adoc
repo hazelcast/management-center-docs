@@ -63,6 +63,7 @@ A valid Management Center license is required for:
 * Clustered REST (API)
 * Cluster Client Filtering
 * Prometheus Exporter
+* Configuration healthcheck
 
 And some Management Center features rely on your Hazelcast Platform's Enterprise capabilities:
 

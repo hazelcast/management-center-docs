@@ -1,6 +1,5 @@
 = Cluster State
 :description: You can use the Cluster State tab of the Administration menu item to see your cluster's name, state, and to shut down the whole cluster.
-:page-enterprise: true
 
 You can use the *Cluster State* tab of the *Administration* menu item to to see your cluster's name, state, and to shut down the whole cluster.
 

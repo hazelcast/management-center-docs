@@ -6,7 +6,7 @@
 
 The following is the Management Center user interface:
 
-image:ROOT:DashboardPage.png[Dashboard Page]
+image:ROOT:toolbar-and-menu.png[Dashboard Page]
 
 The user interface has a toolbar on the top and a menu on the left.
 
@@ -17,31 +17,22 @@ image:ROOT:Toolbar.png[Management Center Toolbar]
 
 The toolbar has the following elements:
 
-* **Docs**: Opens the Management Center documentation in a new browser tab.
-* **Console**: Opens the in-page console so that you can easily execute commands
-in your cluster. See the <<console, Executing Console Commands section>>. Note that
-this top menu item appears only when you select a cluster to monitor.
-* **User name**: Shows the current user's name. When you hover your mouse cursor
-onto it, the user's last login time is shown as a tooltip, for security purposes.
-* **Cluster Selector**: Switches between the clusters. When clicked on, a dropdown
-list of available clusters appears. You can select any cluster; once selected, the page immediately
-loads with the selected cluster's information. This selector
-has the same functionality as selecting a cluster in the *Manage Clusters* menu
-of the user interface.
-* **Logout**: Closes the current user's session.
+* *Cluster dropdown*: Select a connected cluster to manage.
+* **Docs**: Open the Management Center documentation in a new browser tab.
+* *SQL Browser*: Open a built-in SQL shell and execute SQL queries on your cluster. See xref:tools:sql-browser.adoc[].
+* **Console**: Open the in-app console so that you can easily execute commands on your cluster. See xref:tools:console.adoc[].
+* **Settings**: Configure the Management Center settings such as security providers, users, and licenses. See the *Deploy and Manage* section of the documentation.
+* **Username** or *< > Dev Mode*: If you have configured a security provider, the last element displays the current user's name. You can click this name to sign out. Otherwise, this element displays *< > Dev Mode*.
 
 [[menu]]
 == Menu
 
-The Management Center user interface includes a menu on the left which lists the
+The menu on the left-hand side lists the
 data structures and jobs in your clusters, cluster members and clients connected to
-the cluster (numbers in square brackets show the instance count for each entity),
-as shown below. You can also see an overview state of your cluster,
-execute commands and scripts, and perform user/license operations using this menu:
+the cluster (numbers in square brackets show the instance count for each entity). You can also see an overall state of your cluster,
+execute commands and scripts, and perform user/license operations using this menu.
 
-image:ROOT:LeftMenu.png[Management Center Left Menu,170,750,align="center"]
-
-NOTE: WAN Replication button is only visible with the Hazelcast Enterprise license.
+image::ROOT:LeftMenu.png[Management Center Left Menu]
 
 The menu consists of the following parent menu headings:
 
@@ -56,9 +47,3 @@ manage streaming jobs.
 the executor services in your cluster.
 * **Messaging**: Includes menu items to monitor queues and
 topics in your cluster.
-
-NOTE: If you have not selected a cluster to monitor, only
-the *Management Center* menu items are shown in the user
-interface.
-
-The following sections describe each menu item from top to bottom.

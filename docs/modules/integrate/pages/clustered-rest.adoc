@@ -147,7 +147,7 @@ curl http://localhost:8080/rest/license
 == Health Check
 
 This resource returns a list of health information for each cluster configured on Management Center. See the
-xref:clustered-rest.adoc#cluster-resource[Cluster Resource] section for detailed explanation on the returned
+<<cluster-resource, Cluster Resource>> section for detailed explanation on the returned
 information.
 
 * Request Type: `GET`

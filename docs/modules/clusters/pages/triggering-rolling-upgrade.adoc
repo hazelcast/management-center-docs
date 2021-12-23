@@ -4,8 +4,6 @@
 
 {description}
 
-NOTE: You need an Enterprise license to use this feature.
-
 == Before you Begin
 
 This page is available only to admin users.

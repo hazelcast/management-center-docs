@@ -10,13 +10,13 @@ include::integrate:partial$nav.adoc[]
 .Tools
 include::tools:partial$nav.adoc[]
 
-.Clusters
+.Cluster
 include::clusters:partial$nav.adoc[]
 
-.Data Structures
+.Storage, Compute & Messaging
 include::data-structures:partial$nav.adoc[]
 
-.Jobs
+.Streaming
 include::monitor-streaming:partial$nav.adoc[]
 
 .Troubleshoot

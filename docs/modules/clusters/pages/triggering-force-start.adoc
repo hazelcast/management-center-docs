@@ -4,8 +4,6 @@
 
 {description}
 
-NOTE: You need an Enterprise license to use this feature.
-
 A cluster whose recovery policy is set to `FULL_RECOVERY_ONLY` can recover after a cluster-wide restart only if all members restart with a valid partition table.
 
 If a member is missing after a cluster-wide restart or if the member's partition table is invalid, the cluster cannot restart unless all members first delete their persistence stores.

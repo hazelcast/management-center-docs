@@ -63,7 +63,7 @@ For all the starting options you can preconfigure a cluster in Management Center
 [[starting-with-scripts]]
 === Using Scripts in the Package
 
-As another option, you can use the `mc-start.bat` or `mc-start.sh` scripts,
+As another option, you can use the `mc-start.cmd` (Windows) or `mc-start.sh` (Linux and macOS) scripts,
 which come with the download package in `bin/` folder, to start the Management Center. You can find these scripts under the extracted directory.
 
 [[starting-with-jar-file]]
@@ -79,20 +79,6 @@ You can start this file directly from the command line using the following comma
 ----
 java -jar hazelcast-management-center-{full-version}.jar
 ----
-
-The above command starts the  Hazelcast Management Center service on port 8080 with the root context path (`\http://localhost:8080`).
-
-You can use `-Dhazelcast.mc.http.port` and `-Dhazelcast.mc.contextPath`
-command line options to start Management Center on a different port and
-context path:
-
-[source,bash,subs="attributes+"]
-----
-java -Dhazelcast.mc.http.port=8083 -Dhazelcast.mc.contextPath='hazelcast-mc' -jar hazelcast-management-center-{full-version}.jar
-----
-
-The above command starts Management Center on port `8083` and context path `hazelcast-mc`.
-You can access it by opening `\http://localhost:8083/hazelcast-mc` in your browser.
 
 [[deploying-to-application-server]]
 === Deploying to Application Server
@@ -132,7 +118,7 @@ For the options you can provide when starting Management Center, see xref:deploy
 ====
 To explore the licensed features of Management Center, see the following:
 
-* xref:tools:clustered-rest.adoc[Clustered REST]
+* xref:integrate:clustered-rest.adoc[Clustered REST]
 * xref:integrate:jmx.adoc[Clustered JMX]
 * xref:clusters:client-filtering.adoc[Cluster Client Filtering]
 * xref:integrate:prometheus-monitoring.adoc[Prometheus Exporter]

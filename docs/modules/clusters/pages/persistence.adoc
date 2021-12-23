@@ -4,10 +4,6 @@
 
 You can use the *Persistence* tab of the *Administration* menu item to manage Hazelcast clusters that have persistence enabled.
 
-[[hot-restart]]
-
-NOTE: You need an Enterprise license to use this feature.
-
 This page is available only to admin users.
 
 .Persistence fields
