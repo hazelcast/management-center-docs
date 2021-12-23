@@ -23,13 +23,13 @@ Use the `ldap configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and macOS
 ```bash
-./mc-conf.sh ldap configure
+mc-conf.sh ldap configure
 ```
 
 .Windows
 [source,bash]
 ----
-./mc-conf.bat ldap configure 
+mc-conf.bat ldap configure 
 ----
 --
 ====

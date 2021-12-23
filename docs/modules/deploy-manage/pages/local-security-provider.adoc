@@ -23,12 +23,12 @@ To create a new user with `mc-conf`, use the following command. Replace the `<us
 
 .Linux and macOS
 ```bash
-./mc-conf.sh user create -n <username> -r admin -p 
+mc-conf.sh user create -n <username> -r admin -p 
 ```
 
 .Windows
 ```bash
-./mc-conf.bat user create -n <username> -r admin -p 
+mc-conf.bat user create -n <username> -r admin -p 
 ```
 --
 ====
@@ -72,12 +72,12 @@ To create a new user with `mc-conf`, use the following command. Replace the `<us
 
 .Linux and macOS
 ```bash
-./mc-conf.sh user create -n <username> -r admin -p 
+mc-conf.sh user create -n <username> -r admin -p 
 ```
 
 .Windows
 ```bash
-./mc-conf.bat user create -n <username> -r admin -p 
+mc-conf.bat user create -n <username> -r admin -p 
 ```
 --
 ====
@@ -101,29 +101,12 @@ the minimum length of words by starting Management Center with the
 `hazelcast.mc.security.dictionary.minWordLength`
 property.
 
-[tabs]
-====
-Linux and macOS::
-+
---
 [source,bash,subs="attributes+"]
 ----
-./mc-start.sh \
-  -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-  -Dhazelcast.mc.security.dictionary.minWordLength=3 
+java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+     -Dhazelcast.mc.security.dictionary.minWordLength=3 \
+     -jar hazelcast-management-center-{full-version}.jar
 ----
---
-Windows::
-+
---
-[source,bash,subs="attributes+"]
-----
-./mc-start.cmd \
-  -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-  -Dhazelcast.mc.security.dictionary.minWordLength=3 
-----
---
-====
 
 == Changing User Passwords
 
@@ -149,13 +132,13 @@ Use the following `mc-conf` command. Replace the `<username>` placeholder with y
 
 .Linux and macOS
 ```bash
-./mc-conf.sh user update-password -n <username> -p
+mc-conf.sh user update-password -n <username> -p
 
 ```
 
 .Windows
 ```bash
-./mc-conf.bat user update-password -n <username> -p
+mc-conf.bat user update-password -n <username> -p
 ```
 
 NOTE: If you're on Linux or macOS devices, enclose passwords in single quotes only if you use the `--password` option. If you use the `-p` flag, do not use single quotes in the interactive prompt.

@@ -23,12 +23,12 @@ Use the `saml configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and macOS
 ```bash
-./mc-conf.sh saml configure
+mc-conf.sh saml configure
 ```
 
 .Windows
 ```bash
-./mc-conf.bat saml configure 
+mc-conf.bat saml configure 
 ```
 --
 ====

@@ -24,7 +24,7 @@ Linux and macOS::
 --
 [source,bash]
 ----
-./mc-conf.sh 
+mc-conf.sh 
 ----
 --
 Windows::
@@ -32,7 +32,7 @@ Windows::
 --
 [source,bash]
 ----
-./mc-conf.bat 
+mc-conf.bat 
 ----
 --
 ====
@@ -48,7 +48,7 @@ Linux and macOS::
 --
 [source,bash]
 ----
-./mc-conf.sh user -h
+mc-conf.sh user -h
 ----
 --
 Windows::
@@ -56,7 +56,7 @@ Windows::
 --
 [source,bash]
 ----
-./mc-conf.bat user -h
+mc-conf.bat user -h
 ----
 --
 ====
@@ -70,7 +70,7 @@ Linux and macOS::
 --
 [source,bash]
 ----
-./mc-conf.sh user create -h
+mc-conf.sh user create -h
 ----
 --
 Windows::
@@ -78,7 +78,7 @@ Windows::
 --
 [source,bash]
 ----
-./mc-conf.bat user create -h
+mc-conf.bat user create -h
 ----
 --
 ====
@@ -133,7 +133,7 @@ When you execute `mc-conf.sh` or `mc-conf.bat`, the script checks if Management 
 [source,bash]
 ----
 export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
-./mc-conf.sh ...
+mc-conf.sh ...
 ----
 
 This property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
@@ -154,7 +154,7 @@ To use a secure interactive prompt, enter the `password` option without providin
 When you use the `--password` option without providing a value, you will get a prompt to enter a value on the console.
 
 ```bash
-./mc-conf.sh user update-password --username=admin --password
+mc-conf.sh user update-password --username=admin --password
 Enter value for --password (Password for the user record. Provide value directly,
 or use without value to enter securely with interactive prompt.): ********
 Successfully changed password for user 'admin'.
@@ -171,7 +171,7 @@ leading to a text file. The contents of that file are automatically expanded int
 the current task. An example of the argument file usage is shown below.
 
 ```bash
-./mc-conf.sh user update-password @arg-file.txt
+mc-conf.sh user update-password @arg-file.txt
 Successfully changed password for user 'admin'.
 cat arg-file.txt
 --username=admin --password=mnb3c4s0

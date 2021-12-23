@@ -23,12 +23,12 @@ Use the `oidc configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and macOS
 ```bash
-./mc-conf.sh oidc configure
+mc-conf.sh oidc configure
 ```
 
 .Windows
 ```bash
-./mc-conf.bat oidc configure 
+mc-conf.bat oidc configure 
 ```
 --
 ====

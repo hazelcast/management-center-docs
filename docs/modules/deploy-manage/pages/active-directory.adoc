@@ -26,13 +26,13 @@ Use the `active-directory configure` task. For help, use the `-h` flag or see xr
 .Linux and macOS
 [source,bash]
 ----
-./mc-conf.sh active-directory configure
+mc-conf.sh active-directory configure
 ----
 
 .Windows
 [source,bash]
 ----
-./mc-conf.bat active-directory configure 
+mc-conf.bat active-directory configure 
 ----
 --
 ====

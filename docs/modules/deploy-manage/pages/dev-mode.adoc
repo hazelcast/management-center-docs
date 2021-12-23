@@ -29,13 +29,13 @@ You can use this task for various scripting purposes, and automatically configur
 
 .Linux and macOS
 ```bash
-./mc-conf.sh dev-mode configure 
+mc-conf.sh dev-mode configure 
 ```
 
 .Windows
 [source,bash]
 ----
-./mc-conf.bat dev-mode configure
+mc-conf.bat dev-mode configure
 ----
 --
 ====

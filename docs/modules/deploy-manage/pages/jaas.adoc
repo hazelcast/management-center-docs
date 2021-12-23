@@ -25,12 +25,12 @@ Use the `jaas configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and macOS
 ```bash
-./mc-conf.sh jaas configure
+mc-conf.sh jaas configure
 ```
 
 .Windows
 ```bash
-./mc-conf.bat jaas configure 
+mc-conf.bat jaas configure 
 ```
 --
 ====

@@ -63,7 +63,7 @@ For all the starting options you can preconfigure a cluster in Management Center
 [[starting-with-scripts]]
 === Using Scripts in the Package
 
-As another option, you can use the `mc-start.cmd` (Windows) or `mc-start.sh` (Linux and macOS) scripts,
+As another option, you can use the `mc-start scripts,
 which come with the download package in `bin/` folder, to start the Management Center. You can find these scripts under the extracted directory.
 
 [[starting-with-jar-file]]

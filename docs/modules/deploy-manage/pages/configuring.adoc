@@ -71,49 +71,17 @@ On a Hazelcast member, you can also use the `management-center` setting to enabl
 
 To start Management Center with an extra classpath
 entry, use the
-`MC_CLASSPATH` environment variable:
+following command:
 
-[tabs]
-====
-Linux and macOS::
-+
---
-[source,bash,subs="attributes+"]
-----
-export MC_CLASSPATH="/path/to/an/extra.jar:/path/to/an/otherextra.jar"
-mc-start.sh 
-----
---
-Windows::
-+
---
-[source,bash,subs="attributes+"]
-----
-SET MC_CLASSPATH="/path/to/an/extra.jar;/path/to/an/otherextra.jar"
-mc-start.cmd
-----
---
-====
-
-Or, you can use the `-cp` option:
-
-[tabs]
-====
-Linux and macOS::
-+
---
 [source,bash,subs="attributes+"]
 ----
 java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ----
---
-Windows::
-+
---
+
+On Windows, use a semicolon instead of colon:
+
 [source,bash,subs="attributes+"]
 ----
 java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
 ----
---
-====
 
