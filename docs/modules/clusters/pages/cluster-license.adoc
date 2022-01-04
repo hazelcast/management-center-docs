@@ -16,7 +16,7 @@ Warnings are displayed when a license expires within 30 days.
 
 == Related Resources
 
-Even if members are installed with a license, you cannot use Enterprise features in Management Center until you install the license on Management Center as well. See xref: deploy:managing-licenses.adoc[].
+Even if members are installed with a license, you cannot use Enterprise features in Management Center until you install the license on Management Center as well. See xref:deploy:managing-licenses.adoc[].
 
 For information about cluster licenses, see the following topics in the Platform documentation:
 
