@@ -16,11 +16,22 @@ image:ROOT:MonitoringMaps.png[Monitoring Maps]
 
 The below subsections explain the portions of this window.
 
-[[map-browser]]
-== Map Browser
+[[clear-map]]
+== Removing Entries from a Map
 
-Use the Map Browser tool to retrieve properties of the
-entries stored in the selected map. To open the Map Browser
+You can use the *Clear Data* button to remove all entries from the map.
+
+image:ROOT:ClearMapData.png[Clear Map Data View]
+
+In the confirmation modal, enter the map name and confirm that you want to remove all entries from the map.
+
+image:ROOT:ClearMapDataConfirmation.png[Clear Map Data Confirmation]
+
+[[map-browser]]
+== Exploring Map Entries
+
+You can use the Map Browser tool to retrieve properties of the
+entries stored in a selected map. To open the Map Browser
 tool, click on the **Map Browser** button, located at the
 top right of the window. Once opened, the tool appears as a
 dialog, as shown below.
@@ -82,9 +93,9 @@ or of another Java primitive type, it is rendered as a JSON value as shown below
 image:ROOT:MapBrowserWithCustomTypedValue.png[Map Browser with Custom Typed Value]
 
 [[map-config]]
-== Map Config
+== Configuring a Map
 
-Use the Map Config tool to set the selected map's attributes, such
+You can use the Map Config tool to set the selected map's attributes, such
 as the backup count, TTL, and eviction policy. To open the Map Config
 tool, click on the **Map Config** button, located at the top right of
 the window. Once opened, the tool appears as a dialog, as shown below.
@@ -95,7 +106,7 @@ You can change any attribute and click the **Update** button to save
 your changes.
 
 [[map-monitoring]]
-== Map Monitoring
+== Monitoring a Map
 
 Besides the Map Browser and Map Config tools, the map monitoring
 page shows two graphs that show various metrics of the map.
