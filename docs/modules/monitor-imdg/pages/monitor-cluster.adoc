@@ -1,4 +1,0 @@
-= Monitoring a Hazelcast Cluster
-
-This chapter details the monitoring and administering of
-a Hazelcast cluster using Management Center.

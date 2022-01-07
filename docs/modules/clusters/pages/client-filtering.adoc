@@ -1,0 +1,165 @@
+= Filtering Client Connections
+:description: Create filter lists that define which clients are allowed to connect to the cluster.
+:page-enterprise: true
+
+[[changing-cluster-client-filtering]]
+
+You can use the *Client Filtering* menu item to create filter lists that define which clients are allowed to connect to the cluster:
+
+- *Allow-list*: Clients that *are allowed* to connect to the cluster.
++
+If an allow-list contains entries and a deny-list does not, all clients except those in the allow-list are denied access to the cluster.
+- *Deny-list*: Clients that *are not allowed* to connect to the cluster.
++
+If a deny-list contains entries and an allow-list does not, all clients except those in the deny-list are allowed access to the cluster.
+
+image:ROOT:ClientFilteringView.png[Client Filtering View]
+
+== Creating a New Filter List
+[[changing-cluster-client-filtering-example]]
+
+. Make sure that client filtering is enabled.
++
+image:ROOT:enable-client-filtering.png[Toggle button to enable client filtering]
+
+. Click the **New List** button.
+
+. Give the list a name, a status and a type. For example, you could use the following:
++
+.Example filter list
+[cols="20%s,60%a,20%a"]
+|===
+|Field|Description|Example
+
+|List Name
+|Name of the filter list.
+|Example_allow_list
+
+|List Status
+|Whether the filter list is active (in use by)
+|*Active*
+
+|List Type
+|Whether the filter list is an allow-list or a deny-list.
+|*Allow-list*
+|===
+
+. In the entries section of the form, add one or more entries for the list.
++
+.Address types
+[cols="20%s,60%a,20%a"]
+|===
+|Address type|Description|Example
+
+|IP Address
+|IP address of a client (IPv4 or
+IPv6) with optional range characters (`\*` and `-`) instead of any
+byte group.
+|`10.3.10.*` refers to IPs between `10.3.10.0`
+and `10.3.10.255`. The `10.3.10.4-18` refers to IPs between `10.3.10.4`
+and `10.3.10.18` (4 and 18 included).
+
+|Label
+|A string that matches the client label in the client's configuration. This string can include
+wildcard characters (`\*`). See xref:{page-latest-supported-hazelcast}@hazelcast:clients:java.adoc#defining-client-labels[Defining Client Labels] in the Platform documentation.
+|`green*` refers to any label
+values that start with the `green` string.
+
+|Instance Name
+|A string that matches the client's name in the client's configuration. This string can include
+wildcard characters (`\*`).
+|`*-client` refers
+to any instance name that end with the `-client` string.
+|===
+
+. Click **Save**.
++
+image:ROOT:ClientFilteringExampleStep4.png[Example Step 4]
++
+The orange status indicator means that the list has not yet been deployed to the cluster.
+
+. Click **Deploy Configuration** to deploy the list to the cluster.
++
+When a cluster member receives the deployed filter list, it immediately applies the list to
+all currently connected clients and then uses it for newly connecting
+clients. Clients on the deny-list may connect to another cluster
+if they are configured to support <<related-resources, blue-green deployment>>. If they are not,
+they shut down when denied access to the cluster.
++
+NOTE: If some of the cluster members are not reachable from
+the Management Center, those members keep using the last client
+list applied to them.
++
+image:ROOT:ClientFilteringExampleStep5.png[Example Step 5]
+
+. Click **Report** to see the list of deployed rules from all lists.
++
+image:ROOT:ClientFilteringExampleStep6.png[Example Step 6]
+
+NOTE: Wildcard rules such as *blue** are displayed first.
+
+== Editing an Existing Filter List
+
+. Click the **Edit** button on a list row.
+
+. Make your changes.
+
+. Click *Save and Deploy* to deploy the new list to the cluster.
+
+image:ROOT:ClientFilteringEditList.png[Edit Client Filtering List]
+
+== Deleting an Entry
+
+. Click the **Edit** button on a list row.
+
+. Click *Delete* next to the entry.
+
+. Click *Save and Deploy* to deploy the new list to the cluster.
+
+NOTE: If you deploy an allow-list that contains no entries, all clients are disconnected.
+
+== Disabling an Existing Filter List
+
+To keep a filter list saved in Management Center, but remove it from the cluster:
+
+. Click the **Edit** button on a list row.
+
+. Change the *List Type* field to *Inactive*.
+
+. Click *Save*.
+
+== Deleting a Filter List
+
+To delete an entire filter list:
+
+. Click the **Edit** button on a list row.
+
+. Click *Delete this list and deploy* in the top-right corner.
+
+[[client-filtering-synchronization]]
+== Client Filtering Synchronization
+
+If you have multiple instances of Management Center connected to the same clusters, the clusters' client filtering configuration is synchronized among all those Management Center instances. This synchronization is triggered by the following actions:
+
+* Clicking on the **Deploy Configuration** button.
+* Creating, updating, or deleting a list that is active and matches the deployed type (*Allow-list* or *Deny-list*).
+
+NOTE: These actions override the client filtering configuration
+on other instances of Management Center that are connected to the same cluster.
+
+When Management Center connects to a cluster that already has some client filtering configuration
+deployed, Management Center saves the client filtering configuration from the cluster to the local persistent
+storage. The previous configuration stored in Management Center is overwritten.
+
+When another Management Center instance deploys a new client filtering configuration, then a message "Client filtering
+configuration was updated by another Management Center instance" is displayed and the *Client Filtering Settings* and
+*Filter Lists* data is automatically refreshed.
+
+image:ROOT:ClientFilteringUpdated.png[Client Filtering Updated]
+
+== Related Resources
+
+See
+xref:hazelcast:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery]
+in the Platform documentation.
+

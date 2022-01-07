@@ -1,0 +1,63 @@
+= TLS/SSL
+:description: To secure any communications from/to Management Center, you can configure it to communicate over TLS/SSL.
+
+{description}
+
+Management Center communicates over many channels. To encrypt data transmitted over those channels, using TLS/SSL, you can do the following.
+
+NOTE: The `/health` endpoint is always served over HTTP even if TLS/SSL is enabled. See the xref:system-properties.adoc#enabling-health-check-endpoint[`hazelcast.mc.healthCheck.enable`] property.
+
+- Serve the Management Center UI over HTTPS by doing one of the following:
+
+** Start Management Center from
+the command line with TLS/SSL enabled. See xref:serving-https.adoc[].
+
+** Deploy Management Center on a TLS/SSL-enabled container.
+
+** Install Management Center behind a TLS-enabled
+reverse proxy.
++
+NOTE: Make sure your reverse proxy sets the `X-Forwarded-Proto` HTTP header to HTTPS. Also, make sure that the xref:system-properties.adoc#hazelcast-mc-forwarded-requests-enabled[`hazelcast.mc.forwarded.requests.enabled` property] is set to `true`.
+
+- If your Hazelcast cluster uses TLS, configure Management Center with the necessary truststore information. You'll need to configure the truststore, using a client configuration file. See xref:cluster-connections.adoc[].
+
+- If you're using Clustered JMX in Management Center, enable TLS/SSL. See xref:integrate:jmx.adoc[Enabling TLS/SSL for Clustered JMX].
+
+- If you're using LDAP authentication, make sure you use LDAPS or
+enable the *Start TLS* field. See xref:deploy-manage:security-providers.adoc[LDAP Authentication].
+
+- If you're using Active Directory authentication, make sure you use Java's
+truststore related system properties. See xref:deploy-manage:security-providers.adoc[Active Directory Authentication].
+
+[[excluding-specific-tlsssl-procotols]]
+== Excluding TLS/SSL Protocols
+
+When you enable TLS on the Management Center, it will support any of the TLS/SSL protocols that the JVM supports, by default.
+
+To exclude specific protocols, set the `hazelcast.mc.tls.excludeProtocols`
+property to a comma separated list of protocols to be excluded. For example, to allow only TLSv1.2, use
+the following property when starting Management Center:
+
+```
+-Dhazelcast.mc.tls.excludeProtocols=SSLv3,SSLv2Hello,TLSv1,TLSv1.1
+```
+
+After starting Management Center, you should see a line similar
+to the following in the logs:
+
+```
+2017-06-21 12:35:54.856:INFO:oejus.SslContextFactory:Enabled Protocols
+[TLSv1.2] of [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+```
+
+[[including-excluding-specific-cipher-suites]]
+== Including and Excluding Cipher Suites
+
+When you configure TLS you also can provide which cipher suites Management Center can use
+for establishing TLS connection. You can include cipher suites with the `hazelcast.mc.include.cipher.suites` property
+and exclude cipher suites with the xref:system-properties.adoc#hazelcast-mc-exclude-cipher-suites[`hazelcast.mc.exclude.cipher.suites` property] on startup. You can either use the exact cipher suite name or a regular expression. For example:
+
+```
+-Dhazelcast.mc.include.cipher.suites=^SSL_.*$
+-Dhazelcast.mc.exclude.cipher.suites=^.*_(MD5|SHA|SHA1)$,^TLS_RSA_.*$,^.*_NULL_.*$
+```

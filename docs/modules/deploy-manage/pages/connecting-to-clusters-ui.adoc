@@ -1,0 +1,169 @@
+= Connecting to a Cluster from the UI
+:description: You can configure the Hazelcast client for Management Center, using the UI.
+:page-aliases: ROOT:managing-clusters.adoc
+
+Management Center starts a Hazelcast client for each cluster that it is connected to. {description} 
+
+To connect Management Center to a Hazelcast cluster from the UI, you have two options:
+
+- Use the form fields.
+- Upload a client configuration file in XML or YAML format. (Recommended for more complex configurations.)
++
+If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to configure the client TLS settings. For more information about client TLS configuration, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[TLS] in the Platform documentation.
+
+NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
+
+== Using the Form Fields
+[[creating-a-cluster-configuration-using-form]]
+
+. Click to *Cluster Connections* in the toolbar.
+
+. Click *Connect* to start configuring a new connection.
++
+image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
+
+. Enter the name of the cluster that you want to connect to.
+
+. Enter the hostnames or IP adresses of cluster members that you want to connect to. Press *Enter* after each address to add it to the list.
++
+As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the list. 
+
+. Make sure that *Apply Client Config* is *On*.
++
+If this field is *Off*, Management Center will save the configuration but will not try to connect to the cluster.
+
+. Click *Connect*.
++
+image:ROOT:ClusterConfAdded.png[alt=Cluster Configuration Added]
+
+You will see the following:
+
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|State
+|Current state of the cluster.
+
+|Safe Members
+|Total number of members in the cluster.
+
+|Clients
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients
+
+|===
+
+If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
+
+To connect to another cluster, you can repeat these steps.
+
+== Using a Client Configuration File
+[[creating-a-cluster-configuration-by-uploading-file]]
+
+. Create a client configuration file.
++
+[tabs] 
+====
+XML::
++
+--
+For help creating a client configuration file, see the link:https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-client-full-example.xml[full example reference on GitHub].
+
+.Example XML file
+[source,xml]
+----
+<hazelcast-client xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
+                  http://www.hazelcast.com/schema/client-config/hazelcast-client-config-5.0.xsd">
+  <cluster-name>dev</cluster-name>
+  <network>
+    <cluster-members>
+      <address>127.0.0.1:5701</address>
+      <address>127.0.0.2:5702</address>
+    </cluster-members>
+  </network>
+</hazelcast-client>
+---- 
+--
+YAML::
++
+--
+For help creating a client configuration file, see the link:https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-client-full-example.yaml[full example reference on GitHub].
+
+.Example YAML file
+[source,yaml]
+----
+hazelcast-client:
+  cluster-name: dev
+  network:
+    cluster-members:
+      - 127.0.0.1:5701
+      - 127.0.0.2:5702
+----
+--
+====
++
+As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the `cluster-members` configuration.
+
+. Click to *Cluster Connections* in the toolbar.
+
+. Click *Connect* to start configuring a new connection.
++
+image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
+
+. Go to the *Upload Client Config* tab.
++
+image:ROOT:UploadConfigFile.png[alt=Upload Config File]
+
+. Either drag and drop your configuration file into the box or click to browse your file system.
+
+. Make sure that *Apply Client Config* is *On*.
++
+If this field is *Off*, Management Center will save the configuration but will not try to connect to the cluster.
+
+. Click *Save Configuration*.
+
+You will see the following:
+
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|State
+|Current state of the cluster.
+
+|Safe Members
+|Total number of members in the cluster.
+
+|Clients
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients
+
+|===
+
+If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
+
+To connect to another cluster, you can repeat these steps with a different configuration file.
+
+== Removing a Cluster Connection
+
+To remove an existing connection to a cluster, go to *Cluster Connections* in the toolbar and click the *trash icon* above the name of the cluster that you want to disconnect from Management Center.
+
+image:ROOT:remove-connection.png[Trash icon above the name of a cluster called dev]
+
+== Editing a Cluster Connection
+
+To edit an existing connection, go to *Cluster Connections* in the toolbar and click the *configure icon* (next to the *trash icon*) above the name of the cluster.
+
+image:ROOT:edit-connection.png[Configure icon above the name of a cluster called dev]
+
+If you connected to the cluster from the form fields, you can edit the form.
+
+If you connected to the cluster, using a client configuration file, you can upload a new configuration file.
+
+NOTE: To see the existing configuration file, click the *eye icon* above the box.
+
+
+== Next Steps
+
+Explore the xref:clusters:dashboard.adoc[Clusters dashboard].

@@ -1,0 +1,2 @@
+** xref:troubleshoot:hazelcast-clusters.adoc[Hazelcast Clusters]
+** xref:troubleshoot:management-center.adoc[Management Center]

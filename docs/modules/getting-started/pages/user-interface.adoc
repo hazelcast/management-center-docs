@@ -1,0 +1,49 @@
+= User Interface Menu and Toolbar
+:page-aliases: ROOT:user-interface.adoc
+:description: To help you find your way around Management Center, this page explains the toolbar and left menu items of the user interface.
+
+{description}
+
+The following is the Management Center user interface:
+
+image:ROOT:toolbar-and-menu.png[Dashboard Page]
+
+The user interface has a toolbar on the top and a menu on the left.
+
+[[toolbar]]
+== Toolbar
+
+image:ROOT:Toolbar.png[Management Center Toolbar]
+
+The toolbar has the following elements:
+
+* *Cluster dropdown*: Select a connected cluster to manage.
+* **Docs**: Open the Management Center documentation in a new browser tab.
+* *SQL Browser*: Open a built-in SQL shell and execute SQL queries on your cluster. See xref:tools:sql-browser.adoc[].
+* **Console**: Open the in-app console so that you can easily execute commands on your cluster. See xref:tools:console.adoc[].
+* **Settings**: Configure the Management Center settings such as security providers, users, and licenses. See the *Deploy and Manage* section of the documentation.
+* **Username** or *< > Dev Mode*: If you have configured a security provider, the last element displays the current user's name. You can click this name to sign out. Otherwise, this element displays *< > Dev Mode*.
+
+[[menu]]
+== Menu
+
+The menu on the left-hand side lists the
+data structures and jobs in your clusters, cluster members and clients connected to
+the cluster (numbers in square brackets show the instance count for each entity). You can also see an overall state of your cluster,
+execute commands and scripts, and perform user/license operations using this menu.
+
+image::ROOT:LeftMenu.png[Management Center Left Menu]
+
+The menu consists of the following parent menu headings:
+
+* **Cluster**: Includes menu items for general cluster
+operations, monitoring clients/cluster members and
+executing scripts/commands.
+* **Storage**: Includes menu items to monitor data structures
+such as the maps, caches and PN counters in your cluster.
+* **Streaming**: Includes menu items to export snapshots and
+manage streaming jobs.
+* **Compute**: Includes the *Executors* menu item to monitor
+the executor services in your cluster.
+* **Messaging**: Includes menu items to monitor queues and
+topics in your cluster.

@@ -1,0 +1,115 @@
+= Get Started with Management Center in Docker
+:description: In this tutorial, you'll learn how to start Management Center, using Docker.
+
+{description}
+
+You'll complete the following steps:
+
+* Start Management Center in dev mode on your local device.
+* Connect Management Center to an existing Hazelcast cluster.
+* Create a map using the SQL browser.
+* Monitor the map.
+
+== Before You Begin
+
+To complete this tutorial, you need the following:
+
+[cols="1a,1a"]
+|===
+|Prerequisites|Useful resources
+
+|Requirements and Compatibilities
+|xref:getting-started:overview.adoc#requirements[Requirements]
+
+|Docker
+|
+link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac]
+
+link:https://docs.docker.com/engine/install/[Install Docker for Linux]
+
+link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Windows]
+
+|A running Hazelcast cluster
+|xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-docker.adoc[Start a Hazelcast Cluster]
+
+|Docker image for the Management Center distribution
+|xref:install.adoc#using-docker[Install Management Center]
+
+|===
+
+== Step 1. Start Management Center
+
+. Start Management Center.
++
+[source,shell,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
+----
++
+You should see the following terminal log:
++
+`Hazelcast Management Center successfully started at http://localhost:8080`
+
+. In a web browser, go to localhost:8080 and enable *Dev Mode*.
++
+image:ROOT:DevMode.png[Enable Dev Mode,role=half-width]
+
+This mode is a special security provider that allows you to evaluate Management Center, without needing login credentials or authentication tokens for the REST API. For details about security providers, see xref:deploy-manage:security-providers.adoc[].
+
+== Step 2. Connect to the Cluster
+
+. Click *Connect*.
++
+image:ROOT:ConnectToCluster.png[Connecting to the Hello World Cluster]
+
+. Enter the name of your cluster, and at least two members' IP addresses and ports.
++
+We recommend entering more than one member address for fault tolerance.
++
+You should see the established connection between Management Center and the cluster.
++
+image:ROOT:ConnectionEstablished.png[Connecting to the Hello World Cluster]
+
+. Click *View Cluster* to see the cluster's dashboard.
++
+image:ROOT:DashboardPage.png[Cluster dashboard]
+
+== Step 3. Create a Map
+
+Management Center comes with a variety of tools for communicating with clusters. In this step, you'll use the SQL browser to create a map in the cluster and put some data in it.
+
+. Click *SQL Browser* in the toolbar.
++
+After each of the following SQL queries, click *Execute Query*.
+
+. Create a map called `my_distributed_map`.
++
+[source,sql]
+----
+CREATE MAPPING my_distributed_map TYPE IMap OPTIONS ('keyFormat'='varchar','valueFormat'='varchar');
+----
+
+. Put some data into the map.
++
+[source,sql]
+----
+SINK INTO my_distributed_map VALUES
+   ('1', 'John'),
+   ('2', 'Mary'),
+   ('3', 'Jane');
+----
+
+== Step 4. Monitor the Map
+
+Go to *Storage* > *Maps* in Management Center, and select *my_distributed_map*
+from the list of maps. You can now see the statistics of your map:
+
+image:ROOT:MapStatistics.png[Map Statistics]
+
+== Next Steps
+
+If you have an Enterprise license or you want to learn about Enterprise features, see xref:deploy-manage:license-management.adoc[].
+
+To serve Management Center over HTTPS instead of HTTP, see xref:deploy-manage:serve-mc-over-https.adoc[].
+
+For the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].

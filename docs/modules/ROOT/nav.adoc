@@ -1,52 +1,30 @@
-* xref:index.adoc[Hazelcast Management Center Reference Manual]
+.Get Started
+include::getting-started:partial$nav.adoc[]
 
-* xref:supported-environments.adoc[]
+.Deploy and Manage
+include::deploy-manage:partial$nav.adoc[]
 
-* xref:getting-started.adoc[]
+.Integrate
+include::integrate:partial$nav.adoc[]
 
-* xref:configuring.adoc[]
+.Tools
+include::tools:partial$nav.adoc[]
 
-include::launching:partial$launching-nav.adoc[]
+.Cluster
+include::clusters:partial$nav.adoc[]
 
-* xref:connecting-members.adoc[]
+.Storage, Compute & Messaging
+include::data-structures:partial$nav.adoc[]
 
-* xref:user-interface.adoc[]
+.Streaming
+include::monitor-streaming:partial$nav.adoc[]
 
-* xref:managing-clusters.adoc[]
+.Troubleshoot
+include::troubleshoot:partial$nav.adoc[]
 
-* xref:managing-users.adoc[]
+.Upgrade
+** xref:migration-guides.adoc[]
 
-* xref:managing-licenses.adoc[]
-
-* xref:managing-security-providers.adoc[]
-
-include::monitor-imdg:partial$monitor-cluster-nav.adoc[]
-
-* xref:sql-browser.adoc[]
-
-* xref:healthcheck.adoc[]
-
-* xref:metric-persistence.adoc[]
-
-* xref:clustered-rest.adoc[]
-
-include::jmx:partial$jmx-nav.adoc[]
-
-include::monitor-streaming:partial$monitor-streaming-nav.adoc[]
-
-* xref:prometheus.adoc[]
-
-* xref:mc-conf.adoc[]
-
-* xref:high-availability.adoc[]
-
-* xref:phone-home.adoc[]
-
-* xref:troubleshooting.adoc[]
-
-* xref:migration-guides.adoc[Appendix A: Migration Guides]
-
-* xref:ui-logs.adoc[Appendix B: User Interface Logs]
-
-* xref:automated-security-scan.adoc[Appendix C: Automated Security Scanning]
+.Release Notes
+include::release-notes:partial$nav.adoc[]
 

@@ -1,7 +1,7 @@
 site:
   title: Documentation
   url: http:localhost:5000
-  start_page: management-center::index.adoc
+  start_page: getting-started:overview.adoc
   keys:
     google_analytics: 'GTM-MQ59XD6'
     docsearch_id: 'QK2EAH8GB0'
@@ -19,6 +19,9 @@ content:
     branches: [v/*]
     start_path: docs
   - url: https://github.com/hazelcast/cloud-docs
+    branches: [main]
+    start_path: docs
+  - url: https://github.com/hazelcast/hazelcast-platform-operator-docs
     branches: [main]
     start_path: docs
 ui: 

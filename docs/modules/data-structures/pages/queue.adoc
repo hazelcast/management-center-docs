@@ -1,0 +1,49 @@
+= Queues
+[[monitoring-queues]]
+
+You can see a list of all the queues in your cluster by clicking
+on the **Queues** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:QueueGridView.png[Queue Grid View]
+
+You can filter the queues shown and you can also sort the table
+by clicking on the column headers. Clicking on
+a queue name opens a new page for monitoring that queue
+instance on the right, as shown below.
+
+image:ROOT:MonitoringQueues.png[Monitoring Queues]
+
+On top of the page, there are two graphs that show various metrics of the queue.
+See the xref:getting-started:graphs.adoc[the graph section] for more information.
+
+Under these charts are **Queue Statistics** and **Queue Throughput
+Statistics** tables.
+
+[[queue-statistics]]Queue Statistics table provides item
+and backup item counts in the queue and age statistics of items
+and backup items at each member, as shown below.
+
+image:ROOT:QueueStatistics.png[Queue Statistics]
+
+From left to right, this table lists the IP address and port,
+items and backup items on the queue of each member, and maximum,
+minimum and average age of items in the queue. The order of the
+listings in each column can be ascended or descended by clicking
+on the column headings.
+
+[[queue-operation-statistics]]Queue Operation Statistics table provides information about the
+operations (offers, polls, events) performed on the queues, as shown below.
+
+image:ROOT:QueueOperationStatistics.png[Queue Operation Statistics]
+
+From left to right, this table lists the IP address and port of
+each member, and counts of offers, rejected offers, polls, poll misses and events.
+
+You can select the period in the combo box placed at the top
+right corner of the window to show the table data. Available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+Click on the column headings to ascend or descend the order of
+the listings.
