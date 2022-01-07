@@ -1,0 +1,3 @@
+* xref:monitor-streaming:dashboard.adoc[]
+* xref:monitor-streaming:jobs.adoc[]
+* xref:monitor-streaming:snapshots.adoc[]

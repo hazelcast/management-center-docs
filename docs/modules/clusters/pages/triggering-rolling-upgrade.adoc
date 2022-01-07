@@ -1,0 +1,25 @@
+= Triggering a Rolling Upgrade
+:description: A rolling upgrade allows you to upgrade all running cluster members to a new version of Hazelcast without interrupting the operation of the cluster.
+:page-enterprise: true
+
+{description}
+
+== Before you Begin
+
+This page is available only to admin users.
+
+== Trigger a Rolling Upgrade
+
+. Upgrade Management Center to the new version.
++
+NOTE: Management Center is compatible with the previous minor version of Hazelcast. For example, Management Center 5.2 works with both Hazelcast 5.1 and 5.2. To change your cluster version to 5.2, you need Management Center 5.2.
+
+. Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#rolling-upgrade-procedure[Platform documentation].
+
+. Go to *Administration* > *Rolling Upgrade* and click *Upgrade Cluster*.
++
+image:ROOT:RollingUpgrade.png[RollingUpgradeMenu]
+
+When the cluster version is upgraded, you will see the following notification:
+
+image:ROOT:UpgradeClusterVersionSuccess.png[UpgradeClusterVersionSuccess]

@@ -1,0 +1,29 @@
+= Topics
+[[monitoring-topics]]
+
+You can see a list of all the topics in your cluster by clicking
+on the **Topics** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:TopicGridView.png[Topic Grid View]
+
+You can filter the topics shown and you can also sort the table by
+clicking on the column headers. Clicking on
+a topic name opens a new page for monitoring that topic instance
+on the right, as shown below.
+
+image:ROOT:MonitoringTopics.png[Monitoring Topics]
+
+On top of the page, there are two graphs that show various metrics of the topic.
+See the xref:getting-started:graphs.adoc[the graph section] for more information.
+
+Under these charts is the [[topic-operation-statistics]]Topic Operation Statistics table. From
+left to right, this table lists the IP addresses and ports of each
+member, and counts of the messages published and received per second
+in real-time. You can select the period in the combo box placed at
+top right corner of the table to show the table data. The available
+values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
+and **Last 1 Hour**.
+
+Click on the column heading to ascend or descend the order of
+the listings.

@@ -13,6 +13,5 @@ asciidoc:
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.1-snapshot'
     page-toclevels: 1
-    page-ghissue: https://github.com/hazelcast/management-center-docs/issues/new
 nav:
   - modules/ROOT/nav.adoc

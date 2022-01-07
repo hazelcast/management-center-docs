@@ -1,0 +1,64 @@
+= Securing User Sessions
+:description: To secure users' sessions, you can configure session timeouts and multiple user login attempts.
+
+{description}
+
+[[configuring-session-timeout]]
+== Configuring Session Timeout
+
+If you have deployed Management Center on an application
+server/container, you can configure the default session timeout
+period of the application server/container to change the session
+timeout period for the Management Center. If your server/container
+allows application specific configuration, you can use it to configure
+the session timeout period for the Management Center.
+
+If you started Management Center from the command line, by default, the sessions that are inactive for
+30 minutes are invalidated. To change this, you can use the
+xref:system-properties.adoc#hazelcast-mc-session-timeout-seconds[`hazelcast.mc.session.timeout.seconds` property]. For example, the following command starts Management Center with
+a session timeout period of 1 minute:
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
+----
+
+[[disabling-multiple-simultaneous-login-attempts]]
+== Disabling Multiple Simultaneous Login Attempts
+
+By default, a user can log into an account in Management Center on multiple devices in different locations at the same time. To allow only one user to log into an account, start Management Center with
+the `hazelcast.mc.allowMultipleLogin=false` property.
+
+[[disable-login-configuration]]
+== Temporarily Disabling Logins
+
+To prevent password guessing attacks, logging in is disabled for 5 seconds after 3 consecutive failed login attempts. If the failed
+attempts continue, the timeout is multiplied by 10 after each round of 3 consecutive failed login attempts. For example:
+
+. You try to log in with your credentials consecutively 3 times but failed.
+. Logging in is disabled and you have to wait for 5 seconds.
+. After 5 seconds have passed, logging in is enabled.
+. You try to log in with your credentials consecutively 3 times but again
+failed.
+. Logging in is disabled again and this time you have to wait for 50
+seconds until your next login attempt.
+
+You can configure this behavior, using the following properties:
+
+* `hazelcast.mc.failedAttemptsBeforeDisableLogin`: Number of failed
+login attempts that cause the logging in to be temporarily disabled.
+* `hazelcast.mc.initialDisableLoginPeriod`: Initial duration for the disabled login period in seconds.
+* `hazelcast.mc.disableLoginPeriodMultiplier`: Multiplier used for extending
+the disabled login period in case the failed login attempts continue.
+* `hazelcast.mc.maxDisableLoginPeriod`: Maximum amount of time for the disabled login period.
+
+[[forcing-logout-on-multiple-simultaneous-login-attempts]]
+== Forcing Logout on Multiple Simultaneous Login Attempts
+
+If you <<disabling-multiple-simultaneous-login-attempts, disabled multiple simultaneous login attempts>>,
+the first user to log in with a username stays
+logged in until that user explicitly logs out or the session expires.
+In the meantime, other users cannot log in with the same
+username. If you want to force user to log out and let the
+new users log in, start Management
+Center with the `hazelcast.mc.forceLogoutOnMultipleLogin=true` property.

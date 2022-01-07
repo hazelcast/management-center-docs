@@ -1,13 +1,14 @@
 = Jobs
 :page-aliases: monitor-jet:jobs.adoc
+:description: The *Jobs* menu item provides a general overview of the jobs in a Hazelcast cluster that has Jet enabled.
 
-This page provides a general overview of the jobs in a Hazelcast cluster with Streaming support.
+{description}
 
 image:ROOT:jobs.png[Jobs]
 
 == Active Jobs
 
-It shows the list of actively running jobs in the cluster:
+This section displays the list of actively running jobs in the cluster:
 
 * **Name:** Name/ID of the job.
 * **Status:** Current status of the job.
@@ -18,7 +19,7 @@ It shows the list of actively running jobs in the cluster:
 
 == Failed Jobs
 
-It shows a list of failed jobs in the cluster with the following information:
+This section displays a list of failed jobs in the cluster with the following information:
 
 * **Name:** Name/ID of the job.
 * **Status:** Current status of the job.
@@ -29,7 +30,7 @@ It shows a list of failed jobs in the cluster with the following information:
 
 == Completed Jobs
 
-It shows a list of completed jobs in the cluster with the following information:
+This section displays a list of completed jobs in the cluster with the following information:
 
 * **Name:** Name/ID of the job.
 * **Status:** Current status of the job.
@@ -38,22 +39,23 @@ It shows a list of completed jobs in the cluster with the following information:
 * **Items In:** Total number of items read from the sources of the jobs.
 * **Items Out:** Total number of items written to the sinks of the jobs.
 
-You can click on a job to see a detailed view of it.
-
 == Job Details
 
-This page offers a tool for diagnosing data flow within the job.
-It provides graphical visualization of the stages, ability to manage the
-lifecycle of the job and allows you to peek into dataflow stats across
-the DAG. You can diagnose bottlenecks this way.
+When you click on a job, you'll see a detailed view of it.
+
+This view offers the following: 
+
+- A tool for diagnosing data flow within the job.
+- A graphical visualization of the stages.
+- The bility to manage the lifecycle of the job and peek into dataflow stats across the DAG.
 
 image:ROOT:job-detail.png[Job Details]
 
-**[[job-management]]Job Management:**
+=== Job Management
 
 image:ROOT:job-lifecycle.png[Job Lifecycle]
 
-NOTE: You need to be an admin user to execute any of the actions below.
+NOTE: You must be an admin user to execute any of the following actions.
 
 * **Suspend:** Suspends the running job, only visible when the job is in the *Running* state.
 * **Resume:** Resumes the suspended job, only visible when the job is in the *Suspended* state.
@@ -64,27 +66,21 @@ NOTE: You need to be an admin user to execute any of the actions below.
 * **Mode:** Processing guarantee mode of the job; either
 `None`, `At Least Once` or `Exactly Once`.
 
-**Items Flow:**
+=== Items Flow
 
-image:ROOT:items-flow-table.png[Records Flow]
-
-It shows the dataflow metrics for the cluster:
+This section displays the dataflow metrics for the cluster:
 
 * **Total In:** Total number of items read from the source of the job.
 * **Total Out:** Total number of items written to the sink of the job.
 * **Last Min In:** Number of items read from the source of the job in the last minute.
 * **Last Min Out:** Number of items written to the sink of the job in the last minute.
 
-**Nodes:**
-
-image:ROOT:nodes-table.png[Nodes]
+=== Nodes
 
 * **Used:** Number of members used by the job.
 * **Total:** Number of total members in the cluster.
 
-**Last Successful Snapshot:**
-
-image:ROOT:snapshot-table.png[Last Successful Snapshot]
+=== Last Successful Snapshot
 
 * **Completion Time:** Latest successful snapshot completion time.
 * **Size:** Size of the snapshot.
@@ -92,17 +88,13 @@ image:ROOT:snapshot-table.png[Last Successful Snapshot]
 
 NOTE: These metrics are for only non-exported snapshots.
 
-**Job Visualization:**
+=== Job Graph
 
-It is the graphical representation of the job topology.
+This section displays a graphical representation of the job's processing plan as a directed acyclic graph (DAG). Each processing step is a node in the DAG.
 
 image:ROOT:dag.png[alt=DAG Visualization]
 
-**Vertex Details:**
-
-It shows information about the selected vertex on the Job Visualization section.
-
-image:ROOT:vertex.png[alt=Vertex Details]
+If you click a node in the graph, you'll see the following details about that processing step:
 
 **Parallelism::**
 
@@ -111,7 +103,7 @@ image:ROOT:vertex.png[alt=Vertex Details]
 
 **Incoming Items:**
 
-It lists all the incoming edges by their source vertices and shows the following
+This section displays all the incoming edges by their source vertices and shows the following
 information and totals for each of them.
 
 * **All Time:** Total number of items received by this vertex.
@@ -119,7 +111,7 @@ information and totals for each of them.
 
 **Outgoing Items:**
 
-It lists all the outgoing edges by their target vertices and shows the following
+This section displays all the outgoing edges by their target vertices and shows the following
 information and totals for each of them.
 
 * **All Time:** Total number of items sent by this vertex.
@@ -140,7 +132,7 @@ Overload of events in one partition can also cause it.
 
 **Processors:**
 
-It lists all the processors this vertex has in the cluster and shows the following
+This section displays all the processors this vertex has in the cluster and shows the following
 information for each of them.
 
 * **Queue Size:** Current size of the processor inbox queue.
@@ -179,15 +171,4 @@ where event time is assigned (which can be also be an end
 user’s device). It can even be negative. Always use NTP to
 keep wall-clock precise and avoid using timestamps from devices
 out of your control as event time.
-
-**Edge Details:**
-
-It shows information about the selected edge on the Job Visualization section.
-
-image:ROOT:edge.png[alt=Edge Details]
-
-**Items Flow:**
-
-* **Total:** Total number of items passed through this edge.
-* **Last Min:** Number of items passed through this edge in the last minute.
 

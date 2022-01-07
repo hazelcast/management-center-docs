@@ -1,0 +1,256 @@
+= Members
+:description: Monitor each member in a cluster and perform management operations on any member such as running garbage collection (GC), taking a thread dump, and shutting it down.
+:page-aliases: monitor-imdg:monitor-members.adoc
+
+You can use the *Members* menu item to monitor each member in a cluster and perform management operations on any member such as running garbage collection (GC), taking a thread dump, and shutting it down.
+
+image:ROOT:MemberGridView.png[Member Grid View]
+
+.Member statistics overview
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Member
+|The IP address and port of the member.
+
+|Additional Info
+|Displays an info icon if the member is a CP member or a warning icon if the member's runtime or hardware setup does not conform to our production recommendations. Hover over the icon to see the tooltip. For a list of production recommendations, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:production-checklist.adoc[] in the Platform documentation. To monitor and manage the CP subsystem, see xref:cp-subsystem.adoc[].
+
+|Scripting
+|Whether scripting is enabled. See xref:tools:scripting.adoc[]
+
+|Streaming
+|Whether the Jet engine is enabled. See xref:{page-latest-supported-hazelcast}@hazelcast:configuration:jet-configuration.adoc[] in the Platform documentation.
+
+|Slow Operations
+|Whether the member has detected slow operations. See <<slow-operations, Slow Operations>> on this page.
+
+|Hazelcast Version
+|Version of the member codebase that the member is running.
+
+|Owned Partitions
+|Number of partitions that are owned by the member.
+
+|OS Total Physical Memory
+|Total amount of physical memory on the member.
+
+|OS Committed Virtual Memory
+|Amount of virtual
+memory that is guaranteed to be available to the running member.
+
+|OS Free Physical Memory
+|Amount of free physical
+memory on the member.
+
+|OS CPU Load
+|Recent CPU usage for the whole system represented as a percentage value.
+0% means that all CPUs were idle during the recent period of time
+observed, while `100%` means that all CPUs were actively running during
+the recent period being observed.
+
+|OS Max File Desc
+|Maximum number of file
+descriptors. File descriptor is an integer number that uniquely
+represents an opened file in the operating system.
+
+|OS Open File Desc
+|Number of open file descriptors.
+
+|Intel® Optane™ DC
+|Whether the cluster uses Intel® Optane™ DC memory. See xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence-on-intel.adoc[] in the Platform documentation.
+
+|===
+
+== Filtering Members
+
+To filter the displayed members, use the *Search* bar in the right-hand corner.
+
+To sort the
+table, click on the column headers.
+
+== Viewing Details about a Member
+
+To see more details about a particular member, click on the member's row in the table.
+
+image:ROOT:MonitoringMembers.png[Monitoring Members]
+
+=== Actions
+
+On each member, you can trigger the following actions:
+
+* **Run GC**: Executes garbage collection on the
+selected member. A notification stating that the GC execution was
+successful is shown.
+* **Thread Dump**: Takes a thread dump of the
+selected member and shows it in a separate dialog.
+* **Shutdown Member**: Shuts down the selected member.
+* **Promote Member**: If the member is a lite member, this button promotes it to a data member.
+
+[[utilization-charts]]
+=== Graphs
+
+The **Heap and Native Memory** chart shows the percentage
+of CPU usage on the selected member. The **CPU Load and Used Memory** chart shows the memory usage on the
+selected member. You can open
+each chart as a separate dialog using
+the maximize image:ROOT:MaximizeChart.png[maximize] button.
+
+To customize the data displayed in the graphs, see xref:getting-started:graphs.adoc[]
+
+=== Runtime
+
+**Runtime** is a dynamically updated window tab
+showing the processor number, the start and up
+times, and the maximum, total and free memory
+sizes of the selected member. These values are
+collected from the default MXBeans in the
+Java Virtual Machine (JVM).
+
+NOTE: These descriptions may vary according to the JVM version or vendor.
+
+.Member runtime statistics
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Number of Processors
+|Number of processors
+available to the member (JVM).
+
+|Start Time
+|Start time of the member (JVM).
+
+|Uptime
+|Uptime of the member (JVM).
+
+|Maximum Memory
+|Maximum amount of memory that
+the member (JVM) will attempt to use.
+
+|Free Memory
+|Amount of free memory in the member (JVM).
+
+|Used Heap Memory
+|Amount of used memory.
+
+|Max Heap Memory
+|Maximum amount of memory that can be used for memory management.
+
+|Used Non-Heap Memory
+|Amount of used memory.
+
+|Max Non-Heap Memory
+|Maximum amount of memory that can be used for memory management.
+
+|Total Loaded Classes
+|Total number of classes
+that have been loaded since the member (JVM) has started execution.
+
+|Current Loaded Classes
+|Number of classes that
+are currently loaded in the member (JVM).
+
+|Total Unloaded Classes
+|Total number of classes
+unloaded since the member (JVM) has started execution.
+
+|Total Thread Count
+|Total number of threads created
+and also started since the member (JVM) started.
+
+|Active Thread Count
+|Current number of live threads
+including both daemon and non-daemon threads.
+
+|Peak Thread Count
+|Peak live thread count since the
+member (JVM) started or peak was reset.
+
+|Daemon Thread Count
+|Current number of live daemon threads.
+
+|OS Free Physical Memory
+|Amount of free physical
+memory.
+
+|OS Committed Virtual Memory
+|Amount of virtual
+memory that is guaranteed to be available to the running process.
+
+|OS Total Physical Memory
+|Total amount of physical memory.
+
+|OS Free Swap Space
+|Amount of free swap space. Swap space is used when the amount of physical
+memory (RAM) is full. If the system needs more memory resources
+and the RAM is full, inactive pages in memory are moved to the swap space.
+
+|OS Total Swap Space
+|Total amount of swap space.
+
+|OS Maximum File Descriptor Count
+|Maximum number of file
+descriptors. File descriptor is an integer number that uniquely
+represents an opened file in the operating system.
+
+|OS Open File Descriptor Count
+|Number of open file descriptors.
+
+|OS Process CPU Time
+|CPU time used by the process on
+which the member (JVM) is running.
+
+|OS Process CPU Load
+|Recent CPU usage for the member
+(JVM) process. This is a double with a value from 0.0 to 1.0.
+A value of 0.0 means that none of the CPUs were running threads
+from the member (JVM) process during the recent period of time
+observed, while a value of 1.0 means that all CPUs were actively
+running threads from the member (JVM) 100% of the time during the
+recent period being observed. Threads from the member (JVM) include
+the application threads as well as the member (JVM) internal threads.
+
+|OS System Load Average
+|System load average for the last minute.
+The system load average is the average over a period of time of this sum:
+(the number of runnable entities queued to the available processors) + (the number of runnable entities running on the available processors). The way in which the load average is calculated is operating system specific
+but it is typically a damped time-dependent average.
+
+|OS System CPU Load
+|Recent CPU usage for the whole system represented as a percentage value.
+0% means that all CPUs were idle during the recent period of time
+observed, while 100% means that all CPUs were actively running during
+the recent period being observed.
+
+|===
+
+[[member-properties]]
+=== Properties
+
+Next to the **Runtime** tab, the **Properties** tab shows the member's system properties.
+
+=== Member Configuration
+
+Management Center receives the member configuration in XML format. As a result, even if you used a different configuration format such as YAML, it will be displayed in XML.
+
+To view a member's configuration:
+
+. Click a member's row in the table.
+
+. Scroll down to *Member Configuration* at the bottom of the page.
+
+=== Slow Operations
+
+If a member has slow operations, you can view the detected slow
+operations which occurred on that member. The data is collected by the
+xref:{page-latest-supported-hazelcast}@hazelcast:performance:slowoperationdetector.adoc[SlowOperationDetector].
+
+To view slow operations for a member:
+
+. Click a member's row in the table.
+
+. Click on an entry in the **List of Slow Operations** table.
+
+image:ROOT:SlowOperationDetail.png[Slow Operations Details]
+

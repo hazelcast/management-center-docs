@@ -1,0 +1,80 @@
+= Locks
+[[monitoring-locks]]
+
+You can use the scripting feature of the Management Center to
+monitor the locks in your cluster. See the xref:tools:scripting.adoc[Scripting section]
+to learn how to use this feature.
+
+You can use these JavaScript functions to retrieve various information
+about the locks in your cluster.
+
+== Finding Active Locks
+
+To find the number of active locks in your cluster, use the following script:
+
+[source,javascript]
+----
+var findLocks = function() {
+    var lockstr = '';
+    var node = hazelcast.getCluster().getLocalMember();
+
+    var locks = hazelcast.node.nodeEngine.getService('hz:impl:lockService').getAllLocks();
+    return "Active Lock Count : " + locks.size();
+
+}
+
+findLocks();
+----
+
+== Printing Locks
+
+To print the locks in your cluster, use the following script:
+
+[source,javascript]
+----
+var findLocks = function() {
+        var lockStr = '';
+        var distributedObjects = hazelcast.getDistributedObjects();
+        for each(distributedObject in distributedObjects) {
+            if(distributedObject.getServiceName().equals("hz:impl:lockService")){
+                lockStr += distributedObject.getName() + '\n';
+            }
+
+        }
+        return lockStr;
+}
+
+findLocks();
+----
+
+== Unlocking Forcefully
+
+To force unlock a lock in your cluster, use the following script:
+
+[source,javascript]
+----
+var forceUnlock = function(lockName) {
+
+    hazelcast.getLock(lockName).forceUnlock();
+    return 'OK';
+
+}
+
+forceUnlock('your_Lock_Name');
+----
+
+== Checking Locks
+
+To check if a lock is being hold by a member, use the following script:
+
+[source,javascript]
+----
+var isLocked = function(lockName) {
+
+    var locked = hazelcast.getLock(lockName).isLocked();
+    return lockName + ' -> ' + locked;
+
+}
+
+isLocked('your_Lock_Name');
+----

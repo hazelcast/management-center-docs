@@ -1,0 +1,134 @@
+= Variable Replacers
+:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `mc-conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
+
+{description}
+
+A variable to be replaced takes the following form:
+
+```
+$<prefix> {"<masked-value"}
+```
+
+The `<prefix>` placeholder tells Management Center which replacer to use to replace in the value in the `<masked-value>` placeholder.
+
+The following replacer classes are provided by Hazelcast as example
+implementations of the `ConfigReplacer` interface.
+Note that you can also implement your own replacers.
+
+* <<EncryptionReplacer>>
+* <<PropertyReplacer>>
+
+== EncryptionReplacer
+
+The EncryptionReplacer encrypts and decrypts values. The secret key for encryption/decryption is generated from a
+password which can be a value in a file and/or environment-specific values,
+such as a MAC address or user data.
+
+To encrypt a value with the EncryptionReplacer, execute the Java file:
+
+[source,bash,subs="attributes+"]
+----
+java -cp hazelcast-management-center-{full-version}.jar \ <1>
+     -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \ <2>
+     com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
+     "mc-test123" <3>
+----
+
+<1> Add the Management Center Java file to the classpath. This file contains the `EncryptionReplacer` class.
+<2> Tell the replacer not to use the current user properties to encrypt the variable. This way, you can execute this command from any user and the result will be the same. 
+<3> Pass the replacer the value that you want to encrypt.
+
+The output contains the encrypted value, prefixed with `$ENC`, which tells Management Center to use the EncryptionReplacer to decrypt the value.
+
+```
+$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}
+```
+
+To use the encrypted value as configuration input in Management Center, you need to provide the following properties:
+
+- xref:system-properties.adoc#hazelcast-mc-configreplacer-class[`hazelcast.mc.configReplacer.class`]
+- Any configuration properties that you used to generate the encrypted value.
+- Any property to take the encrypted value as input for the EncryptionReplacer to decrypt.
+
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.tls.enabled=true \
+-Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
+-Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
+-Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
+-Dhazelcast.mc.tls.keyStore=mc.keystore \
+-Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' \ <2>
+-jar hazelcast-management-center-{full-version}.jar
+----
+
+<1> Tell Management Center to use the encryption replacer to decrypt variables that are prefixed with `$ENC`.
+<2> Use the encrypted value as a keystore password.
+
+=== Configuration
+
+Use these properties to configure the EncryptionReplacer.
+
+* `hazelcast.mc.configReplacer.prop.cipherAlgorithm`: Cipher algorithm used for
+the encryption/decryption. Its default value is AES.
+* `hazelcast.mc.configReplacer.prop.keyLengthBits`: Length (in bits) of the
+secret key to be generated. Its default value is 128.
+* `hazelcast.mc.configReplacer.prop.passwordFile`: Path to a file whose content
+should be used as a part of the encryption password. When the property
+is not provided, no file is used as a part of the password. Its default value is null.
+* `hazelcast.mc.configReplacer.prop.passwordNetworkInterface`: Name of the network interface
+whose MAC address should be used as a part of the encryption password. When the
+property is not provided no network interface property is used as a part of the password.
+Its default value is null.
+* `hazelcast.mc.configReplacer.prop.passwordUserProperties`: Specifies whether
+the current user properties (`user.name` and `user.home`) should be used
+as a part of the encryption password. Its default value is true.
+* `hazelcast.mc.configReplacer.prop.saltLengthBytes`: Length (in bytes) of a
+random password salt. Its default value is 8.
+* `hazelcast.mc.configReplacer.prop.secretKeyAlgorithm`:  Name of the secret key
+algorithm to be associated with the generated secret key. Its default
+value is AES.
+* `hazelcast.mc.configReplacer.prop.secretKeyFactoryAlgorithm`: Algorithm used
+to generate a secret key from a password. Its default value is
+PBKDF2WithHmacSHA256.
+* `hazelcast.mc.configReplacer.prop.securityProvider`: Name of a Java Security
+Provider to be used for retrieving the configured secret key factory and
+the cipher. Its default value is null.
+
+NOTE: Older Java versions may not support all the algorithms used as defaults.
+Use the property values supported by your Java version.
+
+== PropertyReplacer
+
+The PropertyReplacer replaces variables by properties with the given name.
+Usually the system properties are used such as`${user.name}`.
+
+The full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer`
+and the replacer prefix is empty string ("").
+
+== Implementing Custom Replacers
+
+To create your own variable replacer implementations, you must implement the following three methods from the `ConfigReplacer` interface:
+
+[source,java]
+----
+import java.util.Properties;
+
+public interface ConfigReplacer {
+    void init(Properties properties);
+    String getPrefix();
+    String getReplacement(String maskedValue);
+}
+----
+
+To use a custom variable replacer, you must configure it, using one of the following options:
+
+* Client configuration file
+* System properties
+
+A variable to be replaced takes the following form:
+
+```
+$<prefix> {"<masked-value>"}
+```
+
+The `<prefix>` placeholder is the value returned by the `getPrefix()` method and the `<masked-value>` placeholder is a value provided by the `getReplacement()` method, which replaces the whole variable string.

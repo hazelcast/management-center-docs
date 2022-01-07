@@ -1,0 +1,13 @@
+= Running a Config Healthcheck
+:description: You can generate a healthcheck report to analyze all member configurations in a cluster. 
+:page-aliases: ROOT:healthcheck.adoc
+:page-enterprise: true
+
+{description}
+
+image:ROOT:Healthcheck.png[Healthcheck]
+
+Management Center automatically runs the healthcheck report at certain intervals. You can disable automatic runs by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
+system property to `false`.
+
+To manually run a healthcheck, go to *Config Healthcheck* and click *Re-Run Healthcheck*.

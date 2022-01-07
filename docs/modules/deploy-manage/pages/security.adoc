@@ -1,0 +1,20 @@
+= Securing Management Center
+:description: To secure Management Center, you can encrypt communications using TLS/SSL, secure user sessions, set up user login authentication, and enable audit logging.
+
+{description}
+
+== TLS/SSL
+
+You can configure Management Center to communicate over TLS/SSL for secure, encrypted traffic. See xref:tls-security.adoc[].
+
+== User Sessions
+
+To secure users' sessions, you can configure session timeouts and user login attempts. See xref:sessions.adoc[].
+
+== User Security Providers
+
+To authenticate user logins, you can choose from a variety of security providers, including a local one or third-party ones such as LDAP. See xref:security-providers.adoc[].
+
+== Logging
+
+To keep a record of events such as user logins, you can configure Management Center to keep an audit log. See xref:logging.adoc#audit-logging[Audit Logging].
