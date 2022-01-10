@@ -23,7 +23,7 @@ mc-conf::
 --
 Use the `jaas configure` task. For help, use the `-h` flag or see xref:mc-conf.adoc[].
 
-.Linux and macOS
+.Linux and Mac
 ```bash
 mc-conf.sh jaas configure
 ```

@@ -12,9 +12,9 @@ version of H2DB which is patched against these vulnerabilities.
 * https://nvd.nist.gov/vuln/detail/CVE-2018-10054[CVE-2018-10054^]
 * https://nvd.nist.gov/vuln/detail/CVE-2018-14335[CVE-2018-14335^]
 
-== Horizontal Scrollbar in Tables when Using macOS
+== Horizontal Scrollbar in Tables when Using Mac
 
-macOS automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
+Mac automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
 
 The scrollbar should hide shortly after you stop scrolling. This is the default behavior and it shouldn't
 cause any inconvenience. However, if you still want to change it, address "Show scroll bars" section of the

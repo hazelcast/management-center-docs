@@ -27,7 +27,7 @@ To set up dev mode with `mc-conf`, use the following command.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without using the UI.
 
-.Linux and macOS
+.Linux and Mac
 ```bash
 mc-conf.sh dev-mode configure 
 ```

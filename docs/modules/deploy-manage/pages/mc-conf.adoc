@@ -8,7 +8,7 @@ This tool makes changes to the configuration settings in the `hazelcast-mc` dire
 
 == Getting Started
 
-To use the `mc-conf` tool, execute the `mc-conf` script in the `bin/` directory of the Management Center distribution. This script is available as a shell script (`mc-conf.sh`) for Linux and macOS or a batch file (`mc-conf.bat`) for Windows.
+To use the `mc-conf` tool, execute the `mc-conf` script in the `bin/` directory of the Management Center distribution. This script is available as a shell script (`mc-conf.sh`) for Linux and Mac or a batch file (`mc-conf.bat`) for Windows.
 
 . Make sure that Management Center is not running.
 +
@@ -19,7 +19,7 @@ arguments.
 +
 [tabs] 
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 [source,bash]
@@ -43,7 +43,7 @@ TIP: If you've set a non-default home directory with the xref:system-properties.
 +
 [tabs] 
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 [source,bash]
@@ -65,7 +65,7 @@ mc-conf.bat user -h
 +
 [tabs] 
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 [source,bash]

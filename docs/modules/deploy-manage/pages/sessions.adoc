@@ -18,10 +18,25 @@ If you started Management Center from the command line, by default, the sessions
 xref:system-properties.adoc#hazelcast-mc-session-timeout-seconds[`hazelcast.mc.session.timeout.seconds` property]. For example, the following command starts Management Center with
 a session timeout period of 1 minute:
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.session.timeout.seconds=60
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.session.timeout.seconds=60
+----
+--
+====
 
 [[disabling-multiple-simultaneous-login-attempts]]
 == Disabling Multiple Simultaneous Login Attempts

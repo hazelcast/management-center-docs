@@ -50,16 +50,35 @@ To use the encrypted value as configuration input in Management Center, you need
 - Any configuration properties that you used to generate the encrypted value.
 - Any property to take the encrypted value as input for the EncryptionReplacer to decrypt.
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
--Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
--Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
--Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
--Dhazelcast.mc.tls.keyStore=mc.keystore \
--Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' \ <2>
--jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
+    -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
+    -Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
+    -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
+    -Dhazelcast.mc.tls.keyStore=mc.keystore \
+    -Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' <2>
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
+    -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer ^ <1>
+    -Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password ^
+    -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false ^
+    -Dhazelcast.mc.tls.keyStore=mc.keystore ^
+    -Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' <2>
+----
+--
+====
 
 <1> Tell Management Center to use the encryption replacer to decrypt variables that are prefixed with `$ENC`.
 <2> Use the encrypted value as a keystore password.

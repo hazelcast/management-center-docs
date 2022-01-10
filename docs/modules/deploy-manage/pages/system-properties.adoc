@@ -30,7 +30,7 @@ ALLOW_MULTIPLE_LOGIN
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.allowMultipleLogin=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.allowMultipleLogin=true
 ----
 
 |[[hazelcast-mc-auditlog-enabled]]hazelcast.mc.auditlog.enabled
@@ -40,7 +40,7 @@ AUDIT_LOG_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.auditlog.enabled=true \
+mc-start.sh -Dhazelcast.mc.auditlog.enabled=true \
 -jar hazelcast-management-center-{full-version}.jar
 ----
 
@@ -49,7 +49,7 @@ java -Dhazelcast.mc.auditlog.enabled=true \
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
+mc-start.sh -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \
 -jar hazelcast-management-center-{full-version}.jar
 ----
 
@@ -59,7 +59,7 @@ configuration loading process stops when a replacement value is missing. Default
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.configReplacer.failIfValueMissing=true \
+mc-start.sh -Dhazelcast.mc.configReplacer.failIfValueMissing=true \
 -jar hazelcast-management-center-{full-version}.jar
 ----
 
@@ -70,7 +70,7 @@ CONTEXT_PATH
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.contextPath=hazelcast-mc \
+mc-start.sh -Dhazelcast.mc.contextPath=hazelcast-mc \
 -jar hazelcast-management-center-{full-version}.jar
 ----
 
@@ -81,7 +81,7 @@ In this example, the URL for Management Center would be `\http:localhost:8080/ha
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.disableHostnameVerification=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.disableHostnameVerification=true
 ----
 
 |[[hazelcast-mc-disableloginperiodmultiplier]]hazelcast.mc.disableLoginPeriodMultiplier
@@ -93,7 +93,7 @@ period expires. Default: `10`. See xref:sessions.adoc[].
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.disableLoginPeriodMultiplier=20 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.disableLoginPeriodMultiplier=20
 ----
 
 |[[hazelcast-mc-exclude-cipher-suites]]hazelcast.mc.exclude.cipher.suites
@@ -103,7 +103,7 @@ EXCLUDE_CIPHER_SUITES
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.exclude.cipher.suites=^.*_(MD5\|SHA\|SHA1)$,^TLS_RSA_.*$,^.*_NULL_.*$ -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.exclude.cipher.suites=^.*_(MD5\|SHA\|SHA1)$,^TLS_RSA_.*$,^.*_NULL_.*$
 ----
 
 |[[hazelcast-mc-existingkeystore-path]]hazelcast.mc.existingKeyStore.path
@@ -114,7 +114,7 @@ Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.existingKeyStore.path=/path/to/existing/keyStore.jceks -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.existingKeyStore.path=/path/to/existing/keyStore.jceks
 ----
 
 |[[hazelcast-mc-existingkeystore-pass]]hazelcast.mc.existingKeyStore.pass
@@ -125,7 +125,7 @@ Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.existingKeyStore.pass=somepass -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.existingKeyStore.pass=somepass
 ----
 
 |[[hazelcast-mc-existingkeystore-type]]hazelcast.mc.existingKeyStore.type
@@ -136,7 +136,7 @@ Default: `JCEKS`.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.existingKeyStore.type=JCEKS -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.existingKeyStore.type=JCEKS
 ----
 
 |[[hazelcast-mc-existingkeystore-provider]]hazelcast.mc.existingKeyStore.provider
@@ -147,7 +147,7 @@ Default: System provider.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.existingKeyStore.provider=com.yourprovider.MyProvider -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.existingKeyStore.provider=com.yourprovider.MyProvider
 ----
 
 |[[hazelcast-mc-failedattemptsbeforedisablelogin]]hazelcast.mc.failedAttemptsBeforeDisableLogin
@@ -158,7 +158,7 @@ login attempts that Management Center allows before disabling logins. Default: `
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.failedAttemptsBeforeDisableLogin=1 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.failedAttemptsBeforeDisableLogin=1
 ----
 
 |[[hazelcast-mc-forcelogoutonmultiplelogin]]hazelcast.mc.forceLogoutOnMultipleLogin
@@ -168,7 +168,7 @@ FORCE_LOGOUT_ON_MULTIPLE_LOGIN
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.forceLogoutOnMultipleLogin=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.forceLogoutOnMultipleLogin=true
 ----
 
 |[[hazelcast-mc-forwarded-requests-enabled]]hazelcast.mc.forwarded.requests.enabled
@@ -179,7 +179,7 @@ headers from reverse proxies. Default: `true`.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.forwarded.requests.enabled=false -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.forwarded.requests.enabled=false
 ----
 
 |[[enabling-health-check-endpoint]][[hazelcast-mc-healthcheck-enable]]hazelcast.mc.healthCheck.enable
@@ -190,7 +190,7 @@ status code if Management Center is running.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.healthCheck.enable=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.healthCheck.enable=true
 ----
 
 In this example, the health check would be available at `\http://localhost:8081/health`.
@@ -202,7 +202,7 @@ HEALTH_CHECK_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.healthCheck.port=2000 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.healthCheck.port=2000
 ----
 
 |[[hazelcast-mc-home]]hazelcast.mc.home
@@ -212,7 +212,7 @@ HOME_PROP
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.home=/home/management-center -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.home=/home/management-center
 ----
 
 |[[hazelcast-mc-hostaddress]]hazelcast.mc.hostAddress
@@ -222,7 +222,7 @@ HOST_ADDRESS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.hostAddress=127.0.1.1 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.hostAddress=127.0.1.1
 ----
 
 |[[hazelcast-mc-http-port]]hazelcast.mc.http.port
@@ -232,7 +232,7 @@ HTTP_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java hazelcast.mc.http.port=80 -jar hazelcast-management-center-{full-version}.jar
+java hazelcast.mc.http.port=80
 ----
 
 In this example, the URL for Management Center would be `\http:localhost:80`.
@@ -244,7 +244,7 @@ INCLUDE_CIPHER_SUITES
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.include.cipher.suites=^SSL_.*$ -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.include.cipher.suites=^SSL_.*$
 ----
 
 |[[hazelcast-mc-initialdisableloginperiod]]hazelcast.mc.initialDisableLoginPeriod
@@ -255,7 +255,7 @@ login period in seconds. Default: `5`. See xref:sessions.adoc[].
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.initialDisableLoginPeriod=50 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.initialDisableLoginPeriod=50
 ----
 
 |[[hazelcast-mc-jmx-enabled]]hazelcast.mc.jmx.enabled
@@ -265,7 +265,7 @@ JMX_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true
 ----
 
 |[[hazelcast-mc-jmx-host]]hazelcast.mc.jmx.host
@@ -275,7 +275,7 @@ JMX_HOST_NAME
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.host=127.0.0.1 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.host=127.0.0.1
 ----
 
 |[[hazelcast-mc-jmx-mutualauthentication]]hazelcast.mc.jmx.mutualAuthentication
@@ -285,7 +285,7 @@ JMX_SSL_MUTUAL_AUTH_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.mutualAuthentication=false -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.mutualAuthentication=false
 ----
 
 |[[hazelcast-mc-jmx-port]]hazelcast.mc.jmx.port
@@ -295,7 +295,7 @@ JMX_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.port=9000 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.port=9000
 ----
 
 |[[hazelcast-mc-jmx-rmi-port]]hazelcast.mc.jmx.rmi.port
@@ -305,7 +305,7 @@ JMX_RMI_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.rmi.port=9001 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.rmi.port=9001
 ----
 
 |[[hazelcast-mc-jmx-ssl]]hazelcast.mc.jmx.ssl
@@ -315,7 +315,7 @@ JMX_SSL_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl=true
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystore]]hazelcast.mc.jmx.ssl.keyStore
@@ -323,7 +323,7 @@ java -Dhazelcast.mc.jmx.ssl=true -jar hazelcast-management-center-{full-version}
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystorepassword]]hazelcast.mc.jmx.ssl.keyStorePassword
@@ -331,7 +331,7 @@ java -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks -jar hazelcast-man
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword
 ----
 
 |[[hazelcast-mc-jmx-ssl-truststore]]hazelcast.mc.jmx.ssl.trustStore
@@ -339,7 +339,7 @@ java -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword -jar hazelcast-managemen
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore
 ----
 
 |[[hazelcast-mc-jmx-ssl-truststorepassword]]hazelcast.mc.jmx.ssl.trustStorePassword
@@ -347,7 +347,7 @@ java -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore -jar hazelcast-manag
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystoretype]]hazelcast.mc.jmx.ssl.keyStoreType
@@ -355,7 +355,7 @@ java -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword -jar hazelcast-managem
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.keyStoreType=JKS -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.keyStoreType=JKS
 ----
 
 |[[hazelcast-mc-jmx-ssl-keymanageralgorithm]]hazelcast.mc.jmx.ssl.keyManagerAlgorithm
@@ -367,7 +367,7 @@ the `javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method. Default: Syste
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=JKS -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=JKS
 ----
 
 |[[hazelcast-mc-ldap-timeout]]hazelcast.mc.ldap.timeout
@@ -377,8 +377,8 @@ LDAP_CONN_TIMEOUT_MILLIS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.ldap.timeout=4000 \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.ldap.timeout=4000 \
+    
 ----
 
 |[[starting-with-a-license]][[hazelcast-mc-license]]hazelcast.mc.license
@@ -389,7 +389,7 @@ over one that is set in the user interface, and you cannot update the license in
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.license={license key} -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.license={license key}
 ----
 
 |[[hazelcast-mc-lock-skip]]hazelcast.mc.lock.skip
@@ -399,7 +399,7 @@ SKIP_MC_LOCK_CHECK
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.lock.skip=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.lock.skip=true
 ----
 
 |[[hazelcast-mc-maxdisableloginperiod]]hazelcast.mc.maxDisableLoginPeriod
@@ -411,8 +411,8 @@ disabled login period is unlimited.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.maxDisableLoginPeriod= \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.maxDisableLoginPeriod= \
+    
 ----
 
 |[[disk-usage-config]][[hazelcast-mc-metrics-disk-ttl-duration]]hazelcast.mc.metrics.disk.ttl.duration
@@ -422,7 +422,7 @@ PERSISTENT_STORE_TTL_DURATION
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.metrics.disk.ttl.duration=P2D -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.metrics.disk.ttl.duration=P2D
 ----
 
 |[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
@@ -432,7 +432,7 @@ PERIODIC_HEALTHCHECK_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.periodic.healthcheck.enabled=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.periodic.healthcheck.enabled=true
 ----
 
 |[[hazelcast-mc-phone-home-enabled]]hazelcast.mc.phone.home.enabled
@@ -442,8 +442,8 @@ PHONE_HOME_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.phone.home.enabled=false \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.phone.home.enabled=false \
+    
 ----
 
 |[[hazelcast-mc-prometheusexporter-enabled]]hazelcast.mc.prometheusExporter.enabled
@@ -453,8 +453,8 @@ PROMETHEUS_EXPORTER_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.prometheusExporter.enabled=true \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+    
 ----
 
 |[[hazelcast-mc-prometheusExporter-filter-metrics-included]]hazelcast.mc.prometheusExporter.filter.metrics.included
@@ -464,8 +464,8 @@ PROMETHEUS_EXPORTER_ALLOWLIST
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
+    
 ----
 
 |[[hazelcast-mc-prometheusexporter-filter-metrics-excluded]]hazelcast.mc.prometheusExporter.filter.metrics.excluded
@@ -475,8 +475,8 @@ PROMETHEUS_EXPORTER_DENYLIST
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
+    
 ----
 
 |[[hazelcast-mc-prometheusexporter-port]]hazelcast.mc.prometheusExporter.port
@@ -484,12 +484,27 @@ java -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadA
 PROMETHEUS_EXPORTER_PORT_NUMBER
 |Port on which the `/metrics` endpoint is exposed.
 |
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.port=2222 \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.port=2222
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
+  -Dhazelcast.mc.prometheusExporter.port=2222
+----
+--
+====
 
 In this example, the `/metrics` endpoint would be available on port 2222: `\http://localhost:2222/metrics`.
 
@@ -500,9 +515,9 @@ PASSWORD_DICTIONARY_MIN_WORD_LENGTH
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+mc-start.sh -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar hazelcast-management-center-{full-version}.jar
+    
 ----
 
 |[[hazelcast-mc-security-dictionary-path]]hazelcast.mc.security.dictionary.path
@@ -512,8 +527,8 @@ PASSWORD_DICTIONARY_PATH
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+    
 ----
 
 |[[hazelcast-mc-session-timeout-seconds]]hazelcast.mc.session.timeout.seconds
@@ -523,7 +538,7 @@ SESSION_TIMEOUT_SECONDS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.session.timeout.seconds=60
 ----
 
 |[[metadata-polling-config]][[hazelcast-mc-state-reschedule-delay-millis]]hazelcast.mc.state.reschedule.delay.millis
@@ -534,7 +549,7 @@ list of all data structures and their configurations. Default: 1000.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.state.reschedule.delay.millis=2000 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.state.reschedule.delay.millis=2000
 ----
 
 |[[hazelcast-mc-tls-excludeprotocols]]hazelcast.mc.tls.excludeProtocols
@@ -544,7 +559,7 @@ TLS_EXCLUDE_PROTOCOLS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.excludeProtocols=SSLv3 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.excludeProtocols=SSLv3
 ----
 
 |[[hazelcast-mc-tls-openssl]]hazelcast.mc.tls.openSsl
@@ -554,7 +569,7 @@ TLS_OPEN_SSL
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.openSsl=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.openSsl=true
 ----
 
 |[[hazelcast-mc-tls-enabled]]hazelcast.mc.tls.enabled
@@ -564,7 +579,7 @@ TLS_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.enabled=true
 ----
 
 |[[hazelcast-mc-tls-keystore]]hazelcast.mc.tls.keyStore
@@ -574,7 +589,7 @@ TLS_KEYSTORE_PATH
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.keyStore=/keys/mc.keystore -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.keyStore=/keys/mc.keystore
 ----
 
 |[[hazelcast-mc-tls-keystorepassword]]hazelcast.mc.tls.keyStorePassword
@@ -584,7 +599,7 @@ TLS_KEYSTORE_PASS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.keyStorePassword=mypassword123 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.keyStorePassword=mypassword123
 ----
 
 |[[hazelcast-mc-tls-truststore]]hazelcast.mc.tls.trustStore
@@ -594,7 +609,7 @@ TLS_TRUSTSTORE_PATH
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.trustStore=/truststores/mc.truststore -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.trustStore=/truststores/mc.truststore
 ----
 
 |[[hazelcast-mc-tls-truststorepassword]]hazelcast.mc.tls.trustStorePassword
@@ -604,7 +619,7 @@ TLS_TRUSTSTORE_PASS
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.trustStorePassword=mypassword123 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.trustStorePassword=mypassword123
 ----
 
 |[[hazelcast.mc.tls.enableHttpPort]]hazelcast.mc.tls.enableHttpPort
@@ -614,7 +629,7 @@ TLS_ENABLE_HTTP_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.trustStorePassword=mypassword123 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.trustStorePassword=mypassword123
 ----
 
 |[[hazelcast-mc-tls-mutualauthentication]]hazelcast.mc.tls.mutualAuthentication
@@ -629,7 +644,7 @@ Default: `OPTIONAL`.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.mutualAuthentication=REQUIRED
 ----
 
 |[[hazelcast-mc-useexistingkeystore]]hazelcast.mc.useExistingKeyStore
@@ -640,7 +655,7 @@ Default: `false`.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.useExistingKeyStore=true -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.useExistingKeyStore=true
 ----
 
 |===
@@ -664,7 +679,7 @@ Values must be between 30000 and 600000.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.client.max.backoff.millis=486000 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.client.max.backoff.millis=486000
 ----
 
 |[[hazelcast-mc-client-backoff-multiplier]]hazelcast.mc.client.backoff.multiplier
@@ -673,7 +688,7 @@ each failed retry. Default: `2`. Values must be between 1 and 10.
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.client.backoff.multiplier=3 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.client.backoff.multiplier=3
 ----
 
 |[[hazelcast-mc-client-initial-backoff-millis]]hazelcast.mc.client.initial.backoff.millis
@@ -681,7 +696,7 @@ java -Dhazelcast.mc.client.backoff.multiplier=3 -jar hazelcast-management-center
 |
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.client.initial.backoff.millis=2000 -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.client.initial.backoff.millis=2000
 ----
 
 |===

@@ -15,13 +15,29 @@ To enable TLS, you need to do the following:
 
 . Start Management Center with the following system properties:
 +
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
--Dhazelcast.mc.tls.keyStore=/path/to/keystore \
--Dhazelcast.mc.tls.keyStorePassword=yourkeystorepassword \
--jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
+     -Dhazelcast.mc.tls.keyStore=/path/to/keystore \
+     -Dhazelcast.mc.tls.keyStorePassword=yourkeystorepassword
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
+     -Dhazelcast.mc.tls.keyStore=/path/to/keystore ^
+     -Dhazelcast.mc.tls.keyStorePassword=yourkeystorepassword
+----
+--
+====
 +
 TIP: To encrypt the keystore/truststore passwords and pass them
 as command line arguments in encrypted form, see xref:variable-replacers.adoc[].
@@ -37,11 +53,7 @@ If you want to use a self-signed certificate, do one of the following:
 - Create the certificate with the hostname of the machine you will
 deploy the Management Center on.
 
-- Disable hostname verification with the following property:
-+
-```
--Dhazelcast.mc.disableHostnameVerification=true
-```
+- Disable hostname verification by setting the xref:system-properties.adoc#hazelcast-mc-disablehostnameverification[`hazelcast.mc.disableHostnameVerification` property] to `true`.
 
 Otherwise, you may see this exceptions in the member logs:
 
@@ -57,16 +69,33 @@ When using a self-signed certificate, your browser may warn you that the connect
 To override the HTTPS port, you can use the `hazelcast.mc.https.port`
 property when starting the Management Center. For example:
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
      -Dhazelcast.mc.tls.keyStore=/path/to/keystore \
      -Dhazelcast.mc.tls.keyStorePassword=yourkeystorepassword \
-     -Dhazelcast.mc.https.port=443 \
-     -jar hazelcast-management-center-{full-version}.jar
+     -Dhazelcast.mc.https.port=443
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
+     -Dhazelcast.mc.tls.keyStore=/path/to/keystore ^
+     -Dhazelcast.mc.tls.keyStorePassword=yourkeystorepassword ^
+     -Dhazelcast.mc.https.port=443
+----
+--
+====
 
-This starts the Management Center on HTTPS port 443.
+This command starts the Management Center on HTTPS port 443.
 
 [[enabling-http-port]]
 == Redirecting the HTTP Port to HTTPS

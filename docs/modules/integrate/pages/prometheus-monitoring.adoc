@@ -38,7 +38,7 @@ To set up basic authentication, use the `set prometheus-auth` task of the `mc-co
 
 [tabs]
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 ```bash
@@ -74,7 +74,7 @@ WARNING: This task will also delete all users from the database.
 
 [tabs]
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 ```bash
@@ -102,35 +102,80 @@ For example, this configuation exposes only the following metrics:
 - `hz_topic_totalReceivedMessages`
 - `hz_map_totalPutLatency`
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency
+----
+--
+====
 
 This configuation exposes all metrics except the following:
 
 - `hz_os_systemLoadAverage,hz_memory_freeHeap`
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
+----
+--
+====
 
 == Overriding the Default Port
 
 By default, metrics are exposed on the same port as the Management Center web interface. To
 override the port number, use the `-Dhazelcast.mc.prometheusExporter.port` system property.
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
-  -Dhazelcast.mc.prometheusExporter.port=2222 \
-  -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.port=2222
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
+  -Dhazelcast.mc.prometheusExporter.port=2222
+----
+--
+====
 
 In this example, the Prometheus endpoint will be available at `http://localhost:2222/metrics`. To allow Prometheus to scrape metrics from Management Center, make sure to set the `static_configs.targets` parameter to this port.
 

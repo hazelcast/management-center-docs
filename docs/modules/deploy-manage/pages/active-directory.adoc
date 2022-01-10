@@ -23,7 +23,7 @@ mc-conf::
 --
 Use the `active-directory configure` task. For help, use the `-h` flag or see xref:mc-conf.adoc[].
 
-.Linux and macOS
+.Linux and Mac
 [source,bash]
 ----
 mc-conf.sh active-directory configure
