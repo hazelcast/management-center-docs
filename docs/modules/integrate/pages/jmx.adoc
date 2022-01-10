@@ -7,14 +7,29 @@
 
 == Enabling Clustered JMX
 
-To enable the clustered JMX service, use the `hazelcast.mc.jmx.enabled` system property:
+To enable the clustered JMX service, use the xref:deploy-manage:system-properties.adoc#hazelcast-mc-jmx-enabled[`hazelcast.mc.jmx.enabled` property]:
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true \
--Dcom.sun.management.jmxremote.ssl=false \ <1>
--jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true \
+-Dcom.sun.management.jmxremote.ssl=false <1>
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.jmx.enabled=true ^
+-Dcom.sun.management.jmxremote.ssl=false <1>
+----
+--
+====
 
 <1> By default, clustered JMX is served unencrypted. This system property configures the remote JMX agent not to use SSL.
 
@@ -44,15 +59,33 @@ TLS/SSL for Clustered JMX, use the following system properties for your Manageme
 The following is an example on how to start Management Center
 with a TLS/SSL enabled clustered JMX service on port 65432:
 
-[source,bash,subs="attributes"]
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true
--Dhazelcast.mc.jmx.port=65432
--Dhazelcast.mc.jmx.ssl=true
--Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
--jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true \
+    -Dhazelcast.mc.jmx.port=65432 \
+    -Dhazelcast.mc.jmx.ssl=true \
+    -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks \
+    -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.jmx.enabled=true ^
+    -Dhazelcast.mc.jmx.port=65432 ^
+    -Dhazelcast.mc.jmx.ssl=true ^
+    -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks ^
+    -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
+----
+--
+====
 
 NOTE: You can encrypt the keystore password and pass it as a
 command line argument in encrypted form for improved security.
@@ -79,18 +112,39 @@ authentication:
 The following is an example on how to start Management Center
 with a TLS mutual authentication enabled Clustered JMX service on port 65432:
 
-[source,bash]
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.jmx.enabled=true
--Dhazelcast.mc.jmx.port=65432
--Dhazelcast.mc.jmx.ssl=true
--Dhazelcast.mc.jmx.mutualAuthentication=true
--Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
--Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword
--Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks
--Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
--jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.jmx.enabled=true \
+    -Dhazelcast.mc.jmx.port=65432 \
+    -Dhazelcast.mc.jmx.ssl=true \
+    -Dhazelcast.mc.jmx.mutualAuthentication=true \
+    -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks \
+    -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword \
+    -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks \
+    -Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.jmx.enabled=true ^
+    -Dhazelcast.mc.jmx.port=65432 ^
+    -Dhazelcast.mc.jmx.ssl=true ^
+    -Dhazelcast.mc.jmx.mutualAuthentication=true ^
+    -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks ^
+    -Dhazelcast.mc.jmx.ssl.keyStorePassword=yourpassword ^
+    -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore.jks ^
+    -Dhazelcast.mc.jmx.ssl.trustStorePassword=yourpassword
+----
+--
+====
 
 == Integrating JMX with AppDynamics
 

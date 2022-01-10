@@ -64,7 +64,7 @@ To use the `mc-conf` tool, do the following:
 
 [tabs] 
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 [source,bash]
@@ -100,7 +100,7 @@ To revoke all auth tokens for a user, use the `user revoke-tokens` task.
 
 [tabs]
 ====
-Linux and macOS::
+Linux and Mac::
 +
 --
 

@@ -10,7 +10,7 @@ WARNING: The console is not recommended for production use.
 the left panel or the one located at the top menu.
 +
 TIP: You can also open the console, using the kbd::[Alt + T] keyboard shortcut on Windows/Linux and kbd::[Option + T] on
-macOS.
+Mac.
 +
 image:ROOT:Console.png[Console]
 

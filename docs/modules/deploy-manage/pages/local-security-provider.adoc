@@ -21,7 +21,7 @@ mc-conf::
 --
 To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
 
-.Linux and macOS
+.Linux and Mac
 ```bash
 mc-conf.sh user create -n <username> -r admin -p 
 ```
@@ -70,7 +70,7 @@ mc-conf::
 --
 To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username.
 
-.Linux and macOS
+.Linux and Mac
 ```bash
 mc-conf.sh user create -n <username> -r admin -p 
 ```
@@ -101,12 +101,27 @@ the minimum length of words by starting Management Center with the
 `hazelcast.mc.security.dictionary.minWordLength`
 property.
 
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-     -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-     -jar hazelcast-management-center-{full-version}.jar
+mc-start.sh -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+     -Dhazelcast.mc.security.dictionary.minWordLength=3
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt ^
+     -Dhazelcast.mc.security.dictionary.minWordLength=3
+----
+--
+====
 
 == Changing User Passwords
 
@@ -130,7 +145,7 @@ mc-conf::
 --
 Use the following `mc-conf` command. Replace the `<username>` placeholder with your username.
 
-.Linux and macOS
+.Linux and Mac
 ```bash
 mc-conf.sh user update-password -n <username> -p
 
@@ -141,7 +156,7 @@ mc-conf.sh user update-password -n <username> -p
 mc-conf.bat user update-password -n <username> -p
 ```
 
-NOTE: If you're on Linux or macOS devices, enclose passwords in single quotes only if you use the `--password` option. If you use the `-p` flag, do not use single quotes in the interactive prompt.
+NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only if you use the `--password` option. If you use the `-p` flag, do not use single quotes in the interactive prompt.
 --
 ====
 

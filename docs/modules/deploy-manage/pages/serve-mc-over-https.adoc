@@ -151,18 +151,39 @@ $ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}
 
 . Start Management Center and pass it the information it needs to use the keystore.
 +
+[tabs]
+====
+Linux and Mac::
++
+--
 [source,bash,subs="attributes+"]
 ----
-java -Dhazelcast.mc.tls.enabled=true \
+mc-start.sh -Dhazelcast.mc.tls.enabled=true \
 -Dhazelcast.mc.https.port=443 \ <1>
 -Dhazelcast.mc.tls.enableHttpPort=true \ <2>
 -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <3>
 -Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
 -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \
 -Dhazelcast.mc.tls.keyStore=mc.keystore \
--Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' \ <4>
--jar hazelcast-management-center-{full-version}.jar
+-Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' <4>
 ----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
+-Dhazelcast.mc.https.port=443 ^ <1>
+-Dhazelcast.mc.tls.enableHttpPort=true ^ <2>
+-Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer ^ <3>
+-Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password ^
+-Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false ^
+-Dhazelcast.mc.tls.keyStore=mc.keystore ^
+-Dhazelcast.mc.tls.keyStorePassword='$ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}' <4>
+----
+--
+====
 +
 <1> Override the default port of 8443 so that Management Center is available on the standard port 443.
 <2> Redirect HTTP traffic to HTTPS.

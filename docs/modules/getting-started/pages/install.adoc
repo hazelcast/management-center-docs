@@ -34,26 +34,30 @@ docker pull hazelcast/management-center:{full-version}
 docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 ----
 
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
+
+- Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by a semicolon.
+- Put your classes in the `bin/user-lib/` directory, and mount that directory to the Docker container.
+
 Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
 == Using Binary Packages
 
-Hazelcast Management Center is included in the Hazelcast download package.
-You can download it from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-platform[download page]
+Hazelcast Management Center is included in the Hazelcast Platform download package.
+
+When a new version of Hazelcast Platform is released, it comes with a compatible version of Management Center. You can download Hazelcast Platform from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-platform[download page]
 of the Hazelcast website.
 
-When a new version of Hazelcast is released, it comes with a compatible version of Management Center.
+If a new version of Management Center is released before a new
+version of Hazelcast Platform, you can download the new version as a
+separate package
+from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page].
 
-There may be times when a new Management Center version is released before a new
-version of Hazelcast. In that case, you may download the new Management Center
-from its https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page] as a
-separate package.
+To start Management Center from the binary package, you have the following options:
 
-If you choose to install Management Center using binary packages, you have the following options to start the Management Center service:
-
-* Start Hazelcast Management Center from the command line.
+* Use the JAR file.
 * Use the scripts that come with the download package.
-* Deploy the file `hazelcast-management-center-{full-version}.war` on your Java application server/servlet container.
+* Deploy the WAR file on your Java application's server/servlet container.
 
 For all the starting options you can preconfigure a cluster in Management Center by setting the following environment variables:
 
@@ -61,47 +65,114 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
 [[starting-with-scripts]]
-=== Using Scripts in the Package
+=== Using Start Script
 
-As another option, you can use the `mc-start scripts,
-which come with the download package in `bin/` folder, to start the Management Center. You can find these scripts under the extracted directory.
+The recommended way to start Management Center with the binary package is the built-in `mc-start` script in the `bin/` directory. This script is available as a batch file for Windows or a shell script for Mac and Linux.
+
+You can start this file from the command line using the following command:
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.sh 
+----
+--
+Windows::
++
+[source,shell,subs="attributes+"]
+----
+mc-start.cmd 
+----
+====
+
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
+
+- Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by semicolons.
+- Put your classes in the `bin/user-lib/` directory.
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+export MC_CLASSPATH="/path/to/an/extra.jar:/path/to/an/otherextra.jar"
+mc-start.sh 
+----
+--
+
+Windows::
++
+--
+[source,shell,subs="attributes+"]
+----
+SET MC_CLASSPATH="/path/to/an/extra.jar;/path/to/an/otherextra.jar"
+mc-start.cmd 
+----
+--
+====
+
 
 [[starting-with-jar-file]]
-=== Using the Command Line
+=== Using the JAR File
 
-Extract the Hazelcast or Management Center package.
-The extracted directory (`hazelcast-management-center-{full-version}`)
-contains the `hazelcast-management-center-{full-version}.jar` file.
+The download package contains a `hazelcast-management-center-{full-version}.jar` file, which you can execute directly from the command line using the following command.
 
-You can start this file directly from the command line using the following command:
+WARNING: Some environment variables do not work with the JAR file. We recommend using the <<starting-with-scripts, script>>.
 
 [source,bash,subs="attributes+"]
 ----
 java -jar hazelcast-management-center-{full-version}.jar
 ----
 
-[[deploying-to-application-server]]
-=== Deploying to Application Server
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do the following:
 
-Instead of starting at the command line, you can
-deploy the Management Center to your application server (Tomcat, Jetty, etc.).
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+----
+--
+
+Windows::
++
+--
+[source,shell,subs="attributes+"]
+----
+java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
+----
+--
+====
+
+[[deploying-to-application-server]]
+=== Deploying to an Application Server
+
+The download package contains a `hazelcast-management-center-{full-version}.war` file, which you can deploy on your application server, such as Tomcat or Jetty.
 
 == SNAPSHOT versions
 
-If you want to use the most recent development (snapshot) version of Management Center, then you can run it by using the `latest-snapshot`
-tag in Docker:
+Development versions of an upcoming release are available as snapshots. To use the most recent snapshot version of Management Center, use the `latest-snapshot` tag in Docker:
 
 [source,bash,subs="attributes+"]
 ----
 docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
 ----
 
-Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip
-or https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz .
+Alternatively, you can download the latest snapshot package:
+- link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip[Download ZIP]
+- link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz[Download TAR]
 
-In these cases, it can be useful to query the build information to be able to tell what revision are you using.
-You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`.
-This endpoint returns JSON.
+In these cases, it can be useful to query the build information to be able to tell what revision you are using.
+You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`. This endpoint returns JSON.
 
 == Next Steps
 
