@@ -1,5 +1,6 @@
 = Filtering Client Connections
 :description: Create filter lists that define which clients are allowed to connect to the cluster.
+:page-aliases: monitor-imdg:client-filtering.adoc
 :page-enterprise: true
 
 [[changing-cluster-client-filtering]]
