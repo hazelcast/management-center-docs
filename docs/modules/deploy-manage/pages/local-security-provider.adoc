@@ -23,7 +23,7 @@ To create a new user with `mc-conf`, use the following command. Replace the `<us
 
 .Linux and Mac
 ```bash
-mc-conf.sh user create -n <username> -r admin -p 
+hz-mc conf user create -n <username> -r admin -p 
 ```
 
 .Windows
@@ -72,7 +72,7 @@ To create a new user with `mc-conf`, use the following command. Replace the `<us
 
 .Linux and Mac
 ```bash
-mc-conf.sh user create -n <username> -r admin -p 
+hz-mc conf user create -n <username> -r admin -p 
 ```
 
 .Windows
@@ -125,7 +125,7 @@ mc-start.cmd -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt ^
 
 == Changing User Passwords
 
-To change user passwords in the local security provider, admin users can use the UI or you can use the `mc-conf` tool.
+To change user passwords in the local security provider, admin users can use the UI or you can use the `hz-mc conf` tool.
 
 [tabs] 
 ====
@@ -140,14 +140,14 @@ UI::
 . Click *Change Password*.
 
 --
-mc-conf::
+hz-mc-conf::
 +
 --
-Use the following `mc-conf` command. Replace the `<username>` placeholder with your username.
+Use the following `hz-mc conf` command. Replace the `<username>` placeholder with your username.
 
 .Linux and Mac
 ```bash
-mc-conf.sh user update-password -n <username> -p
+hz-mc conf user update-password -n <username> -p
 
 ```
 
@@ -162,4 +162,4 @@ NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

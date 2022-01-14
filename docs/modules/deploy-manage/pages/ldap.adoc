@@ -23,7 +23,7 @@ Use the `ldap configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and Mac
 ```bash
-mc-conf.sh ldap configure
+hz-mc conf ldap configure
 ```
 
 .Windows

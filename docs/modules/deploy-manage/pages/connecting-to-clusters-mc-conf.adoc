@@ -21,7 +21,7 @@ For a getting started guide, see xref:mc-conf.adoc[].
 . To provide the cluster name and member addresses, use the following:
 +
 ```bash
-mc-conf.sh cluster add -cn={cluster name} -ma={member addresses}
+hz-mc conf cluster add -cn={cluster name} -ma={member addresses}
 ```
 +
 You should see the following:
@@ -33,7 +33,7 @@ Successfully added Cluster Config.
 . To provide the path to a client configuration file, use the following:
 +
 ```bash
-mc-conf.sh cluster add --client-config={path to file}
+hz-mc conf cluster add --client-config={path to file}
 ```
 +
 You should see the following:
@@ -56,7 +56,7 @@ NOTE: When connecting to multiple clusters from the same instance of Management 
 To remove an existing connection to a cluster, use the following:
 
 ```bash
-mc-conf.sh cluster remove -cn={cluster name}
+hz-mc conf cluster remove -cn={cluster name}
 ```
 
 You should see the following:

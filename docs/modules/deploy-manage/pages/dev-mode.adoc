@@ -29,7 +29,7 @@ You can use this task for various scripting purposes, and automatically configur
 
 .Linux and Mac
 ```bash
-mc-conf.sh dev-mode configure 
+hz-mc conf dev-mode configure 
 ```
 
 .Windows

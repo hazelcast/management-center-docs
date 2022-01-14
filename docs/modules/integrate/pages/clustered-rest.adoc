@@ -45,7 +45,7 @@ NOTE: All auth tokens inherit roles from the user.
 
 |Local Security Provider
 |
-Use the `user issue-token` task of the `mc-conf` tool.
+Use the `user issue-token` task of the `hz-mc conf` tool.
 
 Send a `POST` request to the `/api/tokens` endpoint.
 
@@ -60,7 +60,7 @@ To use the `/api/tokens` endpoint, do the following. Replace the `<username>` an
 curl -u {<username>}:{<password>} -d '{"username":"<username>"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
 ----
 
-To use the `mc-conf` tool, do the following:
+To use the `hz-mc conf` tool, do the following:
 
 [tabs] 
 ====
@@ -69,7 +69,7 @@ Linux and Mac::
 --
 [source,bash]
 ----
-mc-conf.sh user issue-token -n <username>
+hz-mc conf user issue-token -n <username>
 ----
 --
 Windows::
@@ -106,7 +106,7 @@ Linux and Mac::
 
 [source,bash]
 ----
-mc-conf.sh user revoke-tokens -n <username>
+hz-mc conf user revoke-tokens -n <username>
 ----
 
 --

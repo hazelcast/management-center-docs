@@ -23,7 +23,7 @@ Use the `saml configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and Mac
 ```bash
-mc-conf.sh saml configure
+hz-mc conf saml configure
 ```
 
 .Windows
