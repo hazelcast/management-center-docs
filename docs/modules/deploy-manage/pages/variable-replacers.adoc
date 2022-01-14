@@ -57,7 +57,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.tls.enabled=true \
+hz-mc start -Dhazelcast.mc.tls.enabled=true \
     -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
     -Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
     -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \

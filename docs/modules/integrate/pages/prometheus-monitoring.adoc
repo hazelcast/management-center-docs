@@ -109,7 +109,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency
 ----
 --
@@ -135,7 +135,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
 ----
 --
@@ -162,7 +162,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.port=2222
 ----
 --

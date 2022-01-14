@@ -76,7 +76,7 @@ this default directory by setting the `ROCKSDB_SHAREDLIB_DIR` environment variab
 ----
 mkdir $HOME/tmp/rocksdb
 export ROCKSDB_SHAREDLIB_DIR="$(realpath $HOME/tmp/rocksdb)"
-mc-start.sh
+hz-mc start
 ----
 
 === Slow Background Persistence Runs

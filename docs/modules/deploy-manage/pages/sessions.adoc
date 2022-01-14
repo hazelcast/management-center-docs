@@ -25,7 +25,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.session.timeout.seconds=60
+hz-mc start -Dhazelcast.mc.session.timeout.seconds=60
 ----
 --
 Windows::

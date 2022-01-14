@@ -108,7 +108,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
+hz-mc start -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3
 ----
 --

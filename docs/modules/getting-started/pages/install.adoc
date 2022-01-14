@@ -78,7 +78,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh 
+hz-mc start
 ----
 --
 Windows::
@@ -102,7 +102,7 @@ Linux and Mac::
 [source,bash,subs="attributes+"]
 ----
 export MC_CLASSPATH="/path/to/an/extra.jar:/path/to/an/otherextra.jar"
-mc-start.sh 
+hz-mc start
 ----
 --
 

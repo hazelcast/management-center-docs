@@ -158,7 +158,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.tls.enabled=true \
+hz-mc start -Dhazelcast.mc.tls.enabled=true \
 -Dhazelcast.mc.https.port=443 \ <1>
 -Dhazelcast.mc.tls.enableHttpPort=true \ <2>
 -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <3>
