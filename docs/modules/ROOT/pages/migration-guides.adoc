@@ -1,17 +1,13 @@
 = Upgrading from previous versions
 [[migration-guides]]
 
-== Upgrading to Management Center 5.x
+== Upgrading to Management Center 5.1.x
 
 === Changes in 5.1.x
 
  * The `mc-conf.sh` command was renamed to `hz-mc conf`
  * The `start.sh` was deprecated and is superseded by the `hz-mc start` command
  * The supported way for starting up a standalone Management Center instance was changed from `java -jar ...` command to `hz-mc start`
-
-== Upgrading to Management Center 4.x
-
-This section lists the changes for you to be aware when you have been using Management Center 3.x versions and want to use 5.x or newer ones.
 
 === Changes in 3.12.x
 
