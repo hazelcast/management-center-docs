@@ -6,7 +6,7 @@
 
 == Before you Begin
 
-xref:overview.adoc#requirements[Review the requirments] and make sure that you meet them.
+xref:overview.adoc#requirements[Review the requirements] and make sure that you meet them.
 
 == Using Docker
 
