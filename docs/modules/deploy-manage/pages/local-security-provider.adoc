@@ -5,7 +5,7 @@
 
 == Setting Up the Local Security Provider
 
-To set up the local security provider, you need to create an admin user, using either the UI or the `mc-conf` tool.
+To set up the local security provider, you need to create an admin user, using either the UI or the `hz-mc conf` tool.
 
 [tabs] 
 ====
@@ -19,7 +19,7 @@ To set up the local security provider in the UI, go to *Settings* > *Security Pr
 mc-conf::
 +
 --
-To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+To create a new user with `hz-mc conf`, use the following command. Replace the `<username>` placeholder with your username. For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
 
 .Linux and Mac
 ```bash
@@ -52,7 +52,7 @@ Passwords *must not* include the following:
 
 == Creating Users
 
-To create additional users, admin users can use the UI or you can use the `mc-conf` tool.
+To create additional users, admin users can use the UI or you can use the `hz-mc conf` tool.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
@@ -68,7 +68,7 @@ To set up the local security provider in the UI, go to *Settings* > *Security Pr
 mc-conf::
 +
 --
-To create a new user with `mc-conf`, use the following command. Replace the `<username>` placeholder with your username.
+To create a new user with `hz-mc conf`, use the following command. Replace the `<username>` placeholder with your username.
 
 .Linux and Mac
 ```bash

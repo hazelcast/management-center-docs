@@ -7,7 +7,7 @@ Once you have enabled dev mode, you are automatically logged into Management Cen
 
 == Setting Up Dev Mode
 
-To set up dev mode, you can use the UI or the `mc-conf` tool.
+To set up dev mode, you can use the UI or the `hz-mc conf` tool.
 
 [tabs] 
 ====
@@ -23,7 +23,7 @@ image:ROOT:ConfigureSecurityDevMode.png[Dev Mode]
 mc-conf::
 +
 --
-To set up dev mode with `mc-conf`, use the following command.
+To set up dev mode with `hz-mc conf`, use the following command.
 
 You can use this task for various scripting purposes, and automatically configuring Management Center, without using the UI.
 
@@ -42,4 +42,4 @@ mc-conf.bat dev-mode configure
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

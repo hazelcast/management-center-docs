@@ -1,9 +1,9 @@
-= Connecting to a Cluster with the mc-conf Tool
-:description: You can preconfigure the client connection to a cluster before you start Management Center, using the `mc-conf` tool.
+= Connecting to a Cluster with the hz-mc conf Tool
+:description: You can preconfigure the client connection to a cluster before you start Management Center, using the `hz-mc conf` tool.
 
-Management Center starts a Hazelcast client for each cluster that it is connected to. You can preconfigure the client connection to a cluster before you start Management Center, using the `mc-conf` tool.
+Management Center starts a Hazelcast client for each cluster that it is connected to. You can preconfigure the client connection to a cluster before you start Management Center, using the `hz-mc conf` tool.
 
-To connect Management Center to a Hazelcast cluster, using the `mc-conf` tool, you have two options:
+To connect Management Center to a Hazelcast cluster, using the `hz-mc conf` tool, you have two options:
 
 - Provide the cluster name and member addresses.
 - Provide the path to a client configuration file in XML or YAML format. (Recommended for more complex configurations.)

@@ -1,5 +1,5 @@
 = Variable Replacers
-:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `mc-conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
+:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `hz-mc conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
 
 {description}
 

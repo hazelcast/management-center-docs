@@ -83,4 +83,4 @@ When creating users, be sure to give them a valid role. See xref:user-management
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

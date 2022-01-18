@@ -34,7 +34,7 @@ You can either configure Management Center in the UI while it's running or preco
 |xref:system-properties.adoc[System properties and environment variables]
 |Configure any aspect of Management Center on start from the command line, including client configuration, feature flags, JMX, and home directory.
 
-|xref:mc-conf.adoc[`mc-conf` tool]
+|xref:mc-conf.adoc[`hz-mc conf` tool]
 |Preconfigure Management Center before starting it. Use this method for the following:
 
 - Managing connections to clusters
@@ -50,7 +50,7 @@ Because Management Center connects to Hazelcast clusters as a client, you can co
 
 - A client configuration file (XML or YAML):
 ** xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[UI]
-** xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`mc-conf` tool]
+** xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf` tool]
 - xref:system-properties.adoc#client-config[System properties] (only the client connection strategy)
 
 However, Management Center does not allow you to override the following settings:

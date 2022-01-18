@@ -9,7 +9,7 @@ If an environment variable isn't available for a property and you start Manageme
 - Docker environments
 +
 TIP: You may also need to use other environment variables. For the Docker reference, see link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
-- `mc-conf` tool
+- `hz-mc conf` tool
 - Start scripts included with Hazelcast Platform or Management Center such as `hz-mc start`.
 
 You can use properties to configure both Management Center and Management Center's client connection strategy on startup.
@@ -395,7 +395,7 @@ hz-mc start -Dhazelcast.mc.license={license key}
 |[[hazelcast-mc-lock-skip]]hazelcast.mc.lock.skip
 
 SKIP_MC_LOCK_CHECK
-|Whether the `mc-conf` tool does not check for an `mc.lock` file in the home directory. Default: `false`. See xref:mc-conf.adoc#skipping-the-check-for-a-lock-file[Skipping the Check for a Lock File]
+|Whether the `hz-mc conf` tool does not check for an `mc.lock` file in the home directory. Default: `false`. See xref:mc-conf.adoc#skipping-the-check-for-a-lock-file[Skipping the Check for a Lock File]
 |
 [source,bash,subs="attributes+"]
 ----

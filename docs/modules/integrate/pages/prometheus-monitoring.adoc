@@ -34,7 +34,7 @@ scrape_configs:
 
 To secure the scrape endpoint, you can set up basic authentication.
 
-To set up basic authentication, use the `set prometheus-auth` task of the `mc-conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
+To set up basic authentication, use the `set prometheus-auth` task of the `hz-mc conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
 
 [tabs]
 ====

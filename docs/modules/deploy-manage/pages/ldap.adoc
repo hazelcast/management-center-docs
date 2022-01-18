@@ -5,7 +5,7 @@
 
 == Setting Up the LDAP Security Provider
 
-To set up LDAP, you need to configure settings either in the UI or the `mc-conf` tool.
+To set up LDAP, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
 [tabs] 
 ====
@@ -103,7 +103,7 @@ NOTE: The **Reload Security Config** button will only appear
 when the `<hazelcast-mc>/import/securityHotReload.properties` file is present.
 After a successful import, the file will be renamed as `importedSecurityHotReload-<import_timestamp>.properties.bak`.
 
-Alternatively, you can use the `mc-conf` tool's `security reset` and `ldap configure` tasks to
+Alternatively, you can use the `hz-mc conf` tool's `security reset` and `ldap configure` tasks to
 configure the LDAP security provider from scratch,
 but you need to stop Management Center for this configuration option.
 See xref:deploy-manage:mc-conf.adoc[] for more information.
@@ -187,7 +187,7 @@ NOTE: Make sure your keystore supports storing secret keys.
 [[updating-encrypted-passwords]]
 == Updating Encrypted Passwords
 
-You can use the ` ldap update-password` task in the `mc-conf` tool to update
+You can use the ` ldap update-password` task in the `hz-mc conf` tool to update
 the encrypted LDAP password stored in the keystore.
 
 This command expects information about the keystore such as its location and
@@ -196,4 +196,4 @@ on the **Reload Security Config** button on the Management Center login page.
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
