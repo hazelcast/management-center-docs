@@ -5,7 +5,7 @@
 
 == Setting Up the SAML Security Provider
 
-To set up SAML, you need to configure settings either in the UI or the `mc-conf` tool.
+To set up SAML, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
 [tabs] 
 ====
@@ -23,7 +23,7 @@ Use the `saml configure` task. For help, use the `-h` flag or see xref:mc-conf.a
 
 .Linux and Mac
 ```bash
-mc-conf.sh saml configure
+hz-mc conf saml configure
 ```
 
 .Windows
@@ -74,4 +74,4 @@ When creating users, be sure to give them a valid role. See xref:user-management
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

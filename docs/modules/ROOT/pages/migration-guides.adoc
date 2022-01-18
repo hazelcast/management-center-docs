@@ -1,13 +1,17 @@
-= Upgrading from Management Center 3.x 
+= Upgrading to Management Center 5.1.x
 [[migration-guides]]
 
-This section lists the changes for you to be aware when you have been using Management Center 3.x versions and want to use 5.x or newer ones.
+== Changes in 5.1.x
+
+ * The `mc-conf.sh` command was renamed to `hz-mc conf`
+ * The `start.sh` was deprecated and is superseded by the `hz-mc start` command
+ * The supported way for starting up a standalone Management Center instance was changed from `java -jar ...` command to `hz-mc start`
 
 == Changes in 3.12.x
 
 * Default home directory location has been changed from `<user-home>/hazelcast-mancenter-<version>` to `<user-home>/hazelcast-mc`.
 * Parameter to change home directory location has been changed from `hazelcast.mancenter.home` to `hazelcast.mc.home`.
-* The `UpdateLdapPassword` utility (available via `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts) has been merged into the MC Conf tool (available via the `mc-conf.sh` or `mc-conf.bat` scripts).
+* The `UpdateLdapPassword` utility (available via `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts) has been merged into the MC Conf tool (available via the `hz-mc conf` or `mc-conf.bat` scripts).
 
 == Changes in 3.10.x
 

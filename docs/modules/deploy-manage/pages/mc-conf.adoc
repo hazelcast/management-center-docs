@@ -1,20 +1,20 @@
 = Management Center Configuration Tool
 :page-aliases: ROOT:mc-conf.adoc
-:description: The Management Center Configuration Tool (mc-conf) is a command line tool that allows you to automate processes that require configuring Management Center, without using the UI.
+:description: The Management Center Configuration Tool (hz-mc conf) is a command line tool that allows you to automate processes that require configuring Management Center, without using the UI.
 
-The Management Center Configuration Tool (`mc-conf`) is a command line tool that allows you to automate processes that require configuring Management Center, without using the UI.
+The Management Center Configuration Tool (`hz-mc conf`) is a command line tool that allows you to automate processes that require configuring Management Center, without using the UI.
 
 This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed and Management Center must not be running while using the tool.
 
 == Getting Started
 
-To use the `mc-conf` tool, execute the `mc-conf` script in the `bin/` directory of the Management Center distribution. This script is available as a shell script (`mc-conf.sh`) for Linux and Mac or a batch file (`mc-conf.bat`) for Windows.
+To use the `hz-mc conf` tool, execute the `hz-mc conf` command in the `bin/` directory of the Management Center distribution. This command is available as a shell script (`hz-mc conf`) for Linux and Mac or a batch file (`mc-conf.bat`) for Windows.
 
 . Make sure that Management Center is not running.
 +
 You cannot use this tool while Management Center is running.
 
-. To see all available commands, execute the `mc-conf` script with no
+. To see all available commands, execute the `hz-mc conf` command with no additional
 arguments.
 +
 [tabs] 
@@ -24,7 +24,7 @@ Linux and Mac::
 --
 [source,bash]
 ----
-mc-conf.sh 
+hz-mc conf 
 ----
 --
 Windows::
@@ -48,7 +48,7 @@ Linux and Mac::
 --
 [source,bash]
 ----
-mc-conf.sh user -h
+hz-mc conf user -h
 ----
 --
 Windows::
@@ -70,7 +70,7 @@ Linux and Mac::
 --
 [source,bash]
 ----
-mc-conf.sh user create -h
+hz-mc conf user create -h
 ----
 --
 Windows::
@@ -85,7 +85,7 @@ mc-conf.bat user create -h
 
 == Commands
 
-The `mc-conf` tool comes with the following commands. Each command includes tasks that you can execute.
+The `hz-mc conf` tool comes with the following commands. Each command includes tasks that you can execute.
 
 [cols="20%m,80%"]
 |===
@@ -128,12 +128,12 @@ The `mc-conf` tool comes with the following commands. Each command includes task
 
 == Skipping the Check for a Lock File
 
-When you execute `mc-conf.sh` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` property].
+When you execute `hz-mc conf` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` property].
 
 [source,bash]
 ----
 export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
-mc-conf.sh ...
+hz-mc conf ...
 ----
 
 This property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
@@ -154,7 +154,7 @@ To use a secure interactive prompt, enter the `password` option without providin
 When you use the `--password` option without providing a value, you will get a prompt to enter a value on the console.
 
 ```bash
-mc-conf.sh user update-password --username=admin --password
+hz-mc conf user update-password --username=admin --password
 Enter value for --password (Password for the user record. Provide value directly,
 or use without value to enter securely with interactive prompt.): ********
 Successfully changed password for user 'admin'.
@@ -171,7 +171,7 @@ leading to a text file. The contents of that file are automatically expanded int
 the current task. An example of the argument file usage is shown below.
 
 ```bash
-mc-conf.sh user update-password @arg-file.txt
+hz-mc conf user update-password @arg-file.txt
 Successfully changed password for user 'admin'.
 cat arg-file.txt
 --username=admin --password=mnb3c4s0

@@ -1,5 +1,5 @@
 = Variable Replacers
-:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `mc-conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
+:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `hz-mc conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
 
 {description}
 
@@ -57,7 +57,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.tls.enabled=true \
+hz-mc start -Dhazelcast.mc.tls.enabled=true \
     -Dhazelcast.mc.configReplacer.class=com.hazelcast.webmonitor.configreplacer.EncryptionReplacer \ <1>
     -Dhazelcast.mc.configReplacer.prop.passwordFile=path/to/password \
     -Dhazelcast.mc.configReplacer.prop.passwordUserProperties=false \

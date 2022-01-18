@@ -2,9 +2,9 @@
 
 If you've set up dev mode, you can switch to a new security provider by disabling dev mode in the UI.
 
-If you've set up any other security provider, you must use the `mc-conf` tool to reset the security provider before setting up a new one.
+If you've set up any other security provider, you must use the `hz-mc conf` tool to reset the security provider before setting up a new one.
 
-If you want to use the `mc-conf` tool to switch from dev mode to another security provider, you must reset the security provider first.
+If you want to use the `hz-mc conf` tool to switch from dev mode to another security provider, you must reset the security provider first.
 
 == Using the UI
 
@@ -14,7 +14,7 @@ image:ROOT:SecurityProviders.png[alt=Security Providers]
 
 == Using mc-conf
 
-To switch to another security provider with the `mc-conf` tool, use the `security reset` task to reset the provider first.
+To switch to another security provider with the `hz-mc conf` tool, use the `security reset` task to reset the provider first.
 
 This task deletes all existing user accounts and auth tokens.
 

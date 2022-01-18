@@ -5,7 +5,7 @@
 
 == Setting Up the Active Directory Security Provider
 
-To set up Active Directory, you need to configure settings either in the UI or the `mc-conf` tool.
+To set up Active Directory, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
 [tabs]
 ====
@@ -26,7 +26,7 @@ Use the `active-directory configure` task. For help, use the `-h` flag or see xr
 .Linux and Mac
 [source,bash]
 ----
-mc-conf.sh active-directory configure
+hz-mc conf active-directory configure
 ----
 
 .Windows
@@ -91,7 +91,7 @@ NOTE: The **Reload Security Config** button will only appear
 when the `<hazelcast-mc>/import/securityHotReload.properties` file is present.
 After a successful import, the file will be renamed as `importedSecurityHotReload-<import_timestamp>.properties.bak`.
 
-Alternatively, you can use the `mc-conf` tool's `security reset` and `active-directory configure` tasks to
+Alternatively, you can use the `hz-mc conf` tool's `security reset` and `active-directory configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop the Management Center service for this configuration option.
 See xref:deploy-manage:mc-conf.adoc[] for more information.
@@ -114,4 +114,4 @@ if none is provided. You can find out the default by calling the
 
 == Next Steps
 
-For details about the `mc-conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

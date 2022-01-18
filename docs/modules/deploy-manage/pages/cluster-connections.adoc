@@ -9,7 +9,7 @@ To configure these settings, you can use one of the following options:
 - xref:connecting-to-clusters-ui.adoc[Connect to a cluster from the web UI].
 - Preconfigure Management Center to connect to a cluster on start:
 
-** xref:connecting-to-clusters-mc-conf.adoc[`mc-conf` tool]
+** xref:connecting-to-clusters-mc-conf.adoc[`hz-mc conf` tool]
 ** <<environment-variables,Environment variables>>
 
 == Connecting to Clusters with TLS Enabled
@@ -20,7 +20,7 @@ To configure Management Center with a client configuration file, use one of the 
 
 - xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[UI].
 
-- xref:connecting-to-clusters-mc-conf.adoc[`mc-conf` tool]
+- xref:connecting-to-clusters-mc-conf.adoc[`hz-mc conf` tool]
 
 For more information about configuring a client configuration file for TLS, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc#tlsssl-for-hazelcast-clients[TLS for Hazelcast Clients] in the Platform documentation.
 

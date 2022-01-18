@@ -9,7 +9,7 @@ Management Center comes with the following security providers:
 - xref:dev-mode.adoc[*Dev mode*]: No login required. One admin user. No authentication token needed to use the REST API.
 - xref:local-security-provider.adoc[*Local*]: Manage user logins and authentication in Management Center.
 +
-TIP: You can create and manage users both in the Management Center UI and with the `mc-conf` tool only if you use the local security provider.
+TIP: You can create and manage users both in the Management Center UI and with the `hz-mc conf` tool only if you use the local security provider.
 - xref:active-directory.adoc[*Active Directory*]: Use an existing Active Directory server for user authentication and authorization.
 - xref:jaas.adoc[*JAAS*]: Use your own `javax.security.auth.spi.LoginModule` implementation
 for user authentication and authorization.

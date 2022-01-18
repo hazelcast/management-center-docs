@@ -34,7 +34,7 @@ scrape_configs:
 
 To secure the scrape endpoint, you can set up basic authentication.
 
-To set up basic authentication, use the `set prometheus-auth` task of the `mc-conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
+To set up basic authentication, use the `set prometheus-auth` task of the `hz-mc conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
 
 [tabs]
 ====
@@ -42,7 +42,7 @@ Linux and Mac::
 +
 --
 ```bash
-mc-conf.sh set prometheus-auth <my-user> <my-pass>
+hz-mc conf set prometheus-auth <my-user> <my-pass>
 ```
 --
 Windows::
@@ -68,7 +68,7 @@ Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML f
 
 === Resetting the Authentication Credentials
 
-To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `mc-conf` tool.
+To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool.
 
 WARNING: This task will also delete all users from the database.
 
@@ -78,7 +78,7 @@ Linux and Mac::
 +
 --
 ```bash
-mc-conf.sh security reset
+hz-mc conf security reset
 ```
 --
 Windows::
@@ -109,7 +109,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency
 ----
 --
@@ -135,7 +135,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
 ----
 --
@@ -162,7 +162,7 @@ Linux and Mac::
 --
 [source,bash,subs="attributes+"]
 ----
-mc-start.sh -Dhazelcast.mc.prometheusExporter.enabled=true \
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
   -Dhazelcast.mc.prometheusExporter.port=2222
 ----
 --
@@ -194,6 +194,6 @@ https://grafana.com/grafana/dashboards/13183[this dashboard].
 
 == Next Steps
 
-Learn more about the xref:deploy-manage:mc-conf.adoc[`mc-conf` tool].
+Learn more about the xref:deploy-manage:mc-conf.adoc[`hz-mc conf` tool].
 
 Explore xref:deploy-manage:system-properties.adoc[system properties] and their definitions.
