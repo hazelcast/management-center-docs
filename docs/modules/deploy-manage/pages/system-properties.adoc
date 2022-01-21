@@ -415,6 +415,17 @@ hz-mc start -Dhazelcast.mc.maxDisableLoginPeriod= \
     
 ----
 
+|[[hazelcast-mc-metrics-persistence-enabled]]hazelcast.mc.metrics.persistence.enabled
+
+METRICS_PERSISTENCE_ENABLED
+|Whether Management Center persists metrics. Default: `true`. See xref:historical-metrics.adoc[]. 
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.metrics.persistence.enabled=false 
+    
+----
+
 |[[disk-usage-config]][[hazelcast-mc-metrics-disk-ttl-duration]]hazelcast.mc.metrics.disk.ttl.duration
 
 PERSISTENT_STORE_TTL_DURATION

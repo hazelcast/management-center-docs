@@ -91,3 +91,7 @@ To resolve this issue, you can do the following:
 
 - Decrease the amount of metrics that the members send. See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc[Metrics section] of the Hazelcast documentation for details about configuring metrics collection.
 - <<changing-the-metrics-time-to-live, Decrease the TTL of persisted metrics>>.
+
+== Disabling Metrics Persistence
+
+Set the xref:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property to `false`.
