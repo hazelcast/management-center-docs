@@ -7,12 +7,12 @@ on the cluster.
 
 == Before you Begin
 
-Scripting is disabled by default and you need to enable it
+Scripting is disabled by default, and you need to enable it
 in your cluster's configuration. See the
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Toggle Scripting Support] for details. The member list shows whether
 scripting is enabled or disabled for each member.
 
-NOTE: Scripting is currently unsupported for Java 15 and newer. These versions of Java do not come with a JavaScript engine, which is necessary for this feature to work.
+NOTE: Java 15 and newer versions do not come with a JavaScript engine. If you want to use JavaScript as a scripting language on a member with Java 15 and newer, the appropriate libraries should be placed in the classpath of that member. See the <<scripting-languages, Enabling Scripting Languages section>> for more details.
 
 image:ROOT:MemberGridView.png[Member Grid View]
 
@@ -27,13 +27,13 @@ In this window, the left panel is the actual script code editor.
 The combo box located at the top part of the editor enables
 you to select a scripting language: currently, JavaScript, Ruby, Groovy and Python
 languages are supported. You can select the members on which the code will execute
-from the **Members** list shown at the right side of the window.
+from the **Members** list shown on the right side of the screen.
 After you write your script and press the **Execute** button, you can see
 the execution result in the **Result** part of the window.
 
 NOTE: To use the scripting languages other than JavaScript on a member,
 the libraries for those languages should be placed in the classpath of that member.
-See the <<scripting-languages, Enabling Additional Scripting Languages section>>
+See the <<scripting-languages, Enabling Scripting Languages section>>
 for more details.
 
 There are **Save** and **Delete** buttons on the top right of the scripting editor.
@@ -47,25 +47,35 @@ In the scripting engine you have a `HazelcastInstance` bonded to a variable
 named `hazelcast`. You can invoke any method that `HazelcastInstance` has via
 the `hazelcast` variable. You can see an example usage for JavaScript below:
 
-```
+[source,javascript]
+----
 var name = hazelcast.getName();
 var node = hazelcast.getCluster().getLocalMember();
 var employees = hazelcast.getMap("employees");
 employees.put("1","John Doe");
 employees.get("1"); // will return "John Doe"
-```
+----
 
 [[scripting-languages]]
-== Enabling Additional Scripting Languages
+== Enabling Scripting Languages
 
 Hazelcast members use the `javax.script.ScriptEngineManager` API for the execution of the script.
-Only the JavaScript engine is available in most JVMs by default.
-To use a scripting language other than JavaScript on a member, you need to add the
-corresponding scripting engine to the classpath of that member. Here is an example of
+The JavaScript engine is available in most JVMs of versions older than 15 by default.
+To use a scripting language on a member, you need to add the
+corresponding scripting engine and all its transitive dependencies to the classpath of that member.
+
+Here is an example of
 Maven configuration for several scripting engines:
 
-```xml
+[source,xml]
+----
 <dependencies>
+    <!-- JavaScript -->
+    <dependency>
+      <groupId>org.openjdk.nashorn</groupId>
+      <artifactId>nashorn-core</artifactId>
+      <version>15.3</version>
+    </dependency>
     <!-- Groovy -->
     <dependency>
         <groupId>org.codehaus.groovy</groupId>
@@ -90,4 +100,4 @@ Maven configuration for several scripting engines:
         <version>2.7.1</version>
     </dependency>
 </dependencies>
-```
+----
