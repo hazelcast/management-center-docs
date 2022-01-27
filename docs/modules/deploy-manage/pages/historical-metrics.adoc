@@ -58,14 +58,14 @@ Persistent store size on disk
 Data point memory compression ratio
 ```
 
-These logs provide some basic persistence statistics and details about any active persistence configuration. All time values are logged in HH:mm:ss.SSS format.
+These logs provide some basic persistence statistics and details about any active persistence configuration.All time values are logged in HH:mm:ss.SSS format.
 
 `Data point memory compression ratio` shows how many times less disk space is used than in-memory storage.
 
 == Disabling Metrics Persistence
 If you don't want metrics to be persisted on disk, set the xref:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property to `false`, which stores metrics only in memory.
 
-TIP: Disabling persistence allows Management Center to run on an operating system that doesn't support RocksDB. See the xref:getting-started:overview.adoc#os-requirements[Requirements section] for details.
+TIP: Disabling persistence allows Management Center to run on an operating system that doesn't support RocksDB.See the xref:getting-started:overview.adoc[Requirements section] for details.
 
 == Troubleshooting
 
