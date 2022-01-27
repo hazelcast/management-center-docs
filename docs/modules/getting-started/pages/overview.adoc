@@ -15,6 +15,7 @@ You can also enable the REST API to use REST calls to return the
 information presented in Management Center. You can also
 monitor cluster statistics from a JMX interface and Prometheus.
 
+[[os-requirements]]
 == Requirements
 
 You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
