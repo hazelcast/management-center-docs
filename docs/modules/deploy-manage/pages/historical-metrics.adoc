@@ -58,7 +58,7 @@ Persistent store size on disk
 Data point memory compression ratio
 ```
 
-These logs provide some basic persistence statistics and details about any active persistence configuration.All time values are logged in HH:mm:ss.SSS format.
+These logs provide some basic persistence statistics and details about any active persistence configuration. All time values are logged in HH:mm:ss.SSS format.
 
 `Data point memory compression ratio` shows how many times less disk space is used than in-memory storage.
 
