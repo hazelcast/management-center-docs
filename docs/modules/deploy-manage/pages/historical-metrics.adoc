@@ -97,5 +97,3 @@ If you don't want metrics to be persisted on disk, set the xref:system-propertie
 
 TIP: Disabling persistence allows Management Center to run on an operating system that doesn't support RocksDB.
 
-
-Set the xref:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property to `false`.
