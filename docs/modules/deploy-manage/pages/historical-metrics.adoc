@@ -95,6 +95,5 @@ To resolve this issue, you can do the following:
 == Disabling Metrics Persistence
 Disabling Metrics Persistence allows MC to run on OS that aren't supported by RocksDB. Metrics are stored only in memory.
 
-To disable metrics persistence:
 
 Set the xref:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property to `false`.
