@@ -76,6 +76,14 @@ hz-mc start -Dhazelcast.mc.contextPath=hazelcast-mc \
 
 In this example, the URL for Management Center would be `\http:localhost:8080/hazelcast-mc`.
 
+|[[hazelcast-mc-cluster-operation-timeout]]hazelcast.mc.cluster.operation.timeout.millis
+|Operation timeout in milliseconds for scripts in MC. Default: 60000.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cluster.operation.timeout.millis=60000
+----
+
 |[[hazelcast-mc-disablehostnameverification]]hazelcast.mc.disableHostnameVerification
 |Whether Management Center does not verify the hostname of signed TLS/SSL certificates. Default: `false`.
 |
