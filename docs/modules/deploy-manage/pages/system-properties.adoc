@@ -436,6 +436,16 @@ PERSISTENT_STORE_TTL_DURATION
 hz-mc start -Dhazelcast.mc.metrics.disk.ttl.duration=P2D
 ----
 
+|[[hazelcast-mc-metrics-consumer-thread-pool-size]]hazelcast.mc.metrics.consumer.thread.pool.size
+
+METRICS_CONSUMER_THREAD_POOL_SIZE
+|How many threads consume metrics from the cluster members. Default: `2`. See xref:historical-metrics.adoc[].
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhhazelcast.mc.metrics.consumer.thread.pool.size=5
+----
+
 |[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
 
 PERIODIC_HEALTHCHECK_ENABLED
