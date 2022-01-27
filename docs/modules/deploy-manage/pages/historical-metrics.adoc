@@ -62,6 +62,11 @@ These logs provide some basic persistence statistics and details about any activ
 
 `Data point memory compression ratio` shows how many times less disk space is used than in-memory storage.
 
+== Disabling Metrics Persistence
+If you don't want metrics to be persisted on disk, set the xref:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property to `false`, which stores metrics only in memory.
+
+TIP: Disabling persistence allows Management Center to run on an operating system that doesn't support RocksDB.See the xref:getting-started:overview.adoc[Requirements section] for details.
+
 == Troubleshooting
 
 Use this section to find suggestions for resolving errors that may occur with metrics persistence.
@@ -91,3 +96,5 @@ To resolve this issue, you can do the following:
 
 - Decrease the amount of metrics that the members send. See the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc[Metrics section] of the Hazelcast documentation for details about configuring metrics collection.
 - <<changing-the-metrics-time-to-live, Decrease the TTL of persisted metrics>>.
+
+

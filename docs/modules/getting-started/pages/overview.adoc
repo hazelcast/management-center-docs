@@ -15,14 +15,20 @@ You can also enable the REST API to use REST calls to return the
 information presented in Management Center. You can also
 monitor cluster statistics from a JMX interface and Prometheus.
 
+[[os-requirements]]
 == Requirements
 
 You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
 
-Management Center uses RocksDB library to store metrics
-data on disk. Because of that dependency, Mac users have to be on at least 10.15
-version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
-installed. Otherwise, you can use the official Management Center docker image.
+Management Center uses the RocksDB library to store metrics
+data on disk. Because of that dependency, Mac and Windows users must do one of the following:
+
+* Use the official Management Center docker image.
+* xref:deploy-manage:historical-metrics.adoc#disabling-metrics-persistence[Disable metrics persistence].
+* Meet the following requirements:
+** Mac: Use at least version 10.15 version of Catalina.
+** Windows: Install the Microsoft Visual C++ 2015 redistributable.
+
 
 === Hazelcast Compatibility
 
