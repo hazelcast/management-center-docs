@@ -84,6 +84,14 @@ export ROCKSDB_SHAREDLIB_DIR="$(realpath $HOME/tmp/rocksdb)"
 hz-mc start
 ----
 
+=== Missing Values for Metrics
+
+Management Center may experience delays while consuming metrics from cluster members, resulting
+in `N/A` or `0` displayed instead of the metric values. Delays usually occur when Management Center is connected to a large cluster of 30+ members.
+
+To resolve this issue, increase the number of threads that consume metrics from the cluster members by setting the xref:system-properties.adoc#hazelcast-mc-metrics-consumer-thread-pool-size[`hazelcast.mc.metrics.consumer.thread.pool.size` property]
+
+
 === Slow Background Persistence Runs
 
 If Management Center tries to persist more metrics than the underlying persistent storage or disk throughput can handle, you will see the following warning:
