@@ -86,11 +86,11 @@ hz-mc start
 
 === Metrics Consumption Delays
 
-If management Center is connected to a large cluster (30+ members) it may experience metric consumption delays resulting
-in `N/A` or `0` displayed instead of the metric values.
-To resolve this issue, you can do the following:
+Management Center may experience delays while consuming metrics from cluster members, resulting
+in `N/A` or `0` displayed instead of the metric values. Delays usually occur when Management Center is connected to a large cluster of 30+ members.
 
-- Increase the amount of threads that consume metrics from the cluster members by setting xref:system-properties.adoc#hazelcast-mc-metrics-consumer-thread-pool-size[`hazelcast.mc.metrics.consumer.thread.pool.size` property]
+To resolve this issue, increase the number of threads that consume metrics from the cluster members by setting the xref:system-properties.adoc#hazelcast-mc-metrics-consumer-thread-pool-size[`hazelcast.mc.metrics.consumer.thread.pool.size` property]
+
 
 === Slow Background Persistence Runs
 
