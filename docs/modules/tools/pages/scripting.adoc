@@ -80,7 +80,7 @@ Maven configuration for several scripting engines:
     <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-jsr223</artifactId>
-        <version>2.5.6</version>
+        <version>3.0.9</version>
     </dependency>
     <!-- Ruby (JRuby) -->
     <dependency>
