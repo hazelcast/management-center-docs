@@ -443,7 +443,7 @@ METRICS_CONSUMER_THREAD_POOL_SIZE
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhhazelcast.mc.metrics.consumer.thread.pool.size=5
+hz-mc start -Dhazelcast.mc.metrics.consumer.thread.pool.size=5
 ----
 
 |[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
