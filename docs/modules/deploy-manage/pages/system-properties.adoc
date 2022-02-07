@@ -77,7 +77,7 @@ hz-mc start -Dhazelcast.mc.contextPath=hazelcast-mc \
 In this example, the URL for Management Center would be `\http:localhost:8080/hazelcast-mc`.
 
 |[[hazelcast-mc-cluster-operation-timeout]]hazelcast.mc.cluster.operation.timeout.millis
-|Operation timeout in milliseconds for scripts in MC. Default: 60000.
+|Timeout in milliseconds for Management Center operations that wait for a response from members. Default: 60000.
 |
 [source,bash,subs="attributes+"]
 ----
