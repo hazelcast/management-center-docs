@@ -1,1 +1,46 @@
-= Dashboard
+= CP Subsystem
+:description: You can use the CP Subsystem section to manage and monitor the CP subsystem in a cluster.
+
+You can use the *CP Subsystem* section to manage and monitor the CP subsystem in a cluster.
+
+image:ROOT:CPSubsystemTab.png[Status]
+
+.CP subsystem fields
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|CP Members
+|The number of accessible CP members and the CP member count that's configured on the cluster.
+
+|Promote Member to CP
+|Promote a member in the cluster to a CP member. See xref:promoting-cp-member.adoc[].
+
+|Remove CP Member
+|Remove a member from the CP subsystem. See xref:removing-cp-member.adoc[].
+
+|Restart CP Subsystem
+|Restart the CP subsystem. See xref:restarting-cp-subsystem.adoc[].
+|===
+
+== Status Banner
+
+A banner is always displayed at the top of the section with a message about the current CP subsystem status. This banner may display one of
+the following messages:
+
+* *CP Subsystem is not enabled*: The cluster is not configured with a CP member count of at least 3.
+* *All CP members are accessible*: Number of accessible CP members is at least the same as the configured CP member count.
+* *One CP member is not accessible*: One
+CP member is missing and the minority count in the CP subsystem is greater than 1. For example, this value is shown
+when there are 6 accessible CP members and the configured count is 7. In this example, the minority
+count is 3 members and the majority count is 4 members.
+* *Multiple CP members are not accessible:* Multiple
+CP members are missing, but their count is less than the minority.
+* *Minority of the CP members are not accessible:* The minority of CP
+members are missing.
+* *Majority of the CP members are not accessible:* The majority of CP
+members are missing.
+
+== Related Resources
+
+See the Hazelcast Platform documentation to find out more about xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[CP Subsystem].

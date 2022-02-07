@@ -15,10 +15,5 @@
 *** xref:clusters:triggering-force-start.adoc[]
 *** xref:clusters:triggering-partial-start.adoc[]
 *** xref:clusters:triggering-hot-backup.adoc[]
-** CP Subsystem
-*** xref:clusters:cp-subsystem.adoc[Overview]
-*** xref:clusters:promoting-cp-member.adoc[]
-*** xref:clusters:removing-cp-member.adoc[]
-*** xref:clusters:restarting-cp-subsystem.adoc[]
 * xref:clusters:wan-replication.adoc[WAN Replication]
 * xref:clusters:healthcheck.adoc[Config Healthcheck]
