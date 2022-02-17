@@ -48,6 +48,6 @@ For each user login, we store the following information and send it in a phone h
 * Screen height and width
 * Window height and width
 
-== Disabling the collection of Usage Analytics
+== Disabling the Collection of Usage Analytics
 
 You can disable the Phone Homes and the Pendo's Javascript Library by setting the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` property] to `false`
