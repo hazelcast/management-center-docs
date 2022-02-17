@@ -46,5 +46,5 @@ if requested by the Hazelcast's support team.
 
 == Experience Timeout
 
-If you experience a timeout when running scripts or SQL queries, You can increase operation timeout value via setting
+If you experience a timeout when running scripts or SQL queries, you can increase the timeout value 
 in the xref:deploy-manage:system-properties.adoc#hazelcast-mc-cluster-operation-timeout[`hazelcast.mc.cluster.operation.timeout.millis`] property.
