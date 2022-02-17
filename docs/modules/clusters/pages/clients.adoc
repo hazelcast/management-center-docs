@@ -62,7 +62,7 @@ All clusters have an entry for a client called *MC-Client-<your cluster name>*. 
 
 You cannot view any more details about this client other than what is displayed on the *Clients* page.
 
-NOTE: MC-Clients are *not included* in Client Counts on xref:getting-started:user-interface.adoc#menu[the Menu on the left-hand side] and xref:deploy-manage:connecting-to-clusters-ui.adoc[Cluster Connections Screen]
+NOTE: The MC-Client is *not included* in the client count that is displayed in the xref:getting-started:user-interface.adoc#menu[left-hand menu] and the xref:deploy-manage:connecting-to-clusters-ui.adoc[Cluster Connections page]
 
 == Client Address Types
 
