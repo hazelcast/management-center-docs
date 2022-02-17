@@ -7,7 +7,7 @@
 Usage analytics of Management Center are collected in two ways:
 
 * Management Center sends data to the Phone Home server at `\http://phonehome.hazelcast.com/pingMc` 30 minutes after it is started and once every 24 hours after that.
-* Pendo.io Javascript library is included in Management Center's web pages.  Pendo is used to generate reports on activities and analyze the performance of the Management Center's front-end.  You can find more information in Pendo's privacy policy at www.pendo.io/legal/privacy-policy/
+* The link:https://www.pendo.io/[Pendo] JavaScript library collects data from Management Center web pages to generate activity reports and to analyze the performance of the Management Center frontend. Pendo is included in all Management Center web pages. You can find information about Pendo's privacy policy at www.pendo.io/legal/privacy-policy/
 
 == Data Sent in Phone Homes
 
