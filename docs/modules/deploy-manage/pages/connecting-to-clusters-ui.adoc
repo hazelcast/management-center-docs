@@ -137,8 +137,7 @@ You will see the following:
 |Total number of members in the cluster.
 
 |Clients
-|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients
-
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[]
 |===
 
 If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
