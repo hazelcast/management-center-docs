@@ -13,7 +13,7 @@ This page is available only to admin users.
 
 == Remove a CP Member
 
-. Go to *Administration* > *CP Subsystem*, and click *Remove*.
+. Go to *CP Subsystem* > *Dashboard*, and click *Remove*.
 
 . Select a CP member from the dropdown.
 +

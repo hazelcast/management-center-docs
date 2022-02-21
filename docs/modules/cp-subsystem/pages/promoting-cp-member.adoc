@@ -11,7 +11,7 @@ This page is available only to admin users.
 
 == Promote a Member to a CP Member
 
-. Go to *Administration* > *CP Subsystem*, and click *Promote*.
+. Go to *CP Subsystem* > *Dashboard*, and click *Promote*.
 
 . Select an AP member (one of the members that do not participate in the CP subsystem) from the dropdown.
 +

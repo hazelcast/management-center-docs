@@ -9,7 +9,7 @@ You should have a good understanding of CP subsystem in Hazelcast, see xref:{pag
 
 == Restart a CP Member
 
-Go to *Administration* > *CP Subsystem*, and click *Restart*.
+Go to *CP Subsystem* > *Dashboard*, and click *Restart*.
 
 If everything goes well, a success message is displayed.
 

@@ -1,1 +1,9 @@
 = Atomic References
+
+You can see a list of all the atomic references in your cluster
+by clicking on the **Atomic References** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:AtomicReferences.png[Atomic References View]
+
+You can sort the table by clicking on the column headers.

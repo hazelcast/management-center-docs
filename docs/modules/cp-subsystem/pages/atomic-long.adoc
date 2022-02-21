@@ -1,1 +1,9 @@
 = Atomic Longs
+
+You can see a list of all the atomic longs in your cluster
+by clicking on the **Atomic Longs** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:AtomicLongs.png[Atomic Longs View]
+
+You can sort the table by clicking on the column headers.

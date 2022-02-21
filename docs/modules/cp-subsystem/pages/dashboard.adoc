@@ -1,7 +1,7 @@
 = CP Subsystem
-:description: You can use the CP Subsystem section to manage and monitor the CP subsystem in a cluster.
+:description: You can use the CP Subsystem menu section to manage and monitor the CP subsystem in a cluster.
 
-You can use the *CP Subsystem* section to manage and monitor the CP subsystem in a cluster.
+You can use the *CP Subsystem* menu section to manage and monitor the CP subsystem in a cluster.
 
 image:ROOT:CPSubsystemTab.png[Status]
 

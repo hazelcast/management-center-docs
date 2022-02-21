@@ -1,1 +1,9 @@
 = Countdown Latches
+
+You can see a list of all the Countdown Latches in your cluster
+by clicking on the **Countdown Latches** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:CountdownLatches.png[Countdown Latches View]
+
+You can sort the table by clicking on the column headers.
