@@ -93,6 +93,9 @@ or of another Java primitive type, it is rendered as a JSON value as shown below
 image:ROOT:MapBrowserWithCustomTypedValue.png[Map Browser with Custom Typed Value]
 
 [[map-config]]
+
+NOTE: Management Center allows you to access contents of Hazelcast data structures (for instance map entries) via SQL Browser or Map Browser. It may be useful to restrict data access for Management Center if sensitive financial or personal information is stored in the cluster. Management Center cannot access the data if at least one member has the data access disabled. You can disable data access for Management Center in the member configuration file. See the xref:hazelcast:maintain-cluster:monitoring.adoc#managing-data-access[Managing Data Access] section.
+
 == Configuring a Map
 
 You can use the Map Config tool to set the selected map's attributes, such
