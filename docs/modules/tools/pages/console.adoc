@@ -1,6 +1,7 @@
 = Executing Console Commands
 :description: The console feature enables you to execute commands on the cluster. For example, you can perform `put` and `get` operations on a map. 
 :page-aliases: monitor-imdg:console.adoc
+:experimental: true
 
 {description}
 
@@ -13,7 +14,7 @@ console is enabled or disabled for each member.
 
 . Open a console window by clicking on the **Console** button located at the top menu.
 +
-TIP: You can also open the console, using the kbd::[Alt + T] keyboard shortcut on Windows/Linux and kbd::[Option + T] on
+TIP: You can also open the console, using the kbd:[Alt + T] keyboard shortcut on Windows/Linux and kbd:[Option + T] on
 Mac.
 +
 image:ROOT:Console.png[Console]
