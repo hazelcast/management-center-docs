@@ -1,7 +1,4 @@
-= Removing CP Members
-:description: You can manually remove a disconnected CP member from the CP subsystem, using Management Center.
 
-If a CP member loses connection with the rest of the cluster, the CP subsystem will wait for the 4 hours by default before connecting to a new CP member. You can configure this time in the `missing-cp-member-auto-removal-seconds` setting. See xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:configuration.adoc[] in the Platform documentation.
 
 {description}
 
@@ -9,19 +6,7 @@ If a CP member loses connection with the rest of the cluster, the CP subsystem w
 
 You should have a good understanding of CP subsystem in Hazelcast, see xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[] in the Platform documentation.
 
-This page is available only to admin users.
+This page 
 
 == Remove a CP Member
 
-. Go to *CP Subsystem* > *Dashboard*, and click *Remove*.
-
-. Select a CP member from the dropdown.
-+
-Although this member is not connected to the Management Center, it is known by
-the cluster's CP subsystem. 
-
-If everything goes well, a success message is displayed.
-
-image:ROOT:CPRemoveDialog.png[Remove CP Member Confirmation]
-
-If an exception occurs, an error notification is displayed.

@@ -1,8 +1,7 @@
 = Fenced Locks
 
-You can see a list of all the fenced locks in your cluster
-by clicking on the **Fenced Locks** menu item on the left panel. A new
-page is opened on the right, as shown below.
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:fencedlock.adoc[fenced locks] in your cluster
+by clicking on the **Fenced Locks** menu item in the left menu.
 
 image:ROOT:FencedLocks.png[Fenced Locks View]
 

@@ -1,25 +1,2 @@
-= Promoting Members to CP Members
-:description: You can promote any existing member that is not part of the CP subsystem to a CP member.
 
-{description}
-
-== Before you Begin
-
-You should have a good understanding of CP subsystem in Hazelcast, see xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[] in the Platform documentation.
-
-This page is available only to admin users.
-
-== Promote a Member to a CP Member
-
-. Go to *CP Subsystem* > *Dashboard*, and click *Promote*.
-
-. Select an AP member (one of the members that do not participate in the CP subsystem) from the dropdown.
-+
-NOTE: Lite members are not displayed in the dropdown list because they do not store data and cannot be promoted to CP members.
-
-If everything goes well, a success message is displayed.
-
-image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
-
-If an exception occurs, an error notification is displayed.
 

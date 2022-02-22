@@ -1,8 +1,7 @@
 = Semaphores
 
-You can see a list of all the semaphores in your cluster
-by clicking on the **Semaphores** menu item on the left panel. A new
-page is opened on the right, as shown below.
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:isemaphore.adoc[semaphores] in your cluster
+by clicking on the **Semaphores** menu item in the left menu.
 
 image:ROOT:Semaphores.png[Semaphores View]
 

@@ -1,8 +1,7 @@
 = Countdown Latches
 
-You can see a list of all the Countdown Latches in your cluster
-by clicking on the **Countdown Latches** menu item on the left panel. A new
-page is opened on the right, as shown below.
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:icountdownlatch.adoc[countdown latches] in your cluster
+by clicking on the **Countdown Latches** menu item in the left menu.
 
 image:ROOT:CountdownLatches.png[Countdown Latches View]
 
