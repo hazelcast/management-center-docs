@@ -1,6 +1,6 @@
 site:
   title: Documentation
-  url: https://frosty-curran-1fc0c4.netlify.app
+  url: https://frosty-curran-1fc0c4.netlify.app/
   start_page: getting-started:overview.adoc
   robots: disallow
   keys:
