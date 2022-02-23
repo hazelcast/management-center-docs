@@ -15,7 +15,7 @@ To manually run a healthcheck, go to *Config Healthcheck* and click *Re-Run Heal
 == Ignoring Healthcheck Problems
 
 Sometimes, minor differences in member configurations are acceptable, but the healthcheck report will still display a failed status. To hide failed healthcheck reports, you can
-**IGNORE** the reported problems. The ignored problems will not show up again in successive healthcheck runs.
+click *IGNORE* to ignore the reported problems. Ignored problems will not be displayed again in future healthcheck runs.
 
 NOTE: Ignored healthcheck problems can not be unignored.
 
