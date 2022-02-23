@@ -69,6 +69,7 @@ The CP subsystem dashboard displays the following tables:
 
 To see more details about a particular group, click on the down arrow next to the group name.
 
+[[session]]
 .CP session metrics
 [cols="20%s,80%a"]
 |===

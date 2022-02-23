@@ -5,4 +5,6 @@ by clicking on the **Atomic Longs** menu item in the left menu.
 
 image:ROOT:AtomicLongs.png[Atomic Longs View]
 
+An atomic long has only a single metric: The current long value.
+
 You can sort the table by clicking on the column headers.

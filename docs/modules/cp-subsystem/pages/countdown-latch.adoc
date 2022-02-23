@@ -5,4 +5,10 @@ by clicking on the **Countdown Latches** menu item in the left menu.
 
 image:ROOT:CountdownLatches.png[Countdown Latches View]
 
+A countdown latch has three metrics:
+
+- *Round*: Number of the current round. This number is incremented when the countdown latch reaches 0 and is initialized with a new count.
+- *Count*: Initial countdown.
+- *Remaining*: Remaining number of expected countdowns.
+
 You can sort the table by clicking on the column headers.
