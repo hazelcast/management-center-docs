@@ -1,6 +1,6 @@
 = Dashboard Page
 :description: The cluster dashboard provides an overview of the general state and health of a cluster.
-:page-aliases: monitor-imdg:monitor-cluster.adoc
+:page-aliases: monitor-imdg:monitor-cluster.adoc, monitor-imdg:dashboard.adoc
 
 {description}
 
