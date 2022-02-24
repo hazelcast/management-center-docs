@@ -108,7 +108,7 @@ members are missing.
 * *Majority of the CP members are not accessible:* The majority of CP
 members are missing.
 
-[#promote]
+[[promote]]
 == Promoting Members to CP Members
 
 You can promote any existing member that is not part of the CP subsystem to a CP member.
