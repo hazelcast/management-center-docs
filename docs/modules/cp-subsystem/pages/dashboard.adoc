@@ -4,7 +4,7 @@
 
 You can use the *CP Subsystem* menu item to manage and monitor the xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[CP subsystem] in a cluster.
 
-image:ROOT:CPSubsystemTab.png[Status]
+image:ROOT:CPSubsystemDashboard.png[Status]
 
 == Data and Metrics
 
