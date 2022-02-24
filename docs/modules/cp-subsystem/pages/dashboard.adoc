@@ -39,9 +39,6 @@ The CP subsystem dashboard displays the following tables:
 |Nodes
 |Number of Raft nodes that the member is running.
 
-|Groups
-|Number of Raft groups that the member is in. Only members in the metadata group know the total number of groups. If a member is not in the metadata group, this value is 0.
-
 |Destroyed Groups
 |Total number of Raft groups that have been destroyed.
 
