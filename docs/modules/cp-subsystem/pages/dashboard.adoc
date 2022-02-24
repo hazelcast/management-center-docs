@@ -127,7 +127,7 @@ image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
 
 If an exception occurs, an error notification is displayed.
 
-[#remove]
+[[remove]]
 == Removing CP Members
 
 You can manually remove a disconnected CP member from the CP subsystem, using Management Center.
