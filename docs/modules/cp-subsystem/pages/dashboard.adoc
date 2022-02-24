@@ -108,6 +108,7 @@ members are missing.
 * *Majority of the CP members are not accessible:* The majority of CP
 members are missing.
 
+[#promote]
 == Promoting Members to CP Members
 
 You can promote any existing member that is not part of the CP subsystem to a CP member.
@@ -126,6 +127,7 @@ image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
 
 If an exception occurs, an error notification is displayed.
 
+[#remove]
 == Removing CP Members
 
 You can manually remove a disconnected CP member from the CP subsystem, using Management Center.
@@ -146,7 +148,7 @@ If everything goes well, a success message is displayed.
 image:ROOT:CPRemoveDialog.png[Remove CP Member Confirmation]
 
 If an exception occurs, an error notification is displayed.
-
+[#restart]
 == Restarting CP Subsystem
 
 If the majority of CP members crash, you can restart the CP subsystem to delete all CP data and trigger a new round of the discovery process.
