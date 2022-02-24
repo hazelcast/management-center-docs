@@ -1,5 +1,4 @@
-* Dashboard
-** xref:cp-subsystem:dashboard.adoc[]
+* xref:cp-subsystem:dashboard.adoc[Dashboard]
 * xref:cp-subsystem:atomic-long.adoc[]
 * xref:cp-subsystem:semaphore.adoc[]
 * xref:cp-subsystem:atomic-ref.adoc[]
