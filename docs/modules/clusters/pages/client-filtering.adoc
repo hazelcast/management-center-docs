@@ -16,6 +16,8 @@ If a deny-list contains entries and an allow-list does not, all clients except t
 
 image:ROOT:ClientFilteringView.png[Client Filtering View]
 
+NOTE: Client Filtering can also be managed via xref:integrate:clustered-rest.adoc[MC's Clustered REST endpoint].
+
 == Creating a New Filter List
 [[changing-cluster-client-filtering-example]]
 

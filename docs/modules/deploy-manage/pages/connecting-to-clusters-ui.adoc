@@ -18,7 +18,7 @@ NOTE: When connecting to multiple clusters from the same instance of Management 
 
 . Click to *Cluster Connections* in the toolbar.
 
-. Click *Connect* to start configuring a new connection.
+. Click *Add* to start configuring a new connection.
 +
 image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
@@ -49,11 +49,11 @@ You will see the following:
 |Total number of members in the cluster.
 
 |Clients
-|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[]
 
 |===
 
-If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
+If your cluster has the Jet engine enabled, you will also see that the cluster support streaming and SQL.
 
 To connect to another cluster, you can repeat these steps.
 
@@ -108,7 +108,7 @@ As soon as Management Center connects to one member, it will auto-discover the o
 
 . Click to *Cluster Connections* in the toolbar.
 
-. Click *Connect* to start configuring a new connection.
+. Click *Add* to start configuring a new connection.
 +
 image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
@@ -137,11 +137,10 @@ You will see the following:
 |Total number of members in the cluster.
 
 |Clients
-|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients
-
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[]
 |===
 
-If your cluster has the Jet engine enabled, you will also see that the cluster support streaming.
+If your cluster has the Jet engine enabled, you will also see that the cluster support streaming and SQL.
 
 To connect to another cluster, you can repeat these steps with a different configuration file.
 

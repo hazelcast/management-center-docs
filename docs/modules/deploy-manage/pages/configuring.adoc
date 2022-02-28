@@ -7,7 +7,7 @@ For example, you may want to configure the client to connect to certain Hazelcas
 
 == Where Management Center Saves Data
 
-By default, Management Center saves the following data in the `hazlecast-mc` directory of the user's home directory:
+By default, Management Center saves the following data in the `hazelcast-mc` directory of the user's home directory:
 
 - Configuration settings
 - Metrics

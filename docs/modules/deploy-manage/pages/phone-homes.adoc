@@ -1,10 +1,13 @@
-= Phone Home
-:description: Hazelcast uses phone home data to learn about the usage of Hazelcast Management Center.
+= Usage Analytics
+:description: Hazelcast collects analytics data to learn about the usage of Hazelcast Management Center.
 :page-aliases: ROOT:phone-home.adoc
 
 {description}
 
-Management Center sends data to the phone home server at `\http://phonehome.hazelcast.com/pingMc` 30 minutes after it's started and once every 24 hours thereafter.
+Usage analytics of Management Center are collected in two ways:
+
+* Management Center sends data to the Phone Home server at `\http://phonehome.hazelcast.com/pingMc` 30 minutes after it is started and once every 24 hours after that.
+* The link:https://www.pendo.io/[Pendo] JavaScript library collects data from Management Center web pages to generate activity reports and to analyze the performance of the Management Center frontend. Pendo is included in all Management Center web pages. You can find information about Pendo's privacy policy at www.pendo.io/legal/privacy-policy/
 
 == Data Sent in Phone Homes
 
@@ -45,6 +48,6 @@ For each user login, we store the following information and send it in a phone h
 * Screen height and width
 * Window height and width
 
-== Disabling Phone Homes
+== Disabling the Collection of Usage Analytics
 
-Set the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` property] to `false`.
+You can disable data collection in phone homes and Pendo by setting the xref:system-properties.adoc#hazelcast-mc-phone-home-enabled[`hazelcast.mc.phone.home.enabled` property] to `false`

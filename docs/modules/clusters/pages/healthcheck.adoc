@@ -11,3 +11,12 @@ Management Center automatically runs the healthcheck report at certain intervals
 system property to `false`.
 
 To manually run a healthcheck, go to *Config Healthcheck* and click *Re-Run Healthcheck*.
+
+== Ignoring Healthcheck Problems
+
+Sometimes, minor differences in member configurations are acceptable, but the healthcheck report will still display a failed status. To hide failed healthcheck reports, you can
+click *IGNORE* to ignore the reported problems. Ignored problems will not be displayed again in future healthcheck runs.
+
+NOTE: Ignored healthcheck problems can not be unignored.
+
+image:ROOT:HealthcheckIgnore.png[Ignore Healthcheck]

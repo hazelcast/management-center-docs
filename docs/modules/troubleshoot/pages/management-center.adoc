@@ -42,4 +42,9 @@ copy the log entries to the clipboard using **Copy**
 and resume the flow using **Resume**.
 
 NOTE: You may only need to share the information in these logs
-if requested by the Hazelcast's support team.
+if requested by the Hazelcast support team.
+
+== Experience Timeout
+
+If you experience a timeout when running scripts or SQL queries, you can increase the timeout value 
+in the xref:deploy-manage:system-properties.adoc#hazelcast-mc-cluster-operation-timeout[`hazelcast.mc.cluster.operation.timeout.millis`] property.

@@ -9,7 +9,7 @@ on the cluster.
 
 Scripting is disabled by default, and you need to enable it
 in your cluster's configuration. See the
-xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Toggle Scripting Support] for details. The member list shows whether
+xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-scripting-support[Toggle Scripting Support] for details. The member list shows whether
 scripting is enabled or disabled for each member.
 
 NOTE: Java 15 and newer versions do not come with a JavaScript engine. If you want to use JavaScript as a scripting language on a member with Java 15 and newer, the appropriate libraries should be placed in the classpath of that member. See the <<scripting-languages, Enabling Scripting Languages section>> for more details.

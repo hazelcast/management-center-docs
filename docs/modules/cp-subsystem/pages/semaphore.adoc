@@ -1,0 +1,13 @@
+= Semaphores
+
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:isemaphore.adoc[semaphores] in your cluster
+by clicking on the **Semaphores** menu item in the left menu.
+
+image:ROOT:Semaphores.png[Semaphores View]
+
+A semaphore has two metrics; 
+
+- *Initialized*: Whether the semaphore is initialized with a value.
+- *Available*: Number of remaining permits.
+
+You can sort the table by clicking on the column headers.

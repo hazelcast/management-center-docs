@@ -76,6 +76,8 @@ SINK INTO my_first_map VALUES
 +
 image:sql-creates-map.png[Map is Created using SQL Browser]
 
+NOTE: Management Center allows you to access contents of Hazelcast data structures (for instance map entries) via SQL Browser or Map Browser. It may be useful to restrict data access for Management Center if sensitive financial or personal information is stored in the cluster. Management Center cannot access the data if at least one member has the data access disabled. You can disable data access for Management Center in the member configuration file. See the xref:hazelcast:maintain-cluster:monitoring.adoc#managing-data-access[Managing Data Access] section.
+
 == Next Steps
 
 If you're interested in learning more about SQL in Hazelcast, see the xref:hazelcast:sql:sql-statements.adoc[SQL reference] in the Platform documentation.
