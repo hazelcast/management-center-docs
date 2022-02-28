@@ -49,6 +49,11 @@ a|
 - `display_version`
 - `full-version`
 
+|link:https://github.com/hazelcast/management-center[management-center]
+|master
+|openapi/external/antora.yml
+|version
+
 |{url-playbook}[hazelcast-docs]
 a|`main` and `develop`
 |_redirects
@@ -83,6 +88,13 @@ Add the `major.minor` version to the following:
 a|
 - `version`
 - `display_version`
+
+|link:https://github.com/hazelcast/management-center[management-center]
+|The major.minor or `.z` branch of the new latest version of Management Center.
+
+NOTE: If a `.z` branch exists, make this changes before creating a maintenance branch off of it.
+|openapi/external/antora.yml
+|version
 
 |{url-playbook}[hazelcast-docs]
 a|`main` and `develop`
@@ -140,9 +152,9 @@ For example, if you are releasing version 5.1, create a new release branch named
 
 . Update the fields mentioned in <<latest-releases, Latest Releases>>.
 
-. Remove the `prerelease: true` field from the docs/`antora.yml` file of the `management-center-docs` repository.
+. Remove the `prerelease: true` field and the `snapshot: true` field from the docs/`antora.yml` file of the `management-center-docs` repository.
 +
-IMPORTANT: If you are creating a branch for a beta release, do not remove this field.
+IMPORTANT: If you are creating a branch for a beta release, do not remove the `prerelease` field.
 
 . When you are ready to release, create a maintentance branch from the release branch.
 +
