@@ -1,4 +1,4 @@
-= Update Config
+= Updating Cluster Configuration at Runtime
 
 You can use Update Config to dynamically add Data structures and WAN configurations to a running cluster without needing to restart.
 
