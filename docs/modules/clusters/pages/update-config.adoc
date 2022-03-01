@@ -1,0 +1,25 @@
+= Update Config
+
+You can use Update Config to dynamically add Data structures and WAN configurations to a running cluster without needing to restart.
+
+You can pass changes via text field or upload a file.
+
+image:ROOT:UpdateConfig.png[Update Config]
+
+When data is provided Submit button appears and Preview button enables.
+
+image:ROOT:UpdateConfigData.png[Update Config With Data]
+
+To verify upcoming changes press Preview button
+
+image:ROOT:UpdateConfigPreview.png[Update Config Preview]
+
+By pressing Submit button to initiate config update and result section will be displayed.
+
+Result is current state of the update process and can have followed values: Started, In Progress, Failed and Finished.
+
+image:ROOT:UpdateConfigResult.png[Update Config Failed Result]
+
+By pressing Result button information about applied changes or errors will be displayed in similar to "Preview" way.
+
+Result button is available only when updating is finished or failed
