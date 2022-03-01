@@ -1,8 +1,0 @@
-= 5.0.3 Release Notes
-:description: These release notes list any new features, enhancements, and fixes that were made between version 5.0.2 and 5.0.3 of Hazelcast Management Center.
-
-{description}
-
-== Fixes
-
-* Updated log4j to fix CVE-2021-44228. [MC-1222]
