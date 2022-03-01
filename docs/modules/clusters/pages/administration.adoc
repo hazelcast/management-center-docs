@@ -13,8 +13,7 @@ From this menu item, you can do the following:
 - xref:cluster-license.adoc[View details about a cluster's license]
 - xref:triggering-rolling-upgrade.adoc[Trigger a rolling upgrade]
 - xref:persistence.adoc[Manage clusters that have persistence enabled]
-- xref:cp-subsystem.adoc[Manage CP members]
-- xref:update-config.adoc[Update Config]
+- xref:update-config.adoc[Update cluster configuration at runtime]
 
 
 
