@@ -1,17 +1,16 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: "5.1"
+version: '5.1'
 # Version in the version selector
-display_version: "5.1"
+display_version: '5.1'
 asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
     full-version: 5.1.1
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.0'
+    page-latest-supported-hazelcast: '5.1'
     page-toclevels: 1
 nav:
   - modules/ROOT/nav.adoc
-prerelease: false
