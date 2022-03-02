@@ -15,7 +15,7 @@
 == Enhancements
 
 * Security: Console access can be enabled or disabled in the members' config.  This defaults to disabled (breaking change). See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Managing Console Support] in the Platform documentation. [MC-1121]
-* Security: Data acess via the SQL Browser and Map Browser can be disabled in the members' configuration. [MC-1039]
+* Security: Data access via the SQL Browser and Map Browser can be disabled in the members' configuration. [MC-1039]
 * Standardization of naming of start scripts.  `hz-mc` should be used and `hz-mc conf` for any MC offline configuration. [MC-1087]
 * Introduced the `mc-hz conf cluster list` command to list all configured cluster names. [MC-1091]
 * SQL Browser provides instructions if `hazelcast-sql` has not been included in the classpath. [MC-871]
@@ -24,7 +24,7 @@
 * SQL Browser the returned results for each field is capped to 1024 characters to prevent large fields from slowing down MC. [MC-1203]
 * MC now quickly identifies whether the cluster has SQL/Streaming enabled or not. [MC-992]
 * Config Healthcheck can be customised to ignore specific problems via the Ignore button. [MC-541]
-* Updated Config Heatcheck to allow different config for some security parts. [ [MC-925]
+* Updated Config Healthcheck to allow different config for some security parts. [MC-925]
 * Added a button to clear all Map entries. [MC-1176]
 * Queues age-related queue metrics can now be reset. [MC-1109]
 * Improved tables with auto widths based on the content. [MC-1073]
