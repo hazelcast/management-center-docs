@@ -1,5 +1,5 @@
 = 5.1.1 Release Notes
-:description: These release notes list any new features, enhancements, and fixes that were made between version 5.0 and 5.1.1 of Hazelcast Management Center.
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.0 and 5.1.1 of Hazelcast Management Center (MC).
 
 {description}
 
@@ -19,23 +19,23 @@
 * Standardization of naming of start scripts.  `hz-mc` should be used and `hz-mc conf` for any MC offline configuration. [MC-1087]
 * Introduced the `mc-hz conf cluster list` command to list all configured cluster names. [MC-1091]
 * SQL Browser provides instructions if `hazelcast-sql` has not been included in the classpath. [MC-871]
-* SQL Browser has improved messages when MAPPINGs cannot be automatically generated. [MC-1160]
-* SQL Browser when creating a MAPPING, the MAPPING name now defaults to the maps name. [MC-1288]
+* SQL Browser has improved messages when mappings cannot be automatically generated. [MC-1160]
+* SQL Browser when creating a mapping, the mapping name now defaults to the map's name. [MC-1288]
 * SQL Browser the returned results for each field is capped to 1024 characters to prevent large fields from slowing down MC. [MC-1203]
 * MC now quickly identifies whether the cluster has SQL/Streaming enabled or not. [MC-992]
-* Config Healthcheck can be customised to ignore specific problems via the Ignore button. [MC-541]
+* xref:clusters:healthcheck.adoc[Config healthcheck] can be customised to ignore specific problems via the Ignore button. [MC-541]
 * Updated Config Heatcheck to allow different config for some security parts. [ [MC-925]
-* Added a button to clear all Map entries. [MC-1176]
+* Added a button to xref:data-structures:map.adoc[clear all map entries]. [MC-1176]
 * Queues age-related queue metrics can now be reset. [MC-1109]
 * Improved tables with auto widths based on the content. [MC-1073]
 * Improved support for large clusters with lots of metrics. [MC-1242]
-* Persistence of metrics can be disabled via `hazelcast.mc.metrics.persistence.enabled` sysprop [MC-1225]
+* Persistence of metrics can be disabled via xref:deploy-manage:system-properties.adoc#hazelcast-mc-metrics-persistence-enabled[`hazelcast.mc.metrics.persistence.enabled`] property [MC-1225]
 * Duration column has been added to the Completed Jobs table [MC-151]
 * Near Cache stats now includes `invalidations` and `invalidationRequest` metrics. [MC-340]
 * MC own connection(s) to the cluster are now excluded from the client count. [MC-1162]
 * MC's operation timeout with the cluster can now be configured so that long-running operations (like script executions) do not timeout. [MC-1285]
-* "Shutdown member" and "Shutdown cluster" now behave identically for 1-node cluster. [MC-514]
-* Changed the button from "Connect" to "Add" on the Cluster Connections screen. [MC-808]
+* *Shutdown member* and *Shutdown cluster* now behave identically for single-node clusters. [MC-514]
+* Changed the button from *Connect* to *Add* on the Cluster Connections screen. [MC-808]
 * Pendo.io is used to collect usage analytics and performance of Management Center (Pendo can be disabled by disabling MC phone homes) [MC-1299]
 * Java 17 is now supported. [MC-1120]
 
@@ -45,7 +45,7 @@
 * Helpful error if running on an architecture that is not supported by RocksDB. [MC-1208]
 * MC will fail fast if it does not have write access to its data directory. [MC-206]
 * Map configs without actual IMap are not shown in SQL Browser dropdown. [MC-1122]
-* Config Healthcheck: fixed a false alarm that could be generated for the default map. [MC-700]
+* Config healthcheck: fixed a false alarm that could be generated for the default map. [MC-700]
 * Clients detail page: display a human-readable text for the corresponding client language.[MC-804]
 * Empty lib directory has been added to support usercode deployment. [MC-1107]
 * The left menu section that was previously opened is now remembered. [MC-1111]
@@ -55,7 +55,7 @@
 * WAN Sync menu dropdowns have been expanded to match the length of the Map names.  [MC-1139]
 * Fixed the tooltips shown in the WAN Replication screens so they do not overlap. [MC-1153]
 * Fix for displaying a large number of maps in the WAN Sync screen. [MC-1185]
-* Fix for the Maps counter in the left menu to say the total maps count includes system maps. [MC-1207]
+* Fix for the maps counter in the left menu to say the total maps count includes system maps. [MC-1207]
 * Fix for the Map Browser TTL value to show time remaining rather than an expiray date. [MC-1366]
 * Maximize chart icon is no longer shown after clicking on it. [MC-1141]
 
