@@ -10,7 +10,7 @@
 *** xref:clusters:shutting-down-cluster.adoc[]
 ** xref:clusters:cluster-license.adoc[]
 ** xref:clusters:triggering-rolling-upgrade.adoc[Rolling Upgrade]
-** xref:update-config.adoc[Update Config]
+** xref:clusters:update-config.adoc[Update Config]
 ** Persistence
 *** xref:clusters:persistence.adoc[Overview]
 *** xref:clusters:triggering-force-start.adoc[]
