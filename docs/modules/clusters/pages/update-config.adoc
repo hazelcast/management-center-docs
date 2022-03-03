@@ -65,6 +65,8 @@ When the configuration is submitted to the cluster, the cluster sends back one o
 |Failed
 |Some or all configuration blocks were not applied to the cluster.
 
+Possible errors: PARSING_FAILURE, SCHEMA_VALIDATION_FAILURE, GENERIC_FAILURE, INVALID_LICENSE
+
 |Finished
 |The configuration was successfully applied to the cluster.
 |===
