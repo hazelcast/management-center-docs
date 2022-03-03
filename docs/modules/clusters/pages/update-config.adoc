@@ -72,7 +72,7 @@ When the configuration is submitted to the cluster, the cluster sends back one o
 .Success result
 image:ROOT:UpdateConfigFinishedResult.png[Update Config Finished Result]
 
-.Failed result
+.Failure result
 image:ROOT:UpdateConfigResult.png[Update Config Failed Result]
 
 To view the applied changes or errors click the *Result* button.
