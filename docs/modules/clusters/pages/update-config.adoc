@@ -77,11 +77,13 @@ Use this section to find suggestions for resolving errors that may occur with dy
 
 === Failed Results
 
-You will see a *Failed* result if some or all configuration blocks were not applied to the cluster.
+Configuration updates are not atomic. For example if you submit a new configuration block for a map and a queue, the map configuration block may be successfully applied, but the queue configuration block may fail. In this case the map configuration block is not reverted, but you will see a *Failed* result.
 
 Click on the *Results* button to see which configuration blocks were applied and which were ignored.
 
-If you submit an existing configuration block, other than `license`, 
+To apply the configuration blocks that failed, submit the same configuration blocks.
+
+NOTE: If you submit an existing configuration block, other than `license`, 
 that already exists, the cluster ignores that configuration block and applies only the new ones.
 
 === Server request error
