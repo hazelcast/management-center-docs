@@ -23,8 +23,16 @@ As well as these Management Center features, you need an Enterprise license for 
 * Persistence (Hot Restart)
 * Rolling Upgrade
 
-== Next Steps
+== Viewing Cluster Licenses
 
 To view details about an Enterprise license for Hazelcast Platform that's installed on your cluster, see xref:clusters:cluster-license.adoc[].
 
+== Updating Management Center Licenses
+
 To update an Enterprise license for Management Center, see xref:updating-mc-license-ui.adoc[].
+
+== Updating Cluster Licenses at Runtime
+
+You can use Management Center to update an existing Enteprise license in your Hazelcast cluster. See xref:clusters:update-config.adoc[].
+
+Or, for other ways to update a license, see the xref:{page-latest-supported-hazelcast}@hazelcast:deploy:enterprise-licenses.adoc[Hazelcast Platform documentation].

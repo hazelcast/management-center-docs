@@ -8,21 +8,37 @@ Go to *Administration* > *Update Config*.
 
 == Supported Configuration
 
-Management Center allows you to add configuration for the following at runtime:
+Management Center allows you to add configuration for the following at runtime.
+
+TIP: A configuration block is one that is a direct child of `hazelcast`.
 
 - New data structure blocks
 +
-NOTE: You cannot add map indexes at runtime, using the *Update Config* page. To add map indexes, use the xref:{page-latest-supported-hazelcast}@hazelcast:sql:create-index.adoc[`CREATE INDEX`] statement in the xref:tools:sql-browser.adoc[SQL browser].
+NOTE: You cannot add map indexes, using the *Update Config* page. To add map indexes, use the xref:{page-latest-supported-hazelcast}@hazelcast:sql:create-index.adoc[`CREATE INDEX`] statement in the xref:tools:sql-browser.adoc[SQL browser].
 
 - New WAN Replication blocks
 
-- New or existing Enterprise licenses 
+- New or updated Enterprise licenses
 
-TIP: A configuration block is one that is a direct child of `hazelcast`.
+For examples of YAML and XML configuration, see the Hazelcast GitHub repository:
+
+ifdef::snapshot[]
+- link:https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-full-example.xml[XML example]
+
+- https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
+endif::[]
+ifndef::snapshot[]
+- link:https://github.com/hazelcast/hazelcast/tree/{page-latest-supported-hazelcast}/hazelcast/src/main/resources/hazelcast-full-example.xml[XML example]
+
+- link:https://github.com/hazelcast/hazelcast/tree/{page-latest-supported-hazelcast}/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
+endif::[]
 
 == Submitting New Configuration to the Cluster 
 
 You can add configuration blocks to the text field or you can upload a YAML or XML configuration file.
+
+NOTE: If you submit an existing configuration block, other than `license`, 
+that already exists, the cluster ignores that configuration block and applies only the new ones.
 
 image:ROOT:UpdateConfigData.png[Update Config With Data]
 
@@ -34,10 +50,22 @@ To apply the new configuration, click the *Submit* button.
 
 When the configuration is submitted to the cluster, the cluster sends back one of the following results:
 
-- Started: The configuration was successfully uploaded
-- In Progress: Intermediate result for huge configuration blocks. May be not visible
-- Failed: The configuration was not applied fully to the cluster.
-- Finished: The configuration was successfully applied to the cluster.
+[cols="1s,2a"]
+|===
+|Status|Description
+
+|Started
+|Management Center successfully uploaded the configuration to the cluster.
+
+|In Progress
+|Management Center is uploading the configuration to the cluster. This is an intermediate result for large configuration blocks. You may not see this status if you submit small configuration blocks.
+
+|Failed
+|Some or all configuration blocks were not applied to the cluster.
+
+|Finished
+|The configuration was successfully applied to the cluster.
+|===
 
 image:ROOT:UpdateConfigResult.png[Update Config Failed Result]
 
@@ -46,6 +74,15 @@ To view the applied changes or errors click the *Result* button.
 == Troubleshooting
 
 Use this section to find suggestions for resolving errors that may occur with dynamic configuration.
+
+=== Failed Results
+
+You will see a *Failed* result if some or all configuration blocks were not applied to the cluster.
+
+Click on the *Results* button to see which configuration blocks were applied and which were ignored.
+
+If you submit an existing configuration block, other than `license`, 
+that already exists, the cluster ignores that configuration block and applies only the new ones.
 
 === Server request error
 
