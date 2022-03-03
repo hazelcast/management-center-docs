@@ -96,7 +96,7 @@ image:ROOT:MapBrowserWithCustomTypedValue.png[Map Browser with Custom Typed Valu
 == Configuring a Map
 
 You can use the Map Config tool to set the selected map's attributes, such
-as the backup count, TTL, and eviction policy. To open the Map Config
+as the max size, TTL, and eviction policy. To open the Map Config
 tool, click on the **Map Config** button, located at the top right of
 the window. Once opened, the tool appears as a dialog, as shown below.
 
