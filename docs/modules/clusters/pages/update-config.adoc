@@ -34,7 +34,9 @@ To apply the new configuration, click the *Submit* button.
 
 When the configuration is submitted to the cluster, the cluster sends back one of the following results:
 
-- Failed: The configuration was not applied to the cluster.
+- Started: The configuration was successfully uploaded
+- In Progress: Intermediate result for huge configuration blocks. May be not visible
+- Failed: The configuration was not applied fully to the cluster.
 - Finished: The configuration was successfully applied to the cluster.
 
 image:ROOT:UpdateConfigResult.png[Update Config Failed Result]
