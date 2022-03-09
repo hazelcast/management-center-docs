@@ -1,6 +1,6 @@
 = Installing and Starting Management Center
 :page-aliases: ROOT:getting-started.adoc
-:description: This topic explains the options for installing and starting Management Center, using Docker or the binary packages.
+:description: You can install Management Center, using Docker, a package manager, or the binary distribution.
 
 {description}
 
@@ -23,6 +23,19 @@ docker version
 
 . Pull the Management Center Docker image from Docker Hub.
 +
+ifdef::snapshot[]
+[source,bash]
+----
+docker pull hazelcast/management-center:latest-snapshot
+----
+. Start the Management Center service
++
+[source,shell,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 hazelcast/management-center:latest-snapshot
+----
+endif::[]
+ifndef::snapshot[]
 [source,bash,subs="attributes+"]
 ----
 docker pull hazelcast/management-center:{full-version}
@@ -33,9 +46,99 @@ docker pull hazelcast/management-center:{full-version}
 ----
 docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 ----
+endif::[]
 
-Please see more details at link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
 
+- Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by a semicolon.
+- Put your classes in the `bin/user-lib/` directory, and mount that directory to the Docker container.
+
+You can find more details on link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
+
+== Using a Package Manager
+
+Hazelcast offers package managers for Linux and Mac operating systems.
+
+// tag::cli[]
+. To install Management Center, use one of the following methods, depending on your operating system:
++
+[tabs] 
+==== 
+Mac:: 
++ 
+--
+
+To install on macOS, use the Homebrew package manager.
+
+[source,bash,subs="attributes+"]
+----
+brew tap hazelcast/hz
+brew install hazelcast-management-center@{full-version}
+----
+--
+
+Linux::
++
+--
+
+To install on Linux, you can use either of these package managers, depending on your Linux distribution:
+ifdef::snapshot[]
+.Debian
+[source,shell]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian snapshot main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast-management-center
+----
+
+.RPM
+[source,shell]
+----
+wget https://repository.hazelcast.com/rpm/snapshot/hazelcast-rpm.repo -O hazelcast-snapshot-rpm.repo
+sudo mv hazelcast-snapshot-rpm.repo /etc/yum.repos.d/
+sudo yum install hazelcast-management-center
+----
+endif::[]
+ifndef::snapshot[]
+.Debian
+[source,shell,subs="attributes+"]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast-management-center={full-version}
+----
+
+.RPM
+[source,shell,subs="attributes+"]
+----
+wget https://repository.hazelcast.com/rpm/stable/hazelcast-rpm-stable.repo -O hazelcast-rpm-stable.repo
+sudo mv hazelcast-rpm-stable.repo /etc/yum.repos.d/
+sudo yum install hazelcast-management-center={full-version}
+----
+endif::[]
+--
+Windows::
++
+--
+At the moment, Management Center does not support any Windows package managers.
+
+To get started with Management Center on Windows, use one of the other available installation option.
+--
+====
+
+. Check that Management Center is installed.
++
+[source,shell]
+----
+hz-mc -V
+----
++
+You should the version of Management Center.
+
+For more information about the package manager, see the link:https://github.com/hazelcast/hazelcast-management-center-packaging[GitHub repository].
+// end::cli[]
+
+[[binary]]
 == Using Binary Packages
 
 Hazelcast Management Center is included in the Hazelcast download package.
@@ -61,10 +164,57 @@ For all the starting options you can preconfigure a cluster in Management Center
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
 
 [[starting-with-scripts]]
-=== Using Scripts in the Package
+=== Using Start Script
 
-As another option, you can use the `mc-start scripts,
-which come with the download package in `bin/` folder, to start the Management Center. You can find these scripts under the extracted directory.
+The recommended way to start Management Center with the binary package is the built-in start scripts in the `bin/` directory. A script is available as a batch file for Windows or a shell script for Mac and Linux.
+
+You can start this file from the command line using the following command:
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+hz-mc start
+----
+--
+Windows::
++
+[source,shell,subs="attributes+"]
+----
+mc-start.cmd 
+----
+====
+
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
+
+- Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by semicolons.
+- Put your classes in the `bin/user-lib/` directory.
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+export MC_CLASSPATH="/path/to/an/extra.jar:/path/to/an/otherextra.jar"
+hz-mc start
+----
+--
+
+Windows::
++
+--
+[source,shell,subs="attributes+"]
+----
+SET MC_CLASSPATH="/path/to/an/extra.jar;/path/to/an/otherextra.jar"
+mc-start.cmd 
+----
+--
+====
 
 [[starting-with-jar-file]]
 === Using the Command Line
@@ -86,22 +236,50 @@ java -jar hazelcast-management-center-{full-version}.jar
 Instead of starting at the command line, you can
 deploy the Management Center to your application server (Tomcat, Jetty, etc.).
 
-== SNAPSHOT versions
+== Snapshot Versions
 
-If you want to use the most recent development (snapshot) version of Management Center, then you can run it by using the `latest-snapshot`
-tag in Docker:
+Development versions of an upcoming release are available as snapshots. To use the most recent snapshot version of Management Center, use the following:
 
+- Docker:
++
 [source,bash,subs="attributes+"]
 ----
 docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
 ----
 
-Alternatively, you can download it from https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip
-or https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz .
+- Binary packages:
+** link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip[Download ZIP]
+** link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz[Download TAR]
 
-In these cases, it can be useful to query the build information to be able to tell what revision are you using.
-You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`.
-This endpoint returns JSON.
+- Package managers:
+** Homebrew
++
+[source,bash,subs="attributes+"]
+----
+brew tap hazelcast/hz
+brew install hazelcast-management-center@{full-version}
+----
+** Linux
++
+.Debian
+[source,shell]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian snapshot main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast-management-center
+----
++
+.RPM
+[source,shell]
+----
+wget https://repository.hazelcast.com/rpm/snapshot/hazelcast-rpm.repo -O hazelcast-snapshot-rpm.repo
+sudo mv hazelcast-snapshot-rpm.repo /etc/yum.repos.d/
+sudo yum install hazelcast-management-center
+----
+
+
+When you use a snapshot version, it can be useful to query the build information to be able to tell what revision you are using.
+You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`. This endpoint returns JSON.
 
 == Next Steps
 
