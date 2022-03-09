@@ -134,9 +134,9 @@ hz-mc -V
 ----
 +
 You should the version of Management Center.
+// end::cli[]
 
 For more information about the package manager, see the link:https://github.com/hazelcast/hazelcast-management-center-packaging[GitHub repository].
-// end::cli[]
 
 [[binary]]
 == Using Binary Packages
