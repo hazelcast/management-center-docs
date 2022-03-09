@@ -18,10 +18,10 @@ monitor cluster statistics from a JMX interface and Prometheus.
 [[os-requirements]]
 == Requirements
 
-You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
+You need Java Runtime Environment 1.8 or later to run Management Center.
 
 Management Center uses the RocksDB library to store metrics
-data on disk. Because of that dependency, Mac and Windows users must do one of the following:
+data on disk. Because of this dependency, Mac and Windows users must do one of the following:
 
 * Use the official Management Center docker image.
 * xref:deploy-manage:historical-metrics.adoc#disabling-metrics-persistence[Disable metrics persistence].
@@ -32,12 +32,28 @@ data on disk. Because of that dependency, Mac and Windows users must do one of t
 
 === Hazelcast Compatibility
 
-Management Center supports Hazelcast 5.0.x and Hazelcast IMDG 4.2.x clusters.
+Management Center supports the following versions of Hazelcast:
+
+[cols="1a,1a"]
+|===
+|Product
+|Supported versions
+
+|Hazelcast Platform
+|
+5.1.x
+
+5.0.x
+
+|Hazelcast IMDG
+|4.2.x
+
+|===
 
 [[browser-compatibility]]
 === Browser Compatibility
 
-Hazelcast Management Center is tested and works on the following browsers:
+Management Center supports the following browsers:
 
 * Last two versions of Chrome at the time of release
 * Last two versions of Firefox at the time of release
@@ -59,25 +75,23 @@ Experimental support for AIX is provided as well, with the following prerequisit
 
 == Licensing
 
-If you don't have a license, you can use Management Center to monitor clusters of up to a maximum of three members.
-
-If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
-
-A valid Management Center license is required for:
+A valid Enterprise license for Management Center is required for the following features:
 
 * Clustered JMX
-* Clustered REST (API)
-* Cluster Client Filtering
-* Prometheus Exporter
+* Clustered REST API
+* Cluster client filtering
+* Prometheus exporter
 * Configuration healthcheck
 
-And some Management Center features rely on your Hazelcast Platform's Enterprise capabilities:
+A valid Enterprise license for Hazelcast members is required for the following features:
 
-* WAN Replication
+* WAN replication
 * Persistence (Hot Restart)
-* Rolling Upgrade
+* Rolling upgrade
 
-You need to have a valid license for your Hazelcast Platform to be able to manage and monitor the above.
+If you don't have a license, you can use non-licensed features to monitor clusters of up to a maximum of three members.
+
+If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
 
 == Support
 
