@@ -66,7 +66,6 @@ the https://tools.ietf.org/html/rfc4180[RFC 4180 format] or as a JSON file.
 
 In the *History* tab, you can see the history of query execution.
 The history holds the last one hundred executed queries.
-Each row contains *Execution Time*, *Execution Status* and *Query* values.
 You can re-execute any query from the history by pushing a button in the *Execute* column.
 
 image:ROOT:SQLBrowserHistoryTab.png[A history of executed queries]
