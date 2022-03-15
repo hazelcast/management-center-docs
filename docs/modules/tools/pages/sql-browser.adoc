@@ -12,7 +12,7 @@ If a map contains domain objects, the classes for those objects must be on the c
 
 image:ROOT:SQLBrowserMenu.png[SQL Browser Toolbar Icon]
 
-Click **SQL Browser** in the toolbar.
+Click *SQL Browser* in the toolbar.
 
 image:ROOT:SQLBrowserWindow.png[SQL Browser Window]
 
@@ -59,15 +59,15 @@ NOTE: This mode is only for displaying the results of streaming SQL queries.
 
 == Exporting Query Results
 
-You can use **Export** to export the query result as a CSV file in
+You can use *Export* to export the query result as a CSV file in
 the https://tools.ietf.org/html/rfc4180[RFC 4180 format] or as a JSON file.
 
 == Viewing Executed SQL Queries
 
-In the **History** tab, you can see the history of query execution.
+In the *History* tab, you can see the history of query execution.
 The history holds the last one hundred executed queries.
-Each row contains **Execution Time**, **Execution Status** and **Query** values.
-You can re-execute any query from the history by pushing a button in the **Execute** column.
+Each row contains *Execution Time*, *Execution Status* and *Query* values.
+You can re-execute any query from the history by pushing a button in the *Execute* column.
 
 image:ROOT:SQLBrowserHistoryTab.png[A history of executed queries]
 
@@ -90,7 +90,7 @@ SINK INTO my_first_map VALUES
 ('2', 'Mary'),
 ('3', 'Jane');
 ----
-. Close the SQL browser and go to **Storage** > **Maps** to verify that `my_first_map` is created.
+. Close the SQL browser and go to *Storage* > *Maps* to verify that `my_first_map` is created.
 +
 image:sql-creates-map.png[Map is Created using SQL Browser]
 
