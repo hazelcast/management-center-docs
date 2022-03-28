@@ -1,0 +1,14 @@
+= Countdown Latches
+
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:icountdownlatch.adoc[countdown latches] in your cluster
+by clicking on the **Countdown Latches** menu item in the left menu.
+
+image:ROOT:CountdownLatches.png[Countdown Latches View]
+
+A countdown latch has three metrics:
+
+- *Round*: Number of the current round. This number is incremented when the countdown latch reaches 0 and is initialized with a new count.
+- *Count*: Initial countdown.
+- *Remaining*: Remaining number of expected countdowns.
+
+You can sort the table by clicking on the column headers.

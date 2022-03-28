@@ -19,6 +19,9 @@ include::data-structures:partial$nav.adoc[]
 .Streaming
 include::monitor-streaming:partial$nav.adoc[]
 
+.CP Subsystem
+include::cp-subsystem:partial$nav.adoc[]
+
 .Troubleshoot
 include::troubleshoot:partial$nav.adoc[]
 

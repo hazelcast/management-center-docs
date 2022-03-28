@@ -29,7 +29,7 @@ The toolbar has the following elements:
 
 The menu on the left-hand side lists the
 data structures and jobs in your clusters, cluster members and clients connected to
-the cluster (numbers in square brackets show the instance count for each entity). You can also see an overall state of your cluster,
+the cluster (numbers on the right show the instance count for each entity). You can also see an overall state of your cluster,
 execute commands and scripts, and perform user/license operations using this menu.
 
 image::ROOT:LeftMenu.png[Management Center Left Menu]
@@ -47,3 +47,4 @@ manage streaming jobs.
 the executor services in your cluster.
 * **Messaging**: Includes menu items to monitor queues and
 topics in your cluster.
+* **CPSubsystem**: Includes menu items to monitor CP members and data structures such as Atomic Longs, Semaphores, and Fenced Locks in your cluster.
