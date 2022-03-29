@@ -278,7 +278,7 @@ hz-mc start -Dhazelcast.mc.jmx.enabled=true
 
 |[[hazelcast-mc-jmx-host]]hazelcast.mc.jmx.host
 
-MC_JMX_HOST_NAME
+MC_JMX_HOST
 |Hostname/IP address of the JMX host machine. This is used by the JMX client to connect back into JMX, so the given host must be accessible from the host machine that runs the JMX client. Default: Server's hostname.
 |
 [source,bash,subs="attributes+"]
@@ -318,7 +318,7 @@ hz-mc start -Dhazelcast.mc.jmx.rmi.port=9001
 
 |[[hazelcast-mc-jmx-ssl]]hazelcast.mc.jmx.ssl
 
-MC_JMX_SSL_ENABLED
+MC_JMX_SSL
 |Whether TLS/SSL is enabled for communication between the JMX interface and JMX clients. Default: `false`.
 |
 [source,bash,subs="attributes+"]
@@ -380,7 +380,7 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=JKS
 
 |[[hazelcast-mc-ldap-timeout]]hazelcast.mc.ldap.timeout
 
-MC_LDAP_CONN_TIMEOUT
+MC_LDAP_TIMEOUT
 |Timeout in milliseconds for Active Directory and LDAP search queries. Default: `3000`.
 |
 [source,bash,subs="attributes+"]
