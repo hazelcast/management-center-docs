@@ -1,0 +1,4 @@
+= Cluster Connections API
+:page-enterprise: true
+
+swagger_ui::{attachmentsdir}/cluster-connections-api.yaml[]
