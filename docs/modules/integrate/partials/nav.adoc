@@ -7,3 +7,4 @@
 ** xref:integrate:clustered-rest.adoc[Get Started]
 ** xref:integrate:client-filtering.adoc[]
 ** xref:integrate:cluster-metrics.adoc[]
+** xref:integrate:cluster-connections.adoc[]
