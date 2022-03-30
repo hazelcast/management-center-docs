@@ -14,7 +14,7 @@ content:
     branches: HEAD
     start_path: docs
   - url: https://github.com/hazelcast/management-center
-    branches: [master]
+    branches: [5.1.z]
     start_path: openapi/external
 ui: 
   bundle:
@@ -26,7 +26,7 @@ antora:
       trace: true
       componentversions:
         - name: management-center
-          version: '5.2-snapshot'
+          version: '5.1'
           mappings:
             - module: integrate
               family: attachment
@@ -36,7 +36,7 @@ antora:
                     - '**/hazelcast/management-center'
                 branch:
                   includes:
-                    - 'master'
+                    - '5.1.z'
 asciidoc:
   attributes:
     page-pagination: true
