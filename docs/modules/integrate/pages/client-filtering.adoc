@@ -1,4 +1,5 @@
 = Client Filtering API
 :page-enterprise: true
+:page-layout: swagger
 
 swagger_ui::{attachmentsdir}/client-api.yaml[]
