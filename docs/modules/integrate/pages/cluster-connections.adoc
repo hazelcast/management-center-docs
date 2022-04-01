@@ -1,4 +1,5 @@
 = Cluster Connections API
 :page-enterprise: true
+:page-layout: swagger
 
 swagger_ui::{attachmentsdir}/cluster-connections-api.yaml[]

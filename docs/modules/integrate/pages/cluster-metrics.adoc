@@ -1,4 +1,5 @@
 = Cluster Metrics API
 :page-enterprise: true
+:page-layout: swagger
 
 swagger_ui::{attachmentsdir}/cluster-metrics-api.yaml[]
