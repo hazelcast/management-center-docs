@@ -1,0 +1,23 @@
+= 5.1.3 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.1.2 and 5.1.3 of Hazelcast Management Center (MC).
+
+{description}
+
+[[nf-513]]
+== New Features
+
+* Added Cluster Management API to manage cluster connection settings while MC is running. [MC-1348]
+
+[[enh-513]]
+== Enhancements
+
+* SQL Browser: show the reason why SQL mapping suggestion cannot be generated for a map with NATIVE storage. [MC-1448]
+* SQL Browser: allow the schema exploration tab to be hidden/shown. [MC-1395]
+* Show a meaningful log message when there is a file permission issue with RocksDB. [MC-1432]
+
+[[fixes-513]]
+== Fixes
+
+* SQL Browser: hide the schema exploration tab when connected to 5.0 cluster. [MC-1418]
+* Fixed the UI behavior when node limit is exceeded in unlicensed MC. [MC-1397]
+* Fixed various Hazelcast Cloud integration issues. [MC-1427]
