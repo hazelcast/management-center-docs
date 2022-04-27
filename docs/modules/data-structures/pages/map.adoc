@@ -155,7 +155,7 @@ From left to right, this table lists the following:
 |Memory cost of backup entries held by the member.
 
 |Events
-|Number of events received by the member.
+|Number of map events received by the member, including near cache invalidation and new entries.
 
 |Hits
 |Number of hits (reads) of the entries that are owned by
