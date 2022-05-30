@@ -157,7 +157,9 @@ To start Management Center from the binary package, you have the following optio
 * Use the scripts that come with the download package.
 * Deploy the WAR file on your Java application's server/servlet container.
 
-For all the starting options you can preconfigure a cluster in Management Center by setting the following environment variables:
+NOTE: You cannot use Management Center as a library. Management Center runs as a standalone web application.
+
+For all the starting options you can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
 * `MC_DEFAULT_CLUSTER_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
