@@ -537,6 +537,16 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 
 In this example, the `/metrics` endpoint would be available on port 2222: `\http://localhost:2222/metrics`.
 
+|[[hazelcast-mc-rest-enabled]]hazelcast.mc.rest.enabled
+
+MC_REST_ENABLED
+|Enable xref:integrate:clustered-rest.adoc[clustered REST] endpoints. Default: `false`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.rest.enabled=true
+----
+
 |[[hazelcast-mc-security-dictionary-minWordLength]]hazelcast.mc.security.dictionary.minWordLength
 
 MC_SECURITY_DICTIONARY_MIN_WORD_LENGTH
@@ -546,7 +556,6 @@ MC_SECURITY_DICTIONARY_MIN_WORD_LENGTH
 ----
 hz-mc start -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
      -Dhazelcast.mc.security.dictionary.minWordLength=3 \
-    
 ----
 
 |[[hazelcast-mc-security-dictionary-path]]hazelcast.mc.security.dictionary.path
@@ -557,7 +566,6 @@ MC_SECURITY_DICTIONARY_PATH
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
-    
 ----
 
 |[[hazelcast-mc-session-timeout-seconds]]hazelcast.mc.session.timeout.seconds
