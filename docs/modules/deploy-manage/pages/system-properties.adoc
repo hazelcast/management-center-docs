@@ -540,7 +540,7 @@ In this example, the `/metrics` endpoint would be available on port 2222: `\http
 |[[hazelcast-mc-rest-enabled]]hazelcast.mc.rest.enabled
 
 MC_REST_ENABLED
-|Enabled clustered REST endpoints. Default: `false`.
+|Enable clustered REST endpoints. Default: `false`.
 |
 [source,bash,subs="attributes+"]
 ----
