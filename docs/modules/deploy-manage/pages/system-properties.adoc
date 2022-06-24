@@ -493,6 +493,16 @@ java -jar -Dhazelcast.mc.prometheusExporter.enabled=true \
 
 In this example, the `/metrics` endpoint would be available on port 2222: `\http://localhost:2222/metrics`.
 
+|[[hazelcast-mc-rest-enabled]]hazelcast.mc.rest.enabled
+
+MC_REST_ENABLED
+|Enable xref:integrate:clustered-rest.adoc[clustered REST] endpoints. Default: `false`.
+|
+[source,bash,subs="attributes+"]
+----
+java -Dhazelcast.mc.rest.enabled=true -jar hazelcast-management-center-{full-version}.jar
+----
+
 |[[hazelcast-mc-security-dictionary-minWordLength]]hazelcast.mc.security.dictionary.minWordLength
 
 PASSWORD_DICTIONARY_MIN_WORD_LENGTH
