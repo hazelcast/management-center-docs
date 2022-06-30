@@ -6,40 +6,38 @@
 
 Here are some example of what you can do with Management Center:
 
-* Monitor the performance of your clusters.
+* Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
 * See statistical information about your members, clients, and data structures.
 * Execute SQL queries on your clusters.
 * Perform administrative tasks such as identifying and diagnosing issues in clusters.
-
-You can also enable the REST API to use REST calls to return the
-information presented in Management Center. You can also
-monitor cluster statistics from a JMX interface and Prometheus.
+* Use REST API endpoints to return the
+information presented in Management Center. 
 
 == Requirements
 
-You need Java Runtime Environment 1.8 or later to run Hazelcast Management Center.
+You must meet the following requirements to be able to run Management Center
 
-Management Center uses RocksDB library to store metrics
-data on disk. Because of that dependency, macOS users have to be on at least 10.15
-version (Catalina) and Windows users need to have Microsoft Visual C++ 2015 Redistributable
-installed. Otherwise, you can use the official Management Center docker image.
+=== Supported Java Virtual Machines
 
-=== Hazelcast Compatibility
+Hazelcast supports the latest and long-term support (LTS) versions of the Java Development Kit (JDK). However, the JVM in some JDKs may not be compatible with Hazelcast.
 
-Management Center supports Hazelcast 5.0.x and Hazelcast IMDG 4.2.x clusters.
+Management Center {full-version} has been tested against the following JDKs.
 
-[[browser-compatibility]]
-=== Browser Compatibility
+TIP: If you install Hazelcast with Docker or a package manager, it comes with a supported JDK.
 
-Hazelcast Management Center is tested and works on the following browsers:
+include::{page-latest-supported-hazelcast}@hazelcast:deploy:supported-jvms.adoc[tag=supported-jvms]
 
-* Last two versions of Chrome at the time of release
-* Last two versions of Firefox at the time of release
-* Latest Safari
-* Internet Explorer 11
-* Latest Microsoft Edge
+=== Mac and Windows System Requirements
 
-=== System Requirements
+Management Center uses the RocksDB library to store metrics
+data on disk. Because of this dependency, Mac and Windows users must do one of the following:
+
+* Use the official Management Center docker image.
+* Meet the following requirements:
+** Mac: Use at least version 10.15 version of Catalina.
+** Windows: Install the Microsoft Visual C++ 2015 redistributable.
+
+=== Linux System Requirements
 
 Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
 
@@ -50,6 +48,21 @@ Experimental support for AIX is provided as well, with the following prerequisit
 * `glibc` version is 2.17 or newer
 * JRE 1.8 or newer is installed
 * `libsnappy` 1.8.0 or newer is installed
+
+=== Hazelcast Cluster Compatibility
+
+Management Center supports Hazelcast 5.0.x and Hazelcast IMDG 4.2.x clusters.
+
+[[browser-compatibility]]
+== Browser Compatibility
+
+Hazelcast Management Center is tested and works on the following browsers:
+
+* Last two versions of Chrome at the time of release
+* Last two versions of Firefox at the time of release
+* Latest Safari
+* Internet Explorer 11
+* Latest Microsoft Edge
 
 == Licensing
 
@@ -85,3 +98,7 @@ Support is provided via the following channels:
 * https://slack.hazelcast.com/[Hazelcast community Slack]
 (discuss anything related to Hazelcast and Management Center with other
 Hazelcast users and Hazelcast developers)
+
+== Get Started
+
+xref:get-started.adoc[].
