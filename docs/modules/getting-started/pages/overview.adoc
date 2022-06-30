@@ -6,19 +6,29 @@
 
 Here are some example of what you can do with Management Center:
 
-* Monitor the performance of your clusters.
+* Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
 * See statistical information about your members, clients, and data structures.
 * Execute SQL queries on your clusters.
 * Perform administrative tasks such as identifying and diagnosing issues in clusters.
-
-You can also enable the REST API to use REST calls to return the
-information presented in Management Center. You can also
-monitor cluster statistics from a JMX interface and Prometheus.
+* Use REST API endpoints to return the
+information presented in Management Center. 
 
 [[os-requirements]]
 == Requirements
 
-You need Java Runtime Environment 1.8 or later to run Management Center.
+You must meet the following requirements to be able to run Management Center
+
+=== Supported Java Virtual Machines
+
+Hazelcast supports the latest and long-term support (LTS) versions of the Java Development Kit (JDK). However, the JVM in some JDKs may not be compatible with Hazelcast.
+
+Management Center {full-version} has been tested against the following JDKs.
+
+TIP: If you install Hazelcast with Docker or a package manager, it comes with a supported JDK.
+
+include::{page-latest-supported-hazelcast}@hazelcast:deploy:supported-jvms.adoc[tag=supported-jvms]
+
+=== Mac and Windows System Requirements
 
 Management Center uses the RocksDB library to store metrics
 data on disk. Because of this dependency, Mac and Windows users must do one of the following:
@@ -29,8 +39,19 @@ data on disk. Because of this dependency, Mac and Windows users must do one of t
 ** Mac: Use at least version 10.15 version of Catalina.
 ** Windows: Install the Microsoft Visual C++ 2015 redistributable.
 
+=== Linux System Requirements
 
-=== Hazelcast Compatibility
+Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
+
+Experimental support for AIX is provided as well, with the following prerequisites:
+
+* AIX version is 7.2 or newer
+* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
+* `glibc` version is 2.17 or newer
+* JRE 1.8 or newer is installed
+* `libsnappy` 1.8.0 or newer is installed
+
+=== Hazelcast Cluster Compatibility
 
 Management Center supports the following versions of Hazelcast:
 
@@ -54,7 +75,7 @@ Management Center supports the following versions of Hazelcast:
 |===
 
 [[browser-compatibility]]
-=== Browser Compatibility
+== Browser Compatibility
 
 Management Center supports the following browsers:
 
@@ -63,18 +84,6 @@ Management Center supports the following browsers:
 * Latest Safari
 * Internet Explorer 11
 * Latest Microsoft Edge
-
-=== System Requirements
-
-Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
-
-Experimental support for AIX is provided as well, with the following prerequisites:
-
-* AIX version is 7.2 or newer
-* https://www.ibm.com/support/pages/aix-toolbox-linux-applications-overview[AIX Toolbox] is installed
-* `glibc` version is 2.17 or newer
-* JRE 1.8 or newer is installed
-* `libsnappy` 1.8.0 or newer is installed
 
 == Licensing
 
@@ -108,3 +117,7 @@ Support is provided via the following channels:
 * https://slack.hazelcast.com/[Hazelcast community Slack]
 (discuss anything related to Hazelcast and Management Center with other
 Hazelcast users and Hazelcast developers)
+
+== Get Started
+
+xref:get-started.adoc[].
