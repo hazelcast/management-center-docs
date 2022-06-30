@@ -12,6 +12,9 @@ content:
   - url: .
     branches: HEAD
     start_path: docs
+  - url: https://github.com/hazelcast/hz-docs
+    branches: [main]
+    start_path: docs
   - url: https://github.com/hazelcast/management-center
     branches: [master]
     start_path: openapi/external
