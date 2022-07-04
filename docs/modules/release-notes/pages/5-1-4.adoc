@@ -1,0 +1,16 @@
+= 5.1.4 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.1.3 and 5.1.4 of Hazelcast Management Center (MC).
+
+{description}
+
+[[enh-514]]
+== Enhancements
+
+* Jet metrics storage stores only Jet-related metrics. [MC-1532]
+
+[[fixes-514]]
+== Fixes
+
+* Fixed the disabled "Upgrade Cluster" button after successfull rolling upgrade. [MC-1569]
+* Fixed an exception on `hz-mc start`. [MC-1403]
+* Fixed various Hazelcast Cloud integration issues. [MC-1591]
