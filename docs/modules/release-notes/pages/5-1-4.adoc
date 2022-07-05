@@ -11,6 +11,6 @@
 [[fixes-514]]
 == Fixes
 
-* Fixed the disabled "Upgrade Cluster" button after successfull rolling upgrade. [MC-1569]
+* The *Upgrade Cluster* button is no longer disabled after you upgrade your members' codebase version during a rolling upgrade. [MC-1569]
 * Fixed an exception on `hz-mc start`. [MC-1403]
 * Fixed various Hazelcast Cloud integration issues. [MC-1591]
