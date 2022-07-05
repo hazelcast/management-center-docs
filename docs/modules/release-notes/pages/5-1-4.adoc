@@ -1,0 +1,12 @@
+= 5.1.4 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.1.3 and 5.1.4 of Hazelcast Management Center (MC).
+
+{description}
+
+[[fixes-514]]
+== Fixes
+
+* The *Upgrade Cluster* button is no longer disabled after you upgrade your members' codebase version during a rolling upgrade. [MC-1569]
+* The `hz-mc start`command no longer throws ClassNotFoundException. [MC-1403]
+* MC no longer stores unrelated metrics with Jet metrics, leading to less memory consumption. [MC-1532]
+* Fixed various Hazelcast Cloud integration issues. [MC-1591]
