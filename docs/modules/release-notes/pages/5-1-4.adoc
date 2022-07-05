@@ -3,14 +3,10 @@
 
 {description}
 
-[[enh-514]]
-== Enhancements
-
-* Jet metrics storage stores only Jet-related metrics. [MC-1532]
-
 [[fixes-514]]
 == Fixes
 
 * The *Upgrade Cluster* button is no longer disabled after you upgrade your members' codebase version during a rolling upgrade. [MC-1569]
 * The `hz-mc start`command no longer throws ClassNotFoundException. [MC-1403]
+* MC no longer stores unrelated metrics with Jet metrics, leading to less memory consumption. [MC-1532]
 * Fixed various Hazelcast Cloud integration issues. [MC-1591]
