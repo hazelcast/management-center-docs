@@ -9,4 +9,4 @@
 * The *Upgrade Cluster* button is no longer disabled after you upgrade your members' codebase version during a rolling upgrade. [MC-1569]
 * The `hz-mc start`command no longer throws ClassNotFoundException. [MC-1403]
 * MC no longer stores unrelated metrics with Jet metrics, leading to less memory consumption. [MC-1532]
-* Fixed various Hazelcast Cloud integration issues. [MC-1591]
+* Fixed various xref:cloud:ROOT:overview.adoc[{hazelcast-cloud}] integration issues. [MC-1591]
