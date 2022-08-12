@@ -57,9 +57,6 @@ represents an opened file in the operating system.
 |OS Open File Desc
 |Number of open file descriptors.
 
-|Intel® Optane™ DC
-|Whether the cluster uses Intel® Optane™ DC memory. See xref:{page-latest-supported-hazelcast}@hazelcast:storage:persistence-on-intel.adoc[] in the Platform documentation.
-
 |===
 
 == Filtering Members
