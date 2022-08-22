@@ -1,15 +1,14 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.2-snapshot'
+version: '5.2-beta-1'
 # Version in the version selector
-display_version: '5.2-SNAPSHOT'
+display_version: '5.2-BETA-1'
 prerelease: true
 asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '5.2-SNAPSHOT'
-    snapshot: true
+    full-version: '5.2-BETA-1'
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.2-snapshot'
