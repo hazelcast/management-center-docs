@@ -6,7 +6,7 @@
 [[nf-52BETA1]]
 == New Features
 
-* SQL Browser: separate workflows for batch and streaming queries. [MC-1620]
+* SQL Browser: separate workflows for batch and streaming queries for 5.2 Hazelcast. [MC-1620]
 * SQL Browser: editor autocomplete support. [MC-1408]
 * SQL Browser: connector wizard for Kafka connector. [MC-1435]
 * SQL Browser: connector wizard for File connector. [MC-1435]
@@ -14,7 +14,7 @@
 * Introduced cluster connection diagnosis functionality. [MC-1332]
 * Added Map Index statistics table. [MC-153]
 * Added a chart for Tiered Storage usage monitoring. [MC-1478]
-* Added support for Command Line Client (CLC). [MV-1548]
+* Added support for Command Line Client (CLC). [MC-1548]
 
 [[enh-52BETA1]]
 == Enhancements
@@ -41,7 +41,7 @@
 
 * MC no longer fails when receives malformed client stats. [MC-1639]
 * MC no longer fails when Node limit is exceeded. [MC-1397]
-* Fixed OOM for too many Jet metrics. [MC-1532]
+* Fixed OOME for too many Jet metrics. [MC-1532]
 * Fixed disabled Rolling Upgrade button issue. [MC-1569]
 * Fixed data recovery policy overlap on Persistence screen. [MC-1555]
 * Fixed MC error when AP member joins cluster with CP members. [MC-1502]
