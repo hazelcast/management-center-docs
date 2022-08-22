@@ -11,7 +11,7 @@ asciidoc:
     full-version: '5.2-beta-1'
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.2-beta-1'
+    page-latest-supported-hazelcast: '5.2-BETA-1'
     page-toclevels: 1
 nav:
   - modules/ROOT/nav.adoc
