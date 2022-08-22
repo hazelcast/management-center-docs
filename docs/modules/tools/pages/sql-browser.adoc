@@ -47,6 +47,14 @@ When the query is executed, the results are displayed under *Query Results*:
 .Example query results
 image:ROOT:SQLBrowserQueryResultTab.png[A list of query results]
 
+=== Map browser
+
+If you run *simple SELECT queries (without JOIN and AGGREGATION)* over IMap Mappings then you can get access to xref:data-structures:map.adoc#map-browser[query medata].
+image:ROOT:SQLBrowserQueryResultTabWithClosedMapBrowser.png[A list of query results with chevron buttons]
+
+By clicking on *chevron button* at the beginning of each SQL result table row, metadata view opens below a row
+image:ROOT:SQLBrowserQueryResultTabWithOpenMapBrowser.png[A list of query results with metada view]
+
 You can view results in two modes:
 
 * *Show first 1000 records*: Display only the first 1000 records that are returned by the query.
