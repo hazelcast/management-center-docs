@@ -1,0 +1,50 @@
+= 5.2-BETA-1 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.1 and 5.2-BETA-1 of Hazelcast Management Center (MC).
+
+{description}
+
+[[nf-52BETA1]]
+== New Features
+
+* SQL Browser: separate workflows for batch and streaming queries for 5.2 Hazelcast. [MC-1620]
+* SQL Browser: editor autocomplete support. [MC-1408]
+* SQL Browser: connector wizard for Kafka connector. [MC-1435]
+* SQL Browser: connector wizard for File connector. [MC-1435]
+* Introduced customizable tables, in terms of selected columns and order. [MC-1074]
+* Introduced cluster connection diagnosis functionality. [MC-1332]
+* Added Map Index statistics table. [MC-153]
+* Added a chart for Tiered Storage usage monitoring. [MC-1478]
+* Added support for Command Line Client (CLC). [MC-1548]
+
+[[enh-52BETA1]]
+== Enhancements
+
+* SQL Browser: get MapBrowser information for a record in SQL query result. [MC-1438]
+* SQL Browser: schema panel can be hidden/shown. [MC-1395]
+* SQL Browser: an explanation why suggested mapping can't be provided. [MC-1448]
+* SQL Browser: increased speed of Schema tab population. [MC-1448]
+* Updated RocksDB version to support Apple M1. [MC-1291]
+* Increased log level for Jetty classes that log HTTP request information. [MC-1625]
+* Introduced a property to configure SQL export cell size limit. [MC-1609]
+* Improved logging for RocksDB filesystem permission errors. [MC-1432]
+* Improved Time Travel usability. [MC-1414]
+* Time Travel is now disabled when metrics persistence is disabled. [MC-1463]
+* Proper error message when Console is disabled on member. [MC-1434]
+* Removed excessive Spring framework  warnings. []
+* MC no longer starts RocksDB for metrics persistence on unsupported operating systems (currently z/os). [MC-1486]
+* Added progress indicator for Cluster remove operation. [MC-1471]
+* TTL and Max Idle in Map Browser are shown as Unlimited if set to 0 or more than 1000 years. [MC-1392]
+
+
+[[fixes-52BETA1]]
+== Fixes
+
+* MC no longer fails when receiving malformed client stats. [MC-1639]
+* MC no longer fails when the node limit is exceeded. [MC-1397]
+* MC no longer throws OOME when it receives lots of Jet metrics. [MC-1532]
+* Fixed disabled *Rolling Upgrade* button issue. [MC-1569]
+* Fixed data recovery policy overlap on the *Persistence* page. [MC-1555]
+* Fixed MC error when AP member joins cluster with CP members. [MC-1502]
+* kbd:[Ctrl-C] now kills the MC container on Linux. [MC-1423]
+* Fixed *Preview* button behavior on the *Update config* page. [MC-1394]
+* Fixed an error when multiple persistent memory directories are configured. [MC-1379]
