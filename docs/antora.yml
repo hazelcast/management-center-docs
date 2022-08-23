@@ -1,7 +1,7 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.2'
+version: '5.2-beta-1'
 # Version in the version selector
 display_version: '5.2-BETA-1'
 prerelease: true
