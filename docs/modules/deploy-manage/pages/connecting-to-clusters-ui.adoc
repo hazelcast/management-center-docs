@@ -146,18 +146,18 @@ To connect to another cluster, you can repeat these steps with a different confi
 
 == Cluster Connection Diagnosis
 
-If Management Center can't connect to a cluster, you can run cluster connection diagnostics by clicking on the
+In case Management Center could not connect to a cluster, you can run the cluster connection diagnostics by clicking on the
 **DIAGNOSE** button.
 
 image:ROOT:DiagnoseButton.png[Diagnose button]
 
 Management Center runs a bunch of connectivity checks including:
 
-- whether the hostname can be resolved;
-- whether connection ports are open;
-- whether the configured cluster name matches the one configured on a member;
-- whether Management Center can authenticate to members;
-- whether Management Center has permissions to manage the cluster;
+- whether the hostname can be resolved
+- whether the connection ports are open
+- whether the configured cluster name matches the one configured on a member
+- whether Management Center can be authenticated by the members
+- whether Management Center has permissions to manage the cluster.
 
 image:ROOT:ConnectionDiagnosis.png[Cluster connection diagnosis result]
 
