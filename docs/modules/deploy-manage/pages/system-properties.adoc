@@ -722,6 +722,36 @@ Default: `false`.
 hz-mc start -Dhazelcast.mc.useExistingKeyStore=true
 ----
 
+|[[hazelcast-mc-sql-max-cell-lenght]]hazelcast.mc.sql.max-cell-length
+MC_MC_SQL_MAX_CELL_LENGTH
+|Max length of a cell in SQL query result, longer values are truncated.
+Default: `2048`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.sql.max-cell-length=10000
+----
+
+|[[hazelcast-mc-sql-max-row-count]]hazelcast.mc.sql.max-row-count
+MC_MC_SQL_MAX_CELL_LENGTH
+|Max number of rows returned by SQL batch query.
+Default: `1000`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.sql.max-row-count=10000
+----
+
+|[[hazelcast-mc-ui-asynctablethreshold]]hazelcast.mc.ui.asyncTableThreshold
+MC_UI_ASYNC_TABLE_THRESHOLD
+|Tables bigger than the threshold are loaded asynchronously. You can't sort an asynchronous table.
+Default: `500`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dazelcast.mc.ui.asyncTableThreshold=1000
+----
+
 |===
 
 [[client-config]]
