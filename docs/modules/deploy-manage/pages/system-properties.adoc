@@ -293,7 +293,7 @@ MC_JMX_SSL_MUTUAL_AUTH_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.jmx.mutualAuthentication=false
+hz-mc start -Dhazelcast.mc.jmx.ssl.mutualAuthentication=false
 ----
 
 |[[hazelcast-mc-jmx-port]]hazelcast.mc.jmx.port
@@ -316,14 +316,24 @@ MC_JMX_RMI_PORT
 hz-mc start -Dhazelcast.mc.jmx.rmi.port=9001
 ----
 
-|[[hazelcast-mc-jmx-ssl]]hazelcast.mc.jmx.ssl
+|[[hazelcast-mc-jmx-ssl-enabled]]hazelcast.mc.jmx.ssl.enabled
 
 MC_JMX_SSL_ENABLED
 |Whether TLS/SSL is enabled for communication between the JMX interface and JMX clients. Default: `false`.
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.jmx.ssl=true
+hz-mc start -Dhazelcast.mc.jmx.ssl.enabled=true
+----
+
+|[[hazelcast-mc-jmx-ssl-protocol]]hazelcast.mc.jmx.ssl.protocol
+
+MC_JMX_SSL_PROTOCOL
+|The standard name of the requested SSL protocol. Default: `TLS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.protocol=SSLv3
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystore]]hazelcast.mc.jmx.ssl.keyStore
@@ -350,12 +360,29 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword
 hz-mc start -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore
 ----
 
+|[[hazelcast-mc-jmx-ssl-truststoretype]]hazelcast.mc.jmx.ssl.trustStoreType
+|Type of the truststore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.trustStoreType=DKS
+----
+
 |[[hazelcast-mc-jmx-ssl-truststorepassword]]hazelcast.mc.jmx.ssl.trustStorePassword
 |Password for the truststore. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword
+----
+
+|[[hazelcast-mc-jmx-ssl-trustmanageralgorithm]]hazelcast.mc.jmx.ssl.trustManagerAlgorithm
+|Name of the algorithm based on which the authentication keys are provided. System default is used
+if none is provided. You can find out the default by calling the `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.trustManagerAlgorithm=SunX509
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystoretype]]hazelcast.mc.jmx.ssl.keyStoreType
