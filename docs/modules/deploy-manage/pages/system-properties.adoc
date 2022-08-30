@@ -481,6 +481,26 @@ MC_METRICS_CONSUMER_THREAD_POOL_SIZE
 hz-mc start -Dhazelcast.mc.metrics.consumer.thread.pool.size=5
 ----
 
+|[[hazelcast-mc-metrics-reschedule-delay-millis]]`hazelcast.mc.metrics.reschedule.delay.millis`
+MC_METRICS_RESCHEDULE_DELAY_MILLIS
+|Interval in milliseconds that Management Center waits before requesting metrics from cluster members.
+Default: `1000`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.metrics.reschedule.delay.millis=5000
+----
+
+|[[hazelcast-mc-jet-metrics-retentionsecs]]`hazelcast.mc.jet.metrics.retentionSecs`
+MC_JET_METRICS_RETENTION_SECS
+|Interval in seconds that Management Center holds Jet metrics in memory.
+Default: `3600`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jet.metrics.retentionSecs=7200
+----
+
 |[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
 
 MC_PERIODIC_HEALTHCHECK_ENABLED
