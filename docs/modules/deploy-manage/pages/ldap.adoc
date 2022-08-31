@@ -111,18 +111,8 @@ See xref:deploy-manage:mc-conf.adoc[] for more information.
 [[ldap-ssl]]
 == Enabling TLS/SSL for LDAP
 
-If your LDAP server is using `ldaps` (LDAP over SSL) protocol or the *Start TLS* operation, use the following system properties for your Management Center deployment:
-
-* `hazelcast.mc.ldap.ssl.trustStore`: Path to the truststore. This
-truststore needs to contain the public key of your LDAP server.
-* `hazelcast.mc.ldap.ssl.trustStorePassword`: Password of the truststore.
-* `hazelcast.mc.ldap.ssl.trustStoreType`: Type of the truststore. Its default value is JKS.
-* `hazelcast.mc.ldap.ssl.trustManagerAlgorithm`: Name of the algorithm
-based on which the authentication keys are provided. System default is used
-if none is provided. You can find out the default by calling the
-`javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
-
-See the xref:deploy-manage:system-properties.adoc#hazelcast-mc-ldap-ssl-protocol[SSL configuration options] for LDAP.
+If your LDAP server is using `ldaps` (LDAP over SSL) protocol or the *Start TLS* operation, use the command line parameters
+for your Management Center deployment xref:deploy-manage:system-properties.adoc#hazelcast-mc-ldap-ssl-protocol[LDAP SSL configuration options].
 
 [[password-encryption]]
 == Password Encryption
