@@ -112,7 +112,7 @@ based on which the authentication keys are provided. System default is used
 if none is provided. You can find out the default by calling the
 `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
 
-For all the Active Directory SSL configuration options, see xref:deploy-manage:system-properties.adoc[].
+See the xref:deploy-manage:system-properties.adoc#hazelcast-mc-ad-ssl-protocol[SSL configuration options] for Active Directory.
 
 == Next Steps
 
