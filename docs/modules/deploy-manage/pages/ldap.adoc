@@ -122,6 +122,8 @@ based on which the authentication keys are provided. System default is used
 if none is provided. You can find out the default by calling the
 `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
 
+For all the LDAP SSL configuration options, see xref:deploy-manage:system-properties.adoc[].
+
 [[password-encryption]]
 == Password Encryption
 
