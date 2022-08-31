@@ -520,6 +520,97 @@ MC_LDAP_SSL_TRUST_MANAGER_ALGORITHM
 hz-mc start -Dmc.ldap.ssl.trustManagerAlgorithm=SunX509 \
 ----
 
+|[[hazelcast-mc-ad-ssl-protocol]]hazelcast.mc.ad.ssl.protocol
+
+MC_AD_SSL_PROTOCOL
+|The standard name of the requested SSL protocol for AD connection. Default: `TLS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.protocol=SSLv3 \
+----
+
+|[[hazelcast-mc-ad-ssl-keystore]]hazelcast.mc.ad.ssl.keyStore
+
+MC_AD_SSL_KEY_STORE
+|Path to a keystore for AD SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStore=/some/dir/selfsigned.jks \
+----
+
+|[[hazelcast-mc-ad-ssl-keystoretype]]hazelcast.mc.ad.ssl.keyStoreType
+
+MC_AD_SSL_KEY_STORE_TYPE
+|Type of the keystore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStoreType=JKS \
+----
+
+|[[hazelcast-mc-ad-ssl-keystorepassword]]hazelcast.mc.ad.ssl.keyStorePassword
+
+MC_AD_SSL_KEY_STORE_PASSWORD
+|Password for the keystore for AD SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ad-ssl-keymanageralgorithm]]mc.ad.ssl.keyManagerAlgorithm
+
+MC_AD_SSL_KEY_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ad.ssl.keyManagerAlgorithm=SunX509 \
+----
+
+|[[hazelcast-mc-ad-ssl-truststore]]hazelcast.mc.ad.ssl.trustStore
+
+MC_AD_SSL_TRUST_STORE
+|Path to the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStore=/some/dir/truststore \
+
+----
+
+|[[hazelcast-mc-ldap-ssl-truststorepassword]]hazelcast.mc.ad.ssl.trustStorePassword
+
+MC_AD_SSL_TRUST_STORE_PASSWORD
+|Password for the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ad-ssl-truststoretype]]hazelcast.mc.ad.ssl.trustStoreType
+
+MC_AD_SSL_TRUST_STORE_TYPE
+|Type of the truststore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStoreType=DKS \
+----
+
+|[[hazelcast-mc-ad-ssl-trustmanageralgorithm]]mc.ad.ssl.trustManagerAlgorithm
+
+MC_AD_SSL_TRUST_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ad.ssl.trustManagerAlgorithm=SunX509 \
+----
+
 |[[starting-with-a-license]][[hazelcast-mc-license]]hazelcast.mc.license
 
 MC_LICENSE
