@@ -293,7 +293,7 @@ MC_JMX_SSL_MUTUAL_AUTH_ENABLED
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.jmx.mutualAuthentication=false
+hz-mc start -Dhazelcast.mc.jmx.ssl.mutualAuthentication=false
 ----
 
 |[[hazelcast-mc-jmx-port]]hazelcast.mc.jmx.port
@@ -316,17 +316,29 @@ MC_JMX_RMI_PORT
 hz-mc start -Dhazelcast.mc.jmx.rmi.port=9001
 ----
 
-|[[hazelcast-mc-jmx-ssl]]hazelcast.mc.jmx.ssl
+|[[hazelcast-mc-jmx-ssl-enabled]]hazelcast.mc.jmx.ssl.enabled
 
 MC_JMX_SSL_ENABLED
 |Whether TLS/SSL is enabled for communication between the JMX interface and JMX clients. Default: `false`.
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.jmx.ssl=true
+hz-mc start -Dhazelcast.mc.jmx.ssl.enabled=true
+----
+
+|[[hazelcast-mc-jmx-ssl-protocol]]hazelcast.mc.jmx.ssl.protocol
+
+MC_JMX_SSL_PROTOCOL
+|The standard name of the requested SSL protocol. Default: `TLS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.protocol=SSLv3
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystore]]hazelcast.mc.jmx.ssl.keyStore
+
+MC_JMX_SSL_KEY_STORE_TYPE
 |Path to a keystore. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
@@ -335,6 +347,8 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.keyStore=/some/dir/selfsigned.jks
 ----
 
 |[[hazelcast-mc-jmx-ssl-keystorepassword]]hazelcast.mc.jmx.ssl.keyStorePassword
+
+MC_JMX_SSL_KEY_STORE_PASSWORD
 |Password for the keystore. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
@@ -343,6 +357,8 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword
 ----
 
 |[[hazelcast-mc-jmx-ssl-truststore]]hazelcast.mc.jmx.ssl.trustStore
+
+MC_JMX_SSL_TRUST_STORE
 |Path to a truststore. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
@@ -350,7 +366,19 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.keyStorePassword=myPassword
 hz-mc start -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore
 ----
 
+|[[hazelcast-mc-jmx-ssl-truststoretype]]hazelcast.mc.jmx.ssl.trustStoreType
+
+MC_JMX_SSL_TRUST_STORE_TYPE
+|Type of the truststore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.trustStoreType=DKS
+----
+
 |[[hazelcast-mc-jmx-ssl-truststorepassword]]hazelcast.mc.jmx.ssl.trustStorePassword
+
+MC_JMX_SSL_TRUST_STORE_PASSWORD
 |Password for the truststore. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
@@ -358,7 +386,20 @@ hz-mc start -Dhazelcast.mc.jmx.ssl.trustStore=/some/dir/truststore
 hz-mc start -Dhazelcast.mc.jmx.ssl.trustStorePassword=myPassword
 ----
 
+|[[hazelcast-mc-jmx-ssl-trustmanageralgorithm]]hazelcast.mc.jmx.ssl.trustManagerAlgorithm
+
+MC_JMX_SSL_TRUST_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided. System default is used
+if none is provided. You can find out the default by calling the `javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jmx.ssl.trustManagerAlgorithm=SunX509
+----
+
 |[[hazelcast-mc-jmx-ssl-keystoretype]]hazelcast.mc.jmx.ssl.keyStoreType
+
+MC_JMX_SSL_KEY_STORE_TYPE
 |Type of the keystore. Default: `JKS`.
 |
 [source,bash,subs="attributes+"]
@@ -375,7 +416,7 @@ the `javax.net.ssl.KeyManagerFactory#getDefaultAlgorithm` method. Default: Syste
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=JKS
+hz-mc start -Dhazelcast.mc.jmx.ssl.keyManagerAlgorithm=SunX509
 ----
 
 |[[hazelcast-mc-ldap-timeout]]hazelcast.mc.ldap.timeout
@@ -386,7 +427,188 @@ MC_LDAP_CONN_TIMEOUT
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.ldap.timeout=4000 \
-    
+----
+
+|[[hazelcast-mc-ldap-ssl-protocol]]hazelcast.mc.ldap.ssl.protocol
+
+MC_LDAP_SSL_PROTOCOL
+|The standard name of the requested SSL protocol for LDAP connection. Default: `TLS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.protocol=SSLv3 \
+----
+
+|[[hazelcast-mc-ldap-ssl-keystore]]hazelcast.mc.ldap.ssl.keyStore
+
+MC_LDAP_SSL_KEY_STORE
+|Path to a keystore for LDAP SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.keyStore=/some/dir/selfsigned.jks \
+----
+
+|[[hazelcast-mc-ldap-ssl-keystoretype]]hazelcast.mc.ldap.ssl.keyStoreType
+
+MC_LDAP_SSL_KEY_STORE_TYPE
+|Type of the keystore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.keyStoreType=JKS \
+----
+
+|[[hazelcast-mc-ldap-ssl-keystorepassword]]hazelcast.mc.ldap.ssl.keyStorePassword
+
+MC_LDAP_SSL_KEY_STORE_PASSWORD
+|Password for the keystore for LDAP SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.keyStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ldap-ssl-keymanageralgorithm]]mc.ldap.ssl.keyManagerAlgorithm
+
+MC_LDAP_SSL_KEY_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ldap.ssl.keyManagerAlgorithm=SunX509 \
+----
+
+|[[hazelcast-mc-ldap-ssl-truststore]]hazelcast.mc.ldap.ssl.trustStore
+
+MC_LDAP_SSL_TRUST_STORE
+|Path to the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.trustStore=/some/dir/truststore \
+
+----
+
+|[[hazelcast-mc-ldap-ssl-truststorepassword]]hazelcast.mc.ldap.ssl.trustStorePassword
+
+MC_LDAP_SSL_TRUST_STORE_PASSWORD
+|Password for the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.trustStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ldap-ssl-truststoretype]]hazelcast.mc.ldap.ssl.trustStoreType
+
+MC_LDAP_SSL_TRUST_STORE_TYPE
+|Type of the truststore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ldap.ssl.trustStoreType=DKS \
+----
+
+|[[hazelcast-mc-ldap-ssl-trustmanageralgorithm]]mc.ldap.ssl.trustManagerAlgorithm
+
+MC_LDAP_SSL_TRUST_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ldap.ssl.trustManagerAlgorithm=SunX509 \
+----
+
+|[[hazelcast-mc-ad-ssl-protocol]]hazelcast.mc.ad.ssl.protocol
+
+MC_AD_SSL_PROTOCOL
+|The standard name of the requested SSL protocol for AD connection. Default: `TLS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.protocol=SSLv3 \
+----
+
+|[[hazelcast-mc-ad-ssl-keystore]]hazelcast.mc.ad.ssl.keyStore
+
+MC_AD_SSL_KEY_STORE
+|Path to a keystore for AD SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStore=/some/dir/selfsigned.jks \
+----
+
+|[[hazelcast-mc-ad-ssl-keystoretype]]hazelcast.mc.ad.ssl.keyStoreType
+
+MC_AD_SSL_KEY_STORE_TYPE
+|Type of the keystore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStoreType=JKS \
+----
+
+|[[hazelcast-mc-ad-ssl-keystorepassword]]hazelcast.mc.ad.ssl.keyStorePassword
+
+MC_AD_SSL_KEY_STORE_PASSWORD
+|Password for the keystore for AD SSL connection. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.keyStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ad-ssl-keymanageralgorithm]]mc.ad.ssl.keyManagerAlgorithm
+
+MC_AD_SSL_KEY_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ad.ssl.keyManagerAlgorithm=SunX509 \
+----
+
+|[[hazelcast-mc-ad-ssl-truststore]]hazelcast.mc.ad.ssl.trustStore
+
+MC_AD_SSL_TRUST_STORE
+|Path to the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStore=/some/dir/truststore \
+
+----
+
+|[[hazelcast-mc-ldap-ssl-truststorepassword]]hazelcast.mc.ad.ssl.trustStorePassword
+
+MC_AD_SSL_TRUST_STORE_PASSWORD
+|Password for the truststore. Default: `' '` (empty).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStorePassword=myPassword \
+----
+
+|[[hazelcast-mc-ad-ssl-truststoretype]]hazelcast.mc.ad.ssl.trustStoreType
+
+MC_AD_SSL_TRUST_STORE_TYPE
+|Type of the truststore. Default: `JKS`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.ad.ssl.trustStoreType=DKS \
+----
+
+|[[hazelcast-mc-ad-ssl-trustmanageralgorithm]]mc.ad.ssl.trustManagerAlgorithm
+
+MC_AD_SSL_TRUST_MANAGER_ALGORITHM
+|Name of the algorithm based on which the authentication keys are provided.  Default: System default.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dmc.ad.ssl.trustManagerAlgorithm=SunX509 \
 ----
 
 |[[starting-with-a-license]][[hazelcast-mc-license]]hazelcast.mc.license
@@ -452,6 +674,26 @@ MC_METRICS_CONSUMER_THREAD_POOL_SIZE
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.metrics.consumer.thread.pool.size=5
+----
+
+|[[hazelcast-mc-metrics-reschedule-delay-millis]]`hazelcast.mc.metrics.reschedule.delay.millis`
+MC_METRICS_RESCHEDULE_DELAY_MILLIS
+|Interval in milliseconds that Management Center waits before requesting metrics from cluster members.
+Default: `1000`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.metrics.reschedule.delay.millis=5000
+----
+
+|[[hazelcast-mc-jet-metrics-retentionsecs]]`hazelcast.mc.jet.metrics.retentionSecs`
+MC_JET_METRICS_RETENTION_SECS
+|Interval in seconds that Management Center holds Jet metrics in memory.
+Default: `3600`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.jet.metrics.retentionSecs=7200
 ----
 
 |[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
@@ -666,7 +908,7 @@ MC_TLS_ENABLE_HTTP_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.tls.trustStorePassword=mypassword123
+hz-mc start -Dhazelcast.mc.tls.enableHttpPort=true
 ----
 
 |[[hazelcast-mc-tls-mutualauthentication]]hazelcast.mc.tls.mutualAuthentication
@@ -693,6 +935,36 @@ Default: `false`.
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.useExistingKeyStore=true
+----
+
+|[[hazelcast-mc-sql-max-cell-lenght]]hazelcast.mc.sql.max-cell-length
+MC_MC_SQL_MAX_CELL_LENGTH
+|Max length of a cell in SQL query result, longer values are truncated.
+Default: `2048`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.sql.max-cell-length=10000
+----
+
+|[[hazelcast-mc-sql-max-row-count]]hazelcast.mc.sql.max-row-count
+MC_MC_SQL_MAX_CELL_LENGTH
+|Max number of rows returned by SQL batch query.
+Default: `1000`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.sql.max-row-count=10000
+----
+
+|[[hazelcast-mc-ui-asynctablethreshold]]hazelcast.mc.ui.asyncTableThreshold
+MC_UI_ASYNC_TABLE_THRESHOLD
+|Tables bigger than the threshold are loaded asynchronously. You can't sort an asynchronous table.
+Default: `500`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dazelcast.mc.ui.asyncTableThreshold=1000
 ----
 
 |===

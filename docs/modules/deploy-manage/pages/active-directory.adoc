@@ -99,18 +99,8 @@ See xref:deploy-manage:mc-conf.adoc[] for more information.
 [[ad-ssl]]
 == Enabling TLS/SSL for Active Directory
 
-If your Active Directory service is using TLS/SSL protocol,
-use the following command line
-parameters for your Management Center deployment:
-
-* `-Dhazelcast.mc.ad.ssl.trustStore`: Path to the truststore. This
-truststore needs to contain the public key of your Active Directory server.
-* `-Dhazelcast.mc.ad.ssl.trustStorePassword`: Password of the truststore.
-* `-Dhazelcast.mc.ad.ssl.trustStoreType`: Type of the truststore. Its default value is JKS.
-* `-Dhazelcast.mc.ad.ssl.trustManagerAlgorithm`: Name of the algorithm
-based on which the authentication keys are provided. System default is used
-if none is provided. You can find out the default by calling the
-`javax.net.ssl.TrustManagerFactory#getDefaultAlgorithm` method.
+If your Active Directory service is using TLS/SSL protocol, use the command line parameters for your Management Center
+deployment xref:deploy-manage:system-properties.adoc#hazelcast-mc-ad-ssl-protocol[Active Directory SSL configuration options].
 
 == Next Steps
 
