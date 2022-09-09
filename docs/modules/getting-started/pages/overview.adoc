@@ -1,6 +1,6 @@
 = Management Center {full-version}
 :page-aliases: ROOT:index.adoc
-:description: Management Center is a tool for managing and monitoring Hazelcast clusters.
+:description: Management Center is a tool for managing and monitoring Hazelcast Platform clusters.
 
 {description}
 
