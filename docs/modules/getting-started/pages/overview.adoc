@@ -1,6 +1,6 @@
 = Management Center {full-version}
 :page-aliases: ROOT:index.adoc
-:description: Management Center is a tool for managing and monitoring Hazelcast clusters.
+:description: Management Center is a tool for managing and monitoring Hazelcast Platform clusters.
 
 {description}
 
@@ -26,7 +26,7 @@ Management Center {full-version} has been tested against the following JDKs.
 
 TIP: If you install Hazelcast with Docker or a package manager, it comes with a supported JDK.
 
-include::{page-latest-supported-hazelcast}@hazelcast:deploy:supported-jvms.adoc[tag=supported-jvms]
+include::{page-latest-supported-hazelcast}@hazelcast:deploy:versioning-compatibility.adoc[tag=supported-jvms]
 
 === Mac and Windows System Requirements
 
