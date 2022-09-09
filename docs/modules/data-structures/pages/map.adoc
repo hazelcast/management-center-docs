@@ -267,13 +267,13 @@ column headings.
 [[map-index-stats]]
 **Map Index Stats Table** provides information about Map Index statistics if there exists any index for this map.
 
-NOTE: You need to create index to see this table here. See the xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] for details
+NOTE: You need to create indexes to see this table here. See the xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] for details.
 
 image:ROOT:MapIndexStatsTable.png[Map Index Stats Table]
 
 image:ROOT:MapIndexStatsTable2.png[Map Index Stats Table-2]
 
-To see more details about an index, click on the down arrow next to the index name.
+You can see more details about an index by clicking on the down arrow next to the index name.
 
 From left to right this table lists the following:
 
