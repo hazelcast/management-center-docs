@@ -292,34 +292,34 @@ From left to right this table lists the following:
 |Total used memory for this index across all members in the cluster.
 
 |Total Query Count
-|Total number of queries served by the index.
+|Total number of queries served by this index across all members in the cluster.
 
 |Total Insert Count
-|Total number of insert operations performed on the index.
+|Total number of insert operations performed on this index across all members in the cluster.
 
 |Average Insert Time
-|Average time of insert operations performed on the index among the members.
+|Average time of insert operations performed on this index across all members in the cluster.
 
 |Total Update Count
-|Total number of update operations performed on the index.
+|Total number of update operations performed on this index across all members in the cluster.
 
 |Average Update Time
-|Average time of update operations performed on the index among the members.
+|Average time of update operations performed on this index across all members in the cluster.
 
 |Total Remove Count
-|Total number of remove operations performed on the index.
+|Total number of remove operations performed on this index across all members in the cluster.
 
 |Average Remove Time
-|Average time of remove operations performed on the index among the members.
+|Average time of remove operations performed on this index across all members in the cluster.
 
 |Total Hit Count
-|Total number of index hits.
+|Total number of index hits for this index across all members in the cluster.
 
 |Average Hit Time
-|Average time of index hits performed on the index among the members.
+|Average time of index hits performed on this index across all members in the cluster.
 
 |Average Hit Selectivity
-|Average selectivity of the hits served by the index among the members.
+|Average selectivity of the hits served by this index across all members in the cluster.
 |===
 
 .Map index statistics for individual members
