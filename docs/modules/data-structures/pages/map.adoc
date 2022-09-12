@@ -289,7 +289,7 @@ From left to right this table lists the following:
 |Creation time of the index for the first time among the members.
 
 |Total Memory Cost
-|Total local memory cost of the index.
+|Total used memory for this index across all members in the cluster.
 
 |Total Query Count
 |Total number of queries served by the index.
