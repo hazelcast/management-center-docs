@@ -271,8 +271,6 @@ NOTE: This table is displayed only if the map has at least one index. To learn h
 
 image:ROOT:MapIndexStatsTable.png[Map Index Stats Table]
 
-image:ROOT:MapIndexStatsTable2.png[Map Index Stats Table-2]
-
 You can see member-level statistics for each index by clicking on the down arrow next to the index name.
 
 From left to right this table lists the following:
