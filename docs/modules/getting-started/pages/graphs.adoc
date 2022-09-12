@@ -31,14 +31,14 @@ In the historical mode it requests 5 minutes of data up to the selected time poi
 
 image:ROOT:WidgetTimeSelection.png[alt=Time Selection, align="center"]
 
-When the historical mode is activated, the bottom input displays the selected time point. You can press the *Now* button
+When the historical mode is activated, the bottom input displays the selected time point. You can press the *Last 5 Minutes* button
 to switch back to the current mode.
 
 image:ROOT:WidgetHistorical.png[alt=Historical mode, align="center"]
 
 == Presets
 
-Graphs providesaccess to an extensive list of metrics
+Graphs provide access to an extensive list of metrics
 and use a selection of filters to show only relevant data matching a certain condition on the graph.
 A preset is a combination of metrics and a filter. You can add/edit new presets and remove the existing ones.
 Each graph is shipped with at least one default preset. You cannot edit or remove a default preset.
