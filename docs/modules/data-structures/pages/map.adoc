@@ -322,7 +322,7 @@ From left to right this table lists the following:
 |Average selectivity of the hits served by the index among the members.
 |===
 
-.Map Index Stats Table Detailed Sub Row Fields
+.Map index statistics for individual members
 [cols="20%s,80%a"]
 |===
 |Field|Description
