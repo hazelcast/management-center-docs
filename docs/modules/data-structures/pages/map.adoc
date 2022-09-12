@@ -277,7 +277,7 @@ You can see more details about an index by clicking on the down arrow next to th
 
 From left to right this table lists the following:
 
-.Map Index Stats Table Fields
+.Map index statistics for the cluster
 [cols="20%s,80%a"]
 |===
 |Field|Description
