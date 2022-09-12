@@ -273,7 +273,7 @@ image:ROOT:MapIndexStatsTable.png[Map Index Stats Table]
 
 image:ROOT:MapIndexStatsTable2.png[Map Index Stats Table-2]
 
-You can see more details about an index by clicking on the down arrow next to the index name.
+You can see member-level statistics for each index by clicking on the down arrow next to the index name.
 
 From left to right this table lists the following:
 
