@@ -265,7 +265,7 @@ To ascend or descend the order of the listings, click on the
 column headings.
 
 [[map-index-stats]]
-**Map Index Stats Table** provides information about Map Index statistics if there is any index for this map.
+The **Map Index Statistics** table provides statistics for each index in a map.
 
 NOTE: You need to create indexes to see this table here. See the xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] for details.
 
