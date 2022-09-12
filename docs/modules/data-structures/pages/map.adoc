@@ -267,7 +267,7 @@ column headings.
 [[map-index-stats]]
 The **Map Index Statistics** table provides statistics for each index in a map.
 
-NOTE: You need to create indexes to see this table here. See the xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] for details.
+NOTE: This table is displayed only if the map has at least one index. To learn how to create indexes, see xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] in the Hazelcast Platform documentation.
 
 image:ROOT:MapIndexStatsTable.png[Map Index Stats Table]
 
