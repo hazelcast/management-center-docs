@@ -264,6 +264,110 @@ From left to right, this table lists the following:
 To ascend or descend the order of the listings, click on the
 column headings.
 
+[[map-index-stats]]
+The **Map Index Statistics** table provides statistics for each index in a map.
+
+NOTE: This table is displayed only if the map has at least one index. To learn how to create indexes, see xref:{page-latest-supported-hazelcast}@hazelcast:query:indexing-maps.adoc[Indexing Maps] in the Hazelcast Platform documentation.
+
+image:ROOT:MapIndexStatsTable.png[Map Index Stats Table]
+
+You can see member-level statistics for each index by clicking on the down arrow next to the index name.
+
+From left to right this table lists the following:
+
+.Map index statistics for the cluster
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Index Name
+|Name of the index which was created for this map.
+
+|Creation Time
+|The first time that the index was created on a member in the cluster.
+
+|Total Memory Cost
+|Total used memory for this index across all members in the cluster.
+
+|Total Query Count
+|Total number of queries served by this index across all members in the cluster.
+
+|Total Insert Count
+|Total number of insert operations performed on this index across all members in the cluster.
+
+|Average Insert Time
+|Average time of insert operations performed on this index across all members in the cluster.
+
+|Total Update Count
+|Total number of update operations performed on this index across all members in the cluster.
+
+|Average Update Time
+|Average time of update operations performed on this index across all members in the cluster.
+
+|Total Remove Count
+|Total number of remove operations performed on this index across all members in the cluster.
+
+|Average Remove Time
+|Average time of remove operations performed on this index across all members in the cluster.
+
+|Total Hit Count
+|Total number of index hits for this index across all members in the cluster.
+
+|Average Hit Time
+|Average time of index hits performed on this index across all members in the cluster.
+
+|Average Hit Selectivity
+|Average selectivity of the hits served by this index across all members in the cluster.
+|===
+
+.Map index statistics for individual members
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Member
+|IP address and port of the member which has a partition of the index.
+
+|Creation Time
+|Creation Time of the index for this member.
+
+|Memory Cost
+|Local memory cost of the index for this member.
+
+|Query Count
+|Number of queries served by the index for this member.
+
+|Insert Count
+|Number of insert operations performed on the index for this member.
+
+|Average Insert Time
+|Average time of insert operations performed on the index for this member.
+
+|Update Count
+|Number of update operations performed on the index for this member.
+
+|Average Update Time
+|Average time of update operations performed on the index for this member.
+
+|Remove Count
+|Number of remove operations performed on the index for this member.
+
+|Average Remove Time
+|Average time of remove operations performed on the index for this member.
+
+|Hit Count
+|Number of index hits for this member.
+
+|Average Hit Time
+|Average time of index hits performed on the index for this member.
+
+|Average Hit Selectivity
+|Average selectivity of the hits served by the index for this member.
+
+|===
+
+To ascend or descend the order of the listings, click on the column headings.
+
 [[map-client-near-cache-summary-data]]
 **Client Near Cache Summary** provides summary information related to the Near Cache statistics aggregated for all the clients that have Near Cache enabled for this map.
 Aggregated statistics are shown for the following periods:
