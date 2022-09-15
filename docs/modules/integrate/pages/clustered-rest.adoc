@@ -57,12 +57,24 @@ Send a `POST` request to the `/api/tokens` endpoint.
 |Send a `POST` request to the `/api/tokens` endpoint.
 |===
 
-To use the `/api/tokens` endpoint, do the following. Replace the `<username>` and `<password>` placeholders with a user's username and password.
+To use the /api/tokens endpoint for security providers except SAML and OIDC, run the following command. Replace the <username> and <password> placeholders with the credentials of a user logged in to the Management Center.
 
 [source,bash]
 ----
-curl -u {<username>}:{<password>} -d '{"username":"<username>"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
+curl -u <username>:<password> -d '{"username":"<username>"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
 ----
+To use the /api/tokens endpoint for SAML and OIDC, run the following command.
+
+[source,bash]
+----
+curl -d '{"username":"<username>"}' -H "X-CSRF-TOKEN: <x-csrf-token>" -H "Cookie: <cookie>" -H "Content-Type: application/json" -X POST http://localhost:8080/api/tokens
+----
+
+Here, replace the `<username>` placeholders with the username of a user logged in to the Management Center, and replace the `<x-csrf-token>` and `<cookie>` with X-CSRF-TOKEN and Cookie headers. You can get the headers from any request on Network tab in Developer Tools when you are logged into Management Center:
+
+image:ROOT:ClusteredRestProvideHeaders.png[alt=Clustered Rest Provide Headers, align="center"]
+
+
 
 To use the `hz-mc conf` tool, do the following:
 
