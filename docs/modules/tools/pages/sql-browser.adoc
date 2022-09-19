@@ -20,14 +20,37 @@ Before you can query an existing map in a cluster, you must create a mapping to 
 This statement maps the data structure to a table that can be queried with Hazelcast SQL.
 You can type this statement into the editor, or you can generate it automatically.
 
-To generate the `CREATE MAPPING` statement automatically, click the *Connect Maps* button
-and select the name of an existing map from the dropdown:
+You can generate `CREATE MAPPING` statement automatically using Connector Wizard. You can open it by clicking the *Connector Wizard* button
+and then select the type of the mapping that you want to create from the dropdown:
 
-image:ROOT:SQLBrowserConnectMaps.png[SQL Browser Connect Maps]
+image:ROOT:SQLBrowserConnectWizardMapType.png[Connecter Wizard Connector Type]
+
+=== Create Mapping for Hazelcast Map
+To create mapping for *Hazelcast Map*, after selecting the connector type as `Create Mapping for Hazelcast Map`, select the name of an existing map from the dropdown:
+
+image:ROOT:SQLBrowserConnectorWizardMaps.png[SQL Browser Connect Maps]
 
 If you need to change the generated statement, you can use the editor.
 
 NOTE: You cannot generate a `CREATE MAPPING` statement for empty maps or maps that store entries in the `NATIVE` format without indexes.
+
+Click *Confirm & Run*.
+
+=== Create Mapping for Kafka
+To create mapping for *Kafka*, after selecting the connector type as `Create Mapping for Kafka`, fill out the newly opened form. While you are filling this form, editor would be updated appropriately.
+
+image:ROOT:SQLBrowserConnectorWizardKafka.png[SQL Browser Connector Wizard Kafka]
+
+If you need to change the generated statement, you can use the editor.
+
+Click *Confirm & Run*.
+
+=== Create Mapping for a File System
+To create mapping for a *File System*, after selecting the connector type as `Create Mapping for a File System`, fill out the newly opened form. While you are filling this form, editor would be updated appropriately.
+
+image:ROOT:SQLBrowserConnectorWizardFileSystem.png[SQL Browser Connector Wizard File System]
+
+If you need to change the generated statement, you can use the editor.
 
 Click *Confirm & Run*.
 
