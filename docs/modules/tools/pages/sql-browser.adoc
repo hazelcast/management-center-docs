@@ -26,7 +26,7 @@ and then select the type of the mapping that you want to create from the dropdow
 image:ROOT:SQLBrowserConnectWizardMapType.png[Connecter Wizard Connector Type]
 
 === Create Mapping for Hazelcast Map
-To create mapping for *Hazelcast Map*, after selecting the connector type as `Create Mapping for Hazelcast Map`, select the name of an existing map from the dropdown:
+To create mapping for *Hazelcast Map*, after selecting the connector type as `Create Mapping for Hazelcast Map`, select the name of an existing map from the dropdown. Only maps that don't have any mappings are shown in the dropdown:
 
 image:ROOT:SQLBrowserConnectorWizardMaps.png[SQL Browser Connect Maps]
 
