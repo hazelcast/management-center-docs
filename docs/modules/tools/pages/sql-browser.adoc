@@ -20,13 +20,16 @@ Before you can query an existing map in a cluster, you must create a mapping to 
 This statement maps the data structure to a table that can be queried with Hazelcast SQL.
 You can type this statement into the editor, or you can generate it automatically.
 
-You can generate `CREATE MAPPING` statement automatically using Connector Wizard. You can open it by clicking the *Connector Wizard* button
-and then select the type of the mapping that you want to create from the dropdown:
+You can generate CREATE MAPPING statements automatically using Management Center's connector wizard. Using this wizard, you can create mappings with the connectors for Hazelcast Platform maps, Kafka, and other file systems. Launch the wizard by clicking the Connector Wizard button and then select the type of the mapping that you want to create from the dropdown.
 
 image:ROOT:SQLBrowserConnectWizardMapType.png[Connecter Wizard Connector Type]
 
+See the following sections for each connector type.
+
 === Create Mapping for Hazelcast Map
-To create mapping for *Hazelcast Map*, after selecting the connector type as `Create Mapping for Hazelcast Map`, select the name of an existing map from the dropdown. Only maps that don't have any mappings are shown in the dropdown:
+
+* Select the connector type as `Create Mapping for Hazelcast Map`.
+* Select the name of an existing map from the dropdown; only maps that don't have any mappings are shown.
 
 image:ROOT:SQLBrowserConnectorWizardMaps.png[SQL Browser Connect Maps]
 
@@ -37,7 +40,9 @@ NOTE: You cannot generate a `CREATE MAPPING` statement for empty maps or maps th
 Click *Confirm & Run*.
 
 === Create Mapping for Kafka
-To create mapping for *Kafka*, after selecting the connector type as `Create Mapping for Kafka`, fill out the newly opened form. While you are filling this form, editor would be updated appropriately.
+
+* Select the connector type as `Create Mapping for Kafka`.
+* Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
 
 image:ROOT:SQLBrowserConnectorWizardKafka.png[SQL Browser Connector Wizard Kafka]
 
@@ -46,7 +51,9 @@ If you need to change the generated statement, you can use the editor.
 Click *Confirm & Run*.
 
 === Create Mapping for a File System
-To create mapping for a *File System*, after selecting the connector type as `Create Mapping for a File System`, fill out the newly opened form. While you are filling this form, editor would be updated appropriately.
+
+* Select the connector type as `Create Mapping for a File System`.
+* Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
 
 image:ROOT:SQLBrowserConnectorWizardFileSystem.png[SQL Browser Connector Wizard File System]
 
