@@ -77,6 +77,8 @@ When the query is executed, the results are displayed under *Query Results*:
 .Example query results
 image:ROOT:SQLBrowserQueryResultTab.png[A list of query results]
 
+NOTE: You can use xref:deploy-manage:system-properties.adoc#hazelcast-mc-sql-max-cell-lenght[`hazelcast.mc.sql.max-cell-length`] property to specify max length of a cell in SQL query result. It is in byte and default value is `2048` byte. The part of the value in the cell that exceeds this will be truncated.
+
 === Viewing Map Metadata
 
 If you run simple `SELECT` queries without joins or aggregations over maps, you can view xref:data-structures:map.adoc#map-browser[metadata] for each entry that is returned by the query.
@@ -84,6 +86,14 @@ image:ROOT:SQLBrowserQueryResultTabWithClosedMapBrowser.png[A list of query resu
 
 To view an entry's metadata, click the chevron (*⌄*) button next to a map entry in the query results.
 image:ROOT:SQLBrowserQueryResultTabWithOpenMapBrowser.png[A list of query results with metadata view]
+
+== Autocompletion Support
+
+While using the editor, you can get table and column names, built-in SQL Query Schemas (SELECT, INSERT, CREATE, etc..), and built-in SQL Functions (avg, get, sum, etc..) using autocompletion feature.
+
+To use autocompletion feature in the editor press `CTRL + Space`
+
+image:ROOT:SQLBrowserAutocompletion.png[SQl Browser Autocomplete Feature]
 
 == Exporting Query Results
 
