@@ -98,7 +98,6 @@ The SQL editor supports autocompletion to suggest SQL queries for you while you 
 - SQL statements such as `SELECT` and `INSERT`
 - SQL functions such as `AVG` and `SUM`
 
-To use autocompletion feature in the editor press `CTRL + Space`
 
 image:ROOT:SQLBrowserAutocompletion.png[SQl Browser Autocomplete Feature]
 
