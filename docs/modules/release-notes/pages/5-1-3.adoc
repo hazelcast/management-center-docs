@@ -20,4 +20,4 @@
 
 * SQL Browser: hide the schema exploration tab when connected to 5.0 cluster. [MC-1418]
 * Fixed the UI behavior when node limit is exceeded in unlicensed MC. [MC-1397]
-* Fixed various Hazelcast Cloud integration issues. [MC-1427]
+* Fixed various xref:cloud:ROOT:overview.adoc[Hazelcast {hazelcast-cloud}] integration issues. [MC-1427]
