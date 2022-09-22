@@ -77,7 +77,10 @@ When the query is executed, the results are displayed under *Query Results*:
 .Example query results
 image:ROOT:SQLBrowserQueryResultTab.png[A list of query results]
 
-NOTE: You can use xref:deploy-manage:system-properties.adoc#hazelcast-mc-sql-max-cell-lenght[`hazelcast.mc.sql.max-cell-length`] property to specify max length of a cell in SQL query result. It is in byte and default value is `2048` byte. The part of the value in the cell that exceeds this will be truncated.
+
+== Truncating Displayed Query Results
+
+To reduce the time it takes for Management Center to display query results in the browser, the size of each table cell is limited. If a query returns too much data to fit into a cell, the result is truncated. You can adjust this limit by editing the xref:deploy-manage:system-properties.adoc#hazelcast-mc-sql-max-cell-length[`hazelcast.mc.sql.max-cell-length`] property.
 
 === Viewing Map Metadata
 
