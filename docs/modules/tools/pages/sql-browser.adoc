@@ -92,11 +92,11 @@ image:ROOT:SQLBrowserQueryResultTabWithOpenMapBrowser.png[A list of query result
 
 == Autocompletion Support
 
-The SQL editor supports autocompletion to suggest SQL queries for you while you type. To use autocompletion, start typing a query in the SQL editor and press kbd:[Ctrl+Space]. The SQL editor supports the following suggestions:
+The SQL editor supports autocompletion to suggest SQL keywords and identifiers for you while you type. To use autocompletion, start typing a query in the SQL editor and press kbd:[Ctrl+Space]. The SQL editor supports the following suggestions:
 
 - Table and column names
-- SQL statements such as `SELECT` and `INSERT`
-- SQL functions such as `AVG` and `SUM`
+- SQL keywords such as `SELECT`, `INSERT`, `WHERE` and `JOIN`
+- SQL functions such as `COUNT`, `AVG` and `SUM`
 
 
 image:ROOT:SQLBrowserAutocompletion.png[SQl Browser Autocomplete Feature]
