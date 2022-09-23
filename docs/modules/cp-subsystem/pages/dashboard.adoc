@@ -78,6 +78,15 @@ To see more details about a particular group, click on the down arrow next to th
 |Id
 |xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:sessions.adoc[Session] ID.
 
+|Endpoint Name
+|The name of the client that initiated the session (only if the name is set by the client).
+
+|Endpoint
+|The address of the client that initiated the session.
+
+|Endpoint Type
+|The type of the client that initiated the session.
+
 |Version
 |The number of session heartbeats that the member has received.
 
