@@ -937,7 +937,7 @@ Default: `false`.
 hz-mc start -Dhazelcast.mc.useExistingKeyStore=true
 ----
 
-|[[hazelcast-mc-sql-max-cell-lenght]]hazelcast.mc.sql.max-cell-length
+|[[hazelcast-mc-sql-max-cell-length]]hazelcast.mc.sql.max-cell-length
 MC_MC_SQL_MAX_CELL_LENGTH
 |Max length of a cell in SQL query result, longer values are truncated.
 Default: `2048`.
