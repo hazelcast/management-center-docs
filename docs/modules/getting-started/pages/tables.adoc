@@ -1,0 +1,40 @@
+= Tables
+:description: Tables are displayed on the dashboard and on the details page of any data structure (with a few exceptions). This page explains how to read tables and customize their data points.
+
+{description}
+
+image:ROOT:Table.png[alt=Table, align="center"]
+
+== Current and Historical Data
+
+Tables work in two modes - current and historical. It fetches current data in the current mode
+and historical data in the historical mode.
+
+The current mode is always available. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled.
+
+The date/time input controls what data is displayed. The input is disabled if only current data is available.
+You can select any arbitrary point in the past to see the historical data from that period. You can drag
+the chart to adjust the time point.
+
+Tables, by default, show up to 1 minute of data.
+In the current mode it requests data in chunks every 5 seconds, and concatenates it.
+In the historical mode it requests 1 minutes of data up to the selected time point once.
+
+image:ROOT:WidgetTimeSelection.png[alt=Time Selection, align="center"]
+
+When the historical mode is activated, the date/time input displays the selected time point. You can press the *RESET TIME* button
+to switch back to the current mode.
+
+image:ROOT:WidgetHistorical.png[alt=Historical mode, align="center"]
+
+== Presets
+
+Tables provide access to an extensive list of metrics
+and use a selection of filters to show only relevant data matching a certain condition on the table.
+A preset is a combination of metrics and a filter. You can add/edit new presets and remove the existing ones.
+Each table is shipped with at least one default preset. You cannot edit or remove a default preset.
+
+The top-right dropdown shows the name of the preset and allows you to switch between them. The delete button next to it deletes the selected preset.
+The pencil and plus buttons open a dialog to edit the selected preset and to define a new preset, respectively.
+
+
