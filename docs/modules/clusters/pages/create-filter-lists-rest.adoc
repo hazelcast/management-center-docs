@@ -7,7 +7,7 @@
 
 - Configure your Hazelcast clients with one or more failover clusters to make sure that disconnected clients can connect to another cluster. For a tutorial, see xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:blue-green.adoc[].
 
-- Enable clustered REST, using the xref:deploy-manage:system-properties.adoc#hazelcast-mc-rest-enabled[`hazelcast.mc.rest.enabled`] property.
+- Enable clustered REST, using the xref:system-properties.adoc#hazelcast-mc-rest-enabled[`hazelcast.mc.rest.enabled`] property.
 
 - If you are not using Management Center in dev mode, generate an xref:integrate:clustered-rest.adoc[authentication token] to use in HTTP requests.
 
