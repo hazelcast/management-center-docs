@@ -165,9 +165,7 @@ that includes the Cluster Client Filtering feature.
 
 The **Filter** tab includes **Cluster Client Filtering** status,
 **Cluster Client Filter Settings** and **Client Filtering
-Lists** sections, as shown below.
-
-image::ClientFilteringView.png[Client Filtering View]
+Lists** sections.
 
 The **Cluster Client Filtering** status section describes if there
 is a deployed client filtering list available to all cluster
