@@ -21,11 +21,7 @@ The below subsections explain the portions of this window.
 
 You can use the *Clear Data* button to remove all entries from the map.
 
-image:ROOT:ClearMapData.png[Clear Map Data View]
-
 In the confirmation modal, enter the map name and confirm that you want to remove all entries from the map.
-
-image:ROOT:ClearMapDataConfirmation.png[Clear Map Data Confirmation]
 
 [[map-browser]]
 == Exploring Map Entries
