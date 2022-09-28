@@ -30,8 +30,8 @@ include::{page-latest-supported-hazelcast}@hazelcast:deploy:versioning-compatibi
 
 === Mac and Windows System Requirements
 
-Management Center uses the RocksDB library to store metrics
-data on disk. Because of this dependency, Mac and Windows users must do one of the following:
+Management Center uses the RocksDB library to persist metrics
+to disk. Because of this dependency, Mac and Windows users must do one of the following:
 
 * Use the official Management Center docker image.
 * xref:deploy-manage:historical-metrics.adoc#disabling-metrics-persistence[Disable metrics persistence].
