@@ -10,6 +10,8 @@ xref:overview.adoc#requirements[Review the requirements] and make sure that you 
 
 == Using Docker
 
+Deploying via Docker is a convenient way to evaluate the latest version of Management Center:
+
 . link:https://docs.docker.com/get-docker/[Install Docker^].
 
 . Check that Docker is correctly installed.
@@ -133,7 +135,7 @@ To get started with Management Center on Windows, use one of the other available
 hz-mc -V
 ----
 +
-You should the version of Management Center.
+You should see the version of Management Center.
 // end::cli[]
 
 For more information about the package manager, see the link:https://github.com/hazelcast/hazelcast-management-center-packaging[GitHub repository].
