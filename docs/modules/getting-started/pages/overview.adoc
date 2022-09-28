@@ -10,8 +10,8 @@ Here are some example of what you can do with Management Center:
 * See statistical information about your members, clients, and data structures.
 * Execute SQL queries on your clusters.
 * Perform administrative tasks such as identifying and diagnosing issues in clusters.
-* Use REST API endpoints to return the
-information presented in Management Center. 
+* Use client filtering to define rules of which clients are allowed (or denied) to connect to a cluster as part of Blue/Green or Red/Black deployments.
+* Use REST API endpoints to return the information presented in Management Center. 
 
 [[os-requirements]]
 == Requirements
@@ -98,7 +98,7 @@ A valid Enterprise license for Hazelcast members is required for the following f
 * Persistence (Hot Restart)
 * Rolling upgrade
 
-If you don't have a license, you can use non-licensed features to monitor clusters of up to a maximum of three members.
+If you do not have a license, you can use non-licensed features to monitor clusters of up to a maximum of three members.
 
 If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
 
