@@ -4,3 +4,4 @@
 ** User Interface Overview
 *** xref:getting-started:user-interface.adoc[Menu and Toolbar]
 *** xref:getting-started:graphs.adoc[]
+*** xref:getting-started:tables.adoc[]
