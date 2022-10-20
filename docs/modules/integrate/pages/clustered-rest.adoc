@@ -140,5 +140,6 @@ The Clustered REST endpoints are documented in OpenAPI format. See the following
 - xref:client-filtering.adoc[]
 - xref:cluster-metrics.adoc[]
 - xref:cluster-connections.adoc[]
+- xref:wan-replication.adoc[]
 
 This documentation is also accessible at the `/swagger-ui/index.html` endpoint of Management Center. For example `\http://localhost:8080/swagger-ui/index.html`.
