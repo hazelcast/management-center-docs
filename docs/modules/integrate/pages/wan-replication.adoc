@@ -1,0 +1,5 @@
+= WAN Replication API
+:page-enterprise: true
+:page-layout: swagger
+
+swagger_ui::{attachmentsdir}/wan-replication.yaml[]
