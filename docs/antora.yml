@@ -1,7 +1,7 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.2.0'
+version: '5.2'
 # Version in the version selector
 display_version: '5.2.0'
 asciidoc:
@@ -10,7 +10,7 @@ asciidoc:
     full-version: '5.2.0'
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.2-snapshot'
+    page-latest-supported-hazelcast: '5.2'
     page-toclevels: 1
 nav:
   - modules/ROOT/nav.adoc
