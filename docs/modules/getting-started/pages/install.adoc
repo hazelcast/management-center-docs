@@ -161,21 +161,14 @@ version of Hazelcast Platform, you can download the new version as a
 separate package
 from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page].
 
-To start Management Center from the binary package, you have the following options:
-
-* Use the JAR file.
-* Use the scripts that come with the download package.
-* Deploy the WAR file on your Java application's server/servlet container.
+To start Management Center from the binary package, you should use the scripts that come with the download package.
 
 NOTE: You cannot use Management Center as a library. Management Center runs as a standalone web application.
 
-For all the starting options you can preconfigure a cluster connection in Management Center by setting the following environment variables:
+You can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
 * `MC_DEFAULT_CLUSTER_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
 * `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
-
-[[starting-with-scripts]]
-=== Using Start Script
 
 The recommended way to start Management Center with the binary package is the built-in start scripts in the `bin/` directory. A script is available as a batch file for Windows or a shell script for Mac and Linux.
 
@@ -199,6 +192,8 @@ mc-start.cmd
 ----
 ====
 
+[[starting-with-an-extra-classpath]]
+== Providing an Extra Classpath
 In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
 
 - Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by semicolons.
@@ -226,46 +221,6 @@ mc-start.cmd
 ----
 --
 ====
-
-[[starting-with-jar-file]]
-=== Using the JAR File
-
-The download package contains a `hazelcast-management-center-{full-version}.jar` file, which you can execute directly from the command line using the following command.
-
-WARNING: Some environment variables do not work with the JAR file. We recommend using the <<starting-with-scripts, script>>.
-
-[source,bash,subs="attributes+"]
-----
-java -jar hazelcast-management-center-{full-version}.jar
-----
-
-In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do the following:
-
-[tabs]
-====
-Linux and Mac::
-+
---
-[source,bash,subs="attributes+"]
-----
-java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-----
---
-
-Windows::
-+
---
-[source,shell,subs="attributes+"]
-----
-java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-----
---
-====
-
-[[deploying-to-application-server]]
-=== Deploying to an Application Server
-
-The download package contains a `hazelcast-management-center-{full-version}.war` file, which you can deploy on your application server, such as Tomcat or Jetty.
 
 == Snapshot versions
 
