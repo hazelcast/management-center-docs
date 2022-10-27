@@ -6,7 +6,7 @@
 
 == Before you Begin
 
-If a map contains domain objects, the classes for those objects must be on the classpath of Management Center before you can query them. See the xref:deploy-manage:configuring.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath].
+If a map contains domain objects, the classes for those objects must be on the classpath of Management Center before you can query them. See the xref:getting-started:install.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath].
 
 == Using the SQL Browser
 
