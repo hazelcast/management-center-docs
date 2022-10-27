@@ -65,23 +65,3 @@ members.
 === Member-Side Configuration
 
 On a Hazelcast member, you can also use the `management-center` setting to enable or disable both scripting and the console as well as setting up trusted interfaces. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
-
-[[starting-with-an-extra-classpath]]
-== Providing an Extra Classpath
-
-To start Management Center with an extra classpath
-entry, use the
-following command:
-
-[source,bash,subs="attributes+"]
-----
-java -cp "hazelcast-management-center-{full-version}.jar:/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-----
-
-On Windows, use a semicolon instead of colon:
-
-[source,bash,subs="attributes+"]
-----
-java -cp "hazelcast-management-center-{full-version}.jar;/path/to/an/extra.jar" com.hazelcast.webmonitor.Launcher
-----
-
