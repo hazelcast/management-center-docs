@@ -1,9 +1,0 @@
-= 5.1.2 Release Notes
-:description: These release notes list any new features, enhancements, and fixes that were made between version 5.1.1 and 5.1.2 of Hazelcast Management Center (MC).
-
-{description}
-
-[[fixes-512]]
-== Fixes
-
-* Updated the dependency version of Spring to 5.3.18 to mitigate CVE-2022-22965. [MC-1459]
