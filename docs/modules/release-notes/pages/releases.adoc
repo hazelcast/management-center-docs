@@ -1,3 +1,4 @@
 = Hazelcast Management Center Release Notes
 
 - xref:5-2-0.adoc[5.2.0]
+
