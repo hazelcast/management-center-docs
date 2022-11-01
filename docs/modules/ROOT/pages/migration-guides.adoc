@@ -9,7 +9,7 @@
 
  * The `mc-conf.sh` command has been renamed to `hz-mc conf`.
  * The `start.sh` has been deprecated and is superseded by the `hz-mc start` command.
- * The supported way for starting up a standalone Management Center instance has been changed from `java -jar ...` command to `hz-mc start`/
+ * The supported way for starting up a standalone Management Center instance has been changed from `java -jar ...` command to `hz-mc start`.
  * The Console within Management Center is disabled by default and has to be enabled within the member's configuration. See xref:tools:console.adoc[`Executing Console Commands`].
 
 == Changes in 3.12.x
