@@ -43,7 +43,7 @@ If you do not see a version number, see the link:https://docs.docker.com/get-sta
 version: "3.8"
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{full-version}
+    image: hazelcast/hazelcast:{hz-full-version}
     ports:
     - "5701:5701"
   management-center:
@@ -58,7 +58,7 @@ services:
 You can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
 - MC_DEFAULT_CLUSTER: The cluster name that Management Center connects to.
-- MC_DEFAULT_CLUSTER_MEMBERS: A comma-separated list of the cluster member addresses.
+- MC_DEFAULT_CLUSTER_MEMBERS: A comma-separated list of the cluster member addresses or host names.
 
 .	In a terminal, change into the directory that you just created.
 
@@ -127,7 +127,7 @@ SELECT * FROM my_distributed_map;
 Go to back to the cluster's dashboard and select *Storage* > *Maps* in Management Center, and then select *my_distributed_map*
 from the list of maps. You can see the statistics of your map:
 
-image:ROOT:MapStatistics.png[Map Statistics]
+image:ROOT:MapStats.png[Map Statistics]
 
 == Step 5. Shut Down Hazelcast
 
