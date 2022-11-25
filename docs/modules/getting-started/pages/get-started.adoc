@@ -43,7 +43,7 @@ If you do not see a version number, see the link:https://docs.docker.com/get-sta
 version: "3.8"
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{hz-full-version}
+    image: hazelcast/hazelcast:{full-version}
     ports:
     - "5701:5701"
   management-center:
