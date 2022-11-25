@@ -38,7 +38,26 @@ If you do not see a version number, see the link:https://docs.docker.com/get-sta
 
 . Create a new directory on your local machine. In the directory, create a file named `docker-compose.yml` and copy in the following details:
 +
+ifdef::snapshot[]
 [source,yaml,subs="attributes+"]
+----
+version: "3.8"
+services:
+  hazelcast:
+    image: hazelcast/hazelcast:{full-version}
+    ports:
+    - "5701:5701"
+  management-center:
+    image: hazelcast/management-center:latest
+    ports:
+    - "8080:8080"
+    environment:
+    - MC_DEFAULT_CLUSTER=dev
+    - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+----
+endif::[]
+ifndef::snapshot[]
+[source,bash,subs="attributes+"]
 ----
 version: "3.8"
 services:
@@ -54,6 +73,7 @@ services:
     - MC_DEFAULT_CLUSTER=dev
     - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
 ----
+endif::[]
 +
 You can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
