@@ -1,14 +1,16 @@
-= Get Started with Management Center in Docker
-:description: In this tutorial, you'll learn how to start Management Center, using Docker.
+= Get Started with Management Center Using Docker Compose
+:description: pass:q[In this tutorial, you'll start up an instance of Management Center that automatically connects to a Hazelcast cluster, using a Docker container. To get up and running as quickly as possible, an example `docker-compose.yml` is provided. No other configuration or dependencies are required.]
 
 {description}
 
 You'll complete the following steps:
 
-* Start Management Center in dev mode on your local device.
-* Connect Management Center to an existing Hazelcast cluster.
+* Create a `docker-compose.yml` to run a Hazelcast environment from a Docker container on your local machine.
+* Start up Management Center and a Hazelcast cluster, using Docker Compose.
+* Launch Management Center from a browser to view cluster details.
 * Create a map using the SQL browser.
 * Monitor the map.
+* Shut down your Hazelcast environment.
 
 == Before You Begin
 
@@ -18,61 +20,94 @@ To complete this tutorial, you need the following:
 |===
 |Prerequisites|Useful resources
 
-|Requirements and Compatibilities
-|xref:getting-started:overview.adoc#requirements[Requirements]
-
-|Docker
+|Docker Compose
 |
-link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac]
-
-link:https://docs.docker.com/engine/install/[Install Docker for Linux]
-
-link:https://docs.docker.com/docker-for-windows/install/[Install Docker for Windows]
-
-|A running Hazelcast cluster
-|xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:get-started-docker.adoc[Start a Hazelcast Cluster]
-
-|Docker image for the Management Center distribution
-|xref:install.adoc#using-docker[Install Management Center]
-
+link:https://docs.docker.com/compose/install/[Install Docker Compose]
 |===
 
-== Step 1. Start Management Center
+== Step 1. Run Hazelcast from a Docker Container
 
-. Start Management Center.
+. Check that Docker Compose is installed correctly.
 +
 [source,shell,subs="attributes+"]
 ----
-docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
+docker compose version
 ----
 +
-You should see the following terminal log:
-+
-`Hazelcast Management Center successfully started at http://localhost:8080`
+If you do not see a version number, see the link:https://docs.docker.com/get-started/08_using_compose/[Docker docs] for troubleshooting information.
 
-. In a web browser, go to localhost:8080 and enable *Dev Mode*.
+. Create a new directory on your local machine. In the directory, create a file named `docker-compose.yml` and copy in the following details:
 +
-image:ROOT:DevMode.png[Enable Dev Mode,role=half-width]
+ifdef::snapshot[]
+[source,yaml,subs="attributes+"]
+----
+version: "3.8"
+services:
+  hazelcast:
+    image: hazelcast/hazelcast:{full-version}
+ports:
+    - "5701:5701"
+  management-center:
+    image: hazelcast/management-center:latest
+    ports:
+    - "8080:8080"
+    environment:
+    - MC_DEFAULT_CLUSTER=dev
+    - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+----
+endif::[]
+ifndef::snapshot[]
+[source,bash,subs="attributes+"]
+----
+version: "3.8"
+services:
+  hazelcast:
+    image: hazelcast/hazelcast:{full-version}
+    ports:
+    - "5701:5701"
+  management-center:
+    image: hazelcast/management-center:{full-version}
+    ports:
+    - "8080:8080"
+    environment:
+    - MC_DEFAULT_CLUSTER=dev
+    - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+----
+endif::[]
++
+You can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
-This mode is a special security provider that allows you to evaluate Management Center, without needing login credentials or authentication tokens for the REST API. For details about security providers, see xref:deploy-manage:security-providers.adoc[].
+- MC_DEFAULT_CLUSTER: The cluster name that Management Center connects to.
+- MC_DEFAULT_CLUSTER_MEMBERS: A comma-separated list of the cluster member addresses or host names.
 
-== Step 2. Connect to the Cluster
+. To pull the required images, and to start up a Management Center instance already connected to a Hazelcast cluster, run the following:
++
+[source,shell,subs="attributes+"]
+----
+docker compose up
+----
++
+Wait until you see the following message in the console:
++
+`Hazelcast Management Center successfully started at http://localhost:8080`.
++
+Followed by:
++
+`MC Client connected to cluster dev.`
 
-. Click *Connect*.
-+
-image:ROOT:ConnectToCluster.png[Connecting to the Hello World Cluster]
+== Step 2. Launch Management Center
 
-. Enter the name of your cluster, and at least two members' IP addresses and ports.
+Now that Management Center is connected to a running cluster, you can start to explore.
+
+. In a web browser, go to `localhost:8080`. Details of the Hazelcast cluster that Management Center connected to during startup are displayed.
 +
-We recommend entering more than one member address for fault tolerance.
+image:ROOT:ConnectionEstablishedDev.png[Connecting to the dev cluster]
 +
-You should see the established connection between Management Center and the cluster.
-+
-image:ROOT:ConnectionEstablished.png[Connecting to the Hello World Cluster]
+Management Center is running in dev mode. This mode is a special security provider that allows you to evaluate Management Center, without needing login credentials or authentication tokens for the REST API. For details about security providers, see xref:deploy-manage:security-providers.adoc[].
 
 . Click *View Cluster* to see the cluster's dashboard.
 +
-image:ROOT:DashboardPage.png[Cluster dashboard]
+image:ROOT:Dashboard.png[Cluster dashboard]
 
 == Step 3. Create a Map
 
@@ -99,12 +134,21 @@ SINK INTO my_distributed_map VALUES
    ('3', 'Jane');
 ----
 
+. Now you can query the data you have written:
++
+----
+SELECT * FROM my_distributed_map;
+----
+
 == Step 4. Monitor the Map
 
-Go to *Storage* > *Maps* in Management Center, and select *my_distributed_map*
-from the list of maps. You can now see the statistics of your map:
+Go back to the cluster's dashboard and select *Storage* > *Maps* in Management Center, and then select *my_distributed_map* from the list of maps. You can now see the statistics of your map:
 
-image:ROOT:MapStatistics.png[Map Statistics]
+image:ROOT:MapStats.png[Map Statistics]
+
+== Step 5. Shut Down Hazelcast
+
+To shut down your Hazelcast environment gracefully, press CTRL+C.
 
 == Next Steps
 
