@@ -6,9 +6,9 @@
 [[enh-521]]
 == Enhancements
 
-* Allowed READ_ONLY role to see WAN Sync page an events . [MC-1802]
+* Allowed READ_ONLY role to see WAN Sync page and events . [MC-1802]
 * Restored logging of MC Web Application Address on startup. [MC-1781]
-* Added a configurable Websockert buffer size. [MC-1672]
+* Added a configurable Websocket buffer size. [MC-1672]
 * Improve member address entry UI in cluster config creation. [MC-1376]
 
 [[fixes-521]]
@@ -17,7 +17,7 @@
 * SSL keystore path no longer overridden by the truststore path. [MC-1818]
 * MC no longer fails when 'hazelcast.mc.contextPath' doesn't start from '/'. [MC-1780]
 * MC no longer throws TaskRejectedExceptions after connecting to a cluster. [MC-1779]
-* Map Browser no longer fails the map value is a Protobuf object. [MC-1718]
+* Map Browser no longer fails if the map value is a Protobuf object. [MC-1718]
 * Fixed MC error on Swagger UI loading. [MC-1806]
 * Fixed an error when a chart configuration is removed once the time travel is used. [MC-1787]
 * Fixed the disk usage part of `Storage usage` chart. [MC-1770]
