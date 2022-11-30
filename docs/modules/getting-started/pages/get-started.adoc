@@ -44,7 +44,7 @@ ifdef::snapshot[]
 version: "3.8"
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{full-version}
+    image: hazelcast/hazelcast:{hz-full-version}
     ports:
     - "5701:5701"
   management-center:
@@ -144,14 +144,14 @@ SELECT * FROM my_distributed_map;
 
 == Step 4. Monitor the Map
 
-Go to back to the cluster's dashboard and select *Storage* > *Maps* in Management Center, and then select *my_distributed_map*
+Go back to the cluster's dashboard and select *Storage* > *Maps*, and then select *my_distributed_map*
 from the list of maps. You can see the statistics of your map:
 
 image:ROOT:MapStats.png[Map Statistics]
 
 == Step 5. Shut Down Hazelcast
 
-To shut down your Hazelcast environment gracefully, click kbd:[Ctrl+C]. 
+To shut down your Hazelcast environment gracefully, press kbd:[Ctrl+C]. 
 
 == Next Steps
 
