@@ -151,7 +151,7 @@ image:ROOT:MapStats.png[Map Statistics]
 
 == Step 5. Shut Down Hazelcast
 
-To shut down your Hazelcast environment gracefully, press CTRL+C. 
+To shut down your Hazelcast environment gracefully, press kbd:[Ctrl+C]. 
 
 == Next Steps
 

@@ -18,5 +18,6 @@ asciidoc:
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.3-snapshot'
     page-toclevels: 1
+    experimental: true
 nav:
   - modules/ROOT/nav.adoc
