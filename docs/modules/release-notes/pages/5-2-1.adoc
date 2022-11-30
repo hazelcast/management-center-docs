@@ -21,3 +21,4 @@
 * Fixed MC error on Swagger UI loading. [MC-1806]
 * Fixed an error when a chart configuration is removed once the time travel is used. [MC-1787]
 * Fixed the disk usage part of `Storage usage` chart. [MC-1770]
+* Removed a duplicate column from `Resources utilization` table. [MC-1706]
