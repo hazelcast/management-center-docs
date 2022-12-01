@@ -642,18 +642,18 @@ disabled login period is unlimited.
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.maxDisableLoginPeriod= \
-    
+
 ----
 
 |[[hazelcast-mc-metrics-persistence-enabled]]hazelcast.mc.metrics.persistence.enabled
 
 MC_METRICS_PERSISTENCE_ENABLED
-|Whether Management Center persists metrics. Default: `true`. See xref:historical-metrics.adoc[]. 
+|Whether Management Center persists metrics. Default: `true`. See xref:historical-metrics.adoc[].
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.metrics.persistence.enabled=false 
-    
+hz-mc start -Dhazelcast.mc.metrics.persistence.enabled=false
+
 ----
 
 |[[disk-usage-config]][[hazelcast-mc-metrics-disk-ttl-duration]]hazelcast.mc.metrics.disk.ttl.duration
@@ -714,7 +714,7 @@ MC_PHONE_HOME_ENABLED
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.phone.home.enabled=false \
-    
+
 ----
 
 |[[hazelcast-mc-prometheusexporter-enabled]]hazelcast.mc.prometheusExporter.enabled
@@ -725,7 +725,7 @@ MC_PROMETHEUS_EXPORTER_ENABLED
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
-    
+
 ----
 
 |[[hazelcast-mc-prometheusExporter-filter-metrics-included]]hazelcast.mc.prometheusExporter.filter.metrics.included
@@ -736,7 +736,7 @@ MC_PROMETHEUS_EXPORTER_FILTER_METRICS_INCLUDED
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_totalReceivedMessages,hz_map_totalPutLatency \
-    
+
 ----
 
 |[[hazelcast-mc-prometheusexporter-filter-metrics-excluded]]hazelcast.mc.prometheusExporter.filter.metrics.excluded
@@ -747,7 +747,7 @@ MC_PROMETHEUS_EXPORTER_FILTER_METRICS_EXCLUDED
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap \
-    
+
 ----
 
 |[[hazelcast-mc-prometheusexporter-port]]hazelcast.mc.prometheusExporter.port
@@ -803,7 +803,7 @@ hz-mc start -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt \
 |[[hazelcast-mc-security-dictionary-path]]hazelcast.mc.security.dictionary.path
 
 MC_SECURITY_DICTIONARY_PATH
-|Path to a text file that contains words that cannot be included in user passwords. 
+|Path to a text file that contains words that cannot be included in user passwords.
 |
 [source,bash,subs="attributes+"]
 ----
@@ -955,6 +955,16 @@ Default: `1000`.
 [source,bash,subs="attributes+"]
 ----
 hz-mc start -Dhazelcast.mc.sql.max-row-count=10000
+----
+
+|[[hazelcast-mc-websocket-buffer-size]]hazelcast.mc.websocket.buffer-size
+HAZELCAST_MC_WEBSOCKET_BUFFER_SIZE
+|The buffer size of the websocket connection MC uses for SQL operations.
+Default: `5MB`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.websocket.buffer-size=10MB
 ----
 
 |[[hazelcast-mc-ui-asynctablethreshold]]hazelcast.mc.ui.asyncTableThreshold
