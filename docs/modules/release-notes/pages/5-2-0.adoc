@@ -3,7 +3,7 @@
 
 {description}
 
-[[nf-52BETA1]]
+[[nf-520]]
 == New Features
 
 * **SQL Browser:**
@@ -17,7 +17,7 @@
 * Added support for Command Line Client (CLC). [MC-1548]
 * Added health checks for the number of connected clients, and Tiered Storage metrics and configuration. [MC-1476] [MC-1477] [MC-1481] [MC-1581]
 
-[[enh-52BETA1]]
+[[enh-520]]
 == Enhancements
 
 * **SQL Browser:**
@@ -43,7 +43,7 @@
 * Introduced a label for client filtering status in the left menu. [MC-1560]
 * Improved CP Session metrics. [MC-1674]
 
-[[fixes-52BETA1]]
+[[fixes-520]]
 == Fixes
 
 * MC no longer fails when receiving malformed client stats. [MC-1639] [MC-1307]
