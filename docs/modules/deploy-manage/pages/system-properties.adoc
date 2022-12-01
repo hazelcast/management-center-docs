@@ -959,7 +959,7 @@ hz-mc start -Dhazelcast.mc.sql.max-row-count=10000
 
 |[[hazelcast-mc-websocket-buffer-size]]hazelcast.mc.websocket.buffer-size
 HAZELCAST_MC_WEBSOCKET_BUFFER_SIZE
-|The buffer size of the websocket connection MC uses for SQL operations.
+|The buffer size of the WebSocket connection MC uses for SQL operations.
 Default: `5MB`.
 |
 [source,bash,subs="attributes+"]
