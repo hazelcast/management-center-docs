@@ -15,6 +15,7 @@
 == Fixes
 
 * SSL keystore path no longer overridden by the truststore path. [MC-1818]
+* Fixed Prometheus exporter charset to UTF-8. [MC-1827]
 * MC no longer fails when 'hazelcast.mc.contextPath' doesn't start from '/'. [MC-1780]
 * MC no longer throws TaskRejectedExceptions after connecting to a cluster. [MC-1779]
 * Map Browser no longer fails if the map value is a Protobuf object. [MC-1718]
