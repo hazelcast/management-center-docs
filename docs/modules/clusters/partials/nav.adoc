@@ -1,6 +1,8 @@
 * xref:clusters:dashboard.adoc[Dashboard]
 * xref:clusters:clients.adoc[Clients]
 * xref:clusters:client-filtering.adoc[Client Filtering]
+** xref:clusters:create-filter-lists-ui.adoc[]
+** xref:clusters:create-filter-lists-rest.adoc[]
 * xref:clusters:members.adoc[Members]
 * Administration
 ** xref:clusters:administration.adoc[Overview]
