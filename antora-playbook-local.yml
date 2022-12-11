@@ -1,7 +1,7 @@
 site:
   title: Documentation
   url: http:localhost:5000
-  start_page: getting-started:overview.adoc
+  start_page: management-center:getting-started:overview.adoc
   robots: disallow
   keys:
     docsearch_id: 'QK2EAH8GB0'
@@ -12,9 +12,6 @@ content:
   - url: .
     branches: HEAD
     start_path: docs
-  - url: https://github.com/hazelcast/management-center
-    branches: [5.1.z]
-    start_path: openapi/external
 ui: 
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
