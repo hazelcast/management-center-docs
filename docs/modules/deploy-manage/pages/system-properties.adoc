@@ -35,7 +35,7 @@ hz-mc start -Dhazelcast.mc.allowMultipleLogin=true
 
 |[[hazelcast-mc-auditlog-enabled]]hazelcast.mc.auditlog.enabled
 
-MC_AUDIT_LOG_ENABLED
+MC_AUDITLOG_ENABLED
 |Whether Management Center logs auditable events. See xref:logging.adoc#audit-logging[Audit Logging]. Default: `false`.
 |
 [source,bash,subs="attributes+"]
