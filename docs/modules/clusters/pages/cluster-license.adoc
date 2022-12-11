@@ -18,10 +18,4 @@ Warnings are displayed when a license expires within 30 days.
 
 Even if members are installed with a license, you cannot use Enterprise features in Management Center until you install the license on Management Center as well. See xref:deploy-manage:license-management.adoc[].
 
-For information about cluster licenses, see the following topics in the Platform documentation:
-
-- xref:{page-latest-supported-hazelcast}@hazelcast:deploy:installing-license-keys.adoc[]
-- xref:{page-latest-supported-hazelcast}@hazelcast:deploy:monitoring-license-keys.adoc[]
-- xref:{page-latest-supported-hazelcast}@hazelcast:deploy:renewing-license-keys.adoc[]
-- xref:{page-latest-supported-hazelcast}@hazelcast:deploy:updating-license-rest.adoc[]
-
+For information about cluster licenses, see xref:{page-latest-supported-hazelcast}@hazelcast:deploy:enterprise-licenses.adoc[] in the Platform documentation.
