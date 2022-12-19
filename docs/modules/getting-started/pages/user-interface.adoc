@@ -18,6 +18,11 @@ image:ROOT:Toolbar.png[Management Center Toolbar]
 The toolbar has the following elements:
 
 * *Cluster dropdown*: Select a connected cluster to manage.
+* *Cluster version*: Display the version that the current cluster operates. Members can have different patch versions, so display only minor version.
+
+NOTE: During the xref:clusters:triggering-rolling-upgrade.adoc[rolling upgrade] all members can be for instance `5.2.z`, but the Cluster is still `5.1` and the Cluster Version is displayed as `5.1`.
+
+* *Cluster connections*: Navigate to xref:deploy-manage:connecting-to-clusters-ui.adoc[Cluster Connections] page to add new cluster connection.
 * **Docs**: Open the Management Center documentation in a new browser tab.
 * *SQL Browser*: Open a built-in SQL shell and execute SQL queries on your cluster. See xref:tools:sql-browser.adoc[].
 * **Console**: Open the in-app console so that you can easily execute commands on your cluster. See xref:tools:console.adoc[].
