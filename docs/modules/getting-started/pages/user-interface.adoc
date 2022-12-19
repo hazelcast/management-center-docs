@@ -18,7 +18,7 @@ image:ROOT:Toolbar.png[Management Center Toolbar]
 The toolbar has the following elements:
 
 * *Cluster dropdown*: Select a connected cluster to manage.
-* *Cluster version*: Display the version that the current cluster operates. Members can have different patch versions, so display only minor version.
+* *Cluster version*: Display the current cluster version. The members that run on the same cluster can have different patch versions so the cluster version is  displayed in `<major>.<minor>` format.
 
 NOTE: During the xref:clusters:triggering-rolling-upgrade.adoc[rolling upgrade] all members can be for instance `5.2.z`, but the Cluster is still `5.1` and the Cluster Version is displayed as `5.1`.
 
