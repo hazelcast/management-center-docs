@@ -1,0 +1,12 @@
+= Lists
+[[managing-lists]]
+
+You can see a list of all the lists in your cluster
+by clicking on the **Lists** menu item on the left panel. A new
+page is opened on the right, as shown below.
+
+image:ROOT:ListGridView.png[List Grid View]
+
+You can sort the table by clicking on the column headers.
+
+List is a distributed and concurrent implementation of `java.util.List`.
