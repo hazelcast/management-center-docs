@@ -3,6 +3,8 @@
 ** xref:data-structures:replicated-map.adoc[]
 ** xref:data-structures:cache.adoc[]
 ** xref:data-structures:multimap.adoc[]
+** xref:data-structures:list.adoc[]
+** xref:data-structures:set.adoc[]
 ** xref:data-structures:queue.adoc[]
 ** xref:data-structures:topic.adoc[]
 ** xref:data-structures:reliable-topic.adoc[]
