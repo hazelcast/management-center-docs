@@ -136,7 +136,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-.6+.^|xref:clusters:administration.adoc[Administration]
+.7+.^|xref:clusters:administration.adoc[Administration]
 |xref:clusters:shutting-down-cluster.adoc#shut-down-a-cluster[Cluster Shutdown]
 |&check;
 |&#65794;
@@ -167,6 +167,12 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
+|xref:clusters:triggering-hot-backup.adoc[Hot Backup]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
 |xref:clusters:update-config.adoc[Update Config]
 |&check;
 |&#65794;
@@ -180,7 +186,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-|xref:deploy-manage:license-management.adoc[Update License
+|xref:deploy-manage:license-management.adoc[Update License]
 |&check;
 |&#65794;
 |&#65794;
@@ -192,6 +198,46 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&check;
 |&#65794;
 |&#65794;
+
+.4+.^|xref:clusters:wan-replication.adoc[WAN Replication]
+|xref:clusters:wan-replication.adoc#changing-wan-publisher-state[Change State]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#wan-sync[WAN Sync]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#wan-consistency-check[WAN Sync Check]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#add-temporary-wan-replication-config[Add Configuration]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Streaming
+|xref:monitor-streaming:jobs.adoc#job-management[All]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|CP Subsystem
+|xref:cp-subsystem:dashboard.adoc#promote[All]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
 |===
 
 == New Users
