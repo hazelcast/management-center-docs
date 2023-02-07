@@ -224,20 +224,37 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-|Streaming
+|Streaming (SQL)
 |xref:monitor-streaming:jobs.adoc#job-management[All]
 |&check;
-|&#65794;
-|&#65794;
-|&#65794;
-
-|CP Subsystem
-|xref:cp-subsystem:dashboard.adoc#promote[All]
+|&check;
 |&check;
 |&#65794;
-|&#65794;
+
+.4+.^|CP Subsystem
+|xref:cp-subsystem:dashboard.adoc#promote[Promote]
+|&check;
+|&check;
+|&check;
 |&#65794;
 
+|xref:cp-subsystem:dashboard.adoc#remove[Remove]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:cp-subsystem:dashboard.adoc#Restart[Restart]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:cp-subsystem:dashboard.adoc[View Metrics]
+|&check;
+|&check;
+|&check;
+|&check;
 |===
 
 == New Users
