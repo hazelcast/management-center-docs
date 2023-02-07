@@ -27,6 +27,236 @@ a thread dump on a cluster member, or shutting down members or clusters.
 |Users can only view metrics that are displayed in Management Center.
 |===
 
+The following is a detailed table showing the actions that can or cannot be performed per user role.
+
+.Actions
+[cols="2,3,1,1,1,1"]
+|===
+|Panel/Tab|Action|Admin|User|Read-Only|Metrics-Only
+
+.4+.^|xref:data-structures:map.adoc[Storage -> Map]
+|xref:data-structures:map.adoc#clear-map[Clear Data]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:getting-started:tables.adoc#current-and-historical-metrics[Reset Time]
+|&check;
+|&check;
+|&check;
+|&check;
+
+|xref:data-structures:map.adoc#map-browser[Map Browser]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:data-structures:map.adoc#configuring-a-map[Map Config]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+.3+.^|xref:getting-started:tables.adoc#presets[Clients -> View Preset]
+|Add
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Edit
+|&check;
+|&check;
+|&check;
+|&check;
+
+|Remove
+|&check;
+|&check;
+|&check;
+|&check;
+
+.4+.^|xref:clusters:client-filtering.adoc[Client Filtering]
+|Add
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Edit
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Remove
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Enable/Disable
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+.3+.^|xref:clusters:members.adoc[Members]
+|xref:clusters:members.adoc#actions[Shutdown]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:members.adoc#actions[Run GC]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:members.adoc#actions[Thread Dump]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:tools:scripting.adoc[Scripting]
+|xref:tools:scripting.adoc#scripting-in-javascript[Execute Script]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:healthcheck.adoc[Healthcheck]
+|xref:clusters:healthcheck.adoc[Re-run Healthcheck]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+.7+.^|xref:clusters:administration.adoc[Administration]
+|xref:clusters:shutting-down-cluster.adoc#shut-down-a-cluster[Cluster Shutdown]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:changing-cluster-state.adoc#change-the-state-of-a-cluster[Change Cluster State]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:triggering-rolling-upgrade.adoc[Rolling Upgrade]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:triggering-force-start.adoc[Force Start]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:triggering-partial-start.adoc[Partial Start]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:triggering-hot-backup.adoc[Hot Backup]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:clusters:update-config.adoc[Update Config]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+.2+.^|Settings
+|xref:deploy-manage:user-management.adoc#new-users[Add/Remove Users]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:deploy-manage:license-management.adoc[Update License]
+|&check;
+|&#65794;
+|&#65794;
+|&#65794;
+
+|xref:tools:console.adoc[Console]
+|Execute Console Commands
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+.4+.^|xref:clusters:wan-replication.adoc[WAN Replication]
+|xref:clusters:wan-replication.adoc#changing-wan-publisher-state[Change State]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#wan-sync[WAN Sync]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#wan-consistency-check[WAN Sync Check]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|xref:clusters:wan-replication.adoc#add-temporary-wan-replication-config[Add Configuration]
+|&check;
+|&check;
+|&#65794;
+|&#65794;
+
+|Streaming (SQL)
+|xref:monitor-streaming:jobs.adoc#job-management[All]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+.4+.^|CP Subsystem
+|xref:cp-subsystem:dashboard.adoc#promote[Promote]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:cp-subsystem:dashboard.adoc#remove[Remove]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:cp-subsystem:dashboard.adoc#Restart[Restart]
+|&check;
+|&check;
+|&check;
+|&#65794;
+
+|xref:cp-subsystem:dashboard.adoc[View Metrics]
+|&check;
+|&check;
+|&check;
+|&check;
+|===
+
 == New Users
 
 You can create new users and assign those users a role. The way in which you create new users depends on the security provider that you use to authenticate users in Management Center. See xref:security-providers.adoc[].
