@@ -106,7 +106,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 .3+.^|xref:clusters:members.adoc[Members]
 |xref:clusters:members.adoc#actions[Shutdown]
 |&check;
-|&#65794;
+|&check;
 |&#65794;
 |&#65794;
 
