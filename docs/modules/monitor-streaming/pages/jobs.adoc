@@ -47,7 +47,7 @@ This view offers the following:
 
 - A tool for diagnosing data flow within the job.
 - A graphical visualization of the stages.
-- The bility to manage the lifecycle of the job and peek into dataflow stats across the DAG.
+- The ability to manage the lifecycle of the job and peek into dataflow stats across the DAG.
 
 image:ROOT:job-detail.png[Job Details]
 
