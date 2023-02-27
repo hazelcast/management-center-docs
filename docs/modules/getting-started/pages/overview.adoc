@@ -79,8 +79,9 @@ Management Center supports the following browsers:
 * Last two versions of Chrome at the time of release
 * Last two versions of Firefox at the time of release
 * Latest Safari
-* Internet Explorer 11
 * Latest Microsoft Edge
+
+NOTE: Internet Explorer 11 is no longer supported.
 
 == Licensing
 
