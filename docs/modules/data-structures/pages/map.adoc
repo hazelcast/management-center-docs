@@ -82,6 +82,8 @@ listed.
 
 |===
 
+NOTE: To get all these fields, the map must have its `per-entry-stats-enabled` element set to `true`. See the xref:hazelcast:data-structures:reading-map-metrics.adoc#getting-statistics-about-a-specific-map-entry[Reading Map Metrics] section.
+
 If you are using a serialization mechanism other than standard Java
 serialization for storing values in your map, you need to
 configure the client that Management Center uses for connecting to the
