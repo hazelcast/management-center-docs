@@ -1,0 +1,56 @@
+= 5.3-BETA-1 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.2 and 5.3-BETA-1 of Hazelcast Management Center (MC).
+
+{description}
+
+[[nf-53BETA1]]
+== New Features
+
+* **SQL Browser:**
+** Added a connector wizard for JDBC connector. [MC-1705]
+** Multiple tabs in SQL Browser. [MC-1789]
+* Added *Storage/Lists* page. [MC-1216]
+* Added *Storage/Sets* page. [MC-1216]
+* Added Clustered REST API endpoints for WAN Replication. [MC-720]
+* Added *Authentication token management* page. [MC-924]
+* Introduced an auto-connect to a local cluster in Dev mode. [MC-1697]
+
+[[enh-53BETA1]]
+== Enhancements
+
+* **SQL Browser:**
+** Cursor is moved to the error location in SQL editor. [MC-1582]
+** SQL Editor content is stored per cluster. [MC-1776]
+* Migrated Metrics storage from RocksDB to QuestDB. [MC-1736]
+* Added Jet Job "Suspension cause" column. [MC-1790]
+* Added Jet Job "Cancelled by User" column. [MC-1791]
+* Cluster version is shown next to the cluster status. [MC-1711]
+* Maps can be sorted by the storage format. [MC-1785]
+* Added member version to Clustered REST API. [MC-1792]
+* Decreased number of notifications on cluster disconnection. [MC-1858]
+* Changed shutting down a member an admin-only action. [MC-1887]
+* Made CP subsystem actions permissions more restrictive. [MC-1860]
+* Improved UI responsivity. [MC-781]
+* Licensed Tiered Storage amount is displayed on the *License* page. [MC-1778]
+* Warning is shown if IE11 is used. [MC-1871]
+* Numbers are formatted according to locale. [MC-1880]
+* Changed *Streaming* label to *Stream processing*. [MC-1934]
+* Made CSRF error more readable. [MC-1261]
+* Added a fullscreen mode to all charts. [MC-1794]
+* Added a scrollbar to SQL Editor window. [MC-1916]
+
+[[fixes-53BETA1]]
+== Fixes
+* MC no longer throws an error when reconnected to a cluster with Persistence enabled. [MC-1177]
+* MC no longer fails on `security reset` when HealthCheck errors are suppressed. [MC-1928]
+* MC no longer sometimes misses first SQL result row. [MC-1963]
+* MC no longer blinks when switching between table presets. [MC-1748]
+* MC no longer floods with notification on cluster disconnection. [MC-1844]
+* MC no longer accepts a unisocket client config and then fails. [MC-1894]
+* Adjusted client count validation in HealthCheck. [MC-1853]
+* Fixed MC start scripts for Windows. [MC-1903]
+* Fixed disabled *Rolling Upgrade* button issue. [MC-1569]
+* Fixed *Jobs* page layout. [MC-1343]
+* Fixed *Configure a license* link. [MC-1870
+* Fixed Map Event Journal TTL units. [MC-1877]
+* Fixed Ctrl+C behaviour in SQL Editor. [MC-1946]
