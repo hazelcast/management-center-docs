@@ -1,4 +1,4 @@
-= 5.2-BETA-1 Release Notes
+= 5.2.0 Release Notes
 :description: These release notes list any new features, enhancements, and fixes that were made between version 5.1 and 5.2-BETA-1 of Hazelcast Management Center (MC).
 
 {description}
