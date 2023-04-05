@@ -61,6 +61,28 @@ If you need to change the generated statement, you can use the editor.
 
 Click *Confirm & Run*.
 
+=== Create Mapping for JDBC
+
+. Select the connector type as `Create Mapping for JDBC`.
+. Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
+
+image:ROOT:SQLBrowserConnectorWizardJDBC.png[SQL Browser Connector Wizard Kafka]
+
+If you need to change the generated statement, you can use the editor.
+
+Click *Confirm & Run*.
+
+=== Create Mapping for MongoDB
+
+. Select the connector type as `Create Mapping for MongoDB`.
+. Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
+
+image:ROOT:SQLBrowserConnectorWizardMongoDB.png[SQL Browser Connector Wizard Kafka]
+
+If you need to change the generated statement, you can use the editor.
+
+Click *Confirm & Run*.
+
 After executing the `CREATE MAPPING` statement,
 you should see your mapping in the *Queryable objects* tree view:
 
