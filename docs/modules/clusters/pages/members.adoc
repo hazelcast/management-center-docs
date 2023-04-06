@@ -251,3 +251,14 @@ To view slow operations for a member:
 
 image:ROOT:SlowOperationDetail.png[Slow Operations Details]
 
+=== Clock Synchronization
+Any time difference greater than one minute between the Management Center and a member can cause synchronization
+issues, delayed responses or data loss. To prevent such issues, Management Center would report the members that have such
+time differences to the user.
+
+You can view the detected members in the warning notification that is positioned just below the top bar.
+
+image:ROOT:ClockSynchronization.png[Clock Synchronization]
+
+It is highly recommended to synchronize the Management Center JVM clock with the clocks of the members in the cluster
+to ensure consistent time. Clock synchronization can help to promote optimal performance and proper communication.
