@@ -256,7 +256,7 @@ Any time difference greater than one minute between the Management Center and a 
 issues, delayed responses or data loss. To prevent such issues, Management Center would report the members that have such
 time differences to the user.
 
-You can view the detected members in the notification that positioned just below the top bar.
+You can view the detected members in the warning notification that is positioned just below the top bar.
 
 image:ROOT:ClockSynchronization.png[Clock Synchronization]
 
