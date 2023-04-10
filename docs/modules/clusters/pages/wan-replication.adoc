@@ -175,7 +175,7 @@ is added to the cluster.
 You can see the new configuration when you try to initiate a WAN sync operation as
 described in the previous section.
 
-NOTE: With this page you can only add a new WAN Publisher to an already existing WAN Replication configuration.
+NOTE: On this page you can only add a new WAN Publisher to an already existing WAN Replication configuration.
 
 == Related Resources
 
