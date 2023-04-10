@@ -175,6 +175,8 @@ is added to the cluster.
 You can see the new configuration when you try to initiate a WAN sync operation as
 described in the previous section.
 
+NOTE: On this page you can only add a new WAN Publisher to an already existing WAN Replication configuration.
+
 == Related Resources
 
 For details about this feature, see xref:{page-latest-supported-hazelcast}@hazelcast:wan:wan.adoc#synchronizing-wan-clusters[WAN Replication] in the Platform documentation. 
