@@ -53,9 +53,17 @@ Use the `user issue-token` task of the `hz-mc conf` tool.
 
 Send a `POST` request to the `/api/tokens` endpoint.
 
+Use Auth `Settings/API` screen on the UI.
+
 |All other security providers other than dev mode
-|Send a `POST` request to the `/api/tokens` endpoint.
+|
+Send a `POST` request to the `/api/tokens` endpoint.
+
+Use Auth `Settings/API` screen on the UI.
+
 |===
+
+==== Using `api/tokens` Endpoint
 
 To use the /api/tokens endpoint for security providers except SAML and OIDC, run the following command. Replace the <username> and <password> placeholders with the credentials of a user logged in to the Management Center.
 
@@ -74,8 +82,7 @@ Here, replace the `<username>` placeholders with the username of a user logged i
 
 image:ROOT:ClusteredRestProvideHeaders.png[alt=Clustered Rest Provide Headers, align="center"]
 
-
-
+==== Using `hz-mc conf` Tool
 To use the `hz-mc conf` tool, do the following:
 
 [tabs] 
@@ -106,7 +113,52 @@ Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
 Label: 'test_user_2021-07-07T17:24 EEST'
 ```
 
-=== Revoking Auth Tokens
+==== Using Auth Token Management UI
+image:ROOT:SettingsToolBar.png[alt=Clustered Rest Provide Headers, align="center"]
+
+. Click *Settings* in the toolbar.
++
+image:ROOT:AuthTokenManagementPage.png[alt=Auth Token Management Page, align="center"]
+
+. Navigate to the *API* tab.
+
+. Select the user that you want to create token for. Only admin can create token for other users.
+
+. Enter the label of the token that you want to create. Default value has `username_creationTime` format.
+. Click *Create Token*
+
+You will see the created token on the right side.
+
+image:ROOT:AuthTokenManagementPage_createdToken.png[alt=Created Token, align="center"]
+
+You can copy your token to the clipboard.
+
+NOTE: The token will not be displayed again so make sure you note it before leaving the page or creating new one.
+
+You can see the list of created token in table below of the page.
+
+image:ROOT:AuthTokenManagementPage_TokenList.png[alt=Created Token List, align="center"]
+
+
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Time Issued
+|Issue time of the Token
+
+|User
+|Username of the Token that is created for
+
+|Token Label
+|Label of the Token
+
+|Action
+|Action for revoking the Token
+
+|===
+
+=== Revoking All Auth Tokens
 
 To revoke all auth tokens for a user, use the `user revoke-tokens` task.
 
