@@ -28,7 +28,7 @@ image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 +
 As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the list. 
 
-. Make sure that *Apply Client Config* is *On*.
+. Make sure that *Enabled* is *On*.
 +
 If this field is *Off*, Management Center will save the configuration but will not try to connect to the cluster.
 
@@ -118,7 +118,7 @@ image:ROOT:UploadConfigFile.png[alt=Upload Config File]
 
 . Either drag and drop your configuration file into the box or click to browse your file system.
 
-. Make sure that *Apply Client Config* is *On*.
+. Make sure that *Enabled* is *On*.
 +
 If this field is *Off*, Management Center will save the configuration but will not try to connect to the cluster.
 
