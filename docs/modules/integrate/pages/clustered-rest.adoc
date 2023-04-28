@@ -114,6 +114,7 @@ Label: 'test_user_2021-07-07T17:24 EEST'
 ```
 
 ==== Using Auth Token Management UI
+
 image:ROOT:SettingsToolBar.png[alt=Clustered Rest Provide Headers, align="center"]
 
 . Click *Settings* in the toolbar.
@@ -122,10 +123,10 @@ image:ROOT:AuthTokenManagementPage.png[alt=Auth Token Management Page, align="ce
 
 . Navigate to the *API* tab.
 
-. Select the user that you want to create token for. Only admin can create token for other users.
+. Select the user that you want to create a token for. Only admin can create tokens for other users.
 
-. Enter the label of the token that you want to create. Default value has `username_creationTime` format.
-. Click *Create Token*
+. Enter the label of the token that you want to create. Default value has the `username_creationTime` format.
+. Click *Create Token*.
 
 You will see the created token on the right side.
 
@@ -133,9 +134,9 @@ image:ROOT:AuthTokenManagementPage_createdToken.png[alt=Created Token, align="ce
 
 You can copy your token to the clipboard.
 
-NOTE: The token will not be displayed again so make sure you note it before leaving the page or creating new one.
+NOTE: The token will not be displayed again, so make sure you note it before leaving the page or creating a new one.
 
-You can see the list of created token in table below of the page.
+You can see the list of existing tokens in the table, bottom of the page.
 
 image:ROOT:AuthTokenManagementPage_TokenList.png[alt=Created Token List, align="center"]
 
@@ -145,16 +146,16 @@ image:ROOT:AuthTokenManagementPage_TokenList.png[alt=Created Token List, align="
 |Field|Description
 
 |Time Issued
-|Issue time of the Token
+|Date and time when the token was created.
 
 |User
-|Username of the Token that is created for
+|Username which the token is created for.
 
 |Token Label
-|Label of the Token
+|Label of the token.
 
 |Action
-|Action for revoking the Token
+|Action for revoking a token.
 
 |===
 
