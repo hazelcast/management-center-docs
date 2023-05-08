@@ -1,9 +1,11 @@
 = 5.3.0 Release Notes
 :description: These release notes list any new features, enhancements, and fixes that were made between version 5.2 and 5.3.0 of Hazelcast Management Center (MC).
-
 {description}
 
-[[nf-53BETA1]]
+NOTE: Hazelcast Management Center 5.3 requires Java 11 to run.  
+Management Center 5.2.1 is compatible with Hazelcast 5.3 and should be used with Java 8.
+
+[[nf-530]]
 == New Features
 
 * **SQL Browser:**
@@ -17,7 +19,7 @@
 on the local machine, in case there are no other cluster connections. [MC-1697]
 * Added a warning if MC and a member time difference is more than 1 minute. [MC-1965]
 
-[[enh-53BETA1]]
+[[enh-530]]
 == Enhancements
 
 * **SQL Browser:**
@@ -49,7 +51,7 @@ the same Editor content when switching between clusters. [MC-1776]
 * Added allowed HTTP methods to HTTP firewall. [MC-2043]
 * Added a CLI command to display Active Directory configuration. [MC-1937]
 
-[[fixes-53BETA1]]
+[[fixes-530]]
 == Fixes
 * MC no longer throws an error when reconnected to a cluster with Persistence enabled. [MC-1177]
 * MC no longer fails on `security reset` when HealthCheck errors are suppressed. [MC-1928]
