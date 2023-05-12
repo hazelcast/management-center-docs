@@ -2,8 +2,8 @@
 :description: These release notes list any new features, enhancements, and fixes that were made between version 5.2 and 5.3.0 of Hazelcast Management Center (MC).
 {description}
 
-NOTE: Hazelcast Management Center 5.3 requires Java 11 to run.  
-Management Center 5.2.1 is compatible with Hazelcast 5.3 and should be used with Java 8.
+NOTE: Hazelcast Management Center 5.3 requires Java 11 to run.
+Management Center 5.2.1 is compatible with Hazelcast Platform 5.3 and should be used with Java 8.
 
 [[nf-530]]
 == New Features
@@ -32,6 +32,7 @@ the same Editor content when switching between clusters. [MC-1776]
 * Added the cluster version information to be shown next to the cluster status. [MC-1711]
 * Added the licensed Tiered Storage amount information to the *License* page. [MC-1778]
 * Added the ability to sort the maps listing by the storage format. [MC-1785]
+* CP Subsystem objects count is displayed in the left panel. [MC-1717]
 * Added member version to Clustered REST API. [MC-1792]
 * Decreased number of persistently stored metrics. [MC-1737]
 * Decreased number of notifications on cluster disconnection. [MC-1858]
@@ -41,7 +42,7 @@ the same Editor content when switching between clusters. [MC-1776]
 * Improved an error message when WebSocket is closed. [MC-2003]
 * Improved accessibility according to ARIA. [MC-1986]
 * A warning is shown now if IE11 is used as the browser, since it is not supported by MC. [MC-1871]
-* A warning is shown when MC is running low on disk. [MC-1979]
+* Metrics persistence automatically paused when MC is running critically low on disk. [MC-1979]
 * SQL Editor is in focus now when SQL Browser is opened. [MC-2035]
 * Numbers in the listings are now formatted according to locale. [MC-1880]
 * Changed *Streaming* label to *Stream processing*. [MC-1934]
