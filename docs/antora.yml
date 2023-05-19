@@ -14,7 +14,7 @@ asciidoc:
     version-brew: '5.3.0'
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.3-snapshot'
+    page-latest-supported-hazelcast: '5.3'
     page-toclevels: 1
     experimental: true
 nav:
