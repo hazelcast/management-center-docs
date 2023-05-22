@@ -26,7 +26,45 @@ Management Center {full-version} has been tested against the following JDKs.
 
 TIP: If you install Hazelcast with Docker or a package manager, it comes with a supported JDK.
 
-include::{page-latest-supported-hazelcast}@hazelcast:deploy:versioning-compatibility.adoc[tag=supported-jvms]
+[options="header"]
+.Supported JDKs
+|===
+|JDK | Platform {full-version}
+
+|AdoptOpenJDK 17
+|✓
+
+|AdoptOpenJDK 11
+|✓
+
+|Amazon Corretto 17
+|✓
+
+|Amazon Corretto 11
+|✓
+
+|Azul Core (formerly Zulu) 17
+|✓
+
+|Azul Core (formerly Zulu) 11
+|✓
+
+|Oracle 17
+|✓
+
+|Oracle 11
+|✓
+
+|Red Hat build of OpenJDK 17
+|✓
+
+|Red Hat build of OpenJDK 11
+|✓
+
+|Microsoft Build of OpenJDK
+|✓
+
+|===
 
 === Mac and Windows System Requirements
 
