@@ -26,7 +26,7 @@ antora:
       trace: true
       componentversions:
         - name: management-center
-          version: '5.2-snapshot'
+          version: '5.3'
           mappings:
             - module: integrate
               family: attachment
@@ -36,7 +36,7 @@ antora:
                     - '**/hazelcast/management-center'
                 branch:
                   includes:
-                    - 'master'
+                    - '5.3.0'
 asciidoc:
   attributes:
     page-pagination: true
