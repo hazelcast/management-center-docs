@@ -9,7 +9,7 @@
 * **SQL Browser:**
 ** Added graceful handling for SQL Browser websocket buffer overflow. [MC-2092]
 ** Added an ability to resize SQL Browser left panel. [MC-2091]
-** Improved SQL Browser results selection. [MC-1938]
+** Added an ability to select SQL Browser results with a right mouse click. [MC-1938]
 ** Esc or clicking outside the Connector wizard now closes it. [MC-2022]
 * Changed login time in the top right corner to 24 hour clock. [MC-2122]
 * Added margins to Client tables. [MC-2110]
