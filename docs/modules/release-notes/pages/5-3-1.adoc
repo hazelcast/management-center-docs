@@ -1,0 +1,31 @@
+= 5.3.1 Release Notes
+:description: These release notes list any new features, enhancements, and fixes that were made between version 5.3.0 and 5.3.1 of Hazelcast Management Center (MC).
+
+{description}
+
+[[enh-531]]
+== Enhancements
+
+* **SQL Browser:**
+** Added graceful handling for SQL Browser websocket buffer overflow. [MC-2092]
+** Added an ability to resize SQL Browser left panel. [MC-2091]
+** Improved SQL Browser results selection. [MC-1938]
+** Esc or clicking outside the Connector wizard now closes it. [MC-2022]
+* Changed login time in the top right corner to 24 hour clock. [MC-2122]
+* Added margins to Client tables. [MC-2110]
+
+
+[[fixes-531]]
+== Fixes
+
+* **SQL Browser:**
+** Fixed documentation link in SQL Browser. [MC-2183]
+** Fixed SQL Browser results scroll jump after the first 1000 rows. [MC-2182]
+** Fixed SQL Browser left panel message. [MC-2175]
+** Fixed SQL Browser column truncation. [MC-2106]
+* Fixed false-positive HealthCheck warnings during the cluster restart. [MC-1902]
+* Fixed various penetration testing findings. [MC-2061]
+* MC no longer allows running WAN Sync dry run if Merkle tree is not enabled. [MC-2145]
+* MC no longer overrides WAN replication config params with default values. [MC-1461]
+* Removed confusing info about user creation in logs. [MC-1766]
+* Fixed various Scripting-related issues. [MC-1543][MC-1530]
