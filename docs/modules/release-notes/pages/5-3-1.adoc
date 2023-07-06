@@ -25,7 +25,7 @@
 ** Fixed SQL Browser column truncation. [MC-2106]
 * Fixed false-positive HealthCheck warnings during the cluster restart. [MC-1902]
 * Fixed various penetration testing findings. [MC-2061]
-* MC no longer allows running WAN Sync dry run if Merkle tree is not enabled. [MC-2145]
+* MC no longer allows running WAN Sync check if Merkle tree is not enabled on the publisher. [MC-2145]
 * MC no longer overrides WAN replication config params with default values. [MC-1461]
 * Removed confusing info about user creation in logs. [MC-1766]
 * Fixed various Scripting-related issues. [MC-1543][MC-1530]
