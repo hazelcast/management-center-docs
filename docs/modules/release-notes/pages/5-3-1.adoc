@@ -21,10 +21,10 @@
 * **SQL Browser:**
 ** Fixed documentation link in SQL Browser. [MC-2183]
 ** Fixed SQL Browser results scroll jump after the first 1000 rows. [MC-2182]
-** Fixed SQL Browser left panel message. [MC-2175]
+** Fixed the SQL Browser left panel message where it was mentioning a nonexistent button. [MC-2175]
 ** Fixed SQL Browser column truncation. [MC-2106]
 * Fixed false-positive HealthCheck warnings during the cluster restart. [MC-1902]
 * MC no longer allows running WAN Sync check if Merkle tree is not enabled on the publisher. [MC-2145]
-* MC no longer overrides WAN replication config params with default values. [MC-1461]
+* MC no longer overrides WAN replication configuration parameters with the default values. [MC-1461]
 * Removed inaccurate information related to the user creation in the logs. [MC-1766]
 * Fixed various scripting related issues including the saved scripts not being executed. [MC-1543][MC-1530]
