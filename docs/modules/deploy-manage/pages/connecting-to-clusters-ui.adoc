@@ -144,6 +144,8 @@ If your cluster has the Jet engine enabled, you will also see that the cluster s
 
 To connect to another cluster, you can repeat these steps with a different configuration file.
 
+NOTE: Management Center requires a connection to every member in order to collect its state, events and metrics so unisocket connections are not supported.  An error message will be shown if the configuraton uses a unisocket connection.
+
 == Cluster Connection Diagnosis
 
 In case Management Center could not connect to a cluster, you can run the cluster connection diagnostics by clicking on the
