@@ -51,7 +51,7 @@ a|
 
 |link:https://github.com/hazelcast/management-center[management-center]
 |master
-|openapi/external/antora.yml
+|src/openapi/external/antora.yml
 |version
 
 |{url-playbook}[hazelcast-docs]
@@ -93,7 +93,7 @@ a|
 |The major.minor or `.z` branch of the new latest version of Management Center.
 
 NOTE: If a `.z` branch exists, make this changes before creating a maintenance branch off of it.
-|openapi/external/antora.yml
+|src/openapi/external/antora.yml
 |version
 
 |{url-playbook}[hazelcast-docs]
