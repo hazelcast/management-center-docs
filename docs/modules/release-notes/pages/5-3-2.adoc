@@ -11,7 +11,7 @@
 ** Updated texts in Data Explorer. [MC-2224]
 * Now a banner is displayed when repartitioning is in progress. [MC-2132]
 * Improved database error messages. [MC-2063]
-* Jetty SNI check is disabled by default. [MC-2276]
+* Jetty SNI host check is disabled by default. [MC-2276]
 
 
 [[fixes-532]]
