@@ -8,20 +8,20 @@
 
 * **SQL Browser:**
 ** Added an ability to see a query from Query history without execution. [MC-2091]
-** Updated texts in Data Explorer. [MC-2224]
-* Now a banner is displayed when repartitioning is in progress. [MC-2132]
+** Updated UI text on the welcome screen of the Data Explorer. [MC-2224]
+* A banner is now displayed when repartitioning is in progress. [MC-2132]
 * Improved database error messages. [MC-2063]
-* Jetty SNI host check is disabled by default. [MC-2276]
+* Jetty SNI host check is now disabled by default. [MC-2276]
 
 
 [[fixes-532]]
 == Fixes
 
 * **SQL Browser:**
-** Fixed primary key violation on a simultaneous executions of multiple queries. [MC-2050]
-* Fixed incorrect Jet metrics during the first minute after MC is connected. [MC-1578]
-* Fixed false positive HeathCheck warnings for maps created from a default config. [MC-2226]
-* MC no longer blocks HTTP calls when a member config is not available. [MC-2250] [MC-2259]
+** Fixed a primary key violation that occurred when executing multiple simultaneous queries. [MC-2050]
+* Fixed incorrect Jet metrics that were displayed one minute after connecting to MC. [MC-1578]
+* Fixed false positive HealthCheck warnings for maps created using the default configuration. [MC-2226]
+* MC no longer blocks HTTP calls when a member configuration is unavailable. [MC-2250] [MC-2259]
 * MC no longer suppresses authentication error messages when Local Security Provider is used. [MC-2232]
 * MC no longer throws an exception when deleting a misconfigured cluster connection. [MC-2237]
-* MC no longer throws an exception when WAN publisher name is not set. [MC-2249]
+* MC no longer throws an exception when the WAN publisher name is not set. [MC-2249]
