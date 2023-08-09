@@ -7,7 +7,7 @@
 == Enhancements
 
 * **SQL Browser:**
-** Added an ability to see a query from Query history without execution. [MC-2091]
+** Added the ability to view a query from the query history. The query is no longer automatically executed. [MC-2091]
 ** Updated UI text on the welcome screen of the Data Explorer. [MC-2224]
 * A banner is now displayed when repartitioning is in progress. [MC-2132]
 * Improved database error messages. [MC-2063]
