@@ -47,8 +47,8 @@ Passwords *must not* include the following:
 
 * The username
 * Two or more of the same letter following each other.
-* A 3-character or longer sequence of letters following or preceeding each other such as "abc" or "fed".
-* A 3-character or longer sequence of digits following or preceeding each other such as "123" or "987".
+* A 3-character or longer sequence of letters following or preceding each other such as "abc" or "fed".
+* A 3-character or longer sequence of digits following or preceding each other such as "123" or "987".
 
 == Creating Users
 

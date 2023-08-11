@@ -164,10 +164,10 @@ CPU-heavy sync call.
 ** **internal processing latency of Hazelcast**; typically
 very low: 1 or 2 milliseconds. It can be higher if the network is slow, system
 is overloaded, if there are many vertices in the job or many
-jobs, which causes lot of switching, etc.
+jobs, which causes lots of switching, etc.
 ** **clock drift**; since we're comparing to the real time,
 latency can be caused by a clock drift between the machine
-where event time is assigned (which can be also be an end
+where event time is assigned (which can also be an end
 user’s device). It can even be negative. Always use NTP to
 keep wall-clock precise and avoid using timestamps from devices
 out of your control as event time.

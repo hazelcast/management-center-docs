@@ -62,7 +62,7 @@ javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:
 No subject alternative names matching IP address 127.0.0.1 found
 ```
 
-When using a self-signed certificate, your browser may warn you that the connection is not secure. If so, add your certficate to the browsers list of trusted certificates.
+When using a self-signed certificate, your browser may warn you that the connection is not secure. If so, add your certificate to the browsers list of trusted certificates.
 
 == Overrriding the Default HTTPS port
 
