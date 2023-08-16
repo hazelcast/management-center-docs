@@ -24,7 +24,7 @@ image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
 . Enter the name of the cluster that you want to connect to.
 
-. Enter the hostnames or IP adresses of cluster members that you want to connect to. Press *Enter* after each address to add it to the list.
+. Enter the hostnames or IP addresses of cluster members that you want to connect to. Press *Enter* after each address to add it to the list.
 +
 As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the list. 
 
@@ -144,7 +144,7 @@ If your cluster has the Jet engine enabled, you will also see that the cluster s
 
 To connect to another cluster, you can repeat these steps with a different configuration file.
 
-NOTE: Management Center requires a connection to every member in order to collect its state, events and metrics so unisocket connections are not supported.  An error message will be shown if the configuraton uses a unisocket connection.
+NOTE: Management Center requires a connection to every member in order to collect its state, events and metrics so unisocket connections are not supported.  An error message will be shown if the configuration uses a unisocket connection.
 
 == Cluster Connection Diagnosis
 

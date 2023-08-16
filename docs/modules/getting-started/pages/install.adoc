@@ -132,7 +132,7 @@ Windows::
 --
 At the moment, Management Center does not support any Windows package managers.
 
-To get started with Management Center on Windows, use one of the other available installation option.
+To get started with Management Center on Windows, use one of the other available installation options.
 --
 ====
 
@@ -291,5 +291,5 @@ See also the following for the Management Center features that rely on your clus
 
 * xref:clusters:wan-replication.adoc[WAN Replication]
 * xref:clusters:persistence.adoc[Persistence]
-* xref:clusters:triggering-rolling-upgrade[Rolling Upgrades]
+* xref:clusters:triggering-rolling-upgrade.adoc[Rolling Upgrades]
 ====

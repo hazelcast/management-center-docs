@@ -10,7 +10,7 @@ WARNING: The console is not recommended for production use.
 Console is disabled by default, and you need to enable it
 in your cluster's configuration. See the
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether
-console is enabled or disabled for each member.
+the console is enabled or disabled for each member.
 
 . Open a console window by clicking on the **Console** button located at the top menu.
 +

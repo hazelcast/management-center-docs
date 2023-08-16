@@ -223,7 +223,7 @@ From left to right, this table lists the following:
 
 |===
 
-You can select the time period in the combo box placed on the top
+You can select the time period in the combo box placed in the top
 right corner of the window, for which the table data will be
 shown. Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.

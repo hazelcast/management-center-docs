@@ -20,7 +20,7 @@ For example:
 . A one-minute bucket is created for each metric type in memory and each bucket's timestamp is set to 9:00:00 AM. At this point nothing is saved to disk.
 . The next chunk of metrics is received at 9:00:03 AM. No new one-minute buckets are created, only the new metrics are added to the existing one-minute buckets.
 . The first metrics-persistence thread run starts at 9:00:10 AM.
-The thread didn’t find any minute buckets that are 70 seconds old.
+The thread didn't find any minute buckets that are 70 seconds old.
 Still, nothing is saved to disk.
 . At 9:01:10 AM, the metrics-persistence thread saves the compressed one-minute buckets to disk.
 

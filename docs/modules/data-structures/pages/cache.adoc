@@ -7,7 +7,7 @@ page is opened on the right, as shown below.
 
 image:ROOT:CacheGridView.png[Cache Grid View]
 
-You can filter the caches shown and you can also sort the table
+You can filter the caches shown and sort the table
 by clicking on the column headers. Clicking on
 the cache name opens a new page for monitoring that cache
 instance on the right, as shown below.
@@ -71,7 +71,7 @@ From left to right, this table lists the following:
 * IP address and port of each member.
 * Put, get and remove operation rates on each member for this cache.
 
-You can select the period in the combo box placed at the top right
+You can select the period in the combo box placed in the top right
 corner of the window, for which the table data will be shown. Available
 values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
 and **Last 1 Hour**.

@@ -18,7 +18,7 @@ You can configure Management Center to save this data in a different location, u
 
 You can either configure Management Center in the UI while it's running or preconfigure it in the terminal so that it starts with the settings you need.
 
-.Configuration methods for Managment Center
+.Configuration methods for Management Center
 [cols="20%a,80%a"]
 |===
 |Configuration method|Use case

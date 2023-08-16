@@ -69,7 +69,7 @@ Management Center with the `hazelcast.mc.log.level` property. For example, to us
 -Dhazelcast.mc.log.level=debug
 ```
 
-== Customizing the Logging Configuraton
+== Customizing the Logging Configuration
 
 To further customize the logging configuration, you can create a custom
 Log4j configuration file and start Management Center with
