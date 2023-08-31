@@ -38,6 +38,8 @@ mc-start.cmd -Dhazelcast.mc.session.timeout.seconds=60
 --
 ====
 
+NOTE: The timeout duration specified with the above property is effective only after the browser tab is closed or after the browser suspends the background activity of the webpage.
+
 [[disabling-multiple-simultaneous-login-attempts]]
 == Disabling Multiple Simultaneous Login Attempts
 
