@@ -291,5 +291,5 @@ See also the following for the Management Center features that rely on your clus
 
 * xref:clusters:wan-replication.adoc[WAN Replication]
 * xref:clusters:persistence.adoc[Persistence]
-* xref:clusters:triggering-rolling-upgrade[Rolling Upgrades]
+* xref:clusters:triggering-rolling-upgrade.adoc[Rolling Upgrades]
 ====
