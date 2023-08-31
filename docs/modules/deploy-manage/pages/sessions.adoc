@@ -23,6 +23,8 @@ a session timeout period of 1 minute:
 java -Dhazelcast.mc.session.timeout.seconds=60 -jar hazelcast-management-center-{full-version}.jar
 ----
 
+NOTE: The timeout duration specified with the above property is effective only after the browser tab is closed or after the browser suspends the background activity of the webpage.
+
 [[disabling-multiple-simultaneous-login-attempts]]
 == Disabling Multiple Simultaneous Login Attempts
 
