@@ -1,19 +1,17 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.4-snapshot'
+version: '5.4-cloud-1'
 # Version in the version selector
-display_version: '5.4-SNAPSHOT'
-prerelease: true
+display_version: '5.4-CLOUD-1'
 asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '5.4-SNAPSHOT'
+    full-version: '5.4-CLOUD-1'
     # Version to be used when installing a Hazelcast cluster
     hz-full-version: '5.4.0-SNAPSHOT'
     # Version to be used when installing a snapshot using brew
     version-brew: '5.3.1.SNAPSHOT'
-    snapshot: true
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.4-snapshot'
