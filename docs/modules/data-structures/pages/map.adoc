@@ -50,20 +50,11 @@ listed.
 |Value
 |Value that is associated with the key in the map.
 
-|Class
-|Key's Java class.
-
 |Memory Cost
 |Space, in bytes, the key and value cost to be hold in memory.
 
-|Creation Time
-|First time the key was put.
-
 |Expiration Time
 |Time the key was expired and deleted from the map (depends on expiration policy configuration).
-
-|Hits
-|Count of reads by the clients for the key's value in a map.
 
 |Last Access Time
 |Last time the clients read the key's value.
@@ -71,11 +62,26 @@ listed.
 |Last Stored Time
 |Last time the key was stored into the storage.
 
-|Version
-|Count of times where the key's value has been overwritten.
-
 |Time to Live
 |Last set time to live (in milliseconds).
+
+|Key Owner Member
+|Address of the member that is owner of the key.
+
+|Class
+|Key's Java class.
+
+|Creation Time
+|First time the key was put.
+
+|Hits
+|Count of reads by the clients for the key's value in a map.
+
+|Last Update Time
+|Last time the key's value was updated.
+
+|Version
+|Count of times when the key's value has been overwritten.
 
 |Max Idle
 |Last set max idle time (in milliseconds).
