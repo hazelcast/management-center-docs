@@ -38,10 +38,10 @@ operations (offers, polls, events) performed on the queues, as shown below.
 image:ROOT:QueueOperationStatistics.png[Queue Operation Statistics]
 
 From left to right, this table lists the IP address and port of
-each member, and counts of offers, rejected offers, polls, poll misses and events.
+each member, and counts of offers, rejected offers, polls, poll misses, others and events.
 
-You can select the period in the combo box placed at the top
-right corner of the window to show the table data. Available
+You can set the period using date-time picker in the top
+right corner of the window to show the table data. Available built-in
 values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
 and **Last 1 Hour**.
 
