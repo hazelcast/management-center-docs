@@ -26,7 +26,7 @@ If an environment variable is available, it is listed under the system property 
 |[[hazelcast-mc-allowmultiplelogin]]hazelcast.mc.allowMultipleLogin
 
 MC_ALLOW_MULTIPLE_LOGIN
-|Whether a user can log into an account in Management Center on multiple devices in different locations at the same time. Default: `false`. See xref:sessions.adoc[].
+|Whether a user can log into an account in Management Center on multiple devices in different locations at the same time. Default: `true`. See xref:sessions.adoc[].
 |
 [source,bash,subs="attributes+"]
 ----
