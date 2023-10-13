@@ -728,6 +728,17 @@ hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
 
 ----
 
+|[[hazelcast-mc-prometheusexporter-timestamp-enabled]]hazelcast.mc.prometheusExporter.timestamp.enabled
+
+MC_PROMETHEUS_EXPORTER_TIMESTAMP_ENABLED
+|Whether to send timestamp of the individual members' metrics to Prometheus. Default `true`.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.prometheusExporter.timestamp.enabled=false \
+
+----
+
 |[[hazelcast-mc-prometheusExporter-filter-metrics-included]]hazelcast.mc.prometheusExporter.filter.metrics.included
 
 MC_PROMETHEUS_EXPORTER_FILTER_METRICS_INCLUDED
