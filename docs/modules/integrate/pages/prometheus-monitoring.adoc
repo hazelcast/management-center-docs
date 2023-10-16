@@ -13,6 +13,12 @@ Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus 
 
 NOTE: All metrics are exported with the `hz_` prefix.
 
+== Disabling Timestamp
+
+Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus each time. Prometheus discards metrics with the old timestamps. You can disable sending the timestamp to Prometheus so that your monitoring system continues to operate when clock shifts happen in the cluster.
+
+To disable sending timestamp to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
+
 == Configuring Prometheus
 
 After enabling the Prometheus exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
