@@ -30,6 +30,9 @@ content:
   - url: https://github.com/hazelcast-guides/client-failover
     branches: master
     start_paths: docs
+  - url: https://github.com/hazelcast-guides/sql_basics_on_viridian
+    branches: master
+    start_paths: docs
   - url: https://github.com/hazelcast-guides/spring-boot-sample
     branches: master
     start_paths: docs
