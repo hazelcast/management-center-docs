@@ -728,7 +728,7 @@ hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
 
 ----
 
-|[[hazelcast-mc-prometheusexporter-timestamp-enabled]]hazelcast.mc.prometheusExporter.timestamp.enabled
+|[[prometheus-timestamp]]hazelcast.mc.prometheusExporter.timestamp.enabled
 
 MC_PROMETHEUS_EXPORTER_TIMESTAMP_ENABLED
 |Whether to send timestamp of the individual members' metrics to Prometheus. Its default value is `true` (enabled).
