@@ -15,7 +15,7 @@ NOTE: All metrics are exported with the `hz_` prefix.
 
 == Disabling Timestamp
 
-Management Center collects metrics with the timestamp of the individual members and send this timestamp to Prometheus each time. Prometheus discards metrics with old timestamps. You can disable sending timestamp to Prometheus so that your monitoring system continues to operate when clock shifts happen in the cluster.
+Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus each time. Prometheus discards metrics with the old timestamps. You can disable sending the timestamp to Prometheus so that your monitoring system continues to operate when clock shifts happen in the cluster.
 
 To disable sending timestamp to Prometheus, set the `hazelcast.mc.prometheusExporter.timestamp.enabled` system property to `false`.
 
