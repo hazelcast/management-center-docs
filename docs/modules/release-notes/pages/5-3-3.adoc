@@ -6,7 +6,7 @@
 [[enh-533]]
 == Enhancements
 
-* MC no longer sends `scope` parameter on an authorization code `access_token` exchange request. [MC-2347]
+* MC no longer sends `scope` parameter on an OIDC authorization code `access_token`  exchange request. [MC-2347]
 
 
 [[fixes-533]]
