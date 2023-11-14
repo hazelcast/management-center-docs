@@ -4,7 +4,7 @@
 
 {description}
 
-Here are some example of what you can do with Management Center:
+Here are some examples of what you can do with Management Center:
 
 * Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
 * See statistical information about your members, clients, and data structures.
@@ -16,7 +16,7 @@ Here are some example of what you can do with Management Center:
 [[os-requirements]]
 == Requirements
 
-You must meet the following requirements to be able to run Management Center
+You must meet the following requirements to be able to run Management Center.
 
 === Supported Java Virtual Machines
 
