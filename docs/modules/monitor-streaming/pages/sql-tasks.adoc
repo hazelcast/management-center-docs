@@ -1,0 +1,24 @@
+= SQL Tasks
+:page-aliases: monitor-jet:sql-tasks.adoc
+
+This page displays the list of actively running SQL queries in the cluster:
+
+image:ROOT:SQLTasks.png[SQL Tasks]
+
+Here are the descriptions of columns:
+
+* **Query:** SQL text of the query
+* **Streaming Query:** False for batch queries and true for streaming queries
+* **Submission Time:** The timestamp of the submission
+* **Runtime:** The total execution time of the query
+
+NOTE: A query appears in this page only after the runtime exceeds three seconds.
+
+You can click on the rows to see detailed information about a query.
+
+== Query Details
+
+This page displays the available information about the SQL query.
+You can cancel a query by clicking the Cancel button on the details overlay.
+
+image:ROOT:SQLTasksOverlay.png[SnapQuery Details]
