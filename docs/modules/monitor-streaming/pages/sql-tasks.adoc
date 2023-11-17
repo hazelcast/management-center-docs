@@ -8,7 +8,7 @@ image:ROOT:SQLTasks.png[SQL Tasks]
 Here are the descriptions of columns:
 
 * **Query:** SQL text of the query
-* **Streaming Query:** Is the query bounded or not
+* **Streaming Query:** False for batch queries and true for streaming queries
 * **Submission Time:** The timestamp of the submission
 * **Runtime:** The total execution time of the query
 
