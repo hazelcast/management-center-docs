@@ -1,0 +1,13 @@
+= CP Maps
+
+You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:cpmap.adoc[CPMaps] in your cluster
+by clicking on the **CPMaps** menu item in the left menu.
+
+image:ROOT:CPMaps.png[CPMaps View]
+
+A CPMap has two metrics:
+
+- *Entries*: The number of entries in the map
+- *Size*: The size of the map in memory
+
+You can sort the table by clicking on the column headers.
