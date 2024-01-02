@@ -167,7 +167,7 @@ If an exception occurs, an error notification is displayed.
 [[terminate]]
 == Forcing a Session to Close
 
-If a Hazelcast instance that owns a CP session is not temporarily partitioned and crashed, its session could be closed manually to release its resources immediately.
+If a session owner is not temporarily partitioned and crashed, its session could be closed manually to release its resources immediately.
 
 This action is available only to admin users.
 
