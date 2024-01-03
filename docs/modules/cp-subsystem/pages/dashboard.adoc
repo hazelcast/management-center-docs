@@ -175,7 +175,7 @@ To manually close the session, complete the following steps:
 
 . In the CP Session Metrics Table, find the CP session that you want to close.
 
-. Select the `Terminate` button in the Actions column for the related session.
+. Select the *Terminate* button in the Actions column for the related session.
 
 If the session is successfully closed, a confirmation message displays.
 
