@@ -169,15 +169,16 @@ If an exception occurs, an error notification is displayed.
 
 If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
 
+To manually close the session, complete the following steps:
 
-. Go to *CP Subsystem* > *Dashboard*.
+. Select *CP Subsystem* > *Dashboard*.
 
-. Find the CP session that you want to close from the CP Session Metrics Table.
+. In the CP Session Metrics Table, find the CP session that you want to close.
 
-. Click `Terminate` button in the Actions column for the related session.
+. Select the `Terminate` button in the Actions column for the related session.
 
-If everything goes well, a success message is displayed.
+If the session is successfully closed, a confirmation message displays.
 
 image:ROOT:CPTerminateSessionDialog.png[Promote Member to CP Confirmation]
 
-If an exception occurs, an error notification is displayed.
+If an exception occurs, an error displays.
