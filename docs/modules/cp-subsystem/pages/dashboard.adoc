@@ -169,7 +169,6 @@ If an exception occurs, an error notification is displayed.
 
 If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
 
-This action is available only to admin users.
 
 . Go to *CP Subsystem* > *Dashboard*.
 
