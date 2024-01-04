@@ -66,6 +66,44 @@ The CP subsystem dashboard displays the following tables:
 
 To see more details about a particular group, click on the down arrow next to the group name.
 
+.CP group metrics group details
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Member
+|Address of the CP Member.
+
+|Role
+|Role of the member in the Group.
+
+|Priority
+|Priority of the member in raft leader election process.
+
+|Term
+|Raft term of the member in this CP group.
+
+|Commit Index
+|Commit index of the member in this CP group.
+
+|Last Applied
+|Last applied index of the member in this CP group.
+
+|Last Log Term
+|Last log term of the member in this CP group.
+
+|Snapshot Index
+|Raft snapshot index of the member in this CP group.
+
+|Last Log Index
+|Last log index of the member in this CP group.
+
+|Available Log Capacity
+|Available log capacity for the member.
+|===
+
+image:ROOT:CPGroupMetricsTable.png[CP Group Metrics Table]
+
 [[session]]
 .CP session metrics
 [cols="20%s,80%a"]
@@ -91,6 +129,26 @@ To see more details about a particular group, click on the down arrow next to th
 |===
 
 To see more details about a particular session, click on the down arrow next to the Id.
+
+[[session-sub]]
+.CP session metrics session details
+[cols="20%s,80%a"]
+|===
+|Field|Description
+|Member
+|Address of the CP member
+
+|Version
+|The number of session heartbeats that the member has received.
+
+|Creation Time
+|Time at which the session was created.
+
+|Expiration Time
+|Time at which the session will expire.
+|===
+
+image:ROOT:CPSessionMetricsTable.png[CP Session Metrics Table]
 
 == Status Banner
 
@@ -179,6 +237,6 @@ To manually close the session, complete the following steps:
 
 If the session is successfully closed, a confirmation message displays.
 
-image:ROOT:CPTerminateSessionDialog.png[Promote Member to CP Confirmation]
+image:ROOT:CPTerminateSessionDialog.png[Terminate CP Session Confirmation]
 
 If an exception occurs, an error displays.
