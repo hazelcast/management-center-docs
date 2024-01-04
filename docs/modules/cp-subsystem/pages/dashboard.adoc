@@ -66,14 +66,13 @@ The CP subsystem dashboard displays the following tables:
 
 To see more details about a particular group, click on the down arrow next to the group name.
 
+image:ROOT:CPGroupMetricsTable.png[CP Group Metrics Table]
+
 [[session]]
 .CP session metrics
 [cols="20%s,80%a"]
 |===
 |Field|Description
-
-|Member
-|Address of the CP member
 
 |Id
 |xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:sessions.adoc[Session] ID.
@@ -87,15 +86,13 @@ To see more details about a particular group, click on the down arrow next to th
 |Endpoint Type
 |The type of the client that initiated the session.
 
-|Version
-|The number of session heartbeats that the member has received.
-
-|Creation Time
-|Time at which the session was created. 
-
-|Expiration Time
-|Time at which the session will expire. 
+|Actions
+|Related actions that can be applied to the session.
 |===
+
+To see more details about a particular session, click on the down arrow next to the Id.
+
+image:ROOT:CPSessionMetricsTable.png[CP Session Metrics Table]
 
 == Status Banner
 
@@ -169,3 +166,21 @@ Go to *CP Subsystem* > *Dashboard*, and click *Restart*.
 If everything goes well, a success message is displayed.
 
 If an exception occurs, an error notification is displayed.
+[[terminate]]
+== Forcing a Session to Close
+
+If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
+
+To manually close the session, complete the following steps:
+
+. Select *CP Subsystem* > *Dashboard*.
+
+. In the CP Session Metrics Table, find the CP session that you want to close.
+
+. Select the *Terminate* button in the Actions column for the related session.
+
+If the session is successfully closed, a confirmation message displays.
+
+image:ROOT:CPTerminateSessionDialog.png[Terminate CP Session Confirmation]
+
+If an exception occurs, an error displays.
