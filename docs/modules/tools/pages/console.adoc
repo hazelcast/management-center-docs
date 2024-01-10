@@ -1,9 +1,17 @@
 = Executing Console Commands
-:description: The console feature enables you to execute commands on the cluster. For example, you can perform `put` and `get` operations on a map. 
+:description: The console feature enables you to execute client operations using built-in Hazelcast Command-Line Client (CLC).
 :page-aliases: monitor-imdg:console.adoc
 :experimental: true
 
 {description}
+
+Management Center includes an interactive version of Hazelcast's Command-Line Client (CLC).
+CLC functions as a client and adheres to any Security ACLs configured for it.
+
+CLC offers support for a wide range of data structures and the ability to run SQL queries from a text terminal. 
+It also provides flexible output options, such as table, CSV, and JSON formats.
+
+For more information on these features, visit: https://docs.hazelcast.com/clc/latest/overview
 
 WARNING: The console is not recommended for production use.
 
@@ -14,14 +22,17 @@ the console is enabled or disabled for each member.
 
 . Open a console window by clicking on the **Console** button located at the top menu.
 +
-TIP: You can also open the console, using the kbd:[Alt + T] keyboard shortcut on Windows/Linux and kbd:[Option + T] on
-Mac.
-+
 image:ROOT:Console.png[Console]
 
-. Set the namespace of a data structure, using
-the `ns <name of your data structure>` command.
+. Execute any SQL query in terminal. You don't need to use any prefix for SQL queries.
 +
-NOTE: The console does not support data structures with spaces or special characters in their names.
+image:ROOT:ConsoleSql.png[Console SQL]
+. Execute CLC commands with `\` prefix, e.g. `\atomic-long`.
++
+image:ROOT:ConsoleCommand.png[Console Commands]
 
-To get help or a list of all possible commands, enter `help` in the console.
+To get help or a list of all possible commands, enter `\help` in the console.
+You can use `--help` prefix with all commands to get more detail.
+
+TIP: Console container is resizable, you can change the height by dragging upper bar.
+You can make it fullscreen or minimized using the icons in the top-right corner of console container.
