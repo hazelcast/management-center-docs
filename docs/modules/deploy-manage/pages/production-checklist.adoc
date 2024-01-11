@@ -31,7 +31,7 @@ Review the security documentation to make sure that Management Center is secure 
 
 === Disabling Scripting and Console
 
-Scripting engines give code access to the underlying system on the members (files and other resources) and run with the same permissions as the current user. And, the console allows users to interact with the cluster and bypass any cluster client permissions.
+Scripting engines give code access to the underlying system on the members (files and other resources) and run with the same permissions as the current user. And, the console allows users to interact with the cluster.
 
 For security, scripting and the console are disabled in the member configuration by default.
 
