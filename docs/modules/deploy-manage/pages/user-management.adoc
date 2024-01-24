@@ -41,7 +41,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-|xref:getting-started:tables.adoc#current-and-historical-metrics[Reset Time]
+|xref:getting-started:graphs.adoc#current-and-historical-data[Reset Time]
 |&check;
 |&check;
 |&check;
@@ -59,7 +59,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-.3+.^|xref:getting-started:tables.adoc#presets[Clients -> View Preset]
+.3+.^|xref:getting-started:graphs.adoc#presets[Clients -> View Preset]
 |Add
 |&check;
 |&check;
@@ -136,7 +136,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-.7+.^|xref:clusters:administration.adoc[Administration]
+.6+.^|xref:clusters:administration.adoc[Administration]
 |xref:clusters:shutting-down-cluster.adoc#shut-down-a-cluster[Cluster Shutdown]
 |&check;
 |&#65794;
@@ -168,12 +168,6 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 
 |xref:clusters:triggering-hot-backup.adoc[Hot Backup]
-|&check;
-|&#65794;
-|&#65794;
-|&#65794;
-
-|xref:clusters:update-config.adoc[Update Config]
 |&check;
 |&#65794;
 |&#65794;
@@ -232,25 +226,25 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 
 .4+.^|CP Subsystem
-|xref:cp-subsystem:dashboard.adoc#promote[Promote]
+|xref:clusters:promoting-cp-member.adoc[Promote]
 |&check;
 |&check;
 |&check;
 |&#65794;
 
-|xref:cp-subsystem:dashboard.adoc#remove[Remove]
+|xref:clusters:removing-cp-member.adoc[Remove]
 |&check;
 |&check;
 |&check;
 |&#65794;
 
-|xref:cp-subsystem:dashboard.adoc#Restart[Restart]
+|xref:clusters:restarting-cp-subsystem.adoc[Restart]
 |&check;
 |&check;
 |&check;
 |&#65794;
 
-|xref:cp-subsystem:dashboard.adoc[View Metrics]
+|xref:clusters:cp-subsystem.adoc[View Metrics]
 |&check;
 |&check;
 |&check;
