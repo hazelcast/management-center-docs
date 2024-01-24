@@ -41,7 +41,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-|xref:getting-started:tables.adoc#current-and-historical-metrics[Reset Time]
+|xref:getting-started:graphs.adoc#current-and-historical-data[Reset Time]
 |&check;
 |&check;
 |&check;
@@ -59,7 +59,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 |&#65794;
 
-.3+.^|xref:getting-started:tables.adoc#presets[Clients -> View Preset]
+.3+.^|xref:getting-started:graphs.adoc#presets[Clients -> View Preset]
 |Add
 |&check;
 |&check;
