@@ -38,7 +38,7 @@ image:ROOT:WidgetHistorical.png[alt=Historical mode, align="center"]
 
 == Presets
 
-Graphs providesaccess to an extensive list of metrics
+Graphs provides access to an extensive list of metrics
 and use a selection of filters to show only relevant data matching a certain condition on the graph.
 A preset is a combination of metrics and a filter. You can add/edit new presets and remove the existing ones.
 Each graph is shipped with at least one default preset. You cannot edit or remove a default preset.
