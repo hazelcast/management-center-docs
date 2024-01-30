@@ -61,7 +61,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Rebranded MC to a new Hazelcast company style. [MC-2170]
 * Added persistence information to Caches and Maps tables. [MC-2243]
 * Added useful links to the left panel. [MC-2274]
-* Added a banner tp notify about a repartitioning in progress. [MC-2132]
+* Added a banner to notify about a repartitioning in progress. [MC-2132]
 * Added a warning member addresses contain `localhost` in MC running in Docker. [MC-2018]
 * Added a marking for members with TPC enabled in Members table. [MC-2171]
 * Added member's Startup Time to Members table. [MC-1138]
