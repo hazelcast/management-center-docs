@@ -1,3 +1,4 @@
+** xref:release-notes:5-4-0-BETA-2.adoc[5.4.0-BETA-2]
 ** xref:release-notes:5-3-3.adoc[5.3.3]
 ** xref:release-notes:5-3-2.adoc[5.3.2]
 ** xref:release-notes:5-3-1.adoc[5.3.1]
