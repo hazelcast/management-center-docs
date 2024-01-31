@@ -9,7 +9,6 @@ NOTE: This only applies if you are upgrading your MC: MC 5.4.0 uses H2 2.x as it
 H2 1.x and 2.x are not compatible so a data migration step is required.
 If you use the provided `hz-mc` or `mc-start` scripts to start MC, no further actions are needed as they handle the migration seamlessly. If you use
 a custom run script, refer to the documentation for comprehensive instructions on migrating MC data. If the internal database is not upgraded, then MC will start with a new configuration.
-[[nf-540BETA2]]
 == New Features
 
 * **HealthCheck**
@@ -34,7 +33,6 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Added Favourites menu to the left panel. [MC-973]
 * Added a promo page for all licensed features. [MC-1038]
 
-[[enh-540BETA2]]
 == Enhancements
 
 * **Console access**
@@ -73,7 +71,6 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Made timestamps optional in Prometheus Exporter. [MC-2127]
 * Improved displaying of small values to `< 0.01` instead of `0`. [MC-2448]
 
-[[fixes-540BETA2]]
 == Fixes
 
 * MC no longer displays warning about missing packages on startup. [MC-2558]
