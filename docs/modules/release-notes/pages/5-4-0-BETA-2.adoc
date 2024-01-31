@@ -3,7 +3,7 @@
 These release notes list any new features, enhancements, and fixes that were made between version 5.3.3 and 5.4.0-BETA-2 of Hazelcast Management Center (MC).
 {description}
 
-NOTE: Hazelcast Management Center 5.3 requires Java 17 to run.
+NOTE: Hazelcast Management Center 5.4 requires Java 17 to run.
 
 NOTE: MC 5.4.0 uses H2 2.x instead of H2 1.x used by the previous MC releases. H2 1.x and 2.x aren't compatible so data migration is required.
 If you utilize the provided `hz-mc` or `mc-start` scripts, no further actions are needed as they handle the migration seamlessly. If you use
@@ -16,7 +16,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 ** Introduced semantic identifiers for the checks. [MC-2402]
 ** Added an ability to see all the suppressed checks. [MC-1750]
 ** Added an ability to unsuppress checks. [MC-1749]
-** Added an ability to search, filter and sort HealthCheck results. [MC-2445]
+** Added an ability to search and filter HealthCheck results. [MC-2445]
 ** Added HealthCheck status info to Dashboard. [MC-2437]
 ** Added an ability to disable a check for specific data structures. [MC-2424]
 ** Added a check for `eviction-policy` and `eviction-size` consistency. [MC-2426]
@@ -27,6 +27,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 ** Added a check for a soft limit of CPMap instances. [MC-2505]
 ** Added a check for members TPC configuration. [MC-2204]
 ** Added checks for Tiered Storage configuration. [MC-2550]
+** Added HealthCheck counters to Prometheus Exporter. [MC-2439]
 * Added Hazelcast Command-Line Client (CLC) to MC instead of Console. [MC-2189]
 * Added an ability to terminate CP sessions. [MC-1719]
 * Added support for CPMap data structure. [MC-2462]
