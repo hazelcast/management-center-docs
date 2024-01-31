@@ -3,12 +3,12 @@
 These release notes list any new features, enhancements, and fixes that were made between version 5.3.3 and 5.4.0-BETA-2 of Hazelcast Management Center (MC).
 {description}
 
-NOTE: Hazelcast Management Center 5.4 requires Java 17 to run.
+NOTE: Hazelcast Management Center 5.4 requires Java 17 or later to run.
 
-NOTE: MC 5.4.0 uses H2 2.x instead of H2 1.x used by the previous MC releases. H2 1.x and 2.x aren't compatible so data migration is required.
-If you utilize the provided `hz-mc` or `mc-start` scripts, no further actions are needed as they handle the migration seamlessly. If you use
-a custom run script, refer to the documentation for comprehensive instructions on migrating MC data.
-
+NOTE: This only applies if you are upgrading your MC: MC 5.4.0 uses H2 2.x as its internal database instead of H2 1.x used by the previous MC releases. 
+H2 1.x and 2.x are not compatible so a data migration step is required.
+If you use the provided `hz-mc` or `mc-start` scripts to start MC, no further actions are needed as they handle the migration seamlessly. If you use
+a custom run script, refer to the documentation for comprehensive instructions on migrating MC data. If the internal database is not upgraded, then MC will start with a new configuration.
 [[nf-540BETA2]]
 == New Features
 
@@ -28,7 +28,6 @@ a custom run script, refer to the documentation for comprehensive instructions o
 ** Added a check for members TPC configuration. [MC-2204]
 ** Added checks for Tiered Storage configuration. [MC-2550]
 ** Added HealthCheck counters to Prometheus Exporter. [MC-2439]
-* Added Hazelcast Command-Line Client (CLC) to MC instead of Console. [MC-2189]
 * Added an ability to terminate CP sessions. [MC-1719]
 * Added support for CPMap data structure. [MC-2462]
 * Added an ability to pause and resume streaming output in SQL Browser. [MC-2236]
@@ -38,11 +37,13 @@ a custom run script, refer to the documentation for comprehensive instructions o
 [[enh-540BETA2]]
 == Enhancements
 
+* **Console access**
+** The Hazelcast Command-Line Client (CLC) has replaced the MC Console. CLC uses the same member config option to enable or disable the capability. [MC-2189]
 * **SQL Browser**
 ** Added an automatic SQL formatter to SQL Browser. [MC-2351]
 ** Added a proper error message to SQL Browser when Jet is disabled. [MC-2410]
-** Added a proper error message to SQL Browser when  a mapping can't be generated for an empty map. [MC-2270]
-** All maps are now shown in Connector Wizard instead of only unmapped ones. [MC-2247]
+** Added a proper error message to SQL Browser when  a mapping cannot be generated for an empty map. [MC-2270]
+** All maps are now shown in Connector Wizard instead of just the unmapped ones. [MC-2247]
 ** Made View icon blue instead of red to avoid confusion. [MC-2201]
 ** Added an option to load the query from the query history into SQL Editor tab without executing it. [MC-2179]
 ** Only expression at the cursor is executed. [MC-1957]
