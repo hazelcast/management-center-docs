@@ -23,6 +23,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 ** Added a check for CP Subsystem running in Unsafe mode. [MC-2364]
 ** Added a check for a map backup count set to 0. [MC-2350]
 ** Added a check for an even cluster size. [MC-2322]
+** Added a check for CP Subsystem configuration. [MC-2519]
 ** Added a check for CPMap configuration. [MC-2519]
 ** Added a check for a soft limit of CPMap instances. [MC-2505]
 ** Added a check for members TPC configuration. [MC-2204]
@@ -33,6 +34,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Added an ability to pause and resume streaming output in SQL Browser. [MC-2236]
 * Added Favourites menu to the left panel. [MC-973]
 * Added a promo page for all licensed features. [MC-1038]
+* Added SQL Tasks page with a list of actively running SQL queries. [MC-962]
 
 == Enhancements
 
