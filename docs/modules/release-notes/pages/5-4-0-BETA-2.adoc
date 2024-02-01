@@ -9,6 +9,7 @@ NOTE: This only applies if you are upgrading your MC: MC 5.4.0 uses H2 2.x as it
 H2 1.x and 2.x are not compatible so a data migration step is required.
 If you use the provided `hz-mc` or `mc-start` scripts to start MC, no further actions are needed as they handle the migration seamlessly. If you use
 a custom run script, refer to the documentation for comprehensive instructions on migrating MC data. If the internal database is not upgraded, then MC will start with a new configuration.
+
 == New Features
 
 * **HealthCheck**
