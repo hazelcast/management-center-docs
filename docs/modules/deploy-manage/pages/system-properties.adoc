@@ -76,6 +76,105 @@ hz-mc start -Dhazelcast.mc.contextPath=hazelcast-mc \
 
 In this example, the URL for Management Center would be `\http:localhost:8080/hazelcast-mc`.
 
+|[[hazelcast-mc-cors-allowed-origin-patterns]]hazelcast.mc.cors.allowedOriginPatterns
+
+MC_CORS_ALLOWED_ORIGIN_PATTERNS
+|A list of origins patterns for which cross-origin requests are allowed.
+
+If none of `hazelcast.mc.cors.*` properties are set, all origins are allowed to make cross-origin HTTP requests, but WebSocket connection could be established only from the same origin.
+By default this is not set.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.allowedOriginPatterns=http://domain.com:[*],https://*.domain.com:8443,http://domain.com:[8080,8090],
+----
+|[[hazelcast-mc-cors-allowed-methods]]hazelcast.mc.cors.allowedMethods
+
+MC_CORS_ALLOWED_METHODS
+|HTTP methods to allow for cross-origin requests.
+
+By default this is not set.
+
+If any other `hazelcast.mc.cors.*` property is set while `hazelcast.mc.cors.allowedMethods` is not set, only `GET` and `HEAD` HTTP methods will be allowed.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.allowedMethods=GET,HEAD,POST,DELETE
+----
+|[[hazelcast-mc-cors-allowed-headers]]hazelcast.mc.cors.allowedHeaders
+
+MC_CORS_ALLOWED_HEADERS
+|List of headers that a pre-flight request can list as allowed for use during an actual request.
+
+The special value `*` allows actual requests to send any header.
+
+A header name is not required to be listed if it is one of:
+`Cache-Control`, `Content-Language`, `Expires`,
+`Last-Modified`, or `Pragma`.
+
+By default this is not set.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.allowedHeaders=*
+----
+|[[hazelcast-mc-cors-exposed-headers]]hazelcast.mc.cors.exposedHeaders
+
+MC_CORS_EXPOSED_HEADERS
+|List of response headers that an actual response might have and can be exposed to the client.
+
+The special value `*` allows all headers to be exposed.
+
+A header name is not required to be listed if it is one of:
+`Cache-Control`, `Content-Language`, `Expires`,
+`Last-Modified`, or `Pragma`.
+
+By default this is not set.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.exposedHeaders=*
+----
+|[[hazelcast-mc-cors-allow-credentials]]hazelcast.mc.cors.allowCredentials
+
+MC_CORS_ALLOW_CREDENTIALS
+|Whether user credentials are supported or not.
+Setting this property to `true` forbids originPatterns, allowedMethods, allowedHeaders to have a `*` value.
+Be aware that this option establishes a high level of trust with the configured domains and also increases the surface
+ attack of the web application by exposing sensitive user-specific information such as cookies and CSRF tokens.
+By default this is not set (i.e. user credentials are not supported).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.allowCredentials=true
+----
+|[[hazelcast-mc-cors-allow-private-network]]hazelcast.mc.cors.allowPrivateNetwork
+
+MC_CORS_ALLOW_PRIVATE_NETWORK
+|Whether private network access is supported for user-agents restricting such access by default.
+
+Private network requests are requests whose target server's IP address is more private than
+ that from which the request initiator was fetched. For example, a request from a public website
+ (https://example.com) to a private website (https://router.local), or a request from a private
+ website to localhost.
+
+By default this is not set (i.e. private network access is not supported).
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.allowPrivateNetwork=true
+----
+|[[hazelcast-mc-cors-max-age]]hazelcast.mc.cors.maxAge
+
+MC_CORS_MAX_AGE
+|Configure how long, in seconds, the response from a pre-flight request can be cached by clients.
+
+By default this is not set.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.cors.maxAge=1600
+----
 |[[hazelcast-mc-cluster-operation-timeout]]hazelcast.mc.cluster.operation.timeout.millis
 |Timeout in milliseconds for Management Center operations that wait for a response from members. Default: 60000.
 |
@@ -85,6 +184,7 @@ hz-mc start -Dhazelcast.mc.cluster.operation.timeout.millis=60000
 ----
 
 |[[hazelcast-mc-disablehostnameverification]]hazelcast.mc.disableHostnameVerification
+
 |Whether Management Center does not verify the hostname of signed TLS/SSL certificates. Default: `false`.
 |
 [source,bash,subs="attributes+"]
