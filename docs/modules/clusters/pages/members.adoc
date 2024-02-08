@@ -115,30 +115,51 @@ NOTE: These descriptions may vary according to the JVM version or vendor.
 |Number of processors
 available to the member (JVM).
 
-|Start Time
-|Start time of the member (JVM).
-
 |Uptime
 |Uptime of the member (JVM).
+
+|Startup Time
+|Startup time of the member (JVM).
 
 |Maximum Memory
 |Maximum amount of memory that
 the member (JVM) will attempt to use.
 
+|Total Memory
+|Amount of total memory in the member (JVM).
+
 |Free Memory
 |Amount of free memory in the member (JVM).
 
-|Used Heap Memory
-|Amount of used memory.
+|Used Memory
+|Amount of used memory by the member (JVM).
 
 |Max Heap Memory
 |Maximum amount of memory that can be used for memory management.
 
-|Used Non-Heap Memory
-|Amount of used memory.
+|Committed Heap Memory
+|Amount of committed heap memory from the member.
 
-|Max Non-Heap Memory
-|Maximum amount of memory that can be used for memory management.
+|Free Heap Memory
+|Amount of free heap memory of the member.
+
+|Used Heap Memory
+|Amount of used heap memory of the member.
+
+|Max Native Memory
+|Maximum native memory that can be used for memory management.
+
+|Committed Native Memory
+|Amount of committed native memory from the member.
+
+|Free Native Memory
+|Amount of free native memory of the member.
+
+|Used Native Memory
+|Amount of used native memory by the member.
+
+|Device Usage (`device-name`)
+|Percentage of the used device space for the configured device with name `device-name` (if Tiered Storage is enabled).
 
 |Total Loaded Classes
 |Total number of classes
@@ -148,13 +169,9 @@ that have been loaded since the member (JVM) has started execution.
 |Number of classes that
 are currently loaded in the member (JVM).
 
-|Total Unloaded Classes
+|Unloaded Classes
 |Total number of classes
 unloaded since the member (JVM) has started execution.
-
-|Total Thread Count
-|Total number of threads created
-and also started since the member (JVM) started.
 
 |Active Thread Count
 |Current number of live threads
@@ -198,27 +215,17 @@ represents an opened file in the operating system.
 |CPU time used by the process on
 which the member (JVM) is running.
 
-|OS Process CPU Load
-|Recent CPU usage for the member
-(JVM) process. This is a double with a value from 0.0 to 1.0.
-A value of 0.0 means that none of the CPUs were running threads
-from the member (JVM) process during the recent period of time
-observed, while a value of 1.0 means that all CPUs were actively
-running threads from the member (JVM) 100% of the time during the
-recent period being observed. Threads from the member (JVM) include
-the application threads as well as the member (JVM) internal threads.
+|OS System CPU Load
+|Recent CPU usage for the whole system represented as a percentage value.
+0% means that all CPUs were idle during the recent period of time
+observed, while 100% means that all CPUs were actively running during
+the recent period being observed.
 
 |OS System Load Average
 |System load average for the last minute.
 The system load average is the average over a period of time of this sum:
 (the number of runnable entities queued to the available processors) + (the number of runnable entities running on the available processors). The way in which the load average is calculated is operating system specific
 but it is typically a damped time-dependent average.
-
-|OS System CPU Load
-|Recent CPU usage for the whole system represented as a percentage value.
-0% means that all CPUs were idle during the recent period of time
-observed, while 100% means that all CPUs were actively running during
-the recent period being observed.
 
 |===
 
