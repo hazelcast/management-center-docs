@@ -4,60 +4,21 @@
 {description}
 
 Management Center uses https://logging.apache.org/log4j/2.x/[Log4j 2]
-for its logging. By default, Management Center prints all logs except audit logs to standard output. This behavior is defined by the following Log4j 2 configuration file:
+for its logging. By default, Management Center prints all logs except audit logs to standard output. This behavior is defined by the following Spring Boot configuration properties:
 
 [source,properties]
 ----
-appender.console.type = Console
-appender.console.name = STDOUT
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %d [%highlight{%5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
-appender.console.filter.threshold.type = ThresholdFilter
-appender.console.filter.threshold.level = ${sys:hazelcast.mc.log.level:-all}
-
-logger.hazelcast.name = com.hazelcast
-logger.hazelcast.level = ${sys:hazelcast.mc.log.level:-error}
-logger.hazelcast.additivity = false
-logger.hazelcast.appenderRef.rolling.ref = STDOUT
-
-logger.mc.name = com.hazelcast.webmonitor
-logger.mc.level = ${sys:hazelcast.mc.log.level:-info}
-logger.mc.additivity = false
-logger.mc.appenderRef.rolling.ref = STDOUT
-
-logger.jetty.name = org.eclipse.jetty
-logger.jetty.level = ${sys:hazelcast.mc.log.level:-warn}
-logger.jetty.additivity = false
-logger.jetty.appenderRef.rolling.ref = STDOUT
-
-logger.spring.name = org.springframework
-logger.spring.level = ${sys:hazelcast.mc.log.level:-warn}
-logger.spring.additivity = false
-logger.spring.appenderRef.rolling.ref = STDOUT
-
-logger.hibernatevalidator.name = org.hibernate.validator
-logger.hibernatevalidator.level = ${sys:hazelcast.mc.log.level:-warn}
-logger.hibernatevalidator.additivity = false
-logger.hibernatevalidator.appenderRef.rolling.ref = STDOUT
-
-logger.flywaydb.name = org.flywaydb
-logger.flywaydb.level = ${sys:hazelcast.mc.log.level:-warn}
-logger.flywaydb.additivity = false
-logger.flywaydb.appenderRef.rolling.ref = STDOUT
-
-logger.hikari.name = com.zaxxer.hikari
-logger.hikari.level = ${sys:hazelcast.mc.log.level:-warn}
-logger.hikari.additivity = false
-logger.hikari.appenderRef.rolling.ref = STDOUT
-
-# Otherwise every resolved exception is logged
-logger.springerror.name = org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver
-logger.springerror.level = ${sys:hazelcast.mc.log.level:-error}
-logger.springerror.additivity = false
-logger.springerror.appenderRef.rolling.ref = STDOUT
-
-rootLogger.level = ${sys:hazelcast.mc.log.level:-info}
-rootLogger.appenderRef.stdout.ref = STDOUT
+logging.pattern.console=%d [%highlight{%5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n%xwEx
+logging.level.root=${hazelcast.mc.log.level:INFO}
+logging.level.com.hazelcast=${hazelcast.mc.log.level:ERROR}
+logging.level.com.hazelcast.webmonitor=${hazelcast.mc.log.level:INFO}
+logging.level.org.springframework=${hazelcast.mc.log.level:WARN}
+logging.level.org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver=${hazelcast.mc.log.level:ERROR}
+logging.level.MetricsTrace=TRACE
+logging.level.com.zaxxer.hikari=${hazelcast.mc.log.level:WARN}
+logging.level.liquibase=${hazelcast.mc.log.level:WARN}
+logging.level.org.hibernate.validator=${hazelcast.mc.log.level:WARN}
+logging.level.org.eclipse.jetty=WARN
 ----
 
 == Changing the Log Level
@@ -68,32 +29,26 @@ Management Center with the `hazelcast.mc.log.level` property. For example, to us
 ```bash
 -Dhazelcast.mc.log.level=debug
 ```
+To change the logging level for the specific logger, start Management Center with the system property of the following format:
+ `logging.level.<logger-name>=<level>`, where `level` is one of `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `FATAL`, or `OFF`. The `root` logger can be configured by using `logging.level.root`.
+
+For example,
+```bash
+-Dlogging.level.root=DEBUG
+-Dlogging.level.web=TRACE
+-Dlogging.level.org.springframework=INFO
+```
 
 == Customizing the Logging Configuration
 
 To further customize the logging configuration, you can create a custom
-Log4j configuration file and start Management Center with
+Log4j 2 configuration file and start Management Center with
 the `logging.config` property.
 
 For example, you can create a file named `log4j2-custom.properties` with the following
-content and set logging level to `DEBUG`.
+content and write log messages into rolling log files.
 To use this file as the logging configuration, you would start Management Center with the
 `-Dlogging.config=/path/to/your/log4j2-custom.properties` command line parameter:
-
-[source,properties]
-----
-appender.console.type = Console
-appender.console.name = STDOUT
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %d [%highlight{%5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n
-appender.console.filter.threshold.type = ThresholdFilter
-appender.console.filter.threshold.level = ${sys:hazelcast.mc.log.level:-all}
-
-rootLogger.level = debug
-rootLogger.appenderRef.stdout.ref = STDOUT
-----
-
-To write log messages into rolling log files, you can use a similar Log4j configuration file:
 
 [source,properties]
 ----
@@ -209,7 +164,7 @@ types:
 
 === Writing Audit Logs to Rolling Files
 
-To write audit logs to separate rolling log files, you can use a Log4j configuration file such as the following:
+To write audit logs to separate rolling log files, you can use a Log4j 2 configuration file such as the following:
 
 [source,properties]
 ----
