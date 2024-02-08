@@ -130,7 +130,7 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&#65794;
 
 |xref:clusters:healthcheck.adoc[Healthcheck]
-|xref:clusters:healthcheck.adoc[Re-run Healthcheck]
+|xref:clusters:healthcheck.adoc[Run Healthcheck]
 |&check;
 |&#65794;
 |&#65794;

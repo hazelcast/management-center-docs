@@ -1,5 +1,5 @@
-= Running a Config Healthcheck
-:description: You can generate a healthcheck report to analyze all member configurations in a cluster. 
+= Healthcheck
+:description: You can run Healthcheck to analyze member configs and metrics in a cluster.
 :page-aliases: ROOT:healthcheck.adoc
 :page-enterprise: true
 
@@ -7,16 +7,73 @@
 
 image:ROOT:Healthcheck.png[Healthcheck]
 
-Management Center automatically runs the healthcheck report at certain intervals. You can disable automatic runs by setting the `-Dhazelcast.mc.periodic.healthcheck.enabled`
-system property to `false`.
+Healthcheck provides various checks related to configuration semantics, environment, member config equality, and usage.
 
-To manually run a healthcheck, go to *Config Healthcheck* and click *Re-Run Healthcheck*.
+A new Healthcheck is performed upon navigation to the Healthcheck page. You can run all checks again using the `RUN HEALTHCHECK` button in the header.
 
-== Ignoring Healthcheck Problems
+== Healthcheck Status
+Healthcheck categorizes the checks and problems with five different severities:
 
-Sometimes, minor differences in member configurations are acceptable, but the healthcheck report will still display a failed status. To hide failed healthcheck reports, you can
-click *IGNORE* to ignore the reported problems. Ignored problems will not be displayed again in future healthcheck runs.
+- *FAIL:* A check has the status `FAIL`, indicated by a red color, when the cluster exhibits at least one critical problem, signaling the need for urgent resolution to prevent system failure or compromise.
+- *WARNING:* A check has the status `WARNING`, indicated by a yellow color, when the cluster exhibits at least one non-critical issue or potential concern that requires attention, but does not pose an immediate threat or failure.
+- *INFO:* A check has the status `INFO`, indicated by a blue color, to inform the user about best practices that may be applied to enhance system performance, availability, or efficiency within the cluster.
+- *PASS:* A check has the status `PASS`, indicated by a green color, if no violations found in the cluster.
+- *DISABLED:* A check has the status `DISABLED`, indicated by a gray color, if a check is disabled by the user.
 
-NOTE: Ignored healthcheck problems can not be unignored.
+NOTE: If Prometheus Export is enabled, individual Healthcheck status counts are published via exporter periodically with `hz_healthcheck_status_` prefix. For further information on Prometheus Exporter, see xref:integrate:prometheus-monitoring.adoc[].
 
-image:ROOT:HealthcheckIgnore.png[Ignore Healthcheck]
+== Actions
+image:ROOT:HealthcheckActions.png[Healthcheck Actions]
+
+Healthcheck provides several actions to be taken using the Actions dropdown in the header. These actions include the following:
+
+- *Run Full Healthcheck:* When a regular Healthcheck is performed, disabled checks are typically ignored. However, this action specifically allows for the execution of a Healthcheck that includes the results of disabled checks.
+
+NOTE: After running a Full Healthcheck, preview mode is enabled. When Healthcheck goes into preview mode, the user is not able to disable any check. Running regular Healthcheck disables the preview mode.
+
+- *Download Report:* This action can be used to download the Healthcheck report in JSON format, for further analysis.
+- *Reset Healthcheck Settings:* This action removes all information about disabled checks and data structures. After resetting the settings, Healthcheck will include all checks and data structures in the analysis.
+
+== Filters
+image:ROOT:HealthcheckFilter.png[Healthcheck Filters]
+Healthcheck provides a mechanism to filter the results based on several attributes. These filters include the following:
+
+- *Search:*
+Healthcheck results can be filtered by searching for check ID, description, problematic member, and data structure.
+- *Status Filter:*
+You can keep track of the number of checks based on their statuses. Additionally, you can toggle the statuses on/off to filter the results in the report by clicking on the status buttons.
+- *Category Filter:*
+Healthcheck categorizes the checks by several attributes. The results can be filtered by enabling/disabling the checks in different categories, by using choose category dropdown in the header.
+
+NOTE: ID of a check has a letter prefix about the related category.
+
+If at least one filter is in use, all the filters can be cleared using the `Reset Filters` button.
+
+== Healthcheck Problems
+image:ROOT:HealthcheckProblems.png[Healthcheck Problems]
+
+Individual check results can be inspected by clicking on the report item associated with a specific check. A report item may contain several problems of different statuses. A problem summary consists of a problem description
+and advice to fix the issue.
+
+== Disabling Checks
+A check can be disabled when it is not critical, and omitting the check is feasible for a cluster. When a check is disabled, Healthcheck does not perform an operation about this particular check.
+Healthcheck provides two disabling mechanisms:
+
+*Disabling for the whole cluster:* A check can be disabled for the whole cluster by clicking on the checkbox in the details of a report item. Cluster-wide disabled check will not be performed on any member or data structure.
+
+*Disabling for a specific data structure:* A check can be disabled for a specific data structure by clicking on the `Disable For` button inside a problem detail. Note that the check will be performed on the other data structures,
+and it may still contain problems about other data structures.
+
+NOTE: Disabling for a specific data structure works only for specific checks. This mechanism does not exist for every check.
+
+Disabling a check causes the corresponding report item to move down the list. The details of a disabled check looks like the following:
+
+image:ROOT:HealthcheckEnable.png[Healthcheck Enable]
+
+A check may be further enabled for the whole cluster, or for a specific data structure from the report details of the disabled check.
+
+- If a check is disabled cluster-wide, the checkbox inside the report details can be used to enable the check for the whole cluster.
+
+- If a check is disabled for a specific data structure, details about the disabled data structures is shown in the report item. You can further enable the check for a specific data structure by clicking on the `Enable For` button inside
+the problem details.
+

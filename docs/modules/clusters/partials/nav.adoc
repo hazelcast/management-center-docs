@@ -19,4 +19,4 @@
 *** xref:clusters:triggering-partial-start.adoc[]
 *** xref:clusters:triggering-hot-backup.adoc[]
 * xref:clusters:wan-replication.adoc[WAN Replication]
-* xref:clusters:healthcheck.adoc[Config Healthcheck]
+* xref:clusters:healthcheck.adoc[Healthcheck]

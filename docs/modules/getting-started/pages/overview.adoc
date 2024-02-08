@@ -91,7 +91,7 @@ A valid Enterprise license for Management Center is required for the following f
 * Clustered REST API
 * Cluster client filtering
 * Prometheus exporter
-* Configuration healthcheck
+* Healthcheck
 
 A valid Enterprise license for Hazelcast members is required for the following features:
 
