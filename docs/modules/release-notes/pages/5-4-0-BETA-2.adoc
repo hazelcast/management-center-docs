@@ -35,6 +35,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Added Favourites menu to the left panel. [MC-973]
 * Added a promo page for all licensed features. [MC-1038]
 * Added SQL Tasks page with a list of actively running SQL queries. [MC-962]
+* Added configuration parameters for CORS. [MC-2583]
 
 == Enhancements
 
@@ -79,6 +80,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * MC no longer displays warning about missing packages on startup. [MC-2558]
 * MC no longer throws an exception when Jet is disabled. [MC-2289]
 * MC no longer throws an exception when on Streaming page and 4.x cluster. [MC-2531]
+* MC no longer throws an exception when on a context path contains slashes. [MC-2637]
 * MC no longer logs exceptions on a cluster delete operation. [MC-1177]
 * MC no longer show JMX cluster beans for 2 minutes after cluster disconnection. [MC-2602]
 * MC no longer tries to connect to websocket while the app is not initialized. [MC-2560]
