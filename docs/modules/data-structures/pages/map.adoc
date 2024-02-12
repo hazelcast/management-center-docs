@@ -116,6 +116,9 @@ image:ROOT:MapConfig.png[Map Config Tool]
 You can change any attribute and click the **Update** button to save
 your changes.
 
+NOTE: Map config is updated only on the members MC is aware of at the time of the update. When a new member joins the cluster, the updated map configuration is not propagated to it.
+Also if a member has persistence enabled, the updated map config is not persisted to disk and the updates are lost upon the next restart.
+
 [[map-monitoring]]
 == Monitoring a Map
 
