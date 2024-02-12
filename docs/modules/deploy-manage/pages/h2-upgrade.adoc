@@ -1,19 +1,19 @@
 = H2 upgrade
-:description: Management Center uses H2 database to store metadata like connected clusters, security provider config, client filtering configs, etc. For a long time we were using H2 version 1.x, that became unmaitained. Some security scanners were reporting vulnerabilities for H2 1.x, even if Management Center is not affected by these vulnerabilties. Starting from 5.4.0 Management Center uses maintained H2 2.x with lots of fixes and improvements. Unfortunately metadata from the H2 1.x is not binary compatible with H2 2.x version. That is why data migration is required.
+:description: Management Center uses H2 database to store metadata, including connected clusters, security provider config, and client filtering configs. As H2 version 1.x is no longer maintained, some security scanners report vulnerabilities for this version. Although not affected by these vulnerabilities, Management Center has been updated to use H2 2.x, which also includes a number of fixes and improvements. However, as metadata from the H2 1.x is not binary compatible with version 2.x , data migration is required.
 
 {description}
 
 == Seamless H2 data migration
 
-Starting with 5.4.0 we deliver additional `h2-upgrade-cli-*.jar` that is impicitly invoked during Management Center startup in `./bin/hz-mc start` command. So if you use bundled `hz-mc` tool or `hazelcast/management-center` docker image to start Management Center, no actions required on your side, H2 data will be automatically backed up and migrated.
+From 5.4.0, an additional `h2-upgrade-cli-*.jar` is included, which is impicitly invoked during Management Center startup during the `./bin/hz-mc start` command. This means that no further action is required if you use bundled `hz-mc` tool or `hazelcast/management-center` docker image to start Management Center and H2 data is automatically backed up and migrated.
 
 == H2 data migration
 
-If in your setup you have to use custom scripts to run Management Center and you don't call `./bin/hz-mc start` from it, you need to upgrade and migrate H2 data manually.
+If you use custom scripts to run Management Center and they don't call `./bin/hz-mc start`, you must upgrade and migrate H2 data manually.
 
-There is a new command `hz-mc upgrade-h2` that runs all migrations for you. It migrates data from `${MC_HOME}/sql` to `${MC_HOME}/metadata`, during migration some additional folders will be created fro troubleshooting purposes, like `sql.backup`, `sql.migrated.${timestamp}`, etc. Those additional folders can be safely deleted after successful migration.
-If you customized Management Center home directory make sure you have `MC_HOME` env var configured before calling `hz-mc upgrade-h2`
-For example,
+The new `hz-mc upgrade-h2` command runs all migrations for you and migrates data from `${MC_HOME}/sql` to `${MC_HOME}/metadata`. During migration, some additional folders are created for troubleshooting purposes; these include `sql.backup` and `sql.migrated.${timestamp}`. These additional folders can be safely deleted after successful migration.
+If you have customized the Management Center home directory, ensure that the `MC_HOME` environment variable has been configured before calling `hz-mc upgrade-h2`
+For example:
 ```bash
 MC_HOME=/opt/mc ./bin/hz-mc upgrade-h2
 ```
