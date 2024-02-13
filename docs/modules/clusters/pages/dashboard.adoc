@@ -31,7 +31,7 @@ see xref:cp-subsystem.adoc[].
 xref:client-filtering.adoc[].
 
 |Healthcheck
-|Status counts of checks in Healthcheck result. For more information about Healthcheck in Management Center, see
+|Total number of each status in the Healthcheck results. For more information about Healthcheck in Management Center, see
 xref:healthcheck.adoc[].
 
 |===
