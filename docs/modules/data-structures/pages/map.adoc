@@ -157,7 +157,7 @@ From left to right, this table lists the following:
 |Memory cost of backup entries held by the member.
 
 |Events
-|Number of map events received by the member, including near cache invalidation and new entries.
+|Number of map events received by the member. A map event is triggered when a map entry is added, removed, updated, evicted, expired, merged, loaded, invalidated, or included in the "evict all" or "clear all" operations.
 
 |Hits
 |Number of hits (reads) of the entries that are owned by

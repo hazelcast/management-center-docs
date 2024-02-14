@@ -47,7 +47,7 @@ From left to right, this table lists the following:
 |Memory cost of the owned entries in the member.
 
 |Events
-|Number of the events received by the member.
+|Number of replicated map events received by the member. A replicated map event is triggered when a map entry is added, removed, updated, evicted, expired, merged, loaded, invalidated, or included in the "evict all" or "clear all" operations.
 
 |Hits
 |Number of the reads performed for this Replicated Map's entries.
