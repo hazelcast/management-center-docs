@@ -36,6 +36,7 @@ NOTE: After running a Full Healthcheck, preview mode is enabled. In preview mode
 
 == Filters
 image:ROOT:HealthcheckFilter.png[Healthcheck Filters]
+
 You can filter Healthcheck results using any combination of the following:
 
 - *Search:*
@@ -59,9 +60,9 @@ and an advice to fix the issue.
 Only disable a check when it is not critical and when omitting that check is viable for a cluster. When a check is disabled, Healthcheck does not perform that check.
 You can disable a check in either of the following ways:
 
-*Disable for the whole cluster:* Select the checkbox in the details of a report item to disable the check for the whole cluster. If selected, the check is not performed on any member or data structure in the cluster.
+- *Disable for the whole cluster:* Select the checkbox in the details of a report item to disable the check for the whole cluster. If selected, the check is not performed on any member or data structure in the cluster.
 
-*Disable for a specific data structure*: Select the *Disable For* button in the problem details to disable the check for a specific data structure.
+- *Disable for a specific data structure*: Select the *Disable For* button in the problem details to disable the check for a specific data structure.
 
 NOTE: Disabling for a specific data structure works only for specific checks. There is no mechanism to disable all checks for a particular data structure.
 
