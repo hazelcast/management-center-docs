@@ -4,7 +4,7 @@
 
 {description}
 
-image:ROOT:DashboardPage.png[Cluster dashboard page]
+image:ROOT:Dashboard.png[Cluster dashboard page]
 
 [[cluster-state-and-health]]
 == Cluster Status
@@ -29,6 +29,10 @@ see xref:cp-subsystem.adoc[].
 |Filtering
 |Status of any client filter lists and the list type. For more information about client filtering in Management Center, see
 xref:client-filtering.adoc[].
+
+|Healthcheck
+|Total number of each status in the Healthcheck results. For more information about Healthcheck in Management Center, see
+xref:healthcheck.adoc[].
 
 |===
 

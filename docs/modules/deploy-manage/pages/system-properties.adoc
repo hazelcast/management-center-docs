@@ -796,16 +796,6 @@ Default: `3600`.
 hz-mc start -Dhazelcast.mc.jet.metrics.retentionSecs=7200
 ----
 
-|[[hazelcast-mc-periodic-healthcheck-enabled]]hazelcast.mc.periodic.healthcheck.enabled
-
-MC_PERIODIC_HEALTHCHECK_ENABLED
-|Whether Management Center generates a regular healthcheck report. Default: `true`. See xref:clusters:healthcheck.adoc[].
-|
-[source,bash,subs="attributes+"]
-----
-hz-mc start -Dhazelcast.mc.periodic.healthcheck.enabled=true
-----
-
 |[[hazelcast-mc-phone-home-enabled]]hazelcast.mc.phone.home.enabled
 
 MC_PHONE_HOME_ENABLED
