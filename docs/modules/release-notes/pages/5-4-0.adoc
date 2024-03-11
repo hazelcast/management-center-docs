@@ -1,6 +1,6 @@
-= 5.4.0-BETA-2 Release Notes
+= 5.4.0 Release Notes
 :description:
-These release notes list any new features, enhancements, and fixes that were made between version 5.3.3 and 5.4.0-BETA-2 of Hazelcast Management Center (MC).
+These release notes list any new features, enhancements, and fixes that were made between version 5.3.3 and 5.4.0 of Hazelcast Management Center (MC).
 {description}
 
 NOTE: Hazelcast Management Center 5.4 requires Java 17 or later to run.
@@ -28,14 +28,17 @@ a custom run script, refer to the documentation for comprehensive instructions o
 ** Added a check for a soft limit of CPMap instances. [MC-2505]
 ** Added a check for members TPC configuration. [MC-2204]
 ** Added checks for Tiered Storage configuration. [MC-2550]
+** Added a check for used native memory. [MC-2642]
 ** Added HealthCheck counters to Prometheus Exporter. [MC-2439]
 * Added an ability to terminate CP sessions. [MC-1719]
 * Added support for CPMap data structure. [MC-2462]
+* Added support for WAN replication reference update to the Map Config tool. [MC-2460]
 * Added an ability to pause and resume streaming output in SQL Browser. [MC-2236]
 * Added Favourites menu to the left panel. [MC-973]
 * Added a promo page for all licensed features. [MC-1038]
 * Added SQL Tasks page with a list of actively running SQL queries. [MC-962]
 * Added configuration parameters for CORS. [MC-2583]
+* Added cluster versions to the connected clusters dropdown. [MC-2674]
 
 == Enhancements
 
@@ -69,11 +72,16 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Added a warning member addresses contain `localhost` in MC running in Docker. [MC-2018]
 * Added a marking for members with TPC enabled in Members table. [MC-2171]
 * Added member's Startup Time to Members table. [MC-1138]
+* Added a licensed native memory size to License page. [MC-2632]
+* Added links from License page to the corresponding Promo pages. [MC-2512]
 * Improved `Node limit exceeded` banner. [MC-2481]
 * Improved MC resiliency in case of a cluster producing huge amount of metrics. [MC-2376]
 * Upgraded H2 1.x to H2 2.x. [MC-2283]
 * Made timestamps optional in Prometheus Exporter. [MC-2127]
+* Made various improvements to TopBar and SideBar. [MC-2673]
 * Improved displaying of small values to `< 0.01` instead of `0`. [MC-2448]
+* Renamed `Disabled` toggle to `Status` on Client Filtering page. [MC-2683]
+* Renamed `Enterprise` features to `Licensed` features. [MC-2634]
 
 == Fixes
 
@@ -89,6 +97,7 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * MC no longer sporadically goes a listing page instead of particular data structure. [MC-1971]
 * MC no longer throws `Multiple metrics found for metric` exception. [MC-1968]
 * MC no longer shows incorrect Jet job metrics for the first minute after connection. [MC-1968]
+* MC no longer loses table columns width on a page refresh. [MC-2117]
 * Fixed an error on startup on Windows with Turkish locale. [MC-2554]
 * Fixed an error on Persistence page when node limit is exceeded. [MC-2514]
 * Fixed Map Journal enablement representation. [MC-2420]
