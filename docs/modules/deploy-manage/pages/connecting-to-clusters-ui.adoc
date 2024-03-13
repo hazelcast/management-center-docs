@@ -16,7 +16,7 @@ NOTE: When connecting to multiple clusters from the same instance of Management 
 == Using the Form Fields
 [[creating-a-cluster-configuration-using-form]]
 
-. Click to *Cluster Connections* in the toolbar.
+. Click to *Cluster Connections* in Top Bar.
 
 . Click *Add* to start configuring a new connection.
 +
@@ -34,7 +34,7 @@ If this field is *Off*, Management Center will save the configuration but will n
 
 . Click *Connect*.
 +
-image:ROOT:ClusterConfAdded.png[alt=Cluster Configuration Added]
+image:ROOT:ConnectionEstablishedDev.png[alt=Cluster Configuration Added]
 
 You will see the following:
 
@@ -106,7 +106,7 @@ hazelcast-client:
 +
 As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the `cluster-members` configuration.
 
-. Click to *Cluster Connections* in the toolbar.
+. Click to *Cluster Connections* in Top Bar.
 
 . Click *Add* to start configuring a new connection.
 +
@@ -168,15 +168,15 @@ explanation or cancel the diagnostics.
 
 == Removing a Cluster Connection
 
-To remove an existing connection to a cluster, go to *Cluster Connections* in the toolbar and click the *trash icon* above the name of the cluster that you want to disconnect from Management Center.
+To remove an existing connection to a cluster, go to *Cluster Connections* in Top Bar and click the *trash icon* above the name of the cluster that you want to disconnect from Management Center.
 
-image:ROOT:remove-connection.png[Trash icon above the name of a cluster called dev]
+image:ROOT:RemoveConnection.png[Trash icon above the name of a cluster called dev]
 
 == Editing a Cluster Connection
 
-To edit an existing connection, go to *Cluster Connections* in the toolbar and click the *configure icon* (next to the *trash icon*) above the name of the cluster.
+To edit an existing connection, go to *Cluster Connections* in Top Bar and click the *configure icon* (next to the *trash icon*) above the name of the cluster.
 
-image:ROOT:edit-connection.png[Configure icon above the name of a cluster called dev]
+image:ROOT:EditConnection.png[Configure icon above the name of a cluster called dev]
 
 If you connected to the cluster from the form fields, you can edit the form.
 

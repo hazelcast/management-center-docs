@@ -17,27 +17,8 @@ image:ROOT:MonitoringExecutors.png[Monitoring Executors]
 On top of the page, there are two graphs that show various metrics of the Executor.
 See the xref:getting-started:graphs.adoc[graph section] for more information.
 
-image:ROOT:MonitoringOptionsExecutor.png[alt=Monitoring Options for Executor]
-
-When you click on a desired monitoring, the chart loads with the
-selected option. To open a chart as a separate dialog, click on the
-image:ROOT:MaximizeChart.png[maximize] button placed at top right of each
-chart. The below monitoring charts are available:
-
-* **Pending**: Monitors the pending executors. Y-axis is the executor count.
-* **Started**: Monitors the started executors. Y-axis is the executor count.
-* **Start Lat. (msec.)**: Shows the latency when executors are started.
-Y-axis is the duration in milliseconds.
-* **Completed**: Monitors the completed executors. Y-axis is the executor count.
-* **Comp. Time (msec.)**: Shows the completion period of executors.
-Y-axis is the duration in milliseconds.
-
 Under these charts is the [[executor-operation-statistics]]**Executor Operation Statistics**
-table, as shown below.
-
-image:ROOT:ExecutorOperationStats.png[Executor Operation Statistics]
-
-From left to right, this table lists the IP address and port of
+table. From left to right, this table lists the IP address and port of
 members, the counts of pending, started and completed executors
 per second, and the execution time and average start latency of
 executors on each member. Click on the column heading to ascend

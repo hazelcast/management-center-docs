@@ -20,9 +20,6 @@ image:ROOT:ClientGridView.png[Client Grid View]
 |Type
 |Type of client. This field usually contains the client's programming language.
 
-|Enterprise
-|Whether the client is an Enterprise Java client. Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
-
 |Member Connection
 |The member that the client is
 currently connected to. *All* means a client

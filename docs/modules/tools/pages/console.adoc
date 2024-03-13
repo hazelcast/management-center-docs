@@ -20,7 +20,7 @@ in your cluster's configuration. See
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether
 the console is enabled or disabled for each member.
 
-. Open a console window by clicking on the **Console** button located at the top menu.
+. Open a console window by clicking on the **Console** button located at Side Bar.
 +
 image:ROOT:Console.png[Console]
 
@@ -34,5 +34,5 @@ image:ROOT:ConsoleCommand.png[Console Commands]
 To get help or a list of all possible commands, enter `\help` in the console.
 You can use the `--help` option with any command to view the help for that command.
 
-TIP: The console container is resizable; to change the height, drag the top bar.
+TIP: The console container is resizable; to change the height, drag the bar on the top of the console.
 You can maximize or minimize the console container using the icons in its top-right corner.

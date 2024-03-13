@@ -196,8 +196,6 @@ mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
 
 You should see that Management Center is being served over HTTPS.
 
-image:ROOT:mc-https.png[Management Center running over HTTPS in the address bar of a web browser]
-
 == Next Steps
 
 xref:tls-security.adoc[Explore TLS security topics] for Management Center.
