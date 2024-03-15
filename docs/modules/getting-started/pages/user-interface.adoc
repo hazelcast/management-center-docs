@@ -1,6 +1,6 @@
 = Top Bar and Side Bar
 :page-aliases: ROOT:user-interface.adoc
-:description: To help you find your way around Management Center, this page explains the Top Bar and Side Bar items of the user interface.
+:description: To help you find your way around Management Center, this page explains the Top Bar and the Side Bar items of the user interface.
 
 {description}
 
@@ -15,7 +15,7 @@ The user interface has a Top Bar on the top and a Side Bar on the left.
 
 image:ROOT:TopBar.png[Management Center Top Bar]
 
-Top Bar has the following elements:
+The Top Bar has the following elements:
 
 * *Cluster dropdown*: Select a connected cluster to manage. Cluster version is shown to the right of each connected cluster.
 
@@ -30,7 +30,7 @@ NOTE: During a xref:clusters:triggering-rolling-upgrade.adoc[rolling upgrade], a
 
 image:ROOT:SideBar.png[Management Center Side Bar]
 
-Side Bar on the left-hand side contains the following elements:
+The Side Bar on the left-hand side contains the following elements:
 
 * **Menu**: Open/close the menu on the left-hand side.
 * **Console**: Open/close the in-app console so that you can easily execute commands on your cluster. See xref:tools:console.adoc[].

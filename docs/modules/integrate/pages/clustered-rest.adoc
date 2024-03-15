@@ -115,7 +115,7 @@ Label: 'test_user_2021-07-07T17:24 EEST'
 
 ==== Using Auth Token Management UI
 
-. Click *Settings* in Top Bar.
+. Click *Settings* in the Top Bar.
 . Navigate to the *API* tab.
 +
 image:ROOT:AuthTokenManagementPage.png[alt=Auth Token Management Page, align="center"]

@@ -10,7 +10,7 @@ If a map contains domain objects, the classes for those objects must be on the c
 
 == Using the SQL Browser
 
-Click *SQL* in Side Bar.
+Click *SQL* in the Side Bar.
 
 image:ROOT:SQLBrowserWindow.png[SQL Browser Window]
 

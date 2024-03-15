@@ -15,7 +15,7 @@ This feature is available only to admin users.
 
 == Updating the License
 
-Open *Settings* menu from Top Bar, and go to *License* tab.
+Open *Settings* menu from the Top Bar, and go to *License* tab.
 
 image:ROOT:MCLicense.png[Management Center License Page]
 
