@@ -15,18 +15,25 @@ This feature is available only to admin users.
 
 == Updating the License
 
-. Go to *Settings* > *License*.
-+
+Open *Settings* menu from the Top Bar, and go to *License* tab.
+
+image:ROOT:MCLicense.png[Management Center License Page]
+
+
 You'll see the following:
-+
+
 - *License Key Hash*: SHA-256 hash of the key as a Base64 encoded string. The actual key is not displayed for security reasons.
 - *Expires*: The date on which the license will expire.
 - *Licensed Cluster Members*: The total number of members that the license supports and the current number of members running on the license.
-- *License Type*: The type of license.
-+
+- *Allowed Tiered Store Size*: Allowed size of Tiered Store, if the license contains Tiered Storage feature.
+- *Allowed Native Memory Size*: Allowed size of Native Memory, if the license contains High Density Memory feature.
+
 Warnings are displayed when a license expires within 30 days.
 
-. Click *Update my license key*, enter your license key and click *Update License*.
+To update your license key:
+
+. Click *Update my license key*
+. Enter your license key and click *Update License*.
 
 The information on the page will be updated for the new license.
 

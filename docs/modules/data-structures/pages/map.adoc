@@ -113,7 +113,7 @@ the window. Once opened, the tool appears as a dialog, as shown below.
 
 image:ROOT:MapConfig.png[Map Config Tool]
 
-You can change any attribute and click the **Update** button to save
+You can change any attribute and click the **Save Configuration** button to save
 your changes.
 
 NOTE: The Map configuration is updated only on the members that Management Center is aware of at the time of the update. When a new member joins the cluster, the updated map configuration is not propagated to it.
@@ -153,8 +153,11 @@ From left to right, this table lists the following:
 |Puts
 |Number of put operations received by the member.
 
-|Removes
+|Removals
 |Number of remove operations received by the member.
+
+|Sets
+|Number of local set operations received by the member.
 
 |Entry Memory
 |Memory cost of owned entries in the member.
@@ -212,6 +215,9 @@ From left to right, this table lists the following:
 |Removes/s
 |Number of remove operations per second on the member.
 
+|Sets/s
+|Number of local set operations per second on the member.
+
 |Avg Put Latency
 |Average latency of put operations on the member.
 
@@ -221,6 +227,9 @@ From left to right, this table lists the following:
 |Avg Remove Latency
 |Average latency of remove operations on the member.
 
+|Avg Set Latency
+|Average latency of set operations on the member.
+
 |Max Avg Put Latency
 |Maximum average latency of put operations on the member.
 
@@ -229,6 +238,9 @@ From left to right, this table lists the following:
 
 |Max Avg Remove Latency
 |Maximum average latency of remove operations on the member.
+
+|Max Avg Set Latency
+|Maximum average latency of set operations on the member.
 
 |===
 
@@ -267,8 +279,8 @@ From left to right, this table lists the following:
 |Misses
 |Count of the entries which cannot be found in the Near Cache when requested to read.
 
-|Ratio
-|Hits/Misses ratio.
+|Effectiveness
+|Hits/total reads ratio.
 
 |===
 

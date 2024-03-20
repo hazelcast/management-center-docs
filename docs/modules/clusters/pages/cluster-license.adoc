@@ -5,12 +5,13 @@ You can use the *Cluster License* tab of the *Administration* menu item to see d
 
 This page is available only to admin users.
 
-image:ROOT:cluster-license.png[Cluster License page]
+image:ROOT:ClusterLicense.png[Cluster License page]
 
 - *License Key Hash*: SHA-256 hash of the key as a Base64 encoded string. The actual key is not displayed for security reasons.
 - *Expires*: The date on which the license will expire.
 - *Licensed Cluster Members*: The total number of members that the license supports and the current number of members running on the license.
-- *License Type*: The type of license.
+- *Allowed Tiered Store Size*: Allowed size of Tiered Store, if the license includes Tiered Storage feature.
+- *Allowed Native Memory Size*: Allowed size of Native Memory, if the license includes High Density Memory feature.
 
 Warnings are displayed when a license expires within 30 days.
 

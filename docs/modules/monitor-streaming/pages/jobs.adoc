@@ -13,9 +13,9 @@ This section displays the list of actively running jobs in the cluster:
 * **Name:** Name/ID of the job.
 * **Status:** Current status of the job.
 * **Start Time:** Start time of the job.
-* **Completion Time:** Completion time of the job.
 * **Items In:** Total number of items read from the sources of the jobs.
 * **Items Out:** Total number of items written to the sinks of the jobs.
+* **Suspension Cause:** Shows the reason when the task is suspended due to a problem.
 
 == Failed Jobs
 
@@ -79,6 +79,11 @@ This section displays the dataflow metrics for the cluster:
 
 * **Used:** Number of members used by the job.
 * **Total:** Number of total members in the cluster.
+
+=== Job Details
+* **Start Time:** Start time of the job.
+* **Completion Time:** Completion time of the job.
+* **Duration**: Duration of the job.
 
 === Last Successful Snapshot
 

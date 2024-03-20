@@ -115,7 +115,7 @@ image:ROOT:Dashboard.png[Cluster dashboard]
 
 Management Center comes with a variety of tools for communicating with clusters. In this step, you'll use the SQL browser to create a map in the cluster and put some data in it.
 
-. Click *SQL Browser* in the toolbar.
+. Click *SQL* in the Side Bar.
 +
 After each of the following SQL queries, click *Execute Query*.
 

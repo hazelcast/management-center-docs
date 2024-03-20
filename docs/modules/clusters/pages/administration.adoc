@@ -4,6 +4,8 @@
 
 You can use the *Administration* menu item to manage Hazelcast clusters.
 
+image:ROOT:Administration.png[Changing Cluster state]
+
 NOTE: This menu item is available only to admin users.
 
 From this menu item, you can do the following:

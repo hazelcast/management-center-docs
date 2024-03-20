@@ -8,24 +8,25 @@
 
 Under the *Storage* menu, you'll find the following pages:
 
-* xref:data-structures:map.adoc[Map]. Here, you can also set the selected map's attributes.
-* xref:data-structures:cache.adoc[Cache]
-* xref:data-structures:replicated-map.adoc[Replicated Map]
-* xref:data-structures:multimap.adoc[MultiMap]
-* xref:data-structures:lock.adoc[Lock]
-* xref:data-structures:flake-id-gen.adoc[Flake ID Generator]
-* xref:data-structures:pn-counter.adoc[PN Counter]
+* xref:data-structures:map.adoc[Maps]. Here, you can also set the selected map's attributes.
+* xref:data-structures:replicated-map.adoc[Replicated Maps]
+* xref:data-structures:cache.adoc[Caches]
+* xref:data-structures:multimap.adoc[MultiMaps]
+* xref:data-structures:list.adoc[Lists]
+* xref:data-structures:set.adoc[Sets]
+* xref:data-structures:pn-counter.adoc[PN Counters]
+* xref:data-structures:flake-id-gen.adoc[Flake ID Generators]
 
 == Compute
 
 Under the *Compute* menu, you'll find the following pages:
 
-* xref:data-structures:executor.adoc[Executor]
+* xref:data-structures:executor.adoc[Executors]
 
 == Messaging
 
 Under the *Messaging* menu, you'll find the following pages:
 
-* xref:data-structures:queue.adoc[Queue]
-* xref:data-structures:topic.adoc[Topic]
-* xref:data-structures:reliable-topic.adoc[Reliable Topic]
+* xref:data-structures:queue.adoc[Queues]
+* xref:data-structures:topic.adoc[Topics]
+* xref:data-structures:reliable-topic.adoc[Reliable Topics]

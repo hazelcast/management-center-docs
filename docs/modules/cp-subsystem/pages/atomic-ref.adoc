@@ -5,6 +5,4 @@ by clicking on the **Atomic References** menu item in the left menu.
 
 image:ROOT:AtomicReferences.png[Atomic References View]
 
-An atomic reference has only a single metric: Its name.
-
 You can sort the table by clicking on the column headers.

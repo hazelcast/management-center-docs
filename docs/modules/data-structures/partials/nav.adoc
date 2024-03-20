@@ -9,6 +9,5 @@
 ** xref:data-structures:topic.adoc[]
 ** xref:data-structures:reliable-topic.adoc[]
 ** xref:data-structures:executor.adoc[]
-** xref:data-structures:lock.adoc[]
 ** xref:data-structures:pn-counter.adoc[]
 ** xref:data-structures:flake-id-gen.adoc[]
