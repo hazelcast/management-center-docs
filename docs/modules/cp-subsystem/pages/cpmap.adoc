@@ -1,4 +1,4 @@
-= CP Maps
+= CPMaps
 
 You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:cpmap.adoc[CPMaps] in your cluster
 by clicking on the **CPMaps** menu item in the left menu.

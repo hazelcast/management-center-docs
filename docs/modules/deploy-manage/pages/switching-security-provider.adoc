@@ -8,7 +8,7 @@ If you want to use the `hz-mc conf` tool to switch from dev mode to another secu
 
 == Using the UI
 
-To switch to a different security provider from dev mode in the UI, go to *Settings* > *Security Providers* a
+To switch to a different security provider from dev mode in the UI, go to *Settings* > *Security Providers*.
 
 image:ROOT:SecurityProviders.png[alt=Security Providers]
 

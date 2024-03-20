@@ -10,8 +10,8 @@ Management Center requires a valid Enterprise license for the following:
 
 * Clustered JMX
 * Clustered REST API
-* Client Filtering on the cluster
-* Prometheus exporter
+* Cluster Client Filtering
+* Prometheus Exporter
 * Displaying metrics for more than three cluster members
 * Healthcheck
 

@@ -115,13 +115,10 @@ Label: 'test_user_2021-07-07T17:24 EEST'
 
 ==== Using Auth Token Management UI
 
-image:ROOT:SettingsToolBar.png[alt=Clustered Rest Provide Headers, align="center"]
-
-. Click *Settings* in the toolbar.
+. Click *Settings* in the Top Bar.
+. Navigate to the *API* tab.
 +
 image:ROOT:AuthTokenManagementPage.png[alt=Auth Token Management Page, align="center"]
-
-. Navigate to the *API* tab.
 
 . Select the user that you want to create a token for. Only admin can create tokens for other users.
 

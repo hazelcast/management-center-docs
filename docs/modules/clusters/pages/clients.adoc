@@ -18,10 +18,8 @@ image:ROOT:ClientGridView.png[Client Grid View]
 |Local IP address, hostname, or canonical hostname of the client, depending on the <<client-address-types, client address filter>>.
 
 |Type
-|Type of client. This field usually contains the client's programming language.
-
-|Enterprise
-|Whether the client is an Enterprise Java client. Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
+|Type of client. This field typically denotes the client's programming language and indicates whether it is an Enterprise Java client.
+Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
 
 |Member Connection
 |The member that the client is

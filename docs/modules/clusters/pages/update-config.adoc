@@ -40,12 +40,14 @@ You can add configuration blocks to the text field or you can upload a YAML or X
 NOTE: If you submit an existing configuration block, other than `license`, 
 that already exists, the cluster ignores that configuration block and applies only the new ones.
 
-.Update Config page
+Update Config page
+
 image:ROOT:UpdateConfigData.png[Update Config With Data]
 
 To check which configuration blocks will be applied, click the *Preview* button.
 
-.Preview
+Preview
+
 image:ROOT:UpdateConfigPreview.png[Update Config Preview]
 
 To apply the new configuration, click the *Submit* button.
