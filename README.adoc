@@ -186,7 +186,7 @@ To automate some elements of the build process, this repository includes the fol
 
 If you want to add a change or contribute new content, see our {url-contribute}[contributing guide].
 
-To let us know about something that you'd like us to change, consider {url-org}/hazelcast-reference-manual/issues/new[creating an issue].
+To let us know about something that you'd like us to change, consider {url-org}/management-center-docs/issues/new[creating an issue].
 
 == License
 
