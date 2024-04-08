@@ -15,7 +15,7 @@ image:ROOT:NamespaceGridView.png[User Code Namespace Grid View]
 |Name of the user code namespace.
 
 |Resource Count
-|Number of resources contained in a namespace
+|Number of resources contained in a namespace.
 
 |Size
 |The total size in bytes of the resources contained in a namespace
