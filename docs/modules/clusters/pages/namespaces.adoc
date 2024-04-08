@@ -1,0 +1,35 @@
+= User Code Namespaces
+:description: pass:q[You can use the *Namespaces* menu item to monitor all the user code namespaces that are connected to your Hazelcast cluster.]
+:page-aliases: ROOT:namespaces.adoc
+
+{description}
+
+image:ROOT:NamespaceGridView.png[User Code Namespace Grid View]
+
+.User Code Namespace statistics overview
+[cols="20%s,80%a"]
+|===
+|Field|Description
+
+|Name
+|Name of the user code namespace.
+
+|Resource Count
+|Number of resources contained in a namespace.
+
+|Size
+|Total size in bytes of the resources contained in a namespace.
+
+|Type
+|Type of the resources contained in a namespace. N/A - namespace does not contain any resource yet.
+
+|Update Time
+|Update time of a user code namespace configuration.
+|===
+
+== Filtering User Code Namespaces
+
+To filter the displayed namespaces, use the *Search* bar in the right-hand corner.
+
+To sort the
+table, click on the column headers.
