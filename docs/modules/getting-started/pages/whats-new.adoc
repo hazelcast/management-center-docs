@@ -1,0 +1,40 @@
+= What's New in Management Center 5.4
+:description: Here are the highlights of what’s new and improved in Hazelcast Management Center 5.4.
+
+{description}
+
+With enhanced monitoring and an improved console experience, these improvements are designed to elevate your cluster management experience.
+
+== Deeper Insights with Enhanced Config Healthchecks
+
+**Advanced Error Detection**: The Config Healthcheck system now goes beyond identifying configuration errors and inconsistencies. It proactively recommends best practices for improved cluster performance. Specific rules can be disabled for customization.
+
+**Prometheus Integration**: Healthcheck status counters are now published using the Prometheus Exporter, providing seamless integration with your monitoring infrastructure for proactive alerting.
+
+== Richer Console Experience with CLC Integration
+
+**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a wider range of functionalities and support for the latest data structures, including CP Memberships and CPMaps.
+
+== Performance and Usability Enhancements
+
+**Faster Metrics Processing**: Enjoy improved performance when working with cluster metrics.
+
+**CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CP Maps.
+
+**Tiered Storage Awareness**: Monitor and analyze the performance of your Tiered Storage configurations.
+
+**Personalized SQL Browsing**: Retain your preferred table settings, including column widths, for a customized SQL browsing experience.
+
+**Streamlined SQL Workflows**: Pause streaming output in the SQL Browser for better analysis and control.
+
+**Improved Navigation**: The redesigned side bar now includes a favorites section and is collapsible for a more efficient workflow.
+
+== Upgrade Requirements
+
+Hazelcast Management Center 5.4 requires Java 17 or later.
+
+== Additional Improvements
+
+This release incorporates over 255 bug fixes and enhancements to further optimize your cluster management experience.
+For a full list of changes, see xref:release-notes:5-4-0.adoc[].
+We encourage you to upgrade to Hazelcast Management Center 5.4 and experience the benefits firsthand.
