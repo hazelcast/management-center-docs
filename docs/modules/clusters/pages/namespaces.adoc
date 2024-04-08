@@ -1,5 +1,5 @@
 = User Code Namespaces
-:description: You can use the Namespaces menu item to monitor all the user code namespaces that are connected to your Hazelcast cluster.
+:description: You can use the *Namespaces* menu item to monitor all the user code namespaces that are connected to your Hazelcast cluster.
 :page-aliases: ROOT:namespaces.adoc
 
 You can use the *Namespaces* menu item to monitor all the user code namespaces that are connected to your Hazelcast cluster.
