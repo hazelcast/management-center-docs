@@ -18,7 +18,7 @@ image:ROOT:NamespaceGridView.png[User Code Namespace Grid View]
 |Number of resources contained in a namespace.
 
 |Size
-|The total size in bytes of the resources contained in a namespace
+|Total size in bytes of the resources contained in a namespace.
 
 |Type
 |Type of the resources contained in a namespace. N/A - namespace does not contain any resource yet.
