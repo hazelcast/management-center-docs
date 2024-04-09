@@ -7,23 +7,23 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 == Deeper Insights with Enhanced Config Healthchecks
 
-**Advanced Error Detection**: The Config Healthcheck system now goes beyond identifying configuration errors and inconsistencies. It proactively recommends best practices for improved cluster performance. Specific rules can be disabled for customization.
+**Advanced Error Detection**: The Config Healthcheck system now goes beyond identifying configuration errors and inconsistencies. It proactively recommends best practices for improved cluster performance. Specific rules can be disabled for customization. See xref:clusters:healthcheck.adoc[].
 
-**Prometheus Integration**: Healthcheck status counters are now published using the Prometheus Exporter, providing seamless integration with your monitoring infrastructure for proactive alerting.
+**Prometheus Integration**: Healthcheck status counters are now published using the Prometheus Exporter, providing seamless integration with your monitoring infrastructure for proactive alerting. See xref:clusters:healthcheck.adoc#healthcheck-status[Healtcheck Status].
 
 == Richer Console Experience with CLC Integration
 
-**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a more comprehensive range of functionalities and support for the latest data structures, including SQL queries and CP data structures.
+**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a more comprehensive range of functionalities and support for the latest data structures, including SQL queries and CP data structures. See xref:tools:console[].
 
 == Performance and Usability Enhancements
 
-**Faster Metrics Processing**: Enjoy improved performance, especially when working with large clusters or clusters with many data structures.
+**Faster Metrics Processing**: Enjoy improved performance, especially when working with large clusters or clusters with many data structures. See xref:deploy-manage:historical-metrics[].
 
-**CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CP Maps.
+**CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CPMaps. See xref:cp-subsystem:dashboard.adoc#data-and-metrics[CP Subsystem Metrics].
 
 **Tiered Storage Awareness**: Monitor and analyze the performance of your Tiered Storage.
 
-**Personalized Tables**: Retain your preferred table settings, including columns shown and their widths, across the Management Center screens.
+**Personalized Tables**: Retain your preferred table settings, including columns shown and their widths, across the Management Center screens. See xref:getting-started:tables.adoc#presets[Table Presets].
 
 **Improved SQL Browser**: Pause streaming output in the SQL Browser for better analysis and control.
 
