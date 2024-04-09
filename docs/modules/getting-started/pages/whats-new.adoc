@@ -13,21 +13,21 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 == Richer Console Experience with CLC Integration
 
-**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a wider range of functionalities and support for the latest data structures, including CP Memberships and CPMaps.
+**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a more comprehensive range of functionalities and support for the latest data structures, including SQL queries and CP data structures.
 
 == Performance and Usability Enhancements
 
-**Faster Metrics Processing**: Enjoy improved performance when working with cluster metrics.
+**Faster Metrics Processing**: Enjoy improved performance, especially when working with large clusters or clusters with many data structures.
 
 **CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CP Maps.
 
-**Tiered Storage Awareness**: Monitor and analyze the performance of your Tiered Storage configurations.
+**Tiered Storage Awareness**: Monitor and analyze the performance of your Tiered Storage.
 
-**Personalized SQL Browsing**: Retain your preferred table settings, including column widths, for a customized SQL browsing experience.
+**Personalized Tables**: Retain your preferred table settings, including columns shown and their widths, across the Management Center screens.
 
-**Streamlined SQL Workflows**: Pause streaming output in the SQL Browser for better analysis and control.
+**Improved SQL Browser**: Pause streaming output in the SQL Browser for better analysis and control.
 
-**Improved Navigation**: The redesigned side bar now includes a favorites section and is collapsible for a more efficient workflow.
+**Improved Navigation**: The redesigned sidebar now includes a favorites section and is collapsible for a more efficient workflow.
 
 == Upgrade Requirements
 
@@ -35,6 +35,6 @@ Hazelcast Management Center 5.4 requires Java 17 or later.
 
 == Additional Improvements
 
-This release incorporates over 255 bug fixes and enhancements to further optimize your cluster management experience.
+This release incorporates over 100 bug fixes and enhancements to optimize your cluster management experience.
 For a full list of changes, see xref:release-notes:5-4-0.adoc[].
 We encourage you to upgrade to Hazelcast Management Center 5.4 and experience the benefits firsthand.
