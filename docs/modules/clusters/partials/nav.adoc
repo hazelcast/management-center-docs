@@ -20,3 +20,4 @@
 *** xref:clusters:triggering-hot-backup.adoc[]
 * xref:clusters:wan-replication.adoc[WAN Replication]
 * xref:clusters:healthcheck.adoc[Healthcheck]
+* xref:clusters:namespaces.adoc[Namespaces]
