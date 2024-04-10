@@ -25,9 +25,9 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 **Personalized Tables**: Retain your preferred table settings, including columns shown and their widths, across the Management Center screens. See xref:getting-started:tables.adoc#presets[Table Presets].
 
-**Improved SQL Browser**: Pause streaming output in the SQL Browser for better analysis and control.
+**Improved SQL Browser**: Pause streaming output in the SQL Browser for better analysis and control. 
 
-**Improved Navigation**: The redesigned sidebar now includes a favorites section and is collapsible for a more efficient workflow.
+**Improved Navigation**: The redesigned sidebar now includes a favorites section and is collapsible for a more efficient workflow. See xref:user-interface.adoc#side-bar[Side Bar].
 
 == Upgrade Requirements
 
