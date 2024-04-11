@@ -103,5 +103,6 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Fixed an error on Persistence page when node limit is exceeded. [MC-2514]
 * Fixed Map Journal enablement representation. [MC-2420]
 * Fixed incorrect docs link in `hz-mc --help`. [MC-2401]
-* Fixed an incorrect total count in case of a stopped event emitter. [MC-2761]
+* Fixed Map Sink vertex stats on Job page. [MC-2319]
+* Fixed an incorrect total count, which occurred following a stopped event emitter. [MC-2761]
 * MC no longer needs a master member state for operations. [MC-2467]
