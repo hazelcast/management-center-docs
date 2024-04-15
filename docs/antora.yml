@@ -16,7 +16,7 @@ asciidoc:
     snapshot: true
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.4-snapshot'
+    page-latest-supported-hazelcast: '5.5-snapshot'
     page-toclevels: 1
     experimental: true
 nav:
