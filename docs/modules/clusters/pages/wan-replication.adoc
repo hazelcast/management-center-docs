@@ -164,7 +164,7 @@ You can add a temporary WAN replication configuration dynamically to a
 cluster. It is useful for having one-off
 WAN sync operations. The added configuration is not persistent, so it does not survive a member restart.
 
-If you configure a data structure to use the new WAN configuration, entries added after configuration change
+If you configure a data structure to use the new WAN configuration, entries added after the configuration change
 will be automatically replicated by the new WAN replication configuration.
 
 image:ROOT:AddWanReplicationConfiguration.png[Add Temporary WAN Replication Configuration]
