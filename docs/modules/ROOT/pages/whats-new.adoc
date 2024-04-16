@@ -15,7 +15,7 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 == Richer Console Experience with CLC Integration
 
-**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a more comprehensive range of functionalities and support for the latest data structures, including SQL queries and CP data structures. For more information, see xref:tools:console[].
+**Say goodbye to the console**: We've replaced the console with the powerful Hazelcast Command Line Client (CLC), offering a more comprehensive range of functionalities and support for the latest data structures, including SQL queries and CP data structures. For more information, see xref:tools:console[Console].
 
 == Performance and Usability Enhancements
 
