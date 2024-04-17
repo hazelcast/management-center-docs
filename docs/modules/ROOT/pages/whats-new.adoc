@@ -3,7 +3,7 @@
 
 {description}
 
-NOTE: For new and improved features in Hazelcast Platform 5.4, see xref:hazelcast:ROOT:whats-new.adoc[]
+NOTE: For new and improved features in Hazelcast Platform 5.4, see xref:hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.4].
 
 With enhanced monitoring and an improved console experience, these improvements are designed to elevate your cluster management experience.
 
