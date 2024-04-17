@@ -19,7 +19,7 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 == Performance and Usability Enhancements
 
-**Faster Metrics Processing**: Enjoy improved performance, especially when working with large clusters or clusters with many data structures. For more information, see xref:deploy-manage:historical-metrics[].
+**Faster Metrics Processing**: Enjoy improved performance, especially when working with large clusters or clusters with many data structures. For more information, see xref:deploy-manage:historical-metrics.adoc[Metrics].
 
 **CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CP Maps. For more information, see xref:cp-subsystem:dashboard.adoc#data-and-metrics[CP Subsystem Metrics].
 
