@@ -1,0 +1,12 @@
+= 5.4.1 Release Notes
+:description:
+These release notes list fixes that were made between version 5.4.0 and 5.4.1 of Hazelcast Management Center (MC).
+{description}
+
+== Fixes
+
+* MC no longer fails to display WAN Sync maps when connected to a pre-5.4 cluster. [MC-2782]
+* MC no longer fails to start CLC when placeholders are used in the client configuration. [MC-2792]
+* Fixed CLC zip extraction on Windows. [MC-2795]
+* Fixed displaying data structure stats when the data structure name contains the `#` symbol. [MC-2789]
+* Fixed displaying member stats when a member hostname is used instead of an IP address. [MC-2790]
