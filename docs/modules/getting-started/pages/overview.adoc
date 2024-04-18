@@ -113,13 +113,8 @@ Hazelcast provides two types of support: one for the community and one for payin
 Community support is for every Hazelcast user. You can use the following channels to get community support:
 
 * xref:ROOT:troubleshooting.adoc[Troubleshooting page] of this guide
-* https://stackoverflow.com/questions/tagged/hazelcast[Stack Overflow]
-(ask a question about how to use Management Center properly and troubleshoot your setup)
-* https://groups.google.com/forum/#!forum/hazelcast[Hazelcast mailing list]
-(propose features and discuss your ideas with the team)
 * https://slack.hazelcast.com/[Hazelcast community Slack]
-(discuss anything related to Hazelcast and Management Center with other
-Hazelcast users and Hazelcast developers)
+(discuss anything related to Hazelcast and Management Center with the Hazelcast community)
 
 === Customer Support
 
