@@ -8,7 +8,7 @@
 Management Center includes an interactive version of Hazelcast's Command-Line Client (CLC).
 CLC functions as a client and adheres to any Security ACLs configured for it.
 
-CLC supports a wide range of data structures and the ability to run SQL queries from a text terminal.
+CLC supports a wide range of data structures and the ability to run SQL queries from a text terminal. 
 It also provides flexible output options, such as table, CSV, and JSON formats.
 
 For further information on these features, refer to the https://docs.hazelcast.com/clc/latest/overview[Overview^] topic of the CLC documentation.
@@ -18,7 +18,7 @@ WARNING: The console is not recommended for production use.
 TIP: Embedded CLC only supports the PKCS12 store type for TLS. If you're using any other TLS configuration, you'll need to convert it to PKCS12 to use it with CLC.
 
 Console is disabled by default, and you need to enable it
-in your cluster's configuration. See
+in your cluster's configuration. See 
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether
 the console is enabled or disabled for each member.
 
