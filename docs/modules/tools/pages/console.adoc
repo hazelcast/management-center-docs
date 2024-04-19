@@ -42,3 +42,7 @@ You can maximize or minimize the console container using the icons in its top-ri
 WARNING: CLC binary is not signed for Windows users.
 You may need to grant access to it or sign it manually in order to use it.
 You can find the binary inside the clc folder in the Management Center home directory.
+
+If you're encountering difficulties starting the console, it's recommended to check the access permissions for the `clc` folder and the CLC binary.
+The `clc` folder is created under the Management Center home directory, and all console-related files are stored there, including the binary.
+You can navigate to the Management Center home directory and try running the CLC binary manually to see if everything is working correctly.
