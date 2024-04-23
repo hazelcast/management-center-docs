@@ -7,7 +7,7 @@
 
 To set up OpenID Connect, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
-[tabs] 
+[tabs]
 ====
 UI::
 +
@@ -28,11 +28,16 @@ hz-mc conf oidc configure
 
 .Windows
 ```bash
-mc-conf.bat oidc configure 
+mc-conf.bat oidc configure
 ```
 --
 ====
 
+* **Issuer:** Issuer identifier of your OpenID provider. It is usually (but not always) a URL.
+When an issuer URL is provided, you can fetch the OIDC configuration by clicking the `Fetch Configuration` button.
++
+IMPORTANT: Fetching the configuration overrides any previously typed values
+(*Authorization Endpoint*, *User Info Endpoint*, *Token Endpoint* and *JWK Set Endpoint*).
 
 * **Client ID:** The OAuth2 client ID that you obtain from your OpenID provider.
 * **Client Secret:** The OAuth2 client secret you obtain from your OpenID provider.
@@ -40,7 +45,6 @@ mc-conf.bat oidc configure
 * **User Info Endpoint:** User info endpoint URL of your OpenID provider.
 * **Token Endpoint:** Token endpoint URL of your OpenID provider.
 * **JWK Set Endpoint:** JWK set endpoint URL of your OpenID provider.
-* **Issuer:** Issuer identifier of your OpenID provider. It is usually (but not always) a URL.
 * **Redirect URL:** URL of the Management Center endpoint that handles responses to authentication
 requests, including schema (`http://` or `https://`) and port. It is located under the path
 `/oidc/auth`, so you should append `/oidc/auth` to the Management Center URL.
