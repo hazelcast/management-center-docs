@@ -8,7 +8,7 @@
 If you configure clients with one or more xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:blue-green.adoc[failover clusters], you can use Management Center to force selected clients to disconnect from one cluster and connect to another without any downtime. For example, you may connect clients to another cluster to do the following:
 
 - Prepare for planned maintenance on the primary cluster.
-- Balance the load across multiple clusters. 
+- Balance the load across multiple clusters.
 - Shift the clients’ connection back from a failover cluster to its primary cluster.
 
 NOTE: Moving clients from one cluster to another is most useful when your clusters replicate data across each other. See xref:wan-replication.adoc[].
@@ -65,6 +65,60 @@ only if they are configured with a failover cluster. Otherwise,
 clients on the deny-list shut down.
 
 NOTE: If some cluster members are not reachable from Management Center, those members keep using the last filter list that they received.
+
+[[client-filtering-preview]]
+== Client filtering preview
+
+Shows the result of applying filter lists on currently connected clients in real time. Can be hidden by a toggle control (*visible by default*).
+
+image:ROOT:ClientFilteringPreview.png[Client Filtering Preview]
+
+*Allowed clients* - clients that remain connected.
+
+*Denied clients* - clients that disconnect.
+
+.Default table view
+[cols="30%s,70%a"]
+|===
+|Column name|Description
+
+|Name
+|Client name.
+|UUID
+|Client unique identifier.
+|IP Address
+|Client IP address without hostname.
+|Labels
+|List of client labels.
+
+|===
+
+.Extra columns (can be used in custom views)
+[cols="30%s,70%a"]
+|===
+|Column name|Description
+
+|Address
+|Client address.
+|Host Name
+|Canonical client hostname.
+|Client Type
+|Type of client. This field typically denotes the client’s programming language and indicates whether it is an Enterprise Java client. Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
+|Client Version
+|Version of the client codebase.
+
+|===
+
+[[cleint-filtering-deploy-confirmation]]
+== Deploy confirmation
+
+image:ROOT:ClientFilteringDeployConfirmation.png[Client Filtering Deploy Comfirmation]
+
+The deployment of filter lists must be confirmed by clicking the *Confirm Deploy* button in a modal.
+This modal provides a summary of clients connectivity after the current filter lists have been applied.
+<<client-filtering-preview, Preview>> can be enabled by clicking a toggle control.
+
+IMPORTANT: If current filter lists disconnect all clients, the warning (*All clients will be blocked if you apply current client filtering configuration*) will be shown on the top of a modal.
 
 [[client-filtering-synchronization]]
 == Synchronization of Filter Lists Across Multiple Instances of Management Center
