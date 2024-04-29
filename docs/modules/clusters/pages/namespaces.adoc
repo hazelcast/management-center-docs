@@ -21,7 +21,7 @@ image:ROOT:NamespaceGridView.png[User Code Namespace Grid View]
 |Total size in bytes of the resources contained in a namespace.
 
 |Type
-|Type of the resources contained in a namespace. N/A - namespace does not contain any resource yet.
+|Type of the resources contained in a namespace. *N/A* - namespace does not contain any resource yet. *MIXED* - resources contained in a namespace have different types.
 
 |Update Time
 |Update time of a user code namespace configuration.
