@@ -114,7 +114,7 @@ image:ROOT:ClientFilteringPreview.png[Client Filtering Preview]
 
 image:ROOT:ClientFilteringDeployConfirmation.png[Client Filtering Deploy Comfirmation]
 
-The deployment of filter lists must be confirmed by clicking the *Confirm Deploy* button in a modal.
+The deployment of filter lists must be confirmed by clicking the *Confirm Deploy* button.
 This modal provides a summary of clients connectivity after the current filter lists have been applied.
 <<client-filtering-preview, Preview>> can be enabled by clicking a toggle control.
 
