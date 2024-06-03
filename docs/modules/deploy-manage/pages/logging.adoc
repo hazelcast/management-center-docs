@@ -71,7 +71,7 @@ rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.rolling.ref=RollingFile
 ----
 
-Management Center provides JSON template logging out of the box. To enable JSON logging, you can activate `json-logging` profile by starting Management Center with the following parameter:
+To enable JSON logging, you can activate `json-logging` profile by starting Management Center with the following parameter:
 ----
 -Dspring.profiles.active=json-logging
 ----
