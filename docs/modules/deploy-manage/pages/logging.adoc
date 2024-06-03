@@ -71,6 +71,17 @@ rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.rolling.ref=RollingFile
 ----
 
+Management Center provides JSON template logging out of the box. To enable JSON logging, you can activate `json-logging` profile by starting Management Center with the following parameter:
+----
+-Dspring.profiles.active=json-logging
+----
+By default, Management Center uses a JSON logging template compliant with link:https://www.elastic.co/guide/en/ecs/current/ecs-reference.html[Elastic Common Schema (ECS) specification].
+You can change the logging template by providing a JSON logging template file as follows:
+----
+-Dlogging.json.template=<json-file-path>
+----
+For more information about the JSON logging templates, see the link:https://logging.apache.org/log4j/2.x/manual/json-template-layout.html[Log4j2 JSON Layout documentation].
+
 == Audit Logging
 
 To make it easier to examine suspicious activity and troubleshoot issues, you can use audit logging to keep a record of events that happen in Management Center such as user logins.
