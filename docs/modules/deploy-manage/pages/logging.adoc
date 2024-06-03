@@ -80,6 +80,8 @@ You can change the logging template by providing a JSON logging template file as
 ----
 -Dlogging.json.template=<json-file-path>
 ----
+NOTE: For a provided JSON logging template to be effective, you need to activate the `json-logging` profile.
+
 For more information about the JSON logging templates, see the link:https://logging.apache.org/log4j/2.x/manual/json-template-layout.html[Log4j2 JSON Layout documentation].
 
 == Audit Logging
