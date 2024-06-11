@@ -23,11 +23,11 @@ image:ROOT:RollingUpgrade.png[RollingUpgradeMenu]
 +
 [NOTE]
 ====
-Management Center can offer 3 types of rolling upgrades:
+Management Center can offer the following types of rolling upgrades:
 
-* For version 4.2: The upgrade will be to 5.0.
-* For versions below 5.x and other than 4.2: Upgrade will be made to the next minor version. Example: For version 4.1, upgrade will be to 4.2.
-* For versions above and equal to 5.x: Since version 5.5 is Long Term Support, multiple version upgrade is possible. Example: If the cluster version is 5.3 and all member versions are equal and above 5.5, the upgrade will be made to 5.5. If any member version is below than 5.5, upgrade will be made to the next minor version.
+* From version 4.2 to 5.0.
+* From any version earlier than 5.x, excluding 4.2, to the next minor version. For example, from version 4.1 to 4.2.
+* If members are already version 5.5, you can upgrade your cluster across multiple versions directly to the 5.5 long-term support version from any 5.x version. If any member version is earlier than 5.5, the cluster can only be upgraded to the next minor version.
 ====
 
 When the cluster version is upgraded, you will see the following notification:
