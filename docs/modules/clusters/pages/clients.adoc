@@ -120,7 +120,7 @@ for each piece of information:
 |Whether the client is an Enterprise Java client. Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
 
 |Routing Mode
-|Routing mode of the client, as *Single Member*, *Multiple Members*, or *All Members*.
+|Routing mode of the client. This can be *Single Member*, *Multiple Members*, or *All Members*.
 
 |Connected Members
 |The members that the client is [.underline]#currently# connected to. This field may show the address of the member, if the client is currently connected to a single member,
