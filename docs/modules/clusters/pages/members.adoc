@@ -83,6 +83,15 @@ successful is shown.
 selected member and shows it in a separate dialog.
 * **Shutdown Member**: Shuts down the selected member.
 * **Promote Member**: If the member is a lite member, this button promotes it to a data member.
+* **Demote Member**: If the member is a data member, this button demotes it to a lite member. +
+The following conditions must be met to demote a data member:
+** The cluster must be in the Active state.
+** The cluster version must be 5.4 or higher.
+** The member version must be 5.5 or higher.
+** The member must not be the only data member in the cluster.
+
+NOTE: Demoting a data member to a lite member may cause data loss. Make sure you are fully aware of
+the potential consequences and have taken appropriate measures before proceeding.
 
 [[utilization-charts]]
 === Graphs
