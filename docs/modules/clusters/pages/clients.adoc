@@ -21,12 +21,16 @@ image:ROOT:ClientGridView.png[Client Grid View]
 |Type of client. This field typically denotes the client's programming language and indicates whether it is an Enterprise Java client.
 Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
 
-|Member Connection
-|The member that the client is
-currently connected to. *All* means a client
-is configured so that it may connect to all members of
-a cluster, although the client may not have a connection to all
-members all the time.
+|Routing Mode
+|Routing mode of the client. This field shows the routing mode that the client uses to connect to the cluster.
+*All Members* means a client is configured to allow connections to all members of a cluster, although the client might not be connected to them all.
+*Single Member* means a client is configured to connect only to a single member of the cluster. *Multiple Members*
+means that a client is configured to connect to a subset of the cluster members.
+
+|Connected Members
+|The members that the client is currently connected to. This field might show the address of the member, if the client is currently connected only to a single member,
+*All Members* if the client is connected to all members of the cluster, and shows *number of currently connected members / total members*, if the
+client is currently connected to a subset of members.
 
 |Hazelcast Client Version
 |Version of the client codebase.
@@ -115,12 +119,15 @@ for each piece of information:
 |Enterprise
 |Whether the client is an Enterprise Java client. Although non-Java clients can also connect to Enterprise clusters, the Java client includes Enterprise features that non-Java clients do not.
 
-|Member Connection
-|The member that the client is
-currently connected to. *All* means a client
-is configured so that it may connect to all members of
-a cluster. The client may not have a connection to all
-members all the time.
+|Routing Mode
+|Routing mode of the client. This can be *Single Member*, *Multiple Members*, or *All Members*.
+
+|Connected Members
+|The members that the client is currently connected to. This field might show the address of the member, if the client is currently connected only to a single member,
+*All Members* if the client is connected to all members of the cluster, and shows *number of currently connected members / total members*, if the
+client is currently connected to a subset of members.
+
+If the client is connected to a subset of members, select the icon next to the field to see the list of connected members.
 
 |Version
 |Version of the client codebase.
