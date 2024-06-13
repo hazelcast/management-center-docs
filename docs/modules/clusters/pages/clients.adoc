@@ -127,7 +127,7 @@ for each piece of information:
 *All Members* if the client is connected to all members of the cluster, and shows *number of currently connected members / total members*, if the
 client is currently connected to a subset of members.
 
-If the client is connected to a subset of members, you can see the list of connected members, using the icon next to the field.
+If the client is connected to a subset of members, select the icon next to the field to see the list of connected members.
 
 |Version
 |Version of the client codebase.
