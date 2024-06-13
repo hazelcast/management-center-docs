@@ -123,7 +123,7 @@ for each piece of information:
 |Routing mode of the client. This can be *Single Member*, *Multiple Members*, or *All Members*.
 
 |Connected Members
-|The members that the client is [.underline]#currently# connected to. This field may show the address of the member, if the client is currently connected to a single member,
+|The members that the client is currently connected to. This field might show the address of the member, if the client is currently connected only to a single member,
 *All Members* if the client is connected to all members of the cluster, and shows *number of currently connected members / total members*, if the
 client is currently connected to a subset of members.
 
