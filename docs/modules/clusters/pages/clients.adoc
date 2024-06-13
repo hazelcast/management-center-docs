@@ -25,7 +25,7 @@ Although non-Java clients can also connect to Enterprise clusters, the Java clie
 |Routing mode of the client. This field shows the routing mode that the client uses to connect to the cluster.
 *All Members* means a client is configured to allow connections to all members of a cluster, although the client might not be connected to them all.
 *Single Member* means a client is configured to connect only to a single member of the cluster. *Multiple Members*
-means that subset routing is configured for the client.
+means that a client is configured to connect to a subset of the cluster members.
 
 |Connected Members
 |The members that the client is [.underline]#currently# connected to. This field may show the address of the member, if the client is currently connected to a single member,
