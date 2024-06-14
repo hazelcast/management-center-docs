@@ -33,7 +33,7 @@ mc-conf.bat oidc configure
 --
 ====
 
-* **Issuer:** Issuer identifier of your OpenID provider. It is usually (but not always) a URL.
+* **Issuer:** Identifies the issuer of your OpenID provider. It is usually (but not always) a URL.
 When an issuer URL is provided, you can fetch the OIDC configuration by clicking the `Fetch Configuration` button.
 +
 IMPORTANT: Fetching the configuration overrides any previously typed values
