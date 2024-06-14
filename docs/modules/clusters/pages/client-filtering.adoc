@@ -118,7 +118,7 @@ The deployment of filter lists must be confirmed by clicking the *Confirm Deploy
 A summary of client connectivity is shown after the current filter lists have been applied.
 <<client-filtering-preview, Preview>> can be enabled by clicking a toggle control.
 
-IMPORTANT: If the current filter lists disconnect all clients, the warning (*All clients will be blocked if you apply current client filtering configuration*) will be shown on the top of a modal.
+IMPORTANT: If the current filter lists disconnect all clients, the warning (*All clients will be blocked if you apply current client filtering configuration*) is displayed on the top of a modal.
 
 [[client-filtering-synchronization]]
 == Synchronization of Filter Lists Across Multiple Instances of Management Center
