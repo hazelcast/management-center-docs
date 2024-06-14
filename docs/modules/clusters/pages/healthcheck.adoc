@@ -22,7 +22,7 @@ Healthcheck categorizes the checks with five different statuses:
 
 NOTE: If Prometheus Exporter is enabled, individual Healthcheck status counts are published via exporter periodically with a prefix of `hz_healthcheck_status_`. For further information on the Prometheus Exporter, see xref:integrate:prometheus-monitoring.adoc[].
 
-The sidebar navigation item provides notifications about the most severe reported issues, whether they are failures or warnings. These notifications are symbolized by icons: red for failures and yellow for warnings. Furthermore, a tooltip presents the total count of reported potential issues.
+The sidebar navigation item provides notifications about the most critical reported issues, whether they are failures or warnings. These notifications are symbolized by icons, which are red for failures and yellow for warnings. A tooltip displays the total count of reported potential issues.
 
 image:ROOT:HealthcheckFailIcon.png[Healthcheck]
 image:ROOT:HealthcheckWarningIcon.png[Healthcheck]
