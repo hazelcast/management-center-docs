@@ -255,7 +255,7 @@ image:ROOT:MembersSidebarSlowOperationsBadge.png[Sidebar Members Slow Operations
 
 To view slow operations for a member:
 
-. Click a member's row expand button in the table.
+. Click the expand button to the left of a member's row in the table.
 
 image:ROOT:MembersWithSlowOperations.png[Member Grid View With Expanded Slow Operations]
 
