@@ -125,6 +125,7 @@ types:
 * `MC-1005 [Cluster Config]`: Member is shut down.
 * `MC-1006 [Cluster Config]`: Lite member is promoted.
 * `MC-1007 [Cluster Config]`: Cluster version is changed.
+* `MC-1008 [Cluster Config]`: Data member is demoted.
 
 | Authentication Logs
 |* `MC-2001 [Auth]`: User logs in.
