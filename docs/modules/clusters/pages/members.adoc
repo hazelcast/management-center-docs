@@ -259,9 +259,14 @@ If a member has slow operations, you can view the detected slow
 operations which occurred on that member. The data is collected by the
 xref:{page-latest-supported-hazelcast}@hazelcast:performance:slowoperationdetector.adoc[SlowOperationDetector].
 
+The sidebar navigation item provides notifications about existing members with slow operations. A tooltip displays the total count of members with slow operations.
+image:ROOT:MembersSidebarSlowOperationsBadge.png[Sidebar Members Slow Operations Badge]
+
 To view slow operations for a member:
 
-. Click a member's row in the table.
+. Click the expand button to the left of a member's row in the table.
+
+image:ROOT:MembersWithSlowOperations.png[Member Grid View With Expanded Slow Operations]
 
 . Click on an entry in the **List of Slow Operations** table.
 
