@@ -1,4 +1,5 @@
 ** xref:data-structures:overview.adoc[]
+** xref:data-structures:vector-collection.adoc[]
 ** xref:data-structures:map.adoc[]
 ** xref:data-structures:replicated-map.adoc[]
 ** xref:data-structures:cache.adoc[]
