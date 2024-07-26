@@ -1120,7 +1120,7 @@ hz-mc start -Dhazelcast.mc.client.initial.backoff.millis=2000
 ----
 
 |[[hazelcast-mc-client-client-filtering-modes]]hazelcast.mc.clientFiltering.modes
-|Adjusts client filtering modes. Default: [`ALLOWLIST`, `DENYLIST`]. Value must be set of `ALLOWLIST` and `DENYLIST`.
+|Adjusts client filtering modes. Default: `ALLOWLIST, DENYLIST`. Value must be set of `ALLOWLIST` and `DENYLIST`.
 |
 [source,bash,subs="attributes+"]
 ----
