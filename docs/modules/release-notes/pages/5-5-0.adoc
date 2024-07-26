@@ -2,9 +2,9 @@
 :description:
 These release notes list any new features, enhancements, and fixes that were made between version 5.4.1 and 5.5.0 of Hazelcast Management Center (MC).
 
-{description}
+These release notes list any new features, enhancements, and fixes that were made between version 5.4.1 and 5.5.0 of Hazelcast Management Center (MC).
 
-IMPORTANT: If you are upgrading Management Center from a version earlier than 5.4.0, a data migration step is required as Management Center 5.5.0 uses H2 2.x as its internal database instead of H2 1.x (as used in previous releases). If you use the provided `hz-mc` or `mc-start` scripts to start Management Center, this data migration is handled automatically by the script. If you use a custom run script, refer to the documentation for comprehensive instructions on migrating Management Center data. If the internal database is not upgraded, then Management Center will start with a new configuration.
+CAUTION: If you are upgrading Management Center from a version earlier than 5.4.0, a data migration step is required as Management Center 5.5.0 uses H2 2.x as its internal database instead of H2 1.x (as used in previous releases). If you use the provided `hz-mc` or `mc-start` scripts to start Management Center, this data migration is handled automatically by the script. If you use a custom run script, refer to the documentation for comprehensive instructions on migrating Management Center data. If the internal database is not upgraded, then Management Center will start with a new configuration.
 
 == New Features
 
