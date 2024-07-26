@@ -28,9 +28,9 @@ a custom run script, refer to the documentation for comprehensive instructions o
 * Added a link to the License Feature CP Section if CP Subsystem is disabled. [MC-2847]
 * Added an ability to a WAN Replication reference of an IMaps. [MC-2729]
 * Added an ability to configure `consistency-check-strategy` during dynamic creation of a WAN publisher. [MC-243]
-* Added an ability to load OIDC configuration params from an OIDC configuration endpoint. [MC-2733]
+* Added an ability to load OIDC configuration parameters from an OIDC configuration endpoint. [MC-2733]
 
-NOTE: in CLustered REST API `memberConnection` allowed field values have been changed from `ALL` | `<member-address>` to
+NOTE: in Clustered REST API `memberConnection` allowed field values have been changed from `ALL` | `<member-address>` to
 `ALL_MEMBERS` | `MULTI_MEMBER` | `SINGLE_MEMBER`
 
 == Fixes
