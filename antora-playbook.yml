@@ -26,7 +26,7 @@ antora:
       trace: true
       componentversions:
         - name: management-center
-          version: '5.5-snapshot'
+          version: '6.0-SNAPSHOT'
           mappings:
             - module: integrate
               family: attachment
