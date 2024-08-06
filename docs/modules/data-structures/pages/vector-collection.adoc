@@ -26,9 +26,8 @@ image:ROOT:VectorCollectionGrid.png[Vector Collection Grid View]
 
 |===
 
-You can filter the vector collections shown, and you can also sort
-the table by clicking on the column headers. Clicking
-on a vector collection name opens a new page for monitoring that vector collection
+You can filter and sort the displayed vector collections by clicking on the column headers. Click
+on a vector collection name to open a new page for monitoring that vector collection
 instance on the right, as shown below.
 
 image:ROOT:MonitoringVectorCollection.png[Monitoring Vector Collection]
