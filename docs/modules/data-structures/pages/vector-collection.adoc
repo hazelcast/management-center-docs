@@ -226,10 +226,12 @@ From left to right, this table lists the following:
 
 |===
 
-You can select the time period in the combo box placed in the top
-right corner of the window, for which the table data will be
-shown. Available values are **Since Beginning**, **Last Minute**,
-**Last 10 Minutes** and **Last 1 Hour**.
+You can select the time period for the table using the combo box in the top
+right corner of the window:
+* Since Beginning
+* Last Minute
+* Last 10 Minutes
+* Last 1 Hour
 
 To change the order of entries to ascending or descending, click on
 the appropriate column heading.
