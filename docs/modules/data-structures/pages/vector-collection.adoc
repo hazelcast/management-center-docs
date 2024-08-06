@@ -230,5 +230,5 @@ right corner of the window, for which the table data will be
 shown. Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.
 
-To ascend or descend the order of the listings, click on the
-column headings.
+To change the order of entries to ascending or descending, click on
+the appropriate column heading.
