@@ -7,7 +7,7 @@ page is opened on the right, as shown below.
 
 image:ROOT:VectorCollectionGrid.png[Vector Collection Grid View]
 
-.Vector Collections fields
+.Vector Collection fields
 [cols="20%s,80%a"]
 |===
 |Field|Description
