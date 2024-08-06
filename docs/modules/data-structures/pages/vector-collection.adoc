@@ -33,7 +33,6 @@ instance on the right, as shown below.
 
 image:ROOT:MonitoringVectorCollection.png[Monitoring Vector Collection]
 
-The below subsections explain the portions of this window.
 
 
 [[vector-collection-monitoring]]
