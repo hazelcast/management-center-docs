@@ -39,8 +39,7 @@ image:ROOT:MonitoringVectorCollection.png[Monitoring Vector Collection]
 == Monitoring a Vector Collection
 
 The vector collection monitoring
-page shows two graphs that show various metrics of the vector collection.
-See the xref:getting-started:graphs.adoc[graph section] for more information.
+page shows two graphs that show various metrics for the vector collection. For more info on using graphs, see xref:getting-started:graphs.adoc[Graphs].
 
 Under these charts are **Vector Collection Statistics** and **Vector Collection Throughput** data tables.
 
