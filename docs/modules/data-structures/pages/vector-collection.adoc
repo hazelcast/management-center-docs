@@ -13,7 +13,7 @@ image:ROOT:VectorCollectionGrid.png[Vector Collection Grid View]
 |Field|Description
 
 |Name
-|Name of a vector collection.
+|Name of vector collection.
 
 |Creation Time
 |First time the key was put.
