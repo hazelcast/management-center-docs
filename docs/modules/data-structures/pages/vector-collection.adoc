@@ -1,4 +1,5 @@
 = Vector Collections
+:description: Learn how to use and monitor vector collections within Management Center.
 [[managing-vector-collections]]
 
 You can see a list of all the vector collections in your cluster
