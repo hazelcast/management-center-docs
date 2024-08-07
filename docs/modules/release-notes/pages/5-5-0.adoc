@@ -18,6 +18,7 @@ CAUTION: If you are upgrading Management Center from a version earlier than 5.4.
 * Added an ability to specify allowed Client Filtering modes. [MC-2715]
 
 == Enhancements
+
 * Improved logging of H2 Database upgrade process. [MC-2668]
 * Improved styling of WAN Replication table. [MC-2711]
 * HealthCheck icon now reflects the highest severity issue detected. [MC-2867]
