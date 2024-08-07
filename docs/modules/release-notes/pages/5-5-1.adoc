@@ -2,6 +2,10 @@
 :description:
 These release notes list any new features, enhancements, and fixes that were made between version 5.5.0 and 5.5.1 of Hazelcast Management Center (MC).
 
+== Enhancements
+
+* Added a promo page for Vector Collections. [MC-2878]
+
 == Fixes
 
 * MC no longer requires ADVANCED_CP licensed feature to show CP Subsystem screens. [MC-2965]
