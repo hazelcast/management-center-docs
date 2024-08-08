@@ -24,6 +24,8 @@ Management Center supports the following types of filter list:
 - *Allow list*: Clients that *are allowed* to connect to the cluster.
 - *Deny list*: Clients that *are not allowed* to connect to the cluster.
 
+To adjust the modes see xref:deploy-manage:system-properties.adoc#hazelcast-mc-client-client-filtering-modes[system-properties]
+
 image:ROOT:ClientFilteringView.png[Client Filtering View]
 
 == Client Address Types
