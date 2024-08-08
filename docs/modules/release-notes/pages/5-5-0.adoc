@@ -1,0 +1,45 @@
+= 5.5.0 Release Notes
+:description:
+These release notes list any new features, enhancements, and fixes that were made between version 5.4.1 and 5.5.0 of Hazelcast Management Center (MC).
+
+These release notes list any new features, enhancements, and fixes that were made between version 5.4.1 and 5.5.0 of Hazelcast Management Center (MC).
+
+CAUTION: If you are upgrading Management Center from a version earlier than 5.4.0, a data migration step is required as Management Center 5.5.0 uses H2 2.x as its internal database instead of H2 1.x (as used in previous releases). If you use the provided `hz-mc` or `mc-start` scripts to start Management Center, this data migration is handled automatically by the script. If you use a custom run script, refer to the documentation for comprehensive instructions on migrating Management Center data. If the internal database is not upgraded, then Management Center will start with a new configuration.
+
+== New Features
+
+* Added screens for Vector Collection data structures. [MC-2875]
+* Added support for multi-version Rolling Upgrade. [MC-2820]
+* Added support for MULTI_MEMBER clients. [MC-2638]
+* Added support for multi-resource user code namespaces. [MC-2772]
+* Added support for Log4j2 JsonTemplateLayout logging. [MC-2844]
+* Added an ability to demote a data member to a lite member. [MC-2823]
+* Added an ability to preview Client Filtering results. [MC-2715]
+* Added an ability to specify allowed Client Filtering modes. [MC-2715]
+
+== Enhancements
+
+* Improved logging of H2 Database upgrade process. [MC-2668]
+* Improved styling of WAN Replication table. [MC-2711]
+* HealthCheck icon now reflects the highest severity issue detected. [MC-2867]
+* Added cpDirectToLeader property value to Client screen. [MC-2902]
+* Added Slow Operations details to Member Listing screen. [MC-2783]
+* Added a link to the License Feature CP Section if CP Subsystem is disabled. [MC-2847]
+* Added ability for WAN Replication reference of an IMaps. [MC-2729]
+* Added ability to configure `consistency-check-strategy` during dynamic creation of a WAN publisher. [MC-243]
+* Added ability to load OIDC configuration parameters from an OIDC configuration endpoint. [MC-2733]
+
+NOTE: in Clustered REST API `memberConnection` allowed field values have been changed from `ALL` | `<member-address>` to
+`ALL_MEMBERS` | `MULTI_MEMBER` | `SINGLE_MEMBER`
+
+== Fixes
+
+* Fixed layout on Members Listing screen when slow operations are detected. [MC-2918]
+* Fixed links in license expiration popups. [MC-2719]
+* Jet job Received Items count no longer increases if the stream has been cancelled. [MC-2761]
+* Entry cost is no longer shown with fraction of bytes. [MC-2084]
+* Quick zoom in the chart no longer results in page scrolling and faded details. [MC-2486]
+* Turning off SQL Browser no longer returns user to Dashboard instead of the previous page. [MC-2678]
+* An error toast is shown now when user tries to add an expired license. [MC-2773]
+* Dropdowns no longer break WAN Replication layout when long values are selected. [MC-2784]
+* The number of User Code Namespaces displayed is no longer capped at 5. [MC-2892]
