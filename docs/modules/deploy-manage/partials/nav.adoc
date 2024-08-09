@@ -4,6 +4,7 @@
 ** xref:deploy-manage:system-properties.adoc[]
 ** xref:deploy-manage:mc-conf.adoc[]
 ** xref:deploy-manage:variable-replacers.adoc[]
+** xref:deploy-manage:logging.adoc[]
 * Cluster Connections
 ** xref:deploy-manage:cluster-connections.adoc[Overview]
 ** xref:deploy-manage:connecting-to-clusters-mc-conf.adoc[]
