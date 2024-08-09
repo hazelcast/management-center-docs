@@ -19,8 +19,7 @@ Hazelcast supports two kinds of members:
 * **Full Members** for when you need to scale both data storage and computational capabilities across the cluster
 * **Lite Members** are useful when you need additional computational power or clients that access data without the overhead of data storage and synchronization
 
-With Hazelcast Platform 5.5, it's now possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Hazelcast has always supported promoting a Lite member to a Full member but in this release you can also now demote a Full member to a Lite member. Management Center supports this feature.
-// How does it support it? Can you demote within MC? We should add what you can do with MC here.
+With Hazelcast Platform 5.5, it's now possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Management Center has always supported promoting a Lite member to a Full member but in this release you can also now demote a Full member to a Lite member.
 
 == Multi-version rolling upgrades
 
@@ -58,7 +57,7 @@ Management Center 5.5 has added support for Vector Collection metrics. For more 
 
 **Client Filtering Preview**: see the effects of Client Filtering actions before they're made live. For more info, see xref:clusters:client-filtering.adoc#client-filtering-preview[Client Filtering preview].
 
-**Limit Client Filtering modes**: you can now use a system property to limit the available Client Filtering modes to `ALLOWLIST`, `DENYLIST`, or both (which is the default). For more info, see `hazelcast.mc.clientFiltering.modes`.
+**Limit Client Filtering modes**: you can now use a system property to limit the available Client Filtering modes to `ALLOWLIST`, `DENYLIST`, or both (which is the default). For more info, see xref:clusters:client-filtering.adoc#configuring-client-filtering-modes[Client Filtering modes].
 // do we have a link for this ref?
 
 **WAN Replication table**: this table has been improved to increase readability, and it's also now possible to configure the `consistency-check-strategy` during the dynamic creation of a WAN publisher within Management Center. The dropdown fields now also support long values without impacting the UI.
