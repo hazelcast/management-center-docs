@@ -137,9 +137,15 @@ image:ROOT:ClientFilteringUpdated.png[Client Filtering Updated]
 
 == Reconnecting Clients to the Primary Cluster
 
-When you disconnect a client from its primary cluster using a filter list, that client cannot automatically reconnect to the primary cluster.
+If your clients are configured to automatically failover to a secondary cluster, disconnecting a client from its primary cluster using a filter list will make the client to connect to the secondary cluster. When the filter list is deactivated, the client won't automatically reconnect to the primary cluster because it now has an active connection to the secondary cluster.
 
-You must deploy a new filter list to the cluster to update the client connection.
+To restore the client's connection to the primary cluster, you must deploy a new filter list to the secondary cluster. This action will disconnect the client from the secondary cluster, allowing it to cycle through the defined clusters in its configuration and reconnect to the primary cluster.
+
+== Configuring Client Filtering Modes
+
+By default, the available modes for Client Filtering are `ALLOWLIST` and `DENYLIST`. However, the default modes can be customized using the `hazelcast.mc.clientFiltering.modes` system property.
+
+For instance, if you prefer not to enable the use the `DENYLIST` mode to block clients from accessing the cluster, you can override the default setting. This customization allows you to tailor client filtering options according to your specific requirements. See xref:deploy-manage:system-properties.adoc[System Properties] for more details.
 
 == Related Resources
 
