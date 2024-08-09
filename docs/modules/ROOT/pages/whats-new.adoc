@@ -4,67 +4,76 @@
 
 {description}
 
-NOTE: For new and improved features in Hazelcast Platform 5.5, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.5].
+IMPORTANT: Hazelcast Management Center 5.5 requires Java 17 or later.
+
+// Is this recent change? We don't have in 5.4 WN
 
 With enhanced monitoring and an improved console experience, these improvements are designed to elevate your cluster management experience.
 
-== Lite member management
+NOTE: For new and improved features in Hazelcast Platform 5.5, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.5].
 
-Hazelcast supports two kinds of members: **Full Members** for when you need to scale both data storage and computational capabilities across the cluster.  **Lite Members** are useful when you need additional computational power or clients that access the data without the overhead of data storage and synchronization.
+== Lite Member management
 
-With Platform 5.5, it's possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Hazelcast has always supported promoting a Lite member to a Full member and in this release you can now demote a Full member to a Lite member. Management Centre supports this functionality.
+Hazelcast supports two kinds of members: 
 
-== Multi-version Rolling Upgrades
+* **Full Members** for when you need to scale both data storage and computational capabilities across the cluster
+* **Lite Members** are useful when you need additional computational power or clients that access data without the overhead of data storage and synchronization
+
+With Hazelcast Platform 5.5, it's now possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Hazelcast has always supported promoting a Lite member to a Full member but in this release you can also now demote a Full member to a Lite member. Management Center supports this feature.
+// How does it support it? Can you demote within MC? We should add what you can do with MC here.
+
+== Multi-version rolling upgrades
 
 Hazelcast Platform 5.5 introduces Long-term Support (LTS) releases to simplify your upgrade experience and give you greater control over when and how you upgrade your software. It's now possible to upgrade from Hazelcast 5.2.x or later to 5.5 in a single upgrade.
 
-Management Center 5.5 has been updated to support this multi-version Rolling Upgrade. For more information, see xref:clusters:triggering-rolling-upgrade.adoc[`Triggering a Rolling Upgrade`]
+Management Center 5.5 now supports this multi-version rolling upgrade. For more info, see xref:clusters:triggering-rolling-upgrade.adoc[Triggering a Rolling Upgrade].
+// How does it support it? We should add what you can do with MC here.
 
 == Multi-member routing for Java clients
 
-Platform 5.5 adds an additional client routing option for Java client applications connecting to geographically dispersed clusters. Management Center has been updated to support this new Multi-member client routing.
+Hazelcast Platform 5.5 adds an additional client routing option for Java client applications connecting to geographically dispersed clusters. Management Center now supports this new multi-member client routing.
+// How does it support it? We should add what you can do with MC here.
 
-== Multi-resource User Code namespaces
+== Multi-resource User Code Namespaces
 
-Platform 5.4 added namespaces which provide a container for Java classpath resouces. Management Center has enhanced its support for User Code namespaces. For further information see xref:clusters:namespaces.adoc[`User Code namespaces`]
+With Management Center 5.5 you can use **Namespaces** to monitor all the User Code Namespaces that are connected to your Hazelcast cluster. User Code Namespaces provide a container for Java classpath resources. Management Center has enhanced its support for User Code namespaces. For more info, see xref:clusters:namespaces.adoc[User Code Namespaces].
+// What's changed here? Has support been added or enhanced?
 
-== Support for Log4j2 Json Template logging
+== Support for Log4j2 JSON template logging
 
-Hazelcast Platform already supports JSON Templates for logging purposes and now this capability has been added to Management Center. For further information see xref:deploy-manage:logging.adoc[`Logging`]
+Management Center now supports JSON Templates for logging purposes. You can customize the content of logs as well as enable audit logging. For further information see xref:deploy-manage:logging.adoc[`Logging`].
+// this needsn adding to nav - see related nav change
 
-== Slow Operations
+== Improved reporting on slow operations
 
-Enhanced the Slow Operations reporting to provide information on the operations detected by the SlowOperationsDetector. This detailed information is now included on the members’ listing page, allowing for better identification of potential problems. For further information see xref:clusters:members.adoc#slow-operations[`Slow Operations`]
+Reporting on slow operations has been improved to provide information on operations detected by the `SlowOperationsDetector``. This detailed information is now included on the **Members** page, which helps better identify potential problems. For more info, see xref:clusters:members.adoc#slow-operations[Slow Operations].
 
 == Vector Collections (BETA)
 
-**Vector Collections** support a specialized type of vector, optimized for storing, searching, and managing vector embeddings along with additional metadata. This feature allows you to include metadata values for filtering, processing, and detailed analysis of vectors.
+**Vector Collections** support a specialized type of vector that's optimized for storing, searching, and managing vector embeddings along with additional metadata. This feature allows you to include metadata values for filtering, processing, and detailed analysis of vectors.
 
-Management Center 5.5 has added support for Vector Collections' metrics. For more information see xref:data-structures:vector-collection.adoc[`Vector Collections`]
+Management Center 5.5 has added support for Vector Collection metrics. For more info, see xref:data-structures:vector-collection.adoc[Vector Collections].
 
 == Additional Improvements and fixes
 
-* **Client Filtering Preview** is now available to see the affects of the Client Filtering actions before they're made live. For further information see xref:clusters:client-filtering.adoc#client-filtering-preview[`Client Filtering preview`]
+**Client Filtering Preview**: see the effects of Client Filtering actions before they're made live. For more info, see xref:clusters:client-filtering.adoc#client-filtering-preview[Client Filtering preview].
 
-* **Limit Client Filtering modes** can now be defined using a system property to limit the available Client Filtering modes with a choice of just `ALLOWLIST`, `DENYLIST` or the default of both. See `hazelcast.mc.clientFiltering.modes`
+**Limit Client Filtering modes**: you can now use a system property to limit the available Client Filtering modes to `ALLOWLIST`, `DENYLIST`, or both (which is the default). For more info, see `hazelcast.mc.clientFiltering.modes`.
+// do we have a link for this ref?
 
-* **Improvements in the WAN Replication table** to improve its readability. It's now possible to configure the `consistency-check-strategy` during the dynamic creation of a WAN publisher within Management Center. The dropdown fields now support long values without impacting the UI.
+**WAN Replication table**: this table has been improved to increase readability, and it's also now possible to configure the `consistency-check-strategy` during the dynamic creation of a WAN publisher within Management Center. The dropdown fields now also support long values without impacting the UI.
 
-* **Config Healthcheck** warning icon in the left menu has been updated to reflect the color of the highest severity issue detected.
+**Config Healthcheck**: the warning icon in the Side Bar now displays the color of the highest severity issue detected.
  
-* **OpenID Connect** configuration parameters can now be loaded from an OIDC configuration endpoint.
+**OpenID Connect**: you can now load configuration parameters from an OIDC configuration endpoint.
 
-* **SQL Browser** no longer redirects back to the Dashboard screen when closed. Now it returns to the previous page shown.
+**SQL Browser**: when closed, you are now redirected to the previous page instead of the Dashboard.
 
-NOTE: in Clustered REST API `memberConnection` allowed field values have changed from `ALL` | `<member-address>` to
-`ALL_MEMBERS` | `MULTI_MEMBER` | `SINGLE_MEMBER`
+**Clustered REST**: the allowed values for `memberConnection` have changed from `ALL` | `<member-address>` to
+`ALL_MEMBERS` | `MULTI_MEMBER` | `SINGLE_MEMBER`. 
 
-NOTE: Hazelcast Management Center 5.5 requires Java 17 or later.
+{empty} +
 
-== Additional Improvements
-
-This release incorporates additional bug fixes and enhancements to optimize your cluster management experience.
-
-For a full list of changes, see xref:release-notes:5-5-0.adoc[].
+For a full list of bug fixes and enhancements, see xref:release-notes:releases.adoc[].
 
 To get started with Hazelcast Management Center, or upgrade an existing installation, see xref:getting-started:install.adoc[].

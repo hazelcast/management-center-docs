@@ -28,6 +28,6 @@ include::troubleshoot:partial$nav.adoc[]
 .Upgrade
 ** xref:migration-guides.adoc[]
 
-.Release Notes
+.Release Notes 
 include::release-notes:partial$nav.adoc[]
 
