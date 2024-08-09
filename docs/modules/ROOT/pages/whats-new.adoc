@@ -40,12 +40,11 @@ With Management Center 5.5 you can use **Namespaces** to monitor all the User Co
 
 == Support for Log4j2 JSON template logging
 
-Management Center now supports JSON Templates for logging purposes. You can customize the content of logs as well as enable audit logging. For further information see xref:deploy-manage:logging.adoc[`Logging`].
-// this needsn adding to nav - see related nav change
+Management Center now supports JSON Templates for logging purposes. You can customize the content of logs as well as enable audit logging. For further information see xref:deploy-manage:logging.adoc[Logging].
 
 == Improved reporting on slow operations
 
-Reporting on slow operations has been improved to provide information on operations detected by the `SlowOperationsDetector``. This detailed information is now included on the **Members** page, which helps better identify potential problems. For more info, see xref:clusters:members.adoc#slow-operations[Slow Operations].
+Reporting on slow operations has been improved to provide information on operations detected by the `SlowOperationsDetector`. This detailed information is now included on the **Members** page, which helps better identify potential problems. For more info, see xref:clusters:members.adoc#slow-operations[Slow Operations].
 
 == Vector Collections (BETA)
 
