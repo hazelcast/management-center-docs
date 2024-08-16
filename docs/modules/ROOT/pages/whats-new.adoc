@@ -2,7 +2,7 @@
 = What's new in Management Center 5.5
 :description: Here are the highlights of what’s new and improved in Hazelcast Management Center 5.5.
 
-NOTE: The What's New page for Management Center 6.0-SNAPSHOT will be available when this version is released. For the last major release, see below.
+NOTE: The What's New page for Management Center 5.6-SNAPSHOT will be available when this version is released. For the last major release, see below.
 
 {description}
 
