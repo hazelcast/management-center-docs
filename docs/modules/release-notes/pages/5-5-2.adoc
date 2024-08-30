@@ -14,5 +14,5 @@
 * Fixed `USER_LIB` variable setting in the Windows start script. [MC-2988]
 * Fixed `Thread Per Core` feature representation on Cluster License screen. [MC-2985]
 * Fixed OIDC support when claims are not returned by UserInfo endpoint. [MC-2964]
-* Fixed `Advanced AO` promo link from Cluster License screen. [MC-3007]
+* Fixed `Advanced AI` promo link from Cluster License screen. [MC-3007]
 * MC no longer fails when Jet job name contains `/` symbol. [MC-2938]
