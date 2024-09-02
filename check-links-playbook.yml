@@ -8,7 +8,7 @@ site:
     docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
     docsearch_index: 'prod_hazelcast_docs'
 content:
-  sources: 
+  sources:
   - url: .
     branches: HEAD
     start_path: docs
@@ -16,7 +16,7 @@ content:
     branches: [main]
     start_paths: [home,tutorials]
   - url: https://github.com/hazelcast/hz-docs
-    branches: [main]
+    branches: [main, v/*]
     start_path: docs
   - url: https://github.com/hazelcast/imdg-docs
     branches: [main]
@@ -151,9 +151,9 @@ content:
     start_path: docs
   - url: https://github.com/hazelcast/clc-docs
     branches: main
-    start_path: docs    
+    start_path: docs
 
-ui: 
+ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/download/v2.2/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
     snapshot: true
