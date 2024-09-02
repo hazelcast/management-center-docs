@@ -10,7 +10,10 @@ site:
 content:
   sources:
   - url: .
-    branches: [main, v/5.5]
+    branches: HEAD
+    start_path: docs
+  - url: https://github.com/hazelcast/management-center-docs
+    branches: [v/5.5]
     start_path: docs
   - url: https://github.com/hazelcast/hazelcast-docs
     branches: [main]
