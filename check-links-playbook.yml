@@ -10,7 +10,7 @@ site:
 content:
   sources:
   - url: .
-    branches: HEAD
+    branches: [main, v/*]
     start_path: docs
   - url: https://github.com/hazelcast/hazelcast-docs
     branches: [main]
