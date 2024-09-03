@@ -14,7 +14,7 @@ This page is available only to admin users.
 +
 NOTE: Management Center is compatible with the previous minor version of Hazelcast. For example, Management Center 5.2 works with both Hazelcast 5.1 and 5.2. To change your cluster version to 5.2, you need Management Center 5.2.
 
-. Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:clusters:triggering-rolling-upgrade[Platform documentation].
+. Upgrade the codebase of each Hazelcast member. Follow the steps described in the xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster/rolling-upgrades.adoc[Platform documentation].
 
 . Go to *Administration* > *Rolling Upgrade* and click *Upgrade Cluster*.
 +
