@@ -17,6 +17,8 @@ asciidoc:
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '6.0-snapshot'
+    # https://github.com/hazelcast/clc/releases
+    page-latest-supported-clc: '5.4.1'
     page-toclevels: 1
     experimental: true
 nav:
