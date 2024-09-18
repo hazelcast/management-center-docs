@@ -581,7 +581,7 @@ hz-mc start -Dhazelcast.mc.ad.ssl.trustStore=/some/dir/truststore \
 
 ----
 
-|[[hazelcast-mc-ldap-ssl-truststorepassword]]hazelcast.mc.ad.ssl.trustStorePassword
+|[[hazelcast-mc-ad-ssl-truststorepassword]]hazelcast.mc.ad.ssl.trustStorePassword
 
 MC_AD_SSL_TRUST_STORE_PASSWORD
 |Password for the truststore. Default: `' '` (empty).
