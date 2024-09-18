@@ -11,7 +11,7 @@ From 5.4.0, an additional `h2-upgrade-cli-*.jar` is included, which is impicitly
 
 If you use custom scripts to run Management Center and they don't call `./bin/hz-mc start`, you must upgrade and migrate H2 data manually.
 
-The new `hz-mc upgrade-h2` command runs all migrations for you and migrates data from `${MC_HOME}/sql` to `${MC_HOME}/metadata`. During migration, some additional folders are created for troubleshooting purposes; these include `sql.backup` and `sql.migrated.${timestamp}`. These additional folders can be safely deleted after successful migration.
+The new `hz-mc upgrade-h2` command runs all migrations for you and migrates data from `$\{MC_HOME}/sql` to `$\{MC_HOME}/metadata`. During migration, some additional folders are created for troubleshooting purposes; these include `sql.backup` and `sql.migrated.$\{timestamp}`. These additional folders can be safely deleted after successful migration.
 If you have customized the Management Center home directory, ensure that the `MC_HOME` environment variable has been configured before calling `hz-mc upgrade-h2`
 For example:
 ```bash
