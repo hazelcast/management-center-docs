@@ -1,0 +1,27 @@
+= 5.6.0 Release Notes
+:description:
+These release notes list any new features, enhancements, and fixes that were made between version 5.5.2 and 5.6.0 of Hazelcast Management Center (MC).
+
+These release notes list any new features, enhancements, and fixes that were made between version 5.5.2 and 5.6.0 of Hazelcast Management Center (MC).
+
+CAUTION: If you are upgrading Management Center from a version earlier than 5.4.0, a data migration step is required as Management Center 5.6.0 uses H2 2.x as its internal database instead of H2 1.x (as used in previous releases). If you use the provided `hz-mc` or `mc-start` scripts to start Management Center, this data migration is handled automatically by the script. If you use a custom run script, refer to the documentation for comprehensive instructions on migrating Management Center data. If the internal database is not upgraded, then Management Center will start with a new configuration.
+
+== New Features
+
+* Added support for Java Standalone client. [MC-2993]
+* Added a HealthCheck for duplications in `hazelcast.xml`. [MC-2995]
+
+== Enhancements
+
+* Added a default Acknowledgement type for WAN Configs created in MC. [MC-3029]
+* Added a confirmation dialog on changing cluster state. [MC-2953]
+* Added slow operations details to Prometheus Exporter. [MC-2906]
+* Added licenses expiration details to Prometheus Exporter. [MC-2905]
+* Redesigned top and left panels. [MC-2942]
+* Made CLC enablement suggestion more visible. [MC-2901]
+
+== Fixes
+
+* MC no longer fails when connected to a cluster with a large number of reconnecting clients. [MC-3012]
+* Fixed splitting words by line wraps in tooltips. [MC-2955]
+* Fixed CLC prompt blinking after every char input. [MC-2581]
