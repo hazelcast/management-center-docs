@@ -245,6 +245,8 @@ mc-stop.cmd
 ----
 --
 ====
+NOTE: These commands stop Management Center processes that have exactly the same version as the script. If you have multiple versions of Management Center running,
+you need to stop each version using its corresponding script.
 
 == Snapshot versions
 
