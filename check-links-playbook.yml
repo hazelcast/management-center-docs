@@ -22,7 +22,8 @@ content:
       branches: [ archived-versions ]
       start_paths: docs/*
     - url: .
-      branches: [ '!main', v/*, HEAD ]
+#      branches: [ '!main', v/*, HEAD ]
+      branches: [ v/*, HEAD ]
       start_path: docs
     - url: https://github.com/hazelcast/management-center-docs
       branches: [ archived-versions ]
