@@ -1,5 +1,12 @@
-= Upgrading to Management Center 5.2.x
+= Upgrading Management Center
 [[migration-guides]]
+
+== Changes in 5.4.x
+* H2 database version is upgraded from 1.x to 2.x.
+* Hazelcast Management Center requires Java 17 or later to run.
+
+== Changes in 5.3.x
+* Hazelcast Management Center requires Java 11 or later to run.
 
 == Changes in 5.2.x
 
