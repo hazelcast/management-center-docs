@@ -1,9 +1,9 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.6.0'
+version: '5.6'
 # Version in the version selector
-display_version: '5.6.0'
+display_version: '5.6'
 asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
