@@ -8,15 +8,15 @@ CAUTION: If you are upgrading Management Center from a version earlier than 5.4.
 
 == New Features
 
-* Added support for Java Standalone client. [MC-2993]
+* Added support for Java Client (Standalone). [MC-2993]
 * Added a HealthCheck for duplications in `hazelcast.xml`. [MC-2995]
 
 == Enhancements
 
 * Added a default Acknowledgement type for WAN Configs created in MC. [MC-3029]
 * Added a confirmation dialog on changing cluster state. [MC-2953]
-* Added slow operations details to Prometheus Exporter. [MC-2906]
-* Added licenses expiration details to Prometheus Exporter. [MC-2905]
+* Added details on slow operations to Prometheus Exporter. [MC-2906]
+* Added license expiration details to Prometheus Exporter. [MC-2905]
 * Redesigned top and left panels. [MC-2942]
 * Made CLC enablement suggestion more visible. [MC-2901]
 
