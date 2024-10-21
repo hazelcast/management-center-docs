@@ -2,6 +2,21 @@
 = What's new in Management Center 5.6
 :description: Here are the highlights of what’s new and improved in Hazelcast Management Center 5.6.
 
+== New design for user interface
+
+The UI has been redesigned with new panels for the top bar and side bar.
+
+image:ROOT:OldTopBarAndSideBar.png[Old dashboard design]
+
+image:ROOT:TopBarAndSideBar.png[New dashboard design]
+
+== Updates to Prometheus Exporter
+
+Prometheus Exporter updated with details on slow operations and license expiration.
+
+== Release notes
+
 For a full list of bug fixes and enhancements, see xref:release-notes:releases.adoc[].
 
 To get started with Hazelcast Management Center, or upgrade an existing installation, see xref:getting-started:install.adoc[].
+
