@@ -222,6 +222,32 @@ mc-start.cmd
 --
 ====
 
+
+== Stopping Management Center via command line
+The following command stops all Management Center processes that are started with either `hz-mc start` or `mc-start.cmd` commands:
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+hz-mc stop
+----
+--
+
+Windows::
++
+--
+[source,shell,subs="attributes+"]
+----
+mc-stop.cmd
+----
+--
+====
+NOTE: These commands stop Management Center processes that have exactly the same version as the script. If you have multiple versions of Management Center running,
+you need to stop each version using its corresponding script.
+
 == Snapshot versions
 
 Development versions of an upcoming release are available as snapshots. To use the most recent snapshot version of Management Center, use the following:
