@@ -20,4 +20,4 @@ jobs:
     - name: Check for broken internal links
       run: |
         npm i
-        npm run-script check-links-local
+        npm run-script check-links-local $GITHUB_REPOSITORY $GITHUB_BASE_REF
