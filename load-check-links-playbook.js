@@ -10,5 +10,5 @@ console.log('Base branch: ', githubBaseBranch);
 // 1. Load and parse local antora-playbook.yml
 // 2. Load and parse global antora-playbook.yml's content.sources
 // 3. Modify global content.sources
-// 		- 
+// 		-
 // 4. Replace local content.sources with the modified content.sources
