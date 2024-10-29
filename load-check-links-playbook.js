@@ -1,14 +1,48 @@
-const [githubRepo, githubBaseBranch] = process.argv.slice(-2);
+const YAML = require('yaml');
+const fs = require('fs');
 
-if (githubRepo.endsWith('.js') || githubBaseBranch.endsWith('.js')) {
+const [currentRepoName, baseBranchName] = process.argv.slice(-2);
+
+if (currentRepoName.endsWith('.js') || baseBranchName.endsWith('.js')) {
 	throw new Error('GitHub repository name and base branch should be passed as arguments');
 }
 
-console.log('Repository name: ', githubRepo);
-console.log('Base branch: ', githubBaseBranch);
+console.log('Repository name: ', currentRepoName);
+console.log('Base branch: ', baseBranchName);
 
 // 1. Load and parse local antora-playbook.yml
+const localAntoraPlaybookContent = fs.readFileSync('./antora-playbook.yml', 'utf8');
+const localAntoraPlaybook = YAML.parse(localAntoraPlaybookContent);
+
 // 2. Load and parse global antora-playbook.yml's content.sources
+const globalAntoraPlaybookContent = fs.readFileSync('./hazelcast-docs/antora-playbook.yml', 'utf8');
+const globalAntoraPlaybook = YAML.parse(globalAntoraPlaybookContent);
+let globalSources = globalAntoraPlaybook.content.sources;
 // 3. Modify global content.sources
-// 		-
+// 		- add hazelcast-docs GitHub URL
+const hazelcastDocsSource = globalSources.find(source => source.url === '.');
+hazelcastDocsSource.url = 'https://github.com/hazelcast/hazelcast-docs';
+
+// 		- remove Swagger docs
+globalSources = globalSources.filter(source =>
+	!(source.url === 'https://github.com/hazelcast/hazelcast-mono')
+	&& !(source.url === 'https://github.com/hazelcast/management-center'));
+
+// 		- add current branch
+globalSources.unshift({
+	url: '.',
+	branches: 'HEAD',
+	start_path: 'docs',
+});
+
+// 		- remove current branch from the
+const currentRepoSource = globalSources.find(source => source.url.endsWith(currentRepoName));
+currentRepoSource.branches.push(`!${baseBranchName}`);
+
+localAntoraPlaybook.content.sources = globalSources;
 // 4. Replace local content.sources with the modified content.sources
+fs.writeFileSync(
+	'./check-links-playbook.yml',
+	YAML.stringify(localAntoraPlaybook),
+	{ encoding: 'utf8' },
+);

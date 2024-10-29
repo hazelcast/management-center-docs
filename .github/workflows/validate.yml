@@ -17,6 +17,16 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 16
+
+    - name: Checkout global antora-playbook
+      uses: actions/checkout@v4
+      with:
+        repository: hazelcast/hazelcast-docs
+        sparse-checkout: antora-playbook.yml
+        sparse-checkout-cone-mode: false
+        path: hazelcast-docs
+        ref: master
+
     - name: Check for broken internal links
       run: |
         npm i
