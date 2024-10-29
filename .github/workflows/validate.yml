@@ -25,7 +25,7 @@ jobs:
         sparse-checkout: antora-playbook.yml
         sparse-checkout-cone-mode: false
         path: hazelcast-docs
-        ref: master
+        ref: main
 
     - name: Check for broken internal links
       run: |
