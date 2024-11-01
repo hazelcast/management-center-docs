@@ -10,9 +10,9 @@ asciidoc:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
     full-version: '6.0-SNAPSHOT'
     # Version to be used when installing a Hazelcast cluster
-    hz-full-version: '5.4.0-SNAPSHOT'
+    hz-full-version: '5.5.2'
     # Version to be used when installing a snapshot using brew
-    version-brew: '5.3.1.SNAPSHOT'
+    version-brew: '5.5.2'
     snapshot: true
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
