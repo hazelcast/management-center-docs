@@ -19,6 +19,7 @@ Healthcheck categorizes the checks with five different statuses:
 - *INFO:* A check has the status `INFO`, indicated by a blue color, to suggest best practices that can be applied to enhance system performance, availability, or efficiency within the cluster.
 - *PASS:* A check has the status `PASS`, indicated by a green color, if no violations have been found in the cluster.
 - *DISABLED:* A check has the status `DISABLED`, indicated by a gray color, if a check is disabled by the user.
+- *N/A*: A check has the status `N/A`, indicated by a beige color, if a check cannot be performed for the current cluster or member version.
 
 NOTE: If Prometheus Exporter is enabled, individual Healthcheck status counts are published via exporter periodically with a prefix of `hz_healthcheck_status_`. For further information on the Prometheus Exporter, see xref:integrate:prometheus-monitoring.adoc[].
 
