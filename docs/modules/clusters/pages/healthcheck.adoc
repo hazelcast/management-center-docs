@@ -12,7 +12,7 @@ Healthcheck provides various checks related to configuration semantics, environm
 A new Healthcheck is performed each time you display the Healthcheck page. You can run all checks again using the `RUN HEALTHCHECK` button in the header.
 
 == Healthcheck Status
-Healthcheck categorizes the checks with five different statuses:
+Healthcheck categorizes the checks with six different statuses:
 
 - *FAIL:* A check has the status `FAIL`, indicated by a red color, when the cluster exhibits at least one critical problem that may result in an unexpected behavior or an issue with the designed functionality.
 - *WARNING:* A check has the status `WARNING`, indicated by a yellow color, when the cluster exhibits at least one non-critical issue or potential concern that requires attention, but does not pose an immediate threat or failure.
