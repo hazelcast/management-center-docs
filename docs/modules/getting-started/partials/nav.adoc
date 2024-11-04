@@ -1,5 +1,6 @@
 ** xref:getting-started:overview.adoc[Overview]
 ** xref:ROOT:whats-new.adoc[What's new in 5.5]
+** xref:ask-ai.adoc[]
 ** xref:getting-started:install.adoc[Installing and Starting]
 ** xref:getting-started:get-started.adoc[Docker Compose Tutorial]
 ** User Interface Overview
