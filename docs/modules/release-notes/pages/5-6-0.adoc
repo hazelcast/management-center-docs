@@ -10,6 +10,7 @@ CAUTION: If you are upgrading Management Center from a version earlier than 5.4.
 
 * Added support for Java Client (Standalone). [MC-2993]
 * Added a HealthCheck for duplications in `hazelcast.xml`. [MC-2995]
+* Added `hz-mc stop` command. [MC-2872]
 
 == Enhancements
 
