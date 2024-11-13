@@ -47,7 +47,7 @@ hz-mc start -Dhazelcast.mc.auditlog.enabled=true \
 |[[hazelcast-mc-clusterHealthCheck-exclude]]hazelcast.mc.clusterHealthCheck.exclude
 
 MC_CLUSTERHEALTHCHECK_EXCLUDE
-|List of checks identifiers to be excluded from Healthcheck. By default, this is not set. See xref:clusters:healthcheck.adoc[Healthcheck].
+|List of check identifiers to be excluded from Healthcheck. By default, this is not set. See xref:clusters:healthcheck.adoc#excluding-checks[Healthcheck].
 |
 [source,bash,subs="attributes+"]
 ----

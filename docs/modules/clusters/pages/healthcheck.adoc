@@ -82,8 +82,9 @@ A check may be further enabled for the whole cluster, or for a specific data str
 
 - If a check is disabled for a specific data structure, select the *Enable For* button in the report details to enable the check for that data structure.
 
+[#excluding-checks]
 == Excluding Checks
-You can exclude a check from the Healthcheck analysis by adding the check ID to the `hazelcast.mc.clusterHealthCheck.exclude` system property.
-An excluded check does not exist in Healthcheck report, and the check will not be performed on any member in the cluster.
-See xref:deploy-manage:system-properties.adoc[] for more information.
+You can exclude a check from the Healthcheck analysis by adding the check ID (shown in the left column) to the `hazelcast.mc.clusterHealthCheck.exclude` system property.
+An excluded check is not present in Healthcheck report, and the check will not be performed on any member in the cluster.
+See xref:deploy-manage:system-properties.adoc#hazelcast-mc-clusterHealthCheck-exclude[System Properties and Environment Variables] for more information.
 
