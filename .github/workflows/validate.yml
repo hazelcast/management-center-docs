@@ -28,6 +28,8 @@ jobs:
         ref: main
 
     - name: Check for broken internal links
+      env:
+        GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
       run: |
         npm i
         npm run-script fetch-check-links-playbook -- $GITHUB_REPOSITORY $GITHUB_BASE_REF
