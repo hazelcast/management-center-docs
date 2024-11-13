@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const [currentRepoName, baseBranchName] = process.argv.slice(-2);
 
+console.log('Checking links...');
+
 if (currentRepoName.endsWith('.js') || baseBranchName.endsWith('.js')) {
 	throw new Error('GitHub repository name and base branch should be passed as arguments');
 }
@@ -24,9 +26,9 @@ const hazelcastDocsSource = globalSources.find(source => source.url === '.');
 hazelcastDocsSource.url = 'https://github.com/hazelcast/hazelcast-docs';
 
 // 		- remove Swagger docs
-globalSources = globalSources.filter(source =>
-	!(source.url === 'https://github.com/hazelcast/hazelcast-mono')
-	&& !(source.url === 'https://github.com/hazelcast/management-center'));
+// globalSources = globalSources.filter(source =>
+// 	!(source.url === 'https://github.com/hazelcast/hazelcast-mono')
+// 	&& !(source.url === 'https://github.com/hazelcast/management-center'));
 
 // 		- add current branch
 globalSources.unshift({
@@ -35,14 +37,16 @@ globalSources.unshift({
 	start_path: 'docs',
 });
 
-// 		- remove current branch from the
+// 		- remove current target branch from the global content list
 const currentRepoSource = globalSources.find(source => source.url.endsWith(currentRepoName));
 currentRepoSource.branches.push(`!${baseBranchName}`);
 
-localAntoraPlaybook.content.sources = globalSources;
 // 4. Replace local content.sources with the modified content.sources
+localAntoraPlaybook.content.sources = globalSources;
+const checkLinksPlaybook = YAML.stringify(localAntoraPlaybook);
+
 fs.writeFileSync(
 	'./check-links-playbook.yml',
-	YAML.stringify(localAntoraPlaybook),
+	checkLinksPlaybook,
 	{ encoding: 'utf8' },
 );
