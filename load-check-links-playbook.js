@@ -25,11 +25,6 @@ let globalSources = globalAntoraPlaybook.content.sources;
 const hazelcastDocsSource = globalSources.find(source => source.url === '.');
 hazelcastDocsSource.url = 'https://github.com/hazelcast/hazelcast-docs';
 
-// 		- remove Swagger docs, because they will never have links to the current
-// globalSources = globalSources.filter(source =>
-// 	!(source.url === 'https://github.com/hazelcast/hazelcast-mono')
-// 	&& !(source.url === 'https://github.com/hazelcast/management-center'));
-
 // 		- add current branch
 globalSources.unshift({
 	url: '.',
