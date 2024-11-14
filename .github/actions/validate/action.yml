@@ -17,6 +17,7 @@ runs:
         ref: main
 
     - name: Check for broken internal links
+      shell: bash
       run: |
         cp "./hazelcast-docs/lib/api_json.js" "./api_json.js"
         npm i
