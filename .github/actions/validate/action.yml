@@ -2,7 +2,6 @@ name: Validate
 description: Check for dead links
 
 runs:
-  using: 'composite'
   steps:
     - uses: actions/setup-node@v4
       with:
