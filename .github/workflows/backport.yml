@@ -6,11 +6,11 @@ on:
 jobs:
   backport-to-specified-branch:
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6']
     uses: hazelcast/hz-docs/.github/workflows/backport-workflow.yml@main
     with:
-      label: '["backport to ${{ matrix.branch }}"]'
+      label-to-check-for: '["backport to ${{ matrix.branch }}"]'
       target-branch: v/${{ matrix.branch }}
     secrets: inherit
