@@ -30,5 +30,6 @@ jobs:
     - name: Check for broken internal links
       run: |
         npm i
+        npm i -D yaml@2.6.0
         node load-check-links-playbook.js $GITHUB_REPOSITORY $GITHUB_BASE_REF
         ./node_modules/.bin/antora --fetch --to-dir test --log-level=error --log-failure-level=error --extension=@jcahills/antora-link-checker check-links-playbook.yml
