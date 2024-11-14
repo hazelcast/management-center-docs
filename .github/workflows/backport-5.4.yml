@@ -1,4 +1,3 @@
-
 name: Backport changes to maintenance branches
 on:
  push:
