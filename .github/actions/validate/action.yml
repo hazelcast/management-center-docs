@@ -12,7 +12,7 @@ runs:
       uses: actions/checkout@v4
       with:
         repository: hazelcast/hazelcast-docs
-        sparse-checkout: antora-playbook.yml lib/api_json.js
+        sparse-checkout: "antora-playbook.yml" "lib/api_json.js"
         sparse-checkout-cone-mode: false
         path: hazelcast-docs
         ref: main
