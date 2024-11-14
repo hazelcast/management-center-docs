@@ -28,9 +28,7 @@ jobs:
         ref: main
 
     - name: Check for broken internal links
-      env:
-        GIT_CREDENTIALS: ${{ secrets.GH_TOKEN }}
       run: |
         npm i
-        npm run-script fetch-check-links-playbook -- $GITHUB_REPOSITORY $GITHUB_BASE_REF
-        npm run-script check-links-local
+        node load-check-links-playbook.js $GITHUB_REPOSITORY $GITHUB_BASE_REF
+        ./node_modules/.bin/antora --fetch --to-dir test --log-level=error --log-failure-level=error --extension=@jcahills/antora-link-checker check-links-playbook.yml
