@@ -14,5 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Check dead links
-        uses: ./.github/actions/validate
+      - uses: ./.github/actions/validate
