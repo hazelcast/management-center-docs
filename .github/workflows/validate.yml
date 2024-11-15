@@ -15,14 +15,5 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
-      - name: Checkout Actions
-        uses: actions/checkout@v4
-        with:
-          repository: hazelcast/hazelcast-docs
-          sparse-checkout: |
-            .github/actions/validate/action.yml
-          sparse-checkout-cone-mode: false
-          path: common-action
-          ref: main
       - name: Check dead links
-        uses: ./common-action/.github/actions/validate
+        uses: hazelcast/hazelcast-docs/.github/actions/validate@main
