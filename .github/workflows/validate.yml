@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Current Repo
-        uses: actions/checkout@v4
       - name: Checkout Actions
         uses: actions/checkout@v4
         with:
           repository: hazelcast/hazelcast-docs
           path: hazelcast-docs
           ref: main
+      - name: Checkout Current Repo
+        uses: actions/checkout@v4
       - name: Check dead links
         uses: ./hazelcast-docs/.github/actions/validate
