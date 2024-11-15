@@ -18,7 +18,7 @@ jobs:
         with:
           repository: fantkolja/hazelcast-docs
           sparse-checkout: |
-            .github/actions/validate/action.yml
+            .github/actions/validate@1/action.yml
             antora-playbook.yml
             lib/load-check-links-playbook.js
           sparse-checkout-cone-mode: false
