@@ -5,20 +5,21 @@
 
 {description}
 
-image:ROOT:Healthcheck.png[Healthcheck]
+image:ROOT:Healthcheck.png[Screenshot showing a list of checks in the Healthcheck user interface]
 
 Healthcheck provides various checks related to configuration semantics, environment, member configuration equality, and usage.
 
 A new Healthcheck is performed each time you display the Healthcheck page. You can run all checks again using the `RUN HEALTHCHECK` button in the header.
 
 == Healthcheck Status
-Healthcheck categorizes the checks with five different statuses:
+Healthcheck categorizes the checks with six different statuses:
 
 - *FAIL:* A check has the status `FAIL`, indicated by a red color, when the cluster exhibits at least one critical problem that may result in an unexpected behavior or an issue with the designed functionality.
 - *WARNING:* A check has the status `WARNING`, indicated by a yellow color, when the cluster exhibits at least one non-critical issue or potential concern that requires attention, but does not pose an immediate threat or failure.
 - *INFO:* A check has the status `INFO`, indicated by a blue color, to suggest best practices that can be applied to enhance system performance, availability, or efficiency within the cluster.
 - *PASS:* A check has the status `PASS`, indicated by a green color, if no violations have been found in the cluster.
 - *DISABLED:* A check has the status `DISABLED`, indicated by a gray color, if a check is disabled by the user.
+- *N/A*: A check has the status `N/A`, indicated by a beige color, if a check cannot be performed for the current cluster or member version.
 
 NOTE: If Prometheus Exporter is enabled, individual Healthcheck status counts are published via exporter periodically with a prefix of `hz_healthcheck_status_`. For further information on the Prometheus Exporter, see xref:integrate:prometheus-monitoring.adoc[].
 
@@ -80,4 +81,10 @@ A check may be further enabled for the whole cluster, or for a specific data str
 - If a check is disabled cluster-wide, deselect the checkbox in the report details to enable the check for the whole cluster.
 
 - If a check is disabled for a specific data structure, select the *Enable For* button in the report details to enable the check for that data structure.
+
+[#excluding-checks]
+== Excluding Checks
+You can exclude a check from Healthcheck analysis entirely by adding the check ID (shown in the left column) to the `hazelcast.mc.clusterHealthCheck.exclude` system property. Excluded checks will not be performed on any member in the cluster and will not appear in the Healthcheck report.
+
+See xref:deploy-manage:system-properties.adoc#hazelcast-mc-clusterHealthCheck-exclude[System Properties and Environment Variables] for more information.
 
