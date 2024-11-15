@@ -16,13 +16,13 @@ jobs:
       - name: Checkout Common Files
         uses: actions/checkout@v4
         with:
-          repository: fantkolja/hazelcast-docs
+          repository: hazelcast/hazelcast-docs
           sparse-checkout: |
             .github/actions/validate/action.yml
             antora-playbook.yml
             lib/load-check-links-playbook.js
           sparse-checkout-cone-mode: false
           path: hazelcast-docs
-          ref: feature/common-dead-links-checker
+          ref: main
       - name: Check dead links
         uses: ./hazelcast-docs/.github/actions/validate
