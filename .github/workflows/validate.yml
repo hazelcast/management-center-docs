@@ -1,5 +1,3 @@
-# This workflow will check if the incoming pull request includes any broken links
-
 name: Check for dead links
 
 on:
@@ -13,11 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 16
-    - name: Check for broken internal links
-      run: |
-        npm i
-        npm run-script check-links-local
+      - name: Checkout Current Repo
+        uses: actions/checkout@v4
+      - name: Checkout Actions
+        uses: actions/checkout@v4
+        with:
+          repository: hazelcast/hazelcast-docs
+          sparse-checkout: |
+            .github/actions/validate/action.yml
+          sparse-checkout-cone-mode: false
+          path: common-action
+          ref: main
+      - name: Check dead links
+        uses: ./common-action/.github/actions/validate
