@@ -13,16 +13,14 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
-      - name: Checkout Common Files
+      - name: Checkout Actions
         uses: actions/checkout@v4
         with:
           repository: hazelcast/hazelcast-docs
           sparse-checkout: |
             .github/actions/validate/action.yml
-            antora-playbook.yml
-            lib/load-check-links-playbook.js
           sparse-checkout-cone-mode: false
-          path: hazelcast-docs
+          path: common-action
           ref: main
       - name: Check dead links
-        uses: ./hazelcast-docs/.github/actions/validate
+        uses: ./common-action/.github/actions/validate
