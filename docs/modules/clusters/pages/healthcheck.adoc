@@ -5,7 +5,7 @@
 
 {description}
 
-image:ROOT:Healthcheck.png[Healthcheck]
+image:ROOT:Healthcheck.png[Screenshot showing a list of checks in the Healthcheck user interface]
 
 Healthcheck provides various checks related to configuration semantics, environment, member configuration equality, and usage.
 
@@ -81,4 +81,10 @@ A check may be further enabled for the whole cluster, or for a specific data str
 - If a check is disabled cluster-wide, deselect the checkbox in the report details to enable the check for the whole cluster.
 
 - If a check is disabled for a specific data structure, select the *Enable For* button in the report details to enable the check for that data structure.
+
+[#excluding-checks]
+== Excluding Checks
+You can exclude a check from Healthcheck analysis entirely by adding the check ID (shown in the left column) to the `hazelcast.mc.clusterHealthCheck.exclude` system property. Excluded checks will not be performed on any member in the cluster and will not appear in the Healthcheck report.
+
+See xref:deploy-manage:system-properties.adoc#hazelcast-mc-clusterHealthCheck-exclude[System Properties and Environment Variables] for more information.
 
