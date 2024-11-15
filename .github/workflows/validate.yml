@@ -11,13 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Actions
-        uses: actions/checkout@v4
-        with:
-          repository: hazelcast/hazelcast-docs
-          path: hazelcast-docs
-          ref: main
       - name: Checkout Current Repo
         uses: actions/checkout@v4
+      - name: Checkout Common Files
+        uses: actions/checkout@v4
+        with:
+          repository: fantkolja/hazelcast-docs
+          sparse-checkout: |
+            .github/actions/validate/action.yml
+            antora-playbook.yml
+            lib/load-check-links-playbook.js
+          sparse-checkout-cone-mode: false
+          path: hazelcast-docs
+          ref: feature/common-dead-links-checker
       - name: Check dead links
         uses: ./hazelcast-docs/.github/actions/validate
