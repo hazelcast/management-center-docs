@@ -2,7 +2,6 @@
 /node_modules/
 /test/
 .idea/
-package-lock.json
 .gradle
 .project
 .settings
