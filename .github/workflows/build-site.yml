@@ -8,8 +8,5 @@ on:
 
 jobs:
   dispatch:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Trigger build
-      run: curl -X POST -d {} https://api.netlify.com/build_hooks/6001915875dde5f2ff105296
+    uses: ./.github/workflows/deploy-docs-workflow.yml
 
