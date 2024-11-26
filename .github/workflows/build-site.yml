@@ -5,8 +5,13 @@ name: Build production site
 on:
   push:
     branches: [ main, 'v/*', archived-versions ]
+  workflow_call:
 
 jobs:
-  dispatch:
-    uses: ./.github/workflows/deploy-docs-workflow.yml
+  deploy:
+    runs-on: ubicloud-standard-2
+    steps:
+      - name: Dispatch docs deployment
+        #   https://docs.netlify.com/configure-builds/build-hooks/
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/6001915875dde5f2ff105296
 
