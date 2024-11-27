@@ -8,11 +8,14 @@ site:
     docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
     docsearch_index: 'prod_hazelcast_docs'
 content:
-  sources: 
+  sources:
   - url: .
     branches: HEAD
     start_path: docs
-ui: 
+  - url: https://github.com/hazelcast/hz-docs
+    branches: [ main, v/* ]
+    start_path: docs
+ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
     snapshot: true
