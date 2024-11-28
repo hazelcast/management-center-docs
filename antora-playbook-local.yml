@@ -15,7 +15,7 @@ content:
   - url: https://github.com/hazelcast/hz-docs
     branches: [ main ]
     start_path: docs
-  - url: https://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:@github.com/hazelcast/management-center
+  - url: https://@github.com/hazelcast/management-center
     branches: [  feature/automate-docs-build ]
     start_path: hazelcast-management-center/src/openapi/external
 ui:
