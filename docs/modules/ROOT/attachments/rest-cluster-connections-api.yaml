@@ -1,0 +1,112 @@
+openapi: "3.0.3"
+info:
+  title: Management Center - Cluster Connections API
+  version: "1.0"
+  description: Use this API to manage connected Hazelcast clusters.
+paths:
+  /rest/mc/clusterConnectionConfigs:
+    summary: Manage the configuration settings for all connected clusters in Management Center
+    get:
+      summary: Get the currently configured cluster connections
+      operationId: getAllClusterConnectionConfigs
+      responses:
+        "200":
+          description: Cluster connections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ClusterConnection"
+    post:
+      summary: Create or update the cluster connection configuration
+      operationId: createClusterConnectionsConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ClusterConnection"
+      responses:
+        "200":
+          description: Cluster config successfully updated
+        "201":
+          description: Cluster config successfully created
+  /rest/mc/clusterConnectionConfigs/{clusterName}:
+    summary: Manage the configuration settings for a given connected cluster in Management Center
+    parameters:
+      - name: clusterName
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get the cluster connection configuration for a given cluster
+      operationId: getClusterConnectionConfig
+      responses:
+        "200":
+          description: Cluster connection configuration for the cluster
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClusterConnection"
+        "404":
+          $ref: "#/components/responses/ClusterConfigNotFound"
+    delete:
+      summary: Remove a given cluster from the cluster connection configuration
+      operationId: deleteClusterConnectionConfig
+      responses:
+        "200":
+          description: The cluster connection was removed from Management Center
+        "404":
+          $ref: "#/components/responses/ClusterConfigNotFound"
+components:
+  schemas:
+    ClusterConnection:
+      description: |
+        A cluster connection configuration consists of a mandatory cluster name
+        and connection information. The connection information is either a list of member addresses
+        or a client configuration file in XML or YAML format.
+      type: object
+      properties:
+        clusterName:
+          type: string
+          minLength: 1
+        enabled:
+          type: boolean
+          description: Corresponds to the **Enabled** toggle in the UI
+          default: true
+      required:
+        - clusterName
+      oneOf:
+        - properties:
+            memberAddresses:
+              type: array
+              items:
+                type: string
+                example: 192.168.0.1
+          required:
+            - memberAddresses
+        - properties:
+            clientConfigType:
+              enum:
+                - XML
+                - YAML
+            clientConfig:
+              type: string
+          required:
+            - clientConfigType
+            - clientConfig
+  responses:
+   ClusterConfigNotFound:
+     description: |
+       Cluster name indicated by the {clusterName} path parameter was not
+       found in Management Center.
+     content:
+       application/json:
+         schema:
+           type: object
+           properties:
+             type:
+               type: string
+             message:
+               type: string
