@@ -19,7 +19,7 @@ content:
     start_path: docs
   - url: https://github.com/hazelcast/management-center
     branches: [ master ]
-    start_path: hazelcast-management-center/src/openapi/external
+    start_path: antora
 ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip

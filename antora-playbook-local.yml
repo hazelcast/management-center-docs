@@ -19,8 +19,8 @@ content:
 #    These are private repos. You need to do private repository authentication.
 #    See [here](https://docs.antora.org/antora/latest/playbook/private-repository-auth/) how to do that
 #  - url: https://github.com/hazelcast/management-center
-#    branches: [  feature/automate-docs-build ]
-#    start_path: hazelcast-management-center/src/openapi/external
+#    branches: [  master ]
+#    start_path: antora
 ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
