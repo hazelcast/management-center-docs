@@ -18,7 +18,7 @@ content:
     branches: [ main ]
     start_path: docs
   - url: https://github.com/hazelcast/management-center
-    branches: [  feature/automate-docs-build ]
+    branches: [ master ]
     start_path: hazelcast-management-center/src/openapi/external
 ui:
   bundle:
