@@ -351,7 +351,7 @@ MC_HTTP_PORT
 |
 [source,bash,subs="attributes+"]
 ----
-java hazelcast.mc.http.port=80
+hz-mc start -Dhazelcast.mc.http.port=80
 ----
 
 In this example, the URL for Management Center would be `\http:localhost:80`.
