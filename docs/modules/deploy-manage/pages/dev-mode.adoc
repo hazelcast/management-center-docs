@@ -5,6 +5,8 @@
 
 Once you have enabled dev mode, you are automatically logged into Management Center as an admin user without needing to supply any credentials.
 
+When in dev mode, Management Center will try to automatically to connect to a cluster called `dev`.  It will create a cluster configuration for this `dev` cluster if successful.  
+
 == Setting Up Dev Mode
 
 To set up dev mode, you can use the UI or the `hz-mc conf` tool.
