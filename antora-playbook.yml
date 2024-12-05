@@ -9,34 +9,17 @@ site:
     docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
     docsearch_index: 'prod_hazelcast_docs'
 content:
-  sources: 
+  sources:
   - url: .
     branches: HEAD
     start_path: docs
   - url: https://github.com/hazelcast/management-center
     branches: [master, 5.6.0]
-    start_path: hazelcast-management-center/src/openapi/external
-ui: 
+    start_path: antora
+ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
     snapshot: true
-antora:
-  extensions:
-    - require: '@djencks/antora-aggregate-collector'
-      trace: true
-      componentversions:
-        - name: management-center
-          version: '5.6'
-          mappings:
-            - module: integrate
-              family: attachment
-              origin:
-                url:
-                  include:
-                    - '**/hazelcast/management-center'
-                branch:
-                  includes:
-                    - 'master'
 asciidoc:
   attributes:
     page-pagination: true
