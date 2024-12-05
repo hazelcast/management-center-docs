@@ -85,7 +85,7 @@ image:ROOT:ClusteredRestProvideHeaders.png[alt=Clustered Rest Provide Headers, a
 ==== Using `hz-mc conf` Tool
 To use the `hz-mc conf` tool, do the following:
 
-[tabs] 
+[tabs]
 ====
 Linux and Mac::
 +
