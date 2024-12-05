@@ -8,31 +8,14 @@ site:
     docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
     docsearch_index: 'prod_hazelcast_docs'
 content:
-  sources: 
+  sources:
   - url: .
     branches: HEAD
     start_path: docs
-ui: 
+ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
     snapshot: true
-antora:
-  extensions:
-    - require: '@djencks/antora-aggregate-collector'
-      trace: true
-      componentversions:
-        - name: management-center
-          version: '5.2-snapshot'
-          mappings:
-            - module: integrate
-              family: attachment
-              origin:
-                url:
-                  include:
-                    - '**/hazelcast/management-center'
-                branch:
-                  includes:
-                    - 'master'
 asciidoc:
   attributes:
     page-pagination: true
@@ -42,7 +25,7 @@ asciidoc:
     javadoc: https://docs.hazelcast.org/docs/latest-dev/javadoc
     imdg-core: https://github.com/hazelcast/hazelcast/tree/master/hazelcast/src/main/java/com/hazelcast
     docs-archive: 'https://hazelcast.org/imdg/download/archives/'
-    hazelcast-cloud: Viridian Cloud
+    hazelcast-cloud: Cloud
   extensions:
     - ./lib/tabs-block.js
     - ./lib/swagger-ui-block-macro.js
