@@ -3,3 +3,4 @@
 This page summarizes the changes in each release.
 
 * xref:release-notes:5-6-0.adoc[5.6.0]
+* xref:release-notes:5-6-1.adoc[5.6.1]
