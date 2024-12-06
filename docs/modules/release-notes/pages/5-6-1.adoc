@@ -5,4 +5,4 @@
 
 == Fixes
 
-* MC processes Licenses < V7 in order to support in FIPS approved mode. [MC-3079]
+* Update the License Extractor code to support FIPS-approved mode. [MC-3079]
