@@ -7,6 +7,7 @@
   "scripts": {
     "build": "antora --to-dir docs --fetch antora-playbook.yml",
     "build-local": "antora --to-dir test --fetch antora-playbook-local.yml",
+    "check-orphan-pages": "node orphan-pages-checker.js",
     "serve": "serve test",
     "expose": "ngrok http 5000"
   },
