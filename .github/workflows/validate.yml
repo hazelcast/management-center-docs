@@ -15,3 +15,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
+      - name: Check orphan pages
+        shell: bash
+        run: npm run check-orphan-pages
