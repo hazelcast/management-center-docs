@@ -14,10 +14,10 @@ jobs:
       GH_TOKEN: ${{ github.token }}
 
     steps:
-      - name: Test stuff
-        run: echo ${{ github.actor }}
       - name: Checkout Current Repo
         uses: actions/checkout@v4
+      - name: Test install
+        run: npm i git+https://github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
       - name: Check orphan pages
