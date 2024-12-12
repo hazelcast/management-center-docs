@@ -17,5 +17,8 @@
     "asciidoctor-kroki": "^0.10.0",
     "ngrok": "^4.2.2",
     "serve": "^13.0.2"
+  },
+  "dependencies": {
+    "hazelcast-docs-tools": "github:hazelcast/hazelcast-docs-tools#v0.0.1-alpha"
   }
 }
