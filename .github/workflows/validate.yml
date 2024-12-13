@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Test echo
-        run: echo ${{ github.token }}
+        run: npm -v
       - name: Checkout Current Repo
         uses: actions/checkout@v4
       - name: Test install
