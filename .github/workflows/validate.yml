@@ -9,22 +9,14 @@ jobs:
   check-links:
 
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
-      - name: Test echo
-        run: |
-          echo ${{ secrets.GH_TOKEN }} | gh auth login --with-token
-          gh auth status -a
       - name: Checkout Current Repo
         uses: actions/checkout@v4
       - name: Test install
 #        run: npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
         run: |
-          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs
-          npm i git+ssh://git@github.com:hazelcast/hazelcast-docs-tools.git
-#          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs-tools
+          npm i git+https://${{ secrets.GH_TOKEN_DOCS_TOOLS }}@github.com/hazelcast/hazelcast-docs-tools
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
       - name: Check orphan pages
