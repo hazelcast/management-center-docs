@@ -9,10 +9,12 @@ jobs:
   check-links:
 
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Test echo
-        run: npm -v
+        run: gh auth status -a
       - name: Checkout Current Repo
         uses: actions/checkout@v4
       - name: Test install
