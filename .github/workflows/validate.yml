@@ -16,7 +16,6 @@ jobs:
       - name: Test install
 #        run: npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
         run: |
-          git config --global url."https://${{ secrets.GH_TOKEN_DOCS_TOOLS }}@github.com/".insteadOf ssh://git@github.com/
           npm i git+https://${{ secrets.GH_TOKEN_DOCS_TOOLS }}@github.com/hazelcast/hazelcast-docs-tools
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
