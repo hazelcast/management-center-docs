@@ -21,9 +21,9 @@ jobs:
       - name: Test install
 #        run: npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
         run: |
-          npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs
-          npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-cloud-frontend
-          npm i git+https://${{ secrets.GITHUB_TOKEN }}@github.com/hazelcast/hazelcast-docs-tools
+          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs
+          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-cloud-frontend
+          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs-tools
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
       - name: Check orphan pages
