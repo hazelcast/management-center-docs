@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - name: Test echo
-        run: gh auth login --with-token <<< ${{ secrets.GH_TOKEN }}
+        run: |
+          gh auth login --with-token <<< ${{ secrets.GH_TOKEN }}
+          gh auth status -a
       - name: Checkout Current Repo
         uses: actions/checkout@v4
       - name: Test install
