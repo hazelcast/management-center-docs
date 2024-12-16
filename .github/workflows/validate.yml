@@ -9,9 +9,6 @@ jobs:
   check-links:
 
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Test echo
@@ -22,7 +19,6 @@ jobs:
 #        run: npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
         run: |
           npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs
-          npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-cloud-frontend
           npm i git+https://${{ secrets.GH_TOKEN }}@github.com/hazelcast/hazelcast-docs-tools
       - name: Check dead links
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
