@@ -16,7 +16,10 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
-      - uses: fregante/setup-git-user@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
       - name: Test install
 #        run: npm i git+https://${{ github.token }}@github.com/hazelcast/hazelcast-docs-tools.git#v0.0.1-alpha
         run: |
