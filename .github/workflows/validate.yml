@@ -9,6 +9,9 @@ jobs:
   check-links:
 
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN_DOCS_TOOLS }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN_DOCS_TOOLS }}
 
     steps:
       - name: Checkout Current Repo
