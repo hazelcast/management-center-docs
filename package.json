@@ -7,7 +7,7 @@
   "scripts": {
     "build": "antora --to-dir docs --fetch antora-playbook.yml",
     "build-local": "antora --to-dir test --fetch antora-playbook-local.yml",
-    "check-orphan-pages": "check-orphan-pages",
+    "check-orphan-pages": "check-orphan-pages --log-failure-level=error",
     "serve": "serve test",
     "expose": "ngrok http 5000"
   },
@@ -15,6 +15,7 @@
     "@antora/cli": "^3.1.1",
     "@antora/site-generator": "^3.1.1",
     "asciidoctor-kroki": "^0.10.0",
+    "hazelcast-docs-tools": "github:hazelcast/hazelcast-docs-tools#v0.0.5",
     "ngrok": "^4.2.2",
     "serve": "^13.0.2"
   }
