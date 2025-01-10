@@ -14,4 +14,4 @@ jobs:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
       - name: Validate Docs
-        uses: fantkolja/hazelcast-docs/.github/actions/validate@bugfix/validate-action
+        uses: hazelcast/hazelcast-docs/.github/actions/validate@main
