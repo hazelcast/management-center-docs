@@ -13,7 +13,5 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
-      - name: Check dead links
+      - name: Validate Docs
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
-      - name: Check orphan pages
-        run: npm run check-orphan-pages
