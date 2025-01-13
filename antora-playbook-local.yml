@@ -36,5 +36,5 @@ asciidoc:
     docs-archive: 'https://hazelcast.org/imdg/download/archives/'
     hazelcast-cloud: Cloud
   extensions:
-    - ./lib/tabs-block.js
-    - ./lib/swagger-ui-block-macro.js
+    - ./node_modules/hazelcast-docs-tools/antora-macro/tabs-block.js
+    - ./node_modules/hazelcast-docs-tools/antora-macro/swagger-ui-block-macro.js
