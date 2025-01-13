@@ -1,4 +1,4 @@
-name: Check for dead links
+name: Docs validation
 
 on:
   pull_request:
