@@ -1,4 +1,4 @@
-name: Check for dead links
+name: Docs validation
 
 on:
   pull_request:
@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
-      - name: Check dead links
+      - name: Validate Docs
         uses: hazelcast/hazelcast-docs/.github/actions/validate@main
