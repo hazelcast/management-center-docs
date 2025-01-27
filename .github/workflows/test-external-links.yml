@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - uses: hazelcast/hz-docs/.github/actions/test-external-links@main
         with:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DOCS }}
