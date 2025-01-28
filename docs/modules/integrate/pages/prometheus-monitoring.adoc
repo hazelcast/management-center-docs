@@ -11,7 +11,7 @@ To start exposing metrics to Prometheus, set the `hazelcast.mc.prometheusExporte
 
 Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus metrics path.
 
-NOTE: All metrics are exported with the `hz_` prefix.
+NOTE: Management Center can also reformat the default metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc.
 
 == Disabling Timestamp
 
@@ -103,7 +103,7 @@ By default, Management Center exports all metrics that are reported by the clust
 To filter the metrics that are exposed to the scrape endpoint, use the `hazelcast.mc.prometheusExporter.filter.metrics.included`
 and `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties.
 
-For example, this configuation exposes only the following metrics:
+For example, this configuration exposes only the following metrics:
 
 - `hz_topic_totalReceivedMessages`
 - `hz_map_totalPutLatency`

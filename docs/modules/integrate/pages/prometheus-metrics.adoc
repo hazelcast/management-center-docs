@@ -1,0 +1,294 @@
+= Prometheus metrics
+:description: Management Center automatically reformats Hazelcast cluster metrics to align with Prometheus best practice recommendations. This makes it easier to construct complex queries, build dashboards, and work alongside metrics from other applications.
+:page-enterprise: true
+
+{description}
+
+Management Center makes the following changes to metrics exposed by Hazelcast clusters:
+
+* Use `snake_case`
+* Change prefix from `hz_` to `hazelcast_`
+* Update metric names where appropriate
+* Implement labels
+* Convert to recommended base units:
+    * Time in seconds
+    * Memory in bytes
+    * Percentages as ratios (for example, 50% converts to 0.5)
+
+The updated metrics are based on link:https://prometheus.io/docs/practices/naming/[Prometheus conventions].
+
+NOTE: By default, both the old and new metrics are exposed. Existing integrations will continue to work, but you should consider the old metrics deprecated and plan to migrate to the new metrics. You can optionally TODO: config.
+
+The following examples show the differences between the old and new metrics.
+
+* Rename and remove `unit` label:
++
+```
+hz_map_queryCount{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="COUNT",} 0.0 1737715903399
+
+hazelcast_map_queries{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 0.0 1737715903399
+```
+
+* Rename, remove `unit` label, convert value (1.7^12^ milliseconds to 1.7^9^ seconds):
++
+```
+hz_map_creationTime{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 1.737715861118E12 1737715903399
+
+hazelcast_map_creation_timestamp_seconds{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 1.737715861118E9 1737715903399
+```
+
+* Rename, remove `unit` label, add `remove` label:
++
+```
+hz_map_totalMaxRemoveLatency{name="concreteClass",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 0.0 1737715903399
+
+hazelcast_map_latency_max_seconds{name="concreteClass",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="remove",} 0.0 1737715903399
+```
+
+TODO: config to enable/disable
+
+== Metrics list
+
+Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation. 
+
+|===
+|Original metric `hz_` |Updated metric `hazelcast_` |Labels |Description 
+
+|map.backupCount
+|map_backups
+|
+|Number of backups per entry
+
+|map.backupEntryCount
+|map_entries_backup
+|
+|Number of backup entries held by the member
+
+|map.backupEntryMemoryCost
+|map_entries_backup_memory_cost
+|
+|Memory cost of backup entries in this member
+
+|map.creationTime
+|map_creation_timestamp
+|
+|Creation time of the map on the member
+
+|map.dirtyEntryCount
+|map_entries_dirty
+|
+|Number of updated but not yet persisted entries (dirty entries) that the member owns
+
+|map.evictionCount
+|map_evictions
+|
+|Number of evictions on locally owned entries, excluding backups
+
+|map.expirationCount
+|map_expirations
+|
+|Number of expirations on locally owned entries, excluding backups
+
+|map.getCount
+|map_operations_total
+|get
+|Number of local get operations on the map; incremented for every get operation even if the entries do not exist
+
+|map.heapCost
+|map_heap_cost_bytes
+|
+|Total heap cost for the map on this member
+
+|map.indexedQueryCount
+|map_queries_indexed
+|
+|Total number of indexed local queries performed on the map
+
+|map.lastAccessTime
+|map_last_access_timestamp
+|
+|Last access (read) time of the locally owned entries
+
+|map.lastUpdateTime
+|map_last_update_timestamp
+|
+|Last update time of the locally owned entries
+
+|map.lockedEntryCount
+|map_entries_locked
+|
+|Number of locked entries that the member owns
+
+|map.merkleTreesCost
+|map_merkle_trees_cost_bytes
+|
+|Total heap cost of the Merkle trees used
+
+|map.numberOfEvents
+|map_events
+|
+|Number of local events received on the map
+
+|map.numberOfOtherOperations
+|map_operations_total
+|other
+|Total number of other operations performed on this member
+
+|map.ownedEntryCount
+|map_entries_owned
+|
+|Number of map entries owned by the member
+
+|map.ownedEntryMemoryCost
+|map_entries_owned_memory_cost
+|
+|Memory cost of owned map entries on this member
+
+|map.putCount
+|map_operations_total
+|put
+|Number of local put operations on the map
+
+|map.queryCount
+|map_queries
+|
+|Number of queries executed on the map (it may be imprecise for queries involving partition predicates (PartitionPredicate) on the off-heap storage)
+
+|map.removeCount
+|map_operations_total
+|remove
+|Number of local remove operations on the map
+
+|map.setCount
+|map_operations_total
+|set
+|Number of local set operations on the map
+
+|map.hits
+|map_hits
+|
+|Number of reads of the locally owned entries; incremented for every read by any type of operation (get, set, put), so the entries should exist
+
+|map.totalGetLatency
+|map_latency_total
+|get
+|Total latency of local get operations on the map
+
+|map.totalMaxGetLatency
+|map_latency_max
+|get
+|Maximum latency of local get operations on the map
+
+|map.totalPutLatency
+|map_latency_total
+|put
+|Total latency of local put operations on the map
+
+|map.totalMaxPutLatency
+|map_latency_max
+|put
+|Maximum latency of local put operations on the map
+
+|map.totalRemoveLatency
+|map_latency_total
+|remove
+|Total latency of local remove operations on the map
+
+|map.totalMaxRemoveLatency
+|map_latency_max
+|remove
+|Maximum latency of local remove operations on the map
+
+|map.totalSetLatency
+|map_latency_total
+|set
+|Total latency of local set operations on the map
+
+|map.totalMaxSetLatency
+|map_latency_max
+|set
+|Maximum latency of local set operations on the map
+
+|map.index.creationTime
+|map_index_creation_timestamp
+|
+|Creation time of the index on this member
+
+|map.index.hitCount
+|map_index_hits
+|
+|Total number of index hits (the value of this metric may be greater than the `map.index.queryCount` because a single query may hit the same index more than once)
+
+|map.index.insertCount
+|map_index_inserts
+|
+|Number of insert operations performed on the index
+
+|map.index.memoryCost
+|map_index_memory_cost
+|
+|Local memory cost of the index (for on-heap indexes in OBJECT or BINARY formats the returned value is a best-effort approximation and doesn't indicate a precise on-heap memory usage of the index)
+
+|map.index.queryCount
+|map_index_queries
+|
+|Total number of queries served by the index
+
+|map.index.removeCount
+|map_index_removes
+|
+|Number of remove operations performed on the index
+
+|map.index.totalInsertLatency
+|map_index_latency_total
+|insert
+|Total latency of insert operations performed on the index
+
+|map.index.totalRemoveLatency
+|map_index_latency_total
+|remove
+|Total latency of remove operations performed on the index
+
+|map.index.totalUpdateLatency
+|map_index_latency_total
+|update
+|Total latency of update operations performed on the index
+
+|map.index.updateCount
+|map_index_updates
+|
+|Number of update operations performed on the index
+
+|set.creationTime
+|set_creation_timestamp
+|
+|Creation time of the set on the member
+
+|set.lastAccessTime
+|set_last_access_timestamp
+|
+|Last access (read) time of the locally owned items
+
+|set.lastUpdateTime
+|set_last_update_timestamp
+|
+|Last update time of the locally owned items
+
+|list.creationTime
+|list_creation_timestamp
+|
+|Creation time of this list on the member
+
+|list.lastAccessTime
+|list_last_access_timestamp
+|
+|Last access (read) time of the locally owned items
+
+|list.lastUpdateTime
+|list_last_update_timestamp
+|
+|Last update time of the locally owned items
+
+|===
+
+
