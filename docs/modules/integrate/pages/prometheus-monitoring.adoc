@@ -1,9 +1,11 @@
 = Prometheus Monitoring
-:description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. By collecting cluster metrics in Prometheus you can monitor Hazelcast along with your other applications in the same monitoring tool.
+:description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
 :page-enterprise: true
 
 {description}
+
+By configuring Prometheus to scrape metrics from Management Center, you can easily collect metrics for the whole cluster. Otherwise, you would have to configure Prometheus to scrape members individually, manage changes from scaling and restarts, and collate the metrics from all members.
 
 == Enabling the Prometheus Exporter
 
@@ -97,6 +99,8 @@ mc-conf.bat security reset
 ====
 
 == Filtering Metrics
+
+TODO: Impact on filtering behavior TBC
 
 By default, Management Center exports all metrics that are reported by the cluster.
 
