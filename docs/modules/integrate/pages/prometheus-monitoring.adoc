@@ -11,7 +11,7 @@ To start exposing metrics to Prometheus, set the `hazelcast.mc.prometheusExporte
 
 Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus metrics path.
 
-NOTE: Management Center can also reformat the default metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc.
+NOTE: Management Center also reformats the metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc for details.
 
 == Disabling Timestamp
 
@@ -130,7 +130,7 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 --
 ====
 
-This configuation exposes all metrics except the following:
+This configuration exposes all metrics except the following:
 
 - `hz_os_systemLoadAverage,hz_memory_freeHeap`
 
