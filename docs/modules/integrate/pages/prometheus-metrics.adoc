@@ -4,6 +4,8 @@
 
 {description}
 
+By default, Management Center exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally TODO: config.
+
 Management Center makes the following changes to metrics exposed by Hazelcast clusters:
 
 * Use `snake_case`
@@ -11,13 +13,11 @@ Management Center makes the following changes to metrics exposed by Hazelcast cl
 * Update metric names where appropriate
 * Implement labels
 * Convert to recommended base units:
-    * Time in seconds
-    * Memory in bytes
-    * Percentages as ratios (for example, 50% converts to 0.5)
+** Time in seconds
+** Memory in bytes
+** Percentages as ratios (for example, 50% converts to 0.5)
 
 The updated metrics are based on link:https://prometheus.io/docs/practices/naming/[Prometheus conventions].
-
-NOTE: By default, both the old and new metrics are exposed. Existing integrations will continue to work, but you should consider the old metrics deprecated and plan to migrate to the new metrics. You can optionally TODO: config.
 
 The following examples show the differences between the old and new metrics.
 
@@ -49,44 +49,46 @@ TODO: config to enable/disable
 
 == Metrics list
 
-Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation. 
+Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation.
+
+NOTE: Management Center also converts `.` to `_` to make the original metrics compatible with Prometheus.
 
 |===
 |Original metric `hz_` |Updated metric `hazelcast_` |Labels |Description 
 
 |map.backupCount
 |map_backups
-|
+|n/a
 |Number of backups per entry
 
 |map.backupEntryCount
 |map_entries_backup
-|
+|n/a
 |Number of backup entries held by the member
 
 |map.backupEntryMemoryCost
 |map_entries_backup_memory_cost
-|
+|n/a
 |Memory cost of backup entries in this member
 
 |map.creationTime
 |map_creation_timestamp
-|
+|n/a
 |Creation time of the map on the member
 
 |map.dirtyEntryCount
 |map_entries_dirty
-|
+|n/a
 |Number of updated but not yet persisted entries (dirty entries) that the member owns
 
 |map.evictionCount
 |map_evictions
-|
+|n/a
 |Number of evictions on locally owned entries, excluding backups
 
 |map.expirationCount
 |map_expirations
-|
+|n/a
 |Number of expirations on locally owned entries, excluding backups
 
 |map.getCount
@@ -96,37 +98,37 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.heapCost
 |map_heap_cost_bytes
-|
+|n/a
 |Total heap cost for the map on this member
 
 |map.indexedQueryCount
 |map_queries_indexed
-|
+|n/a
 |Total number of indexed local queries performed on the map
 
 |map.lastAccessTime
 |map_last_access_timestamp
-|
+|n/a
 |Last access (read) time of the locally owned entries
 
 |map.lastUpdateTime
 |map_last_update_timestamp
-|
+|n/a
 |Last update time of the locally owned entries
 
 |map.lockedEntryCount
 |map_entries_locked
-|
+|n/a
 |Number of locked entries that the member owns
 
 |map.merkleTreesCost
 |map_merkle_trees_cost_bytes
-|
+|n/a
 |Total heap cost of the Merkle trees used
 
 |map.numberOfEvents
 |map_events
-|
+|n/a
 |Number of local events received on the map
 
 |map.numberOfOtherOperations
@@ -136,12 +138,12 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.ownedEntryCount
 |map_entries_owned
-|
+|n/a
 |Number of map entries owned by the member
 
 |map.ownedEntryMemoryCost
 |map_entries_owned_memory_cost
-|
+|n/a
 |Memory cost of owned map entries on this member
 
 |map.putCount
@@ -151,7 +153,7 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.queryCount
 |map_queries
-|
+|n/a
 |Number of queries executed on the map (it may be imprecise for queries involving partition predicates (PartitionPredicate) on the off-heap storage)
 
 |map.removeCount
@@ -166,7 +168,7 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.hits
 |map_hits
-|
+|n/a
 |Number of reads of the locally owned entries; incremented for every read by any type of operation (get, set, put), so the entries should exist
 
 |map.totalGetLatency
@@ -211,32 +213,32 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.index.creationTime
 |map_index_creation_timestamp
-|
+|n/a
 |Creation time of the index on this member
 
 |map.index.hitCount
 |map_index_hits
-|
+|n/a
 |Total number of index hits (the value of this metric may be greater than the `map.index.queryCount` because a single query may hit the same index more than once)
 
 |map.index.insertCount
 |map_index_inserts
-|
+|n/a
 |Number of insert operations performed on the index
 
 |map.index.memoryCost
 |map_index_memory_cost
-|
+|n/a
 |Local memory cost of the index (for on-heap indexes in OBJECT or BINARY formats the returned value is a best-effort approximation and doesn't indicate a precise on-heap memory usage of the index)
 
 |map.index.queryCount
 |map_index_queries
-|
+|n/a
 |Total number of queries served by the index
 
 |map.index.removeCount
 |map_index_removes
-|
+|n/a
 |Number of remove operations performed on the index
 
 |map.index.totalInsertLatency
@@ -256,37 +258,37 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 
 |map.index.updateCount
 |map_index_updates
-|
+|n/a
 |Number of update operations performed on the index
 
 |set.creationTime
 |set_creation_timestamp
-|
+|n/a
 |Creation time of the set on the member
 
 |set.lastAccessTime
 |set_last_access_timestamp
-|
+|n/a
 |Last access (read) time of the locally owned items
 
 |set.lastUpdateTime
 |set_last_update_timestamp
-|
+|n/a
 |Last update time of the locally owned items
 
 |list.creationTime
 |list_creation_timestamp
-|
+|n/a
 |Creation time of this list on the member
 
 |list.lastAccessTime
 |list_last_access_timestamp
-|
+|n/a
 |Last access (read) time of the locally owned items
 
 |list.lastUpdateTime
 |list_last_update_timestamp
-|
+|n/a
 |Last update time of the locally owned items
 
 |===
