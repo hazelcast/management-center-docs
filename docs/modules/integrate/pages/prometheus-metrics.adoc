@@ -48,7 +48,7 @@ hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_clu
 ```
 
 [[config]]
-== Choose which set of metrics is exposed
+== Choose which set of metrics to use
 
 To change which set of metrics is exposed to Prometheus, update the `hazelcast.mc.prometheusExporter.printers` system property:
 
