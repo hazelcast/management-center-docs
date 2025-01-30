@@ -891,14 +891,14 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 
 In this example, the `/metrics` endpoint would be available on port 2222: `\http://localhost:2222/metrics`.
 
-|[[hazelcast-mc-prometheus-exporter-printers]]hazelcast.mc.prometheus-exporter.printers
+|[[hazelcast-mc-prometheusexporter-printers]]hazelcast.mc.prometheusExporter.printers
 
 MC_PROMETHEUS_EXPORTER_PRINTERS
 |Which set of metrics to expose. Default: `V1,V2`. See xref:integrate:prometheus-metrics.adoc[].
 |
 [source,bash,subs="attributes+"]
 ----
-hz-mc start -Dhazelcast.mc.prometheus-exporter.printers=V1
+hz-mc start -Dhazelcast.mc.prometheusExporter.printers=V1
 
 ----
 
