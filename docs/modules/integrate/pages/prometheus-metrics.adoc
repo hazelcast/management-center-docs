@@ -9,14 +9,15 @@ By default, Management Center exposes both the original metrics and the updated 
 Management Center makes the following changes to metrics exposed by Hazelcast clusters:
 
 * Use `snake_case`
-* Change prefix from `hz_` to `hazelcast_`
+* Add `hazelcast_` prefix
 * Update metric names where appropriate
-* Implement labels and combine related metrics
+* Combine related metrics and add labels
 * Convert to recommended base units:
 ** Time in seconds
 ** Memory in bytes
 ** Percentages as ratios (for example, 50% converts to 0.5)
-* Append base units to metric names
+* Append units to metric names
+* Remove unit labels
 
 The updated metrics are based on link:https://prometheus.io/docs/practices/naming/[Prometheus conventions].
 
