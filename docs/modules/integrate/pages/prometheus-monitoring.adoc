@@ -100,8 +100,6 @@ mc-conf.bat security reset
 
 == Filtering Metrics
 
-TODO: Impact on filtering behavior TBC
-
 By default, Management Center exports all metrics that are reported by the cluster.
 
 To filter the metrics that are exposed to the scrape endpoint, use the `hazelcast.mc.prometheusExporter.filter.metrics.included`
@@ -159,6 +157,8 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 ----
 --
 ====
+
+NOTE: As described in xref:prometheus-metrics.adoc[], Management Center reformats metrics to align with Prometheus best practice recommendations. Filtering matches against metrics in any format. For example, if you exclude `map.getCount`, you will exclude `hz_map_getCount` and `hazelcast_map_operations_total`.
 
 == Overriding the Default Port
 

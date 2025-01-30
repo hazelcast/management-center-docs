@@ -4,54 +4,66 @@
 
 {description}
 
-By default, Management Center exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally TODO: config.
+By default, Management Center exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally xref:config[change which set of metrics is exposed].
 
 Management Center makes the following changes to metrics exposed by Hazelcast clusters:
 
 * Use `snake_case`
 * Change prefix from `hz_` to `hazelcast_`
 * Update metric names where appropriate
-* Implement labels
+* Implement labels and combine related metrics
 * Convert to recommended base units:
 ** Time in seconds
 ** Memory in bytes
 ** Percentages as ratios (for example, 50% converts to 0.5)
+* Append base units to metric names
 
 The updated metrics are based on link:https://prometheus.io/docs/practices/naming/[Prometheus conventions].
 
-The following examples show the differences between the old and new metrics.
+The following examples illustrate the differences between the old and new metrics.
 
 * Rename and remove `unit` label:
 +
 ```
-hz_map_queryCount{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="COUNT",} 0.0 1737715903399
+hz_map_queryCount{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="COUNT",} 0.0 1737715903399
 
-hazelcast_map_queries{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 0.0 1737715903399
+hazelcast_map_queries{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 0.0 1737715903399
 ```
 
-* Rename, remove `unit` label, convert value (1.7^12^ milliseconds to 1.7^9^ seconds):
+* Rename and append unit, remove `unit` label, convert value (1.7x10^12^ milliseconds to 1.7x10^9^ seconds):
 +
 ```
-hz_map_creationTime{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 1.737715861118E12 1737715903399
+hz_map_creationTime{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 1.737715861118E12 1737715903399
 
-hazelcast_map_creation_timestamp_seconds{name="concreteSubclassWithNestedCollection",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 1.737715861118E9 1737715903399
+hazelcast_map_creation_timestamp_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 1.737715861118E9 1737715903399
 ```
 
-* Rename, remove `unit` label, add `remove` label:
+* Rename and append unit, remove `unit` label, add `remove` label:
 +
 ```
-hz_map_totalMaxRemoveLatency{name="concreteClass",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 0.0 1737715903399
+hz_map_totalMaxRemoveLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 0.0 1737715903399
 
-hazelcast_map_latency_max_seconds{name="concreteClass",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="remove",} 0.0 1737715903399
+hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="remove",} 0.0 1737715903399
 ```
 
-TODO: config to enable/disable
+[[config]]
+== Choose which set of metrics is exposed
+
+To change which set of metrics is exposed to Prometheus, update the `hazelcast.mc.prometheus-exporter.printers` system property:
+
+* Original only: `hazelcast.mc.prometheus-exporter.printers=V1`
+* Updated only: `hazelcast.mc.prometheus-exporter.printers=V2`
+* Both (default): `hazelcast.mc.prometheus-exporter.printers=V1,V2`
+
+See xref:deploy-manage:system-properties.adoc[].
 
 == Metrics list
 
 Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation.
 
-NOTE: Management Center also converts `.` to `_` to make the original metrics compatible with Prometheus.
+In some cases, several original metrics are combined into one and differentiated by labels. For example, `hazelcast_map_operations_total` replaces `hz_map_getCount` and `hz_map_setCount` by adding `operation="get"` and `operation="set"` labels.
+
+NOTE: Management Center also converts `.` to `_` and prepends `hz_` to make the original metrics compatible with Prometheus.
 
 |===
 |Original metric `hz_` |Updated metric `hazelcast_` |Labels |Description 
@@ -72,7 +84,7 @@ NOTE: Management Center also converts `.` to `_` to make the original metrics co
 |Memory cost of backup entries in this member
 
 |map.creationTime
-|map_creation_timestamp
+|map_creation_timestamp_seconds
 |n/a
 |Creation time of the map on the member
 
@@ -107,12 +119,12 @@ NOTE: Management Center also converts `.` to `_` to make the original metrics co
 |Total number of indexed local queries performed on the map
 
 |map.lastAccessTime
-|map_last_access_timestamp
+|map_last_access_timestamp_seconds
 |n/a
 |Last access (read) time of the locally owned entries
 
 |map.lastUpdateTime
-|map_last_update_timestamp
+|map_last_update_timestamp_seconds
 |n/a
 |Last update time of the locally owned entries
 
@@ -172,47 +184,47 @@ NOTE: Management Center also converts `.` to `_` to make the original metrics co
 |Number of reads of the locally owned entries; incremented for every read by any type of operation (get, set, put), so the entries should exist
 
 |map.totalGetLatency
-|map_latency_total
+|map_latency_total_seconds
 |get
 |Total latency of local get operations on the map
 
 |map.totalMaxGetLatency
-|map_latency_max
+|map_latency_max_seconds
 |get
 |Maximum latency of local get operations on the map
 
 |map.totalPutLatency
-|map_latency_total
+|map_latency_total_seconds
 |put
 |Total latency of local put operations on the map
 
 |map.totalMaxPutLatency
-|map_latency_max
+|map_latency_max_seconds
 |put
 |Maximum latency of local put operations on the map
 
 |map.totalRemoveLatency
-|map_latency_total
+|map_latency_total_seconds
 |remove
 |Total latency of local remove operations on the map
 
 |map.totalMaxRemoveLatency
-|map_latency_max
+|map_latency_max_seconds
 |remove
 |Maximum latency of local remove operations on the map
 
 |map.totalSetLatency
-|map_latency_total
+|map_latency_total_seconds
 |set
 |Total latency of local set operations on the map
 
 |map.totalMaxSetLatency
-|map_latency_max
+|map_latency_max_seconds
 |set
 |Maximum latency of local set operations on the map
 
 |map.index.creationTime
-|map_index_creation_timestamp
+|map_index_creation_timestamp_seconds
 |n/a
 |Creation time of the index on this member
 
@@ -247,12 +259,12 @@ NOTE: Management Center also converts `.` to `_` to make the original metrics co
 |Total latency of insert operations performed on the index
 
 |map.index.totalRemoveLatency
-|map_index_latency_total
+|map_index_latency_total_seconds
 |remove
 |Total latency of remove operations performed on the index
 
 |map.index.totalUpdateLatency
-|map_index_latency_total
+|map_index_latency_total_seconds
 |update
 |Total latency of update operations performed on the index
 
@@ -267,27 +279,27 @@ NOTE: Management Center also converts `.` to `_` to make the original metrics co
 |Creation time of the set on the member
 
 |set.lastAccessTime
-|set_last_access_timestamp
+|set_last_access_timestamp_seconds
 |n/a
 |Last access (read) time of the locally owned items
 
 |set.lastUpdateTime
-|set_last_update_timestamp
+|set_last_update_timestamp_seconds
 |n/a
 |Last update time of the locally owned items
 
 |list.creationTime
-|list_creation_timestamp
+|list_creation_timestamp_seconds
 |n/a
 |Creation time of this list on the member
 
 |list.lastAccessTime
-|list_last_access_timestamp
+|list_last_access_timestamp_seconds
 |n/a
 |Last access (read) time of the locally owned items
 
 |list.lastUpdateTime
-|list_last_update_timestamp
+|list_last_update_timestamp_seconds
 |n/a
 |Last update time of the locally owned items
 
