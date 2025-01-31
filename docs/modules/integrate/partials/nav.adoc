@@ -1,5 +1,6 @@
 * xref:integrate:integrations.adoc[]
 * xref:integrate:prometheus-monitoring.adoc[]
+** xref:integrate:prometheus-metrics.adoc[]
 * Clustered JMX
 ** xref:integrate:jmx.adoc[Get Started]
 ** xref:integrate:jmx-api.adoc[]
