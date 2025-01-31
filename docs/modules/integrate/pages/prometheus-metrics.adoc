@@ -1,5 +1,5 @@
 = Prometheus metrics
-:description: Management Center automatically reformats Hazelcast cluster metrics to align with Prometheus best practice recommendations. This makes it easier to construct complex queries, build dashboards, and work alongside metrics from other applications.
+:description: Management Center automatically reformats a subset of Hazelcast cluster metrics to align with Prometheus best practice recommendations. This makes it easier to construct complex queries, build dashboards, and work alongside metrics from other applications.
 :page-enterprise: true
 
 {description}
