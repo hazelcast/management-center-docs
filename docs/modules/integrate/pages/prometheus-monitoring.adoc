@@ -1,5 +1,5 @@
 = Prometheus Monitoring
-:description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
+:description: Prometheus is an open source monitoring system for metrics. You can export Hazelcast cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
 :page-enterprise: true
 
@@ -25,7 +25,7 @@ To disable sending timestamp to Prometheus, set the <<prometheus-timestamp, `haz
 
 After enabling the Prometheus exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
 
-TIP: For guidance, see the link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config[Prometheus configuration docs].
+TIP: For guidance, see the link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config[Prometheus configuration documentation].
 
 To allow Prometheus to scrape metrics from Management Center, set the `static_configs.targets` parameter to the URL of your Management Center instance.
 
@@ -199,8 +199,7 @@ scrape_configs:
 
 == Visualizing Metrics in Grafana
 
-To visualize Prometheus metrics in Grafana, you can start with
-https://grafana.com/grafana/dashboards/13183[this dashboard].
+Grafana is an open source data visualization solution that allows you to build monitoring dashboards from your Prometheus metrics. To start visualizing Prometheus metrics in Grafana, refer to the link:https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/[Grafana documentation]. Hazelcast provides an https://grafana.com/grafana/dashboards/13183[example dashboard] to help you get started.
 
 == Next Steps
 
