@@ -76,7 +76,7 @@ Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML f
 
 === Resetting the Authentication Credentials
 
-To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool. This requires restarting Management Center.
+To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool. You must stop Management Center to apply this change.
 
 WARNING: This task will also delete all users from the database.
 
@@ -86,18 +86,14 @@ Linux and Mac::
 +
 --
 ```bash
-hz-mc stop
 hz-mc conf security reset
-hz-mc start
 ```
 --
 Windows::
 +
 --
 ```bash
-hz-mc stop
 mc-conf.bat security reset
-hz-mc start
 ```
 --
 ====
