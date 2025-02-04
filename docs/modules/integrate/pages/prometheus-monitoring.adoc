@@ -1,31 +1,27 @@
 = Prometheus Monitoring
-:description: Prometheus is an open source smonitoring system for metrics. You can export Hazelcast cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
+:description: Prometheus is an open source monitoring system for metrics. You can export Hazelcast cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
 :page-enterprise: true
 
 {description}
 
-By configuring Prometheus Exporter to scrape metrics from Management Center, you can easily collect metrics for the whole cluster from a single endpoint. Without it, you would have to configure your monitoring tool to scrape each member individually, manage any changes from scaling, restarts and any member IP address changes, and then collate the metrics from all members to provide a cluster-wide overview.  
-
-Management Center's Prometheus Exporter simplifies this process by providing a cluster view of the metrics which it automatically keeps up to date with any membership changes that happen to the cluster.  The endpoint provides these metrics for all clusters that Management Center is connected to.
+Management Center's Prometheus Exporter automatically updates with any cluster changes and allows you to easily collect metrics for the whole cluster, or multiple clusters, from a single endpoint. Without it, you would have to scrape each member individually, manage any changes from scaling, restarts, and IP configuration, and collate the metrics from all members.
 
 == Enabling the Prometheus Exporter
 
-To start exposing metrics via Prometheus Exporter, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+To start exposing metrics via the Prometheus Exporter, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
 
-Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus metrics path.
-
-NOTE: Management Center's Prometheus Exporter is an Enterprise feature which needs to be included within the license key.
+Metrics are exposed to the `/metrics` endpoint, which is the Prometheus default. The endpoint provides metrics for all clusters that Management Center is connected to.
 
 NOTE: Management Center also reformats the metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc[] for details.
 
-== Disabling Timestamp
+== Disabling Timestamps
 
-Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus each time. Prometheus discards metrics with the old timestamps. You can disable including the timestamp to Prometheus so that your monitoring system continues to operate when clock shifts happen in the cluster.
+Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus. Prometheus discards metrics with the oldest timestamps. You can disable sending timestamps so that your monitoring system continues to operate when clock shifts happen in the cluster.
 
-To disable sending timestamp to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
+To stop sending timestamps to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
 
-== Configuring Prometheus Exporter
+== Configuring Prometheus
 
 After enabling the Prometheus Exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
 
@@ -80,7 +76,7 @@ Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML f
 
 === Resetting the Authentication Credentials
 
-To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool.  Management Center should not be running when you run the `hz-mc` commands.
+To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool. This requires restarting Management Center.
 
 WARNING: This task will also delete all users from the database.
 
@@ -90,14 +86,18 @@ Linux and Mac::
 +
 --
 ```bash
+hz-mc stop
 hz-mc conf security reset
+hz-mc start
 ```
 --
 Windows::
 +
 --
 ```bash
+hz-mc stop
 mc-conf.bat security reset
+hz-mc start
 ```
 --
 ====

@@ -4,7 +4,7 @@
 
 {description}
 
-By default, Management Center, via the Prometheus Exporter, exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally xref:config[change which set of metrics is exposed].
+By default, Management Center exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally xref:config[change which set of metrics is exposed].
 
 Management Center makes the following changes to metrics exposed by Hazelcast clusters.
 
@@ -74,7 +74,7 @@ Management Center converts all metrics for the `map`, `set` and `list` data stru
 In some cases, several original metrics are combined into one and differentiated by labels. For example, `hazelcast_map_operations_total` replaces `hz_map_getCount` and `hz_map_setCount` by adding `operation="get"` and `operation="set"` labels.
 
 |===
-|Original metric `hz_` |Updated metric `hazelcast_` |Labels |Description 
+|Original metric `hz_` |Updated metric `hazelcast_` |Additional labels |Description 
 
 |map_backupCount
 |map_backups
