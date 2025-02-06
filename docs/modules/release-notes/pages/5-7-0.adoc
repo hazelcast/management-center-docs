@@ -1,0 +1,29 @@
+= 5.7.0 Release Notes
+:description: These release notes list any new features, enhancements, fixes, and breaking changes implemented in this release of Hazelcast Management Center (MC).
+
+{description}
+
+== New features
+* Management Center now converts metrics for the `map`, `set` and `list` data structures to align with Prometheus best practice recommendations. This makes it easier to construct complex queries, build dashboards, and work alongside metrics from other applications.
+
+For more information about new features, see xref:ROOT:whats-new.adoc[].
+
+//TODO: Update What's New with new Prometheus feature, including link to relevant docs section(?)
+
+== Enhancements
+* 
+
+== Known issues
+* 
+
+== Fixes
+
+* Authentication error for different authentication object types (HZX-302)
+* Missing units in Used Memory column (MC-3123)
+
+== Security
+
+* 
+
+// TODO: complete
+// https://hazelcast.atlassian.net/wiki/spaces/MC/pages/5698879496/Release+Notes
