@@ -1,4 +1,4 @@
-= 5.7.0 Release Notes
+= 5.7.0 Release notes
 :description: These release notes list any new features, enhancements, fixes, and breaking changes implemented in this release of Hazelcast Management Center (MC).
 
 {description}
