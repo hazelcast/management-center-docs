@@ -1,5 +1,5 @@
 = Hazelcast Management Center 5.7.x release notes
 
-The following pages summarize the changes in each release:
+This section summarizes the changes in each release:
 
 * xref:release-notes:5-7-0.adoc[5.7.0]
