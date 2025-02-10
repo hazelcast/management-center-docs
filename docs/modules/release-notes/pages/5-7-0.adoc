@@ -4,26 +4,51 @@
 {description}
 
 == New features
-* Management Center now converts metrics for the `map`, `set` and `list` data structures to align with Prometheus best practice recommendations. This makes it easier to construct complex queries, build dashboards, and work alongside metrics from other applications.
 
-For more information about new features, see xref:ROOT:whats-new.adoc[].
+* *Updated Prometheus metrics format*: The Prometheus Exporter now adheres more closely to Prometheus best practices while preserving backward compatibility. This update improves metrics format for Lists, Sets, and Maps. To prevent breaking changes in existing implementations, both the new and old Prometheus metrics formats are available. See xref:integrate:prometheus-metrics.adoc[].
 
-//TODO: Update What's New with new Prometheus feature, including link to relevant docs section(?)
+// For more information about new features, see xref:ROOT:whats-new.adoc[].
 
 == Enhancements
-* 
 
-== Known issues
-* 
+* *Improved CP group leadership tracking*: Management Center now offers improved tracking of CP group leadership, making it easier to identify the current leader of a CP group. Additionally, a last-seen timestamp has been introduced, providing clearer visibility into the CP state and reducing reliance on manual log inspection.
 
-== Fixes
+* *Accurate CP promotion candidate listing*: Management Center now correctly identifies CP promotion candidates, by excluding Lite members as being eligible for promotion. 
 
-* Authentication error for different authentication object types (HZX-302)
-* Missing units in Used Memory column (MC-3123)
+* *BouncyCastle update for FIPS compliance*: Hazelcast now supports FIPS-compliant mode with an updated BouncyCastle implementation. Previously, a public key used by Hazelcast was not endorsed in FIPS-approved mode under BouncyCastle version 2.0.0.
+
+* *Consistent display of VectorCollection sizes*: VectorCollection entry counts are displayed on the summary page, providing consistency with IMap and ReplicatedMap. This improves clarity and usability by providing a uniform view of entry counts across data structures.
+
+* *UI improvements: updated cards, typography and table spacing*: This release introduces several UI improvements, including refined card designs and updated typography for a more polished appearance. Additionally, tables now have a fixed width with improved spacing, enhancing readability with a more consistent layout.
+
+* *Access help pages without a cluster connection*: Users can now access HELP pages in Management Center even without an active cluster connection. Previously, in DEV mode, HELP pages were inaccessible until a cluster was connected, making it difficult to reference documentation for tasks like configuring SSL connections. 
+
+* *Selective Config Healthcheck deactivation*: Management Center allows specific Config Healthchecks to be disabled when starting Management Center, providing greater flexibility for customized deployments, such as pre-configured Docker images. This is beneficial when pre-populating images with predefined cluster configurations, where certain health checks (e.g. low resources warnings) may not be relevant due to known resource constraints. When Management Center connects to a cluster running an older version, it now automatically disables Health Checks that are not supported by that cluster version. 
+
+* *mc-conf.sh now supports MC_CLASSPATH*: The `mc-conf.sh` script now supports the `MC_CLASSPATH` option, aligning it with `hz-mc` for consistency. This makes it easier to add client configurations requiring custom JARs (e.g. for security) and provides a unified experience across the Hazelcast scripts.
 
 == Security
 
-* 
+* *CVE-2024-38820 & CVE-2024-38821 – Spring Security vulnerability*: This release addresses CVE-2024-38820 and CVE-2024-38821, vulnerabilities identified in Spring Security 6.3.3, which is used in Hazelcast Management Center 5.6.0. The affected Spring Security dependencies have been upgraded to a patched version, mitigating both CVEs.
 
-// TODO: complete
-// https://hazelcast.atlassian.net/wiki/spaces/MC/pages/5698879496/Release+Notes
+* *CVE-2024-38821 – critical security vulnerability*: A security scan has identified CVE-2024-38821 in Hazelcast Management Center 5.5.2. While it is still awaiting NVD evaluation, both the reporting CNA and GitHub classify this vulnerability as Critical, indicating a high likelihood that it will retain this classification once fully assessed. This release resolves this CVE.
+
+* *CVE-2024-47175 in Hazelcast Management Center 5.5.2 Docker image*: A security scan has identified CVE-2024-47175 in the Hazelcast Management Center 5.5.2 Docker image. This vulnerability is classified as Critical by the reporting CNA and GitHub, and is awaiting NVD evaluation. The updated Docker image eliminates this CVE.
+
+== Fixes
+
+* *Metrics improvements in Management Center*: Management Center 5.5 could display fluctuating metrics, including high memory usage, CPU load, and map statistics. This release fixes the problem, providing stable metric reporting.
+
+* *LDAP configuration now trims whitespace*: Management Center now automatically trims leading and trailing whitespace from LDAP configuration values. Previously, this could cause authentication failures even when the configuration appeared correct. This fix provides a smoother authentication process, preventing unexpected login issues.
+
+* *Missing units in Used Memory column*: The Used Memory column in the Members page now displays memory values with proper units (e.g. 1024 MB, 1 GB), providing clarity and making it easier to interpret resource usage at a glance.
+
+* *Comma-separated cipher suite configuration issue*: The `hazelcast.mc.exclude.cipher.suites` property now properly handles comma-separated lists of cipher suite exclusions. Previously, only the first pattern in the list was applied, while any additional patterns were ignored. With this fix, all patterns in a comma-separated list are correctly recognized and applied, allowing users to exclude multiple cipher suites as intended.
+
+* *MC-CLC Client now exempt from client filtering rules in Management Center*: The MC-CLC Console Client is now automatically exempt from Client Filtering rules in Management Center. Previously, users had to manually add an allow rule based on the "CLC" label or an instance name starting with "MC-CLC".
+
+* *CLC updates now apply without deleting MC home*: Previously, CLC updates were not applied if a CLC executable already existed under the Management Center home directory. This issue has been resolved, and CLC updates now take effect automatically without requiring users to delete the existing executable manually.
+
+* *Resolved NullPointerException in Management Center logs*: A NullPointerException (NPE) related to java.lang.CharSequence.length() in the VersionCheckAspect component has been fixed. This issue was caused by an unexpected null value in version string processing. With this fix, Management Center no longer encounters NPEs during version checks, improving system stability and log clarity.
+
+* *Documentation clarification for Management Center permissions*: The documentation has been updated to clarify that all-permissions are required for full Management Center access if Security ACLs are implemented on the members. Previously, using management-permission alone caused permission errors (e.g. `"MapPermission __mc.clientFiltering create" denied!`), preventing proper functionality. See link:https://docs.hazelcast.com/hazelcast/latest/security/client-authorization#permissions[Client Authorization] in the Hazelcast Platform documentation.
