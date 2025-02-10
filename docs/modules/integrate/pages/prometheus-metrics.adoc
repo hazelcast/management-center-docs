@@ -6,6 +6,8 @@
 
 By default, Management Center exposes both the original metrics and the updated versions. Existing integrations will therefore continue to work, but you should consider the original metrics deprecated and plan to migrate to the updated versions. You can optionally xref:config[change which set of metrics is exposed].
 
+== Metrics changes
+
 Management Center makes the following changes to metrics exposed by Hazelcast clusters.
 
 Original metrics:
