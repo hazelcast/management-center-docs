@@ -7,7 +7,7 @@
 
 * *Updated Prometheus metrics format*: The Prometheus Exporter now adheres more closely to Prometheus best practices while preserving backward compatibility. This update improves metrics format for Lists, Sets, and Maps. To prevent breaking changes in existing implementations, both the new and old Prometheus metrics formats are available. See xref:integrate:prometheus-metrics.adoc[].
 
-// For more information about new features, see xref:ROOT:whats-new.adoc[].
+For more information about new features, see xref:ROOT:whats-new.adoc[].
 
 == Enhancements
 
