@@ -1,78 +1,26 @@
 
-= What's new in Management Center 5.5
-:description: Here are the highlights of what’s new and improved in Hazelcast Management Center 5.5.
-
-NOTE: The What's New page for Management Center 5.6-SNAPSHOT will be available when this version is released. For the last major release, see below.
+= What's new in Management Center 5.7
+:description: Here are the highlights of what’s new and improved in Hazelcast Management Center 5.7, including Prometheus Exporter updates, FIPS-compliance and CP Subsystem improvements.
 
 {description}
 
-IMPORTANT: Hazelcast Management Center 5.5 requires Java 17 or later.
-
-// Is this recent change? We don't have in 5.4 WN
-
-With enhanced monitoring and an improved console experience, these improvements are designed to elevate your cluster management experience.
-
 NOTE: For new and improved features in Hazelcast Platform 5.5, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.5].
 
-== Lite Member management
+== Metrics updates for Prometheus Exporter
+Management Center's Prometheus Exporter now follows best practice for metric formats while preserving backward compatibility. The new format metrics are available for lists, sets, and maps. For more information, see xref:integrate:prometheus-metrics.adoc[].
 
-Hazelcast supports two kinds of members: 
+== CP Subsystem improvements
 
-* **Full Members** for when you need to scale both data storage and computational capabilities across the cluster
-* **Lite Members** are useful when you need additional computational power or clients that access data without the overhead of data storage and synchronization
+We've improved the CP Subsystem screen to provide clearer visibility into the CP state, with better tracking of CP Group leadership and the introduction of a last-seen timestamp. Identification of CP promotion candidates has also been improved by excluding Lite members from promotion. 
 
-With Hazelcast Platform 5.5, it's now possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Management Center has always supported promoting a Lite member to a Full member but in this release you can also now demote a Full member to a Lite member.
+== FIPS-compliant with BouncyCastle update
 
-== Multi-version rolling upgrades
+Management Center now supports FIPS-compliant mode with an updated BouncyCastle implementation.
 
-Hazelcast Platform 5.5 introduces Long-term Support (LTS) releases to simplify your upgrade experience and give you greater control over when and how you upgrade your software. It's now possible to upgrade from Hazelcast 5.2.x or later to 5.5 in a single upgrade.
+== General design and UI improvements
+UI design improvements for better readability around cards, typography, and table spacing.
 
-Management Center 5.5 now supports this multi-version rolling upgrade. For more info, see xref:clusters:triggering-rolling-upgrade.adoc[Triggering a Rolling Upgrade].
-// How does it support it? We should add what you can do with MC here.
-
-== Multi-member routing for Java clients
-
-Hazelcast Platform 5.5 adds an additional client routing option for Java client applications connecting to geographically dispersed clusters. Management Center now supports this new multi-member client routing.
-// How does it support it? We should add what you can do with MC here.
-
-== Multi-resource User Code Namespaces
-
-With Management Center 5.5 you can use **Namespaces** to monitor all the User Code Namespaces that are connected to your Hazelcast cluster. User Code Namespaces provide a container for Java classpath resources. Management Center has enhanced its support for User Code namespaces. For more info, see xref:clusters:namespaces.adoc[User Code Namespaces].
-// What's changed here? Has support been added or enhanced?
-
-== Support for Log4j2 JSON template logging
-
-Management Center now supports JSON Templates for logging purposes. You can customize the content of logs as well as enable audit logging. For further information see xref:deploy-manage:logging.adoc[Logging].
-
-== Improved reporting on slow operations
-
-Reporting on slow operations has been improved to provide information on operations detected by the `SlowOperationsDetector`. This detailed information is now included on the **Members** page, which helps better identify potential problems. For more info, see xref:clusters:members.adoc#slow-operations[Slow Operations].
-
-== Vector Collections (BETA)
-
-**Vector Collections** support a specialized type of vector that's optimized for storing, searching, and managing vector embeddings along with additional metadata. This feature allows you to include metadata values for filtering, processing, and detailed analysis of vectors.
-
-Management Center 5.5 has added support for Vector Collection metrics. For more info, see xref:data-structures:vector-collection.adoc[Vector Collections].
-
-== Additional Improvements and fixes
-
-**Client Filtering Preview**: see the effects of Client Filtering actions before they're made live. For more info, see xref:clusters:client-filtering.adoc#client-filtering-preview[Client Filtering preview].
-
-**Limit Client Filtering modes**: you can now use a system property to limit the available Client Filtering modes to `ALLOWLIST`, `DENYLIST`, or both (which is the default). For more info, see xref:clusters:client-filtering.adoc#configuring-client-filtering-modes[Client Filtering modes].
-// do we have a link for this ref?
-
-**WAN Replication table**: this table has been improved to increase readability, and it's also now possible to configure the `consistency-check-strategy` during the dynamic creation of a WAN publisher within Management Center. The dropdown fields now also support long values without impacting the UI.
-
-**Config Healthcheck**: the warning icon in the Side Bar now displays the color of the highest severity issue detected.
- 
-**OpenID Connect**: you can now load configuration parameters from an OIDC configuration endpoint.
-
-**SQL Browser**: when closed, you are now redirected to the previous page instead of the Dashboard.
-
-**Clustered REST**: the allowed values for `memberConnection` have changed from `ALL` | `<member-address>` to
-`ALL_MEMBERS` | `MULTI_MEMBER` | `SINGLE_MEMBER`. 
-
-{empty} +
+TIP: Most of these improvements were requested by the Hazelcast Product Strategy Board. To find out more or discuss joining, see https://hazelcast.com/lp/product-strategy-board/?utm_source=docs-website[Product Strategy Board].
 
 For a full list of bug fixes and enhancements, see xref:release-notes:releases.adoc[].
 
