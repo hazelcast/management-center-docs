@@ -1,29 +1,31 @@
 = Prometheus Monitoring
-:description: You can export cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. By collecting cluster metrics in Prometheus you can monitor Hazelcast along with your other applications in the same monitoring tool.
+:description: Prometheus is an open source monitoring system for metrics. You can export Hazelcast cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
 :page-enterprise: true
 
 {description}
 
+Management Center's Prometheus Exporter automatically updates with any cluster changes and allows you to easily collect metrics for the whole cluster, or multiple clusters, from a single endpoint. Without it, you would have to scrape each member individually, manage any changes from scaling, restarts, and IP configuration, and collate the metrics from all members.
+
 == Enabling the Prometheus Exporter
 
-To start exposing metrics to Prometheus, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
+To start exposing metrics via the Prometheus Exporter, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
 
-Metrics are exposed to the `/metrics` endpoint, which is the default Prometheus metrics path.
+Metrics are exposed to the `/metrics` endpoint, which is the Prometheus default. The endpoint provides metrics for all clusters that Management Center is connected to.
 
-NOTE: All metrics are exported with the `hz_` prefix.
+NOTE: Management Center also reformats the metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc[] for details.
 
-== Disabling Timestamp
+== Disabling Timestamps
 
-Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus each time. Prometheus discards metrics with the old timestamps. You can disable sending the timestamp to Prometheus so that your monitoring system continues to operate when clock shifts happen in the cluster.
+Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus. Prometheus discards metrics with the oldest timestamps. You can disable sending timestamps so that your monitoring system continues to operate when clock shifts happen in the cluster.
 
-To disable sending timestamp to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
+To stop sending timestamps to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
 
 == Configuring Prometheus
 
-After enabling the Prometheus exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
+After enabling the Prometheus Exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
 
-TIP: For guidance, see the link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config[Prometheus configuration docs].
+TIP: For guidance, see the link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config[Prometheus configuration documentation].
 
 To allow Prometheus to scrape metrics from Management Center, set the `static_configs.targets` parameter to the URL of your Management Center instance.
 
@@ -74,7 +76,7 @@ Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML f
 
 === Resetting the Authentication Credentials
 
-To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool.
+To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool. You must stop Management Center to apply this change.
 
 WARNING: This task will also delete all users from the database.
 
@@ -103,7 +105,7 @@ By default, Management Center exports all metrics that are reported by the clust
 To filter the metrics that are exposed to the scrape endpoint, use the `hazelcast.mc.prometheusExporter.filter.metrics.included`
 and `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties.
 
-For example, this configuation exposes only the following metrics:
+For example, this configuration exposes only the following metrics:
 
 - `hz_topic_totalReceivedMessages`
 - `hz_map_totalPutLatency`
@@ -130,7 +132,7 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 --
 ====
 
-This configuation exposes all metrics except the following:
+This configuration exposes all metrics except the following:
 
 - `hz_os_systemLoadAverage,hz_memory_freeHeap`
 
@@ -155,6 +157,8 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 ----
 --
 ====
+
+NOTE: As described in xref:prometheus-metrics.adoc[], Management Center reformats metrics to align with Prometheus best practice recommendations. Filtering matches against metrics in any format. For example, if you exclude `map.getCount`, you will exclude `hz_map_getCount` and `hazelcast_map_operations_total`.
 
 == Overriding the Default Port
 
@@ -195,8 +199,7 @@ scrape_configs:
 
 == Visualizing Metrics in Grafana
 
-To visualize Prometheus metrics in Grafana, you can start with
-https://grafana.com/grafana/dashboards/13183[this dashboard].
+Grafana is an open source data visualization solution that allows you to build monitoring dashboards from your Prometheus metrics. To start visualizing Prometheus metrics in Grafana, refer to the link:https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/[Grafana documentation]. Hazelcast provides an https://grafana.com/grafana/dashboards/13183[example dashboard] to help you get started.
 
 == Next Steps
 
