@@ -6,8 +6,6 @@
 
 IMPORTANT: Hazelcast Management Center 5.7 requires Java 17 or later.
 
-NOTE: For new and improved features in Hazelcast Platform 5.5, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.5].
-
 == Metrics updates for Prometheus Exporter
 Management Center's Prometheus Exporter now follows best practice for metric formats while preserving backward compatibility. The new format metrics are available for lists, sets, and maps. For more information, see xref:integrate:prometheus-metrics.adoc[].
 
@@ -28,3 +26,5 @@ TIP: Most of these improvements were requested by the Hazelcast Product Strategy
 For a full list of bug fixes and enhancements, see xref:release-notes:releases.adoc[].
 
 To get started with Hazelcast Management Center, or upgrade an existing installation, see xref:getting-started:install.adoc[].
+
+NOTE: For new and improved features in Hazelcast Platform 5.5, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new in Hazelcast Platform 5.5].
