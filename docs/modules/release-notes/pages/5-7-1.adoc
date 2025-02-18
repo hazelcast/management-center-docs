@@ -1,0 +1,13 @@
+= 5.7.1 Release notes
+:description: These release notes list any new features, enhancements, fixes, and breaking changes implemented between version 5.7.0 and version 5.7.1 of Hazelcast Management Center (MC).
+
+{description}
+
+This is a maintenance release for Hazelcast Management Center, which ensures compatibility for Hazelcast Platform 5.5.4. 
+
+For help downloading Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+== Security
+
+* *CVE 2024-57699 - Update JSON Smart to 2.5.2*: This release addresses CVE 2024-57699 by upgrading JSON Smart to 2.5.2.
+
