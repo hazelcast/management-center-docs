@@ -64,20 +64,13 @@ Hazelcast offers package managers for Linux and Mac operating systems.
 // tag::cli[]
 . To install Management Center, use one of the following methods, depending on your operating system:
 +
-[tabs] 
-==== 
-Mac:: 
-+ 
+[tabs]
+====
+Mac::
++
 --
 
 To install on macOS, use the Homebrew package manager.
-ifdef::snapshot[]
-[source,bash,subs="attributes+"]
-----
-brew tap hazelcast/hz
-brew install hazelcast-management-center@{version-brew}
-----
-endif::[]
 ifndef::snapshot[]
 [source,bash,subs="attributes+"]
 ----
@@ -188,7 +181,7 @@ Windows::
 +
 [source,shell,subs="attributes+"]
 ----
-mc-start.cmd 
+mc-start.cmd
 ----
 ====
 
@@ -217,7 +210,7 @@ Windows::
 [source,shell,subs="attributes+"]
 ----
 SET MC_CLASSPATH="/path/to/an/extra.jar;/path/to/an/otherextra.jar"
-mc-start.cmd 
+mc-start.cmd
 ----
 --
 ====
