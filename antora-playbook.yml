@@ -14,11 +14,14 @@ content:
   - url: .
     branches: HEAD
     start_path: docs
+  - url: https://github.com/hazelcast/management-center-docs
+    branches: [ v/5.6.0 ]
+    start_path: antora
   - url: https://github.com/hazelcast/hz-docs
     branches: [ main ]
     start_path: docs
   - url: https://github.com/hazelcast/management-center
-    branches: [ master, v/5.6.0 ]
+    branches: [ master ]
     start_path: antora
   - url: https://github.com/hazelcast/cloud-docs
     branches: [ main ]
@@ -40,6 +43,9 @@ content:
     start_path: docs
   - url: https://github.com/hazelcast/hz-flow-docs
     branches: [ main ]
+    start_path: docs
+  - url: https://github.com/hazelcast-guides/sql_stock_ticker_cloud
+    branches: master
     start_path: docs
 ui:
   bundle:
