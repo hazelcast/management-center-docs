@@ -18,7 +18,7 @@ content:
     branches: [ main ]
     start_path: docs
   - url: https://github.com/hazelcast/management-center
-    branches: [ master ]
+    branches: [ master, v/5.6.0 ]
     start_path: antora
   - url: https://github.com/hazelcast/cloud-docs
     branches: [ main ]
@@ -35,6 +35,12 @@ content:
   - url: https://github.com/hazelcast-guides/stream-to-stream-joins
     branches: master
     start_paths: docs
+  - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
+    branches: main
+    start_path: docs
+  - url: https://github.com/hazelcast/hz-flow-docs
+    branches: [ main ]
+    start_path: docs
 ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
