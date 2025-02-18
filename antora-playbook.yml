@@ -16,7 +16,7 @@ content:
     start_path: docs
   - url: https://github.com/hazelcast/management-center-docs
     branches: [ v/5.6 ]
-    start_path: antora
+    start_path: docs
   - url: https://github.com/hazelcast/hz-docs
     branches: [ main ]
     start_path: docs
