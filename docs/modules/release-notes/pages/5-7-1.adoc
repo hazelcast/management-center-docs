@@ -9,5 +9,5 @@ For help downloading Hazelcast Management Center, see xref:getting-started:insta
 
 == Security
 
-* *CVE 2024-57699 - Update JSON Smart to 2.5.2*: This release addresses CVE 2024-57699 by upgrading JSON Smart to 2.5.2.
+* *CVE 2024-57699 - JSON Smart Vulnerability*: This release addresses https://github.com/advisories/GHSA-pq2g-wx69-c263[CVE-2024-57699], a vulnerability in Netplex JSON Smart versions 2.5.0 - 2.5.1, which could lead to Denial of Service (DoS) due to stack exhaustion when processing specially crafted JSON inputs. The affected JSON Smart dependency has been upgraded to version 2.5.2, mitigating the vulnerability.
 
