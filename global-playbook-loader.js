@@ -71,8 +71,6 @@ async function parseInputArgs() {
 		throw new Error('`repo` and `branch` must be specified!');
 	}
 
-	console.log('Checking links...');
-
 	console.debug('Repository name: ', currentRepoName);
 	console.debug('Base branch: ', baseBranchName);
 
