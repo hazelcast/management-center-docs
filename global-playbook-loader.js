@@ -4,13 +4,13 @@ const fs = require('fs');
 const {parseArgs} = require('node:util');
 
 async function main() {
-	const { currentRepoName, baseBranchName } = parseInputArgs();
+	const { currentRepoName, baseBranchName, skipPrivateRepos } = await parseInputArgs();
 
 	// 1. Load and parse local antora-playbook.yml
 	let localAntoraPlaybook = loadLocalAntoraPlaybook();
 
 	// 2. Load and parse global antora-playbook.yml's content.sources
-	let { globalSources, globalAsciidocAttributes } = await loadGlobalAntoraData();
+	let { globalSources, globalAsciidocAttributes } = await loadGlobalAntoraData(skipPrivateRepos);
 
 	// 3. Modify global content.sources
 	// 		- add hazelcast-docs GitHub URL
@@ -30,7 +30,7 @@ async function main() {
 	writeGlobalAntoraPlaybookFile(localAntoraPlaybook, globalSources);
 }
 
-function parseInputArgs() {
+async function parseInputArgs() {
 	const {
 		values: argValues,
 	} = parseArgs({ options: {
@@ -46,17 +46,21 @@ function parseInputArgs() {
 				type: 'string',
 				default: 'log', // 'log' | 'debug'
 			},
+			'skip-private-repos': {
+				type: 'boolean',
+				default: false
+			},
 		},
 	});
 
-	console.log('process.env.REPOSITORY_URL', process.env.REPOSITORY_URL);
-	console.log('process.env.BRANCH', process.env.BRANCH);
-	console.log('process.env.HEAD', process.env.HEAD);
-	console.log('process.env.COMMIT_REF', process.env.COMMIT_REF);
+	const netlifyRepositoryName = process.env.REPOSITORY_URL.replace('https://github.com/', '');
+	// @todo: fix production build
+	const prId = process.env.BRANCH.replace('pull/', '').replace('/head', '');
 
-	const currentRepoName = argValues.repo;
-	const baseBranchName = process.env.HEAD || argValues.branch;
+	const currentRepoName = netlifyRepositoryName || argValues.repo;
+	const baseBranchName = await fetchBranchName(currentRepoName, prId) || argValues.branch;
 	const logLevel = argValues['log-level'];
+	const skipPrivateRepos = argValues['skip-private-repos'];
 
 	if (logLevel !== 'debug') {
 		global.console.debug = () => null;
@@ -72,7 +76,7 @@ function parseInputArgs() {
 	console.debug('Repository name: ', currentRepoName);
 	console.debug('Base branch: ', baseBranchName);
 
-	return { currentRepoName, baseBranchName, logLevel };
+	return { currentRepoName, baseBranchName, logLevel, skipPrivateRepos };
 }
 
 function loadLocalAntoraPlaybook() {
@@ -88,10 +92,25 @@ async function fetchGlobalAntoraPlaybook() {
 	return YAML.parse(globalAntoraPlaybookContent);
 }
 
-async function loadGlobalAntoraData() {
-	const globalAntoraPlaybook = await fetchGlobalAntoraPlaybook();
+async function fetchBranchName(repoName, prId) {
+	const response = await fetch(`https://api.github.com/repos/${repoName}/pulls/${prId}`);
+	const prData = await response.json();
+	return prData.base.ref;
+}
 
-	const globalSources = globalAntoraPlaybook.content.sources;
+function removeProtectedSources(sources) {
+	return sources.filter(source =>
+		!(source.url === 'https://github.com/hazelcast/hazelcast-mono')
+		&& !(source.url === 'https://github.com/hazelcast/management-center'));
+}
+
+async function loadGlobalAntoraData(skipPrivateRepos) {
+	const globalAntoraPlaybook = await fetchGlobalAntoraPlaybook();
+	let globalSources = globalAntoraPlaybook.content.sources;
+	if (skipPrivateRepos) {
+		globalSources = removeProtectedSources(globalAntoraPlaybook.content.sources);
+	}
+
 	const globalAsciidocAttributes = globalAntoraPlaybook.asciidoc.attributes;
 
 	return { globalSources, globalAsciidocAttributes };

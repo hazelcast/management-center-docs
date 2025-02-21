@@ -5,9 +5,10 @@
   "author": "Hazelcast Docs",
   "license": "ISC",
   "scripts": {
-    "load-antora-playbook": "node -v && node global-playbook-loader.js -b main -r hazelcast/management-center-docs",
+    "load-antora-playbook": "node global-playbook-loader.js",
     "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml",
-    "build-local": "antora --to-dir test --fetch antora-playbook-local.yml",
+    "load-antora-playbook-local": "node global-playbook-loader.js -b main -r hazelcast/management-center-docs --skip-private-repos",
+    "build-local": "npm run load-antora-playbook-local && antora --to-dir test --fetch antora-playbook-local.yml",
     "check-orphan-pages": "check-orphan-pages --log-failure-level=error",
     "serve": "serve test",
     "expose": "ngrok http 5000"
