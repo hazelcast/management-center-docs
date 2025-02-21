@@ -49,7 +49,10 @@ function parseInputArgs() {
 		},
 	});
 
+	console.log('process.env.REPOSITORY_URL', process.env.REPOSITORY_URL);
+	console.log('process.env.BRANCH', process.env.BRANCH);
 	console.log('process.env.HEAD', process.env.HEAD);
+	console.log('process.env.COMMIT_REF', process.env.COMMIT_REF);
 
 	const currentRepoName = argValues.repo;
 	const baseBranchName = process.env.HEAD || argValues.branch;
