@@ -1,6 +1,6 @@
 const YAML = require('yaml');
-const fs = require('fs');
 const { isMatch } = require('matcher');
+const fs = require('fs');
 const {parseArgs} = require('node:util');
 
 async function main() {
@@ -49,10 +49,10 @@ function parseInputArgs() {
 		},
 	});
 
-	console.log('process.env.BRANCH', process.env.BRANCH);
+	console.log('process.env.HEAD', process.env.HEAD);
 
 	const currentRepoName = argValues.repo;
-	const baseBranchName = process.env.BRANCH || argValues.branch;
+	const baseBranchName = process.env.HEAD || argValues.branch;
 	const logLevel = argValues['log-level'];
 
 	if (logLevel !== 'debug') {
