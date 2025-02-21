@@ -5,7 +5,7 @@
   "author": "Hazelcast Docs",
   "license": "ISC",
   "scripts": {
-    "load-antora-playbook": "node global-playbook-loader.js -b main -r hazelcast/management-center-docs --log-level debug",
+    "load-antora-playbook": "node -v && node global-playbook-loader.js -b main -r hazelcast/management-center-docs --log-level debug",
     "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml",
     "build-local": "antora --to-dir test --fetch antora-playbook-local.yml",
     "check-orphan-pages": "check-orphan-pages --log-failure-level=error",
