@@ -54,7 +54,7 @@ async function parseInputArgs() {
 	});
 
 	const netlifyRepositoryName = process.env.REPOSITORY_URL.replace('https://github.com/', '');
-	// @todo: fix production build
+	// @todo: check production build
 	const prId = process.env.BRANCH.replace('pull/', '').replace('/head', '');
 
 	const currentRepoName = netlifyRepositoryName || argValues.repo;
