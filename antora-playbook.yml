@@ -20,6 +20,9 @@ content:
   - url: https://github.com/hazelcast/hz-docs
     branches: [ main, v/5.5 ]
     start_path: docs
+  - url: https://github.com/hazelcast/hazelcast-code-samples
+    branches: [ master ]
+    start_path: docs
   - url: https://github.com/hazelcast/management-center
     branches: [ master ]
     start_path: antora
