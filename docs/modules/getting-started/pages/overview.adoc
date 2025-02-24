@@ -182,8 +182,9 @@ include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/clients/Examp
 ANOTHER ONE:
 
 ----
-include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/cluster-split-brain-protection/src/main/java/ClusterSplitBrainProtection.java[]
+include::hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
 ----
+
 
 == Get Started
 
