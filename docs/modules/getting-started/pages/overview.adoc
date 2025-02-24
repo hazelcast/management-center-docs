@@ -185,7 +185,18 @@ ANOTHER ONE:
 include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
 ----
 
-// include::ROOT:example$/cluster-split-brain-protection/src/main/java/ClusterSplitBrainProtection.java[ClusterSplitBrainProtection.java]
+ANOTHER ONE:
+
+----
+include::6.0-snapshot@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
+----
+
+
+ANOTHER ONE:
+
+----
+include::@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
+----
 
 == Get Started
 
