@@ -179,23 +179,11 @@ Lastly, be prompt in your communication with Hazelcast support - helps to ensure
 include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/clients/ExampleClientAwsConfig.java[]
 ----
 
-ANOTHER ONE:
-
-----
-include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
-----
 
 ANOTHER ONE:
 
 ----
-include::6.0-snapshot@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
-----
-
-
-ANOTHER ONE:
-
-----
-include::@hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
+include::hazelcast:ROOT:example$/spring/spring-configuration/src/main/java/com/hazelcast/springconfiguration/HazelcastDataTypes.java[]
 ----
 
 == Get Started
