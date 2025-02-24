@@ -14,12 +14,42 @@ content:
   - url: .
     branches: HEAD
     start_path: docs
+  - url: https://github.com/hazelcast/management-center-docs
+    branches: [ v/5.6, v/5.7 ]
+    start_path: docs
   - url: https://github.com/hazelcast/hz-docs
-    branches: [ main ]
+    branches: [ main, v/5.5 ]
+    start_path: docs
+  - url: https://github.com/hazelcast/hazelcast-code-samples
+    branches: [ master ]
     start_path: docs
   - url: https://github.com/hazelcast/management-center
     branches: [ master ]
     start_path: antora
+  - url: https://github.com/hazelcast/cloud-docs
+    branches: [ main ]
+    start_paths: [ docs, tutorials ]
+  - url: https://github.com/hazelcast/clc-docs
+    branches: [ v/5.5.0 ]
+    start_path: docs
+  - url: https://github.com/hazelcast/hazelcast-platform-operator-docs
+    branches: [ main ]
+    start_path: docs
+  - url: https://github.com/hazelcast-guides/write-through-cache-mongodb-mapstore
+    branches: master
+    start_paths: docs
+  - url: https://github.com/hazelcast-guides/stream-to-stream-joins
+    branches: master
+    start_paths: docs
+  - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
+    branches: main
+    start_path: docs
+  - url: https://github.com/hazelcast/hz-flow-docs
+    branches: [ main ]
+    start_path: docs
+  - url: https://github.com/hazelcast-guides/sql_stock_ticker_cloud
+    branches: master
+    start_path: docs
 ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
