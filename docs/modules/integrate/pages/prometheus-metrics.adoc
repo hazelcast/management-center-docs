@@ -264,7 +264,7 @@ In some cases, several original metrics are combined into one and differentiated
 |Number of remove operations performed on the index
 
 |map_index_totalInsertLatency
-|map_index_latency_total
+|map_index_latency_total_seconds
 |insert
 |Total latency of insert operations performed on the index
 
