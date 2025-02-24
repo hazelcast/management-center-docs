@@ -175,6 +175,10 @@ Please consider the above for prompt help from the team and note that the more i
 is provided upfront the better.
 Lastly, be prompt in your communication with Hazelcast support - helps to ensure timely resolution of issues.
 
+----
+include::{page-latest-supported-hazelcast}@hazelcast:ROOT:example$/clients/ExampleClientAwsConfig.java[]
+----
+
 == Get Started
 
 xref:get-started.adoc[].
