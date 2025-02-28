@@ -120,6 +120,7 @@ class PlaybookLoader {
 
 	static mergePlaybooks(globalPlaybook, localPlaybook, sources) {
 		return {
+			...globalPlaybook,
 			site: {
 				...globalPlaybook.site,
 				...localPlaybook.site,
