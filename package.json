@@ -5,10 +5,12 @@
   "author": "Hazelcast Docs",
   "license": "ISC",
   "scripts": {
-    "load-antora-playbook": "node global-playbook-loader.js",
+    "load-antora-playbook": "load-global-playbook",
     "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml",
-    "load-antora-playbook-local": "node global-playbook-loader.js -b main -r hazelcast/management-center-docs --skip-private-repos",
+    "load-antora-playbook-local": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos",
     "build-local": "npm run load-antora-playbook-local && antora --to-dir test --fetch global-antora-playbook.yml",
+    "load-validate-docs-playbook": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos --enforce-global-sources",
+    "validate-docs": "npm run load-validate-docs-playbook && antora --fetch --to-dir test --log-level=warn --log-failure-level=warn --extension=./node_modules/hazelcast-docs-tools/antora-extensions/antora-link-checker-extension.js global-antora-playbook.yml",
     "check-orphan-pages": "check-orphan-pages --log-failure-level=error",
     "serve": "serve test",
     "expose": "ngrok http 5000"
@@ -17,10 +19,8 @@
     "@antora/cli": "^3.1.1",
     "@antora/site-generator": "^3.1.1",
     "asciidoctor-kroki": "^0.10.0",
-    "hazelcast-docs-tools": "github:hazelcast/hazelcast-docs-tools#v1.1.0",
-    "matcher": "^3.0.0",
+    "hazelcast-docs-tools": "github:hazelcast/hazelcast-docs-tools#v1.2.1",
     "ngrok": "^4.2.2",
-    "serve": "^13.0.2",
-    "yaml": "^2.6.0"
+    "serve": "^13.0.2"
   }
 }
