@@ -8,3 +8,4 @@
 .vscode
 .cache
 /build/
+global-antora-playbook.yml
