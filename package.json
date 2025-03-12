@@ -21,6 +21,6 @@
     "asciidoctor-kroki": "^0.10.0",
     "hazelcast-docs-tools": "github:hazelcast/hazelcast-docs-tools#v1.2.1",
     "ngrok": "^4.2.2",
-    "serve": "^13.0.2"
+    "serve": "^14.2.4"
   }
 }
