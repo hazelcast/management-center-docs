@@ -182,6 +182,35 @@ To automate some elements of the build process, this repository includes the fol
 |On a push to the `master` branch and any `v/` branches
 |===
 
+== npm scripts
+
+For deployment and development this repository includes the following npm scripts:
+
+.npm scripts
+[cols="m,a,a"]
+|===
+|Script |Description |Notes
+
+|`npm run build`
+|Builds a production version of the docs from this repo
+|This script depends on Netlify env vars (`REPOSITORY_URL` and `BRANCH`) which you can encode using e.g.: `export REPOSITORY_URL=https://github.com/hazelcast/management-center-docs && export BRANCH=pull/445/head && npm run build`
+You should generally just use build-local though.
+
+|`npm run build-local`
+|Builds a local version of the docs from this repo
+|By default, it will build all content sources taken from the link:https://github.com/hazelcast/hazelcast-docs/blob/main/antora-playbook.yml[global antora-playbook]. But if you want to build less, please modify the local link:./antora-playbook.yml[antora-playbook].
+
+|`npm run validate-docs`
+|Validates docs
+|It will take into consideration all content sources taken from the link:https://github.com/hazelcast/hazelcast-docs/blob/main/antora-playbook.yml[global antora-playbook].
+
+|`npm run check-orphan-pages`
+|Checks orphan pages
+|
+|===
+
+NOTE: Before running any of the scripts please make sure you have installed all latest npm packages via `npm i`.
+
 == Contributing
 
 If you want to add a change or contribute new content, see our {url-contribute}[contributing guide].
