@@ -1,22 +1,17 @@
 name: management-center
 title: Management Center
-# Version in the URL
-version: '6.0-snapshot'
-# Version in the version selector
-display_version: '6.0-SNAPSHOT'
+version: snapshot_ci
+display_version: snapshot_ci
 prerelease: true
 asciidoc:
   attributes:
-    # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '6.0.0-SNAPSHOT'
-    # Version to be used when installing a Hazelcast cluster
-    hz-full-version: '5.5.2'
+    full-version: snapshot_ci
+    hz-full-version: 5.5.2
     snapshot: true
     javasource: ROOT:example$
-    page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '6.0-snapshot'
-    # https://github.com/hazelcast/clc/releases
-    page-latest-supported-clc: '5.4.1'
+    page-latest-supported-imdg: "4.2"
+    page-latest-supported-hazelcast: 6.0-snapshot
+    page-latest-supported-clc: 5.4.1
     page-toclevels: 1
     experimental: true
 nav:
