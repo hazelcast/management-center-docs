@@ -193,7 +193,8 @@ For deployment and development this repository includes the following npm script
 
 |`npm run build`
 |Builds a production version of the docs from this repo
-|This script depends on Netlify env vars (`REPOSITORY_URL` and `BRANCH`) which you can encode using e.g.: `export REPOSITORY_URL=https://github.com/hazelcast/management-center-docs && export BRANCH=pull/445/head && npm run build`
+|This script depends on Netlify env vars, which you can encode using e.g.: `export NETLIFY=true && export PULL_REQUEST=true && export REPOSITORY_URL=h
+ttps://github.com/hazelcast/management-center-docs && export BRANCH=pull/445/head && npm run build`
 You should generally just use build-local though.
 
 |`npm run build-local`
