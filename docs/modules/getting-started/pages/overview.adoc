@@ -4,7 +4,7 @@
 
 {description}
 
-Here are some example of what you can do with Management Center:
+Here are some example of what you can do with Management Center: 
 
 * Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
 * See statistical information about your members, clients, and data structures.
