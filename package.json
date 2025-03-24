@@ -7,9 +7,9 @@
   "scripts": {
     "load-antora-playbook": "load-global-playbook",
     "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml",
-    "load-antora-playbook-local": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos",
+    "load-antora-playbook-local": "load-global-playbook -b v/5.6 -r hazelcast/management-center-docs --skip-private-repos",
     "build-local": "npm run load-antora-playbook-local && antora --to-dir test --fetch global-antora-playbook.yml",
-    "load-validate-docs-playbook": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos --enforce-global-sources",
+    "load-validate-docs-playbook": "load-global-playbook -b v/5.6 -r hazelcast/management-center-docs --skip-private-repos --enforce-global-sources",
     "validate-docs": "npm run load-validate-docs-playbook && antora --fetch --to-dir test --log-level=warn --log-failure-level=warn --extension=./node_modules/hazelcast-docs-tools/antora-extensions/antora-link-checker-extension.js global-antora-playbook.yml",
     "check-orphan-pages": "check-orphan-pages --log-failure-level=error",
     "serve": "serve test",
