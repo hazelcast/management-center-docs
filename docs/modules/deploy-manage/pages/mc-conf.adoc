@@ -116,10 +116,10 @@ The `hz-mc conf` tool comes with the following commands. Each command includes t
 |Manage security providers. See xref:switching-security-provider.adoc[]
 
 |set
-|Change settings in Management Center.
+|Change some settings in Management Center.
 
 |get
-|Read settings from Management Center.
+|Read some settings from Management Center.
 
 |dev-mode
 |Manage the dev mode security provider. See xref:dev-mode.adoc[]
