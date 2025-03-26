@@ -28,9 +28,9 @@ ifdef::snapshot[]
 - https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
 endif::[]
 ifndef::snapshot[]
-- link:https://github.com/hazelcast/hazelcast/tree/{page-latest-supported-hazelcast}.z/hazelcast/src/main/resources/hazelcast-full-example.xml[XML example]
+- link:https://github.com/hazelcast/hazelcast/tree/v{page-latest-supported-hazelcast}.0/hazelcast/src/main/resources/hazelcast-full-example.xml[XML example]
 
-- link:https://github.com/hazelcast/hazelcast/tree/{page-latest-supported-hazelcast}.z/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
+- link:https://github.com/hazelcast/hazelcast/tree/v{page-latest-supported-hazelcast}.0/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
 endif::[]
 
 == Submitting New Configuration to the Cluster 
