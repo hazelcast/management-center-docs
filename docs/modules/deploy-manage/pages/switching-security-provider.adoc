@@ -20,7 +20,7 @@ This task deletes all existing user accounts and auth tokens.
 
 Then, you can configure another local security provider. For help setting one up, see xref:security-providers.adoc[]
 
-== Fetching the Security Provider details
+== Fetching the security provider details
 
 You can fetch the configuration details of the security provider to validate if set correctly using the `hz-mc conf` tool with the `security get` task.
 The sensitive fields like `password` or `clientSecret` are masked in the output.
