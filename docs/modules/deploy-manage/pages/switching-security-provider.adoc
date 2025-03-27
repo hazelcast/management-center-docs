@@ -23,7 +23,7 @@ Then, you can configure another local security provider. For help setting one up
 == Fetching the security provider details
 
 You can fetch the configuration details of the security provider to validate if this is set correctly using the `hz-mc conf` tool with the `security get` task.
-The sensitive fields like `password` or `clientSecret` are masked in the output.
+Sensitive fields such as `password` or `clientSecret` are masked in the output.
 
 This can be done only when the Management Center web application is stopped.
 
