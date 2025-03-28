@@ -158,9 +158,6 @@ the member (JVM) will attempt to use.
 |Used Native Memory
 |Amount of used native memory by the member.
 
-|Device Usage (`device-name`)
-|Percentage of the used device space for the configured device with name `device-name` (if Tiered Storage is enabled).
-
 |Total Loaded Classes
 |Total number of classes
 that have been loaded since the member (JVM) has started execution.
