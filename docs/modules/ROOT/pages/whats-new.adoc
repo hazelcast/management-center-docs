@@ -23,8 +23,6 @@ With enhanced monitoring and an improved console experience, these improvements 
 
 **CP Metrics Support**: Gain deeper insights into your CP clusters with improved metrics for CP data structures, including CP Maps. For more information, see xref:cp-subsystem:dashboard.adoc#data-and-metrics[CP Subsystem Metrics].
 
-**Tiered Storage Awareness**: Monitor and analyze the performance of your Tiered Storage.
-
 **Personalized Tables**: Retain your preferred table settings, including columns shown and their widths, across the Management Center screens. For more information, see xref:getting-started:tables.adoc#presets[Table Presets].
 
 **Improved SQL Browser**: Pause streaming output in the SQL Browser for better analysis and control. 
