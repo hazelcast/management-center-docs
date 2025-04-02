@@ -1,22 +1,31 @@
 = Management Center {full-version}
 :page-aliases: ROOT:index.adoc
-:description: Management Center is a tool for managing and monitoring Hazelcast Platform clusters.
+:description: Management Center is a powerful tool for managing and monitoring Hazelcast Platform clusters.
 
 {description}
 
-Here are some example of what you can do with Management Center:
+Management Center provides a user-friendly interface to monitor performance, view statistics, and perform administrative tasks.
 
-* Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
-* See statistical information about your members, clients, and data structures.
-* Execute SQL queries on your clusters.
-* Perform administrative tasks such as identifying and diagnosing issues in clusters.
-* Use client filtering to define rules of which clients are allowed (or denied) to connect to a cluster as part of Blue/Green or Red/Black deployments.
-* Use REST API endpoints to return the information presented in Management Center.
+== Key Features and Benefits
+
+* *Monitoring and Performance Tracking*. Management Center allows you to monitor the performance of your clusters through its UI, JMX interface, and Prometheus integration. You can view detailed statistics about members, clients, and data structures in real-time, helping you identify performance bottlenecks and optimize your applications.
+* *Execute SQL queries on your clusters*. The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive.
+* *Administrative Capabilities*. Management Center enables you to perform various administrative tasks such as:
+** Identifying and diagnosing issues in clusters
+** Implementing client filtering to control which clients can connect to a cluster
+** Executing scripts to automate interactions with the cluster
+** Taking thread dumps from nodes
+** Updating map configurations 
+* *High Availability*. Management Center supports high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes. 
+User Management with Role-Based Access Control. Management Center provides comprehensive role-based access control with different user roles (Admin, User, Read-Only, and Metrics-Only) having varying levels of permissions for different operations.
+* *Easy Deployment with Docker*. You can quickly get started with Management Center using Docker Compose. For example, you can create a `docker-compose.yml` file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster. 
+* *REST API and Integration*. Management Center offers REST API endpoints to programmatically access the information presented in the UI, making it easier to integrate with other systems and automate monitoring and management tasks. 
+Using Management Center, you can manage your Hazelcast deployment, and quickly respond to any issues that may arise.
 
 [[os-requirements]]
 == Requirements
 
-You must meet the following requirements to be able to run Management Center
+You must meet the following requirements to be able to run Management Center.
 
 === Supported Java Virtual Machines
 
@@ -87,13 +96,8 @@ NOTE: Internet Explorer 11 is no longer supported.
 
 == Licensing
 
-A valid Enterprise license for Management Center is required for the following features:
-
-* Clustered JMX
-* Clustered REST API
-* Cluster client filtering
-* Prometheus exporter
-* Healthcheck
+A valid Enterprise license for Management Center is required for some features. 
+For a list of Enterprise features, see xref:deploy-manage:license-management.adoc[Licensed Features].
 
 A valid Enterprise license for Hazelcast members is required for the following features:
 
@@ -108,7 +112,7 @@ If a page in the documentation requires an Enterprise license, it is labelled [.
 [[support]]
 == Getting Support
 
-Hazelcast provides two types of support: one for the community and one for paying customers.
+Hazelcast provides two types of support: one for the Community Edition, and one for the Enterprise Edition.
 
 === Community Support
 
@@ -116,11 +120,11 @@ Community support is for every Hazelcast user. You can use the following channel
 
 * xref:ROOT:troubleshooting.adoc[Troubleshooting page] of this guide
 * https://slack.hazelcast.com/[Hazelcast community Slack]
-(discuss anything related to Hazelcast and Management Center with the Hazelcast community)
+(here you can discuss anything related to Hazelcast and Management Center with the Hazelcast community)
 
 === Customer Support
 
-Customer support is for paying Hazelcast customers.
+Customer support is for Hazelcast Enterprise Edition customers.
 See https://hazelcast.com/services/support/[hazelcast.com^] for the support options.
 A support subscription from Hazelcast will allow you to get the most value out of your
 selection of Hazelcast. Our customers benefit from rapid response times to technical
