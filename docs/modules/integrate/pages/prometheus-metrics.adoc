@@ -63,7 +63,6 @@ hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_clu
 ```
 hz_map_totalPutLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 2019.0 1743601193973
 
-
 hazelcast_map_latency_seconds_total{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="put",} 2.019 1743601193973
 ```
 
