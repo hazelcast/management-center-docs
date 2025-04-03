@@ -1,6 +1,10 @@
 .Get Started
 include::getting-started:partial$nav.adoc[]
 
+.Install and upgrade
+** xref:getting-started:install.adoc[Install and Start]
+** xref:migration-guides.adoc[]
+
 .Deploy and Manage
 include::deploy-manage:partial$nav.adoc[]
 
@@ -24,9 +28,6 @@ include::cp-subsystem:partial$nav.adoc[]
 
 .Troubleshoot
 include::troubleshoot:partial$nav.adoc[]
-
-.Upgrade
-** xref:migration-guides.adoc[]
 
 .Release Notes 
 include::release-notes:partial$nav.adoc[]
