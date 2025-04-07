@@ -17,9 +17,10 @@ Management Center provides a user-friendly interface to monitor performance, vie
 ** Taking thread dumps from nodes
 ** Updating map configurations 
 * *High Availability*. Management Center supports high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes. 
-User Management with Role-Based Access Control. Management Center provides comprehensive role-based access control with different user roles (Admin, User, Read-Only, and Metrics-Only) having varying levels of permissions for different operations.
+* *User Management with Role-Based Access Control*. Management Center provides comprehensive role-based access control with different user roles (Admin, User, Read-Only, and Metrics-Only) having varying levels of permissions for different operations.
 * *Easy Deployment with Docker*. You can quickly get started with Management Center using Docker Compose. For example, you can create a `docker-compose.yml` file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster. 
 * *REST API and Integration*. Management Center offers REST API endpoints to programmatically access the information presented in the UI, making it easier to integrate with other systems and automate monitoring and management tasks. 
+
 Using Management Center, you can manage your Hazelcast deployment, and quickly respond to any issues that may arise.
 
 [[os-requirements]]
@@ -114,6 +115,6 @@ If a page in the documentation requires an Enterprise license, it is labelled [.
 
 For information about the types of support Hazelcast offers, see xref:get-support.adoc[Get support].
 
-== Get Started
+== Next steps
 
-xref:get-started.adoc[].
+For guidance on how to get up and running quickly with Management Center, see xref:get-started.adoc[].
