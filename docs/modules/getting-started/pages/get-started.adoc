@@ -41,7 +41,6 @@ If you do not see a version number, see the link:https://docs.docker.com/get-sta
 ifdef::snapshot[]
 [source,yaml,subs="attributes+"]
 ----
-version: "3.8"
 services:
   hazelcast:
     image: hazelcast/hazelcast:{hz-full-version}
@@ -59,7 +58,6 @@ endif::[]
 ifndef::snapshot[]
 [source,bash,subs="attributes+"]
 ----
-version: "3.8"
 services:
   hazelcast:
     image: hazelcast/hazelcast:{hz-full-version}
