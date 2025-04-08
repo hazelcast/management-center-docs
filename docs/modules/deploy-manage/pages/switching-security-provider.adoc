@@ -20,3 +20,43 @@ This task deletes all existing user accounts and auth tokens.
 
 Then, you can configure another local security provider. For help setting one up, see xref:security-providers.adoc[]
 
+== Fetching the security provider details
+
+You can fetch the configuration details of the security provider to validate if this is set correctly using the `hz-mc conf` tool with the `security get` task.
+Sensitive fields such as `password` or `clientSecret` are masked in the output.
+
+This can be done only when the Management Center web application is stopped.
+
+If the security provider is not set you should see the following:
+```
+{
+  "currentProvider" : null
+}
+```
+If the Dev Mode is set you should see the following:
+```
+{
+  "currentProvider" : "Dev Mode"
+}
+```
+For the other security providers, you should see the list of the configured properties. For example, if the LDAP is configured you should see the following set of properties with the values which were set during the LDAP configuration:
+```
+{
+  "configuration" : {
+    "adminGroup" : "Admins",
+    "startTls" : false,
+    "url" : "ldap://localhost:56830",
+    "nestedGroupSearch" : true,
+    "password" : "****",
+    "groupDn" : "ou=Groups,dc=mancenter,dc=hazelcast,dc=com",
+    "userSearchFilter" : "uid={0}",
+    "groupSearchFilter" : "uniquemember={0}",
+    "readonlyUserGroup" : "Readers",
+    "metricsOnlyGroup" : "Metrics",
+    "userGroup" : "Writers",
+    "userDn" : "ou=Users,dc=mancenter,dc=hazelcast,dc=com",
+    "username" : "cn=admin,dc=mancenter,dc=hazelcast,dc=com"
+  },
+  "currentProvider" : "LDAP"
+}
+```
