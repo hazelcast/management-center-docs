@@ -27,14 +27,13 @@ Updated metrics:
 ** Percentages as ratios (for example, 50% converts to 0.5)
 * Append units to metric names
 * Remove unit labels
-* All metrics have a suffix describing a unit
-* Accumulated metrics have a suffix `_total`
+* Append `_total` to accumulated metrics
 
 The updated metrics are based on link:https://prometheus.io/docs/practices/naming/[Prometheus conventions].
 
 The following examples illustrate the differences between the original and updated metrics.
 
-* Rename and remove `unit` label, add `_total` suffix to mark the accumulating unit-less metric:
+* Rename and remove `unit` label, add `_total` suffix:
 +
 ```
 hz_map_queryCount{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="COUNT",} 0.0 1737715903399
@@ -58,7 +57,7 @@ hz_map_totalMaxRemoveLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster=
 hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="remove",} 0.0 1737715903399
 ```
 
-* Rename and append unit suffix _and_ `_total` suffix for accumulating metrics with units, remove `unit` label, add `remove` label, convert value from milliseconds to seconds:
+* Rename, append unit suffix and `_total` suffix, remove `unit` label, add `remove` label, convert value from milliseconds to seconds:
 +
 ```
 hz_map_totalPutLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 2019.0 1743601193973
@@ -84,7 +83,7 @@ IMPORTANT: If you set the property to `V2`, Management Center will only expose t
 
 Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation.
 
-In some cases, several original metrics are combined into one and differentiated by labels. For example, `map_operations_total` replaces `hz_map_getCount` and `hz_map_setCount` by adding `operation="get"` and `operation="set"` labels.
+In some cases, several original metrics are combined into one and differentiated by labels. For example, `hazelcast_map_operations_total` replaces `hz_map_getCount` and `hz_map_setCount` by adding `operation="get"` and `operation="set"` labels.
 
 .Map
 [%collapsible]
