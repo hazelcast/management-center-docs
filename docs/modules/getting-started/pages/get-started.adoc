@@ -20,7 +20,7 @@ To complete this tutorial, you need the following:
 
 [cols="1a,1a"]
 |===
-|Prerequisites|Useful resources
+|Requirements|Useful resources
 
 |Docker Compose
 |
@@ -82,7 +82,7 @@ You can preconfigure a cluster connection in Management Center by setting the fo
 - MC_DEFAULT_CLUSTER: The cluster name that Management Center connects to.
 - MC_DEFAULT_CLUSTER_MEMBERS: A comma-separated list of the cluster member addresses or host names.
 
-.	In a terminal, change into the directory that you just created.
+.	In a terminal, change to the directory that you just created.
 
 . To pull the required images, and to start up a Management Center instance already connected to a Hazelcast cluster, run the following:
 +
@@ -166,4 +166,4 @@ If you have an Enterprise license or you want to learn about Enterprise features
 
 To serve Management Center over HTTPS instead of HTTP, see xref:deploy-manage:serve-mc-over-https.adoc[].
 
-For the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].
+For information about the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].

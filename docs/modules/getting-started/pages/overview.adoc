@@ -6,7 +6,7 @@
 
 Management Center provides a user-friendly interface to monitor performance, view statistics, and perform administrative tasks.
 
-== Key Features and Benefits
+== Key features and benefits
 
 * *Monitoring and Performance Tracking*. Management Center allows you to monitor the performance of your clusters through its UI, JMX interface, and Prometheus integration. You can view detailed statistics about members, clients, and data structures in real-time, helping you identify performance bottlenecks and optimize your applications.
 * *Execute SQL queries on your clusters*. The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive.
@@ -23,6 +23,8 @@ Management Center provides a user-friendly interface to monitor performance, vie
 
 Using Management Center, you can manage your Hazelcast deployment, and quickly respond to any issues that may arise.
 
+NOTE: For information about what's new, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new] in the Hazelcast Platform documentation.
+
 [[os-requirements]]
 == Requirements
 
@@ -38,7 +40,7 @@ TIP: If you install Hazelcast with Docker or a package manager, it comes with a 
 
 include::{page-latest-supported-hazelcast}@hazelcast:deploy:versioning-compatibility.adoc[tag=supported-jvms]
 
-=== Mac and Windows System Requirements
+=== Mac and Windows system requirements
 
 Management Center uses the RocksDB library to persist metrics
 to disk. Because of this dependency, Mac and Windows users must do one of the following:
@@ -46,16 +48,16 @@ to disk. Because of this dependency, Mac and Windows users must do one of the fo
 * Use the official Management Center docker image.
 * xref:deploy-manage:historical-metrics.adoc#disabling-metrics-persistence[Disable metrics persistence].
 * Meet the following requirements:
-** Mac: Use at least version 10.15 version of Catalina.
-** Windows: Install the Microsoft Visual C++ 2015 redistributable.
+** Mac: use at least version 10.15 version of Catalina.
+** Windows: install the Microsoft Visual C++ 2015 redistributable.
 
-=== Linux System Requirements
+=== Linux system requirements
 
 Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
 
 Experimental support for AIX with Metrics Persistence disabled is provided.
 
-=== Hazelcast Cluster Compatibility
+=== Hazelcast cluster compatibility
 
 Management Center supports the following versions of Hazelcast:
 
@@ -84,7 +86,7 @@ Management Center supports the following versions of Hazelcast:
 |===
 
 [[browser-compatibility]]
-== Browser Compatibility
+== Browser compatibility
 
 Management Center supports the following browsers:
 
@@ -108,7 +110,7 @@ A valid Enterprise license for Hazelcast members is required for the following f
 
 If you do not have a license, you can use non-licensed features to monitor clusters of up to a maximum of three members.
 
-If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
+If a feature in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
 
 [[support]]
 == Get support

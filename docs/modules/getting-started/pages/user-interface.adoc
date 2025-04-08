@@ -1,6 +1,6 @@
 = Top Bar and Side Bar
 :page-aliases: ROOT:user-interface.adoc
-:description: To help you find your way around Management Center, this topic explains the Top Bar and Side Bar items of the user interface.
+:description: To help you find your way around Management Center, this topic explains the Top Bar and Side Bar elements of the user interface.
 
 {description}
 
@@ -8,7 +8,7 @@ The following shows the Management Center user interface:
 
 image:ROOT:TopBarAndSideBar.png[Dashboard Page]
 
-The user interface has a Top Bar on the top and a Side Bar on the left.
+The user interface has a Top Bar running along the top and a Side Bar on the left.
 
 [[top-bar]]
 == Top Bar
@@ -40,7 +40,7 @@ The Side Bar on the left-hand side contains the following elements:
 
 The menu on the left-hand side lists the
 data structures and jobs in your clusters, cluster members and clients connected to
-the cluster (numbers on the right show the instance count for each entity). You can also see an overall state of your cluster,
+the cluster (numbers on the right show the instance count for each entity). You can also see the overall state of your cluster,
 execute commands and scripts, and perform user/license operations using this menu.
 The menu consists of the following parent menu headings:
 
@@ -60,4 +60,4 @@ topics in your cluster.
 * **CP Subsystem**. Includes menu items to monitor CP members and data structures such as Atomic Longs, Semaphores, and Fenced Locks in your cluster.
 * **Useful Links**. Includes several external useful links and an information page for the licensed features.
 
-NOTE: You can resize the menu by dragging the right-hand side of it.
+TIP: You can resize the menu by dragging its right-hand side.

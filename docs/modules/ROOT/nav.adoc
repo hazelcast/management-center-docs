@@ -1,14 +1,14 @@
-.Get Started
+.Get started
 // include::getting-started:partial$nav.adoc[]
 * xref:getting-started:overview.adoc[Overview]
 // ** xref:ROOT:whats-new.adoc[What's new in 5.7]
 * xref:ask-ai.adoc[]
-* xref:getting-started:get-started.adoc[Docker Compose Tutorial]
+* xref:getting-started:get-started.adoc[Using Docker Compose]
 * User Interface overview
 ** xref:getting-started:user-interface.adoc[Top Bar and Side Bar]
 ** xref:getting-started:graphs.adoc[]
 ** xref:getting-started:tables.adoc[]
-* xref:get-support.adoc[Get support]
+* xref:getting-started:get-support.adoc[Get support]
 
 .Install and upgrade
 * xref:getting-started:install.adoc[Install and start]
@@ -99,7 +99,7 @@
 * xref:clusters:healthcheck.adoc[Healthcheck]
 * xref:clusters:namespaces.adoc[Namespaces]
 
-.Storage, Compute & Messaging
+.Storage, compute & messaging
 // include::data-structures:partial$nav.adoc[]
 * xref:data-structures:overview.adoc[]
 * xref:data-structures:vector-collection.adoc[]
@@ -138,7 +138,7 @@
 * xref:troubleshoot:hazelcast-clusters.adoc[Hazelcast clusters]
 * xref:troubleshoot:management-center.adoc[Management Center]
 
-.Release Notes 
+.Release notes
 // include::release-notes:partial$nav.adoc[]
 * xref:release-notes:releases.adoc[Summary]
 * xref:release-notes:5-7-0.adoc[5.7.0]

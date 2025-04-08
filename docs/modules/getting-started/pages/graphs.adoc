@@ -18,8 +18,8 @@ image:ROOT:WidgetLegend.png[]
 
 Graphs work in two modes: 
 
-* Current mode — this fetches current data.
-* Historical mode — this fetches historical data.
+* Current mode—this fetches current data.
+* Historical mode—this fetches historical data.
 
 The current mode is always available. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled.
 
@@ -66,12 +66,12 @@ Every metric is measured using some unit of measurement. You can select metrics 
 
 Graphs support the following types of filters:
 
-. Outliers (auto)
-. Peak Top 3
-. Peak Bottom 3
-. Average Top 3
-. Average Bottom 3
-. Manual Selection
+* Outliers (auto)
+* Peak Top 3
+* Peak Bottom 3
+* Average Top 3
+* Average Bottom 3
+* Manual Selection
 
 === Peak Top 3 and Peak Bottom 3
 

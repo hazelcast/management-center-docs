@@ -1,5 +1,5 @@
 = Tables
-:description: Tables are displayed within the dashboard and on the details page of most data structures. This page explains how to read tables and customize their settings, including the columns shown.
+:description: Tables are displayed within the dashboard and on the details page of most data structures. This topic explains how to read tables and customize their settings, including the columns shown.
 
 {description}
 
@@ -10,7 +10,7 @@ image:ROOT:Table.png[alt=Table, align="center"]
 Tables work in two modes: current and historical. In the current mode, currently live metrics are shown from the cluster. 
 The historical mode offers previously persisted metrics allowing the tables to show metrics back in time. 
 
-The current mode is always available for the connected cluster. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled and persists metrics for the TTL expiry period configured within the Metrics Persistence settings.
+The current mode is always available for the connected cluster. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled and persists metrics for the Time to live (TTL) expiry period configured within the Metrics Persistence settings.
 
 To see the current metrics view, press *RESET TIME*. To switch to the historical mode, click on the field labelled as *Now*, which opens the time selector:
 

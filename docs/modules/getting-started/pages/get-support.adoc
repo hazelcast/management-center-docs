@@ -1,5 +1,5 @@
 = Get support
-:description: Hazelcast provides two types of support: one for the Community Edition, and customer support for the Enterprise Edition.
+:description: Hazelcast provides two types of support: community support for the Community Edition, and customer support for the Enterprise Edition.
 
 {description}
 
@@ -26,13 +26,13 @@ a support ticket on the https://support.hazelcast.com/s/[Hazelcast Support Porta
 
 When submitting a ticket to the team, please provide as much information and data as possible. 
 
-=== Adding details to the support ticket
+=== Create a support ticket
 
 TIP: Make sure that all your environments are capturing Hazelcast diagnostics logs.
 This is key to diagnosing issues with Hazelcast environments.
-If your environments are not capturing diagnostics logs, update them to capture diagnostics logs.
+If your environments are not capturing diagnostics logs, update them to capture these.
 
-Create a support ticket with the following details:
+Provide the following details in the support ticket:
 
 * Add a concise title that describes the problem. 
 This allows the team to route the issue to the appropriate expert.
@@ -50,11 +50,11 @@ Make sure the logs capture data around the date and time of the incident.
 ** Attach Hazelcast process logs.
 ** Attach Hazelcast health monitor logs.
 ** Attach thread dumps from all members.
-** Add networking logs.
-** Add Hazelcast diagnostic logs. Do not truncate diagnostics logs as they only capture Hazelcast
+** Attach Networking logs.
+** Attach Hazelcast diagnostic logs. Do not truncate diagnostics logs as these only capture Hazelcast
 systems specific information and details.
 * Attach the appropriate severity to the ticket.
 ** `PROD` issues that affect production are considered as severity 1. 
 All other issues in other environments are considered severity 2 or 3, depending on urgency.
 ** `DEV` issues are considered as severity 3 and priority low.
-** All other issues, e.g., questions or documentation review are considered as severity 3 or higher.
+** All other issues, e.g., questions or documentation feedback review are considered as severity 3 or higher.
