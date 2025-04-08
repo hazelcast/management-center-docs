@@ -23,7 +23,7 @@ Management Center provides a user-friendly interface to monitor performance, vie
 
 Using Management Center, you can manage your Hazelcast deployment, and quickly respond to any issues that may arise.
 
-NOTE: For information about what's new, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new] in the Hazelcast Platform documentation.
+NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
 
 [[os-requirements]]
 == Requirements
