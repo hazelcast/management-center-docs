@@ -1,4 +1,4 @@
-= Production Checklist
+= Production checklist
 :description: Before going into production, you should have a high availability setup and a secure deployment of Management Center.
 :page-aliases: ROOT:high-availability
 
@@ -10,7 +10,7 @@ Before going into production, you should review the following list of recommenda
 
 - For Docker deployments, persist the `hazelcast-mc` directory.
 
-== Setting Up High Availability Deployments
+== Setting Up high availability deployments
 [[high-availability]]
 
 When you have only a single instance of Management Center connected to your cluster, that instance is a single point of failure. If Management Center goes offline for any reason, you will not be able to use it to manage your cluster. To make your deployment more robust, you can connect multiple instances of Management Center to a cluster. This way, if one instance goes down, you will still have the others.
@@ -29,7 +29,7 @@ Client filtering rules are synchronized among instances of Management Center tha
 
 Review the security documentation to make sure that Management Center is secure before going into production. See xref:security.adoc[].
 
-=== Disabling Scripting and Console
+=== Disabling scripting and console
 
 Scripting engines give code access to the underlying system on the members (files and other resources) and run with the same permissions as the current user. And, the console allows users to interact with the cluster.
 
@@ -37,7 +37,7 @@ For security, scripting and the console are disabled in the member configuration
 
 If you enabled scripting or the console, be sure to disable it before going into production. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.
 
-== Persisting Management Center Data in Docker
+== Persisting Management Center data in Docker
 
 When you upgrade Management Center with Docker, you will lose all configuration and metrics data unless you persist the `hazelcast-mc` directory before upgrading.
 
