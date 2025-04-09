@@ -1,4 +1,4 @@
-= Connecting to a Cluster from the UI
+= Connect from the UI
 :description: You can configure the Hazelcast client for Management Center, using the UI.
 :page-aliases: ROOT:managing-clusters.adoc
 
@@ -13,12 +13,12 @@ If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to confi
 
 NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
-== Using the Form Fields
+== Use the form fields
 [[creating-a-cluster-configuration-using-form]]
 
-. Click to *Cluster Connections* in the Top Bar.
+. Click *Cluster Connections* in the Top Bar.
 
-. Click *Add* to start configuring a new connection.
+. Click *Add* to configure a new connection.
 +
 image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
@@ -49,13 +49,13 @@ You will see the following:
 |Total number of members in the cluster.
 
 |Clients
-|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[]
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[].
 
 |===
 
-If your cluster has the Jet engine enabled, you will also see that the cluster support streaming and SQL.
+If your cluster has the Jet engine enabled, you will also see that the cluster supports streaming and SQL.
 
-To connect to another cluster, you can repeat these steps.
+To connect to another cluster, repeat these steps.
 
 == Using a Client Configuration File
 [[creating-a-cluster-configuration-by-uploading-file]]
@@ -106,9 +106,9 @@ hazelcast-client:
 +
 As soon as Management Center connects to one member, it will auto-discover the other members of the cluster. But, for fault-tolerance, it's best to add more than one member's address to the `cluster-members` configuration.
 
-. Click to *Cluster Connections* in the Top Bar.
+. Click *Cluster Connections* in the Top Bar.
 
-. Click *Add* to start configuring a new connection.
+. Click *Add* to configure a new connection.
 +
 image:ROOT:AddClusterConfig.png[alt=Add New Cluster Configuration]
 
@@ -137,54 +137,52 @@ You will see the following:
 |Total number of members in the cluster.
 
 |Clients
-|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[]
+|Total number of clients currently connected to the cluster, not including the Management Center client. See xref:clusters:clients.adoc[].
 |===
 
-If your cluster has the Jet engine enabled, you will also see that the cluster support streaming and SQL.
+If your cluster has the Jet engine enabled, you will also see that the cluster supports streaming and SQL.
 
-To connect to another cluster, you can repeat these steps with a different configuration file.
+To connect to another cluster, repeat these steps with a different configuration file.
 
-NOTE: Management Center requires a connection to every member in order to collect its state, events and metrics so unisocket connections are not supported.  An error message will be shown if the configuration uses a unisocket connection.
+NOTE: Management Center requires a connection to every member in order to collect its state, events and metrics so unisocket connections are not supported. An error message appears if the configuration uses a unisocket connection.
 
-== Cluster Connection Diagnosis
+== Cluster connection diagnosis
 
-In case Management Center could not connect to a cluster, you can run the cluster connection diagnostics by clicking on the
-**DIAGNOSE** button.
+If Management Center cannot connect to a cluster, run the cluster connection diagnostics by clicking **DIAGNOSE**.
 
 image:ROOT:DiagnoseButton.png[Diagnose button]
 
-Management Center runs a bunch of connectivity checks including:
+Management Center runs various connectivity checks including whether:
 
-- whether the hostname can be resolved
-- whether the connection ports are open
-- whether the configured cluster name matches the one configured on a member
-- whether Management Center can be authenticated by the members
-- whether Management Center has permissions to manage the cluster.
+- The hostname can be resolved.
+- The connection ports are open.
+- The configured cluster name matches the one configured on a member.
+- Management Center can be authenticated by the members.
+- Management Center has permissions to manage the cluster.
 
 image:ROOT:ConnectionDiagnosis.png[Cluster connection diagnosis result]
 
-Connection diagnostics process may take up to 30 seconds, please wait until you receive a `FAIL` check with an
+The connection diagnostics process may take up to 30 seconds—wait until you receive a `FAIL` check with an
 explanation or cancel the diagnostics.
 
-== Removing a Cluster Connection
+== Remove a cluster connection
 
 To remove an existing connection to a cluster, go to *Cluster Connections* in the Top Bar and click the *trash icon* above the name of the cluster that you want to disconnect from Management Center.
 
 image:ROOT:RemoveConnection.png[Trash icon above the name of a cluster called dev]
 
-== Editing a Cluster Connection
+== Edit a cluster connection
 
 To edit an existing connection, go to *Cluster Connections* in the Top Bar and click the *configure icon* (next to the *trash icon*) above the name of the cluster.
 
 image:ROOT:EditConnection.png[Configure icon above the name of a cluster called dev]
 
-If you connected to the cluster from the form fields, you can edit the form.
+If you connected to the cluster from the form fields, edit the form.
 
-If you connected to the cluster, using a client configuration file, you can upload a new configuration file.
+If you connected to the cluster using a client configuration file, upload a new configuration file.
 
 NOTE: To see the existing configuration file, click the *eye icon* above the box.
 
-
-== Next Steps
+== Next steps
 
 Explore the xref:clusters:dashboard.adoc[Clusters dashboard].

@@ -21,7 +21,7 @@ logging.level.org.hibernate.validator=${hazelcast.mc.log.level:WARN}
 logging.level.org.eclipse.jetty=WARN
 ----
 
-== Changing the Log Level
+== Change the log level
 
 To change the logging level for all loggers, start
 Management Center with the `hazelcast.mc.log.level` property. For example, to use the debug logging level, start Management Center with the following line:
@@ -39,7 +39,7 @@ For example,
 -Dlogging.level.org.springframework=INFO
 ```
 
-== Customizing the Logging Configuration
+== Customize the logging configuration
 
 To further customize the logging configuration, you can create a custom
 Log4j 2 configuration file and start Management Center with
@@ -47,7 +47,7 @@ the `logging.config` property.
 
 For example, you can create a file named `log4j2-custom.properties` with the following
 content and write log messages into rolling log files.
-To use this file as the logging configuration, you would start Management Center with the
+To use this file as the logging configuration, start Management Center with the
 `-Dlogging.config=/path/to/your/log4j2-custom.properties` command line parameter:
 
 [source,properties]
@@ -71,7 +71,7 @@ rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.rolling.ref=RollingFile
 ----
 
-To enable JSON logging, you can activate `json-logging` profile by starting Management Center with the following parameter:
+To enable JSON logging, activate the `json-logging` profile by starting Management Center with the following parameter:
 ----
 -Dspring.profiles.active=json-logging
 ----
@@ -84,7 +84,7 @@ NOTE: To use a custom JSON logging template, you must activate the `json-logging
 
 For more information about the JSON logging templates, see the link:https://logging.apache.org/log4j/2.x/manual/json-template-layout.html[Log4j2 JSON Layout documentation].
 
-== Audit Logging
+== Audit logging
 
 To make it easier to examine suspicious activity and troubleshoot issues, you can use audit logging to keep a record of events that happen in Management Center such as user logins.
 
@@ -101,7 +101,7 @@ An example log entry looks like the following:
 
 `MC-2001 [Auth]` you see in this example represents the log's type.
 
-=== Audit Logging Event Types
+=== Audit logging event types
 
 The following table lists the current log categories along with their
 types:
@@ -176,7 +176,7 @@ types:
 
 |===
 
-=== Writing Audit Logs to Rolling Files
+=== Write audit logs to rolling files
 
 To write audit logs to separate rolling log files, you can use a Log4j 2 configuration file such as the following:
 
