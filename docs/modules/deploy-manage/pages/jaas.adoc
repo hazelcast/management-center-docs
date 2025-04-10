@@ -47,7 +47,7 @@ on the Management Center.
 * **Metrics-only Group:** Members of this group have the privilege to see
 only the metrics on the Management Center.
 
-== Create and Manage users
+== Create and manage users
 
 To create and manage additional users, you must configure them in your JAAS login module.
 

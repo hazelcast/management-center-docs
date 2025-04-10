@@ -79,7 +79,7 @@ you will be redirected back to Management Center as a logged in user.
 NOTE: Management Center uses the `sub` claim to determine the user's ID and the `preferred_username`
 claim to determine which username to show in the user interface. Make sure your OpenID provider returns these two claims, when asked.
 
-== Create and Manage users
+== Create and manage users
 
 To create and manage additional users, you must register them with your OpenID Connect provider.
 
