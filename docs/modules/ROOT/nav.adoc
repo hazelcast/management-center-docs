@@ -3,7 +3,7 @@
 * xref:getting-started:overview.adoc[Overview]
 // ** xref:ROOT:whats-new.adoc[What's new in 5.7]
 * xref:ask-ai.adoc[]
-* xref:getting-started:get-started.adoc[Using Docker Compose]
+* xref:getting-started:get-started.adoc[Docker Compose tutorial]
 * User Interface overview
 ** xref:getting-started:user-interface.adoc[Top Bar and Side Bar]
 ** xref:getting-started:graphs.adoc[]
