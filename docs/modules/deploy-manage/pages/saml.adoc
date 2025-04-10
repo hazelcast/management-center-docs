@@ -3,7 +3,7 @@
 
 {description}
 
-== Setting Up the SAML Security Provider
+== Set up the SAML security provider
 
 To set up SAML, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
@@ -66,12 +66,12 @@ you will be redirected back to Management Center as a logged in user.
 NOTE: If your identity provider needs service provider metadata XML, you can use the `saml/metadata` endpoint
 to view/download it once you configure SAML. For example, `\http://localhost:8080/saml/metadata`.
 
-== Creating and Managing Users
+== Create and Manage users
 
 To create and manage additional users, you must register them with your identity provider.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

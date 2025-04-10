@@ -3,7 +3,7 @@
 
 {description}
 
-== Setting Up the OpenID Connect Security Provider
+== Set up the OpenID Connect security provider
 
 To set up OpenID Connect, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
@@ -79,12 +79,12 @@ you will be redirected back to Management Center as a logged in user.
 NOTE: Management Center uses the `sub` claim to determine the user's ID and the `preferred_username`
 claim to determine which username to show in the user interface. Make sure your OpenID provider returns these two claims, when asked.
 
-== Creating and Managing Users
+== Create and Manage users
 
 To create and manage additional users, you must register them with your OpenID Connect provider.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

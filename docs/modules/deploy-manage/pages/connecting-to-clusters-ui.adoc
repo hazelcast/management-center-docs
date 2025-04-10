@@ -57,7 +57,7 @@ If your cluster has the Jet engine enabled, you will also see that the cluster s
 
 To connect to another cluster, repeat these steps.
 
-== Using a Client Configuration File
+== Use a client configuration file
 [[creating-a-cluster-configuration-by-uploading-file]]
 
 . Create a client configuration file.

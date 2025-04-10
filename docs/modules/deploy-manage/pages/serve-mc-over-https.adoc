@@ -37,7 +37,7 @@ If you don't see a list of commands, install Java.
 You can use any browser, but this tutorial uses Firefox because it's simple to configure Firefox to trust self-signed certificates.
 |===
 
-== Create a Key Pair
+== Create a key pair
 
 To be able to use HTTPS, you need to generate a public/private key pair that Management Center can use to encrypt the HTTP traffic.
 

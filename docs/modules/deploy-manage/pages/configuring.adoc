@@ -1,4 +1,4 @@
-= Configuring Management Center
+= Configure Management Center
 :description: You can use various options to configure the Management Center instance as well as the client that Management Center uses to connect to and interact with Hazelcast clusters.
 
 {description}
@@ -44,7 +44,7 @@ You can either configure Management Center in the UI while it's running or preco
 
 |===
 
-=== Configuring the client 
+=== Configure the client 
 
 Because Management Center connects to Hazelcast clusters as a client, you can configure it, using the following methods:
 
@@ -62,6 +62,6 @@ never gives up trying to connect to the cluster.
 - `network.smart-routing`: Set to `true` so that Management Center will open connections to all
 members.
 
-=== Member-Side configuration
+=== Member-side configuration
 
 On a Hazelcast member, you can also use the `management-center` setting to enable or disable both scripting and the console as well as setting up trusted interfaces. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#management-center[Management Center] in the Platform documentation.

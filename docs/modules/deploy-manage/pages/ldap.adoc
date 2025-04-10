@@ -3,7 +3,7 @@
 
 {description}
 
-== Setting Up the LDAP Security Provider
+== Set up the LDAP security provider
 
 To set up LDAP, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
@@ -71,13 +71,13 @@ NOTE: Values for **Admin**, **User**, **Read-only** and **Metrics-Only** group n
 be given as plain names. They should not contain any LDAP attributes such
 as `CN`, `OU` and `DC`.
 
-== Creating and Managing Users
+== Create and manage users
 
 To create and manage additional users, you must configure them on the LDAP server.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Updating LDAP Settings
+== Update LDAP settings
 
 Once configured, LDAP settings are saved in a local database managed by Management Center.
 If you need to update your settings afterwards, you need to provide the import properties file under `<hazelcast-mc>/import/securityHotReload.properties`, and then click on the **Reload Security Config** button on the login page.
@@ -109,13 +109,13 @@ but you need to stop Management Center for this configuration option.
 See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 [[ldap-ssl]]
-== Enabling TLS/SSL for LDAP
+== Enable TLS/SSL for LDAP
 
 If your LDAP server is using `ldaps` (LDAP over SSL) protocol or the *Start TLS* operation, use the command line parameters
 for your Management Center deployment xref:deploy-manage:system-properties.adoc#hazelcast-mc-ldap-ssl-protocol[LDAP SSL configuration options].
 
 [[password-encryption]]
-== Password Encryption
+== Password encryption
 
 By default, the password that you use in the LDAP configuration is stored in a plain text in a local database.
 This might pose a security risk.
@@ -137,7 +137,7 @@ when configuring LDAP security provider.
 See xref:deploy-manage:variable-replacers.adoc[] for more information.
 
 [[providing-a-master-key-for-encryption]]
-=== Providing a Master Key for Encryption
+=== Provide a master key for encryption
 
 There are two ways to provide a master key for encryption:
 
@@ -158,7 +158,7 @@ change the location of this file by using the
 `hazelcast.mc.keyStore.path` property.
 
 [[configuring-an-external-java-keystore]]
-=== Configuring an External Java KeyStore
+=== Configure an external Java keyStore
 
 If you don't want Management Center to create a keystore for you and
 use an existing one that you've created before (or an HSM), set the
@@ -177,15 +177,15 @@ of your HSM's `java.security.Provider` implementation if you use an HSM.
 NOTE: Make sure your keystore supports storing secret keys.
 
 [[updating-encrypted-passwords]]
-== Updating Encrypted Passwords
+== Update encrypted passwords
 
 You can use the ` ldap update-password` task in the `hz-mc conf` tool to update
 the encrypted LDAP password stored in the keystore.
 
 This command expects information about the keystore such as its location and
-password and the new LDAP password that you want to use. After updating the LDAP password, you need to click
-on the **Reload Security Config** button on the Management Center login page.
+password and the new LDAP password that you want to use. After updating the LDAP password, click 
+**Reload Security Config** on the Management Center login page.
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

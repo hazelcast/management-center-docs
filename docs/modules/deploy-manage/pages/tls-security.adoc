@@ -51,7 +51,7 @@ to the following appears in the logs:
 ```
 
 [[including-excluding-specific-cipher-suites]]
-== Include and Exclude cipher suites
+== Include and exclude cipher suites
 
 When you configure TLS, you also can provide which cipher suites Management Center can use
 for establishing a TLS connection. You can include cipher suites with the `hazelcast.mc.include.cipher.suites` property

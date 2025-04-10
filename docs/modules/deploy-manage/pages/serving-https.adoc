@@ -7,7 +7,7 @@ To serve Management Center over HTTPS, you need to enable TLS in the Management 
 
 == Enable TLS for Management Center
 
-To enable TLS, you need to do the following:
+To enable TLS:
 
 . Generate key pairs and a signed certificate. If you are using a self-signed certificate, see <<self-signed-certificates, Self-Signed Certificates>> on this page.
 
