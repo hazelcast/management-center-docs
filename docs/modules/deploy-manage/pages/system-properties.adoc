@@ -1,4 +1,4 @@
-= System Properties and Environment Variables
+= System properties and environment variables
 :description: You can use system properties and environment variables to configure many aspects of Management Center, from JMX to the home directory and feature flags. These properties give you the power to tweak settings at startup without having to configure anything in the UI.
 :page-aliases: ROOT:configuring.adoc
 
@@ -14,7 +14,7 @@ TIP: You may also need to use other environment variables. For the Docker refere
 
 You can use properties to configure both Management Center and Management Center's client connection strategy on startup.
 
-== Management Center Configuration
+== Management Center configuration
 
 If an environment variable is available, it is listed under the system property in the Property column.
 
@@ -1103,7 +1103,7 @@ hz-mc start -Dazelcast.mc.ui.asyncTableThreshold=1000
 |===
 
 [[client-config]]
-== Client Connection Strategy Configuration
+== Client connection strategy configuration
 
 Use the following properties to configure the connection strategy of the Management Center client.
 

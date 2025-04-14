@@ -1,9 +1,9 @@
-= Local Security Provider
+= Local security provider
 :description: You can use the local security provider to control authentication and authorization in Management Center. With this security provider, user accounts are stored in Management Center's database.
 
 {description}
 
-== Setting Up the Local Security Provider
+== Set up the local security provider
 
 To set up the local security provider, you need to create an admin user, using either the UI or the `hz-mc conf` tool.
 
@@ -50,7 +50,7 @@ Passwords *must not* include the following:
 * A 3-character or longer sequence of letters following or preceding each other such as "abc" or "fed".
 * A 3-character or longer sequence of digits following or preceding each other such as "123" or "987".
 
-== Creating Users
+== Create users
 
 To create additional users, admin users can use the UI or you can use the `hz-mc conf` tool.
 
@@ -82,7 +82,7 @@ mc-conf.bat user create -n <username> -r admin -p
 --
 ====
 
-== Using a Dictionary to Prevent Weak User Passwords
+== Use a dictionary to prevent weak user passwords
 
 To prevent certain words from being included in user
 passwords, you can use a dictionary.
@@ -123,7 +123,7 @@ mc-start.cmd -Dhazelcast.mc.security.dictionary.path=/usr/MCtext/pwd.txt ^
 --
 ====
 
-== Changing User Passwords
+== Change user passwords
 
 To change user passwords in the local security provider, admin users can use the UI or you can use the `hz-mc conf` tool.
 
@@ -160,6 +160,6 @@ NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only
 --
 ====
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
