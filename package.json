@@ -6,7 +6,7 @@
   "license": "ISC",
   "scripts": {
     "load-antora-playbook": "load-global-playbook",
-    "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml",
+    "build": "npm run load-antora-playbook && antora --to-dir docs --fetch global-antora-playbook.yml && cp _redirects docs",
     "load-antora-playbook-local": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos --skip-redirects-download",
     "build-local": "npm run load-antora-playbook-local && antora --to-dir test --fetch global-antora-playbook.yml",
     "load-validate-docs-playbook": "load-global-playbook -b main -r hazelcast/management-center-docs --skip-private-repos --enforce-global-sources",
