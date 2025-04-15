@@ -9,3 +9,4 @@
 .cache
 /build/
 global-antora-playbook.yml
+_redirects
