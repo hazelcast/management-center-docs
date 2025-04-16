@@ -1,0 +1,24 @@
+= Diagnostic Logging
+:description: Hazelcast offers an extended set of diagnostics plugins for both Hazelcast members and clients. A dedicated log file is used to write the diagnostics content, and a rolling file approach is used to prevent taking up too much disk space.
+
+{description}
+
+== Enabling Diagnostics Logging
+
+To enable diagnostics logging, click the `Enable` button, confirm the action, and wait until the process is finished.
+
+image:ROOT:DisabledDiagnosticLogging.png[Enabling Diagnostic Logging]
+
+image:ROOT:ConfirmEnablingDiagnosticLogging.png[Confirm Enabling Diagnostic Logging]
+
+You must be an admin user to access this feature.
+
+When diagnostic logging is enabled, a notification is displayed at the top of every page.
+
+image:ROOT:EnabledDiagnosticLoggingNotification.png[Diagnostic Logging Notification]
+
+== Disabling Diagnostics Logging
+
+To disable diagnostics logging, click the `Disable` button and wait until the process is finished.
+
+image:ROOT:EnabledDiagnosticLogging.png[Disabling Diagnostic Logging]
