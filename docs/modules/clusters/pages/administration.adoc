@@ -12,6 +12,7 @@ From this menu item, you can do the following:
 
 - xref:changing-cluster-state.adoc[Change the state of a cluster]
 - xref:shutting-down-cluster.adoc[Shut down a cluster]
+- xref:diagnostic-logging.adoc[Diagnostic logging]
 - xref:cluster-license.adoc[View details about a cluster's license]
 - xref:triggering-rolling-upgrade.adoc[Trigger a rolling upgrade]
 - xref:persistence.adoc[Manage clusters that have persistence enabled]

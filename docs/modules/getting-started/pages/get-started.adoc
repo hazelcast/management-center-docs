@@ -45,7 +45,7 @@ ifdef::snapshot[]
 ----
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{hz-full-version}
+    image: hazelcast/hazelcast:latest
     ports:
     - "5701:5701"
   management-center:
@@ -62,7 +62,7 @@ ifndef::snapshot[]
 ----
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{hz-full-version}
+    image: hazelcast/hazelcast:latest
     ports:
     - "5701:5701"
   management-center:
