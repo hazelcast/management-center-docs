@@ -19,5 +19,7 @@ asciidoc:
     page-latest-supported-clc: '5.4.1'
     page-toclevels: 1
     experimental: true
+    open-source-product-name: 'Community Edition'
+    enterprise-product-name: 'Enterprise Edition'
 nav:
   - modules/ROOT/nav.adoc

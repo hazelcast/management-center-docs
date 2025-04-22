@@ -5,11 +5,11 @@
 
 == TLS/SSL
 
-You can configure Management Center to communicate over TLS/SSL for secure, encrypted traffic. For information, see xref:tls-security.adoc[].
+You can configure Management Center to communicate over TLS/SSL for secure, encrypted traffic. See xref:tls-security.adoc[].
 
 == User sessions
 
-To secure users' sessions, you can configure session timeouts and user login attempts. For information, see xref:sessions.adoc[].
+To secure users' sessions, you can configure session timeouts and user login attempts. See xref:sessions.adoc[].
 
 == User security providers
 
@@ -17,4 +17,4 @@ To authenticate user logins, you can choose from a variety of security providers
 
 == Logging
 
-To keep a record of events such as user logins, you can configure Management Center to keep an audit log. For information, see xref:logging.adoc#audit-logging[Audit Logging].
+To keep a record of events such as user logins, you can configure Management Center to keep an audit log. See xref:logging.adoc#audit-logging[Audit Logging].
