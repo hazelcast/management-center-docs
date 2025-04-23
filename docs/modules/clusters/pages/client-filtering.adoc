@@ -1,4 +1,4 @@
-= Managing Client Connections
+= Manage client connections
 :description: When you use failover clients, you can disconnect them from one cluster and connect them to another, using client filtering in Management Center.
 :page-aliases: monitor-imdg:client-filtering.adoc
 :page-enterprise: true
@@ -9,13 +9,13 @@ If you configure clients with one or more xref:{page-latest-supported-hazelcast}
 
 - Prepare for planned maintenance on the primary cluster.
 - Balance the load across multiple clusters.
-- Shift the clients’ connection back from a failover cluster to its primary cluster.
+- Shift the client's connection back from a failover cluster to its primary cluster.
 
 NOTE: Moving clients from one cluster to another is most useful when your clusters replicate data across each other. See xref:wan-replication.adoc[].
 
-== Filter Lists
+== Filter lists
 
-Clusters allow or disallow client connections, using rules that are defined in a filter list. You can deploy filter lists to your connected clusters, using the UI or the REST API in Management Center.
+Clusters allow or disallow client connections using rules that are defined in a filter list. You can deploy filter lists to your connected clusters, using the UI or the REST API in Management Center.
 
 When a cluster receives a filter list, it applies the rules to any new or existing client connections.
 
@@ -24,11 +24,11 @@ Management Center supports the following types of filter list:
 - *Allow list*: Clients that *are allowed* to connect to the cluster.
 - *Deny list*: Clients that *are not allowed* to connect to the cluster.
 
-To adjust the modes see xref:deploy-manage:system-properties.adoc#hazelcast-mc-client-client-filtering-modes[system-properties]
+To adjust the modes, see xref:deploy-manage:system-properties.adoc#hazelcast-mc-client-client-filtering-modes[system-properties].
 
 image:ROOT:ClientFilteringView.png[Client Filtering View]
 
-== Client Address Types
+== Client address types
 
 You can filter clients, using the following types:
 
@@ -47,7 +47,7 @@ values that start with the `green` string.
 |A string that matches the client's name in the client's configuration. This string can include
 wildcard characters (`\*`).
 |`*-client` refers
-to any instance name that end with the `-client` string.
+to any instance name that ends with the `-client` string.
 
 |IP Address
 |IP address of a client (IPv4 or
@@ -63,7 +63,7 @@ TIP: It's useful to assign roles to your clients by configuring them with labels
 When a cluster member receives the deployed filter list, it immediately applies the list to
 all currently connected clients and then uses it for newly connecting
 clients. Clients on the deny-list connect to another cluster
-only if they are configured with a failover cluster. Otherwise,
+only if they are configured with a failover cluster; otherwise,
 clients on the deny-list shut down.
 
 NOTE: If some cluster members are not reachable from Management Center, those members keep using the last filter list that they received.
@@ -120,10 +120,10 @@ The deployment of filter lists must be confirmed by clicking the *Confirm Deploy
 A summary of client connectivity is shown after the current filter lists have been applied.
 <<client-filtering-preview, Preview>> can be enabled by clicking a toggle control.
 
-IMPORTANT: If the current filter lists disconnect all clients, the warning (*All clients will be blocked if you apply current client filtering configuration*) is displayed on the top of a modal.
+IMPORTANT: If the current filter lists disconnect all clients, the warning *All clients will be blocked if you apply current client filtering configuration* is displayed on the top of a modal.
 
 [[client-filtering-synchronization]]
-== Synchronization of Filter Lists Across Multiple Instances of Management Center
+== Synchronization of filter lists across multiple instances of Management Center
 
 If you have more than one instance of Management Center connected to the same cluster, the cluster synchronizes changes to its filter lists among all Management Center instances. When you create, update, or delete an active filter list, the cluster receives the filter list and sends it to the other connected instances of Management Center. Any existing filter lists on those instances of Management Center are overwritten.
 
@@ -135,26 +135,26 @@ configuration was updated by another Management Center instance
 
 image:ROOT:ClientFilteringUpdated.png[Client Filtering Updated]
 
-== Reconnecting Clients to the Primary Cluster
+== Reconnect clients to the primary cluster
 
-If your clients are configured to automatically failover to a secondary cluster, disconnecting a client from its primary cluster using a filter list will make the client to connect to the secondary cluster. When the filter list is deactivated, the client won't automatically reconnect to the primary cluster because it now has an active connection to the secondary cluster.
+If your clients are configured to automatically failover to a secondary cluster, disconnecting a client from its primary cluster using a filter list will make the client connect to the secondary cluster. When the filter list is deactivated, the client won't automatically reconnect to the primary cluster because it now has an active connection to the secondary cluster.
 
 To restore the client's connection to the primary cluster, you must deploy a new filter list to the secondary cluster. This action will disconnect the client from the secondary cluster, allowing it to cycle through the defined clusters in its configuration and reconnect to the primary cluster.
 
-== Configuring Client Filtering Modes
+== Configure client filtering modes
 
 By default, the available modes for Client Filtering are `ALLOWLIST` and `DENYLIST`. However, the default modes can be customized using the `hazelcast.mc.clientFiltering.modes` system property.
 
-For instance, if you prefer not to enable the use the `DENYLIST` mode to block clients from accessing the cluster, you can override the default setting. This customization allows you to tailor client filtering options according to your specific requirements. See xref:deploy-manage:system-properties.adoc[System Properties] for more details.
+For instance, if you prefer not to enable the use of the `DENYLIST` mode to block clients from accessing the cluster, you can override the default setting. This customization allows you to tailor client filtering options according to your specific requirements. See xref:deploy-manage:system-properties.adoc[System Properties] for more details.
 
-== Related Resources
+== Related resources
 
 See
 xref:hazelcast:clients:java.adoc#blue-green-deployment-and-disaster-recovery[Blue-Green Deployment and Disaster Recovery]
 in the Platform documentation.
 
 [[changing-cluster-client-filtering-example]]
-== Next Steps
+== Next steps
 
 - xref:create-filter-lists-ui.adoc[].
 

@@ -1,4 +1,4 @@
-= Dashboard Page
+= Cluster dashboard
 :description: The cluster dashboard provides an overview of the general state and health of a cluster.
 :page-aliases: monitor-imdg:monitor-cluster.adoc, monitor-imdg:dashboard.adoc
 
@@ -76,12 +76,12 @@ This chart displays the percentage of partitions that each cluster member owns.
 image:ROOT:PartitionDistribution.png[Partition Distribution per Member]
 
 In the above example, you can see that two members share
-the total partition count (which is 271 by default). See xref:{page-latest-supported-hazelcast}@hazelcast:overview:data-partitioning.adoc[] in the Platform documentation
+the total partition count (which is 271 by default). See xref:{page-latest-supported-hazelcast}@hazelcast:overview:data-partitioning.adoc[] in the Platform documentation.
 
 NOTE: This chart does not display any information
 until you create at least one distributed data structure. When you create a new cluster, partitions do not yet exist. Once you connect
 to your cluster and, for example, create a map,
-only then this chart starts to show partition distribution information.
+only then will this chart show partition distribution information.
 
 To see the exact number of partitions owned by each member, see the xref:members.adoc[*Members* page] in Management Center.
 
@@ -139,6 +139,6 @@ heap memory outside of the JVM that is guaranteed to be available to the running
 
 |===
 
-== Related Resources
+== Related resources
 
 For details about GC events, see link:https://plumbr.io/blog/garbage-collection/minor-gc-vs-major-gc-vs-full-gc[Minor GC vs Major GC].

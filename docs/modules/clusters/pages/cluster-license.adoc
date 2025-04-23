@@ -1,4 +1,4 @@
-= Viewing a Cluster License
+= View a cluster license
 :description: You can use the Cluster License tab of the Administration menu item to see details about your cluster's license.
 
 You can use the *Cluster License* tab of the *Administration* menu item to see details about your cluster's license.
@@ -14,7 +14,7 @@ image:ROOT:ClusterLicense.png[Cluster License page]
 
 Warnings are displayed when a license expires within 30 days.
 
-== Related Resources
+== Related resources
 
 Even if members are installed with a license, you cannot use Enterprise features in Management Center until you install the license on Management Center as well. See xref:deploy-manage:license-management.adoc[].
 

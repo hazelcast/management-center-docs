@@ -59,14 +59,14 @@ represents an opened file in the operating system.
 
 |===
 
-== Filtering Members
+== Filter members
 
 To filter the displayed members, use the *Search* bar in the right-hand corner.
 
 To sort the
 table, click on the column headers.
 
-== Viewing Details about a Member
+== View details about a member
 
 To see more details about a particular member, click on the member's row in the table.
 
@@ -100,7 +100,7 @@ The **Heap and Native Memory** chart shows the percentage
 of CPU usage on the selected member. The **CPU Load and Used Memory** chart shows the memory usage on the
 selected member. You can open
 each chart as a separate dialog using
-the maximize image:ROOT:MaximizeChart.png[maximize] button.
+the maximize button image:ROOT:MaximizeChart.png[maximize]
 
 To customize the data displayed in the graphs, see xref:getting-started:graphs.adoc[]
 
@@ -238,9 +238,9 @@ but it is typically a damped time-dependent average.
 [[member-properties]]
 === Properties
 
-Next to the **Runtime** tab, the **Properties** tab shows the member's system properties.
+The **Properties** tab (next to the **Runtime** tab) shows the member's system properties.
 
-=== Member Configuration
+=== Member configuration
 
 Management Center receives the member configuration in XML format. As a result, even if you used a different configuration format such as YAML, it will be displayed in XML.
 
@@ -250,7 +250,7 @@ To view a member's configuration:
 
 . Scroll down to *Member Configuration* at the bottom of the page.
 
-=== Slow Operations
+=== Slow operations
 
 If a member has slow operations, you can view the detected slow
 operations which occurred on that member. The data is collected by the
@@ -269,7 +269,7 @@ image:ROOT:MembersWithSlowOperations.png[Member Grid View With Expanded Slow Ope
 
 image:ROOT:SlowOperationDetail.png[Slow Operations Details]
 
-=== Clock Synchronization
+=== Clock synchronization
 Any time difference greater than one minute between the Management Center and a member can cause synchronization
 issues, delayed responses or data loss. To prevent such issues, Management Center would report the members that have such
 time differences to the user.
@@ -278,5 +278,5 @@ You can view the detected members in the warning notification that is positioned
 
 image:ROOT:ClockSynchronization.png[Clock Synchronization]
 
-It is highly recommended to synchronize the Management Center JVM clock with the clocks of the members in the cluster
+We recommended you synchronize the Management Center JVM clock with the clocks of the members in the cluster
 to ensure consistent time. Clock synchronization can help to promote optimal performance and proper communication.
