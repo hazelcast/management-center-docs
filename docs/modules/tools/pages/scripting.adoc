@@ -5,7 +5,7 @@
 You can use the scripting feature of the Management Center to execute scripts
 on the cluster.
 
-== Before you Begin
+== Before you begin
 
 Scripting is disabled by default, and you need to enable it
 in your cluster's configuration. See the
@@ -45,7 +45,7 @@ before, select it from this list and press the **Delete** button.
 
 In the scripting engine you have a `HazelcastInstance` bonded to a variable
 named `hazelcast`. You can invoke any method that `HazelcastInstance` has via
-the `hazelcast` variable. You can see an example usage for JavaScript below:
+the `hazelcast` variable. An example usage for JavaScript is below:
 
 [source,javascript]
 ----
@@ -57,7 +57,7 @@ employees.get("1"); // will return "John Doe"
 ----
 
 [[scripting-languages]]
-== Enabling Scripting Languages
+== Enable scripting languages
 
 Hazelcast members use the `javax.script.ScriptEngineManager` API for the execution of the script.
 The JavaScript engine is available in most JVMs of versions older than 15 by default.
