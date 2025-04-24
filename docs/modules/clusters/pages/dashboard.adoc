@@ -7,7 +7,7 @@
 image:ROOT:Dashboard.png[Cluster dashboard page]
 
 [[cluster-state-and-health]]
-== Cluster Status
+== Cluster status
 
 The *Cluster Status* section provides the following details:
 
@@ -37,7 +37,7 @@ xref:healthcheck.adoc[].
 |===
 
 [[heap-memory-distribution]]
-== Heap Memory Distribution
+== Heap memory distribution
 
 The *Heap Memory Distribution* section provides a quick view of how much free heap memory is available to the cluster.
 
@@ -69,7 +69,7 @@ is used by Hazelcast maps.
 To see the heap memory usage of each member, see <<resources-utilization, Resources Utilization>>
 
 [[partition-distribution]]
-== Partition Distribution
+== Partition distribution
 
 This chart displays the percentage of partitions that each cluster member owns.
 
@@ -90,7 +90,7 @@ To see the exact number of partitions owned by each member, see the xref:members
 To customize the data displayed in the graphs, see xref:getting-started:graphs.adoc[].
 
 [[memory-utilization]]
-== Resources Utilization
+== Resources utilization
 
 The *Resources Utilization* section provides information about the memory usage and CPU load of each member.
 

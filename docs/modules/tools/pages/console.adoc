@@ -1,4 +1,4 @@
-= Executing Console Commands
+= Execute console commands
 :description: The console feature allows you to execute client operations using the built-in Hazelcast Command-Line Client (CLC).
 :page-aliases: monitor-imdg:console.adoc
 :experimental: true
