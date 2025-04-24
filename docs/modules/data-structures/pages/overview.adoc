@@ -1,8 +1,10 @@
 = Overview
-:description: You can monitor data structures in your cluster using the *Storage*, *Compute*, and *Messaging* menus in Management Center.
+// :description: You can monitor data structures in your cluster using the *Storage*, *Compute*, and *Messaging* menus in Management Center.
 :page-aliases: monitor-imdg:monitor-dds.adoc
 
-{description}
+// {description} Commented out as bold tags do not work properly when used within the description
+
+You can monitor data structures in your cluster using the *Storage*, *Compute*, and *Messaging* menus in Management Center.
 
 == Storage
 

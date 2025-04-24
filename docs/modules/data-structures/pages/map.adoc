@@ -3,7 +3,7 @@
 
 You can see a list of all the maps in your cluster
 by clicking on the **Maps** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:MapGridView.png[Map Grid View]
 
@@ -14,10 +14,10 @@ instance on the right, as shown below.
 
 image:ROOT:MonitoringMaps.png[Monitoring Maps]
 
-The below subsections explain the portions of this window.
+The sections below explain the portions of this window.
 
 [[clear-map]]
-== Removing Entries from a Map
+== Remove entries from a map
 
 You can use the *Clear Data* button to remove all entries from the map.
 
@@ -28,7 +28,7 @@ In the confirmation modal, enter the map name and confirm that you want to remov
 image:ROOT:ClearMapDataConfirmation.png[Clear Map Data Confirmation]
 
 [[map-browser]]
-== Exploring Map Entries
+== Explore map entries
 
 You can use the Map Browser tool to retrieve properties of the
 entries stored in a selected map. To open the Map Browser
@@ -38,8 +38,8 @@ dialog, as shown below.
 
 image:ROOT:MapBrowser.png[Map Browser]
 
-Once the key and the key's type are specified and the **Browse**
-button is clicked, the key's properties along with its value are
+Specify the key and the key's type, then click the **Browse**
+button. The key's properties along with its value are
 listed.
 
 .Map Browser fields
@@ -104,26 +104,26 @@ image:ROOT:MapBrowserWithCustomTypedValue.png[Map Browser with Custom Typed Valu
 
 NOTE: Management Center allows you to access contents of Hazelcast data structures (for instance map entries) via SQL Browser or Map Browser. It may be useful to restrict data access for Management Center if sensitive financial or personal information is stored in the cluster. Management Center cannot access the data if at least one member has the data access disabled. You can disable data access for Management Center in the member configuration file. See the xref:hazelcast:maintain-cluster:monitoring.adoc#managing-data-access[Managing Data Access] section.
 
-== Configuring a Map
+== Configure a map
 
-You can use the Map Config tool to set the selected map's attributes, such
+Use the Map Config tool to set the selected map's attributes, such
 as the max size, TTL, and eviction policy. To open the Map Config
 tool, click on the **Map Config** button, located at the top right of
 the window. Once opened, the tool appears as a dialog, as shown below.
 
 image:ROOT:MapConfig.png[Map Config Tool]
 
-You can change any attribute and click the **Save Configuration** button to save
+Change any attribute and click the **Save Configuration** button to save
 your changes.
 
 NOTE: The Map configuration is updated only on the members that Management Center is aware of at the time of the update. When a new member joins the cluster, the updated map configuration is not propagated to it.
 If a member has persistence enabled, the updated map configuration is not persisted to disk and the updates are lost on the next restart.
 
 [[map-monitoring]]
-== Monitoring a Map
+== Monitor a map
 
-Besides the Map Browser and Map Config tools, the map monitoring
-page shows two graphs that show various metrics of the map.
+In addition to the Map Browser and Map Config tools, the map monitoring
+page shows two graphs that display various map metrics.
 See the xref:getting-started:graphs.adoc[graph section] for more information.
 
 Under these charts are **Map Statistics**, **Map Throughput**,
@@ -244,12 +244,12 @@ From left to right, this table lists the following:
 
 |===
 
-You can select the time period in the combo box placed in the top
+Select the time period in the combo box found in the top
 right corner of the window, for which the table data will be
 shown. Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.
 
-To ascend or descend the order of the listings, click on the
+To display listings in ascending or descending order, click on the
 column headings.
 
 [[member-near-cache-data]]**Member Near Cache Table** provides information about the Member Near
@@ -284,7 +284,7 @@ From left to right, this table lists the following:
 
 |===
 
-To ascend or descend the order of the listings, click on the
+To display listings in ascending or descending order, click on the
 column headings.
 
 [[map-index-stats]]
@@ -389,7 +389,8 @@ From left to right this table lists the following:
 
 |===
 
-To ascend or descend the order of the listings, click on the column headings.
+To display listings in ascending or descending order, click on the
+column headings.
 
 [[map-client-near-cache-summary-data]]
 **Client Near Cache Summary** provides summary information related to the Near Cache statistics aggregated for all the clients that have Near Cache enabled for this map.
@@ -398,7 +399,7 @@ _1 minute_, _5 minutes_, _30 minutes_ and _60 minutes_.
 Currently, the table shows overall Near Cache effectiveness, calculated as hits/total reads ratio.
 
 NOTE: You need to enable the statistics for clients to see them here.
-See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
+See xref:clusters:clients.adoc[Monitoring Clients] for details.
 
 image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 
@@ -406,7 +407,7 @@ image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 **Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this map, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
-See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
+See xref:clusters:clients.adoc[Monitoring Clients] for details.
 
 image:ROOT:ClientNearCacheDataTable.png[Maps Client Near Cache Data Table]
 
@@ -452,5 +453,5 @@ From left to right, this table lists the following:
 
 |===
 
-To ascend or descend the order of the listings, click on the
+To display listings in ascending or descending order, click on the
 column headings.
