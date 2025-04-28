@@ -42,7 +42,7 @@ list of possible WAN publisher states.
 * **Events Published per Second**: Number of published events
 per second. Please see the paragraph below.
 * **Average Event Latency**: Average latency of sending a record
-to the target from this member. See the below for details.
+to the target from this member. See below for details.
 * **Outbound Queue Fill Ratio**: Percentage of how full the outbound queue is. +
 Outbound Queue Fill Ratio = (Outbound Queue Size / Outbound Queue Capacity) * 100
 * **Outbound Queue Size**: Number of records waiting in the queue
