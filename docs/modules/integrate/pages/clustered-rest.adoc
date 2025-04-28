@@ -113,7 +113,7 @@ Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
 Label: 'test_user_2021-07-07T17:24 EEST'
 ```
 
-==== Useg Auth Token Management UI
+==== Use Auth Token Management UI
 
 . Click *Settings* in the Top Bar.
 . Navigate to the *API* tab.
