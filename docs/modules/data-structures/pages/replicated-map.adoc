@@ -8,8 +8,8 @@ panel. A new page appears on the right, as shown below.
 image:ROOT:ReplicatedMapGridView.png[Replicated Map Grid View]
 
 You can filter the Replicated Maps shown and also
-sort the table by clicking on the column headers. Clicking on
-a Replicated Map name opens a new page for monitoring
+sort the table by clicking on the column headers. Click on
+a Replicated Map name to open a new page for monitoring
 that Replicated Map instance on the right, as shown below.
 
 image:ROOT:MonitoringReplicatedMaps.png[Monitoring Replicated Maps]
@@ -81,7 +81,7 @@ From left to right, this table lists the following:
 
 |===
 
-You can select the period from the combo box placed at the top
+Select the period from the combo box located in the top
 right corner of the window, in which the table data is shown.
 Available values are **Since Beginning**, **Last Minute**,
 **Last 10 Minutes** and **Last 1 Hour**.

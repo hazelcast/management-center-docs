@@ -3,18 +3,18 @@
 
 You can see a list of all the caches in your cluster by
 clicking on the **Caches** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:CacheGridView.png[Cache Grid View]
 
 You can filter the caches shown and sort the table
-by clicking on the column headers. Clicking on
-the cache name opens a new page for monitoring that cache
+by clicking on the column headers. Click on
+the cache name to open a new page for monitoring that cache
 instance on the right, as shown below.
 
 image:ROOT:MonitoringCaches.png[Monitoring Caches]
 
-On top of the page, there are two graphs that show various metrics of the cache.
+At the top of the page are two graphs that show various metrics for the cache.
 See the xref:getting-started:graphs.adoc[graph section] for more information.
 
 Under these charts are **Cache Statistics**, **Cache Throughput**, and **Client Near Cache**
@@ -57,10 +57,10 @@ cache on each member.
 
 |===
 
-To ascend or descend the order of the listings, click on the
+To list entries in ascending or descending order, click on the
 column headings.
 
-[[cache-throughput]]**Cache Throughput Statistic Table** provides information about the
+The [[cache-throughput]]**Cache Throughput Statistics Table** provides information about the
 operations (get, put, remove) performed on each member for the selected
 cache.
 
@@ -76,13 +76,13 @@ corner of the window, for which the table data will be shown. Available built-in
 values are **Since Beginning**, **Last Minute**, **Last 10 Minutes**
 and **Last 1 Hour**.
 
-You can ascend or descend the order of the listings in each column
-by clicking on column headings.
+To list entries in ascending or descending order, click on the
+column headings.
 
 [[cache-client-near-cache-summary-data]]
 **Client Near Cache Summary** provides summary information related to the Near Cache statistics aggregated for all the clients that have Near Cache enabled for this cache.
 Aggregated statistics are shown for the following periods:
-_1 minute_, _5 minutes_, _30 minutes_ and _60 minutes_.
+**1 minute**, **5 minutes**, **30 minutes** and **60 minutes**.
 Currently, the table shows overall Near Cache effectiveness, calculated as hits/total reads ratio.
 
 NOTE: You need to enable the statistics for clients to see them here.
@@ -91,7 +91,7 @@ See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
 image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 
 [[cache-client-near-cache-data]]
-**Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this cache, as shown below.
+The **Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this cache, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
 See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
@@ -141,12 +141,12 @@ From left to right, this table lists the following:
 |===
 
 
-To ascend or descend the order of the listings, click on the
+To list entries in ascending or descending order, click on the
 column headings.
 
 NOTE: You need to enable the statistics for caches to monitor them
 in the Management Center. Use the `<statistics-enabled>` element or
 `setStatisticsEnabled()` method in declarative or programmatic
-configuration, respectively, to enable the statistics. Please refer
+configuration, respectively, to enable the statistics. Refer
 to the xref:{page-latest-supported-hazelcast}@hazelcast:jcache:setup.adoc#jcache-declarative-configuration[JCache Declarative Configuration]
 section for more information.
