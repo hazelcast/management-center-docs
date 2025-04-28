@@ -1,4 +1,4 @@
-= Updating Cluster Configuration at Runtime
+= Update cluster configuration at runtime
 :description: You can add YAML or XML configuration blocks to your running cluster, without needing to restart it.
 :page-enterprise: true
 
@@ -6,7 +6,7 @@
 
 Go to *Administration* > *Update Config*.
 
-== Supported Configuration
+== Supported configuration
 
 Management Center allows you to add configuration for the following at runtime.
 
@@ -14,7 +14,7 @@ TIP: A configuration block is one that is a direct child of `hazelcast`.
 
 - New data structure blocks
 +
-NOTE: You cannot add map indexes, using the *Update Config* page. To add map indexes, use the xref:{page-latest-supported-hazelcast}@hazelcast:sql:create-index.adoc[`CREATE INDEX`] statement in the xref:tools:sql-browser.adoc[SQL browser].
+NOTE: You cannot add map indexes using the *Update Config* page. To add map indexes, use the xref:{page-latest-supported-hazelcast}@hazelcast:sql:create-index.adoc[`CREATE INDEX`] statement in the xref:tools:sql-browser.adoc[SQL browser].
 
 - New WAN Replication blocks
 
@@ -33,7 +33,7 @@ ifndef::snapshot[]
 - link:https://github.com/hazelcast/hazelcast/tree/v{page-latest-supported-hazelcast}.0/hazelcast/src/main/resources/hazelcast-full-example.yaml[YAML example]
 endif::[]
 
-== Submitting New Configuration to the Cluster 
+== Submit new configuration to the cluster 
 
 You can add configuration blocks to the text field or you can upload a YAML or XML configuration file.
 
@@ -79,13 +79,13 @@ image:ROOT:UpdateConfigFinishedResult.png[Update Config Finished Result]
 .Failure result
 image:ROOT:UpdateConfigResult.png[Update Config Failed Result]
 
-To view the applied changes or errors click the *Result* button.
+To view the applied changes or errors, click the *Result* button.
 
 == Troubleshooting
 
 Use this section to find suggestions for resolving errors that may occur with dynamic configuration.
 
-=== Failed Results
+=== Failed results
 
 Configuration updates are not atomic. For example if you submit a new configuration block for a map and a queue, the map configuration block may be successfully applied, but the queue configuration block may fail. In this case the map configuration block is not reverted, but you will see a *Failed* result.
 

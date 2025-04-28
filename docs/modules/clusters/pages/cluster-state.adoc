@@ -1,4 +1,4 @@
-= Cluster State
+= Cluster state
 :description: You can use the Cluster State tab of the Administration menu item to see your cluster's name, state, and to shut down the whole cluster.
 
 You can use the *Cluster State* tab of the *Administration* menu item to see your cluster's name, state, and to shut down the whole cluster.
@@ -9,7 +9,7 @@ This page is available only to admin users.
 - *Cluster State*: The current state of the cluster. To learn about changing the state, see xref:changing-cluster-state.adoc[].
 - *Cluster Shutdown*: Trigger a graceful cluster-wide shutdown. See xref:shutting-down-cluster.adoc[].
 
-== Related Resources
+== Related resources
 
 For details about cluster states, see xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:cluster-member-states.adoc[] in the Platform documentation.
 

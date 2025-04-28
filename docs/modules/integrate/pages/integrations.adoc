@@ -1,5 +1,5 @@
 = Integrations
-:description: Management Center provides integrations with Prometheus and JMX and provides a fully featured Clustered REST API for all the Clusters that it is connected to.
+:description: Management Center provides integrations with Prometheus and JMX, and provides a fully featured Clustered REST API for all the clusters it's connected to.
 
 {description}
 
@@ -9,4 +9,4 @@ Use one of the following integrations to access cluster metrics:
 
 - xref:jmx.adoc[Clustered JMX]: Java Management Extensions (JMX) is a Java technology that supplies tools for managing and monitoring resources. Those resources are represented by objects called MBeans (managed beans).
 
-- xref:clustered-rest.adoc[Clustered REST]: Clustered REST is a REST API that allows you to request statistics from a cluster, using HTTP methods and manage the Client Filtering configuration.
+- xref:clustered-rest.adoc[Clustered REST]: Clustered REST is a REST API that allows you to request statistics from a cluster, using HTTP methods, and manage the Client Filtering configuration.
