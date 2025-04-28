@@ -1,4 +1,4 @@
-= PN Counters
+= PN counters
 [[monitoring-pn-counters]]
 
 You can see a list of all the PN counters in your cluster by

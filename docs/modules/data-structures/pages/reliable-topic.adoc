@@ -1,4 +1,4 @@
-= Reliable Topics
+= Reliable topics
 [[monitoring-reliable-topics]]
 
 You can see a list of all the Reliable Topics in your cluster by

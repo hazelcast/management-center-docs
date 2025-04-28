@@ -1,4 +1,4 @@
-= Replicated Maps
+= Replicated maps
 [[monitoring-replicated-maps]]
 
 You can see a list of all the Replicated Maps in your cluster

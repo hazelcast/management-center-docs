@@ -1,4 +1,4 @@
-= Flake ID Generators
+= Flake ID generators
 [[monitoring-flake-id-generators]]
 
 You can see a list of all Flake ID Generators in your
