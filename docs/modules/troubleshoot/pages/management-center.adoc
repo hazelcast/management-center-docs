@@ -1,18 +1,18 @@
 = Troubleshooting Management Center
 :page-aliases: ROOT:automated-security-scan.adoc, ROOT:troubleshooting.adoc, ROOT:ui-logs.adoc
 
-This section describes how to deal with known issues and also how to read the user interface logs of Management Center.
+This topic describes how to deal with known issues and also how to read the user interface logs of Management Center.
 
-== Automated Security Scanning
+== Automated security scanning
 
 When you scan Management Center artifacts, your tool might warn you about the following
-vulnerabilities. Management Center security is *not* affected by them. It uses a custom
+vulnerabilities. Management Center security is *not* affected by these. It uses a custom
 version of H2DB which is patched against these vulnerabilities.
 
 * https://nvd.nist.gov/vuln/detail/CVE-2018-10054[CVE-2018-10054^]
 * https://nvd.nist.gov/vuln/detail/CVE-2018-14335[CVE-2018-14335^]
 
-== Horizontal Scrollbar in Tables when Using Mac
+== Horizontal scrollbar in tables when using Mac
 
 Mac automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
 
@@ -20,7 +20,7 @@ The scrollbar should hide shortly after you stop scrolling. This is the default 
 cause any inconvenience. However, if you still want to change it, address "Show scroll bars" section of the
 link:https://support.apple.com/guide/mac-help/change-general-preferences-mchlp1225/mac["Change General preferences on Mac" guide].
 
-== Experience Timeout
+== Experience timeout
 
 If you experience a timeout when running scripts or SQL queries, you can increase the timeout value 
 in the xref:deploy-manage:system-properties.adoc#hazelcast-mc-cluster-operation-timeout[`hazelcast.mc.cluster.operation.timeout.millis`] property.

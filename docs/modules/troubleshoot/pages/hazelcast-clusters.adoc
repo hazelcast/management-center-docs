@@ -1,26 +1,27 @@
-= Troubleshooting Hazelcast Clusters
+= Troubleshooting Hazelcast clusters
 :description: Management Center writes log entries for each connection failure and allows you to trigger garbage collection and take thread dumps.
 
-{description} This section describes how to work with these operations to help identifying the issues in a Hazelcast cluster.
+{description} This topic describes how to work with these operations to help identify the issues in a Hazelcast cluster.
 
-== Logs for Cluster Connection Failures
+== Logs for cluster connection failures
 
 Management Center logs all cluster connection failures, their reasons and retry attempts to `hz-client.log` in `hazelcast.mc.home` directory.
 
-== Running Garbage Collection
+== Running garbage collection
 
-Running a garbage collection means cleaning up a member's memory, e.g., removing the unused
-data structure objects. It is not recommended to run it unless instructed by the Hazelcast support team.
+Running a garbage collection means cleaning up a member's memory, for example, removing the unused
+data structure objects. 
+Hazelcast do not recommend you run it unless instructed to do so by the Hazelcast support team.
 
 To run garbage collection for a specific member, go to **Cluster** > **Members** and select
 the member in question. In the member details screen, you will see **Run GC**.
 
 image:run-gc.png[RUN GC button]
 
-Once you click the button, you will be asked to confirm. Note that this operation
-does not write information to a file, only cleans up the member's memory in the background.
+Click the button, and you will be prompted to confirm. Note that this operation
+does not write information to a file, it only cleans up the member's memory in the background.
 
-== Taking a Thread Dump
+== Taking a thread dump
 
 Thread dumps may be useful to troubleshoot a member that is deadlocked or slow;
 they provide detailed information on threads, including the state for each thread.
@@ -28,7 +29,7 @@ We recommend collecting and providing multiple thread dumps when submitting a su
 
 To take a thread dump for a member, go to **Cluster** > **Members** and select
 the member in question. In the member details screen, you will see **Thread Dump** next to **Run GC** 
-as shown in the above screenshot. This operation shows the collected thread dump in a separate dialog.
+as shown in the above screenshot. This operation shows the collected thread dump in a separate dialog box.
 
 image:thread-dump.png[Thread Dump]
 
