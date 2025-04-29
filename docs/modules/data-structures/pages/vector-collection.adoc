@@ -1,10 +1,10 @@
-= Vector Collections
+= Vector collections
 :description: Learn how to use and monitor vector collections within Management Center.
 [[managing-vector-collections]]
 
 You can see a list of all the vector collections in your cluster
 by clicking on the **Vector Collections** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:VectorCollectionGrid.png[Vector Collection Grid View]
 
@@ -36,10 +36,10 @@ image:ROOT:MonitoringVectorCollection.png[Monitoring Vector Collection]
 
 
 [[vector-collection-monitoring]]
-== Monitoring a Vector Collection
+== Monitor a vector collection
 
 The vector collection monitoring
-page shows two graphs that show various metrics for the vector collection. For more info on using graphs, see xref:getting-started:graphs.adoc[Graphs].
+page shows two graphs that display various metrics for the vector collection. For more information, see xref:getting-started:graphs.adoc[Graphs].
 
 Under these charts are **Vector Collection Statistics** and **Vector Collection Throughput** data tables.
 
@@ -114,8 +114,7 @@ From left to right, this table lists the following:
 
 |===
 
-You can ascend or descend the order of the listings by clicking on
-the column headings.
+To display the list in ascending or descending order, click on the column headings.
 
 [[vector-collection-throughput]]**Vector Collection Throughput Table** provides information about the operations
 (get, put, remove) performed on each member in the vector collection, as shown below.
@@ -224,12 +223,13 @@ From left to right, this table lists the following:
 
 |===
 
-You can select the time period for the table using the combo box in the top
+Select the time period for the table using the combo box in the top
 right corner of the window:
+
 * Since Beginning
 * Last Minute
 * Last 10 Minutes
 * Last 1 Hour
 
-To change the order of entries to ascending or descending, click on
+To display entries in ascending or descending order, click on
 the appropriate column heading.
