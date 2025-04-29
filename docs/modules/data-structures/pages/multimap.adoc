@@ -16,6 +16,6 @@ a MultiMap name to open a new page for monitoring that
 MultiMap instance on the right.
 
 [[multimap-statistics]]This monitoring option is similar to the
-**Maps** option: the same monitoring charts and data tables monitor
+**Maps** option in that the same monitoring charts and data tables monitor
 MultiMaps. The difference is that you cannot browse MultiMaps
-and re-configure it. See the <<managing-maps, Managing Maps>>.
+and re-configure them. See the <<managing-maps, Managing Maps>>.

@@ -60,7 +60,7 @@ cache on each member.
 To list entries in ascending or descending order, click on the
 column headings.
 
-The [[cache-throughput]]**Cache Throughput Statistics Table** provides information about the
+The [[cache-throughput]]**Cache Throughput Statistics** table provides information about the
 operations (get, put, remove) performed on each member for the selected
 cache.
 
@@ -91,7 +91,7 @@ See the xref:clusters:clients.adoc[Monitoring Clients section] for details.
 image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 
 [[cache-client-near-cache-data]]
-The **Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this cache, as shown below.
+The **Client Near Cache** table provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this cache, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
 See the xref:clusters:clients.adoc[Monitoring Clients section] for details.

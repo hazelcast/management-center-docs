@@ -8,8 +8,8 @@ page appears on the right, as shown below.
 image:ROOT:MapGridView.png[Map Grid View]
 
 You can filter the maps shown and you can also sort
-the table by clicking on the column headers. Clicking
-on a map name opens a new page for monitoring that map
+the table by clicking on the column headers. Click
+on a map name to open a new page for monitoring that map
 instance on the right, as shown below.
 
 image:ROOT:MonitoringMaps.png[Monitoring Maps]
@@ -19,22 +19,22 @@ The sections below explain the portions of this window.
 [[clear-map]]
 == Remove entries from a map
 
-You can use the *Clear Data* button to remove all entries from the map.
+Use the *Clear Data* button to remove all entries from the map.
 
 image:ROOT:ClearMapData.png[Clear Map Data View]
 
-In the confirmation modal, enter the map name and confirm that you want to remove all entries from the map.
+When prompted, enter the map name and confirm that you want to remove all entries from the map.
 
 image:ROOT:ClearMapDataConfirmation.png[Clear Map Data Confirmation]
 
 [[map-browser]]
 == Explore map entries
 
-You can use the Map Browser tool to retrieve properties of the
+Use the Map Browser tool to retrieve properties of the
 entries stored in a selected map. To open the Map Browser
 tool, click on the **Map Browser** button, located at the
 top right of the window. Once opened, the tool appears as a
-dialog, as shown below.
+dialog box, as shown below.
 
 image:ROOT:MapBrowser.png[Map Browser]
 
@@ -109,7 +109,7 @@ NOTE: Management Center allows you to access contents of Hazelcast data structur
 Use the Map Config tool to set the selected map's attributes, such
 as the max size, TTL, and eviction policy. To open the Map Config
 tool, click on the **Map Config** button, located at the top right of
-the window. Once opened, the tool appears as a dialog, as shown below.
+the window. Once opened, the tool appears as a dialog box, as shown below.
 
 image:ROOT:MapConfig.png[Map Config Tool]
 
@@ -129,7 +129,7 @@ See the xref:getting-started:graphs.adoc[graph section] for more information.
 Under these charts are **Map Statistics**, **Map Throughput**,
  **Member Near Cache**, and **Client Near Cache** data tables.
 
-[[map-statistics]]**Map Statistic Table** provides statistics distributed
+The [[map-statistics]]**Map Statistics** table provides statistics distributed
 over the members, as shown below.
 
 image:ROOT:MapStatisticDataTable.png[Map Statistic Data Table]
@@ -188,10 +188,10 @@ map but not written to/removed from a database yet.
 
 |===
 
-You can ascend or descend the order of the listings by clicking on
+To display entries in ascending or descending order, click on
 the column headings.
 
-[[map-throughput]]**Map Throughput Table** provides information about the operations
+The [[map-throughput]]**Map Throughput Statistics** table provides information about the operations
 (get, put, remove) performed on each member in the map, as shown below.
 
 image:ROOT:MapThroughputDataTable.png[Map Throughput Data Table]
@@ -252,7 +252,7 @@ shown. Available values are **Since Beginning**, **Last Minute**,
 To display listings in ascending or descending order, click on the
 column headings.
 
-[[member-near-cache-data]]**Member Near Cache Table** provides information about the Member Near
+The [[member-near-cache-data]]**Member Near Cache** table provides information about the Member Near
 Caches, if available, on each member, as shown below.
 
 image:ROOT:MemberNearCacheDataTable.png[Member Near Cache Data Table]
@@ -403,8 +403,8 @@ See xref:clusters:clients.adoc[Monitoring Clients] for details.
 
 image:ROOT:ClientNearCacheSummaryTable.png[Maps Client Near Cache Summary]
 
-[[map-client-near-cache-data]]
-**Client Near Cache Table** provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this map, as shown below.
+The [[map-client-near-cache-data]]
+**Client Near Cache** table provides information about the Near Caches statistics, if available, on each client that has Near Cache enabled for this map, as shown below.
 
 NOTE: You need to enable the statistics for clients to see them here.
 See xref:clusters:clients.adoc[Monitoring Clients] for details.

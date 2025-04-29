@@ -54,7 +54,7 @@ From left to right, this table lists the following:
 
 |===
 
-[[replicated-map-throughput]]Replicated Map Throughput Table provides information about
+The [[replicated-map-throughput]]**Replicated Map Throughput Statistics** table provides information about
 operations (get, put, remove) performed on each member in the selected
 Replicated Map.
 

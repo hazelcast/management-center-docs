@@ -17,7 +17,7 @@ image:ROOT:MonitoringTopics.png[Monitoring Topics]
 At the top of the page are two graphs that show various metrics for the topic.
 See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
-Under these charts is the [[topic-throughput-statistics]]Topic Throughput Statistics table. From
+Under these charts is the [[topic-throughput-statistics]]**Topic Throughput Statistics** table. From
 left to right, this table lists the IP addresses and ports of each
 member, and counts of the messages published and received per second
 in real-time.

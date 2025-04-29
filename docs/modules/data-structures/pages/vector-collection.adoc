@@ -231,5 +231,5 @@ right corner of the window:
 * Last 10 Minutes
 * Last 1 Hour
 
-To change the order of entries to ascending or descending, click on
+To display entries in ascending or descending order, click on
 the appropriate column heading.
