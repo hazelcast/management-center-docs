@@ -10,4 +10,4 @@ A semaphore has two metrics;
 - *Initialized*: Whether the semaphore is initialized with a value.
 - *Available*: Number of remaining permits.
 
-You can sort the table by clicking on the column headers.
+Sort the table by clicking on the column headers.

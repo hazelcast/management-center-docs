@@ -1,8 +1,8 @@
-= Atomic References
+= Atomic references
 
 You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:data-structures:iatomicreference.adoc[atomic references] in your cluster
 by clicking on the **Atomic References** menu item in the left menu.
 
 image:ROOT:AtomicReferences.png[Atomic References View]
 
-You can sort the table by clicking on the column headers.
+Sort the table by clicking on the column headers.

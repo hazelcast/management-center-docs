@@ -1,4 +1,4 @@
-= Fenced Locks
+= Fenced locks
 
 You can see a list of all the xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:fencedlock.adoc[fenced locks] in your cluster
 by clicking on the **Fenced Locks** menu item in the left menu.
@@ -10,9 +10,9 @@ A fenced lock has two fixed metrics:
 - *Acquire Limit*: Maximum number of reentrant acquires, which is configured in the CP member's xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:configuration.adoc#fencedlock-configuration[`lock-acquire-limit`] option.
 - *Lock Count*: Total number of times the lock has been acquired.
 
-If lock is held by an endpoint, the following additional metrics are displayed:
+If the lock is held by an endpoint, the following additional metrics are displayed:
 
 - *Owner Session Id*: xref:dashboard.adoc#session[Session] ID of the lock owner.
 - *Owner*: Address of the lock owner.
 
-You can sort the table by clicking on the column headers.
+Sort the table by clicking on the column headers.
