@@ -167,7 +167,7 @@ If everything goes well, a success message is displayed.
 
 If an exception occurs, an error notification is displayed.
 [[terminate]]
-== Forcing a Session to Close
+== Forcing a session to close
 
 If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
 
