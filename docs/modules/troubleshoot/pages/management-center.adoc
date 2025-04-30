@@ -5,7 +5,7 @@ This topic describes how to deal with known issues and also how to read the user
 
 == Automated security scanning
 
-When you scan Management Center artifacts, your tool might warn you about the following
+When you scan Management Center artifacts, the tool might warn you about the following
 vulnerabilities. Management Center security is *not* affected by these. It uses a custom
 version of H2DB which is patched against these vulnerabilities.
 
@@ -17,7 +17,7 @@ version of H2DB which is patched against these vulnerabilities.
 Mac automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
 
 The scrollbar should hide shortly after you stop scrolling. This is the default behavior and it shouldn't
-cause any inconvenience. However, if you still want to change it, address "Show scroll bars" section of the
+cause any inconvenience. However, if you still want to change it, see the "Show scroll bars" section of the
 link:https://support.apple.com/guide/mac-help/change-general-preferences-mchlp1225/mac["Change General preferences on Mac" guide].
 
 == Experience timeout
