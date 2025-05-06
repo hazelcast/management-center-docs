@@ -3,7 +3,7 @@
 
 {description}
 
-== Setting Up the JAAS Security Provider
+== Set up the JAAS security provider
 
 To set up JAAS, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
@@ -47,7 +47,7 @@ on the Management Center.
 * **Metrics-only Group:** Members of this group have the privilege to see
 only the metrics on the Management Center.
 
-== Creating and Managing Users
+== Create and manage users
 
 To create and manage additional users, you must configure them in your JAAS login module.
 
@@ -133,6 +133,6 @@ public class SampleLoginModule implements LoginModule {
 }
 ----
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

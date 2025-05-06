@@ -1,10 +1,10 @@
-= User Management
-:description: Users in Management Center have roles that determine what permissions they have. For example, an admin user has access to all features, whereas a metrics-only user can only view metrics and can't see the data. To create and manage users, it depends on which security provider you are using.
+= User management
+:description: Users in Management Center have roles that determine what permissions they have. For example, an admin user has access to all features, whereas a metrics-only user can only view metrics and can't see the data. How you create and manage users depends on the security provider you are using.
 :page-aliases: ROOT:managing-users.adoc
 
 {description}
 
-== User Roles
+== User roles
 
 All users need one of the following roles:
 
@@ -14,7 +14,7 @@ All users need one of the following roles:
 |Role|Permissions
 
 |Admin
-|Administrator privileges give users access to all features. Only admin users can update user's passwords, create new users, or manage Enterprise licenses.
+|Administrator privileges give users access to all features. Only admin users can update user passwords, create new users, or manage Enterprise licenses.
 
 |User
 |Users have read and write access to Management Center.
@@ -27,7 +27,7 @@ a thread dump on a cluster member, or shutting down members or clusters.
 |Users can only view metrics that are displayed in Management Center.
 |===
 
-The following is a detailed table showing the actions that can or cannot be performed per user role.
+The following table shows details of the actions that can or cannot be performed for each user role.
 
 .Actions
 [cols="2,3,1,1,1,1"]
@@ -257,12 +257,12 @@ The following is a detailed table showing the actions that can or cannot be perf
 |&check;
 |===
 
-== New Users
+== New users
 
-You can create new users and assign those users a role. The way in which you create new users depends on the security provider that you use to authenticate users in Management Center. See xref:security-providers.adoc[].
+You can create new users and assign those users a role. The way in which you create new users depends on the security provider that you use to authenticate users in Management Center. For information, see xref:security-providers.adoc[].
 
-== Authentication Tokens
+== Authentication tokens
 
 To use the REST API, users need an authentication token, unless you are an admin user and you are using dev mode.
 
-The way in which you generate an authentication token depends on your chosen security provider. See xref:integrate:clustered-rest.adoc[].
+The way in which you generate an authentication token depends on your chosen security provider. For information, see xref:integrate:clustered-rest.adoc[].

@@ -4,13 +4,13 @@
 
 The Management Center Configuration Tool (`hz-mc conf`) is a command line tool that allows you to automate processes that require configuring Management Center, without using the UI.
 
-This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed and Management Center must not be running while using the tool.
+This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed on, and Management Center must not be running while using the tool.
 
-== Getting Started
+== Get started
 
 To use the `hz-mc conf` tool, execute the `hz-mc conf` command in the `bin/` directory of the Management Center distribution. This command is available as a shell script (`hz-mc conf`) for Linux and Mac or a batch file (`mc-conf.bat`) for Windows.
 
-. Make sure that Management Center is not running.
+. Make sure Management Center isn't running.
 +
 You cannot use this tool while Management Center is running.
 
@@ -126,7 +126,7 @@ The `hz-mc conf` tool comes with the following commands. Each command includes t
 
 |===
 
-== Skipping the Check for a Lock File
+== Skip the check for a lock file
 
 When you execute `hz-mc conf` or `mc-conf.bat`, the script checks if Management Center is running by looking for a lock file called `mc.lock` in the Management Center home directory. If the `mc.lock` file is found, the script exits with an error. You can disable this check by starting Management Center with the xref:system-properties.adoc#hazelcast-mc-lock-skip[`hazelcast.mc.lock.skip` property].
 
@@ -136,15 +136,15 @@ export JAVA_OPTS='-Dhazelcast.mc.lock.skip=true'
 hz-mc conf ...
 ----
 
-This property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
+This property can be useful when you run Management Center on Kubernetes, and the home directory is on a mounted persistent volume. In this case, when Kubernetes restarts the container for any reason, the `mc.lock` file won't be deleted, therefore the next startup will be prevented due to the lock file.
 
-== Hiding Sensitive Configuration in the UI
+== Hide sensitive configuration in the UI
 
 The `set sensitive-properties` task configures the sensitive properties that must not be shown in plain text in Management Center.
 `--hidden-properties` is a comma-separated list of member properties to be hidden in the member properties.
 `--masked-config-properties` is a comma-separated list of XPath expressions in the member configuration to be masked.
 
-== Secure Interactive Prompt for Passwords
+== Secure interactive prompt for passwords
 
 By default, passwords are displayed in the console as you type. If you want to hide your password from the console, you can use a secure interactive prompt.
 
@@ -160,13 +160,12 @@ or use without value to enter securely with interactive prompt.): ********
 Successfully changed password for user 'admin'.
 ```
 
-As you see in the above example, the password input is not echoed to the console
-since it is provided with the secure interactive mode.
+As you can see in the above example, the password input is not echoed to the console
+since it's provided with the secure interactive mode.
 
-== Argument Files
+== Argument files
 
-When an
-argument beginning with the character `@` is encountered, it is treated as a path
+When an argument beginning with the character `@` is encountered, it is treated as a path
 leading to a text file. The contents of that file are automatically expanded into
 the current task. An example of the argument file usage is shown below.
 
