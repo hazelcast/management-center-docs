@@ -1,16 +1,16 @@
 = CP Subsystem
-:description: You can use the CP Subsystem menu section to manage and monitor the CP subsystem in a cluster.
+:description: You can use the CP Subsystem menu section to manage and monitor the CP Subsystem in a cluster.
 :page-aliases: clusters:promoting-cp-member.adoc, clusters:removing-cp-member.adoc, clusters:restarting-cp-subsystem.adoc, clusters:cp-subsystem.adoc
 
-You can use the *CP Subsystem* menu item to manage and monitor the xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[CP subsystem] in a cluster.
+You can use the *CP Subsystem* menu item to manage and monitor the xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:cp-subsystem.adoc[CP Subsystem] in a cluster.
 
 image:ROOT:CPSubsystemDashboard.png[Status]
 
-== Data and Metrics
+== Data and metrics
 
-The CP subsystem dashboard displays the following tables:
+The CP Subsystem dashboard displays the following tables:
 
-.CP subsystem
+.CP Subsystem
 [cols="20%s,80%a"]
 |===
 |Field|Description
@@ -28,7 +28,7 @@ The CP subsystem dashboard displays the following tables:
 |This button is available only to admin users.
 |===
 
-.CP subsystem stats
+.CP Subsystem stats
 [cols="20%s,80%a"]
 |===
 |Field|Description
@@ -94,9 +94,9 @@ To see more details about a particular session, click on the down arrow next to 
 
 image:ROOT:CPSessionMetricsTable.png[CP Session Metrics Table]
 
-== Status Banner
+== Status banner
 
-A banner is always displayed at the top of the page with a message about the current CP subsystem status.
+A banner is always displayed at the top of the page with a message about the current CP Subsystem status.
 
 This banner may display one of
 the following messages:
@@ -104,7 +104,7 @@ the following messages:
 * *CP Subsystem is not enabled*: The cluster is not configured with a CP member count of at least 3.
 * *All CP members are accessible*: Number of accessible CP members is at least the same as the configured CP member count.
 * *One CP member is not accessible*: One
-CP member is missing and the minority count in the CP subsystem is greater than 1. For example, this value is shown
+CP member is missing and the minority count in the CP Subsystem is greater than 1. For example, this value is shown
 when 6 accessible CP members are available and the configured count is 7. In this example, the minority
 count is 3 members and the majority count is 4 members.
 * *Multiple CP members are not accessible:* Multiple
@@ -115,15 +115,15 @@ members are missing.
 members are missing.
 
 [[promote]]
-== Promoting Members to CP Members
+== Promoting members to CP members
 
-You can promote any existing member that is not part of the CP subsystem to a CP member.
+You can promote any existing member that is not part of the CP Subsystem to a CP member.
 
 This action is available only to admin users. 
 
 . Go to *CP Subsystem* > *Dashboard*, and click *Promote*.
 
-. Select an AP member (one of the members that do not participate in the CP subsystem) from the dropdown.
+. Select an AP member (one of the members that do not participate in the CP Subsystem) from the dropdown.
 +
 NOTE: Lite members are not displayed in the dropdown list because they do not store data and cannot be promoted to CP members.
 
@@ -134,11 +134,11 @@ image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
 If an exception occurs, an error notification is displayed.
 
 [[remove]]
-== Removing CP Members
+== Removing CP members
 
-You can manually remove a disconnected CP member from the CP subsystem, using Management Center.
+You can manually remove a disconnected CP member from the CP Subsystem, using Management Center.
 
-If a CP member loses connection with the rest of the cluster, the CP subsystem will wait for 4 hours by default before connecting to a new CP member. You can configure this time in the `missing-cp-member-auto-removal-seconds` option. See xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:configuration.adoc[] in the Platform documentation.
+If a CP member loses connection with the rest of the cluster, the CP Subsystem will wait for 4 hours by default before connecting to a new CP member. You can configure this time in the `missing-cp-member-auto-removal-seconds` option. See xref:{page-latest-supported-hazelcast}@hazelcast:cp-subsystem:configuration.adoc[] in the Platform documentation.
 
 This action is available only to admin users. 
 
@@ -147,7 +147,7 @@ This action is available only to admin users.
 . Select a CP member from the dropdown.
 +
 Although this member is not connected to the Management Center, it is known by
-the cluster's CP subsystem. 
+the cluster's CP Subsystem. 
 
 If everything goes well, a success message is displayed.
 
@@ -157,7 +157,7 @@ If an exception occurs, an error notification is displayed.
 [[restart]]
 == Restarting CP Subsystem
 
-If the majority of CP members crash, you can restart the CP subsystem to delete all CP data and trigger a new round of the discovery process.
+If the majority of CP members crash, you can restart the CP Subsystem to delete all CP data and trigger a new round of the discovery process.
 
 This action is available only to admin users. 
 
@@ -167,7 +167,7 @@ If everything goes well, a success message is displayed.
 
 If an exception occurs, an error notification is displayed.
 [[terminate]]
-== Forcing a Session to Close
+== Forcing a session to close
 
 If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
 

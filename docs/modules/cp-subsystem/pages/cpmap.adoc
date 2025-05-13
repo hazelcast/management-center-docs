@@ -10,4 +10,4 @@ A CPMap has two metrics:
 - *Entries*: The number of entries in the map
 - *Size*: The size of the map in memory
 
-You can sort the table by clicking on the column headers.
+Sort the table by clicking on the column headers.
