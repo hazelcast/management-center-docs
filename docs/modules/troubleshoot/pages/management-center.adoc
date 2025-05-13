@@ -3,15 +3,6 @@
 
 This topic describes how to deal with known issues and also how to read the user interface logs of Management Center.
 
-== Automated security scanning
-
-When you scan Management Center artifacts, the tool might warn you about the following
-vulnerabilities. Management Center security is *not* affected by these. It uses a custom
-version of H2DB which is patched against these vulnerabilities.
-
-* https://nvd.nist.gov/vuln/detail/CVE-2018-10054[CVE-2018-10054^]
-* https://nvd.nist.gov/vuln/detail/CVE-2018-14335[CVE-2018-14335^]
-
 == Horizontal scrollbar in tables when using Mac
 
 Mac automatically shows a horizontal scrollbar in the status tables of Management Center, when you scroll through a table content.
