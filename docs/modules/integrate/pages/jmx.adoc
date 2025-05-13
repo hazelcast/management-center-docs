@@ -5,6 +5,8 @@
 
 {description}
 
+TIP: For information about integration with Datadog, see the: link:https://docs.datadoghq.com/integrations/hazelcast/[Datadog Docs].
+
 == Enabling Clustered JMX
 
 To enable the clustered JMX service, use the xref:deploy-manage:system-properties.adoc#hazelcast-mc-jmx-enabled[`hazelcast.mc.jmx.enabled` property]:
