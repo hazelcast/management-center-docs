@@ -1,5 +1,5 @@
 = Healthcheck
-:description: Healthcheck provides a comprehensive analysis of member configurations and metrics across your cluster to identify potential issues before they become critical problems, and to help prioritize remediation efforts. 
+:description: Config Healthcheck provides a comprehensive analysis of member configurations and metrics across your cluster to identify potential issues before they become critical problems, and to help prioritize remediation efforts. 
 
 :page-aliases: ROOT:healthcheck.adoc
 :page-enterprise: true
