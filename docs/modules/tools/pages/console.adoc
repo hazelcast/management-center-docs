@@ -11,7 +11,7 @@ CLC functions as a client and adheres to any Security ACLs configured for it.
 CLC supports a wide range of data structures and the ability to run SQL queries from a text terminal. 
 It also provides flexible output options, such as table, CSV, and JSON formats.
 
-For further information on these features, refer to the xref:{page-latest-supported-clc}@clc:deploy::overview.adoc[Overview^] topic of the CLC documentation.
+For further information on these features, refer to the xref:{page-latest-supported-clc}@clc::overview.adoc[Overview^] topic of the CLC documentation.
 
 WARNING: The console is not recommended for production use.
 
