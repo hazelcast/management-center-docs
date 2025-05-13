@@ -81,7 +81,7 @@ IMPORTANT: If you set the property to `V2`, Management Center will only expose t
 
 == Metrics list
 
-Management Center converts all metrics for the `map`, `set` and `list` data structures. The full link:https://docs.hazelcast.com/hazelcast/latest/list-of-metrics[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation.
+Management Center converts all metrics for the `map`, `set` and `list` data structures. The full xref:{page-latest-supported-hazelcast}@hazelcast:::list-of-metrics.adoc[list of Hazelcast metrics] is provided in the Hazelcast Platform documentation.
 
 In some cases, several original metrics are combined into one and differentiated by labels. For example, `hazelcast_map_operations_total` replaces `hz_map_getCount` and `hz_map_setCount` by adding `operation="get"` and `operation="set"` labels.
 
