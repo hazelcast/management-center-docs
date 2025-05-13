@@ -1,4 +1,4 @@
-= Triggering a Force-Start
+= Trigger a force-start
 :description: You can trigger a force-start to force a cluster with persistence enabled to restart and delete its persistence store when one or more members are missing after a cluster-wide restart.
 :page-enterprise: true
 
@@ -10,7 +10,7 @@ If a member is missing after a cluster-wide restart or if the member's partition
 
 A force-start deletes the persistence stores of all members in the cluster and then restarts the cluster.
 
-== Before you Begin
+== Before you begin
 
 Go to *Administration* > *Persistence* and check the *Cluster Status* field. Only trigger a force-start if the cluster status is *In_Progress*, which means your cluster is missing a member.
 
@@ -18,12 +18,10 @@ To learn more about persistence in Hazelcast and what happens after a cluster-wi
 
 This page is available only to admin users.
 
-== Trigger a Force-Start
+== Trigger a force-start
 
 . Go to *Administration* > *Persistence*, and click *Force Start*.
 
 . Confirm that you want to continue by clicking *Confirm* in the dialog.
 
-If everything goes well, a success message is displayed.
-
-If an exception occurs, an error notification is displayed.
+A success message is displayed or, if an exception occurs, an error notification.

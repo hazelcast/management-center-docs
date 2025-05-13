@@ -1,14 +1,14 @@
-= Triggering a Rolling Upgrade
+= Trigger a rolling upgrade
 :description: A rolling upgrade allows you to upgrade all running cluster members to a new version of Hazelcast without interrupting the operation of the cluster.
 :page-enterprise: true
 
 {description}
 
-== Before you Begin
+== Before you begin
 
 This page is available only to admin users.
 
-== Trigger a Rolling Upgrade
+== Trigger a rolling upgrade
 
 . Upgrade Management Center to the new version.
 +

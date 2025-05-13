@@ -1,4 +1,4 @@
-= User Code Namespaces
+= User code namespaces
 :description: pass:q[You can use the *Namespaces* menu item to monitor all the user code namespaces that are connected to your Hazelcast cluster.]
 :page-aliases: ROOT:namespaces.adoc
 
@@ -27,9 +27,8 @@ image:ROOT:NamespaceGridView.png[User Code Namespace Grid View]
 |Update time of a user code namespace configuration.
 |===
 
-== Filtering User Code Namespaces
+== Filter user code namespaces
 
 To filter the displayed namespaces, use the *Search* bar in the right-hand corner.
 
-To sort the
-table, click on the column headers.
+To sort the table, click on the column headers.
