@@ -1,4 +1,4 @@
-= Execute console commands
+= Executing console commands
 :description: The Management Center console allows you to interact with your Hazelcast cluster.
 :page-aliases: monitor-imdg:console.adoc
 :experimental: true
