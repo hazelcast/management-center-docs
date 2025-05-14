@@ -18,7 +18,7 @@ For more information, see xref:tools:console.adoc[].
 Note: There are no changes to the format of v1 metrics. All v1 metrics start with `hz_` and all v2 metrics start with `hazelcast_`. For more information, see xref:integrate:prometheus-metrics.adoc[].
 
 The following Prometheus Exporter metrics v2 have been renamed:
-+
+
 [cols="1a,2a"]
 |===
 |Version 5.7.x|Version 5.8.0
