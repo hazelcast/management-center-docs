@@ -1,24 +1,58 @@
-= Executing Console Commands
-:description: The console feature allows you to execute client operations using the built-in Hazelcast Command-Line Client (CLC).
+= Executing console commands
+:description: The Management Center console allows you to interact with your Hazelcast cluster.
 :page-aliases: monitor-imdg:console.adoc
 :experimental: true
 
 {description}
 
-Management Center includes an interactive version of Hazelcast's Command-Line Client (CLC).
-CLC functions as a client and adheres to any Security ACLs configured for it.
+The console is primarily useful for development and testing purposes. It is not recommended for production use.
+
+You can use either the original console, or the CLC-based console:
+
+- The CLC-based console allows you to execute client operations using the built-in Command-Line Client (CLC), but has limitations regarding the supported TLS certificates.
+- The original console enables you to execute commands directly on the cluster and is unaffected by these limitations. 
+
+The console is disabled by default for security reasons and needs to be explicitly enabled in your cluster's configuration. 
+See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether the console is enabled or disabled for each member.
+
+WARNING: Neither console is recommended for production use.
+
+== Switch consoles
+
+Once the console is enabled, by default, the CLC-based console is available. However, you can switch to the original console by setting a system property or environment variable. 
+
+To switch to the original console: 
+
+- Set the system property `hazelcast.mc.original.console.enabled=true`
+
+OR
+
+- Set the environment variable `HAZELCAST_MC_ORIGINAL_CONSOLE_ENABLED=true`
+
+Then restart Management Center. 
+
+To switch back to the CLC-based console, either set the flag to false, or remove the system property or environment variable, and restart Management Center.
+
+NOTE: Once Management Center starts, you cannot switch the console. You must stop Management Center and re-start it with the necessary  system property or environment variable.
+
+== Use the CLC-based console
+
+Management Center includes an interactive version of Hazelcast's Command-Line Client (CLC). CLC functions as a client and adheres to any Security ACLs configured for it.
 
 CLC supports a wide range of data structures and the ability to run SQL queries from a text terminal. 
 It also provides flexible output options, such as table, CSV, and JSON formats.
 
-For further information on these features, refer to the https://docs.hazelcast.com/clc/latest/overview[Overview^] topic of the CLC documentation.
+For further information on these features, see the https://docs.hazelcast.com/clc/latest/overview[Overview^] topic of the CLC documentation.
 
-WARNING: The console is not recommended for production use.
+Note the following limitations with the CLC-based console:
 
-Console is disabled by default, and you need to enable it
-in your cluster's configuration. See 
-xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether
-the console is enabled or disabled for each member.
+- CLC cannot connect to all Hazelcast Platform clusters. For instance, CLC supports only simple authentication (username and password) for Hazelcast Platform and does not currently support other client authentication methods like Kerberos.
+- CLC currently cannot decode all values, particularly ones encoded using language-specific serializers, such as Java serialization. However, it helpfully shows which key/values it cannot decode and their types.
+- The data types that CLC can write are currently limited. The types that CLC can write are as follows for both Map keys and values: boolean, 32 and 64-bit floats, 8, 16, 32 and 64-bit integers, strings and JSON.
+
+If your deployment is affected by these limitations, consider switching to the original console. 
+
+=== Execute client operations
 
 . Open a console window by clicking on the **Console** button located at the Side Bar.
 +
@@ -36,3 +70,24 @@ You can use the `--help` option with any command to view the help for that comma
 
 TIP: The console container is resizable; to change the height, drag the bar on the top of the console.
 You can maximize or minimize the console container using the icons in its top-right corner.
+
+== Use the original console
+
+For added flexibility, Management Center also includes the original console which enables you to execute commands directly on the cluster. For example, you can perform `put` and `get` operations on a map. This console is unaffected by the CLC limitations. 
+
+=== Execute commands on a cluster
+
+. Open a console window by clicking on the **Console** button located at the top menu.
++
+TIP: You can also open the console, using the kbd:[Alt + T] keyboard shortcut on Windows/Linux and kbd:[Option + T] on
+Mac.
++
+image:ROOT:original_console.png[Console]
+
+. Set the namespace of a data structure, using
+the `ns <name of your data structure>` command.
++
+NOTE: The console does not support data structures with spaces or special characters in their names.
+
+To get help or a list of all possible commands, enter `help` in the console.
+
