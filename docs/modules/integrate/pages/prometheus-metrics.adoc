@@ -23,7 +23,9 @@ By default, Management Center exposes two versions of metrics:
   * Append `_total` to accumulated metrics
   * Rename and remove `unit` label, add `_total` suffix:
 
-We currently publish by default V1 and V2 metrics; however, the V1 metrics are marked for deprecation and will be removed in an upcoming release of Management Center.
+We currently publish by default V1 and V2 metrics.
+
+:NOTE: V2 Metrics are currently BETA.
 
 The following examples illustrate the differences between the V1 and V2 metrics.
 
