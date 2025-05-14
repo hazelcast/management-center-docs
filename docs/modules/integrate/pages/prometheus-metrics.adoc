@@ -23,7 +23,7 @@ By default, Management Center exposes two versions of metrics:
   * Append `_total` to accumulated metrics
   * Rename and remove `unit` label, add `_total` suffix:
 
-We currently publish by default V1 and V2 metrics; however, the V1 metrics are marked for deprecation and will be removed in an upcoming release of Management Centre.
+We currently publish by default V1 and V2 metrics; however, the V1 metrics are marked for deprecation and will be removed in an upcoming release of Management Center.
 
 The following examples illustrate the differences between the V1 and V2 metrics.
 
@@ -65,7 +65,7 @@ hazelcast_map_latency_seconds_total{name="map-1",mc_member="127.0.0.1:5701",mc_c
 [[config]]
 == Configuring the Metrics Version
 
-You can tell Management Centre which metrics version to export by defining the system property `hazelcast.mc.prometheusExporter.printers` as follows:
+You can tell Management Center which metrics version to export by defining the system property `hazelcast.mc.prometheusExporter.printers` as follows:
 
 * V1: `hazelcast.mc.prometheusExporter.printers=V1`
 * V2: `hazelcast.mc.prometheusExporter.printers=V2`
