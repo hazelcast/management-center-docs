@@ -13,4 +13,76 @@ For more information about new features, see xref:ROOT:whats-new.adoc[].
 
 == Changes
 
-* *Updated Prometheus Mappings*: More of the Prometheus metrics were updated to the new format. See xref:integrate:prometheus-metrics.adoc[].
+* *Renamed Prometheus Mappings*: The following Prometheus Exporter V2 keys are renamed:
++
+[cols="1a,2a"]
+|===
+|Version 5.7.x|Version 5.8.0
+
+|hazelcast_map_backups
+|hazelcast_map_backups_total
+
+|hazelcast_map_entries_backup
+|hazelcast_map_backup_entries_total
+
+|hazelcast_map_entries_backup_memory_cost
+|hazelcast_map_backup_entries_memory_cost_bytes
+
+|hazelcast_map_entries_dirty
+|hazelcast_map_dirty_entries_total
+
+|hazelcast_map_evictions
+|hazelcast_map_evictions_total
+
+|hazelcast_map_expirations
+|hazelcast_map_expirations_total
+
+|hazelcast_map_queries_indexed
+|hazelcast_map_indexed_queries_total
+
+|hazelcast_map_entries_locked
+|hazelcast_map_locked_entries_total
+
+|hazelcast_map_events
+|hazelcast_map_events_total
+
+|hazelcast_map_entries_owned
+|hazelcast_map_owned_entries_total
+
+|hazelcast_map_entries_owned_memory_cost
+|hazelcast_map_owned_entry_memory_cost_bytes
+
+|hazelcast_map_queries
+|hazelcast_map_queries_total
+
+|hazelcast_map_hits
+|hazelcast_map_hits_total
+
+|hazelcast_map_latency_total_seconds
+|hazelcast_map_latency_seconds_total
+
+|hazelcast_map_index_hits
+|hazelcast_map_index_hits_total
+
+|hazelcast_map_index_inserts
+|hazelcast_map_index_inserts_total
+
+|hazelcast_map_index_memory_cost
+|hazelcast_map_index_memory_cost_bytes
+
+|hazelcast_map_index_queries
+|hazelcast_map_index_queries_total
+
+|hazelcast_map_index_removes
+|hazelcast_map_index_removes_total
+
+|hazelcast_map_index_latency_total_seconds
+|hazelcast_map_index_latency_seconds_total
+
+|hazelcast_map_index_updates
+|hazelcast_map_index_updates_total
+
+|hazelcast_set_creation_timestamp
+|hazelcast_set_creation_timestamp_seconds
+
+|===
