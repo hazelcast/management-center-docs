@@ -61,11 +61,11 @@ hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_clu
 
 To change which set of metrics is exposed to Prometheus, update the `hazelcast.mc.prometheusExporter.printers` system property:
 
+NOTE: The updated (V2) metrics are currently in BETA.
+
 * Original only: `hazelcast.mc.prometheusExporter.printers=V1`
 * Updated only: `hazelcast.mc.prometheusExporter.printers=V2`
 * Both (default): `hazelcast.mc.prometheusExporter.printers=V1,V2`
-
-NOTE: The updated (V2) metrics are currently in BETA.
 
 See xref:deploy-manage:system-properties.adoc[].
 
