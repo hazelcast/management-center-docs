@@ -23,11 +23,11 @@ Once the console is enabled, by default, the CLC-based console is available. How
 
 To switch to the original console: 
 
-- Set the system property `hazelcast.mc.old.console.enabled=true`
+- Set the system property `hazelcast.mc.original.console.enabled=true`
 
 OR
 
-- Set the environment variable `HAZELCAST_MC_OLD_CONSOLE_ENABLED=true`
+- Set the environment variable `HAZELCAST_MC_ORIGINAL_CONSOLE_ENABLED=true`
 
 Then restart Management Center. 
 
