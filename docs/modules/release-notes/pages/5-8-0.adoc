@@ -7,13 +7,23 @@ For help downloading Hazelcast Management Center, see xref:getting-started:insta
 
 == New features
 
-* *Added the option to use original console*: With this release, it is possible to switch to the original pre-5.4 console for improved compatibility with previous versions of Management Center. See xref:tools:console.adoc[].
+* *Console and CLC support in MC 5.8.0*:Some customers have reported issues using the Command Line Client (CLC) in Management Center.
++
+As these customers are upgrading from an earlier version where the original Console was used, we have added an option in MC 5.8.0 to replace CLC with the original Console.  This is enabled by setting the environment variable `HAZELCAST_MC_ORIGINAL_CONSOLE_ENABLED` to `true`.
++
+See xref:tools:console.adoc[] for further details.
 
 For more information about new features, see xref:ROOT:whats-new.adoc[].
 
 == Changes
 
-* *Renamed Prometheus Mappings*: The following Prometheus Exporter V2 keys are renamed:
+* *Changes to V2 Prometheus Exporter Metrics (BETA)*: Further changes have been made to the V2 version of the Prometheus Exporter metrics (BETA), including the following breaking changes as shown in the table below.  V2 metrics start with `hazelcast_` and the V1 metrics start with `hz_`
++
+Note: the V1 metrics continue to be exported with no changes to their format.
++
+See xref:integrate:prometheus-metrics.adoc[] for further information.
++
+The following V2 Prometheus Exporter Metrics have been renamed:
 +
 [cols="1a,2a"]
 |===
