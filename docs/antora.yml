@@ -1,15 +1,15 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.7'
+version: '5.8'
 # Version in the version selector
-display_version: '5.7'
+display_version: '5.8'
 asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '5.7.1'
+    full-version: '5.8.0'
     # Version to be used when installing a Hazelcast cluster
-    hz-full-version: '5.5.4'
+    hz-full-version: '5.5.6'
     # Version to be used when installing a snapshot using brew
     version-brew: '5.5.2'
     javasource: ROOT:example$
