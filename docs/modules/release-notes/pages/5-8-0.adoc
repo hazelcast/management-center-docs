@@ -1,0 +1,92 @@
+= 5.8.0 Release notes
+:description: These release notes list any new features, enhancements, fixes, and breaking changes implemented between version 5.7.1 and version 5.8.0 of Hazelcast Management Center (MC).
+
+{description}
+
+For help downloading Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+== New features
+
+* *Console support*: If you are experiencing any issues using the Command Line Client (CLC) in Management Center, there is a new option to switch from the CLC-based console to the original console. You can enable this by setting the environment variable `HAZELCAST_MC_ORIGINAL_CONSOLE_ENABLED` to `true`.
++
+For more information, see xref:tools:console.adoc[].
+
+== Breaking changes
+
+* *Changes to Prometheus Exporter metrics v2 (BETA)*: The following changes have been implemented to Prometheus Exporter metrics v2, which are currently in BETA:
++
+Note: There are no changes to the format of v1 metrics. All v1 metrics start with `hz_` and all v2 metrics start with `hazelcast_`. For more information, see xref:integrate:prometheus-metrics.adoc[].
+
+The following Prometheus Exporter metrics v2 have been renamed:
++
+[cols="1a,2a"]
+|===
+|Version 5.7.x|Version 5.8.0
+
+|hazelcast_map_backups
+|hazelcast_map_backups_total
+
+|hazelcast_map_entries_backup
+|hazelcast_map_backup_entries_total
+
+|hazelcast_map_entries_backup_memory_cost
+|hazelcast_map_backup_entries_memory_cost_bytes
+
+|hazelcast_map_entries_dirty
+|hazelcast_map_dirty_entries_total
+
+|hazelcast_map_evictions
+|hazelcast_map_evictions_total
+
+|hazelcast_map_expirations
+|hazelcast_map_expirations_total
+
+|hazelcast_map_queries_indexed
+|hazelcast_map_indexed_queries_total
+
+|hazelcast_map_entries_locked
+|hazelcast_map_locked_entries_total
+
+|hazelcast_map_events
+|hazelcast_map_events_total
+
+|hazelcast_map_entries_owned
+|hazelcast_map_owned_entries_total
+
+|hazelcast_map_entries_owned_memory_cost
+|hazelcast_map_owned_entry_memory_cost_bytes
+
+|hazelcast_map_queries
+|hazelcast_map_queries_total
+
+|hazelcast_map_hits
+|hazelcast_map_hits_total
+
+|hazelcast_map_latency_total_seconds
+|hazelcast_map_latency_seconds_total
+
+|hazelcast_map_index_hits
+|hazelcast_map_index_hits_total
+
+|hazelcast_map_index_inserts
+|hazelcast_map_index_inserts_total
+
+|hazelcast_map_index_memory_cost
+|hazelcast_map_index_memory_cost_bytes
+
+|hazelcast_map_index_queries
+|hazelcast_map_index_queries_total
+
+|hazelcast_map_index_removes
+|hazelcast_map_index_removes_total
+
+|hazelcast_map_index_latency_total_seconds
+|hazelcast_map_index_latency_seconds_total
+
+|hazelcast_map_index_updates
+|hazelcast_map_index_updates_total
+
+|hazelcast_set_creation_timestamp
+|hazelcast_set_creation_timestamp_seconds
+
+|===
