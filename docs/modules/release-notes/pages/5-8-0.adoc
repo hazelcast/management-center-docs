@@ -1,0 +1,16 @@
+= 5.8.0 Release notes
+:description: These release notes list any new features, enhancements, fixes, and breaking changes implemented between version 5.7.1 and version 5.8.0 of Hazelcast Management Center (MC).
+
+{description}
+
+For help downloading Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+== New features
+
+* *Added the option to use original console*: With this release, it is possible to switch to the original pre-5.4 console for improved compatibility with previous versions of Management Center. See xref:tools:console.adoc[].
+
+For more information about new features, see xref:ROOT:whats-new.adoc[].
+
+== Changes
+
+* *Updated Prometheus Mappings*: More of the Prometheus metrics were updated to the new format. See xref:integrate:prometheus-metrics.adoc[].
