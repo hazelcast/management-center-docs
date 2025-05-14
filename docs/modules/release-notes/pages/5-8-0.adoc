@@ -14,7 +14,7 @@ For more information, see xref:tools:console.adoc[].
 == Breaking changes
 
 * *Changes to Prometheus Exporter metrics v2 (BETA)*: The following changes have been implemented to Prometheus Exporter metrics v2, which are currently in BETA:
-
++
 Note: There are no changes to the format of v1 metrics. All v1 metrics start with `hz_` and all v2 metrics start with `hazelcast_`. For more information, see xref:integrate:prometheus-metrics.adoc[].
 
 The following Prometheus Exporter metrics v2 have been renamed:
