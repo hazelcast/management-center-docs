@@ -8,7 +8,7 @@ For help downloading Hazelcast Management Center, see xref:getting-started:insta
 == New features
 
 * *Console support*: If you are experiencing any issues using the Command Line Client (CLC) in Management Center, there is a new option to switch from the CLC-based console to the original console. You can enable this by setting the environment variable `HAZELCAST_MC_ORIGINAL_CONSOLE_ENABLED` to `true`.
-
++
 For more information, see xref:tools:console.adoc[].
 
 == Breaking changes
