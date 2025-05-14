@@ -1,4 +1,5 @@
 = Hazelcast Management Center 5.8.x release notes
+:page-aliases: ROOT:whats-new.adoc
 
 This section summarizes the changes in each release:
 
