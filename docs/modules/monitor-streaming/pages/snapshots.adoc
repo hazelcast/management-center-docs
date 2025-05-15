@@ -6,7 +6,7 @@ jobs. To create a new export, see xref:jobs.adoc#job-management[Job Management].
 
 image:ROOT:snapshots.png[Snapshots]
 
-Here are the descriptions of parameters:
+The following describes the parameters shown:
 
 * **Name:** Given name of the exported snapshot.
 * **Job Name:** Name of the job.

@@ -1,8 +1,10 @@
 = Jobs
 :page-aliases: monitor-jet:jobs.adoc
-:description: The *Jobs* menu item provides a general overview of the jobs in a Hazelcast cluster that has Jet enabled.
+// :description: The *Jobs* menu item provides a general overview of the jobs in a Hazelcast cluster that has Jet enabled.
 
-{description}
+// {description} - commented out due to the description not formatting correctly
+
+The *Jobs* menu item provides a general overview of the jobs in a Hazelcast cluster that have Jet enabled.
 
 image:ROOT:jobs.png[Jobs]
 
@@ -101,7 +103,7 @@ image:ROOT:dag.png[alt=DAG Visualization]
 
 If you click a node in the graph, you'll see the following details about that processing step:
 
-**Parallelism::**
+**Parallelism:**
 
 * **Local:** Number of processors running for that vertex on each member.
 * **Global:** Total number of processors running for that vertex on the cluster.
@@ -145,7 +147,7 @@ information for each of them.
 * **Queue Cap Usage:** Queue utilization percentage.
 * **Items In:** Total number of items received by this processor.
 * **Items Out:** Total number of items sent by this processor.
-* [[latency]]**latency:** Time difference between the wall-clock
+* [[latency]]**Latency:** Time difference between the wall-clock
 time and the last forwarded watermark (“event time, time of the stream”).
 Multiple factors contribute to the total latency:
 ** **latency in the external system**; events arrive already delayed to Stream source
@@ -154,26 +156,26 @@ for delayed events, watermarks will always be delayed by this
 lag. Note that the actual output might not be delayed.
 ** **event-to-event interval**; if there is a time period
 between two events, the event time “stops” for that time. In
-other words, until a new event comes, Hazelcast thinks the current
+other words, until a new event occurs, the current
 time is the time of the last event. As “current event time”
 is tracked independently for each partition, this can be the
 major source of skew. If your events are irregular, you might
 consider adding heartbeat events.
 This factor also applies if you use
 `withIngestionTimestamps` since a new
-wall-clock time is assigned only if new
-event arrives.
-** **time to execute map/filter stages**; they contribute
-with the latency of the async call or with the time to execute
+wall-clock time is assigned only if a new
+event occurs.
+** **time to execute map/filter stages**; these contribute to
+the latency of the async call or to the time to execute
 CPU-heavy sync call.
 ** **internal processing latency of Hazelcast**; typically
-very low: 1 or 2 milliseconds. It can be higher if the network is slow, system
-is overloaded, if there are many vertices in the job or many
-jobs, which causes lots of switching, etc.
+very low: 1 or 2 milliseconds. It can be higher if the network is slow, the system
+is overloaded, if there are many vertices in the job, or many
+jobs which cause lots of switching, etc.
 ** **clock drift**; since we're comparing to the real time,
-latency can be caused by a clock drift between the machine
+latency can be caused by a clock drift between this and the machine
 where event time is assigned (which can also be an end
-user’s device). It can even be negative. Always use NTP to
-keep wall-clock precise and avoid using timestamps from devices
+user's device). It can even be negative. Always use NTP to
+keep wall-clock precise, and avoid using timestamps from devices
 out of your control as event time.
 
