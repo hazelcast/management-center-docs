@@ -1,12 +1,14 @@
 = Management Center {full-version}
 :page-aliases: ROOT:index.adoc
-:description: Management Center is a powerful tool for managing and monitoring Hazelcast Platform clusters.
+:description: Hazelcast Management Center provides a powerful and intuitive interface for managing and monitoring your Hazelcast Platform clusters.
 
 {description}
 
-Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise. 
+Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise, and helping you maximize the value of your Hazelcast deployment.
 
-An Enterprise license provides you with a comprehensive solution with enhanced security, monitoring capabilities, and administrative features. For the full Enterprise experience, you can get a 30-day free trial with no obligation from the  https://hazelcast.com/get-started/[Try Hazelcast] page.
+== Enterprise versus Community Edition
+
+While the Community Edition offers basic functionality for small deployments (up to 3 cluster members), the Enterprise Edition unlocks the full potential of Management Center with advanced security, monitoring, and management features. Get a 30-day free trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
 
 == Key features and benefits
 
