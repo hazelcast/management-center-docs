@@ -22,7 +22,6 @@ By default, Management Center exposes two versions of metrics:
 ** Remove unit labels
 ** Append `_total` to accumulated metrics
 
-We currently publish by default V1 and V2 metrics.
 
 The following examples illustrate the differences between the V1 and V2 metrics.
 
