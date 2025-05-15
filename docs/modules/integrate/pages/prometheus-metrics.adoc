@@ -64,7 +64,7 @@ hazelcast_map_latency_seconds_total{name="map-1",mc_member="127.0.0.1:5701",mc_c
 [[config]]
 == Configuring the metrics version
 
-You can tell Management Center which metrics version to export by defining the system property `hazelcast.mc.prometheusExporter.printers` as follows:
+To change which set of metrics is exposed to Prometheus, update the `hazelcast.mc.prometheusExporter.printers` system property:
 
 * V1: `hazelcast.mc.prometheusExporter.printers=V1`
 * V2: `hazelcast.mc.prometheusExporter.printers=V2`
