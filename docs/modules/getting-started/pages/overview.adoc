@@ -6,15 +6,15 @@
 
 Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise. 
 
-An Enterprise license provides you with a comprehensive solution with enhanced security, monitoring capabilities, and administrative features. For the full Enterprise experience, you can get a 30-day free trial with no obligation from the  https://hazelcast.com/get-started/[Try Hazelcast] page. 
+An Enterprise license provides you with a comprehensive solution with enhanced security, monitoring capabilities, and administrative features. For the full Enterprise experience, you can get a 30-day free trial with no obligation from the  https://hazelcast.com/get-started/[Try Hazelcast] page.
 
 == Key features and benefits
 
-* *Monitoring and Performance Tracking*. Management Center allows you to monitor the performance of your clusters through its UI, JMX interface, and Prometheus integration. You can view detailed statistics about members, clients, and data structures in real-time, helping you identify performance bottlenecks and optimize your applications. With an Enterprise license, you gain access to **Clustered JMX** capabilities and secure **Prometheus Exporter** functionality with authentication support, providing enterprise-grade monitoring solutions. While the Community Edition limits you to monitoring only three cluster members, an Enterprise license removes this restriction, allowing you to monitor clusters of any size.
+* *Monitoring and Performance Tracking*. Management Center allows you to monitor the performance of your clusters through its UI, JMX interface, and Prometheus integration. You can view detailed statistics about members, clients, and data structures in real-time, helping you identify performance bottlenecks and optimize your applications. With an Enterprise license, you gain access to **Clustered JMX** capabilities and secure **Prometheus Exporter** functionality with authentication support, providing enterprise-grade monitoring solutions. While the {open-source-product-name} limits you to monitoring only three cluster members, an Enterprise license removes this restriction, allowing you to monitor clusters of any size.
 * *Execute SQL queries on your clusters*. The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive. Enterprise users benefit from the ability to use SQL DML statements such as CREATE MAPPING, INSERT INTO, and SINK INTO in the SQL Browser. 
 * *Administrative Capabilities*. Management Center enables you to perform various administrative tasks such as:
-** Identifying and diagnosing issues in clusters with automatic **Config Health Check** (Enterprise feature) that runs when cluster topology or member configuration changes.  
-** Implementing **Client Filtering** (Enterprise feature) to control which clients can connect to a cluster, essential for Blue/Green or Red/Black deployments
+** Identifying and diagnosing issues in clusters with automatic **Config Health Check** ({enterprise-product-name}) that runs when cluster topology or member configuration changes.  
+** Implementing **Client Filtering** ({enterprise-product-name}) to control which clients can connect to a cluster, essential for Blue/Green or Red/Black deployments
 ** Executing scripts to automate interactions with the cluster
 ** Taking thread dumps from nodes
 ** Updating map configurations 
