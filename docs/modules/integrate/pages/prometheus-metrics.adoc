@@ -20,17 +20,16 @@ By default, Management Center exposes two versions of metrics:
 ** Percentages as ratios (for example, 50% converts to 0.5)
 * Append units to metric names
 * Remove unit labels
-* Append `_total` to accumulated metrics
 
 The following examples illustrate the differences between the V1 and V2 metrics.
 
-* Rename and remove `unit` label, add `_total` suffix:
+* Rename and remove `unit` label:
 +
 ```
 # V1
 hz_map_queryCount{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="COUNT",} 0.0 1737715903399
 # V2
-hazelcast_map_queries_total{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 0.0 1737715903399
+hazelcast_map_queries{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",} 0.0 1737715903399
 ```
 
 * Rename and append unit, remove `unit` label, convert value (1.7x10^12^ milliseconds to 1.7x10^9^ seconds):
@@ -49,15 +48,6 @@ hazelcast_map_creation_timestamp_seconds{name="map-1",mc_member="127.0.0.1:5701"
 hz_map_totalMaxRemoveLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 0.0 1737715903399
 # V2
 hazelcast_map_latency_max_seconds{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="remove",} 0.0 1737715903399
-```
-
-* Rename, append unit suffix and `_total` suffix, remove `unit` label, add `remove` label, convert value from milliseconds to seconds:
-+
-```
-# V1
-hz_map_totalPutLatency{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",unit="MS",} 2019.0 1743601193973
-# V2
-hazelcast_map_latency_seconds_total{name="map-1",mc_member="127.0.0.1:5701",mc_cluster="Cluster-1",operation="put",} 2.019 1743601193973
 ```
 
 [[config]]
