@@ -6,10 +6,10 @@
 
 By default, Management Center exposes two versions of metrics:
 
-* Version 1 (V1) Metrics. Take the metrics exposed by xref:{page-latest-supported-hazelcast}@hazelcast::list-of-metrics.adoc[Hazelcast's JMX metrics system] and applies the following transformation to each of the metric names:
+* *Version 1 (V1) Metrics.* Take the metrics exposed by xref:{page-latest-supported-hazelcast}@hazelcast::list-of-metrics.adoc[Hazelcast's JMX metrics system] and applies the following transformation to each of the metric names:
 ** Substitutes `.` for `_`
 ** Adds the prefix `hz_`
-* Version 2 (V2) Metrics. Take the metrics exposed by xref:{page-latest-supported-hazelcast}@hazelcast::list-of-metrics.adoc[Hazelcast's JMX metrics system] but applies transformation to their names so that they conform with link:https://prometheus.io/docs/practices/naming/[Prometheus naming conventions]:
+* *Version 2 (V2) Metrics.* Take the metrics exposed by xref:{page-latest-supported-hazelcast}@hazelcast::list-of-metrics.adoc[Hazelcast's JMX metrics system] but applies transformation to their names so that they conform with link:https://prometheus.io/docs/practices/naming/[Prometheus naming conventions]:
 ** Use `snake_case`
 ** Add `hazelcast_` prefix
 ** Update metric names where appropriate
