@@ -1,5 +1,5 @@
-= Variable Replacers
-:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or the `hz-mc conf` tool. A common usecase for variable replacers is to mask sensitive information such as usernames and passwords.
+= Variable replacers
+:description: Variable replacers are Java classes that replace custom strings in configuration. You can use variable replacers in command line arguments or in the `hz-mc conf` tool. A common use case for variable replacers is to mask sensitive information such as usernames and passwords.
 
 {description}
 
@@ -9,7 +9,7 @@ A variable to be replaced takes the following form:
 $<prefix>{<masked-value>}
 ```
 
-The `<prefix>` placeholder tells Management Center which replacer to use to replace in the value in the `<masked-value>` placeholder.
+The `<prefix>` placeholder tells Management Center which replacer to use to replace the value in the `<masked-value>` placeholder.
 
 The following replacer classes are provided by Hazelcast as example
 implementations of the `ConfigReplacer` interface.
@@ -127,7 +127,7 @@ Usually the system properties are used such as`${user.name}`.
 The full class name is `com.hazelcast.webmonitor.configreplacer.PropertyReplacer`
 and the replacer prefix is empty string ("").
 
-== Implementing Custom Replacers
+== Implement custom replacers
 
 To create your own variable replacer implementations, you must implement the following three methods from the `ConfigReplacer` interface:
 
