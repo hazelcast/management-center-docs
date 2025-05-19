@@ -12,18 +12,65 @@ While the Community Edition offers basic functionality for small deployments (up
 
 == Key features and benefits
 
-* *Monitoring and Performance Tracking*. Management Center allows you to monitor the performance of your clusters through its UI, JMX interface, and Prometheus integration. You can view detailed statistics about members, clients, and data structures in real-time, helping you identify performance bottlenecks and optimize your applications. With an Enterprise license, you gain access to **Clustered JMX** capabilities and secure **Prometheus Exporter** functionality with authentication support, providing enterprise-grade monitoring solutions. While the {open-source-product-name} limits you to monitoring only three cluster members, an Enterprise license removes this restriction, allowing you to monitor clusters of any size.
-* *Execute SQL queries on your clusters*. The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive. Enterprise users benefit from the ability to use SQL DML statements such as CREATE MAPPING, INSERT INTO, and SINK INTO in the SQL Browser. 
-* *Administrative Capabilities*. Management Center enables you to perform various administrative tasks such as:
-** Identifying and diagnosing issues in clusters with automatic **Config Health Check** ({enterprise-product-name}) that runs when cluster topology or member configuration changes.  
-** Implementing **Client Filtering** ({enterprise-product-name}) to control which clients can connect to a cluster, essential for Blue/Green or Red/Black deployments
-** Executing scripts to automate interactions with the cluster
-** Taking thread dumps from nodes
-** Updating map configurations 
-* *High Availability*. Management Center supports high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes. 
-* *User Management with Role-Based Access Control*. Management Center provides comprehensive role-based access control with different user roles (Admin, User, Read-Only, and Metrics-Only) having varying levels of permissions for different operations.
-* *Easy Deployment with Docker*. You can quickly get started with Management Center using Docker Compose. For example, you can create a `docker-compose.yml` file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster. 
-* *REST API and Integration*. Management Center offers REST API endpoints to programmatically access the information presented in the UI. With an Enterprise license, you gain access to secure **Clustered REST API** endpoints that require authentication, allowing for enterprise-grade security when integrating with other systems and automating monitoring and management tasks. 
+[cols="1a,1a,1a"]
+|===
+|Real-time monitoring and performance tracking|Community Edition|Enterprise Edition
+
+|Comprehensive dashboards provide detailed statistics about members, clients and the data structures in real-time, helping you identify performance bottlenecks and optimize your applications
+|Limited to monitoring clusters up to 3 members
+|No limits
+
+|Multi-channel monitoring through secure Clustered REST and JMX capabilities, and secure Prometheus Exporter functionality with authentication support, providing integration into enterprise-grade monitoring solutions
+|n/a
+|Included
+
+|Prometheus Exporter provides all the metrics from the cluster in a Prometheus format. Config allows for the metrics to be filtered. Also included are Config Healthcheck counters
+|n/a
+|Included
+
+|*Powerful Administrative Tools*|*Community Edition*|*Enterprise Edition*
+|Client Filtering allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
+|n/a
+|Included
+
+|You can identify and diagnose issues in clusters with automatic Config Health Check which runs when cluster topology or member configuration changes
+|n/a
+|Included
+
+|Integrated tooling from Console, Command Line Client and scripting
+|(_what should go here?_)
+|(_what should go here?_)
+
+|Diagnostics allow you to check performance and memory usage. Admin user can take thread dumps
+|Included
+|Included
+
+|*Enterprise-grade security and integration*|*Community Edition*|*Enterprise Edition*
+|Local User Security — User management with Role-Based Access Control (RBAC) provides several user roles (Admin, User, Read-Only, and Metrics-Only) with varying permissions for different operations
+|Included
+|Included
+
+|Third party authentication extends the RABC integration with support for 3rd party authentication services, including JAAS, LDAP, Active Directory, SAML and OpenID
+|n/a
+|Included
+
+|Audit logs track administrative actions for compliance
+|n/a
+|Included
+
+|*SQL Queries*|*Community Edition*|*Enterprise Edition*
+|The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive 
+|Included up to cluster of 3 members
+|Includes the ability to use SQL DML statements such as CREATE MAPPING, INSERT INTO, and SINK INTO in the SQL Browser
+
+|Support for high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes
+|n/a
+|Included
+
+|Easy deployment with Docker. You can quickly get started with Management Center using Docker Compose. For example, you can create a docker-compose.yml file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster
+|Included
+|Included
+|===
 
 NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
 
