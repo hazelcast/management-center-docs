@@ -23,7 +23,7 @@ configuration is synchronized among Management Center instances.
  - Inconsistencies in the reported metrics may occur if one of the instances goes down for some time.
  - HTTP sessions are not shared between Management Center instances. Load balancing options are limited to sticky sessions or round-robin connections with basic authentication.
 
-NOTE: If relying on the JSESSIONID cookie for sticky session routing, consider setting the JETTY_WORKER_INSTANCE environment variable distinctly for each Management Center instance to provide a consistent value for configuring your routes appropriately.
+NOTE: If you are relying on the `JSESSIONID` cookie for sticky session routing, consider setting the `JETTY_WORKER_INSTANCE` environment variable distinctly for each Management Center instance to provide a consistent value for configuring your routes.
 
 Client filtering rules are synchronized among instances of Management Center that are connected to the same cluster. See xref:clusters:client-filtering.adoc#client-filtering-synchronization[Client Filtering Synchronization].
 
