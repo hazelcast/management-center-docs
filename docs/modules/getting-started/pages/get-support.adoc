@@ -1,0 +1,61 @@
+= Get support
+:description: Hazelcast provides two types of support: community support for the {open-source-product-name}, and customer support for the {enterprise-product-name}.
+
+{description}
+
+== Community support
+
+Community support is available to every Hazelcast user. You can use the following channels to get community support:
+
+* xref:ROOT:troubleshooting.adoc[Troubleshooting page] of this guide
+* https://slack.hazelcast.com/[Hazelcast Community Slack]
+(here you can discuss anything related to Hazelcast and Management Center with the Hazelcast community)
+
+== Customer support
+
+Hazelcast provides comprehensive customer support for Hazelcast Enterprise Edition customers.
+See https://hazelcast.com/services/support/[hazelcast.com^] for details.
+
+A support subscription from Hazelcast allows you to get the most out of Hazelcast. 
+You'll benefit from rapid response times to technical support inquiries, access to critical software patches, and other services which will help you achieve increased productivity and quality. Learn more about Hazelcast support subscriptions:
+https://hazelcast.com/pricing/.
+
+If your organization subscribes to Hazelcast support,
+and you already have an account set up, you can login to your account and open
+a support ticket on the https://support.hazelcast.com/s/[Hazelcast Support Portal].
+
+When submitting a ticket to the team, please provide as much information and data as possible. 
+
+=== Create a support ticket
+
+TIP: Make sure that all your environments are capturing Hazelcast diagnostics logs.
+This is key to diagnosing issues with Hazelcast environments.
+If your environments are not capturing diagnostics logs, update them to capture these.
+See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#enabling-diagnostics-logging[Enabling diagnostics logging] in the Platform documentation.
+
+Provide the following details in the support ticket:
+
+* Add a concise title that describes the problem. 
+This allows the team to route the issue to the appropriate expert.
+* Where possible, make a note of the steps that caused the issue, so that Support can attempt
+to reproduce the problem. This should include a detailed description of the incident, with what happened and when.
+Otherwise, capture the sequence of events that led to the issue.
+* Add details of the use case. This is crucial as it helps Support narrow down the features and
+functionality in play when the problem occurred.
+* Attach any specific errors found.
+* Capture any relevant screen shots.
+* Specify the exact time of the incident.
+* Attach the complete log files, i.e., Hazelcast logs. When providing Hazelcast logs, make sure that the system and
+environment details captured at system startup are included, even if you truncate the logs.
+Make sure the logs capture data around the date and time of the incident.
+** Attach Hazelcast process logs.
+** Attach Hazelcast health monitor logs.
+** Attach thread dumps from all members.
+** Attach Networking logs.
+** Attach Hazelcast diagnostic logs. Do not truncate diagnostics logs. These only capture Hazelcast
+systems specific information and details.
+* Attach the appropriate severity to the ticket.
+** `PROD` issues that affect production are considered as severity 1. 
+All other issues in other environments are considered severity 2 or 3, depending on urgency.
+** `DEV` issues are considered as severity 3 and priority low.
+** All other issues, e.g., questions or documentation feedback review are considered as severity 3 or higher.

@@ -1,10 +1,10 @@
-= Securing User Sessions
+= Secure user sessions
 :description: To secure users' sessions, you can configure session timeouts and multiple user login attempts.
 
 {description}
 
 [[configuring-session-timeout]]
-== Configuring Session Timeout
+== Configure session timeout
 
 If you have deployed Management Center on an application
 server/container, you can configure the default session timeout
@@ -41,13 +41,13 @@ mc-start.cmd -Dhazelcast.mc.session.timeout.seconds=60
 NOTE: The timeout duration specified with the above property is effective only after the browser tab is closed or after the browser suspends the background activity of the webpage.
 
 [[disabling-multiple-simultaneous-login-attempts]]
-== Disabling Multiple Simultaneous Login Attempts
+== Disable multiple simultaneous login attempts
 
 By default, a user can log into an account in Management Center on multiple devices in different locations at the same time. To allow only one user to log into an account, start Management Center with
 the `hazelcast.mc.allowMultipleLogin=false` property.
 
 [[disable-login-configuration]]
-== Temporarily Disabling Logins
+== Temporarily disable logins
 
 To prevent password guessing attacks, logging in is disabled for 5 seconds after 3 consecutive failed login attempts. If the failed
 attempts continue, the timeout is multiplied by 10 after each round of 3 consecutive failed login attempts. For example:
@@ -70,7 +70,7 @@ the disabled login period in case the failed login attempts continue.
 * `hazelcast.mc.maxDisableLoginPeriod`: Maximum amount of time for the disabled login period.
 
 [[forcing-logout-on-multiple-simultaneous-login-attempts]]
-== Forcing Logout on Multiple Simultaneous Login Attempts
+== Force logout on multiple simultaneous login attempts
 
 If you <<disabling-multiple-simultaneous-login-attempts, disabled multiple simultaneous login attempts>>,
 the first user to log in with a username stays

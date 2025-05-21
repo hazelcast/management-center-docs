@@ -1,4 +1,4 @@
-= Upgrading Management Center
+= Upgrade Management Center
 [[migration-guides]]
 
 == Changes in 5.4.x

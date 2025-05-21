@@ -1,33 +1,147 @@
-.Get Started
-include::getting-started:partial$nav.adoc[]
+.Get started
+// include::getting-started:partial$nav.adoc[]
+* xref:getting-started:overview.adoc[Overview]
+// ** xref:ROOT:whats-new.adoc[What's new in 5.7]
+* xref:ask-ai.adoc[]
+* xref:getting-started:get-started.adoc[Docker Compose tutorial]
+* User Interface overview
+** xref:getting-started:user-interface.adoc[Top Bar and Side Bar]
+** xref:getting-started:graphs.adoc[]
+** xref:getting-started:tables.adoc[]
+* xref:getting-started:get-support.adoc[Get support]
 
-.Deploy and Manage
-include::deploy-manage:partial$nav.adoc[]
+.Install and upgrade
+* xref:getting-started:install.adoc[Install and start]
+//* Release notes
+* xref:release-notes:releases.adoc[Release notes]
+** xref:release-notes:5-7-0.adoc[5.7.0]
+* xref:migration-guides.adoc[]
+
+
+.Deploy and manage
+// include::deploy-manage:partial$nav.adoc[]
+* xref:deploy-manage:production-checklist.adoc[Production checklist]
+* Configuration
+** xref:deploy-manage:configuring.adoc[Overview]
+** xref:deploy-manage:system-properties.adoc[]
+** xref:deploy-manage:mc-conf.adoc[]
+** xref:deploy-manage:variable-replacers.adoc[]
+** xref:deploy-manage:logging.adoc[]
+* Cluster connections
+** xref:deploy-manage:cluster-connections.adoc[Overview]
+** xref:deploy-manage:connecting-to-clusters-mc-conf.adoc[]
+** xref:deploy-manage:connecting-to-clusters-ui.adoc[]
+* License management
+** xref:deploy-manage:license-management.adoc[Overview]
+** xref:deploy-manage:updating-mc-license-ui.adoc[]
+* Security
+** xref:deploy-manage:security.adoc[Overview]
+** TLS
+*** xref:deploy-manage:tls-security.adoc[]
+*** xref:deploy-manage:serving-https.adoc[]
+*** xref:deploy-manage:serve-mc-over-https.adoc[Tutorial]
+** User authentication
+*** xref:deploy-manage:security-providers.adoc[]
+*** xref:deploy-manage:dev-mode.adoc[]
+*** xref:deploy-manage:local-security-provider.adoc[]
+*** xref:deploy-manage:active-directory.adoc[]
+*** xref:deploy-manage:ldap.adoc[]
+*** xref:deploy-manage:jaas.adoc[]
+*** xref:deploy-manage:saml.adoc[]
+*** xref:deploy-manage:openid.adoc[]
+*** xref:deploy-manage:switching-security-provider.adoc[]
+** xref:deploy-manage:sessions.adoc[]
+* xref:deploy-manage:user-management.adoc[User management]
+* xref:deploy-manage:historical-metrics.adoc[Historical metrics]
+* xref:deploy-manage:phone-homes.adoc[Phone homes]
 
 .Integrate
-include::integrate:partial$nav.adoc[]
+// include::integrate:partial$nav.adoc[]
+* xref:integrate:integrations.adoc[]
+* xref:integrate:prometheus-monitoring.adoc[]
+** xref:integrate:prometheus-metrics.adoc[]
+* Clustered JMX
+** xref:integrate:jmx.adoc[Get started with JMX]
+** xref:integrate:jmx-api.adoc[]
+* Clustered REST
+** xref:integrate:clustered-rest.adoc[Get started with REST API]
+** xref:integrate:client-filtering.adoc[]
+** xref:integrate:cluster-metrics.adoc[]
+** xref:integrate:cluster-connections.adoc[]
+** xref:integrate:wan-replication.adoc[]
 
 .Tools
-include::tools:partial$nav.adoc[]
+// include::tools:partial$nav.adoc[]
+* xref:tools:overview.adoc[]
+* xref:tools:sql-browser.adoc[]
+* xref:tools:console.adoc[]
+* xref:tools:scripting.adoc[]
 
 .Cluster
-include::clusters:partial$nav.adoc[]
+// include::clusters:partial$nav.adoc[]
+* xref:clusters:dashboard.adoc[Dashboard]
+* xref:clusters:clients.adoc[Clients]
+* xref:clusters:client-filtering.adoc[Client filtering]
+** xref:clusters:create-filter-lists-ui.adoc[]
+** xref:clusters:create-filter-lists-rest.adoc[]
+* xref:clusters:members.adoc[Members]
+* Administration
+** xref:clusters:administration.adoc[Overview]
+** Cluster states
+*** xref:clusters:cluster-state.adoc[Overview]
+*** xref:clusters:changing-cluster-state.adoc[]
+*** xref:clusters:shutting-down-cluster.adoc[]
+** xref:clusters:cluster-license.adoc[]
+** xref:clusters:triggering-rolling-upgrade.adoc[Rolling upgrade]
+** xref:clusters:update-config.adoc[Update Config]
+** Persistence
+*** xref:clusters:persistence.adoc[Overview]
+*** xref:clusters:triggering-force-start.adoc[]
+*** xref:clusters:triggering-partial-start.adoc[]
+*** xref:clusters:triggering-hot-backup.adoc[]
+* xref:clusters:wan-replication.adoc[WAN replication]
+* xref:clusters:healthcheck.adoc[Healthcheck]
+* xref:clusters:namespaces.adoc[Namespaces]
 
-.Storage, Compute & Messaging
-include::data-structures:partial$nav.adoc[]
+.Storage, compute & messaging
+// include::data-structures:partial$nav.adoc[]
+* xref:data-structures:overview.adoc[]
+* xref:data-structures:vector-collection.adoc[]
+* xref:data-structures:map.adoc[]
+* xref:data-structures:replicated-map.adoc[]
+* xref:data-structures:cache.adoc[]
+* xref:data-structures:multimap.adoc[]
+* xref:data-structures:list.adoc[]
+* xref:data-structures:set.adoc[]
+* xref:data-structures:queue.adoc[]
+* xref:data-structures:topic.adoc[]
+* xref:data-structures:reliable-topic.adoc[]
+* xref:data-structures:executor.adoc[]
+* xref:data-structures:pn-counter.adoc[]
+* xref:data-structures:flake-id-gen.adoc[]
 
 .Streaming
-include::monitor-streaming:partial$nav.adoc[]
+// include::monitor-streaming:partial$nav.adoc[]
+* xref:monitor-streaming:dashboard.adoc[]
+* xref:monitor-streaming:jobs.adoc[]
+* xref:monitor-streaming:snapshots.adoc[]
+* xref:monitor-streaming:sql-tasks.adoc[]
 
 .CP Subsystem
-include::cp-subsystem:partial$nav.adoc[]
+// include::cp-subsystem:partial$nav.adoc[]
+* xref:cp-subsystem:dashboard.adoc[Dashboard]
+* xref:cp-subsystem:cpmap.adoc[]
+* xref:cp-subsystem:atomic-long.adoc[]
+* xref:cp-subsystem:semaphore.adoc[]
+* xref:cp-subsystem:atomic-ref.adoc[]
+* xref:cp-subsystem:countdown-latch.adoc[]
+* xref:cp-subsystem:fenced-lock.adoc[]
 
 .Troubleshoot
-include::troubleshoot:partial$nav.adoc[]
+// include::troubleshoot:partial$nav.adoc[]
+* xref:troubleshoot:hazelcast-clusters.adoc[Hazelcast clusters]
+* xref:troubleshoot:management-center.adoc[Management Center]
 
-.Upgrade
-** xref:migration-guides.adoc[]
-
-.Release Notes 
-include::release-notes:partial$nav.adoc[]
-
+//.Release notes
+// include::release-notes:partial$nav.adoc[]
+// moved to Install & Upgrade
