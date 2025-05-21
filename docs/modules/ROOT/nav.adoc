@@ -13,6 +13,10 @@
 .Install and upgrade
 * xref:getting-started:install.adoc[Install and start]
 * xref:migration-guides.adoc[]
+* Release notes
+** xref:release-notes:releases.adoc[Summary]
+** xref:release-notes:5-7-0.adoc[5.7.0]
+
 
 .Deploy and manage
 // include::deploy-manage:partial$nav.adoc[]
@@ -138,7 +142,6 @@
 * xref:troubleshoot:hazelcast-clusters.adoc[Hazelcast clusters]
 * xref:troubleshoot:management-center.adoc[Management Center]
 
-.Release notes
+//.Release notes
 // include::release-notes:partial$nav.adoc[]
-* xref:release-notes:releases.adoc[Summary]
-* xref:release-notes:5-7-0.adoc[5.7.0]
+// moved to Install & Upgrade
