@@ -30,7 +30,7 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 |n/a
 |Included
 
-|*Powerful Administrative Tools*|*{open-source-product-name}*|*{enterprise-product-name}*
+|*Powerful administrative tools*|*{open-source-product-name}*|*{enterprise-product-name}*
 |Client Filtering allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
 |n/a
 |Included
@@ -60,7 +60,7 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 |n/a
 |Included
 
-|*SQL Queries*|*{open-source-product-name}*|*{enterprise-product-name}*
+|*SQL queries*|*{open-source-product-name}*|*{enterprise-product-name}*
 |The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive 
 |Included up to cluster of 3 members
 |Includes the ability to use SQL DML statements such as CREATE MAPPING, INSERT INTO, and SINK INTO in the SQL Browser

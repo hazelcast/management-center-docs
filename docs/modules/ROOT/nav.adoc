@@ -12,10 +12,10 @@
 
 .Install and upgrade
 * xref:getting-started:install.adoc[Install and start]
-* xref:migration-guides.adoc[]
-* Release notes
-** xref:release-notes:releases.adoc[Summary]
+//* Release notes
+* xref:release-notes:releases.adoc[Release notes]
 ** xref:release-notes:5-7-0.adoc[5.7.0]
+* xref:migration-guides.adoc[]
 
 
 .Deploy and manage
