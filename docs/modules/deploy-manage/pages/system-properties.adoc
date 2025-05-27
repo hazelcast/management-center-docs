@@ -1149,4 +1149,13 @@ hz-mc start -Dhazelcast.mc.client.initial.backoff.millis=2000
 hz-mc start -Dhazelcast.mc.clientFiltering.modes=ALLOWLIST
 ----
 
+|[[maskOpts]]maskOpts
+|Masks sensitive data in logs passed via JAVA_OPTS.
+Should include a comma-separated list of option keys to be masked.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Djavax.net.ssl.keyStorePassword=keypassword -Djavax.net.ssl.trustStorePassword=trustpassword -DmaskOpts=javax.net.ssl.keyStorePassword,javax.net.ssl.trustStorePassword
+----
+
 |===
