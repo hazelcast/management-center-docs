@@ -1150,7 +1150,7 @@ hz-mc start -Dhazelcast.mc.clientFiltering.modes=ALLOWLIST
 ----
 
 |[[maskOpts]]maskOpts
-|Comma-separated list of option keys to be masked. Masks sensitive data in logs passed via JAVA_OPTS. Default: ' ' (empty).
+|Comma-separated list of option keys to be masked. Masks sensitive data in logs passed via JAVA_OPTS. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
