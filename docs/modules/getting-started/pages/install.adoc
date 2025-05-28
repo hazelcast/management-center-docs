@@ -1,4 +1,4 @@
-= Installing and starting Management Center
+= Instal and start Management Center
 :page-aliases: ROOT:getting-started.adoc
 :description: You can install Management Center, using Docker, a package manager, or the binary distribution.
 
