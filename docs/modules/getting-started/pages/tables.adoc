@@ -1,18 +1,18 @@
 = Tables
-:description: Tables are displayed within the dashboard and on the details page of most data structures. This page explains how to read tables and customize their settings, including the columns shown.
+:description: Tables are displayed within the dashboard and on the details page of most data structures. This topic explains how to read tables and customize their settings, including the columns shown.
 
 {description}
 
 image:ROOT:Table.png[alt=Table, align="center"]
 
-== Current and Historical Metrics
+== Current and historical metrics
 
-Tables work in two modes - current and historical. In the current mode, the currently live metrics are shown from the cluster. 
+Tables work in two modes: current and historical. In the current mode, currently live metrics are shown from the cluster. 
 The historical mode offers previously persisted metrics allowing the tables to show metrics back in time. 
 
-The current mode is always available for the connected cluster. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled and persists metrics for the TTL expiry period configured within the Metrics Persistence settings.
+The current mode is always available for the connected cluster. The historical mode requires xref:deploy-manage:historical-metrics.adoc[] to be enabled and persists metrics for the Time to live (TTL) expiry period configured within the Metrics Persistence settings.
 
-To see the current metrics view, press the *RESET TIME* button. To switch to the historical mode, click on the field labelled as *Now*, which opens the time selector:
+To see the current metrics view, press *RESET TIME*. To switch to the historical mode, click on the field labelled as *Now*, which opens the time selector:
 
 image:ROOT:TimeSelector.png[alt=Time Selector, align="center"]
 
@@ -20,7 +20,7 @@ You can set the time range of metrics shown by either providing times using the 
 In the historical mode, the time input fields show the active time range limit. 
 If xref:deploy-manage:historical-metrics.adoc[] is disabled, then the time range fields will be disabled, showing only the current metrics.
 
-Tables, by default, show the last minute of metrics. In the current mode,  metrics are requested in chunks every 5 seconds.
+Tables, by default, show the last minute of metrics. In the current mode, metrics are requested in chunks every 5 seconds.
 The metrics that have been persisted can be requested in historical mode as long as they have been previously recorded and within the TTL expiry period (defaults to 1 day).
 
 == Presets
