@@ -1,11 +1,11 @@
-= Updating an Enterprise License for Management Center
+= Update an Enterprise License for Management Center
 :description: You can use the UI to update an Enterprise license for Management Center.
 
 An Enterprise license must be installed on Management Center to access Enterprise features and display metrics for more than three cluster members. 
 
 {description}
 
-== Before you Begin
+== Before you begin
 
 You need a valid Enterprise license. You can get a trial license from the link:http://trialrequest.hazelcast.com/[Hazelcast website].
 
@@ -13,9 +13,9 @@ Make sure that Management Center was not started with the `hazelcast.mc.license`
 
 This feature is available only to admin users.
 
-== Updating the License
+== Update the license
 
-Open *Settings* menu from the Top Bar, and go to *License* tab.
+From the *Settings* menu in the Top Bar, go to the *License* tab.
 
 image:ROOT:MCLicense.png[Management Center License Page]
 
@@ -31,15 +31,15 @@ Warnings are displayed when a license expires within 30 days.
 
 To update your license key:
 
-. Click *Update my license key*
+. Click *Update my license key*.
 . Enter your license key and click *Update License*.
 
-The information on the page will be updated for the new license.
+The information on the page is updated for the new license.
 
-== Next Steps
+== Next steps
 
 xref:clusters:cluster-license.adoc[View the license that's installed on the Hazelcast cluster].
 
 Use the REST API to xref:integrate:clustered-rest.adoc#retrieving-management-center-license-expiration-time[get details about license expiration times].
 
-Start Management Center with the xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] to override any Management Center Enterprise license for Management Center that's already installed.
+Start Management Center with the xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] to override any Enterprise license for Management Center that's already installed.

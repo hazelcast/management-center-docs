@@ -3,7 +3,7 @@
 
 {description}
 
-== Setting Up the Active Directory Security Provider
+== Set up the Active Directory security provider
 
 To set up Active Directory, you need to configure settings either in the UI or the `hz-mc conf` tool.
 
@@ -14,8 +14,8 @@ UI::
 --
 To set up the local security provider in the UI, go to *Settings* > *Security Providers* > *Active Directory*.
 
-Before saving your configuration, you can test it by clicking the **Test**
-button. The user you test with needs to be a member of one of
+Before saving your configuration, test it by clicking **Test**. 
+The user you test with must be a member of one of
 the groups you have configured for the Management Center.
 --
 mc-conf::
@@ -66,16 +66,16 @@ Center. To use more than one group, separate them with a semicolon (;).
 * **Nested Group Search:** Disable if you have a large LDAP group structure
 and it takes a long time to query all nested groups during login.
 
-== Creating and Managing Users
+== Create and manage users
 
 To create and manage additional users, you must configure them in Active Directory.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-== Updating Active Directory Settings
+== Update Active Directory settings
 
 Once configured, Active Directory settings are saved in a local database managed by Management Center.
-If you need to update your settings afterwards, you need to provide the import properties file under `<hazelcast-mc>/import/securityHotReload.properties`, and then click on the **Reload Security Config** button on the login page.
+If you need to update your settings afterwards, you need to provide the import properties file under `<hazelcast-mc>/import/securityHotReload.properties`, and then click **Reload Security Config** on the login page.
 The `securityHotReload.properties` should contain the following properties:
 
 ```
@@ -97,11 +97,11 @@ but you need to stop the Management Center service for this configuration option
 See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 [[ad-ssl]]
-== Enabling TLS/SSL for Active Directory
+== Enable TLS/SSL for Active Directory
 
 If your Active Directory service is using TLS/SSL protocol, use the command line parameters for your Management Center
 deployment xref:deploy-manage:system-properties.adoc#hazelcast-mc-ad-ssl-protocol[Active Directory SSL configuration options].
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

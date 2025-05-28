@@ -1,21 +1,28 @@
-= Enterprise Licenses
-:description: To use some features in Management Center, you need an Enterprise license.
+= Enterprise licenses
+:description: To use some features in Management Center, you need a valid Enterprise license.
 :page-aliases: ROOT:managing-licenses.adoc
 
 {description}
 
-== Licensed Features
+== Licensed features
+
+// For a list of Management Center's Enterprise features, see the xref:getting-started:overview.adoc#key-features-and-benefits[Overview].
 
 Management Center requires a valid Enterprise license for the following:
 
-* Clustered JMX
-* Clustered REST API
-* Cluster Client Filtering
-* Prometheus Exporter
-* Displaying metrics for more than three cluster members
-* Healthcheck
+- Clustered JMX
 
-To use these features in Management Center, you must install (in Management Center) either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
+- Clustered REST API
+
+- Cluster Client Filtering
+
+- Prometheus Exporter
+
+- Displaying metrics for more than three cluster members
+
+- Healthcheck
+
+To use these features, you must install (in Management Center) either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
 
 As well as these Management Center features, you need an Enterprise license for Hazelcast Platform on your cluster to use the following features in Management Center:
 
@@ -23,15 +30,15 @@ As well as these Management Center features, you need an Enterprise license for 
 * Persistence (Hot Restart)
 * Rolling Upgrade
 
-== Viewing Cluster Licenses
+== View cluster licenses
 
 To view details about an Enterprise license for Hazelcast Platform that's installed on your cluster, see xref:clusters:cluster-license.adoc[].
 
-== Updating Management Center Licenses
+== Update Management Center licenses
 
 To update an Enterprise license for Management Center, see xref:updating-mc-license-ui.adoc[].
 
-== Updating Cluster Licenses at Runtime
+== Update cluster licenses at runtime
 
 You can use Management Center to update an existing Enterprise license in your Hazelcast cluster. See xref:clusters:update-config.adoc[].
 
