@@ -37,7 +37,7 @@ The auth token must be included in the following header:
 
 * Authorization: Bearer <user_auth_token>
 
-=== Generating auth tokens
+=== Generate auth tokens
 
 The way in which you generate an auth token depends on the security provider that you use. See xref:deploy-manage:security-providers.adoc[].
 

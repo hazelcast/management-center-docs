@@ -1,12 +1,14 @@
 = Overview
-:description: You can monitor data structures in your cluster using the *Storage*, *Compute*, and *Messaging* menus in Management Center.
+// :description: You can monitor data structures in your cluster using the *Storage*, *Compute*, and *Messaging* menus in Management Center.
 :page-aliases: monitor-imdg:monitor-dds.adoc
 
-{description}
+// {description} Commented out as bold tags do not work properly when used within the description
+
+The *Storage*, *Compute*, and *Messaging* menus in Management Center allow you to monitor different types of data structures and services in your Hazelcast cluster.
 
 == Storage
 
-Under the *Storage* menu, you'll find the following pages:
+Use the *Storage* menu to monitor data storage structures, including: 
 
 * xref:data-structures:map.adoc[Maps]. Here, you can also set the selected map's attributes.
 * xref:data-structures:replicated-map.adoc[Replicated Maps]
@@ -17,16 +19,20 @@ Under the *Storage* menu, you'll find the following pages:
 * xref:data-structures:pn-counter.adoc[PN Counters]
 * xref:data-structures:flake-id-gen.adoc[Flake ID Generators]
 
+This helps you track memory usage, entry counts, and performance metrics for your stored data. 
+
 == Compute
 
-Under the *Compute* menu, you'll find the following pages:
+Use the *Compute* menu to monitor Executors for tracking distributed computation tasks running on your cluster:
 
 * xref:data-structures:executor.adoc[Executors]
 
 == Messaging
 
-Under the *Messaging* menu, you'll find the following pages:
+Use the *Messaging* menu to monitor messaging structures:
 
 * xref:data-structures:queue.adoc[Queues]
 * xref:data-structures:topic.adoc[Topics]
 * xref:data-structures:reliable-topic.adoc[Reliable Topics]
+
+These menus provide a comprehensive view of your cluster's data structures, allowing you to monitor performance, usage patterns, and the overall health of your Hazelcast deployment.

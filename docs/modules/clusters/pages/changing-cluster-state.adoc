@@ -1,4 +1,4 @@
-= Changing the cluster state
+= Change the cluster state
 :description: Cluster states determine what cluster operations are available. By changing the state of a cluster, you can grant or restrict cluster operations such as migrations as well as change the behavior of those operations.
 
 {description}
