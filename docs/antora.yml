@@ -13,9 +13,11 @@ asciidoc:
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '6.0-snapshot'
-    # https://github.com/hazelcast/clc/releases
-    page-latest-supported-clc: '5.4.1'
+    # https://github.com/hazelcast/hazelcast-commandline-client/releases
+    page-latest-supported-clc: '5.5.0'
     page-toclevels: 1
     experimental: true
+    open-source-product-name: 'Community Edition'
+    enterprise-product-name: 'Enterprise Edition'
 nav:
   - modules/ROOT/nav.adoc

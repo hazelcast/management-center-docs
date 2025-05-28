@@ -3,6 +3,8 @@
 
 In this tutorial, you'll serve Management Center over HTTPS, using a self-signed certificate.
 
+== Overview
+
 You will learn how to do the following:
 
 - Generate a self-signed certificate for Management Center.
@@ -11,17 +13,17 @@ You will learn how to do the following:
 
 - Serve Management Center over HTTPS on localhost.
 
-== Before you Begin
+== Prerequisites
 
 To complete this tutorial, you need the following:
 
 [cols="1a,1a"]
 |===
-|Prerequisites|Useful resources
+|Requirements|Useful resources
 
 |Java KeyTool
 |
-To check if you have Java KeyTool, run the following command:
+To check if you have the Java KeyTool, run this command:
 
 ```bash
 keytool --help
@@ -35,7 +37,7 @@ If you don't see a list of commands, install Java.
 You can use any browser, but this tutorial uses Firefox because it's simple to configure Firefox to trust self-signed certificates.
 |===
 
-== Step 1. Create a Key Pair
+== Create a key pair
 
 To be able to use HTTPS, you need to generate a public/private key pair that Management Center can use to encrypt the HTTP traffic.
 
@@ -99,7 +101,7 @@ Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) wi
 
 The key and certificate are stored in the `mc.keystore` file in your current directory.
 
-== Step 2. Extract a Self-Signed Certificate from the Keystore
+== Extract a self-signed certificate from the keystore
 
 To allow Management Center to prove its identity, it needs a certificate that is signed with its private key.
 
@@ -117,7 +119,7 @@ Certificate stored in file <mc-public.cert>
 
 The signed certificate is stored in the `mc-public.cert` file in your current directory.
 
-== Step 3. Encrypt the Keystore Password
+== Encrypt the keystore password
 
 For improved security, you can mask your keystore password by encrypting it with the built-in encryption replacer.
 
@@ -147,7 +149,7 @@ java -cp hazelcast-management-center-{full-version}.jar \ <1>
 $ENC{h7kmetFZwh8=:531:dOsG5ezhSZiyBXY5JNx8gg==}
 ```
 
-== Step 4. Start Management Center
+== Start Management Center
 
 . Start Management Center and pass it the information it needs to use the keystore.
 +
@@ -196,7 +198,7 @@ mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
 
 You should see that Management Center is being served over HTTPS.
 
-== Next Steps
+== Next steps
 
 xref:tls-security.adoc[Explore TLS security topics] for Management Center.
 

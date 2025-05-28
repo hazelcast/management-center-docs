@@ -1,11 +1,11 @@
-= Dev Mode
+= Dev mode
 :description: Dev mode is a development security provider that allows you to evaluate Management Center without needing credentials for logging in or using the REST API.
 
 {description}
 
 Once you have enabled dev mode, you are automatically logged into Management Center as an admin user without needing to supply any credentials.
 
-== Setting Up Dev Mode
+== Set up dev mode
 
 To set up dev mode, you can use the UI or the `hz-mc conf` tool.
 
@@ -40,6 +40,6 @@ mc-conf.bat dev-mode configure
 --
 ====
 
-== Next Steps
+== Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

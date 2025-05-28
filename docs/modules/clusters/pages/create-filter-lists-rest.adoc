@@ -1,9 +1,9 @@
-= Deploying a Client Filter List with the REST API
+= Deploy a client filter list with the REST API
 :description: You can define filter lists to allow or disallow client connections to clusters, using the REST API in Management Center.
 
 {description}
 
-== Before you Begin
+== Before you begin
 
 - Configure your Hazelcast clients with one or more failover clusters to make sure that disconnected clients can connect to another cluster. For a tutorial, see xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:blue-green.adoc[].
 
@@ -13,7 +13,7 @@
 
 You can deploy either an allow list or a deny list to a cluster, not both. If you deploy an allow list, the cluster disallows connections from any clients that aren't in the allow list. If you deploy a deny list, the cluster allows connections from any client that isn't in the deny list.
 
-== Creating a Filter List
+== Create a filter list
 
 Use the xref:integrate:client-filtering.adoc#/paths/~1rest~1clusters~1%7Bcluster%7D~1clientfiltering~1lists/post[`/clientfiltering/lists`] endpoint to create a new filter list.
 
@@ -32,7 +32,7 @@ curl --location --request POST "$MANAGEMENT_CENTER_IP:$MANAGEMENT_CENTER_PORT/re
 ]}'
 ```
 
-== Deploying a Filter List to a Connected Cluster
+== Deploy a filter list to a connected cluster
 
 To deploy an active filter list to a connected cluster, use the xref:integrate:client-filtering.adoc#/paths/~1rest~1clusters~1%7Bcluster%7D~1clientfiltering~1deploy/post[`/clientfiltering/deploy`] endpoint.
 
@@ -47,7 +47,7 @@ curl --location --request POST "$MANAGEMENT_CENTER_IP:$MANAGEMENT_CENTER_PORT/re
 }'
 ``` 
 
-== Example Scripts
+== Example scripts
 
 To automate the process of managing filter lists, you can use bash scripts. These examples are for enabling and disabling a deny list that blocks all client connections from a cluster.
 
@@ -273,7 +273,7 @@ curl --location --request POST "${ip}:${port}/rest/clusters/${cluster}/clientfil
 }'
 ```
 
-== Related Resources
+== Related resources
 
 xref:integrate:client-filtering.adoc[].
 

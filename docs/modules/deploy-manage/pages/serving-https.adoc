@@ -1,13 +1,13 @@
-= Serving Management Center over HTTPS
+= Serve Management Center over HTTPS
 :description: Serving Management Center over HTTPS secures communication between Management Center and HTTP clients such as web browsers that are connected to it.
 
 {description}
 
 To serve Management Center over HTTPS, you need to enable TLS in the Management Center configuration. This topic explains the options you have for serving Management Center over HTTPS. For a tutorial, see xref:serve-mc-over-https.adoc[].
 
-== Enabling TLS for Management Center
+== Enable TLS for Management Center
 
-To enable TLS, you need to do the following:
+To enable TLS:
 
 . Generate key pairs and a signed certificate. If you are using a self-signed certificate, see <<self-signed-certificates, Self-Signed Certificates>> on this page.
 
@@ -44,27 +44,27 @@ as command line arguments in encrypted form, see xref:variable-replacers.adoc[].
 
 When TLS is enabled, you can access Management Center over HTTPS on port 8443: `\https://localhost:8443`.
 
-== Self-Signed Certificates
+== Self-signed certificates
 
 It's not always necessary to have certificates signed by a well-known certificate authority. For example, you may want to set up HTTPS on a private network or a staging environment. In this case, you can use a self-signed certificate.
 
-If you want to use a self-signed certificate, do one of the following:
+To use a self-signed certificate, do one of the following:
 
 - Create the certificate with the hostname of the machine you will
 deploy the Management Center on.
 
 - Disable hostname verification by setting the xref:system-properties.adoc#hazelcast-mc-disablehostnameverification[`hazelcast.mc.disableHostnameVerification` property] to `true`.
 
-Otherwise, you may see this exceptions in the member logs:
+Otherwise, you may see this exception in the member logs:
 
 ```
 javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:
 No subject alternative names matching IP address 127.0.0.1 found
 ```
 
-When using a self-signed certificate, your browser may warn you that the connection is not secure. If so, add your certificate to the browsers list of trusted certificates.
+When using a self-signed certificate, your browser may warn you that the connection is not secure. If so, add your certificate to the browser's list of trusted certificates.
 
-== Overrriding the Default HTTPS port
+== Override the default HTTPS port
 
 To override the HTTPS port, you can use the `hazelcast.mc.https.port`
 property when starting the Management Center. For example:
@@ -98,17 +98,17 @@ mc-start.cmd -Dhazelcast.mc.tls.enabled=true ^
 This command starts the Management Center on HTTPS port 443.
 
 [[enabling-http-port]]
-== Redirecting the HTTP Port to HTTPS
+== Redirect the HTTP port to HTTPS
 
 By default, the HTTP port is disabled when you enable TLS. If you want to
 have an open HTTP port that redirects to the HTTPS port, set the xref:system-properties.adoc#hazelcast-mc-tls-enablehttpport[`hazelcast.mc.tls.enableHttpPort` property] to `true`.
 
 [[mutual-authentication]]
-== Mutual Authentication
+== Mutual authentication
 
 To make sure that only authenticated HTTP clients such as web browsers or cURL can connect to Management Center, you can enable mutual authentication.
 
-When mutual authentication is enabled, HTTP clients need to present their own TLS certificate to Management Center before they are allowed to connect. You can store trusted clients' TLS certificates in the Management Center truststore so that it can authenticate them.
+When mutual authentication is enabled, HTTP clients need to present their own TLS certificate to Management Center before they are allowed to connect. You can store trusted clients' TLS certificates in the Management Center truststore so it can authenticate them.
 
 To enable mutual authentication,
-you need to use the xref:system-properties.adoc#hazelcast-mc-tls-mutualauthentication[`hazelcast.mc.tls.mutualAuthentication` property].
+use the xref:system-properties.adoc#hazelcast-mc-tls-mutualauthentication[`hazelcast.mc.tls.mutualAuthentication` property].
