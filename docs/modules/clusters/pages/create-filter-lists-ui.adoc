@@ -1,15 +1,15 @@
-= Deploying a Client Filter List from the UI
+= Deploy a client filter list from the UI
 :description: You can define filter lists to allow or disallow client connections to clusters, using the Management Center UI.
 
 {description}
 
-== Before you Begin
+== Before you begin
 
 Configure your Hazelcast clients with one or more failover clusters to make sure that disconnected clients can connect to another cluster. For a tutorial, see xref:{page-latest-supported-hazelcast}@hazelcast:getting-started:blue-green.adoc[].
 
 You can deploy either an allow list or a deny list to a cluster, not both. If you deploy an allow list, the cluster disallows connections from any clients that aren't in the allow list. If you deploy a deny list, the cluster allows connections from any client that isn't in the deny list.
 
-== Creating a Filter List
+== Create a filter list
 
 . Enable client filtering on the connected cluster.
 +
@@ -27,7 +27,7 @@ image:ROOT:ClientFilteringExampleStep4.png[Example Step 4]
 +
 The orange status indicator means that the list has not yet been deployed to the cluster.
 
-== Deploying a Filter List to a Connected Cluster
+== Deploy a filter list to a connected cluster
 
 . If you created an allow list, select the *Allow-list* tab to enter the allow mode. Or, if you created a deny-list, select the *Deny-list* tab to enter the deny mode.
 
@@ -39,7 +39,7 @@ image:ROOT:ClientFilteringExampleStep5.png[Example Step 5]
 +
 image:ROOT:ClientFilteringExampleStep6.png[Example Step 6]
 
-== Editing an Existing Filter List
+== Edit an existing filter list
 
 . Click the **Edit** button on a list row.
 
@@ -49,7 +49,7 @@ image:ROOT:ClientFilteringExampleStep6.png[Example Step 6]
 
 image:ROOT:ClientFilteringEditList.png[Edit Client Filtering List]
 
-== Deleting an Entry
+== Delete an entry
 
 . Click the **Edit** button on a list row.
 
@@ -57,9 +57,9 @@ image:ROOT:ClientFilteringEditList.png[Edit Client Filtering List]
 
 . Click *Save and Deploy* to deploy the new list to the cluster.
 
-== Disabling an Existing Filter List
+== Disable an existing filter list
 
-To keep a filter list saved in Management Center, but remove it from the cluster, do the following:
+To keep a filter list saved in Management Center, but remove it from the cluster:
 
 . Click the **Edit** button on a list row.
 
@@ -67,9 +67,9 @@ To keep a filter list saved in Management Center, but remove it from the cluster
 
 . Click *Save*.
 
-== Deleting a Filter List
+== Delete a filter list
 
-To delete an entire filter list from the cluster, do the following:
+To delete an entire filter list from the cluster:
 
 . Click the **Edit** button on a list row.
 
@@ -77,6 +77,6 @@ To delete an entire filter list from the cluster, do the following:
 
 NOTE: You can also disable client filtering to delete all filter lists from the cluster.
 
-== Related Resources
+== Related resources
 
 xref:create-filter-lists-rest.adoc[].

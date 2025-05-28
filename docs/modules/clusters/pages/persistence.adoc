@@ -36,7 +36,7 @@ This page is available only to admin users.
 |A countdown from the value configured in the cluster's xref:{page-latest-supported-hazelcast}@hazelcast:storage:configuring-persistence.adoc#persistence-validation-timeout-seconds[`validation-timeout-seconds`] configuration option.
 |===
 
-== Related Resources
+== Related resources
 
 See the following topics in the Platform documentation:
 

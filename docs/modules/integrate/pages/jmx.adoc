@@ -5,9 +5,9 @@
 
 {description}
 
-TIP: For information about integration with Datadog, see the: link:https://docs.datadoghq.com/integrations/hazelcast/[Datadog Docs].
+== Enable Clustered JMX
 
-== Enabling Clustered JMX
+TIP: For information about integration with Datadog, see the: link:https://docs.datadoghq.com/integrations/hazelcast/[Datadog Docs].
 
 To enable the clustered JMX service, use the xref:deploy-manage:system-properties.adoc#hazelcast-mc-jmx-enabled[`hazelcast.mc.jmx.enabled` property]:
 
@@ -49,7 +49,7 @@ using the address `localhost:9000`.
 
 To connect to the clustered JMX interface, you can use any JMX client such as JConsole.
 
-== Enabling TLS for Clustered JMX
+== Enable TLS for Clustered JMX
 
 By default, clustered JMX is served unencrypted. To enable
 TLS/SSL for Clustered JMX, use the following system properties for your Management Center deployment:
@@ -101,7 +101,7 @@ clustered JMX service using JConsole with the address `localhost:65432`:
 jconsole -J-Djavax.net.ssl.trustStore=/some/dir/selftrusted.ts -J-Djavax.net.ssl.trustStorePassword=trustpass
 ----
 
-=== Enabling TLS Mutual Authentication for Clustered JMX
+=== Enable TLS mutual authentication for Clustered JMX
 
 To secure the clustered JMX interface, you can use
 the following command line parameters to enable TLS mutual
@@ -148,7 +148,7 @@ mc-start.cmd -Dhazelcast.mc.jmx.enabled=true ^
 --
 ====
 
-== Integrating JMX with AppDynamics
+== Integrate JMX with AppDynamics
 
 You can use the clustered JMX interface to integrate Management Center
 with *AppDynamics*. To perform this integration, attach the AppDynamics
@@ -176,7 +176,7 @@ Started AppDynamics Java Agent Successfully.
 Hazelcast Management Center starting on port 8080 at path : /
 ```
 
-== Integrating JMX with New Relic
+== Integrate JMX with New Relic
 
 You can use the clustered JMX interface to integrate Management Center
 with New Relic. To perform this integration, attach the New Relic Java agent
@@ -256,7 +256,7 @@ While you are creating the dashboard, you should see the metrics that
 you are sending to New Relic from the Management Center in the **Metrics**
 section under the JMX directory.
 
-== Next Steps
+== Next steps
 
 See a list of all available xref:jmx-api.adoc[JMX attributes].
 
