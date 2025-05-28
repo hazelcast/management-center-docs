@@ -1,4 +1,4 @@
-= Troubleshooting Management Center
+= Troubleshoot Management Center
 :page-aliases: ROOT:automated-security-scan.adoc, ROOT:troubleshooting.adoc, ROOT:ui-logs.adoc
 
 This topic describes how to deal with known issues and also how to read the user interface logs of Management Center.

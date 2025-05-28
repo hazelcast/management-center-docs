@@ -115,7 +115,7 @@ members are missing.
 members are missing.
 
 [[promote]]
-== Promoting members to CP members
+== Promote members to CP members
 
 You can promote any existing member that is not part of the CP Subsystem to a CP member.
 
@@ -134,7 +134,7 @@ image:ROOT:CPPromoteDialog.png[Promote Member to CP Confirmation]
 If an exception occurs, an error notification is displayed.
 
 [[remove]]
-== Removing CP members
+== Remove CP members
 
 You can manually remove a disconnected CP member from the CP Subsystem, using Management Center.
 
@@ -155,7 +155,7 @@ image:ROOT:CPRemoveDialog.png[Remove CP Member Confirmation]
 
 If an exception occurs, an error notification is displayed.
 [[restart]]
-== Restarting CP Subsystem
+== Restart CP Subsystem
 
 If the majority of CP members crash, you can restart the CP Subsystem to delete all CP data and trigger a new round of the discovery process.
 
@@ -167,7 +167,7 @@ If everything goes well, a success message is displayed.
 
 If an exception occurs, an error notification is displayed.
 [[terminate]]
-== Forcing a session to close
+== Force a session to close
 
 If a session owner is not temporarily partitioned and crashed, an admin user can manually close the session to release its resources immediately.
 
