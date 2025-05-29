@@ -6,13 +6,11 @@
 
 Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise, and helping you maximize the value of your Hazelcast deployment.
 
-NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
+NOTE: For information about what is new and improved in Hazelcast Platform, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new] in Hazelcast Platform. For information about the improvements and changes in Management Center, see the xref:release-notes:releases.adoc[Release notes]. 
 
 == {enterprise-product-name} versus {open-source-product-name}
 
 While the {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members), the {enterprise-product-name} unlocks the full potential of Management Center with advanced security, monitoring, and management features. Get a 30-day free trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
-
-NOTE: To access Enterprise features, an Enterprise license must be installed on Management Center. See xref:deploy-manage:license-management.adoc[].
 
 == Key features and benefits
 
@@ -116,8 +114,8 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 
 |===
 
-NOTE: The specific Enterprise features enabled in Management Center depend on the license key. 
-To verify which features are enabled, view the xref:deploy-manage:updating-mc-license-ui.adoc[License screen].
+NOTE: To access Enterprise features, a license must be installed on Management Center — see xref:deploy-manage:license-management.adoc[].
+The specific features enabled in Management Center depend on the license key. To verify which features are enabled, view the xref:deploy-manage:updating-mc-license-ui.adoc[License screen].
 
 [[os-requirements]]
 == Requirements
