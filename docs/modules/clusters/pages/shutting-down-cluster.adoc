@@ -1,4 +1,4 @@
-= Shutting down members and clusters
+= Shut down members and clusters
 :description: Maintaining a cluster often requires shutting down and restarting members to make changes take effect. You can shut down a whole Hazelcast cluster or individual members in Management Center with one button.
 
 {description}
