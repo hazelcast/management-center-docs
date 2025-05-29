@@ -6,6 +6,8 @@
 
 Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise, and helping you maximize the value of your Hazelcast deployment.
 
+NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
+
 == {enterprise-product-name} versus {open-source-product-name}
 
 While the {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members), the {enterprise-product-name} unlocks the full potential of Management Center with advanced security, monitoring, and management features. Get a 30-day free trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
@@ -13,8 +15,6 @@ While the {open-source-product-name} offers basic functionality for small deploy
 NOTE: To access Enterprise features, an Enterprise license must be installed on Management Center. See xref:deploy-manage:license-management.adoc[].
 
 == Key features and benefits
-
-//cols="2a,1a,1a,2a"]
 
 [cols="30%,20%,20%,30%"]
 |===
@@ -24,7 +24,6 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 |No limits
 |Limited to monitoring clusters up to 3 members
 |Detailed statistics about members, clients and the data structures in real-time are provided to help you identify performance bottlenecks and optimize your applications
-
 
 |Multi-channel monitoring 
 |Included
@@ -46,6 +45,11 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 |Included
 |n/a
 |Lets you identify and diagnose issues in clusters. Config Healthcheck runs automatically when cluster topology or member configuration changes
+
+|WAN Replication
+|Requires cluster with WAN Replication license
+|n/a
+|Provides detailed metrics and management of WAN Replication and Sync, including Merkle Tree support for consistency checks and an option to force sync any deltas
 
 |Integrated tooling
 |Included
@@ -88,9 +92,32 @@ NOTE: To access Enterprise features, an Enterprise license must be installed on 
 |Included
 |Included
 |Get started quickly with Management Center using Docker Compose. For example, create a docker-compose.yml file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster
+
+|*REST API*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|Client Filtering API
+|Included
+|n/a
+|Access to the Client Filtering settings via secure API
+
+|Cluster Metrics API
+|Included
+|n/a
+|Access to metrics of all clusters connected to Management Center
+
+|WAN Replication API
+|Included
+|n/a
+|Access to WAN Replication metrics and management via API
+
+|Cluster Connections API
+|Included
+|n/a
+|Manage cluster connections to Management Center via API
+
 |===
 
-NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
+NOTE: The specific Enterprise features enabled in Management Center depend on the license key. 
+To verify which features are enabled, view the xref:deploy-manage:updating-mc-license-ui.adoc[License screen].
 
 [[os-requirements]]
 == Requirements
