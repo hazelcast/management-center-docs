@@ -34,23 +34,23 @@ The following table explains which features are available in Management Center b
 
 |Prometheus Exporter and Healthcheck
 |Included
-|n/a
+|N/A
 |Prometheus Exporter provides all the metrics from the cluster in a Prometheus format. Config allows for the metrics to be filtered. Also included are Config Healthcheck counters
 
 |*Powerful administrative tools*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
 |Client Filtering
 |Included
-|n/a
+|N/A
 |Allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
 
 |Config Healthcheck
 |Included
-|n/a
+|N/A
 |Lets you identify and diagnose issues in clusters. Config Healthcheck runs automatically when cluster topology or member configuration changes
 
 |WAN Replication
 |Requires cluster with WAN Replication license
-|n/a
+|N/A
 |Provides detailed metrics and management of WAN Replication and Sync, including Merkle Tree support for consistency checks and an option to force sync any deltas
 
 |Integrated tooling
@@ -71,12 +71,12 @@ The following table explains which features are available in Management Center b
 
 |Third-party authentication
 |Included
-|n/a
+|N/A
 |Extends the RBAC integration with support for third-party authentication services, including JAAS, LDAP, Active Directory, SAML and OpenID
 
 |Audit logs
 |Included
-|n/a
+|N/A
 |Track administrative actions for compliance
 
 |*SQL queries*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
@@ -87,7 +87,7 @@ The following table explains which features are available in Management Center b
 
 |High availability deployments
 |Included
-|n/a
+|N/A
 |Support for high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes
 
 |Easy deployment with Docker
@@ -98,22 +98,22 @@ The following table explains which features are available in Management Center b
 |*REST API*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
 |Client Filtering API
 |Included
-|n/a
+|N/A
 |Access to the Client Filtering settings via secure API
 
 |Cluster Metrics API
 |Included
-|n/a
+|N/A
 |Access to metrics of all clusters connected to Management Center
 
 |WAN Replication API
 |Included
-|n/a
+|N/A
 |Access to WAN Replication metrics and management via API
 
 |Cluster Connections API
 |Included
-|n/a
+|N/A
 |Manage cluster connections to Management Center via API
 
 |===
