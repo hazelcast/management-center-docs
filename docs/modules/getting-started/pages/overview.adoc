@@ -10,7 +10,11 @@ NOTE: For information about what is new and improved across Hazelcast products a
 
 == {enterprise-product-name} versus {open-source-product-name}
 
-While the {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members), the {enterprise-product-name} unlocks the full potential of Management Center with advanced security, monitoring, and management features. Get a 30-day free trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
+If you have Hazelcast Platform {enterprise-product-name} then you have access to all Management Centre features, including advanced security, monitoring, and management features. You can either reuse your Hazelcast Platform license key or use a dedicated Enterprise license for Management Center. Otherwise, {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members).
+
+TIP: Get a 30-day free Enterprise trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
+
+The following table explains which features are available in Management Center based on your license:
 
 == Key features and benefits
 
