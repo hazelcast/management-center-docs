@@ -5,14 +5,14 @@
 
 {description}
 
-== Enabling Clustered REST
+== Enable Clustered REST
 
 The REST API is disabled by default.
 
 To enable clustered REST in Management Center, use the
 xref:deploy-manage:system-properties.adoc#hazelcast-mc-rest-enabled[`hazelcast.mc.rest.enabled` property] at startup.
 
-== Root Endpoint
+== Root endpoint
 
 The entry point for the clustered REST API is `/rest`. This
 resource does not have any attributes.
@@ -37,7 +37,7 @@ The auth token must be included in the following header:
 
 * Authorization: Bearer <user_auth_token>
 
-=== Generating Auth Tokens
+=== Generate auth tokens
 
 The way in which you generate an auth token depends on the security provider that you use. See xref:deploy-manage:security-providers.adoc[].
 
@@ -63,7 +63,7 @@ Use Auth `Settings/API` screen on the UI.
 
 |===
 
-==== Using `api/tokens` Endpoint
+==== Use `api/tokens` endpoint
 
 To use the /api/tokens endpoint for security providers except SAML and OIDC, run the following command. Replace the <username> and <password> placeholders with the credentials of a user logged in to the Management Center.
 
@@ -82,7 +82,7 @@ Here, replace the `<username>` placeholders with the username of a user logged i
 
 image:ROOT:ClusteredRestProvideHeaders.png[alt=Clustered Rest Provide Headers, align="center"]
 
-==== Using `hz-mc conf` Tool
+==== Use `hz-mc conf` tool
 To use the `hz-mc conf` tool, do the following:
 
 [tabs]
@@ -113,19 +113,19 @@ Token: 'mJMMDfaSWZ1MuqhmGhA8m4erCNZtPi_A4_VyR_y8eH0'
 Label: 'test_user_2021-07-07T17:24 EEST'
 ```
 
-==== Using Auth Token Management UI
+==== Use Auth Token Management UI
 
 . Click *Settings* in the Top Bar.
 . Navigate to the *API* tab.
 +
 image:ROOT:AuthTokenManagementPage.png[alt=Auth Token Management Page, align="center"]
 
-. Select the user that you want to create a token for. Only admin can create tokens for other users.
+. Select the user that you want to create a token for. Only an admin can create tokens for other users.
 
 . Enter the label of the token that you want to create. Default value has the `username_creationTime` format.
 . Click *Create Token*.
 
-You will see the created token on the right side.
+The created token appears on the right-hand side.
 
 image:ROOT:AuthTokenManagementPage_createdToken.png[alt=Created Token, align="center"]
 
@@ -133,7 +133,7 @@ You can copy your token to the clipboard.
 
 NOTE: The token will not be displayed again, so make sure you note it before leaving the page or creating a new one.
 
-You can see the list of existing tokens in the table, bottom of the page.
+You can see the list of existing tokens in the table, at the bottom of the page.
 
 image:ROOT:AuthTokenManagementPage_TokenList.png[alt=Created Token List, align="center"]
 
@@ -156,7 +156,7 @@ image:ROOT:AuthTokenManagementPage_TokenList.png[alt=Created Token List, align="
 
 |===
 
-=== Revoking All Auth Tokens
+=== Revoke all auth tokens
 
 To revoke all auth tokens for a user, use the `user revoke-tokens` task.
 
@@ -183,7 +183,7 @@ mc-conf.bat user revoke-tokens -n <username>
 --
 ====
 
-== OpenAPI Definitions
+== OpenAPI definitions
 
 The Clustered REST endpoints are documented in OpenAPI format. See the following:
 

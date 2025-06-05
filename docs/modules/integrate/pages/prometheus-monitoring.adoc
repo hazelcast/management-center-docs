@@ -1,13 +1,13 @@
-= Prometheus Monitoring
+= Prometheus monitoring
 :description: Prometheus is an open source monitoring system for metrics. You can export Hazelcast cluster metrics to a scrape endpoint in Management Center that Prometheus can consume. This allows you to monitor Hazelcast along with your other applications in the same monitoring tool.
 :page-aliases: ROOT:prometheus.adoc
 :page-enterprise: true
 
 {description}
 
-Management Center's Prometheus Exporter automatically updates with any cluster changes and allows you to easily collect metrics for the whole cluster, or multiple clusters, from a single endpoint. Without it, you would have to scrape each member individually, manage any changes from scaling, restarts, and IP configuration, and collate the metrics from all members.
+Management Center's Prometheus Exporter automatically updates with any cluster changes and allows you to collect metrics easily for the whole cluster, or multiple clusters, from a single endpoint. Without it, you would have to scrape each member individually, manage any changes from scaling, restarts, and IP configuration, and collate the metrics from all members.
 
-== Enabling the Prometheus Exporter
+== Enable the Prometheus Exporter
 
 To start exposing metrics via the Prometheus Exporter, set the `hazelcast.mc.prometheusExporter.enabled` system property to `true`.
 
@@ -15,13 +15,13 @@ Metrics are exposed to the `/metrics` endpoint, which is the Prometheus default.
 
 NOTE: Management Center also reformats the metrics to align with Prometheus best practice recommendations. See xref:prometheus-metrics.adoc[] for details.
 
-== Disabling Timestamps
+== Disable timestamps
 
 Management Center collects metrics with the timestamp of individual members, and sends this timestamp to Prometheus. Prometheus discards metrics with the oldest timestamps. You can disable sending timestamps so that your monitoring system continues to operate when clock shifts happen in the cluster.
 
 To stop sending timestamps to Prometheus, set the <<prometheus-timestamp, `hazelcast.mc.prometheusExporter.timestamp.enabled`>> property to `false`.
 
-== Configuring Prometheus
+== Configure Prometheus
 
 After enabling the Prometheus Exporter, you can configure your Prometheus YAML file to scrape metrics from Management Center.
 
@@ -38,11 +38,11 @@ scrape_configs:
     - targets: ['localhost:8080'] # replace this address with the network address of Hazelcast Management Center
 ----
 
-=== Authenticating the Scrape Endpoint
+=== Authenticate the scrape endpoint
 
 To secure the scrape endpoint, you can set up basic authentication.
 
-To set up basic authentication, use the `set prometheus-auth` task of the `hz-mc conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
+To do this, use the `set prometheus-auth` task of the `hz-mc conf` tool. Replace the `<my-user>` and `<my-pass>` placeholders with your chosen username and password.
 
 [tabs]
 ====
@@ -74,7 +74,7 @@ Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML f
       password: my-pass
 ----
 
-=== Resetting the Authentication Credentials
+=== Reset the authentication credentials
 
 To reset authentication credentials for the scrape endpoint, use the `security reset` task of the `hz-mc conf` tool. You must stop Management Center to apply this change.
 
@@ -98,7 +98,7 @@ mc-conf.bat security reset
 --
 ====
 
-== Filtering Metrics
+== Filter metrics
 
 By default, Management Center exports all metrics that are reported by the cluster.
 
@@ -160,7 +160,7 @@ mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
 
 NOTE: As described in xref:prometheus-metrics.adoc[], Management Center reformats metrics to align with Prometheus best practice recommendations. Filtering matches against metrics in any format. For example, if you exclude `map.getCount`, you will exclude `hz_map_getCount` and `hazelcast_map_operations_total`.
 
-== Overriding the Default Port
+== Override the default port
 
 By default, metrics are exposed on the same port as the Management Center web interface. To
 override the port number, use the `-Dhazelcast.mc.prometheusExporter.port` system property.
@@ -197,11 +197,11 @@ scrape_configs:
     - targets: ['localhost:2222']
 ----
 
-== Visualizing Metrics in Grafana
+== Visualize metrics in Grafana
 
 Grafana is an open source data visualization solution that allows you to build monitoring dashboards from your Prometheus metrics. To start visualizing Prometheus metrics in Grafana, refer to the link:https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/[Grafana documentation]. Hazelcast provides an https://grafana.com/grafana/dashboards/13183[example dashboard] to help you get started.
 
-== Next Steps
+== Next steps
 
 Learn more about the xref:deploy-manage:mc-conf.adoc[`hz-mc conf` tool].
 

@@ -1,14 +1,14 @@
-= Executing SQL Queries
+= Execute SQL Queries
 :page-aliases: ROOT:sql-browser.adoc
 :description: You can use Management Center to execute SQL queries on a Hazelcast cluster.
 
 {description}
 
-== Before you Begin
+== Before you begin
 
 If a map contains domain objects, the classes for those objects must be on the classpath of Management Center before you can query them. See the xref:getting-started:install.adoc#starting-with-an-extra-classpath[Providing an Extra Classpath].
 
-== Using the SQL Browser
+== Use the SQL Browser
 
 Click *SQL* in the Side Bar.
 
@@ -24,7 +24,7 @@ image:ROOT:SQLBrowserConnectWizardMapType.png[Connecter Wizard Connector Type]
 
 See the following sections for each connector type.
 
-=== Create Mapping for Hazelcast Map
+=== Create mapping for Hazelcast map
 
 . Select the connector type as `Create Mapping for Hazelcast Map`.
 . Select the name of an existing map from the dropdown; only maps that don't have any mappings are shown.
@@ -37,7 +37,7 @@ NOTE: You cannot generate a `CREATE MAPPING` statement for empty maps or maps th
 
 Click *Confirm & Run*.
 
-=== Create Mapping for Kafka
+=== Create mapping for Kafka
 
 . Select the connector type as `Create Mapping for Kafka`.
 . Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
@@ -48,7 +48,7 @@ If you need to change the generated statement, you can use the editor.
 
 Click *Confirm & Run*.
 
-=== Create Mapping for a File System
+=== Create mapping for a file system
 
 . Select the connector type as `Create Mapping for a File System`.
 . Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
@@ -59,7 +59,7 @@ If you need to change the generated statement, you can use the editor.
 
 Click *Confirm & Run*.
 
-=== Create Mapping for JDBC
+=== Create mapping for JDBC
 
 . Select the connector type as `Create Mapping for JDBC`.
 . Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
@@ -70,7 +70,7 @@ If you need to change the generated statement, you can use the editor.
 
 Click *Confirm & Run*.
 
-=== Create Mapping for MongoDB
+=== Create mapping for MongoDB
 
 . Select the connector type as `Create Mapping for MongoDB`.
 . Fill out the newly opened form. While you are filling this form, the editor should be updated appropriately.
@@ -88,7 +88,7 @@ image:ROOT:SQLBrowserQueryableObjects.png[SQL Browser Queryable Objects]
 
 Under the mapping name, you can find columns and indexes with their types.
 
-== Executing Queries
+== Execute queries
 
 To execute a query, click *Execute Query*.
 
@@ -99,11 +99,11 @@ When the query is executed, the results are displayed under *Query Results*:
 image:ROOT:SQLBrowserQueryResultTab.png[A list of query results]
 
 
-== Truncating Displayed Query Results
+== Truncate displayed query results
 
 To reduce the time it takes for Management Center to display query results in the browser, the size of each table cell is limited. If a query returns too much data to fit into a cell, the result is truncated. You can adjust this limit by editing the xref:deploy-manage:system-properties.adoc#hazelcast-mc-sql-max-cell-length[`hazelcast.mc.sql.max-cell-length`] property.
 
-== Viewing Map Metadata
+== View map metadata
 
 If you run simple `SELECT` queries without joins or aggregations over maps, you can view xref:data-structures:map.adoc#map-browser[metadata] for each entry that is returned by the query.
 
@@ -113,7 +113,7 @@ To view an entry's metadata, click the chevron (*⌄*) button next to a map entr
 
 image:ROOT:SQLBrowserQueryResultTabWithOpenMapBrowser.png[A list of query results with metadata view]
 
-== Autocompletion Support
+== Autocompletion support
 
 The SQL editor supports autocompletion to suggest SQL keywords and identifiers for you while you type. To use autocompletion, start typing a query in the SQL editor and press kbd:[Ctrl+Space]. The SQL editor supports the following suggestions:
 
@@ -124,12 +124,12 @@ The SQL editor supports autocompletion to suggest SQL keywords and identifiers f
 
 image:ROOT:SQLBrowserAutocompletion.png[SQl Browser Autocomplete Feature]
 
-== Exporting Query Results
+== Export query results
 
 You can use *Export* to export the query result as a CSV file in
 the https://tools.ietf.org/html/rfc4180[RFC 4180 format] or as a JSON file.
 
-== Viewing Executed SQL Queries
+== View executed SQL queries
 
 In the *History* tab, you can see the history of query execution.
 The history holds the last one hundred executed queries.
@@ -139,7 +139,7 @@ image:ROOT:SQLBrowserHistoryTab.png[A history of executed queries]
 
 To remove the query results, click *Clear Query Result*.
 
-== Creating a Map
+== Create a map
 
 . Open the SQL browser and execute the following SQL statement to create a map called `my_first_map`.
 +
@@ -162,6 +162,6 @@ image:ROOT:SQLCreatesMap.png[Map is Created using SQL Browser]
 
 NOTE: Management Center allows you to access contents of Hazelcast data structures (for instance map entries) via SQL Browser or Map Browser. It may be useful to restrict data access for Management Center if sensitive financial or personal information is stored in the cluster. Management Center cannot access the data if at least one member has the data access disabled. You can disable data access for Management Center in the member configuration file. See the xref:hazelcast:maintain-cluster:monitoring.adoc#managing-data-access[Managing Data Access] section.
 
-== Next Steps
+== Next steps
 
 If you're interested in learning more about SQL in Hazelcast, see the xref:hazelcast:sql:sql-statements.adoc[SQL reference] in the Platform documentation.

@@ -3,24 +3,24 @@
 
 You can see a list of all the topics in your cluster by clicking
 on the **Topics** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:TopicGridView.png[Topic Grid View]
 
 You can filter the topics shown and you can also sort the table by
-clicking on the column headers. Clicking on
-a topic name opens a new page for monitoring that topic instance
+clicking on the column headers. Click on
+a topic name to open a new page for monitoring that topic instance
 on the right, as shown below.
 
 image:ROOT:MonitoringTopics.png[Monitoring Topics]
 
-On top of the page, there are two graphs that show various metrics of the topic.
+At the top of the page are two graphs that show various metrics for the topic.
 See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
-Under these charts is the [[topic-throughput-statistics]]Topic Throughput Statistics table. From
+Under these charts is the [[topic-throughput-statistics]]**Topic Throughput Statistics** table. From
 left to right, this table lists the IP addresses and ports of each
 member, and counts of the messages published and received per second
 in real-time.
 
-Click on the column heading to ascend or descend the order of
-the listings.
+To display listings in ascending or descending order, click on the
+column headings.

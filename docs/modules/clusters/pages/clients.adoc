@@ -43,7 +43,7 @@ client is currently connected to a subset of members.
 
 |===
 
-== Available Data
+== Available data
 
 By default, only basic information about connected clients is displayed. The
 values for
@@ -66,25 +66,24 @@ You cannot view any more details about this client other than what is displayed 
 
 NOTE: The MC-Client is *not included* in the client count that is displayed in the xref:getting-started:user-interface.adoc#menu[left-hand menu] and the xref:deploy-manage:connecting-to-clusters-ui.adoc[Cluster Connections page]
 
-== Client Address Types
+== Client address types
 
 By default, the hostname of the client is displayed in the *Address* column.
 
 To display the client's IP address or the canonical hostname, use the **Address Type**
 dropdown.
 
-== Filtering Clients
+== Filter clients
 
 To filter the displayed clients, use the *Search* bar in the right-hand corner.
 
 To sort the
 table, click on the column headers.
 
-== Viewing Details about a Connected Client
+== View details about a connected client
 
 Click on
-a client name will open a new page for monitoring that client
-on the right, as shown below.
+a client name to open a new page on the right for monitoring that client, as shown below.
 
 image:ROOT:MonitoringClientDetailed.png[Monitoring Client Detailed]
 
@@ -94,7 +93,7 @@ image:ROOT:MonitoringClientDetailed.png[Monitoring Client Detailed]
 The *Heap Memory Utilization* chart shows the memory usage
 on the selected client with three different metrics
 (maximum, used and total memory) represented by different colors. You can open this
-chart as a separate window using the image:ROOT:MaximizeChart.png[maximize] button placed at top right of it.
+chart as a separate window using the button to the top right of it image:ROOT:MaximizeChart.png[maximize].
 
 === General
 
@@ -240,11 +239,11 @@ entities running on the available processors)
 ```
 
 The way in which the
-load average is calculated is differently, depending on the operating system, but it is typically a damped time-dependent average.
+load average is calculated differs, depending on the operating system, but it is typically a damped time-dependent average.
 |===
 
 [[client-near-cache]]
-=== Client Near Cache Statistics
+=== Client near cache statistics
 
 The *Client Near Cache Statistics* tables show statistics related
 to the Near Cache of a client for maps and caches.
@@ -305,7 +304,7 @@ key persistence (when the pre-load feature is enabled).
 
 |===
 
-== Related Resources
+== Related resources
 
 See the following topics in the Platform documentation:
 

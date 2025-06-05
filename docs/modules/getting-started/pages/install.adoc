@@ -1,14 +1,14 @@
-= Installing and Starting Management Center
+= Install and start Management Center
 :page-aliases: ROOT:getting-started.adoc
 :description: You can install Management Center, using Docker, a package manager, or the binary distribution.
 
 {description}
 
-== Before you Begin
+== Before you begin
 
-xref:overview.adoc#requirements[Review the requirements] and make sure that you meet them.
+xref:overview.adoc#requirements[Review the requirements] to make sure that you meet them.
 
-== Using Docker
+== Use Docker
 
 Deploying via Docker is a convenient way to evaluate the latest version of Management Center:
 
@@ -30,7 +30,7 @@ ifdef::snapshot[]
 ----
 docker pull hazelcast/management-center:latest
 ----
-. Start the Management Center service
+. Start the Management Center service.
 +
 [source,shell,subs="attributes+"]
 ----
@@ -42,7 +42,7 @@ ifndef::snapshot[]
 ----
 docker pull hazelcast/management-center:{full-version}
 ----
-. Start the Management Center service
+. Start the Management Center service.
 +
 [source,shell,subs="attributes+"]
 ----
@@ -57,7 +57,7 @@ In some cases, such as querying maps that contain custom objects, you may need t
 
 You can find more details on link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
-== Using a Package Manager
+== Use a package manager
 
 Hazelcast offers package managers for Linux and Mac operating systems.
 
@@ -74,7 +74,7 @@ To install on macOS, use the Homebrew package manager.
 [source,bash,subs="attributes+"]
 ----
 brew tap hazelcast/hz
-brew install hazelcast-management-center@{full-version}
+brew install hazelcast/hz/hazelcast-management-center@{full-version}
 ----
 --
 
@@ -140,7 +140,7 @@ You should see the version of Management Center.
 For more information about the package manager, see the link:https://github.com/hazelcast/hazelcast-management-center-packaging[GitHub repository].
 
 [[binary]]
-== Using Binary Packages
+== Use binary packages
 
 Hazelcast Management Center is included in the Hazelcast Platform download package.
 
@@ -152,14 +152,14 @@ version of Hazelcast Platform, you can download the new version as a
 separate package
 from the https://hazelcast.com/open-source-projects/downloads/#hazelcast-management-center[download page].
 
-To start Management Center from the binary package, you should use the scripts that come with the download package.
+To start Management Center from the binary package, use the scripts that come with the download package.
 
 NOTE: You cannot use Management Center as a library. Management Center runs as a standalone web application.
 
 You can preconfigure a cluster connection in Management Center by setting the following environment variables:
 
-* `MC_DEFAULT_CLUSTER_MEMBERS` variable should contain a comma-separated list of the cluster member addresses.
-* `MC_DEFAULT_CLUSTER` variable should contain the cluster name and defaults to `dev` if not provided.
+* `MC_DEFAULT_CLUSTER_MEMBERS`—this should contain a comma-separated list of the cluster member addresses.
+* `MC_DEFAULT_CLUSTER`—this should contain the cluster name, and defaults to `dev` if not provided.
 
 The recommended way to start Management Center with the binary package is the built-in start scripts in the `bin/` directory. A script is available as a batch file for Windows or a shell script for Mac and Linux.
 
@@ -184,8 +184,8 @@ mc-start.cmd
 ====
 
 [[starting-with-an-extra-classpath]]
-== Providing an Extra Classpath
-In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
+== Provide an extra classpath
+In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, do one of the following:
 
 - Pass the `MC_CLASSPATH` environment variable the paths to your classes, separated by semicolons.
 - Put your classes in the `bin/user-lib/` directory.
@@ -214,7 +214,7 @@ mc-start.cmd
 ====
 
 
-== Stopping Management Center via command line
+== Stop Management Center via the command line
 The following command stops all Management Center processes that are started with either `hz-mc start` or `mc-start.cmd` commands:
 [tabs]
 ====
@@ -241,7 +241,7 @@ you need to stop each version using its corresponding script.
 
 == Snapshot versions
 
-Development versions of an upcoming release are available as snapshots. To use the most recent snapshot version of Management Center, use the following:
+Development versions of an upcoming release are available as snapshots. To use the most recent snapshot version of Management Center, do the following:
 
 - Docker:
 +
@@ -284,27 +284,27 @@ sudo yum install hazelcast-management-center
 When you use a snapshot version, it can be useful to query the build information to be able to tell what revision you are using.
 You can find version metadata about a running instance of Management Center at the following endpoint: `<hazelcast.mc.home>/api/buildInfo`. This endpoint returns JSON.
 
-== Next Steps
+== Next steps
 
-For an end-to-end getting started, see xref:get-started.adoc[].
+For guidance on how to get up and running quickly, see xref:get-started.adoc[].
 
 To learn how to connect to a cluster, see xref:deploy-manage:cluster-connections.adoc[].
 
 To serve Management Center over HTTPS instead of HTTP, see xref:deploy-manage:serve-mc-over-https.adoc[].
 
-For the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].
+For information about the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].
 
 .Enterprise topics
 [%collapsible]
 ====
-To explore the licensed features of Management Center, see the following:
+To explore the licensed features of Management Center, see:
 
 * xref:integrate:clustered-rest.adoc[Clustered REST]
 * xref:integrate:jmx.adoc[Clustered JMX]
 * xref:clusters:client-filtering.adoc[Cluster Client Filtering]
 * xref:integrate:prometheus-monitoring.adoc[Prometheus Exporter]
 
-See also the following for the Management Center features that rely on your cluster's enterprise capabilities:
+For the Management Center features that rely on your cluster's enterprise capabilities, see:
 
 * xref:clusters:wan-replication.adoc[WAN Replication]
 * xref:clusters:persistence.adoc[Persistence]

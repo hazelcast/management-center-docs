@@ -1,7 +1,9 @@
 = Get Started with Management Center Using Docker Compose
-:description: pass:q[In this tutorial, you'll start up an instance of Management Center that automatically connects to a Hazelcast cluster, using a Docker container. To get up and running as quickly as possible, an example `docker-compose.yml` is provided. No other configuration or dependencies are required.]
+:description: pass:q[In this tutorial, you'll start up an instance of Management Center that automatically connects to a Hazelcast cluster, using a Docker container. To enable you to get up and running quickly, an example `docker-compose.yml` is provided. No other configuration or dependencies are required.]
 
 {description}
+
+== Overview
 
 You'll complete the following steps:
 
@@ -12,20 +14,20 @@ You'll complete the following steps:
 * Monitor the map.
 * Shut down your Hazelcast environment.
 
-== Before You Begin
+== Prerequisites
 
 To complete this tutorial, you need the following:
 
 [cols="1a,1a"]
 |===
-|Prerequisites|Useful resources
+|Requirements|Useful resources
 
 |Docker Compose
 |
 link:https://docs.docker.com/compose/install/[Install Docker Compose]
 |===
 
-== Step 1. Run Hazelcast from a Docker Container
+== Run Hazelcast from a Docker Container
 
 . Check that Docker Compose is installed correctly.
 +
@@ -43,7 +45,7 @@ ifdef::snapshot[]
 ----
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{hz-full-version}
+    image: hazelcast/hazelcast:latest
     ports:
     - "5701:5701"
   management-center:
@@ -60,7 +62,7 @@ ifndef::snapshot[]
 ----
 services:
   hazelcast:
-    image: hazelcast/hazelcast:{hz-full-version}
+    image: hazelcast/hazelcast:latest
     ports:
     - "5701:5701"
   management-center:
@@ -78,7 +80,7 @@ You can preconfigure a cluster connection in Management Center by setting the fo
 - MC_DEFAULT_CLUSTER: The cluster name that Management Center connects to.
 - MC_DEFAULT_CLUSTER_MEMBERS: A comma-separated list of the cluster member addresses or host names.
 
-.	In a terminal, change into the directory that you just created.
+.	In a terminal, change to the directory that you just created.
 
 . To pull the required images, and to start up a Management Center instance already connected to a Hazelcast cluster, run the following:
 +
@@ -95,7 +97,7 @@ Followed by:
 +
 `MC Client connected to cluster dev.`
 
-== Step 2. Launch Management Center
+== Launch Management Center
 
 Now that Management Center is connected to a running cluster, you can start to explore.
 
@@ -109,7 +111,7 @@ Management Center is running in dev mode. This mode is a special security provid
 +
 image:ROOT:Dashboard.png[Cluster dashboard]
 
-== Step 3. Create a Map
+== Create a map
 
 Management Center comes with a variety of tools for communicating with clusters. In this step, you'll use the SQL browser to create a map in the cluster and put some data in it.
 
@@ -140,21 +142,26 @@ SINK INTO my_distributed_map VALUES
 SELECT * FROM my_distributed_map;
 ----
 
-== Step 4. Monitor the Map
+== Monitor the map
 
 Go back to the cluster's dashboard and select *Storage* > *Maps*, and then select *my_distributed_map*
 from the list of maps. You can see the statistics of your map:
 
 image:ROOT:MapStats.png[Map Statistics]
 
-== Step 5. Shut Down Hazelcast
+== Shut down Hazelcast
 
 To shut down your Hazelcast environment gracefully, press kbd:[Ctrl+C]. 
 
-== Next Steps
+== Summary
+
+In this tutorial, you learned how to use Docker Compose to start up Management Center and a Hazelcast cluster. 
+You also learned how to create and monitor a map.
+
+== Next steps
 
 If you have an Enterprise license or you want to learn about Enterprise features, see xref:deploy-manage:license-management.adoc[].
 
 To serve Management Center over HTTPS instead of HTTP, see xref:deploy-manage:serve-mc-over-https.adoc[].
 
-For the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].
+For information about the options you can provide when starting Management Center, see xref:deploy-manage:system-properties.adoc[].

@@ -1,22 +1,130 @@
 = Management Center {full-version}
 :page-aliases: ROOT:index.adoc
-:description: Management Center is a tool for managing and monitoring Hazelcast Platform clusters.
+:description: Hazelcast Management Center provides a powerful and intuitive interface for managing and monitoring your Hazelcast Platform clusters.
 
 {description}
 
-Here are some example of what you can do with Management Center:
+You can use Management Center to monitor performance, view metrics, and perform administrative tasks such as license management and client filtering. This enables you manage your deployment effectively and respond quickly to any issues that arise, which helps maximize the value of your Hazelcast deployment.
 
-* Monitor the performance of your clusters from the UI, a JMX interface, and Prometheus.
-* See statistical information about your members, clients, and data structures.
-* Execute SQL queries on your clusters.
-* Perform administrative tasks such as identifying and diagnosing issues in clusters.
-* Use client filtering to define rules of which clients are allowed (or denied) to connect to a cluster as part of Blue/Green or Red/Black deployments.
-* Use REST API endpoints to return the information presented in Management Center.
+NOTE: For information about what is new and improved across Hazelcast products and tools, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new]. For detailed information about Management Center changes, see the xref:release-notes:releases.adoc[Release notes]. 
+
+== {enterprise-product-name} versus {open-source-product-name}
+
+If you have Hazelcast Platform {enterprise-product-name} then you have access to all Management Centre features, including advanced security, monitoring, and management features. You can either reuse your Hazelcast Platform license key or use a dedicated Enterprise license for Management Center. Otherwise, {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members).
+
+TIP: Get a 30-day free Enterprise trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
+
+The following table explains which features are available in Management Center based on your license:
+
+== Key features and benefits
+
+[cols="30%,20%,20%,30%"]
+|===
+|*Real-time monitoring and performance tracking*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+
+|Comprehensive dashboards for monitoring
+|No limits
+|Limited to monitoring clusters up to 3 members
+|Detailed statistics about members, clients and the data structures in real-time are provided to help you identify performance bottlenecks and optimize your applications
+
+|Multi-channel monitoring 
+|Included
+|N/A
+|Delivered through secure Clustered REST and JMX capabilities, and secure Prometheus Exporter functionality with authentication support, providing integration into enterprise-grade monitoring solutions
+
+|Prometheus Exporter and Healthcheck
+|Included
+|N/A
+|Prometheus Exporter provides all the metrics from the cluster in a Prometheus format. Config allows for the metrics to be filtered. Also included are Config Healthcheck counters
+
+|*Powerful administrative tools*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|Client Filtering
+|Included
+|N/A
+|Allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
+
+|Config Healthcheck
+|Included
+|N/A
+|Lets you identify and diagnose issues in clusters. Config Healthcheck runs automatically when cluster topology or member configuration changes
+
+|WAN Replication
+|Requires cluster with WAN Replication license
+|N/A
+|Provides detailed metrics and management of WAN Replication and Sync, including Merkle Tree support for consistency checks and an option to force sync any deltas
+
+|Integrated tooling
+|Included
+|Included
+|Integrated tooling from Console, Command Line Client and scripting
+
+|Diagnostics
+|Included
+|Included
+|Allows you to check performance and memory usage. Admin users can take thread dumps
+
+|*Enterprise-grade security and integration*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|Local User Security
+|Included
+|Included
+|User management with Role-Based Access Control (RBAC) provides several user roles (Admin, User, Read-Only, and Metrics-Only) with varying permissions for different operations
+
+|Third-party authentication
+|Included
+|N/A
+|Extends the RBAC integration with support for third-party authentication services, including JAAS, LDAP, Active Directory, SAML and OpenID
+
+|Audit logs
+|Included
+|N/A
+|Track administrative actions for compliance
+
+|*SQL queries*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|SQL Browser to execute queries
+|Includes ability to use SQL DML statements in SQL Browser
+|Included up to cluster of 3 members
+|Enables you to execute SQL queries (such as CREATE MAPPING, INSERT INTO, and SINK INTO) on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive
+
+|High availability deployments
+|Included
+|N/A
+|Support for high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes
+
+|Easy deployment with Docker
+|Included
+|Included
+|Get started quickly with Management Center using Docker Compose. For example, create a docker-compose.yml file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster
+
+|*REST API*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|Client Filtering API
+|Included
+|N/A
+|Access to the Client Filtering settings via secure API
+
+|Cluster Metrics API
+|Included
+|N/A
+|Access to metrics of all clusters connected to Management Center
+
+|WAN Replication API
+|Included
+|N/A
+|Access to WAN Replication metrics and management via API
+
+|Cluster Connections API
+|Included
+|N/A
+|Manage cluster connections to Management Center via API
+
+|===
+
+NOTE: To access Enterprise features, a license must be installed on Management Center — see xref:deploy-manage:license-management.adoc[].
+The specific features enabled in Management Center depend on the license key. To verify which features are enabled, view the xref:deploy-manage:updating-mc-license-ui.adoc[License screen].
 
 [[os-requirements]]
 == Requirements
 
-You must meet the following requirements to be able to run Management Center
+You must meet the following requirements to be able to run Management Center.
 
 === Supported Java Virtual Machines
 
@@ -28,7 +136,7 @@ TIP: If you install Hazelcast with Docker or a package manager, it comes with a 
 
 include::{page-latest-supported-hazelcast}@hazelcast:deploy:versioning-compatibility.adoc[tag=supported-jvms]
 
-=== Mac and Windows System Requirements
+=== Mac and Windows system requirements
 
 Management Center uses the RocksDB library to persist metrics
 to disk. Because of this dependency, Mac and Windows users must do one of the following:
@@ -36,16 +144,16 @@ to disk. Because of this dependency, Mac and Windows users must do one of the fo
 * Use the official Management Center docker image.
 * xref:deploy-manage:historical-metrics.adoc#disabling-metrics-persistence[Disable metrics persistence].
 * Meet the following requirements:
-** Mac: Use at least version 10.15 version of Catalina.
-** Windows: Install the Microsoft Visual C++ 2015 redistributable.
+** Mac: use at least version 10.15 version of Catalina.
+** Windows: install the Microsoft Visual C++ 2015 redistributable.
 
-=== Linux System Requirements
+=== Linux system requirements
 
 Most Linux distributions are supported, assuming that `glibc` 2.12 or newer is installed.
 
 Experimental support for AIX with Metrics Persistence disabled is provided.
 
-=== Hazelcast Cluster Compatibility
+=== Hazelcast cluster compatibility
 
 Management Center supports the following versions of Hazelcast:
 
@@ -74,7 +182,7 @@ Management Center supports the following versions of Hazelcast:
 |===
 
 [[browser-compatibility]]
-== Browser Compatibility
+== Browser compatibility
 
 Management Center supports the following browsers:
 
@@ -87,13 +195,8 @@ NOTE: Internet Explorer 11 is no longer supported.
 
 == Licensing
 
-A valid Enterprise license for Management Center is required for the following features:
-
-* Clustered JMX
-* Clustered REST API
-* Cluster client filtering
-* Prometheus exporter
-* Healthcheck
+A valid Enterprise license for Management Center is required for some features. 
+For a list of Enterprise features, see xref:deploy-manage:license-management.adoc[Licensed Features].
 
 A valid Enterprise license for Hazelcast members is required for the following features:
 
@@ -103,78 +206,13 @@ A valid Enterprise license for Hazelcast members is required for the following f
 
 If you do not have a license, you can use non-licensed features to monitor clusters of up to a maximum of three members.
 
-If a page in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
+If a feature in the documentation requires an Enterprise license, it is labelled [.enterprise]*Enterprise*.
 
 [[support]]
-== Getting Support
+== Get support
 
-Hazelcast provides two types of support: one for the community and one for paying customers.
+For information about the types of support Hazelcast offers, see xref:get-support.adoc[Get support].
 
-=== Community Support
+== Next steps
 
-Community support is for every Hazelcast user. You can use the following channels to get community support:
-
-* xref:ROOT:troubleshooting.adoc[Troubleshooting page] of this guide
-* https://slack.hazelcast.com/[Hazelcast community Slack]
-(discuss anything related to Hazelcast and Management Center with the Hazelcast community)
-
-=== Customer Support
-
-Customer support is for paying Hazelcast customers.
-See https://hazelcast.com/services/support/[hazelcast.com^] for the support options.
-A support subscription from Hazelcast will allow you to get the most value out of your
-selection of Hazelcast. Our customers benefit from rapid response times to technical
-support inquiries, access to critical software patches, and other services which
-will help you achieve increased productivity and quality. Learn more about Hazelcast support subscriptions:
-https://hazelcast.com/pricing/
-
-If your organization subscribes to Hazelcast support,
-and you already have an account setup, you can login to your account and open
-a support request using our ticketing system:  https://support.hazelcast.com/s/.
-
-When submitting a ticket to the team, please provide as much information and data as possible:
-
-* Make sure that all your environments are capturing Hazelcast diagnostics logs.
-This a primary on diagnosing issues with Hazelcast environments.
-* If your environments are not capturing diagnostics logs, please update them to capture diagnostics logs.
-* Make note of your issue with a clear description of the issue for a title text.
-This will allow the team to route the issue to the proper expert
-* Make a note of the steps to reproduce if possible.
-If not please capture the sequence of events that led to the problem.
-* Write a complete description of the problem along with any error found.
-* Capture any relevant screen shots and or errors noted.
-* Create a support ticket on https://support.hazelcast.com/s/[Hazelcast Support Portal].
-* Attach the appropriate severity to the ticket.
-* `PROD` issues that affect production are considered as severity 1.
-* All other issues in other environments are considered severity 2 or 3 depending on urgency.
-* `DEV` issues are considered as severity 3 and priority low.
-* All other issues, e.g., questions or documentation review are considered as severity 3 or higher.
-
-==== Adding Details to the Support Ticket
-
-* When you open a support ticket add a concise title and description of the problem.
-* Add steps to reproduce as best as you can document them so that support can attempt
-to reproduce the problem. This includes Detailed description of incident – what happened and when.
-* Add a reproducible test case, this is optional - Hazelcast engineering may ask for it if required.
-* Add details of use case. This is crucial as it helps support narrow down the features and
-functionality in play when the problem occurred.
-* Attach any specific errors found.
-* Attach the complete logs files, i.e., Hazelcast logs.
-* Attach Hazelcast process logs.
-* Attach Hazelcast health monitor logs.
-* Attach thread dumps from all members.
-* Add networking logs.
-* Specify the time of incident.
-* When providing Hazelcast logs, please make sure that the system and
-environment details that are captured at system startup are included, even if you truncate the logs.
-* Add Hazelcast diagnostic logs. Please do not truncate diagnostics logs. They only capture Hazelcast
-systems specific information and details.
-* Please make sure that the logs capture data around the date and time of the incident.
-
-Please consider the above for prompt help from the team and note that the more information
-is provided upfront the better.
-Lastly, be prompt in your communication with Hazelcast support - helps to ensure timely resolution of issues.
-
-== Get Started
-
-xref:get-started.adoc[].
+For guidance on how to get up and running quickly with Management Center, see xref:get-started.adoc[].

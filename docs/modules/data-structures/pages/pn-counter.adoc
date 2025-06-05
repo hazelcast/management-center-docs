@@ -1,9 +1,9 @@
-= PN Counters
+= PN counters
 [[monitoring-pn-counters]]
 
 You can see a list of all the PN counters in your cluster by
 clicking on the **Counters** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:CounterGridView.png[Counter Grid View]
 
@@ -18,13 +18,14 @@ was decremented per second during the last timeslice.
 * **Number of Replicas**: Number of member instances that
 have a state for the counter.
 
-[[counter-details]]Clicking on a counter name opens a new page for monitoring
+[[counter-details]]Click on a counter name to open a new page for monitoring
 that specific counter instance, as shown below.
 
 image:ROOT:MonitoringCounters.png[Monitoring Counters]
 
-The table can likewise be sorted by clicking the column headers.
-It shows IP and port of the members that have a state for
+Likewise, you can sort the table by clicking the column
+headers.
+It shows the IP and port of the members that have a state for
 the specific counter named in the page's title.
 The monitoring data available are:
 

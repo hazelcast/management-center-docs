@@ -1,10 +1,10 @@
-= Reliable Topics
+= Reliable topics
 [[monitoring-reliable-topics]]
 
 You can see a list of all the Reliable Topics in your cluster by
 clicking on the **Reliable Topics** menu item on the left panel.
 A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:ReliableTopicGridView.png[Reliable Topic Grid View]
 
@@ -15,12 +15,13 @@ Reliable Topic instance on the right, as shown below.
 
 image:ROOT:MonitoringReliableTopics.png[Monitoring Reliable Topics]
 
-On top of the page, there are two graphs that show various metrics
-of the reliable topic. See the xref:getting-started:graphs.adoc[the graph section] for more information.
+At the top of the page are two graphs that show various metrics
+for the reliable topic. See the xref:getting-started:graphs.adoc[the graph section] for more information.
 
-Under these charts is the Reliable Topic Throughput Statistics table.
+Under these charts is the **Reliable Topic Throughput Statistics** table.
 From left to right, this table lists the IP addresses and ports of
 each member, and counts of the messages published and received per
 second in real-time.
 
-Click on the column heading to ascend or descend the order of the listings.
+To display listings in ascending or descending order, click on the
+column headings.

@@ -3,10 +3,10 @@
 
 You can see a list of all the sets in your cluster
 by clicking on the **Sets** menu item on the left panel. A new
-page is opened on the right, as shown below.
+page appears on the right, as shown below.
 
 image:ROOT:SetGridView.png[Set Grid View]
 
-You can sort the table by clicking on the column headers.
+To sort the table, click on the column headers.
 
 Set is a distributed and concurrent implementation of `java.util.Set`.

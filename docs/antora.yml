@@ -9,15 +9,15 @@ asciidoc:
   attributes:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
     full-version: '6.0.0-SNAPSHOT'
-    # Version to be used when installing a Hazelcast cluster
-    hz-full-version: '5.5.2'
     snapshot: true
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '6.0-snapshot'
-    # https://github.com/hazelcast/clc/releases
-    page-latest-supported-clc: '5.4.1'
+    # https://github.com/hazelcast/hazelcast-commandline-client/releases
+    page-latest-supported-clc: '5.5.0'
     page-toclevels: 1
     experimental: true
+    open-source-product-name: 'Community Edition'
+    enterprise-product-name: 'Enterprise Edition'
 nav:
   - modules/ROOT/nav.adoc
