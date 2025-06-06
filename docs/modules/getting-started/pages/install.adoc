@@ -25,19 +25,6 @@ docker version
 
 . Pull the Management Center Docker image from Docker Hub.
 +
-ifdef::snapshot[]
-[source,bash]
-----
-docker pull hazelcast/management-center:latest
-----
-. Start the Management Center service.
-+
-[source,shell,subs="attributes+"]
-----
-docker run --rm -p 8080:8080 hazelcast/management-center:latest
-----
-endif::[]
-ifndef::snapshot[]
 [source,bash,subs="attributes+"]
 ----
 docker pull hazelcast/management-center:{full-version}
@@ -48,7 +35,6 @@ docker pull hazelcast/management-center:{full-version}
 ----
 docker run --rm -p 8080:8080 hazelcast/management-center:{full-version}
 ----
-endif::[]
 
 In some cases, such as querying maps that contain custom objects, you may need to add those object classes to the classpath of Management Center before starting it. To add your own classes to the classpath, you can do one of the following:
 
@@ -247,7 +233,7 @@ Development versions of an upcoming release are available as snapshots. To use t
 +
 [source,bash,subs="attributes+"]
 ----
-docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest
+docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest-snapshot
 ----
 
 - Binary packages:
@@ -260,7 +246,7 @@ docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest
 [source,bash,subs="attributes+"]
 ----
 brew tap hazelcast/hz
-brew install hazelcast-management-center@{full-version}
+brew install hazelcast-management-center@latest-snapshot
 ----
 ** Linux
 +
