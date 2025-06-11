@@ -299,6 +299,7 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 ====
 |===
 |V1 metric `hz_` |V2 metric `hazelcast_` |Additional labels |Description
+
 |set_creationTime
 |set_creation_timestamp_seconds
 |n/a
@@ -321,6 +322,7 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 ====
 |===
 |V1 metric `hz_` |V2 metric `hazelcast_` |Additional labels |Description
+
 |list_creationTime
 |list_creation_timestamp_seconds
 |n/a
