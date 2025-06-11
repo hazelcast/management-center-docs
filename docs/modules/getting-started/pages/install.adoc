@@ -115,7 +115,7 @@ sudo apt update && sudo apt install hazelcast-management-center={full-version}
 ----
 wget https://repository.hazelcast.com/rpm/stable/hazelcast-rpm-stable.repo -O hazelcast-rpm-stable.repo
 sudo mv hazelcast-rpm-stable.repo /etc/yum.repos.d/
-sudo yum install hazelcast-management-center={full-version}
+sudo yum install hazelcast-management-center-{full-version}
 ----
 endif::[]
 --
