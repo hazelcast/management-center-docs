@@ -443,11 +443,11 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |V1 metric `hz_` |V2 metric `hazelcast_` |Additional labels
 
 |listeners.eventsProcessed
-|listeners_processed_total
+|listeners_events_processed_total
 |n/a
 
 |listeners.eventQueueSize
-|listeners_queue_size_total
+|listeners_event_queue_size_total
 |n/a
 |===
 ====
