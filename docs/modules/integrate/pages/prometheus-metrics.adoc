@@ -85,212 +85,171 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 [%collapsible]
 ====
 |===
-|V1 metric `hz_` |V2 metric `hazelcast_` |Additional labels |Description
+|V1 metric `hz_` |V2 metric `hazelcast_` |Additional labels
 
 |map_backupCount
 |map_backups_total
 |n/a
-|Number of backups per entry
 
 |map_backupEntryCount
 |map_backup_entries_total
 |n/a
-|Number of backup entries held by the member
 
 |map_backupEntryMemoryCost
 |map_backup_entries_memory_cost_bytes
 |n/a
-|Memory cost of backup entries in this member
 
 |map_creationTime
 |map_creation_timestamp_seconds
 |n/a
-|Creation time of the map on the member
 
 |map_dirtyEntryCount
 |map_dirty_entries_total
 |n/a
-|Number of updated but not yet persisted entries (dirty entries) that the member owns
 
 |map_evictionCount
 |map_evictions_total
 |n/a
-|Number of evictions on locally owned entries, excluding backups
 
 |map_expirationCount
 |map_expirations_total
 |n/a
-|Number of expirations on locally owned entries, excluding backups
 
 |map_getCount
 |map_operations_total
 |operation=get
-|Number of local get operations on the map; incremented for every get operation even if the entries do not exist
 
 |map_heapCost
 |map_heap_cost_bytes
 |n/a
-|Total heap cost for the map on this member
 
 |map_indexedQueryCount
 |map_indexed_queries_total
 |n/a
-|Total number of indexed local queries performed on the map
 
 |map_lastAccessTime
 |map_last_access_timestamp_seconds
 |n/a
-|Last access (read) time of the locally owned entries
 
 |map_lastUpdateTime
 |map_last_update_timestamp_seconds
 |n/a
-|Last update time of the locally owned entries
 
 |map_lockedEntryCount
 |map_locked_entries_total
 |n/a
-|Number of locked entries that the member owns
 
 |map_merkleTreesCost
 |map_merkle_trees_cost_bytes
 |n/a
-|Total heap cost of the Merkle trees used
 
 |map_numberOfEvents
 |map_events_total
 |n/a
-|Number of local events received on the map
 
 |map_numberOfOtherOperations
 |map_operations_total
 |operation=other
-|Total number of other operations performed on this member
 
 |map_ownedEntryCount
 |map_owned_entries_total
 |n/a
-|Number of map entries owned by the member
 
 |map_ownedEntryMemoryCost
 |map_owned_entry_memory_cost_bytes
 |n/a
-|Memory cost of owned map entries on this member
 
 |map_putCount
 |map_operations_total
 |operation=put
-|Number of local put operations on the map
 
 |map_queryCount
 |map_queries_total
 |n/a
-|Number of queries executed on the map (it may be imprecise for queries involving partition predicates (PartitionPredicate) on the off-heap storage)
 
 |map_removeCount
 |map_operations_total
 |operation=remove
-|Number of local remove operations on the map
 
 |map_setCount
 |map_operations_total
 |operation=set
-|Number of local set operations on the map
 
 |map_hits
 |map_hits_total
 |n/a
-|Number of reads of the locally owned entries; incremented for every read by any type of operation (get, set, put), so the entries should exist
 
 |map_totalGetLatency
 |map_latency_seconds_total
 |operation=get
-|Total latency of local get operations on the map
 
 |map_totalMaxGetLatency
 |map_latency_max_seconds
 |operation=get
-|Maximum latency of local get operations on the map
 
 |map_totalPutLatency
 |map_latency_seconds_total
 |operation=put
-|Total latency of local put operations on the map
 
 |map_totalMaxPutLatency
 |map_latency_max_seconds
 |operation=put
-|Maximum latency of local put operations on the map
 
 |map_totalRemoveLatency
 |map_latency_seconds_total
 |operation=remove
-|Total latency of local remove operations on the map
 
 |map_totalMaxRemoveLatency
 |map_latency_max_seconds
 |operation=remove
-|Maximum latency of local remove operations on the map
 
 |map_totalSetLatency
 |map_latency_seconds_total
 |operation=set
-|Total latency of local set operations on the map
 
 |map_totalMaxSetLatency
 |map_latency_max_seconds
 |operation=set
-|Maximum latency of local set operations on the map
 
 |map_index_creationTime
 |map_index_creation_timestamp_seconds
 |n/a
-|Creation time of the index on this member
 
 |map_index_hitCount
 |map_index_hits_total
 |n/a
-|Total number of index hits (the value of this metric may be greater than the `map_index_queryCount` because a single query may hit the same index more than once)
 
 |map_index_insertCount
 |map_index_inserts_total
 |n/a
-|Number of insert operations performed on the index
 
 |map_index_memoryCost
 |map_index_memory_cost_bytes
 |n/a
-|Local memory cost of the index (for on-heap indexes in OBJECT or BINARY formats the returned value is a best-effort approximation and doesn't indicate a precise on-heap memory usage of the index)
 
 |map_index_queryCount
 |map_index_queries_total
 |n/a
-|Total number of queries served by the index
 
 |map_index_removeCount
 |map_index_removes_total
 |n/a
-|Number of remove operations performed on the index
 
 |map_index_totalInsertLatency
 |map_index_latency_seconds_total
 |operation=insert
-|Total latency of insert operations performed on the index
 
 |map_index_totalRemoveLatency
 |map_index_latency_seconds_total
 |operation=remove
-|Total latency of remove operations performed on the index
 
 |map_index_totalUpdateLatency
 |map_index_latency_seconds_total
 |operation=update
-|Total latency of update operations performed on the index
 
 |map_index_updateCount
 |map_index_updates_total
 |n/a
-|Number of update operations performed on the index
 |===
 ====
 
@@ -303,17 +262,14 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |set_creationTime
 |set_creation_timestamp_seconds
 |n/a
-|Creation time of the set on the member
 
 |set_lastAccessTime
 |set_last_access_timestamp_seconds
 |n/a
-|Last access (read) time of the locally owned items
 
 |set_lastUpdateTime
 |set_last_update_timestamp_seconds
 |n/a
-|Last update time of the locally owned items
 |===
 ====
 
@@ -326,17 +282,14 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |list_creationTime
 |list_creation_timestamp_seconds
 |n/a
-|Creation time of this list on the member
 
 |list_lastAccessTime
 |list_last_access_timestamp_seconds
 |n/a
-|Last access (read) time of the locally owned items
 
 |list_lastUpdateTime
 |list_last_update_timestamp_seconds
 |n/a
-|Last update time of the locally owned items
 |===
 ====
 
