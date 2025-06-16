@@ -74,7 +74,7 @@ ifdef::snapshot[]
 [source,shell]
 ----
 wget -qO - https://repository.hazelcast.com/api/gpg/key/public | gpg --dearmor | sudo tee /usr/share/keyrings/hazelcast-archive-keyring.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian snapshot main" |
+echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian snapshot main"| sudo tee -a /etc/apt/sources.list
 sudo apt update && sudo apt install hazelcast-management-center
 ----
 
@@ -91,7 +91,7 @@ ifndef::snapshot[]
 [source,shell,subs="attributes+"]
 ----
 wget -qO - https://repository.hazelcast.com/api/gpg/key/public | gpg --dearmor | sudo tee /usr/share/keyrings/hazelcast-archive-keyring.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian stable main" |
+echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian stable main"| sudo tee -a /etc/apt/sources.list
 sudo apt update && sudo apt install hazelcast-management-center={full-version}
 ----
 
@@ -254,7 +254,7 @@ brew install hazelcast-management-center@latest-snapshot
 [source,shell]
 ----
 wget -qO - https://repository.hazelcast.com/api/gpg/key/public | gpg --dearmor | sudo tee /usr/share/keyrings/hazelcast-archive-keyring.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian snapshot main" |
+echo "deb [signed-by=/usr/share/keyrings/hazelcast-archive-keyring.gpg] https://repository.hazelcast.com/debian snapshot main"| sudo tee -a /etc/apt/sources.list
 sudo apt update && sudo apt install hazelcast-management-center
 ----
 +
