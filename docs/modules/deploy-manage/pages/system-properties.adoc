@@ -87,6 +87,8 @@ hz-mc start -Dhazelcast.mc.contextPath=hazelcast-mc \
 
 In this example, the URL for Management Center would be `\http:localhost:8080/hazelcast-mc`.
 
+Note that when you set -Dhazelcast.mc.contextPath, every Management Center endpoint including /health endpoint is served under that prefix.
+
 |[[hazelcast-mc-cors-allowed-origin-patterns]]hazelcast.mc.cors.allowedOriginPatterns
 
 MC_CORS_ALLOWED_ORIGIN_PATTERNS
