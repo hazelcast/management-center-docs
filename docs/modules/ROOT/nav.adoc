@@ -99,6 +99,7 @@
 *** xref:clusters:triggering-force-start.adoc[]
 *** xref:clusters:triggering-partial-start.adoc[]
 *** xref:clusters:triggering-hot-backup.adoc[]
+** xref:clusters:diagnostic-logging.adoc[]
 * xref:clusters:wan-replication.adoc[WAN replication]
 * xref:clusters:healthcheck.adoc[Healthcheck]
 * xref:clusters:namespaces.adoc[Namespaces]
