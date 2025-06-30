@@ -4,122 +4,77 @@
 
 {description}
 
-You can use Management Center to monitor performance, view metrics, and perform administrative tasks such as license management and client filtering. This enables you manage your deployment effectively and respond quickly to any issues that arise, which helps maximize the value of your Hazelcast deployment.
-
-NOTE: For information about what is new and improved across Hazelcast products and tools, see xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new]. For detailed information about Management Center changes, see the xref:release-notes:releases.adoc[Release notes]. 
+Using Management Center, you can manage your Hazelcast deployment with a user-friendly interface to monitor performance, view statistics, and perform administrative tasks, allowing you to respond quickly to any issues that may arise, and helping you maximize the value of your Hazelcast deployment.
 
 == {enterprise-product-name} versus {open-source-product-name}
 
-If you have Hazelcast Platform {enterprise-product-name} then you have access to all Management Centre features, including advanced security, monitoring, and management features. You can either reuse your Hazelcast Platform license key or use a dedicated Enterprise license for Management Center. Otherwise, {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members).
+While the {open-source-product-name} offers basic functionality for small deployments (up to 3 cluster members), the {enterprise-product-name} unlocks the full potential of Management Center with advanced security, monitoring, and management features. Get a 30-day free trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
 
-TIP: Get a 30-day free Enterprise trial with no obligation from our https://hazelcast.com/get-started/[Try Hazelcast] page.
-
-The following table explains which features are available in Management Center based on your license:
+NOTE: To access Enterprise features, an Enterprise license must be installed on Management Center. See xref:deploy-manage:license-management.adoc[].
 
 == Key features and benefits
 
-[cols="30%,20%,20%,30%"]
+[cols="2a,1a,1a"]
 |===
-|*Real-time monitoring and performance tracking*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
+|Real-time monitoring and performance tracking|{open-source-product-name}|{enterprise-product-name}
 
-|Comprehensive dashboards for monitoring
-|No limits
+|Comprehensive dashboards provide detailed statistics about members, clients and the data structures in real-time, helping you identify performance bottlenecks and optimize your applications
 |Limited to monitoring clusters up to 3 members
-|Detailed statistics about members, clients and the data structures in real-time are provided to help you identify performance bottlenecks and optimize your applications
+|No limits
 
-|Multi-channel monitoring 
+|Multi-channel monitoring through secure Clustered REST and JMX capabilities, and secure Prometheus Exporter functionality with authentication support, providing integration into enterprise-grade monitoring solutions
+|n/a
 |Included
-|N/A
-|Delivered through secure Clustered REST and JMX capabilities, and secure Prometheus Exporter functionality with authentication support, providing integration into enterprise-grade monitoring solutions
 
-|Prometheus Exporter and Healthcheck
-|Included
-|N/A
 |Prometheus Exporter provides all the metrics from the cluster in a Prometheus format. Config allows for the metrics to be filtered. Also included are Config Healthcheck counters
-
-|*Powerful administrative tools*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
-|Client Filtering
+|n/a
 |Included
-|N/A
-|Allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
 
-|Config Healthcheck
+|*Powerful administrative tools*|*{open-source-product-name}*|*{enterprise-product-name}*
+|Client Filtering allows you to control which clients can connect to a cluster; essential for Blue/Green or Red/Black deployments
+|n/a
 |Included
-|N/A
-|Lets you identify and diagnose issues in clusters. Config Healthcheck runs automatically when cluster topology or member configuration changes
 
-|WAN Replication
-|Requires cluster with WAN Replication license
-|N/A
-|Provides detailed metrics and management of WAN Replication and Sync, including Merkle Tree support for consistency checks and an option to force sync any deltas
+|Config Healthcheck lets you identify and diagnose issues in clusters. This runs automatically when cluster topology or member configuration changes
+|n/a
+|Included
 
-|Integrated tooling
-|Included
-|Included
 |Integrated tooling from Console, Command Line Client and scripting
+|Included
+|Included
 
-|Diagnostics
+|Diagnostics allow you to check performance and memory usage. Admin user can take thread dumps
 |Included
 |Included
-|Allows you to check performance and memory usage. Admin users can take thread dumps
 
-|*Enterprise-grade security and integration*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
-|Local User Security
+|*Enterprise-grade security and integration*|*{open-source-product-name}*|*{enterprise-product-name}*
+|Local User Security — User management with Role-Based Access Control (RBAC) provides several user roles (Admin, User, Read-Only, and Metrics-Only) with varying permissions for different operations
 |Included
 |Included
-|User management with Role-Based Access Control (RBAC) provides several user roles (Admin, User, Read-Only, and Metrics-Only) with varying permissions for different operations
 
-|Third-party authentication
+|Third-party authentication extends the RBAC integration with support for third-party authentication services, including JAAS, LDAP, Active Directory, SAML and OpenID
+|n/a
 |Included
-|N/A
-|Extends the RBAC integration with support for third-party authentication services, including JAAS, LDAP, Active Directory, SAML and OpenID
 
-|Audit logs
+|Audit logs track administrative actions for compliance
+|n/a
 |Included
-|N/A
-|Track administrative actions for compliance
 
-|*SQL queries*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
-|SQL Browser to execute queries
-|Includes ability to use SQL DML statements in SQL Browser
+|*SQL queries*|*{open-source-product-name}*|*{enterprise-product-name}*
+|The SQL Browser feature enables you to execute SQL queries on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive 
 |Included up to cluster of 3 members
-|Enables you to execute SQL queries (such as CREATE MAPPING, INSERT INTO, and SINK INTO) on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive
+|Includes the ability to use SQL DML statements such as CREATE MAPPING, INSERT INTO, and SINK INTO in the SQL Browser
 
-|High availability deployments
-|Included
-|N/A
 |Support for high availability deployments where multiple Management Center instances can connect to the same cluster, eliminating a single point of failure for management and monitoring purposes
+|n/a
+|Included
 
-|Easy deployment with Docker
+|Easy deployment with Docker. You can quickly get started with Management Center using Docker Compose. For example, you can create a docker-compose.yml file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster
 |Included
 |Included
-|Get started quickly with Management Center using Docker Compose. For example, create a docker-compose.yml file to run both Hazelcast and Management Center containers, with Management Center automatically connecting to the Hazelcast cluster
-
-|*REST API*|*{enterprise-product-name}*|*{open-source-product-name}*|*Description*
-|Client Filtering API
-|Included
-|N/A
-|Access to the Client Filtering settings via secure API
-
-|Cluster Metrics API
-|Included
-|N/A
-|Access to metrics of all clusters connected to Management Center
-
-|WAN Replication API
-|Included
-|N/A
-|Access to WAN Replication metrics and management via API
-
-|Cluster Connections API
-|Included
-|N/A
-|Manage cluster connections to Management Center via API
-
 |===
 
-NOTE: To access Enterprise features, a license must be installed on Management Center — see xref:deploy-manage:license-management.adoc[].
-The specific features enabled in Management Center depend on the license key. To verify which features are enabled, view the xref:deploy-manage:updating-mc-license-ui.adoc[License screen].
+NOTE: For information about xref:{page-latest-supported-hazelcast}@hazelcast:ROOT:whats-new.adoc[What's new], see the Hazelcast Platform documentation.
 
 [[os-requirements]]
 == Requirements
