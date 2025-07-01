@@ -174,11 +174,6 @@ Management Center supports the following versions of Hazelcast:
 
 5.1.x
 
-5.0.x
-
-|Hazelcast IMDG
-|4.2.x
-
 |===
 
 [[browser-compatibility]]
