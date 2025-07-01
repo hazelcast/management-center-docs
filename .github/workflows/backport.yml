@@ -3,6 +3,7 @@ on:
  push:
   branches:
    - main
+   - v/*
 jobs:
   backport-to-specified-branch:
     strategy:
