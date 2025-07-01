@@ -1,4 +1,4 @@
-= Get supportAdd commentMore actions
+= Get support
 :description: Hazelcast provides two types of support: community support for the {open-source-product-name}, and customer support for the {enterprise-product-name}.
 
 {description}
