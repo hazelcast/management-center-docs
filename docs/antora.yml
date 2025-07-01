@@ -21,8 +21,6 @@ asciidoc:
     # https://github.com/hazelcast/clc/releases
     page-latest-supported-clc: '5.4.1'
     page-toclevels: 1
-    experimental: true
-    open-source-product-name: 'Community Edition'
-    enterprise-product-name: 'Enterprise Edition'    
+    experimental: true 
 nav:
   - modules/ROOT/nav.adoc
