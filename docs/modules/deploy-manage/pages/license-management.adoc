@@ -6,14 +6,7 @@
 
 == Licensed Features
 
-Management Center requires a valid Enterprise license for the following:
-
-* Clustered JMX
-* Clustered REST API
-* Cluster Client Filtering
-* Prometheus Exporter
-* Displaying metrics for more than three cluster members
-* Healthcheck
+For a list of Management Center's Enterprise features, see the xref:getting-started:overview.adoc#key-features-and-benefits[Overview].
 
 To use these features in Management Center, you must install (in Management Center) either an Enterprise license for Management Center or an Enterprise license for Hazelcast Platform.
 
