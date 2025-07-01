@@ -6,3 +6,4 @@
 *** xref:getting-started:user-interface.adoc[Top Bar and Side Bar]
 *** xref:getting-started:graphs.adoc[]
 *** xref:getting-started:tables.adoc[]
+** xref:getting-started:get-support.adoc[Get support]
