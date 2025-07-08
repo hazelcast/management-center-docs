@@ -14,7 +14,10 @@ image:ROOT:DisabledDiagnosticLogging.png[Enabling Diagnostic Logging]
 When enabling diagnostic logging, you can configure an automatic turn-off duration to prevent logs from running indefinitely. This feature helps manage disk space and system resources.
 
 - **Auto turn-off enabled**: Check this option to automatically disable diagnostic logging after a specified duration
-- **Duration format**: Use the format `1d 23h 45m` (days, hours, minutes)
+- **Duration format**: Use the format `1d 23h 45m` (days, hours, minutes).
+
+NOTE: One month is calculated as 30 days.
+
 - **Auto turn-off disabled**: If auto turn-off is disabled, diagnostic logging will run indefinitely until manually disabled
 
 image:ROOT:ConfirmEnablingDiagnosticLogging.png[Confirm Enabling Diagnostic Logging]
