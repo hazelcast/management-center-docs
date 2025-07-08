@@ -49,7 +49,7 @@ services:
     ports:
     - "5701:5701"
   management-center:
-    image: hazelcast/management-center:latest
+    image: hazelcast/management-center:{full-version}
     ports:
     - "8080:8080"
     environment:
