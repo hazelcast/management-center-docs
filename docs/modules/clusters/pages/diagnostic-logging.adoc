@@ -25,7 +25,9 @@ You must be an admin user to access this feature.
 
 - **Admin Access**: Only admin users can configure diagnostic logging settings
 - **Dynamic Configuration**: This feature is only available when diagnostic logging can be configured dynamically. If diagnostic logging is configured via properties, it cannot be modified dynamically through the Management Center interface
-- **Cluster Version**: Dynamic diagnostic logging configuration requires a minimum cluster version
+image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
+- **Cluster Version**: Dynamic diagnostic logging configuration requires Hazelcast clusters version 6.0 or higher
+image:ROOT:UnsupportedDiagnosticLoggingClusterVersion.png[Unsupported Cluster Version]
 
 == Diagnostic Logging Notifications
 
@@ -69,8 +71,6 @@ image:ROOT:DisabledDiagnosticLoggingStatus.png[Diagnostic Logging Disabled Statu
 == Disabling Diagnostics Logging
 
 To disable diagnostics logging, click the `Disable` button and wait until the process is finished.
-
-image:ROOT:EnabledDiagnosticLogging.png[Disabling Diagnostic Logging]
 
 Diagnostic logging will also be automatically disabled when the configured auto turn-off duration expires, if this feature was enabled during setup.
 
