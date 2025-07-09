@@ -77,4 +77,4 @@ To disable diagnostics logging, click the `Disable` button and wait until the pr
 
 Diagnostic logging will also be automatically disabled when the configured auto turn-off duration expires, if this feature was enabled during setup.
 
-For more information about diagnostic logging configuration and available logging options, see xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#diagnostics [Diagnostic Logging in the Hazelcast Platform documentation].
+For more information about diagnostic logging configuration and available logging options, see xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#diagnostics [Diagnostic Logging in Hazelcast Platform].
