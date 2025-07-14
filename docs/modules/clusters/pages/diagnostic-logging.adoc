@@ -71,6 +71,8 @@ image:ROOT:EnabledDiagnosticLoggingStatus.png[Diagnostic Logging Enabled Status]
 
 image:ROOT:DisabledDiagnosticLoggingStatus.png[Diagnostic Logging Disabled Status]
 
+NOTE: The logging state along with the **Enabled at** and **Disabled at** fields are presented on a best-effort basis and may not accurately represent the state of diagnostic logging across the entire cluster. For example, logging might still be enabled on some members even if the interface already shows "Disabled at"
+
 == Disabling Diagnostics Logging
 
 To disable diagnostics logging, click the `Disable` button and wait until the process is finished.
