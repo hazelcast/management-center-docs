@@ -99,7 +99,7 @@ Followed by:
 
 === Start the compose stack with an enterprise license
 
-If you own an enterprise license you can configure the license in the compose file as following (see xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] for more details):
+If you own an enterprise license you can configure the license in the compose file as following (see xref:deploy-manage:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] for more details):
 
 ifdef::snapshot[]
 [source,yaml,subs="attributes+"]
