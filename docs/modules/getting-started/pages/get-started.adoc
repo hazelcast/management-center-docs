@@ -97,6 +97,49 @@ Followed by:
 +
 `MC Client connected to cluster dev.`
 
+=== Start the compose stack with an enterprise license
+
+If you own an enterprise license you can configure the license in the compose file as following (see xref:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] for more details):
+
+ifdef::snapshot[]
+[source,yaml,subs="attributes+"]
+----
+services:
+  hazelcast:
+    image: hazelcast/hazelcast-enterprise:latest
+    ports:
+    - "5701:5701"
+    environment:
+    - HZ_LICENSEKEY={license key}
+  management-center:
+    image: hazelcast/management-center:{full-version}
+    ports:
+    - "8080:8080"
+    environment:
+    - MC_LICENSE={license key}
+----
+endif::[]
+ifndef::snapshot[]
+[source,bash,subs="attributes+"]
+----
+services:
+  hazelcast:
+    image: hazelcast/hazelcast-enterprise:latest
+    ports:
+    - "5701:5701"
+    environment:
+    - HZ_LICENSEKEY={license key}
+  management-center:
+    image: hazelcast/management-center:{full-version}
+    ports:
+    - "8080:8080"
+    environment:
+    - MC_LICENSE={license key}
+    - MC_DEFAULT_CLUSTER=dev
+    - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+----
+endif::[]
+
 == Launch Management Center
 
 Now that Management Center is connected to a running cluster, you can start to explore.
