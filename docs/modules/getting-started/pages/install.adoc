@@ -207,7 +207,7 @@ mc-start.cmd
 ====
 
 [[starting-with-enterprise-license]]
-== Starting Management Centre with an enterprise license
+== Starting Management Center with an Enterprise license
 If you want to start management centre with a valid enterprise license via command line,
 you could set the `MC_LICENSE` or pass the java property `hazelcast.mc.license` environment variable (see xref:deploy-manage:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] for more details).
 
