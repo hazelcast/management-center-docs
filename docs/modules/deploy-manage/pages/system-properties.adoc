@@ -77,7 +77,7 @@ hz-mc start -Dhazelcast.mc.configReplacer.failIfValueMissing=true \
 |[[hazelcast-mc-contextpath]]hazelcast.mc.contextPath
 
 MC_CONTEXT_PATH
-|Prefix of all URL paths in Management Center. Default: `' '` (empty).
+|When a context path is set, every Management Center endpoint, including `/health` endpoint, is served under that prefix. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
