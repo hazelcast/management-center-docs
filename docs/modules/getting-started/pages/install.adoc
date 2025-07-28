@@ -43,7 +43,7 @@ In some cases, such as querying maps that contain custom objects, you may need t
 
 You can find more details on link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
-To start Management Center with a valid Enterprise License you can pass the environment variable `MC_LICENSE`:
+To start Management Center with a valid Enterprise Edition license, you can pass the environment variable `MC_LICENSE`:
 
 [source,shell,subs="attributes+"]
 ----
