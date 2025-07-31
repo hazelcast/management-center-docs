@@ -43,6 +43,13 @@ In some cases, such as querying maps that contain custom objects, you may need t
 
 You can find more details on link:https://hub.docker.com/r/hazelcast/management-center[DockerHub].
 
+To start Management Center with a valid Enterprise Edition license, you can pass the environment variable `MC_LICENSE`:
+
+[source,shell,subs="attributes+"]
+----
+docker run --rm -p 8080:8080 -e MC_LICENSE=<your-licence-key> hazelcast/management-center:{full-version}
+----
+
 == Use a package manager
 
 Hazelcast offers package managers for Linux and Mac operating systems.
@@ -198,6 +205,45 @@ mc-start.cmd
 ----
 --
 ====
+
+[[starting-with-enterprise-license]]
+== Starting Management Center with an Enterprise license
+If you want to start Management Center with a valid Enterprise Edition license via the command line,
+you can set the `MC_LICENSE` or pass the Java property `hazelcast.mc.license` environment variable (see xref:deploy-manage:system-properties.adoc#starting-with-a-license[`hazelcast.mc.license` property] for more details).
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+export MC_LICENSE=<license-key>
+hz-mc start
+----
+
+or
+
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.license=<license key>
+----
+
+--
+
+Windows::
++
+--
+[source,shell,subs="attributes+"]
+----
+SET MC_LICENSE=<license-key>
+mc-start.cmd
+----
+--
+====
+
+Alternatively, you can set the license via the UI as documented in the xref:deploy-manage:license-management.adoc[] section.
+
 
 
 == Stop Management Center via the command line
