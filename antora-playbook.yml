@@ -2,7 +2,7 @@
 site:
 #  title: Documentation
   url: https://frosty-curran-1fc0c4.netlify.app/
-  start_page: 6.0-snapshot@management-center:getting-started:overview.adoc
+  start_page: 5.9-snapshot@management-center:getting-started:overview.adoc
   robots: disallow
 #  keys:
 #    google_analytics: 'GTM-MQ59XD6'
