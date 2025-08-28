@@ -260,8 +260,8 @@ docker run --rm -p 8080:8080 --pull=always hazelcast/management-center:latest
 ----
 
 - Binary packages:
-** link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.zip[Download ZIP]
-** link:https://download.hazelcast.com/management-center/management-center-latest-snapshot.tar.gz[Download TAR]
+** link:https://repository.hazelcast.com/download/management-center/hazelcast-management-center-latest-snapshot.zip[Download ZIP]
+** link:https://repository.hazelcast.com/download/management-center/hazelcast-management-center-latest-snapshot.tar.gz[Download TAR]
 
 - Package managers:
 ** Homebrew
