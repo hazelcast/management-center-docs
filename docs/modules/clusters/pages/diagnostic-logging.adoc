@@ -3,7 +3,11 @@
 
 {description}
 
-// Author's note - need better description consistent with Operator and Platform. To Do
+You can switch diagnostic logging on and off at runtime (known as _dynamic_ configuration) without having to restart the cluster. 
+
+To prevent logs from running indefinitely, you can also switch diagnostic logging off automatically after a set period by configuring the auto turn-off feature in Management Center.
+
+NOTE: Only admin users can configure diagnostic logging settings.
 
 == Enable diagnostic logging
 
@@ -13,30 +17,28 @@ image:ROOT:DisabledDiagnosticLogging.png[Enabling Diagnostic Logging]
 
 === Configure auto turn-off
 
-When enabling diagnostic logging, you can configure an automatic turn-off duration to prevent logs from running indefinitely. This feature helps manage disk space and system resources.
+When enabling diagnostic logging, you can configure an automatic turn-off duration to prevent logs from running indefinitely.
 
-- **Auto turn-off enabled**: Check this option to automatically disable diagnostic logging after a specified duration
-- **Duration format**: Use the format `1d 23h 45m` (days, hours, minutes). Note that one month is calculated as 30 days
+- **Auto turn-off enabled**: Select this option to automatically disable diagnostic logging after a specified duration
+- **Duration format**: Specify using the format `1d 23h 45m` (days, hours, minutes). Note that one month is calculated as 30 days
 - **Auto turn-off disabled**: If auto turn-off is disabled, diagnostic logging will run indefinitely until manually disabled
 
 image:ROOT:ConfirmEnablingDiagnosticLogging.png[Confirm Enabling Diagnostic Logging]
-
-You must be an admin user to access this feature.
 
 NOTE: When diagnostic logging is enabled with auto turn-off, members that join the cluster later will start their own timers from zero. As a result, earlier members may stop diagnostics before the last joiner, leading to a temporary inconsistency. To keep the reported state accurate, Management Center restarts its diagnostics auto turn-off timer from zero whenever a new member joins while diagnostics is enabled. This ensures Management Center shows diagnostics as enabled as long as at least one member is still logging.
 
 == Prerequisites and limitations
 
-- **Admin Access**: Only admin users can configure diagnostic logging settings
-- **Dynamic Configuration**: This feature is only available when diagnostic logging can be configured dynamically. If diagnostic logging is configured via properties, it cannot be modified dynamically through the Management Center interface
+- **Admin only**: Only admin users can configure diagnostic logging settings
+- **Dynamic configuration**: If diagnostic logging is configured in Hazelcast Platform via system properties (known as _static_ configuration), logging cannot be switched on and off dynamically through the Management Center interface and the following message will appear:
 image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
 // Author's note - needs work. To Do
-- **Cluster Version**: Dynamic diagnostic logging configuration requires Hazelcast clusters version 6.0 or higher
+- **Cluster version**: Dynamic diagnostic logging configuration requires Hazelcast clusters version 6.0 or higher: 
 image:ROOT:UnsupportedDiagnosticLoggingClusterVersion.png[Unsupported Cluster Version]
 
 == Diagnostic logging notifications
 
-The Management Center displays notifications at the top of every page to keep you informed about diagnostic logging status:
+To inform you about diagnostic logging status, the Management Center displays notifications at the top of every page.
 
 === When diagnostic logging is enabled
 
@@ -51,13 +53,13 @@ image:ROOT:EnabledDiagnosticLoggingNotification.png[Diagnostic Logging Enabled N
 === When diagnostic logging is disabled
 
 - A dismissible notification appears showing "Diagnostic logging was disabled at [timestamp]"
-- Users can close this notification by clicking the close button
+- This notification can be dismissed by clicking the close button
 - Once dismissed, the notification won't appear again for the same disable event
 - The system remembers your dismissal preference per user and cluster
 
 image:ROOT:DisabledDiagnosticLoggingNotification.png[Diagnostic Logging Disabled Notification]
 
-NOTE: Notifications only appear when diagnostic logging can be configured dynamically
+NOTE: Notifications appear only when diagnostic logging is enabled via dynamic configuration
 
 == Monitor diagnostic logging status
 
@@ -77,8 +79,8 @@ NOTE: The logging state along with the **Enabled at** and **Disabled at** fields
 
 == Disable diagnostic logging
 
-To disable diagnostic logging, click the `Disable` button and wait until the process is finished.
+To disable diagnostic logging, click the `Disable` button and wait until the process completes.
 
-Diagnostic logging will also be automatically disabled when the configured auto turn-off duration expires, if this feature was enabled during setup.
+If auto turn-off is enabled, diagnostic logging will be disabled automatically when the configured duration expires.
 
 For more information about diagnostic logging configuration and available logging options, see xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#diagnostics [Diagnostic Logging in Hazelcast Platform].
