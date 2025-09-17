@@ -1,23 +1,20 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.9-snapshot'
+version: '5.9'
 # Version in the version selector
-display_version: '5.9-SNAPSHOT'
-prerelease: true
+display_version: '5.9'
 asciidoc:
   attributes:
     # product name variables
     open-source-product-name: 'Community Edition'
     enterprise-product-name: 'Enterprise Edition'
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '5.9.0-SNAPSHOT'
-    snapshot: true
+    full-version: '5.9.0'
     javasource: ROOT:example$
-    page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.7-snapshot'
     # https://github.com/hazelcast/hazelcast-commandline-client/releases
-    page-latest-supported-clc: '5.5.0'
+    page-latest-supported-clc: '5.5.1'
     page-toclevels: 1
     experimental: true
 nav:
