@@ -1,9 +1,9 @@
 name: management-center
 title: Management Center
 # Version in the URL
-version: '5.9-snapshot'
+version: '5.10-snapshot'
 # Version in the version selector
-display_version: '5.9-SNAPSHOT'
+display_version: '5.10-SNAPSHOT'
 prerelease: true
 asciidoc:
   attributes:
@@ -11,7 +11,7 @@ asciidoc:
     open-source-product-name: 'Community Edition'
     enterprise-product-name: 'Enterprise Edition'
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
-    full-version: '5.9.0-SNAPSHOT'
+    full-version: '5.10.0-SNAPSHOT'
     snapshot: true
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
