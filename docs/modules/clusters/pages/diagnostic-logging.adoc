@@ -33,8 +33,6 @@ NOTE: When diagnostic logging is enabled with auto turn-off, members that join t
 - **Admin only**: Only admin users can configure diagnostic logging settings
 - **Dynamic configuration**: If diagnostic logging is configured in Hazelcast Platform via system properties (known as _static_ configuration), logging cannot be switched on and off dynamically through the Management Center interface and the following message will appear:
 image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
-- **Cluster version**: Dynamic diagnostic logging configuration requires Hazelcast clusters version 6.0 or higher: 
-image:ROOT:UnsupportedDiagnosticLoggingClusterVersion.png[Unsupported Cluster Version]
 
 == Diagnostic logging notifications
 
