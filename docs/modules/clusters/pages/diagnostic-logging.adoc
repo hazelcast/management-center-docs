@@ -20,9 +20,9 @@ image:ROOT:DisabledDiagnosticLogging.png[Enabling Diagnostic Logging]
 
 When enabling diagnostic logging, you can configure an automatic turn-off duration to prevent logs from running indefinitely and having a performance impact on the cluster.
 
-- **Auto turn-off enabled**: Select this option to automatically disable diagnostic logging after a specified duration
-- **Duration format**: Specify using the format `1d 23h 45m` (days, hours, minutes). Note that one month is calculated as 30 days
-- **Auto turn-off disabled**: If auto turn-off is disabled, diagnostic logging will run indefinitely until manually disabled
+- **Auto turn-off enabled**: Select this option to automatically disable diagnostic logging after a specified duration.
+- **Duration format**: Specify using the format `1d 23h 45m` (days, hours, minutes). Note that one month is calculated as 30 days.
+- **Auto turn-off disabled**: If auto turn-off is disabled, diagnostic logging will run indefinitely until manually disabled.
 
 image:ROOT:ConfirmEnablingDiagnosticLogging.png[Confirm Enabling Diagnostic Logging]
 
@@ -31,9 +31,9 @@ NOTE: When diagnostic logging is enabled with auto turn-off, members that join t
 == Prerequisites and limitations
 
 - **Admin only**: Only admin users can configure diagnostic logging settings
+- **Diagnostic Logs Cannot Be Enabled in Operator, Kubernetes, and Docker Deployments Due to Persistence Restrictions**: Enabling diagnostic logs may fail in Operator, Kubernetes, and Docker deployments because the default directory for saving diagnostic logs (/opt/hazelcast) is read-only in these environments. As a result, when diagnostic logging is enabled, it cannot start due to lack of write permissions. Making this directory writable is not recommended for security reasons, as it could allow unintended or malicious changes to binary files. To workaround this issue, use the STDOUT option for diagnostic logs in containerized environments to ensure logs are accessible and persistent. Directing logs to STDOUT is a standard practice in Kubernetes and Docker environments, allowing logs to be collected by log scraping services for persistence. Note that if you attempt to save diagnostic logs to FILE, each cluster node will check for write permissions at the specified location. If one or more nodes cannot write to the location, Management Center will display an error indicating that diagnostic logging could not be started on all members — check individual member logs for further details.
 - **Dynamic configuration**: If diagnostic logging is configured in Hazelcast Platform via system properties (known as _static_ configuration), logging cannot be switched on and off dynamically through the Management Center interface and the following message will appear:
 image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
-- **Diagnostic Logs Cannot Be Enabled in Operator, Kubernetes, and Docker Deployments Due to Persistence Restrictions**: Enabling diagnostic logs may fail in Operator, Kubernetes, and Docker deployments because the default directory for saving diagnostic logs (/opt/hazelcast) is read-only in these environments. As a result, when diagnostic logging is enabled, it cannot start due to lack of write permissions. Making this directory writable is not recommended for security reasons, as it could allow unintended or malicious changes to binary files. To workaround this issue, use the STDOUT option for diagnostic logs in containerized environments to ensure logs are accessible and persistent. Directing logs to STDOUT is a standard practice in Kubernetes and Docker environments, allowing logs to be collected by log scraping services for persistence. Note that if you attempt to save diagnostic logs to FILE, each cluster node will check for write permissions at the specified location. If one or more nodes cannot write to the location, Management Center will display an error indicating that diagnostic logging could not be started on all members — check individual member logs for further details.
 
 == Diagnostic logging notifications
 
