@@ -1,0 +1,5 @@
+= Diagnostics Config API
+:page-enterprise: true
+:page-layout: swagger
+
+swagger_ui::{attachmentsdir}/rest-diagnostics-config-api.yaml[]
