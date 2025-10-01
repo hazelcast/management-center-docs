@@ -69,6 +69,7 @@
 ** xref:integrate:cluster-metrics.adoc[]
 ** xref:integrate:cluster-connections.adoc[]
 ** xref:integrate:wan-replication.adoc[]
+** xref:integrate:diagnostics-config.adoc[]
 
 .Tools
 // include::tools:partial$nav.adoc[]
