@@ -27,7 +27,6 @@ Management Center can offer the following types of rolling upgrades:
 
 * From any version 4.0 to 5.x, excluding 4.2, to the next minor version. For example, from version 4.1 to 4.2.
 * From version 4.2 to 5.0.
-* If members are already version 5.5, you can upgrade your cluster across multiple versions directly to the 5.5 https://docs.hazelcast.com/hazelcast/5.5/migrate/lts[long-term support version^] from any 5.x version. If any member version is earlier than 5.5, the cluster can only be upgraded to the next minor version.
 ====
 
 When the cluster version is upgraded, you will see the following notification:
