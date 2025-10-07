@@ -5,7 +5,6 @@ name: Build production site
 on:
   push:
     branches: [ main, 'v/*', archived-versions ]
-  workflow_call:
 
 jobs:
   deploy:
