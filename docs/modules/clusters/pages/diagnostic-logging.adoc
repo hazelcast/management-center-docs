@@ -12,7 +12,7 @@ To prevent logs from running indefinitely, you can also automatically switch dia
 
 NOTE: Only admin users can configure diagnostic logging settings, and the feature is only available in version 5.6 or later.
 
-TIP: Diagnostic logging can also be configured via the REST API — for details, see xref:integrate:diagnostics-config.adoc[Diagnostics Config API]
+TIP: Diagnostic logging can also be configured via the REST API — for details, see xref:integrate:diagnostics-config.adoc[Diagnostics Config API].
 
 == Enable diagnostic logging
 
