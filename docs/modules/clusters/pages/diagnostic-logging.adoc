@@ -37,7 +37,7 @@ NOTE: When diagnostic logging is enabled with auto turn-off, members that join t
 
 == Prerequisites and limitations
 
-- **Admin only**: Only admin users can configure diagnostic logging settings
+- **Admin only**: Only admin users can configure diagnostic logging settings.
 - **Use STDOUT for diagnostic logs in Kubernetes and Docker**: A known limitation prevents dynamic diagnostic logging from being started with file output in Docker and Kubernetes environments. This is due to the default logging directory being read-only. The recommended workaround is to direct diagnostic logs to STDOUT so standard logging systems can collect them, or to preconfigure a writable storage location if file output is required.
 - **Dynamic configuration**: If diagnostic logging is configured in Hazelcast Platform via system properties (known as _static_ configuration), logging cannot be switched on and off dynamically through the Management Center interface and the following message will appear:
 image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
