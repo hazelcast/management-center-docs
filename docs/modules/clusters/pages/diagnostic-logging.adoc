@@ -8,7 +8,7 @@ An extended set of diagnostics plugins is provided for both Hazelcast members an
 
 You can switch diagnostic logging on and off at runtime (known as _dynamic_ configuration) without having to restart the cluster. 
 
-To prevent logs from running indefinitely, you can also switch diagnostic logging off automatically after a set period by configuring the auto turn-off feature in Management Center.
+To prevent logs from running indefinitely, you can also automatically switch diagnostic logging off after a set period by configuring the auto turn-off feature in Management Center.
 
 NOTE: Only admin users can configure diagnostic logging settings, and the feature is available only in versions 5.6 onwards.
 
