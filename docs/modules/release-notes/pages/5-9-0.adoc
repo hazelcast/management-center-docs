@@ -1,0 +1,118 @@
+= 5.9.0 Release notes
+:description: These release notes list any new features, enhancements, fixes, and breaking changes implemented between version 5.8.0 and version 5.9.0 of Hazelcast Management Center (MC).
+
+{description}
+
+For help downloading Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+== New features
+
+* *Dynamic Diagnostic Logging (Beta)*: Diagnostic logging can now be controlled dynamically through Management Center without requiring a cluster restart. An optional auto-off timer can also be configured.
+
+NOTE: A known limitation prevents dynamic diagnostic logging from being started with file output in Docker and Kubernetes environments. This is due to the default logging directory being read-only. The recommended workaround is to direct diagnostic logs to STDOUT so standard logging systems can collect them, or to preconfigure a writable storage location if file output is required.
+
+For more information about new features, see xref:ROOT:whats-new.adoc[].
+
+== Enhancements
+
+* *Exposed TCP write queue metrics*: `tcp_connection_out_writeQueuePendingBytes` and  `priorityWriteQueuePendingBytes` metrics are now available by default, improving visibility into network performance without requiring diagnostic logging.  This information is available via JMX endpoint on the members and via Management Center's Prometheus Exporter.
+
+* *Updated Prometheus metrics format*: Continuation implementation of the improved Prometheus Exporter format. This update improves metrics format for Events, Listeners, Operation, Threads, Memory, OS, GC, Capacity, Runtime, Operations and Threads.  To prevent breaking changes in existing implementations, both the new and old Prometheus metrics formats are available. See Prometheus metrics. XREF
+
+* *hz-mc command now displays the existing security configuration*: When running the `hz-mc conf security get` command, the current security provider is included in the output. This makes it easy to validate the MC security provider settings (all passwords are automatically masked).
+
+* *Added search field to MC CP Sessions Metrics table*: You can now search for the session ID within the CP Session table to quickly find a specific entry.. 
+
+* *Show in the maps listing which maps have indexes*: This enhancement adds a column to the map listing to show whether the map has indexes enabled. 
+
+* *Time travel enhancement*: Selecting the time to jump back to has been made easier as you can now set the amount and jump back in minutes or hours. 
+
+== Security
+
+// need to add the CVE links
+
+* *CVE-2025-48924 - in Management Center 5.8.0*: Fixed a vulnerability in Apache Commons Lang that prevents uncontrolled recursions, which could lead to denial of service conditions.
+
+* *CVE-2024-47554 - in Management Center 5.8.0*: Resolved a vulnerability in Apache Commons IO that could excessively consume CPU resources when processing maliciously crafted input, leading to potential denial of service attacks.
+
+* *CVE-2025-22871 - (Go net/http Request Smuggling) in Management Center 5.8.0*: Resolved a flaw in Go’s standard library net/http package.  As CLC does not operate as a server, it was not affected by this vulnerability.
+
+* *CVE-2025-21613 - (go-git Argument Injection) in Management Center 5.6.0*: Resolve an argument injection vulnerability in go-git dependency. As CLC does not operate as a server, it was not affected by this vulnerability.
+
+* *CVE-2024-45337 - (golang.org/x/crypto SSH Authorization Bypass)*: Fix resolves an authorization bypass.  As CLC does not operate as a server, it was not affected by this vulnerability. 
+
+// add the security fixes here:
+
+* *Users can now see their roles in the MC menu*: When signed into MC, customers are unable to see the role they were assigned when using an external security provider.  Their role in MC is now visible in the pull-down menu in the upper right corner after the username.
+
+* *License Key masked in the logs*: In Management Center, the license key is masked in the log files. Only a few characters at the start and end of the key will be shown in the logs. For example:  `hazelcast.licensekey=eyJhb*********dDw==`
+
+* *Masking sensitive data passed via JAVA_OPTS, such as SSL Store passwords*: Sensitive data, including SSL passwords, was being printed within the MC logs when passed via `JAVA_OPTS`.  A new option `maskOpts` has been introduced, which allows you to specify which options should be masked in the logs. 
+
+== Fixes
+
+* *Selected page persistence within tables*: An issue was resolved where customers selected a page within a paginated table view, and the panel would revert to Page 1 instead of staying on the selected page.  
+
+* *JAVA_HOME variable in the hz-mc script*: Previously, the hz-mc script did not reference the `$JAVA` variable at runtime, where it was not used when loading Management Center. This fix ensures that the script consistently references `$JAVA`, preventing unexpected behavior. 
+
+* *The “Create new WAN Replication” button is missing role protection*: Previously, the “Create new WAN Replication” button was shown to roles that did not have permission to execute that action. The fix now makes the button invisible for roles that do not have such permission (Read-only and Metrics-only MC roles). 
+
+* *Improved contrast ratio in the Legacy Console*: The contrast of the text against the background was poor in the Legacy Console and has now been improved to ensure better readability. 
+
+#Author's Note - is it legacy console or original console?#
+
+* *CLC client config now relies on the list of active members rather than on the initial cluster setup*: Every time Management Center initializes CLC, it recreates the config with an up-to-date list of data-member nodes in the cluster based on the current connection. This fixes a bug where, previously, CLC would try to connect to a member that was no longer in the cluster. 
+
+* *Unable to update expired license using the hz-mc tool when MC is not running*: Resolved an issue when Management Center was shut down, an expired license could not be replaced using the hz-mc tool. 
+
+* *When browsing a map entry, MC can now read the properties of undefined map entries*: The issue where Management Center would display an error when trying to initialize an undefined property has been resolved.
+
+== Known issues
+
+* *Limitations of the "config import-java" command*: CLC can import a limited subset of Hazelcast client XML configuration using the `config import-java` command. However, configuration features that depend on Java-specific XML features, such as replacers, are not supported. See the https://docs.hazelcast.com/clc/latest/clc-config#clc-config-import-java[CLC Documentation] for further information.
+
+Workaround: Remove any use of, or references to, variable replacers in your config file. 
+
+* *CLC cannot use keystores/truststores that use JKS*: CLC can only use PEM files for SSL certificates. 
+Available workarounds: 
+
+** Enable the legacy MC Console, which runs directly on the members (and therefore does not require a TLS certificate) by setting hazelcast.mc.original.console.enabled to true.
+** Convert your JKS certs to PEM:
+
+For information, see the https://docs.hazelcast.com/hazelcast/5.5/security/integrating-openssl#configuring-hazelcast-for-openssl[documentation]. 
+
+If you use keyStore, see this note:
+
+// fix the formatting
+
+keyStore: Path of your keystore file.
+
+Using the keyStore property is not recommended, use keyFile and keyCertChainFile instead
+
+If you must use it, then it must be converted to PKCS12 - see the information below on converting.
+
+If you use trustStore, see this note:
+
+trustStore: Path of your truststore file. The file truststore is a keystore file that contains a collection of certificates trusted by your application. Its type should be JKS.
+
+Using the trustStore property is not recommended, use trustCertCollectionFile instead
+
+If you need to convert from JKS to PEM:
+
+// fix the formatting
+
+# Convert JKS file into PKCS12
+keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.p12 -srcstoretype JKS -deststoretype PKCS12
+# Convert PKCS12 file to PEM
+openssl pkcs12 -in keystore.p12 -out keystore.pem
+
+* *CLC fails to connect when client passwords are used*: As a workaround, you can either:
+
+** Use the legacy MC Console
+** Not use username/password auth on Hazelcast Platform
+
+NOTE: mTLS can be supported to maintain a secure cluster.
+
+#Author's Note - is it legacy console or original console?#
+
+* *MC's embedded CLC does not connect when security certificates are missing*: Management Center's embedded CLC does not connect when the security certificates are missing. Ensure that the correct security certificates are included.
