@@ -1,14 +1,18 @@
 = Diagnostic logging
-:description: Hazelcast offers an extended set of diagnostics plugins for both Hazelcast members and clients. A dedicated log file is used to write the diagnostics content, and a rolling file approach is used to prevent taking up too much disk space.
+:description: Hazelcast provides diagnostic logging capabilities that help with troubleshooting and monitoring.
 :page-beta: true
 
 {description}
+
+An extended set of diagnostics plugins is provided for both Hazelcast members and clients. A dedicated log file is used to write the diagnostics content, and a rolling file approach is used to prevent taking up too much disk space.
 
 You can switch diagnostic logging on and off at runtime (known as _dynamic_ configuration) without having to restart the cluster. 
 
 To prevent logs from running indefinitely, you can also switch diagnostic logging off automatically after a set period by configuring the auto turn-off feature in Management Center.
 
 NOTE: Only admin users can configure diagnostic logging settings, and the feature is available only in versions 5.6 onwards.
+
+TIP: Diagnostic logging can also be configured via the REST API — for details, see xref:integrate:diagnostics-config.adoc[Diagnostics Config API]
 
 == Enable diagnostic logging
 
@@ -55,7 +59,7 @@ image:ROOT:EnabledDiagnosticLoggingNotification.png[Diagnostic Logging Enabled N
 === When diagnostic logging is disabled
 
 - A dismissible notification appears showing "Diagnostic logging was disabled at [timestamp]"
-- This notification can be dismissed by clicking the close button
+- You can dismiss this notification by clicking the close button
 - Once dismissed, the notification won't appear again for the same disable event
 - The system remembers your dismissal preference per user and cluster
 
