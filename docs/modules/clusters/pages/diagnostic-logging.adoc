@@ -44,7 +44,7 @@ image:ROOT:StaticDiagnosticLogging.png[Static Diagnostic Logging]
 
 == Diagnostic logging notifications
 
-To inform you about diagnostic logging status, the Management Center displays notifications at the top of every page.
+To inform you about the status of diagnostic logging, Management Center displays notifications at the top of every page.
 
 === When diagnostic logging is enabled
 
