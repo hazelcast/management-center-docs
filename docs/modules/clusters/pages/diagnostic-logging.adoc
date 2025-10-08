@@ -10,8 +10,6 @@ You can switch diagnostic logging on and off at runtime (known as _dynamic_ conf
 
 To prevent logs from running indefinitely, you can also automatically switch diagnostic logging off after a set period by configuring the auto turn-off feature in Management Center.
 
-NOTE: Only admin users can configure diagnostic logging settings, and the feature is only available in version 5.6 or later.
-
 TIP: Diagnostic logging can also be configured via the REST API — for details, see xref:integrate:diagnostics-config.adoc[Diagnostics Config API].
 
 == Enable diagnostic logging
@@ -24,6 +22,8 @@ To enable diagnostic logging:
 image:ROOT:DisabledDiagnosticLogging.png[Enabling Diagnostic Logging]
 
 === Configure auto turn-off
+
+NOTE: Only admin users can configure diagnostic logging settings, and the feature is only available in version 5.6 or later.
 
 When enabling diagnostic logging, you can configure an automatic turn-off duration to prevent logs from running indefinitely and having a performance impact on the cluster.
 

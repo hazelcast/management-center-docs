@@ -1,0 +1,42 @@
+= CLC
+:description: This page includes some known issues and limitations when using CLC (Command Line Client) in Management Center, as well as guidance on workarounds.
+
+== Limitations of the "config import-java" command
+
+CLC can import a limited subset of Hazelcast client XML configuration using the `config import-java` command. However, configuration features that depend on Java-specific XML features, such as replacers, are not supported. See the https://docs.hazelcast.com/clc/latest/clc-config#clc-config-import-java[CLC Documentation] for further information. The recommended workaround is to remove any use of, or references to, variable replacers in your config file.
+
+== CLC fails to connect when client passwords are used
+
+As a workaround, you can either:
+
+** Use the original Management Center Console
+** Not use username/password auth on Hazelcast Platform
+
+NOTE: https://docs.hazelcast.com/hazelcast/5.5/security/tls-ssl#mutual-authentication[mTLS] can be supported to maintain a secure cluster.
+
+== CLC does not connect when security certificates are missing
+
+Management Center's embedded CLC does not connect when the security certificates are missing. Ensure that the correct security certificates are included.
+
+== CLC cannot use keystores/truststores that use JKS
+
+CLC can only use PEM files for SSL certificates. 
+As a workaround, you can either: 
+
+** Enable the original Management Center console, which runs directly on the members (and therefore does not require a TLS certificate) by setting `hazelcast.mc.original.console.enabled` to true.
+
+** Convert your JKS certs to PEM. For more information, see https://docs.hazelcast.com/hazelcast/5.5/security/integrating-openssl#configuring-hazelcast-for-openssl[Configuring Hazelcast for OpenSSL]. Note that: 
+
+*** If you use trustStore, using the `trustStore` property is not recommended — use `trustCertCollectionFile` instead.
+
+*** If you use keyStore, using the `keyStore` property is not recommended — use `keyFile` and `keyCertChainFile` instead. If you must use it, then it must be converted to PKCS12. 
+
+*** To convert from JKS to PEM:
+
+[source]
+----
+# Convert JKS file into PKCS12
+keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.p12 -srcstoretype JKS -deststoretype PKCS12
+# Convert PKCS12 file to PEM
+openssl pkcs12 -in keystore.p12 -out keystore.pem
+----
