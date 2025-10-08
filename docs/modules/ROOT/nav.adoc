@@ -1,7 +1,5 @@
 .Get started
-// include::getting-started:partial$nav.adoc[]
 * xref:getting-started:overview.adoc[Overview]
-// ** xref:ROOT:whats-new.adoc[What's new in 5.7]
 * xref:ask-ai.adoc[]
 * xref:getting-started:get-started.adoc[Docker Compose tutorial]
 * User Interface overview
@@ -12,14 +10,12 @@
 
 .Install and upgrade
 * xref:getting-started:install.adoc[Install and start]
-//* Release notes
 * xref:release-notes:releases.adoc[Release notes]
 ** xref:release-notes:5-7-0.adoc[5.7.0]
+** xref:release-notes:5-9-0.adoc[5.9.0]
 * xref:migration-guides.adoc[]
 
-
 .Deploy and manage
-// include::deploy-manage:partial$nav.adoc[]
 * xref:deploy-manage:production-checklist.adoc[Production checklist]
 * Configuration
 ** xref:deploy-manage:configuring.adoc[Overview]
@@ -56,7 +52,6 @@
 * xref:deploy-manage:phone-homes.adoc[Phone homes]
 
 .Integrate
-// include::integrate:partial$nav.adoc[]
 * xref:integrate:integrations.adoc[]
 * xref:integrate:prometheus-monitoring.adoc[]
 ** xref:integrate:prometheus-metrics.adoc[]
@@ -72,14 +67,12 @@
 ** xref:integrate:diagnostics-config.adoc[]
 
 .Tools
-// include::tools:partial$nav.adoc[]
 * xref:tools:overview.adoc[]
 * xref:tools:sql-browser.adoc[]
 * xref:tools:console.adoc[]
 * xref:tools:scripting.adoc[]
 
 .Cluster
-// include::clusters:partial$nav.adoc[]
 * xref:clusters:dashboard.adoc[Dashboard]
 * xref:clusters:clients.adoc[Clients]
 * xref:clusters:client-filtering.adoc[Client filtering]
@@ -106,7 +99,6 @@
 * xref:clusters:namespaces.adoc[Namespaces]
 
 .Storage, compute & messaging
-// include::data-structures:partial$nav.adoc[]
 * xref:data-structures:overview.adoc[]
 * xref:data-structures:vector-collection.adoc[]
 * xref:data-structures:map.adoc[]
@@ -123,14 +115,12 @@
 * xref:data-structures:flake-id-gen.adoc[]
 
 .Streaming
-// include::monitor-streaming:partial$nav.adoc[]
 * xref:monitor-streaming:dashboard.adoc[]
 * xref:monitor-streaming:jobs.adoc[]
 * xref:monitor-streaming:snapshots.adoc[]
 * xref:monitor-streaming:sql-tasks.adoc[]
 
 .CP Subsystem
-// include::cp-subsystem:partial$nav.adoc[]
 * xref:cp-subsystem:dashboard.adoc[Dashboard]
 * xref:cp-subsystem:cpmap.adoc[]
 * xref:cp-subsystem:atomic-long.adoc[]
@@ -140,10 +130,5 @@
 * xref:cp-subsystem:fenced-lock.adoc[]
 
 .Troubleshoot
-// include::troubleshoot:partial$nav.adoc[]
 * xref:troubleshoot:hazelcast-clusters.adoc[Hazelcast clusters]
 * xref:troubleshoot:management-center.adoc[Management Center]
-
-//.Release notes
-// include::release-notes:partial$nav.adoc[]
-// moved to Install & Upgrade

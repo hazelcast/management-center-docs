@@ -3,3 +3,5 @@
 This section summarizes the changes in each release:
 
 * xref:release-notes:5-7-0.adoc[5.7.0]
+* xref:release-notes:5-9-0.adoc[5.9.0]
+
