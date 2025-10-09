@@ -5,7 +5,6 @@ name: Build production site
 on:
   push:
     branches: [ main, 'v/*', archived-versions ]
-  workflow_call:
 
 jobs:
   deploy:
@@ -13,5 +12,5 @@ jobs:
     steps:
       - name: Dispatch docs deployment
         #   https://docs.netlify.com/configure-builds/build-hooks/
-        run: curl -d {} https://api.netlify.com/build_hooks/6001915875dde5f2ff105296
+        run: curl -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
 
