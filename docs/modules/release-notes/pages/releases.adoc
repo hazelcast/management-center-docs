@@ -30,6 +30,22 @@ For more information, see xref:clusters:diagnostic-logging.adoc[].
 
 * *Time travel enhancement*: Selecting the time to jump back to has been made easier as you can now set the amount and jump back in minutes or hours. 
 
+== Fixes
+
+* *Selected page persistence within tables*: Resolves an issue where customers selected a page within a paginated table view, and the panel would revert to Page 1 instead of staying on the selected page.  
+
+* *JAVA_HOME variable in the hz-mc script*: Previously, the hz-mc script did not reference the `$JAVA` variable at runtime, where it was not used when loading Management Center. This fix ensures that the script consistently references `$JAVA`, preventing unexpected behavior. 
+
+* *The "Create new WAN Replication” button is missing role protection*: Previously, the *Create new WAN Replication* button was shown to roles that did not have permission to execute that action. The fix now makes the button invisible for roles that do not have permission (Read-only and Metrics-only MC roles). 
+
+* *Improved contrast ratio in the original console*: The contrast of the text against the background was poor in Management Center's original console and has now been improved to ensure better readability. 
+
+* *CLC client config now relies on the list of active members rather than on the initial cluster setup*: Every time Management Center initializes CLC, it recreates the config with an up-to-date list of data-member nodes in the cluster based on the current connection. This fixes an issue where, previously, CLC would try to connect to a member that was no longer in the cluster. 
+
+* *Unable to update expired license using the hz-mc tool when MC is not running*: Resolves an issue in which an expired license could not be replaced using the hz-mc tool when Management Center was shut down. 
+
+* *When browsing a map entry, MC can now read the properties of undefined map entries*: Resolves an issue where Management Center would display an error when trying to initialize an undefined property.
+
 === Security
 
 * *CVE-2025-48924*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2025-48924 to fix a vulnerability in Apache Commons Lang that prevents uncontrolled recursions, which could lead to denial of service conditions.
@@ -47,20 +63,4 @@ For more information, see xref:clusters:diagnostic-logging.adoc[].
 * *License key masked in the logs*: The license key is now masked in the log files. Only a few characters at the start and end of the key will be shown in the logs. For example: `hazelcast.licensekey=eyJhb*********dDw==`.
 
 * *Masking sensitive data passed via JAVA_OPTS, such as SSL Store passwords*: Sensitive data, including SSL passwords, was being printed within the Management Center logs when passed via `JAVA_OPTS`. A new option `maskOpts` has been introduced, that allows you to specify which options should be masked in the logs. 
-
-== Fixes
-
-* *Selected page persistence within tables*: Resolves an issue where customers selected a page within a paginated table view, and the panel would revert to Page 1 instead of staying on the selected page.  
-
-* *JAVA_HOME variable in the hz-mc script*: Previously, the hz-mc script did not reference the `$JAVA` variable at runtime, where it was not used when loading Management Center. This fix ensures that the script consistently references `$JAVA`, preventing unexpected behavior. 
-
-* *The "Create new WAN Replication” button is missing role protection*: Previously, the *Create new WAN Replication* button was shown to roles that did not have permission to execute that action. The fix now makes the button invisible for roles that do not have permission (Read-only and Metrics-only MC roles). 
-
-* *Improved contrast ratio in the original console*: The contrast of the text against the background was poor in Management Center's original console and has now been improved to ensure better readability. 
-
-* *CLC client config now relies on the list of active members rather than on the initial cluster setup*: Every time Management Center initializes CLC, it recreates the config with an up-to-date list of data-member nodes in the cluster based on the current connection. This fixes an issue where, previously, CLC would try to connect to a member that was no longer in the cluster. 
-
-* *Unable to update expired license using the hz-mc tool when MC is not running*: Resolves an issue in which an expired license could not be replaced using the hz-mc tool when Management Center was shut down. 
-
-* *When browsing a map entry, MC can now read the properties of undefined map entries*: Resolves an issue where Management Center would display an error when trying to initialize an undefined property.
 
