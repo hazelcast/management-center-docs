@@ -1,3 +1,0 @@
-** xref:release-notes:releases.adoc[Overview]
-** xref:release-notes:5-7-0.adoc[5.7.0]
-
