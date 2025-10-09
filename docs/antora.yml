@@ -3,7 +3,7 @@ title: Management Center
 # Version in the URL
 version: '5.10-snapshot'
 # Version in the version selector
-display_version: '5.10-SNAPSHOT'
+display_version: '5.9'
 prerelease: true
 asciidoc:
   attributes:
