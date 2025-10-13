@@ -11,5 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger build
-      run: curl -X POST -d {} https://api.netlify.com/build_hooks/6001915875dde5f2ff105296
-
+      run: curl -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
