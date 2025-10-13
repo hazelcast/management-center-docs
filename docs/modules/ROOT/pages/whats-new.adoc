@@ -21,13 +21,6 @@ Hazelcast supports two kinds of members:
 
 With Hazelcast Platform 5.5, it's now possible to execute Jet jobs only on the Lite members and therefore scale computational power independently of storage. Management Center has always supported promoting a Lite member to a Full member but in this release you can also now demote a Full member to a Lite member.
 
-== Multi-version rolling upgrades
-
-Hazelcast Platform 5.5 introduces Long-term Support (LTS) releases to simplify your upgrade experience and give you greater control over when and how you upgrade your software. It's now possible to upgrade from Hazelcast 5.2.x or later to 5.5 in a single upgrade.
-
-Management Center 5.5 now supports this multi-version rolling upgrade. For more info, see xref:clusters:triggering-rolling-upgrade.adoc[Triggering a Rolling Upgrade].
-// How does it support it? We should add what you can do with MC here.
-
 == Multi-member routing for Java clients
 
 Hazelcast Platform 5.5 adds an additional client routing option for Java client applications connecting to geographically dispersed clusters. Management Center now supports this new multi-member client routing.
