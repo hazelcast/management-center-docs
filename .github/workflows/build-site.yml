@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: Dispatch docs deployment
         #   https://docs.netlify.com/configure-builds/build-hooks/
-        run: curl -X POST -d {} https://api.netlify.com/build_hooks/6001915875dde5f2ff105296
+        run: curl -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
 
