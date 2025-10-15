@@ -17,7 +17,7 @@ asciidoc:
     version-brew: '5.5.2'
     javasource: ROOT:example$
     page-latest-supported-imdg: '4.2'
-    page-latest-supported-hazelcast: '5.5'
+    page-latest-supported-hazelcast: '5.6'
     # https://github.com/hazelcast/clc/releases
     page-latest-supported-clc: '5.4.1'
     page-toclevels: 1
