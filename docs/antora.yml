@@ -14,7 +14,7 @@ asciidoc:
     full-version: '5.9.0'
     snapshot: true
     javasource: ROOT:example$
-    page-latest-supported-hazelcast: '5.7-snapshot'
+    page-latest-supported-hazelcast: '5.6'
     # https://github.com/hazelcast/hazelcast-commandline-client/releases
     page-latest-supported-clc: '5.5.1'
     page-toclevels: 1
