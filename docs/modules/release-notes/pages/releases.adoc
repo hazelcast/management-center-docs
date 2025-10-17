@@ -32,7 +32,7 @@ For more information, see xref:clusters:diagnostic-logging.adoc[].
 
 == Fixes
 
-* *Selected page persistence within tables*: Resolves an issue where customers selected a page within a paginated table view, and the panel would revert to Page 1 instead of staying on the selected page.  
+* *Selected page persistence within tables*: Resolves an issue where selecting a page within a paginated table view would revert to first page instead of staying on the selected page.  
 
 * *JAVA_HOME variable in the hz-mc script*: Previously, the hz-mc script did not reference the `$JAVA` variable at runtime, where it was not used when loading Management Center. This fix ensures that the script consistently references `$JAVA`, preventing unexpected behavior. 
 
