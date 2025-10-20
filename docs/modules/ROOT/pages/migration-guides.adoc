@@ -1,16 +1,39 @@
 = Upgrade Management Center
 [[migration-guides]]
 
+== Changes in 5.9.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.9/release-notes/releases[Management Center 5.9 Release Notes].
+
+== Changes in 5.8.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.8/release-notes/releases[Management Center 5.8 Release Notes].
+
+== Changes in 5.7.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.7/release-notes/releases[Management Center 5.7 Release Notes].
+
+== Changes in 5.6.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.6/release-notes/releases[Management Center 5.6 Release Notes].
+
+== Changes in 5.5.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.5/release-notes/releases[Management Center 5.5 Release Notes].
+
 == Changes in 5.4.x
 * H2 database version is upgraded from 1.x to 2.x.
 * Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.4/release-notes/releases[Management Center 5.4 Release Notes].
 
 == Changes in 5.3.x
 * Hazelcast Management Center requires Java 11 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.3/release-notes/releases[Management Center 5.3 Release Notes].
 
 == Changes in 5.2.x
 
 * The custom Log4j configuration file property `log4j.configurationFile` has been changed to `logging.config`.
+* See link:https://docs.hazelcast.com/management-center/5.2/release-notes/releases[Management Center 5.2 Release Notes].
 
 == Changes in 5.1.x
 
@@ -18,26 +41,4 @@
  * The `start.sh` has been deprecated and is superseded by the `hz-mc start` command.
  * The supported way for starting up a standalone Management Center instance has been changed from `java -jar ...` command to `hz-mc start`.
  * The Console within Management Center is disabled by default and has to be enabled within the member's configuration. See xref:tools:console.adoc[`Executing Console Commands`].
-
-== Changes in 3.12.x
-
-* Default home directory location has been changed from `<user-home>/hazelcast-mancenter-<version>` to `<user-home>/hazelcast-mc`.
-* Parameter to change home directory location has been changed from `hazelcast.mancenter.home` to `hazelcast.mc.home`.
-* The `UpdateLdapPassword` utility (available via `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts) has been merged into the MC Conf tool (available via the `hz-mc conf` or `mc-conf.bat` scripts).
-
-== Changes in 3.10.x
-
-* Hazelcast Management Center’s default URL has been changed from `localhost:8080/mancenter` to `localhost:8080/hazelcast-mancenter`.
-* Default home directory location has been changed from `<user-home>/mancenter-<version>` to `<user-home>/hazelcast-mancenter-<version>`.
-* Name of the WAR file has been changed from `mancenter-\{version}.war` to `hazelcast-mancenter-\{version}.war`.
-
-== Changes in 3.8.x
-
-Starting with Management Center 3.8.4, you can
-use the following system properties for Clustered JMX
-via Management Center:
-
-* `-Dhazelcast.mc.jmx.rmi.port=9001`
-* `-Dhazelcast.mc.jmx.host=localhost`
-
-See the xref:integrate:jmx.adoc[Clustered JMX via Management Center section].
+ * See link:https://docs.hazelcast.com/management-center/5.1/release-notes/releases[Management Center 5.1 Release Notes]. 
