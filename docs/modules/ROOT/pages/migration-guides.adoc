@@ -1,43 +1,20 @@
 = Upgrade Management Center
 [[migration-guides]]
 
-== Changes in 5.4.x
-* H2 database version is upgraded from 1.x to 2.x.
-* Hazelcast Management Center requires Java 17 or later to run.
+To upgrade Hazelcast Management Center:
 
-== Changes in 5.3.x
-* Hazelcast Management Center requires Java 11 or later to run.
-
-== Changes in 5.2.x
-
-* The custom Log4j configuration file property `log4j.configurationFile` has been changed to `logging.config`.
-
-== Changes in 5.1.x
-
- * The `mc-conf.sh` command has been renamed to `hz-mc conf`.
- * The `start.sh` has been deprecated and is superseded by the `hz-mc start` command.
- * The supported way for starting up a standalone Management Center instance has been changed from `java -jar ...` command to `hz-mc start`.
- * The Console within Management Center is disabled by default and has to be enabled within the member's configuration. See xref:tools:console.adoc[`Executing Console Commands`].
-
-== Changes in 3.12.x
-
-* Default home directory location has been changed from `<user-home>/hazelcast-mancenter-<version>` to `<user-home>/hazelcast-mc`.
-* Parameter to change home directory location has been changed from `hazelcast.mancenter.home` to `hazelcast.mc.home`.
-* The `UpdateLdapPassword` utility (available via `updateLdapPassword.sh` or `updateLdapPassword.bat` scripts) has been merged into the MC Conf tool (available via the `hz-mc conf` or `mc-conf.bat` scripts).
-
-== Changes in 3.10.x
-
-* Hazelcast Management Center’s default URL has been changed from `localhost:8080/mancenter` to `localhost:8080/hazelcast-mancenter`.
-* Default home directory location has been changed from `<user-home>/mancenter-<version>` to `<user-home>/hazelcast-mancenter-<version>`.
-* Name of the WAR file has been changed from `mancenter-\{version}.war` to `hazelcast-mancenter-\{version}.war`.
-
-== Changes in 3.8.x
-
-Starting with Management Center 3.8.4, you can
-use the following system properties for Clustered JMX
-via Management Center:
-
-* `-Dhazelcast.mc.jmx.rmi.port=9001`
-* `-Dhazelcast.mc.jmx.host=localhost`
-
-See the xref:integrate:jmx.adoc[Clustered JMX via Management Center section].
+1.	*Review requirements and changes* 
+** Before upgrading, review the requirements and any breaking changes in recent versions. For example, Management Center 5.4.x and later require Java 17 or later to run, and earlier versions have other requirements and changes you should be aware of. Review the xref:release-notes:release-notes.adoc[Release Notes] for version-specific changes.
+2.	*Choose your upgrade method* 
+** Management Center can be installed and upgraded using Docker, a package manager (for Mac or Linux), or the binary distribution. Detailed instructions for each method are available in the xref:getting-started:install.adoc[installation section].
+3.	*Special considerations*
+**	If you are using persistent storage (e.g., with Helm on Kubernetes), refer to the xref:{page-latest-supported-hazelcast}@hazelcast:kubernetes:helm-upgrade-guide.adoc[Helm upgrade guide] to avoid issues with persistent volumes.
+**	If you deployed Management Center using the Hazelcast Platform Operator, follow the link:https://docs.hazelcast.com/operator/latest-snapshot/deploy-management-center[Operator documentation] for upgrade steps.
+4.	*Upgrade process*
+**	Stop the currently running Management Center instance.
+**	Install or deploy the new version using your chosen method.
+**	Start the new version.
+5.	*After upgrade*
+**	Verify that Management Center is running and connected to your Hazelcast cluster.
+**	If you use an Enterprise license, you may need to update or reapply your license key.
+For detailed, step-by-step instructions for your specific deployment method, see the xref:getting-started:install.adoc[installation section].

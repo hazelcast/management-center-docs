@@ -6,6 +6,8 @@
 
 == Before you begin
 
+Hazelcast Management Center requires Java 17 or later to run. 
+
 xref:overview.adoc#requirements[Review the requirements] to make sure that you meet them.
 
 == Use Docker
