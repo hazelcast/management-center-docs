@@ -11,7 +11,7 @@
 .Install and upgrade
 * xref:getting-started:install.adoc[Install and start]
 * xref:migration-guides.adoc[Upgrade Management Center]
-* xref:release-notes:release-notes.adoc[Release notes]
+* xref:release-notes:release-notes.adoc[]
 
 
 .Deploy and manage
