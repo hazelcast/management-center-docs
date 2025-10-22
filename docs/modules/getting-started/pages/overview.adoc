@@ -164,6 +164,8 @@ Management Center supports the following versions of Hazelcast:
 
 |Hazelcast Platform
 |
+5.6.x
+
 5.5.x
 
 5.4.x
@@ -175,9 +177,6 @@ Management Center supports the following versions of Hazelcast:
 5.1.x
 
 5.0.x
-
-|Hazelcast IMDG
-|4.2.x
 
 |===
 
