@@ -1,17 +1,20 @@
 = Upgrade Management Center
 [[migration-guides]]
+:description: This topic explains how to upgrade Hazelcast Management Center using Docker, a package manager, or the binary distribution.
 
-To upgrade Hazelcast Management Center:
+{description}
+
+To upgrade Management Center:
 
 1.	*Review requirements and changes* 
-** Before upgrading, review the requirements and any breaking changes in recent versions. For example, Management Center 5.4.x and later require Java 17 or later to run, and earlier versions have other requirements and changes you should be aware of. Review the xref:release-notes:release-notes.adoc[Release Notes] for version-specific changes.
+** Before upgrading, review the requirements and any breaking changes in recent versions. For example, Management Center 5.4.x and later require Java 17 or later to run, and earlier versions have other requirements and changes you should be aware of. Review the xref:release-notes:release-notes.adoc[] for version-specific changes.
 2.	*Choose your upgrade method* 
 ** Management Center can be installed and upgraded using Docker, a package manager (for Mac or Linux), or the binary distribution. Detailed instructions for each method are available in the xref:getting-started:install.adoc[installation section].
 3.	*Special considerations*
 **	If you are using persistent storage (e.g., with Helm on Kubernetes), refer to the xref:{page-latest-supported-hazelcast}@hazelcast:kubernetes:helm-upgrade-guide.adoc[Helm upgrade guide] to avoid issues with persistent volumes.
-**	If you deployed Management Center using the Hazelcast Platform Operator, follow the link:https://docs.hazelcast.com/operator/latest-snapshot/deploy-management-center[Operator documentation] for upgrade steps.
+**	If you deployed Management Center using Hazelcast Platform Operator, follow the link:https://docs.hazelcast.com/operator/latest-snapshot/deploy-management-center[Operator documentation] for upgrade steps.
 4.	*Upgrade process*
-**	Stop the currently running Management Center instance.
+**	Stop any running Management Center instances.
 **	Install or deploy the new version using your chosen method.
 **	Start the new version.
 5.	*After upgrade*
