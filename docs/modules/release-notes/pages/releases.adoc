@@ -1,5 +1,4 @@
-= Hazelcast Management Center 5.7.x release notes
+= Release Notes
+:description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
 
-This section summarizes the changes in each release:
-
-* xref:release-notes:5-7-0.adoc[5.7.0]
+{description}
