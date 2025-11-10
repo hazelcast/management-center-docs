@@ -83,7 +83,7 @@ The following table explains which features are available in Management Center b
 |SQL Browser to execute queries
 |icon:check-circle[size=lg,role=success]
 |icon:check-circle[size=lg,role=success]
-|Enables you to execute SQL queries (such as CREATE MAPPING, INSERT INTO, and SINK INTO) on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive. In {enterprise-product-name} includes ability to use SQL DML statements in SQL Browser; in {open-source-product-name}, included up to cluster of 3 members
+|Enables you to execute SQL queries (such as CREATE MAPPING, INSERT INTO, and SINK INTO) on your clusters. Management Center shows queryable objects with a schema and index explorer, and can handle streaming SQL queries, displaying the last 1,000 entries as they arrive. In {enterprise-product-name}, includes ability to use SQL DML statements in SQL Browser; in {open-source-product-name}, included for cluster of up to 3 members
 
 |High availability deployments
 |icon:check-circle[size=lg,role=success]
