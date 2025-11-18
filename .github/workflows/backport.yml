@@ -5,13 +5,9 @@ on:
    - main
    - v/*
 jobs:
-  backport-to-specified-branch:
-    strategy:
-      fail-fast: false
-      matrix:
-        branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8']
-    uses: hazelcast/hz-docs/.github/workflows/backport-workflow.yml@main
+  backport:
+    uses: hazelcast/backport/.github/workflows/backport.yml@master
     with:
-      label-to-check-for: '["backport to ${{ matrix.branch }}"]'
-      target-branch: v/${{ matrix.branch }}
-    secrets: inherit
+      BACKPORT_PREFIX: "backport to"
+    secrets:
+      GH_TOKEN: ${{ secrets.DEVOPSHAZELCAST_PAT_FOR_MONOREPO }}
