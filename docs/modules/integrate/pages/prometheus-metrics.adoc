@@ -1324,11 +1324,11 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |n/a
 
 |cluster.clock.clusterTime
-|cluster_clock_cluster_seconds_total
+|cluster_clock_cluster_time_seconds_total
 |n/a
 
 |cluster.clock.clusterTimeDiff
-|cluster_clock_cluster_time_diff_seconds_total
+|cluster_clock_cluster_time_diff_seconds
 |n/a
 
 |cluster.clock.clusterUpTime
@@ -1340,7 +1340,7 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |n/a
 
 |cluster.clock.maxClusterTimeDiff
-|cluster_clock_max_cluster_time_diff_seconds_total
+|cluster_clock_max_cluster_time_diff_seconds
 |n/a
 
 |cluster.connection.closedTime
