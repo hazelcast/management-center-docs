@@ -2513,7 +2513,7 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |===
 ====
 
-.Management Center Metrics
+.Management Center
 [%collapsible]
 ====
 |===
