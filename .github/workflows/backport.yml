@@ -1,0 +1,13 @@
+name: Backport changes to maintenance branches
+on:
+ pull_request_target:
+  types: labeled
+ push:
+  branches:
+   - main
+   - v/*
+jobs:
+  backport:
+    uses: hazelcast/backport/.github/workflows/backport.yml@master
+    with:
+      BACKPORT_PREFIX: "backport to"
