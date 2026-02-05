@@ -27,6 +27,13 @@ NOTE: If you are relying on the `JSESSIONID` cookie for sticky session routing, 
 
 Client filtering rules are synchronized among instances of Management Center that are connected to the same cluster. See xref:clusters:client-filtering.adoc#client-filtering-synchronization[Client Filtering Synchronization].
 
+=== Reverse proxies and load balancers (WebSocket)
+
+Management Center uses WebSocket connections for some of the features. If a reverse proxy or load balancer does not support WebSockets or is not configured to preserve the WebSocket handshake headers, you may see errors. When using a reverse proxy or load balancer in front of Management Center, make sure to:
+
+- Ensure your proxy/load balancer supports WebSocket connections.
+- Make sure the WebSocket upgrade headers are forwarded intact by the proxy: `Upgrade: websocket` and `Connection: Upgrade`.
+
 == Secure Management Center
 
 Review the security documentation to make sure that Management Center is secure before going into production. See xref:security.adoc[].
