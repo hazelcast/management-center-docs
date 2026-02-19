@@ -1,74 +1,78 @@
 = Release Notes
 :description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-:page-aliases: release-notes:5-9-0.adoc
+:page-aliases: release-notes:5-10-0.adoc
 
 {description}
 
 The key changes made in previous releases are also summarized with links to earlier release notes. 
 
-== 5.9.0
+== 5.10.0
 
 For help downloading Hazelcast Management Center, see xref:getting-started:install.adoc[].
 
-**Release date**: 2025-10-15
-
-=== New features
-
-* *Dynamic diagnostic logging (Beta)*: Diagnostic logging can now be controlled dynamically (i.e. at runtime) through Management Center without requiring a cluster restart. An optional auto-off timer can also be configured.
-
-For more information, see xref:clusters:diagnostic-logging.adoc[].
+**Release date**: 2026-02-25
 
 === Enhancements
 
-* *TCP write queue metrics exposed*: `tcp_connection_out_writeQueuePendingBytes` and  `priorityWriteQueuePendingBytes` metrics are now available by default, improving visibility into network performance without requiring diagnostic logging.  This information is available via JMX endpoint on the members and via Management Center's Prometheus Exporter.
+* Added to the REST API Endpoint so that Mao Configuration Details can be retrieved:* It is now possible to access the Map config via the MC REST API including TTL, Max-Idle, Eviction and Backup settings for automated auditing purposes.
 
-* *Prometheus metrics format updated*: As part of the continued implementation of the improved Prometheus Exporter format, this update improves metrics formats for Events, Listeners, Operation, Threads, Memory, OS, GC, Capacity, Runtime, Operations and Threads. To prevent breaking changes in existing implementations, both the new and old Prometheus metrics formats are available. See https://docs.hazelcast.com/management-center/5.10-snapshot/integrate/prometheus-metrics[Prometheus metrics].
+* Updated Prometheus metrics: The V2 format support for the Prometheus Exporter in MC has been extended to include the following metrics:
 
-* *hz-mc command now displays the existing security configuration*: When running the `hz-mc conf security get` command, the current security provider is included in the output. This makes it easy to validate the Management Center security provider settings (all passwords are automatically masked).
+** Topic, Reliable Topic, Queue, Cache, Replicated Map, MultiMap, Vector Collection
 
-* *Search field added to MC CP Sessions Metrics table*: You can now search for the session ID within the CP Session table to find a specific entry quickly. 
+** CP Subsystem, Raft Algorithm, Flake ID Generator, PN Counter, Proxies, Transactions
 
-* *Maps listing shows which maps have indexes*: This enhancement adds a column to the map listing to show whether the map has indexes enabled. 
+** Clients, Client Invocations, Near Cache
 
-* *Time travel enhancement*: Selecting the time to jump back to has been made easier as you can now set the amount and jump back in minutes or hours. 
+** Cluster, Partitions, WAN Replication, High-Density (HD) Memory Store, MC Config HealthcheckUser Code Deployment, User Code Namespaces
+
+** Persistence, Executor Service, Streaming Engine Cluster-Wide Metrics, Streaming Engine Job-specific Metrics
+
+* *Added an option to copy the Config Healthcheck report:* Requested from technical support to make it easier for customers to share the Config Healthcheck report.
+
+* *Added a settable hostname that it is running MC in UI:* By default it shows the hostname that MC is running on but this can be set to any value via the `hazelcast.mc.info.instanceName` system property (or to blank to hide it).
+
+* *Improved UI on the meaning of max native size:* The documentation has been updated to clarify that the max native memory size is per Node.
 
 == Fixes
 
-* *Selected page persistence within tables*: Resolves an issue where selecting a page within a paginated table view would revert to first page instead of staying on the selected page.  
+* *Resolved an issue where stale CP members could be incorrectly displayed in MC:* The fix automatically removes these stale entries with outdated "last seen" timestamps from the CP membership screens.
 
-* *JAVA_HOME variable in the hz-mc script*: Previously, the hz-mc script did not reference the `$JAVA` variable at runtime, where it was not used when loading Management Center. This fix ensures that the script consistently references `$JAVA`, preventing unexpected behavior. 
+* *Resolved an issue where CLC would fail to connect to clusters that require a username and password:* The embedded Command Line Client (CLC) in MC would fail to connect to clusters requiring username and password authentication. This fix addresses a previously documented known issue.
 
-* *The "Create new WAN Replication” button is missing role protection*: Previously, the *Create new WAN Replication* button was shown to roles that did not have permission to execute that action. The fix now makes the button invisible for roles that do not have permission (Read-only and Metrics-only MC roles). 
+* *Updated Management Center rolling upgrade functionality to align with Platform upgrade capabilities:* Previously MC was limited to single minor version upgrades, the feature now supports multi-version upgrades based on Platform version compatibility.
 
-* *Improved contrast ratio in the original console*: The contrast of the text against the background was poor in Management Center's original console and has now been improved to ensure better readability. 
+* *MC now shows a clear warning if connecting to a platform version that is newer than itself:* A banner is show in MC if the Platform version is newer than the MC version. When upgrading, the customer should always upgrade MC first.
 
-* *CLC client config now relies on the list of active members rather than on the initial cluster setup*: Every time Management Center initializes CLC, it recreates the config with an up-to-date list of data-member nodes in the cluster based on the current connection. This fixes an issue where, previously, CLC would try to connect to a member that was no longer in the cluster. 
+* *Resolved an issue with testing the Security Providers:* The fix ensures the SAML and Active Directory Security Provider test pass prior to saving the configuration. This prevents from saving the configs which will not connect to the security provider
 
-* *Unable to update expired license using the hz-mc tool when MC is not running*: Resolves an issue in which an expired license could not be replaced using the hz-mc tool when Management Center was shut down. 
+* *Resolved an issue in MC’s Config Healthcheck:* Fixed MC connection diagnostic failures related to missing service-dns configurations in Kubernetes environments.
 
-* *When browsing a map entry, MC can now read the properties of undefined map entries*: Resolves an issue where Management Center would display an error when trying to initialize an undefined property.
+* *Resolved an issue where upgrading MC from earlier versions:* Under certain circumstances, the issue prevented the H2 database upgrade from running which resulted in the existing cluster connection config being lost.   Additional fixes were applied when running on Microsoft Windows.
+
+* *Resolved a Dynamic Diagnostic Config error message:* A fix has been applied to stop error messages from being shown when accessing these screens for a cluster that has just been stopped.
+
+* *Resolved a licensing warning message:* MC shows clearer messages when connecting to an OSS cluster.
+
+* *Resolved an issue with the alert levels in Config Health Check:* in non-development mode, the alert level for the minimum number of nodes in a cluster has been reduced from a FAIL to WARNING.  For dev-mode, it remains INFO.
 
 === Security
 
-* *CVE-2025-48924*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2025-48924 to fix a vulnerability in Apache Commons Lang that prevents uncontrolled recursions, which could lead to denial of service conditions.
+* Resolved CVE-2025-41254 addresses a vulnerability in STOMP over WebSocket applications that could allow attackers to send unauthorized messages. This has been resolved by upgrading the `spring-boot-dependencies` and `spring-framework-core`.
 
-* *CVE-2024-47554*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2024-47554 to fix a vulnerability in Apache Commons IO that could excessively consume CPU resources when processing maliciously crafted input, leading to potential denial of service attacks.
+* Resolved CVE-2024-56518, which risks remote code execution via a JndiLoginModule user.provider.url in a hazelcast-client XML document (aka a client configuration file). The `com.sun.jndi.ldap.object.trustSerialData` system property is set to `false`.
 
-* *CVE-2025-22871 - (Go net/http Request Smuggling) in Management Center 5.8.0*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2025-22871 to fix a flaw in Go's standard library net/http package. As CLC does not operate as a server, it was not affected by this vulnerability.
+* Prevented Cross-Site-Scripting (XSS): PEN Testing highlighted improvements admin web forms in MC to prevent Cross-Site-Scripting (XSS) which have been implemented.
 
-* *CVE-2025-21613 - (go-git Argument Injection)*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2025-21613 to fix an argument injection vulnerability in go-git dependency. As CLC does not operate as a server, it was not affected by this vulnerability.
-
-* *CVE-2024-45337 - (golang.org/x/crypto SSH Authorization Bypass)*: Resolved https://nvd.nist.gov/vuln/detail/CVE-2024-45337 to fix an authorization bypass. As CLC does not operate as a server, it was not affected by this vulnerability. 
-
-* *Users can now see own role*: When signed into Management Center, users are unable to see the role they were assigned when using an external security provider. Their role in Management Center is now visible in the pull-down menu in the upper right corner after the username.
-
-* *License key masked in the logs*: The license key is now masked in the log files. Only a few characters at the start and end of the key will be shown in the logs. For example: `hazelcast.licensekey=eyJhb*********dDw==`.
-
-* *Masking sensitive data passed via JAVA_OPTS, such as SSL Store passwords*: Sensitive data, including SSL passwords, was being printed within the Management Center logs when passed via `JAVA_OPTS`. A new option `maskOpts` has been introduced, that allows you to specify which options should be masked in the logs. 
+* PEN Testing highlighted that MC was responding with HTTP code 400 for HTTP TRACE verb. This has been resolved and MC now properly handles HTTP TRACE verb requests with 405 status codes.
 
 == Changes in earlier versions
 
 This section summarizes the main changes made in previous releases of Hazelcast Management Center and provides links to earlier release notes.
+
+=== Changes in 5.9.x
+* Hazelcast Management Center requires Java 17 or later to run.
+* See link:https://docs.hazelcast.com/management-center/5.9/release-notes/releases[Management Center 5.9 Release Notes].
 
 === Changes in 5.8.x
 * Hazelcast Management Center requires Java 17 or later to run.
