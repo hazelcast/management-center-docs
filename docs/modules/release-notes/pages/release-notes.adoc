@@ -12,102 +12,57 @@ For help downloading Hazelcast Management Center, see xref:getting-started:insta
 
 **Release date**: 2026-02-25
 
+=== Security
+
+* **Resolved CVE-2025-41254, which addresses a vulnerability in STOMP over WebSocket applications that could allow attackers to send unauthorized messages.** This has been resolved by upgrading the `spring-boot-dependencies` and `spring-framework-core`.
+
+* **Resolved CVE-2024-56518, which risks remote code execution via a JndiLoginModule user.provider.url in a hazelcast-client XML document** (aka a client configuration file). The `com.sun.jndi.ldap.object.trustSerialData` system property is set to `false`.
+
+* **Prevented Cross-Site-Scripting (XSS):** PEN Testing highlighted improvements to the admin web forms in MC to prevent Cross-Site-Scripting (XSS), which have been implemented.
+
+* **PEN Testing highlighted that MC was responding with HTTP code 400 for the HTTP TRACE verb.** This has been resolved and MC now properly handles HTTP TRACE verb requests with 405 status codes.
+
 === Enhancements
 
-* Added to the REST API Endpoint so that Mao Configuration Details can be retrieved:* It is now possible to access the Map config via the MC REST API including TTL, Max-Idle, Eviction and Backup settings for automated auditing purposes.
+* **Extended the REST API Endpoint so that Map Configuration Details can be retrieved:** It is now possible to access the Map config via the MC REST API, including TTL, Max-Idle, Eviction and Backup settings for automated auditing purposes.
 
-* Updated Prometheus metrics: The V2 format support for the Prometheus Exporter in MC has been extended to include the following metrics:
+* **Updated Prometheus metrics:** The V2 format support for the Prometheus Exporter in MC has been extended to include the following metrics:
 
-** Topic, Reliable Topic, Queue, Cache, Replicated Map, MultiMap, Vector Collection
+    * Topic, Reliable Topic, Queue, Cache, Replicated Map, MultiMap, Vector Collection
 
-** CP Subsystem, Raft Algorithm, Flake ID Generator, PN Counter, Proxies, Transactions
+    * CP Subsystem, Raft Algorithm, Flake ID Generator, PN Counter, Proxies, Transactions
 
-** Clients, Client Invocations, Near Cache
+    * Clients, Client Invocations, Near Cache
 
-** Cluster, Partitions, WAN Replication, High-Density (HD) Memory Store, MC Config HealthcheckUser Code Deployment, User Code Namespaces
+    * Cluster, Partitions, WAN Replication, High-Density (HD) Memory Store, MC Config HealthcheckUser Code Deployment, User Code Namespaces
 
-** Persistence, Executor Service, Streaming Engine Cluster-Wide Metrics, Streaming Engine Job-specific Metrics
+    * Persistence, Executor Service, Streaming Engine Cluster-Wide Metrics, Streaming Engine Job-specific Metrics
 
-* *Added an option to copy the Config Healthcheck report:* Requested from technical support to make it easier for customers to share the Config Healthcheck report.
+* **Added an option to copy the Config Healthcheck report:** Requested from technical support to make it easier for customers to share the Config Healthcheck report.
 
-* *Added a settable hostname that it is running MC in UI:* By default it shows the hostname that MC is running on but this can be set to any value via the `hazelcast.mc.info.instanceName` system property (or to blank to hide it).
+* **Added a settable hostname that it is running MC in UI:** By default it shows the hostname that MC is running on but this can be set to any value via the `hazelcast.mc.info.instanceName` system property (or to blank to hide it).
 
-* *Improved UI on the meaning of max native size:* The documentation has been updated to clarify that the max native memory size is per Node.
+* **Improved UI on the meaning of max native size:** The documentation has been updated to clarify that the max native memory size is per Node.
 
 == Fixes
 
-* *Resolved an issue where stale CP members could be incorrectly displayed in MC:* The fix automatically removes these stale entries with outdated "last seen" timestamps from the CP membership screens.
+* **Resolved an issue where stale CP members could be incorrectly displayed in MC:** The fix automatically removes these stale entries with outdated "last seen" timestamps from the CP membership screens.
 
-* *Resolved an issue where CLC would fail to connect to clusters that require a username and password:* The embedded Command Line Client (CLC) in MC would fail to connect to clusters requiring username and password authentication. This fix addresses a previously documented known issue.
+* **Resolved an issue where CLC would fail to connect to clusters that require a username and password:** The embedded Command Line Client (CLC) in MC would fail to connect to clusters requiring username and password authentication. This fix addresses a previously documented known issue.
 
-* *Updated Management Center rolling upgrade functionality to align with Platform upgrade capabilities:* Previously MC was limited to single minor version upgrades, the feature now supports multi-version upgrades based on Platform version compatibility.
+* **Updated Management Center rolling upgrade functionality to align with Platform upgrade capabilities:** Previously MC was limited to single minor version upgrades, the feature now supports multi-version upgrades based on Platform version compatibility.
 
-* *MC now shows a clear warning if connecting to a platform version that is newer than itself:* A banner is show in MC if the Platform version is newer than the MC version. When upgrading, the customer should always upgrade MC first.
+* **MC now shows a clear warning if connecting to a platform version that is newer than itself:** A banner is show in MC if the Platform version is newer than the MC version. When upgrading, the customer should always upgrade MC first.
 
-* *Resolved an issue with testing the Security Providers:* The fix ensures the SAML and Active Directory Security Provider test pass prior to saving the configuration. This prevents from saving the configs which will not connect to the security provider
+* **Resolved an issue with testing the Security Providers:** The fix ensures the SAML and Active Directory Security Provider test pass prior to saving the configuration. This prevents from saving the configs which will not connect to the security provider
 
-* *Resolved an issue in MC’s Config Healthcheck:* Fixed MC connection diagnostic failures related to missing service-dns configurations in Kubernetes environments.
+* **Resolved an issue in MC’s Config Healthcheck:** Fixed MC connection diagnostic failures related to missing service-dns configurations in Kubernetes environments.
 
-* *Resolved an issue where upgrading MC from earlier versions:* Under certain circumstances, the issue prevented the H2 database upgrade from running which resulted in the existing cluster connection config being lost.   Additional fixes were applied when running on Microsoft Windows.
+* **Resolved an issue where upgrading MC from earlier versions:** Under certain circumstances, the issue prevented the H2 database upgrade from running which resulted in the existing cluster connection config being lost.   Additional fixes were applied when running on Microsoft Windows.
 
-* *Resolved a Dynamic Diagnostic Config error message:* A fix has been applied to stop error messages from being shown when accessing these screens for a cluster that has just been stopped.
+* **Resolved a Dynamic Diagnostic Config error message:** A fix has been applied to stop error messages from being shown when accessing these screens for a cluster that has just been stopped.
 
-* *Resolved a licensing warning message:* MC shows clearer messages when connecting to an OSS cluster.
+* **Resolved a licensing warning message:** MC shows clearer messages when connecting to an OSS cluster.
 
-* *Resolved an issue with the alert levels in Config Health Check:* in non-development mode, the alert level for the minimum number of nodes in a cluster has been reduced from a FAIL to WARNING.  For dev-mode, it remains INFO.
+* **Resolved an issue with the alert levels in Config Health Check:** in non-development mode, the alert level for the minimum number of nodes in a cluster has been reduced from a FAIL to WARNING.  For dev-mode, it remains INFO.
 
-=== Security
-
-* Resolved CVE-2025-41254 addresses a vulnerability in STOMP over WebSocket applications that could allow attackers to send unauthorized messages. This has been resolved by upgrading the `spring-boot-dependencies` and `spring-framework-core`.
-
-* Resolved CVE-2024-56518, which risks remote code execution via a JndiLoginModule user.provider.url in a hazelcast-client XML document (aka a client configuration file). The `com.sun.jndi.ldap.object.trustSerialData` system property is set to `false`.
-
-* Prevented Cross-Site-Scripting (XSS): PEN Testing highlighted improvements admin web forms in MC to prevent Cross-Site-Scripting (XSS) which have been implemented.
-
-* PEN Testing highlighted that MC was responding with HTTP code 400 for HTTP TRACE verb. This has been resolved and MC now properly handles HTTP TRACE verb requests with 405 status codes.
-
-== Changes in earlier versions
-
-This section summarizes the main changes made in previous releases of Hazelcast Management Center and provides links to earlier release notes.
-
-=== Changes in 5.9.x
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.9/release-notes/releases[Management Center 5.9 Release Notes].
-
-=== Changes in 5.8.x
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.8/release-notes/releases[Management Center 5.8 Release Notes].
-
-=== Changes in 5.7.x
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.7/release-notes/releases[Management Center 5.7 Release Notes].
-
-=== Changes in 5.6.x
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.6/release-notes/releases[Management Center 5.6 Release Notes].
-
-=== Changes in 5.5.x
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.5/release-notes/releases[Management Center 5.5 Release Notes].
-
-=== Changes in 5.4.x
-* H2 database version is upgraded from 1.x to 2.x.
-* Hazelcast Management Center requires Java 17 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.4/release-notes/releases[Management Center 5.4 Release Notes].
-
-=== Changes in 5.3.x
-* Hazelcast Management Center requires Java 11 or later to run.
-* See link:https://docs.hazelcast.com/management-center/5.3/release-notes/releases[Management Center 5.3 Release Notes].
-
-=== Changes in 5.2.x
-
-* The custom Log4j configuration file property `log4j.configurationFile` has been changed to `logging.config`.
-* See link:https://docs.hazelcast.com/management-center/5.2/release-notes/releases[Management Center 5.2 Release Notes].
-
-=== Changes in 5.1.x
-
- * The `mc-conf.sh` command has been renamed to `hz-mc conf`.
- * The `start.sh` has been deprecated and is superseded by the `hz-mc start` command.
- * The supported way for starting up a standalone Management Center instance has been changed from `java -jar ...` command to `hz-mc start`.
- * The Console within Management Center is disabled by default and has to be enabled within the member's configuration. See xref:tools:console.adoc[`Executing Console Commands`].
- * See link:https://docs.hazelcast.com/management-center/5.1/release-notes/releases[Management Center 5.1 Release Notes]. 
