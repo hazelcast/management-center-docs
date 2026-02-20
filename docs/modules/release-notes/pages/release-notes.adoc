@@ -12,9 +12,9 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 === Security
 
-* **Resolved CVE-2025-41254, which addresses a vulnerability in STOMP over WebSocket applications that could allow attackers to send unauthorized messages**. This has been resolved by upgrading the `spring-boot-dependencies` and `spring-framework-core`.
+* **Resolved https://nvd.nist.gov/vuln/detail/CVE-2025-41254[CVE-2025-41254], which addresses a vulnerability in STOMP over WebSocket applications that could allow attackers to send unauthorized messages**. This has been resolved by upgrading the `spring-boot-dependencies` and `spring-framework-core`.
 
-* **Resolved CVE-2024-56518, which risks remote code execution via a `JndiLoginModule` `user.provider.url` in a hazelcast-client XML document** (a client configuration file). The `com.sun.jndi.ldap.object.trustSerialData` system property is set to `false`.
+* **Resolved https://nvd.nist.gov/vuln/detail/CVE-2024-56518[CVE-2024-56518], which risks remote code execution via a `JndiLoginModule` `user.provider.url` in a hazelcast-client XML document** (a client configuration file). The `com.sun.jndi.ldap.object.trustSerialData` system property is set to `false`.
 
 * **Prevented Cross-Site-Scripting (XSS)**: Pen testing highlighted improvements to the admin web forms in Management Center to prevent Cross-Site-Scripting (XSS), which have been implemented.
 
