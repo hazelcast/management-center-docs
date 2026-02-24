@@ -8,7 +8,7 @@
 
 For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
 
-**Release date**: 2026-02-25
+**Release date**: 2026-02-24
 
 === Security
 
