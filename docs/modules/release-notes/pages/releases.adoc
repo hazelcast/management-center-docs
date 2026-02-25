@@ -1,4 +1,0 @@
-= Release Notes
-:description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-
-{description}
