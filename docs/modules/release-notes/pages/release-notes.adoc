@@ -1,12 +1,12 @@
 = Release Notes
 :description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-:page-aliases: release-notes:5-10-0.adoc
+:page-aliases: release-notes:releases.adoc
 
 {description}
 
-== 5.10.0
-
 For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+== 5.10.0
 
 **Release date**: 2026-02-24
 
