@@ -1,6 +1,6 @@
 = Release Notes
 :description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-:page-aliases: release-notes:releases.adoc
+:page-aliases: release-notes:releases.adoc, release-notes:5-10-0.adoc
 
 {description}
 
