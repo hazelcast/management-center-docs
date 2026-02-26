@@ -2,4 +2,4 @@
 :page-enterprise: true
 :page-layout: swagger
 
-swagger_ui::https://github.com/hazelcast/management-center/tree/master/hazelcast-management-center/src/openapi/external[]
+swagger_ui::https://github.com/hazelcast/management-center/blob/master/hazelcast-management-center/src/openapi/external/rest-client-api.yaml[]
