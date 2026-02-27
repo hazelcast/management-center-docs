@@ -278,6 +278,22 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |map_entrySetCount
 |map_operations_total
 |operation=entry_set
+
+|map.noMatchingIndexQueryCount
+|map_no_matching_index_queries_total
+|n/a
+
+|map.queryLimiterHitCount
+|map_query_limiter_hits_total
+|n/a
+
+|map.store.offloaded.operations.waitingToBeProcessedCount
+|map_store_offloaded_operations_waiting_to_be_processed_total
+|n/a
+
+|map.valuesCount
+|map_values_total
+|n/a
 |===
 ====
 
