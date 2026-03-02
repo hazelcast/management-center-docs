@@ -250,6 +250,50 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |map_index_updateCount
 |map_index_updates_total
 |n/a
+
+|map_index_averageHitLatency
+|map_index_average_hit_latency_seconds
+|n/a
+
+|map_index_averageHitSelectivity
+|map_index_average_hit_selectivity_ratio
+|n/a
+
+|map_index_partitionsIndexed
+|map_index_partitions_indexed_total
+|n/a
+
+|map_index_partitionUpdatesStarted
+|map_index_partition_updates_started_total
+|n/a
+
+|map_index_partitionUpdatesFinished
+|map_index_partition_updates_finished_total
+|n/a
+
+|map_index_notReadyQueryCount
+|map_index_not_ready_queries_total
+|n/a
+
+|map_entrySetCount
+|map_operations_total
+|operation=entry_set
+
+|map.noMatchingIndexQueryCount
+|map_no_matching_index_queries_total
+|n/a
+
+|map.queryLimiterHitCount
+|map_query_limiter_hits_total
+|n/a
+
+|map.store.offloaded.operations.waitingToBeProcessedCount
+|map_store_offloaded_operations_waiting_to_be_processed_total
+|n/a
+
+|map.valuesCount
+|map_values_total
+|n/a
 |===
 ====
 
@@ -698,6 +742,10 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |operation.thread.priorityPendingCount
 |operation_thread_priority_pending_total
 |n/a
+
+|operation.callTimeoutCount
+|operation_call_timeouts_total
+|n/a
 |===
 ====
 
@@ -985,6 +1033,14 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 
 |tcp.outputThread.taskQueueSize
 |tcp_task_queue_size_total
+|thread=output
+
+|tcp.inputThread.selectorRebuildCount
+|tcp_selector_rebuild_total
+|thread=input
+
+|tcp.outputThread.selectorRebuildCount
+|tcp_selector_rebuild_total
 |thread=output
 |===
 ====
@@ -1309,6 +1365,10 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 
 |taskletCount
 |streaming_engine_tasklets_total
+|n/a
+
+|jobs.executionCompleted
+|streaming_engine_jobs_executions_completed_total
 |n/a
 |===
 ====
@@ -1762,6 +1822,14 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |replicatedMap.total
 |replicated_map_operations_total
 |n/a
+
+|replicatedMap.entrySetCount
+|replicated_map_operations_total
+|operation=entry_set
+
+|replicatedMap.valuesCount
+|replicated_map_values_total
+|n/a
 |===
 ====
 
@@ -2174,6 +2242,34 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |multiMap.totalSetLatency
 |multi_map_latency_seconds_total
 |operation=set
+
+|multiMap.entrySetCount
+|multi_map_operations_total
+|operation=entry_set
+
+|multiMap.evictionCount
+|multi_map_evictions_total
+|n/a
+
+|multiMap.expirationCount
+|multi_map_expirations_total
+|n/a
+
+|multiMap.indexesSkippedQueryCount
+|multi_map_indexes_skipped_queries_total
+|n/a
+
+|multiMap.noMatchingIndexQueryCount
+|multi_map_no_matching_index_queries_total
+|n/a
+
+|multiMap.valuesCount
+|multi_map_values_total
+|n/a
+
+|multiMap.queryLimiterHitCount
+|multi_map_query_limiter_hits_total
+|n/a
 |===
 ====
 
@@ -2510,6 +2606,10 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |wan.failedTransmitCount
 |wan_failed_transmits_total
 |n/a
+
+|wan.queueFillPercent
+|wan_queue_fill_ratio
+|n/a
 |===
 ====
 
@@ -2539,12 +2639,20 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |healthcheck_na_total
 |n/a
 
+|healthcheck_status_disabled
+|healthcheck_disabled_total
+|n/a
+
 |slow_operation_invocation_duration
 |slow_operation_invocations_duration_seconds_total
 |n/a
 
 |slow_operation_total_invocations
 |slow_operation_invocations_total
+|n/a
+
+|license_expiration
+|license_expiration_timestamp_seconds
 |n/a
 |===
 ====
