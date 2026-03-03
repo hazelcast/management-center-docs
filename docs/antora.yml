@@ -12,6 +12,7 @@ asciidoc:
     # The full major.minor.patch version, which is used as a variable in the docs for things like download links
     full-version: '5.2.1'
     javasource: ROOT:example$
+    mc-repo-swagger-branch: '5.2.1'
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.2'
     page-toclevels: 1
