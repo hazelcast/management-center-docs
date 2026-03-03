@@ -16,6 +16,7 @@ asciidoc:
     # Version to be used when installing a snapshot using brew
     version-brew: '5.3.0'
     javasource: ROOT:example$
+    mc-repo-swagger-branch: '5.3.4'
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.3'
     page-toclevels: 1
