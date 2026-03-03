@@ -16,6 +16,7 @@ asciidoc:
     # Version to be used when installing a snapshot using brew
     version-brew: '5.5.2'
     javasource: ROOT:example$
+    mc-repo-swagger-branch: '5.7.0'
     page-latest-supported-imdg: '4.2'
     page-latest-supported-hazelcast: '5.5'
     # https://github.com/hazelcast/clc/releases
