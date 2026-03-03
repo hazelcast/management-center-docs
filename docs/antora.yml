@@ -13,6 +13,7 @@ asciidoc:
     full-version: '5.9.0'
     snapshot: true
     javasource: ROOT:example$
+    mc-repo-swagger-branch: '5.9.0'
     page-latest-supported-hazelcast: '5.6'
     # https://github.com/hazelcast/hazelcast-commandline-client/releases
     page-latest-supported-clc: '5.5.1'
