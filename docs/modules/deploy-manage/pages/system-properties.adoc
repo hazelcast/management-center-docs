@@ -1150,7 +1150,7 @@ hz-mc start -Dhazelcast.mc.clientFiltering.modes=ALLOWLIST
 ----
 
 |[[hazelcast-mc-info-instanceName]]hazelcast.mc.info.instanceName
-|Set the instance name visible in the xref:getting-started:user-interface.adoc#top-bar[Top Bar]. Set blank to not display any instance name.
+|Set the instance name visible in the xref:getting-started:user-interface.adoc#top-bar[Top Bar]. Set blank to not display any instance name. If not set the instance name defaults to the hostname of the machine Manage Center is deployed on.
 |
 [source,bash,subs="attributes+"]
 ----
