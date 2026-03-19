@@ -1149,6 +1149,14 @@ hz-mc start -Dhazelcast.mc.client.initial.backoff.millis=2000
 hz-mc start -Dhazelcast.mc.clientFiltering.modes=ALLOWLIST
 ----
 
+|[[hazelcast-mc-info-instanceName]]hazelcast.mc.info.instanceName
+|Allows to specify the instance name visible in the xref:getting-started:user-interface.adoc#top-bar[Top Bar]. Specify explicitly blank to not display any instance name.
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.info.instanceName=ManCenter-us-east-1
+----
+
 |[[maskOpts]]maskOpts
 |Comma-separated list of option keys to be masked. Masks sensitive data in logs passed via JAVA_OPTS. Default: `' '` (empty).
 |

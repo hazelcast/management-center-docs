@@ -17,6 +17,8 @@ image:ROOT:TopBar.png[Management Center Top Bar]
 
 The Top Bar has the following elements:
 
+* *Instance Name*. Displays the instance name of the machine MC is deployed on. In order to override the value see xref:deploy-manage:system-properties.adoc#hazelcast-mc-info-instanceName[`hazelcast.mc.info.instanceName`]
+
 * *Cluster dropdown*. Select a connected cluster to manage. Cluster version is shown to the right of each connected cluster.
 
 NOTE: During a xref:clusters:triggering-rolling-upgrade.adoc[rolling upgrade], all members can be, for instance, `5.2.z`, but the cluster is still `5.1`; in these cases, the cluster version is displayed as `5.1`. You can find more details on xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:rolling-upgrades.adoc#rolling-upgrade-procedure.adoc[Performing a Rolling Upgrade].
