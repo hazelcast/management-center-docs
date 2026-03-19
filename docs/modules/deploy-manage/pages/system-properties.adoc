@@ -1150,7 +1150,7 @@ hz-mc start -Dhazelcast.mc.clientFiltering.modes=ALLOWLIST
 ----
 
 |[[hazelcast-mc-info-instanceName]]hazelcast.mc.info.instanceName
-|Allows to specify the instance name visible in the xref:getting-started:user-interface.adoc#top-bar[Top Bar]. Specify explicitly blank to not display any instance name.
+|Set the instance name visible in the xref:getting-started:user-interface.adoc#top-bar[Top Bar]. Set blank to not display any instance name.
 |
 [source,bash,subs="attributes+"]
 ----
