@@ -17,7 +17,7 @@ image:ROOT:TopBar.png[Management Center Top Bar]
 
 The Top Bar has the following elements:
 
-* *Instance Name*. Displays the instance name of the machine MC is deployed on. In order to override the value see xref:deploy-manage:system-properties.adoc#hazelcast-mc-info-instanceName[`hazelcast.mc.info.instanceName`]
+* *Instance Name*. The instance name of the machine Manage Center is deployed on. Can be overridden with xref:deploy-manage:system-properties.adoc#hazelcast-mc-info-instanceName[`hazelcast.mc.info.instanceName`].
 
 * *Cluster dropdown*. Select a connected cluster to manage. Cluster version is shown to the right of each connected cluster.
 
