@@ -40,7 +40,7 @@ mc-conf.bat dev-mode configure
 --
 ====
 
-=== Use --force to configure dev mode
+== Using --force to configure dev mode
 
 Use the `-f` / `--force` flag with `dev-mode configure` to make configuration idempotent:
 

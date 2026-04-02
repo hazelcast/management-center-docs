@@ -133,7 +133,7 @@ public class SampleLoginModule implements LoginModule {
 }
 ----
 
-=== Use --force to configure JAAS
+== Using --force to configure JAAS
 
 Use the `-f` / `--force` flag with `jaas configure` to make configuration idempotent:
 

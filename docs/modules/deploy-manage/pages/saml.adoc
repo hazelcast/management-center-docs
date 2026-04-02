@@ -72,7 +72,7 @@ To create and manage additional users, you must register them with your identity
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-=== Use --force to configure SAML
+== Using --force to configure SAML
 
 Use the `-f` / `--force` flag with `saml configure` to make configuration idempotent:
 

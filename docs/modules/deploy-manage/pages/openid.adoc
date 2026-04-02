@@ -86,7 +86,7 @@ To create and manage additional users, you must register them with your OpenID C
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
-=== Use --force to configure OpenID Connect
+== Using --force to configure OpenID Connect
 
 Use the `-f` / `--force` flag with `oidc configure` to make configuration idempotent:
 

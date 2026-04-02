@@ -188,7 +188,7 @@ This command expects information about the keystore such as its location and
 password and the new LDAP password that you want to use. After updating the LDAP password, click 
 **Reload Security Config** on the Management Center login page.
 
-=== Use --force to configure LDAP
+== Using --force to configure LDAP
 
 Use the `-f` / `--force` flag with `ldap configure` to make configuration idempotent:
 

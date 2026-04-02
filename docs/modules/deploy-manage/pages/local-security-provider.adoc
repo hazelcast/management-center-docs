@@ -160,7 +160,7 @@ NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only
 --
 ====
 
-=== Use --force to configure the local security provider
+== Using --force to configure the local security provider
 
 Use the `-f` / `--force` flag with the `user configure` task to make configuration idempotent:
 
