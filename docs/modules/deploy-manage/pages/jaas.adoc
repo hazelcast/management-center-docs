@@ -46,25 +46,6 @@ on the Management Center.
 * **Metrics-only Group:** Members of this group have the privilege to see
 only the metrics on the Management Center.
 
-=== Use --force to configure JAAS
-
-Use the `-f` / `--force` flag with `jaas configure` to make configuration idempotent:
-
-* If JAAS is not yet configured, it is set up.
-* If JAAS is already configured with the same settings, the command succeeds without making any changes.
-* If JAAS is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
-* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
-
-.Linux and Mac
-```bash
-hz-mc conf jaas configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat jaas configure --force
-```
-
 
 == Create and manage users
 
@@ -151,6 +132,15 @@ public class SampleLoginModule implements LoginModule {
     }
 }
 ----
+
+=== Use --force to configure JAAS
+
+Use the `-f` / `--force` flag with `jaas configure` to make configuration idempotent:
+
+* If JAAS is not yet configured, it is set up.
+* If JAAS is already configured with the same settings, the command succeeds without making any changes.
+* If JAAS is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
 == Next steps
 

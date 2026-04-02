@@ -48,16 +48,6 @@ Use the `-f` / `--force` flag with `dev-mode configure` to make configuration id
 * If dev mode is already configured, the command succeeds without making any changes.
 * If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
-.Linux and Mac
-```bash
-hz-mc conf dev-mode configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat dev-mode configure --force
-```
-
 == Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].

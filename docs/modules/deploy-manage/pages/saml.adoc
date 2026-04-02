@@ -66,6 +66,12 @@ you will be redirected back to Management Center as a logged in user.
 NOTE: If your identity provider needs service provider metadata XML, you can use the `saml/metadata` endpoint
 to view/download it once you configure SAML. For example, `\http://localhost:8080/saml/metadata`.
 
+== Create and manage users
+
+To create and manage additional users, you must register them with your identity provider.
+
+When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
 === Use --force to configure SAML
 
 Use the `-f` / `--force` flag with `saml configure` to make configuration idempotent:
@@ -75,21 +81,6 @@ Use the `-f` / `--force` flag with `saml configure` to make configuration idempo
 * If SAML is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
 * If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
-.Linux and Mac
-```bash
-hz-mc conf saml configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat saml configure --force
-```
-
-== Create and manage users
-
-To create and manage additional users, you must register them with your identity provider.
-
-When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
 == Next steps
 

@@ -50,25 +50,6 @@ Passwords *must not* include the following:
 * A 3-character or longer sequence of letters following or preceding each other such as "abc" or "fed".
 * A 3-character or longer sequence of digits following or preceding each other such as "123" or "987".
 
-=== Use --force to configure the local security provider
-
-Use the `-f` / `--force` flag with the `user configure` task to make configuration idempotent:
-
-* If the local security provider is not yet configured, it is set up.
-* If the local security provider is already configured with the same settings, the command succeeds without making any changes.
-* If the local security provider is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
-* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
-
-.Linux and Mac
-```bash
-hz-mc conf user configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat user configure --force
-```
-
 == Create users
 
 To create additional users, admin users can use the UI or you can use the `hz-mc conf` tool.
@@ -178,6 +159,15 @@ mc-conf.bat user update-password -n <username> -p
 NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only if you use the `--password` option. If you use the `-p` flag, do not use single quotes in the interactive prompt.
 --
 ====
+
+=== Use --force to configure the local security provider
+
+Use the `-f` / `--force` flag with the `user configure` task to make configuration idempotent:
+
+* If the local security provider is not yet configured, it is set up.
+* If the local security provider is already configured with the same settings, the command succeeds without making any changes.
+* If the local security provider is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
 == Next steps
 

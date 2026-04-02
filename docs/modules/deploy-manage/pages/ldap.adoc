@@ -71,24 +71,6 @@ NOTE: Values for **Admin**, **User**, **Read-only** and **Metrics-Only** group n
 be given as plain names. They should not contain any LDAP attributes such
 as `CN`, `OU` and `DC`.
 
-=== Use --force to configure LDAP
-
-Use the `-f` / `--force` flag with `ldap configure` to make configuration idempotent:
-
-* If LDAP is not yet configured, it is set up.
-* If LDAP is already configured with the same settings, the command succeeds without making any changes.
-* If LDAP is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
-* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
-
-.Linux and Mac
-```bash
-hz-mc conf ldap configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat ldap configure --force
-```
 
 == Create and manage users
 
@@ -205,6 +187,15 @@ the encrypted LDAP password stored in the keystore.
 This command expects information about the keystore such as its location and
 password and the new LDAP password that you want to use. After updating the LDAP password, click 
 **Reload Security Config** on the Management Center login page.
+
+=== Use --force to configure LDAP
+
+Use the `-f` / `--force` flag with `ldap configure` to make configuration idempotent:
+
+* If LDAP is not yet configured, it is set up.
+* If LDAP is already configured with the same settings, the command succeeds without making any changes.
+* If LDAP is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
 == Next steps
 

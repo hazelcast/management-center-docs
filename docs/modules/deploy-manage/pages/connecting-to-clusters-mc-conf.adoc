@@ -51,26 +51,6 @@ To connect to another cluster, repeat these steps.
 
 NOTE: When connecting to multiple clusters from the same instance of Management Center, make sure that the cluster names are unique. Management Center does not support simultaneous connections to more than one cluster with the same cluster name.
 
-=== Use --force to add or overwrite a cluster connection
-
-Use the `-f` / `--force` flag to make `cluster add` idempotent:
-
-* If no cluster with the given name is configured, the cluster is added.
-* If a cluster with the same name is already configured with identical settings, the command succeeds without making any changes.
-* If a cluster with the same name is already configured with different settings, the existing configuration is overwritten.
-
-This removes the need to explicitly run `cluster remove` before re-adding a cluster.
-
-.Linux and Mac
-```bash
-hz-mc conf cluster add --force -cn={cluster name} -ma={member addresses}
-```
-
-.Windows
-```bash
-mc-conf.bat cluster add --force -cn={cluster name} -ma={member addresses}
-```
-
 == Remove a cluster connection
 
 To remove an existing connection to a cluster, use the following:
@@ -85,19 +65,21 @@ You should see:
 Successfully removed Cluster Config.
 ```
 
-=== Use --force to remove a cluster connection
+== Use --force
+
+=== cluster add --force
+
+Use the `-f` / `--force` flag to make `cluster add` idempotent:
+
+* If no cluster with the given name is configured, the cluster is added.
+* If a cluster with the same name is already configured with identical settings, the command succeeds without making any changes.
+* If a cluster with the same name is already configured with different settings, the existing configuration is overwritten.
+
+This removes the need to explicitly run `cluster remove` before re-adding a cluster.
+
+=== cluster remove --force
 
 Use the `-f` / `--force` flag to make `cluster remove` idempotent. The command succeeds even if no cluster with the given name is configured.
-
-.Linux and Mac
-```bash
-hz-mc conf cluster remove --force -cn={cluster name}
-```
-
-.Windows
-```bash
-mc-conf.bat cluster remove --force -cn={cluster name}
-```
 
 == Next steps
 

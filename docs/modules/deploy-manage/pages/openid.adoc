@@ -80,6 +80,12 @@ you will be redirected back to Management Center as a logged in user.
 NOTE: Management Center uses the `sub` claim to determine the user's ID and the `preferred_username`
 claim to determine which username to show in the user interface. Make sure your OpenID provider returns these two claims, when asked.
 
+== Create and manage users
+
+To create and manage additional users, you must register them with your OpenID Connect provider.
+
+When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
 === Use --force to configure OpenID Connect
 
 Use the `-f` / `--force` flag with `oidc configure` to make configuration idempotent:
@@ -89,21 +95,6 @@ Use the `-f` / `--force` flag with `oidc configure` to make configuration idempo
 * If OpenID Connect is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
 * If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
-.Linux and Mac
-```bash
-hz-mc conf oidc configure --force
-```
-
-.Windows
-```bash
-mc-conf.bat oidc configure --force
-```
-
-== Create and manage users
-
-To create and manage additional users, you must register them with your OpenID Connect provider.
-
-When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
 
 == Next steps
 
