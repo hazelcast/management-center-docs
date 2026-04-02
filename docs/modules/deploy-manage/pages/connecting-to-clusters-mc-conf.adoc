@@ -65,6 +65,22 @@ You should see:
 Successfully removed Cluster Config.
 ```
 
+== Use --force
+
+=== cluster add --force
+
+Use the `-f` / `--force` flag to make `cluster add` idempotent:
+
+* If no cluster with the given name is configured, the cluster is added.
+* If a cluster with the same name is already configured with identical settings, the command succeeds without making any changes.
+* If a cluster with the same name is already configured with different settings, the existing configuration is overwritten.
+
+This removes the need to explicitly run `cluster remove` before re-adding a cluster.
+
+=== cluster remove --force
+
+Use the `-f` / `--force` flag to make `cluster remove` idempotent. The command succeeds even if no cluster with the given name is configured.
+
 == Next steps
 
 For the full reference of `mc-cli`, see xref:mc-conf.adoc[]

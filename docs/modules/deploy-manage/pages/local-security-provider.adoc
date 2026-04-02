@@ -160,6 +160,15 @@ NOTE: If you're on Linux or Mac devices, enclose passwords in single quotes only
 --
 ====
 
+== Using --force to configure the local security provider
+
+Use the `-f` / `--force` flag with the `user configure` task to make configuration idempotent:
+
+* If the local security provider is not yet configured, it is set up.
+* If the local security provider is already configured with the same settings, the command succeeds without making any changes.
+* If the local security provider is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
+
 == Next steps
 
 For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
