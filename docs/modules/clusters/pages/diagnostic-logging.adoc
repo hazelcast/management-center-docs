@@ -1,6 +1,5 @@
 = Diagnostic logging
 :description: Hazelcast provides diagnostic logging capabilities that help with troubleshooting and monitoring.
-:page-beta: true
 
 {description}
 
