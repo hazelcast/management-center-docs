@@ -163,6 +163,24 @@ Successfully changed password for user 'admin'.
 As you can see in the above example, the password input is not echoed to the console
 since it's provided with the secure interactive mode.
 
+== Verbose output
+
+Use the `-v` or `--verbose` flag to enable full logging output, including full stack traces.
+
+[source,bash]
+----
+hz-mc conf cluster add --cluster-name=dev --cluster-address=localhost:5701 --verbose
+----
+
+== Lenient mode
+
+Use the `-l` or `--lenient` flag to exit with code `0` when trying to add an object that already exists, instead of failing with an error. This is useful in automation scripts where you want the command to fail silently if the object is already configured.
+
+[source,bash]
+----
+hz-mc conf cluster add --cluster-name=dev --cluster-address=localhost:5701 --lenient
+----
+
 == Argument files
 
 When an argument beginning with the character `@` is encountered, it is treated as a path
@@ -175,5 +193,3 @@ Successfully changed password for user 'admin'.
 cat arg-file.txt
 --username=admin --password=mnb3c4s0
 ```
-
-
