@@ -33,6 +33,7 @@ mc-conf.bat oidc configure
 --
 ====
 
+
 * **Issuer:** Identifies the issuer of your OpenID provider. It is usually (but not always) a URL.
 When an issuer URL is provided, you can fetch the OIDC configuration by clicking the `Fetch Configuration` button.
 +
@@ -84,6 +85,16 @@ claim to determine which username to show in the user interface. Make sure your 
 To create and manage additional users, you must register them with your OpenID Connect provider.
 
 When creating users, be sure to give them a valid role. See xref:user-management.adoc[].
+
+== Using --force to configure OpenID Connect
+
+Use the `-f` / `--force` flag with `oidc configure` to make configuration idempotent:
+
+* If OpenID Connect is not yet configured, it is set up.
+* If OpenID Connect is already configured with the same settings, the command succeeds without making any changes.
+* If OpenID Connect is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
+
 
 == Next steps
 

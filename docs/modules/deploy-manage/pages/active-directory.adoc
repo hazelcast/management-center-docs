@@ -66,6 +66,7 @@ Center. To use more than one group, separate them with a semicolon (;).
 * **Nested Group Search:** Disable if you have a large LDAP group structure
 and it takes a long time to query all nested groups during login.
 
+
 == Create and manage users
 
 To create and manage additional users, you must configure them in Active Directory.
@@ -94,6 +95,7 @@ After a successful import, the file will be renamed as `importedSecurityHotReloa
 Alternatively, you can use the `hz-mc conf` tool's `security reset` and `active-directory configure` tasks to
 configure the Active Directory security provider from scratch,
 but you need to stop the Management Center service for this configuration option.
+You can also use `active-directory configure --force` to reconfigure Active Directory without running `security reset` first.
 See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 [[ad-ssl]]
@@ -101,6 +103,15 @@ See xref:deploy-manage:mc-conf.adoc[] for more information.
 
 If your Active Directory service is using TLS/SSL protocol, use the command line parameters for your Management Center
 deployment xref:deploy-manage:system-properties.adoc#hazelcast-mc-ad-ssl-protocol[Active Directory SSL configuration options].
+
+== Using --force to configure Active Directory
+
+Use the `-f` / `--force` flag with `active-directory configure` to make configuration idempotent:
+
+* If Active Directory is not yet configured, it is set up.
+* If Active Directory is already configured with the same settings, the command succeeds without making any changes.
+* If Active Directory is already configured with different settings, the existing configuration is overwritten without needing to run `security reset` first.
+* If a *different* security provider is currently active, the command fails with an error even when `--force` is used.
 
 == Next steps
 
