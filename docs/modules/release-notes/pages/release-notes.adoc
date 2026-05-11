@@ -25,6 +25,8 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 * **Improved handling of license key expiration**: Management Center now provides clearer messaging when a license key expires, helping operators identify and resolve license issues quickly.
 
+* **Added new Prometheus metric V2 mappings**: Extended Prometheus Exporter coverage with previously missing metric V2 mappings for improved cluster observability.
+
 * **Improved validation for Prometheus Exporter allow/deny list configuration**: The allow-list and deny-list properties for the Prometheus Exporter are now mutually exclusive. Configuring both simultaneously is rejected, preventing ambiguous filtering behavior.
 
 * **Renamed `Up Time` metric to `Uptime`**: The `Up Time` metric has been renamed to `Uptime` for consistency with standard naming conventions.
