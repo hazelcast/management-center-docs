@@ -25,7 +25,7 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 * **Improved handling of license key expiration**: Management Center now provides clearer messaging and behavior when a license key expires, helping operators identify and resolve license issues quickly.
 
-* **Added missing Prometheus metric mappings**: Extended Prometheus Exporter coverage with previously missing metric mappings for improved cluster observability.
+* **Added new Prometheus metric V2 mappings**: Extended Prometheus Exporter coverage with previously missing metric V2 mappings for improved cluster observability.
 
 * **Added Near Cache invalidation metrics to the Prometheus Exporter**: Two new metrics, `NEARCACHE_INVALIDATION_REQUESTS` and `NEARCACHE_INVALIDATIONS`, are now exposed via the Prometheus Exporter, providing visibility into Near Cache invalidation activity.
 
