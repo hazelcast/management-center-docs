@@ -1,9 +1,44 @@
 = Release Notes
 :description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-:page-aliases: release-notes:releases.adoc
+:page-aliases: release-notes:5-11-0.adoc
 
 {description}
 
+== 5.11.0
+
 For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
 
-**Release date**: 
+**Release date**: 2026-05-12
+
+=== Security
+
+* **Resolved authorization bypass**: Fixed missing function-level access control checks. All affected endpoints now enforce appropriate authorization.
+
+* **Disabled server version disclosure in HTTP responses**: Management Center no longer includes its server version in HTTP response headers, reducing information disclosure to potential attackers.
+
+
+=== Enhancements
+
+* **Added CP Leader Auto Step-Down configuration display**: Management Center now shows the CP Leader Auto Step-Down configuration for clusters that have this feature enabled, supporting the new capability introduced in Hazelcast Platform 5.7.
+
+* **Added Java view to the Members screen**: The Members screen now includes a tabular Java view showing JVM details for each cluster member.
+
+* **Improved handling of license key expiration**: Management Center now provides clearer messaging when a license key expires, helping operators identify and resolve license issues quickly.
+
+* **Added new Prometheus metric V2 mappings**: Extended Prometheus Exporter coverage with previously missing metric V2 mappings for improved cluster observability.
+
+* **Improved validation for Prometheus Exporter allow/deny list configuration**: The allow-list and deny-list properties for the Prometheus Exporter are now mutually exclusive. Configuring both simultaneously is rejected, preventing ambiguous filtering behavior.
+
+* **Renamed `Up Time` metric to `Uptime`**: The `Up Time` metric has been renamed to `Uptime` for consistency with standard naming conventions.
+
+* **Made `hz-mc` security commands declarative**: The `hz-mc` security commands now support a declarative configuration mode, simplifying deployments where idempotent and repeatable configuration is required.
+
+* **Added idempotent options for `mc-conf cluster` commands**: New idempotent options have been added to `mc-conf cluster` commands, allowing safe re-execution in automated deployment pipelines.
+
+* **Updated Windows stop script to no longer use WMIC**: The Windows stop script has been updated to use modern PowerShell commands instead of the deprecated WMIC tool, ensuring compatibility with newer Windows versions where WMIC is removed.
+
+=== Fixes
+
+* **Fixed cluster connections stuck in a "limbo" state**: Resolved an issue where a running cluster could be incorrectly shown as offline in Management Center. This now happens far less often, and where it does, the Connection Diagnostics button forces a reconnect that clears the state — removing the previous need to re-add the cluster or restart Management Center.
+
+* **Fixed stale Member Configuration on the Member Details screen**: Resolved an issue where the Member Configuration shown on the Member Details screen was only refreshed when the cluster or Management Center was restarted, or when a member joined or left. The view now stays in sync with configuration changes as they happen, with at most a small delay.
