@@ -23,17 +23,13 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 * **Added Java view to the Members screen**: The Members screen now includes a tabular Java view showing JVM details for each cluster member.
 
-* **Improved handling of license key expiration**: Management Center now provides clearer messaging and behavior when a license key expires, helping operators identify and resolve license issues quickly.
-
-* **Added missing Prometheus metric mappings**: Extended Prometheus Exporter coverage with previously missing metric mappings for improved cluster observability.
-
-* **Added Near Cache invalidation metrics to the Prometheus Exporter**: Two new metrics, `NEARCACHE_INVALIDATION_REQUESTS` and `NEARCACHE_INVALIDATIONS`, are now exposed via the Prometheus Exporter, providing visibility into Near Cache invalidation activity.
+* **Improved handling of license key expiration**: Management Center now provides clearer messaging when a license key expires, helping operators identify and resolve license issues quickly.
 
 * **Improved validation for Prometheus Exporter allow/deny list configuration**: The allow-list and deny-list properties for the Prometheus Exporter are now mutually exclusive. Configuring both simultaneously is rejected, preventing ambiguous filtering behavior.
 
 * **Renamed `Up Time` metric to `Uptime`**: The `Up Time` metric has been renamed to `Uptime` for consistency with standard naming conventions.
 
-* **Made `hz-mc` security commands declarative**: The `hz-mc` security commands now support a declarative configuration mode, simplifying Cloud-Native deployments where idempotent and repeatable configuration is required.
+* **Made `hz-mc` security commands declarative**: The `hz-mc` security commands now support a declarative configuration mode, simplifying deployments where idempotent and repeatable configuration is required.
 
 * **Added idempotent options for `mc-conf cluster` commands**: New idempotent options have been added to `mc-conf cluster` commands, allowing safe re-execution in automated deployment pipelines.
 
@@ -41,6 +37,6 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 === Fixes
 
-* **Fixed cluster discovery to poll for clusters coming online**: Management Center now polls for clusters that come online after Management Center has started, removing the need to manually refresh or restart Management Center to detect new clusters.
+* **Fixed cluster discovery to poll for clusters coming online**: Management Center now polls for clusters that come online after Management Center has started, removing the need to manually refresh or restart Management Center to detect new clusters. Additionally it includes the Connection Diagnostics button behavior.
 
-* **Fixed missing map configuration details on the per-member view**: Resolved an issue where map configuration details such as persistent state and event journal state were not displayed on the per-member view of the Members screen.
+* **Fixed stale Member Configuration on the Member Details screen**: Resolved an issue where the Member Configuration shown on the Member Details screen was only refreshed when the cluster or Management Center was restarted, or when a member joined or left. The view now stays in sync with configuration changes as they happen, with at most a small delay.
