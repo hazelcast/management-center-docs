@@ -39,6 +39,6 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 === Fixes
 
-* **Fixed cluster discovery to poll for clusters coming online**: Management Center now polls for clusters that come online after Management Center has started, removing the need to manually refresh or restart Management Center to detect new clusters. Additionally it includes the Connection Diagnostics button behavior.
+* **Fixed cluster connections stuck in a "limbo" state**: Resolved an issue where a running cluster could be incorrectly shown as offline in Management Center. This now happens far less often, and where it does, the Connection Diagnostics button forces a reconnect that clears the state — removing the previous need to re-add the cluster or restart Management Center.
 
 * **Fixed stale Member Configuration on the Member Details screen**: Resolved an issue where the Member Configuration shown on the Member Details screen was only refreshed when the cluster or Management Center was restarted, or when a member joined or left. The view now stays in sync with configuration changes as they happen, with at most a small delay.
