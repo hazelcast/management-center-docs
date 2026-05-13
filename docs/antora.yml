@@ -15,7 +15,7 @@ asciidoc:
     snapshot: true
     javasource: ROOT:example$
     mc-repo-swagger-branch: 'master'
-    page-latest-supported-hazelcast: '5.7-snapshot'
+    page-latest-supported-hazelcast: '5.8-snapshot'
     # https://github.com/hazelcast/hazelcast-commandline-client/releases
     page-latest-supported-clc: '5.5.1'
     page-toclevels: 1
