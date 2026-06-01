@@ -9,7 +9,7 @@ By default, Management Center exposes two versions of metrics based on xref:{pag
 * *Version 1 (V1) metrics* apply a basic transformation for compatibility with Prometheus:
 ** Convert `.` to `_`
 ** Add `hz_` prefix
-* *Version 2 (V2) metrics (currently in BETA)* apply an advanced transformation for conformity with link:https://prometheus.io/docs/practices/naming/[Prometheus naming conventions]:
+* *Version 2 (V2) metrics* apply an advanced transformation for conformity with link:https://prometheus.io/docs/practices/naming/[Prometheus naming conventions]:
 ** Use `snake_case`
 ** Add `hazelcast_` prefix
 ** Update metric names where appropriate
