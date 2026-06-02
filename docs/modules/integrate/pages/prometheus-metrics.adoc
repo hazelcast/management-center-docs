@@ -73,8 +73,6 @@ To change which set of metrics is exposed to Prometheus, update the `hazelcast.m
 
 See xref:deploy-manage:system-properties.adoc[].
 
-IMPORTANT: If you set the property to `V2`, Management Center will only expose the subset of metrics that have updated versions available.
-
 == Metrics list
 
 The following table lists all V2 metrics with their V1 equivalents. The full xref:{page-latest-supported-hazelcast}@hazelcast::list-of-metrics.adoc[list of Hazelcast metrics] and descriptions is provided in the Hazelcast Platform documentation.
