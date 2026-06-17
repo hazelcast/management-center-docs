@@ -69,6 +69,7 @@ To install on macOS, use the Homebrew package manager.
 [source,bash,subs="attributes+"]
 ----
 brew tap hazelcast/hz
+brew trust hazelcast/hz
 brew install hazelcast/hz/hazelcast-management-center@{full-version}
 ----
 --
