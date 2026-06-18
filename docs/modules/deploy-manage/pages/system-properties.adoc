@@ -843,7 +843,7 @@ hz-mc start -Dhazelcast.mc.prometheusExporter.timestamp.enabled=false \
 |[[hazelcast-mc-prometheusExporter-filter-metrics-included]]hazelcast.mc.prometheusExporter.filter.metrics.included
 
 MC_PROMETHEUS_EXPORTER_FILTER_METRICS_INCLUDED
-|Metrics to include in the `/metrics` endpoint. Default: `' '` (empty).
+|Comma-separated list of metrics to include in the `/metrics` endpoint. Supports the `*` wildcard. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----
@@ -854,7 +854,7 @@ hz-mc start -Dhazelcast.mc.prometheusExporter.filter.metrics.included=hz_topic_t
 |[[hazelcast-mc-prometheusexporter-filter-metrics-excluded]]hazelcast.mc.prometheusExporter.filter.metrics.excluded
 
 MC_PROMETHEUS_EXPORTER_FILTER_METRICS_EXCLUDED
-|Metrics to exclude from the `/metrics` endpoint. Default: `' '` (empty).
+|Comma-separated list of metrics to exclude from the `/metrics` endpoint. Supports the `*` wildcard. Default: `' '` (empty).
 |
 [source,bash,subs="attributes+"]
 ----

@@ -105,6 +105,8 @@ By default, Management Center exports all metrics that are reported by the clust
 To filter the metrics that are exposed to the scrape endpoint, use the `hazelcast.mc.prometheusExporter.filter.metrics.included`
 and `hazelcast.mc.prometheusExporter.filter.metrics.excluded` system properties.
 
+Both properties accept comma-separated metric names and support the `*` wildcard character for pattern matching.
+
 For example, this configuration exposes only the following metrics:
 
 - `hz_topic_totalReceivedMessages`
@@ -154,6 +156,30 @@ Windows::
 ----
 mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
   -Dhazelcast.mc.prometheusExporter.filter.metrics.excluded=hz_os_systemLoadAverage,hz_memory_freeHeap
+----
+--
+====
+
+This configuration exposes only map backup metrics by using the `*` wildcard:
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.prometheusExporter.enabled=true \
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=*map*backup*
+----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.prometheusExporter.enabled=true ^
+  -Dhazelcast.mc.prometheusExporter.filter.metrics.included=*map*backup*
 ----
 --
 ====
