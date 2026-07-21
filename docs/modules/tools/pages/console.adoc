@@ -13,10 +13,15 @@ It also provides flexible output options, such as table, CSV, and JSON formats.
 
 For further information on these features, refer to the xref:{page-latest-supported-clc}@clc::overview.adoc[Overview^] topic of the CLC documentation.
 
-WARNING: The console is not recommended for production use.
+[IMPORTANT]
+====
+When the console is enabled, it grants full access to the cluster through the Command-Line Client. Console commands are *not* limited by the permissions assigned to the Management Center user or principal that runs them, so any user who can access the console can perform any client operation on the cluster.
+
+The console is not recommended for production use. If granular access control is critical, consider leaving the console disabled. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] to enable or disable it.
+====
 
 Console is disabled by default, and you need to enable it
-in your cluster's configuration. See 
+in your cluster's configuration. See
 xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-console-support[Toggle Console Support] for details. The member list shows whether
 the console is enabled or disabled for each member.
 

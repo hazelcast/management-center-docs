@@ -5,6 +5,13 @@
 You can use the scripting feature of the Management Center to execute scripts
 on the cluster.
 
+[IMPORTANT]
+====
+When scripting is enabled, it grants full, unrestricted access to the cluster. Scripts run arbitrary code on cluster members with the same permissions as the member process, and are *not* limited by the permissions assigned to the Management Center user or principal that runs them. Any user who can access scripting can therefore perform any operation on the cluster.
+
+Use scripting with caution, especially in production environments. If granular access control is critical, consider leaving scripting disabled. See xref:{page-latest-supported-hazelcast}@hazelcast:maintain-cluster:monitoring.adoc#managing-scripting-support[Toggle Scripting Support] to enable or disable it.
+====
+
 == Before you begin
 
 Scripting is disabled by default, and you need to enable it
