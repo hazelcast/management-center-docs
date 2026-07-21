@@ -257,6 +257,11 @@ The following table shows details of the actions that can or cannot be performed
 |&check;
 |===
 
+[IMPORTANT]
+====
+The xref:tools:scripting.adoc[Scripting] and xref:tools:console.adoc[Console] features are an exception to the role-based permissions shown above. When these features are enabled on the cluster, any user who can access them has full, unrestricted access to the cluster, regardless of their assigned Management Center role. If granular access control is critical, consider leaving scripting and the console disabled.
+====
+
 == New users
 
 You can create new users and assign those users a role. The way in which you create new users depends on the security provider that you use to authenticate users in Management Center. For information, see xref:security-providers.adoc[].
