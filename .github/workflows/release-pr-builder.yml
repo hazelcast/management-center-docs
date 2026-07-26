@@ -4,12 +4,10 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, synchronize]
     paths:
-      - '.github/scripts/**'
-      - '.github/workflows/package-release.yml'
-      - '.github/workflows/promote-release.yml'
-  workflow_dispatch:
+      - '.github/scripts/*.py'
+      - '.github/workflows/package.yml'
+      - '.github/workflows/promote.yml'
 
 jobs:
   test:
@@ -20,11 +18,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
 
       - name: Install ruamel.yaml
         run: python3 -m pip install ruamel.yaml packaging
