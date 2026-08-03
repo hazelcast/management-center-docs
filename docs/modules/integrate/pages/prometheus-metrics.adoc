@@ -2135,10 +2135,6 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |multi_map_backup_entries_total
 |n/a
 
-|multiMap.backupEntryMemoryCost
-|multi_map_backup_entries_memory_cost_bytes
-|n/a
-
 |multiMap.creationTime
 |multi_map_creation_timestamp_seconds
 |n/a
@@ -2150,10 +2146,6 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 |multiMap.getCount
 |multi_map_operations_total
 |operation=get
-
-|multiMap.heapCost
-|multi_map_heap_cost_bytes
-|n/a
 
 |multiMap.hits
 |multi_map_hits_total
@@ -2189,10 +2181,6 @@ In some cases, several V1 metrics are combined into a single V2 metric different
 
 |multiMap.ownedEntryCount
 |multi_map_owned_entries_total
-|n/a
-
-|multiMap.ownedEntryMemoryCost
-|multi_map_owned_entry_memory_cost_bytes
 |n/a
 
 |multiMap.putCount
