@@ -6,7 +6,7 @@ import urllib.request
 from ruamel.yaml import YAML
 
 def fetch_antora_utils() -> None:
-    branch = "DI-719-migrate-antora-1"
+    branch = "main"
     target_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "antora_utils.py")
     url_path = f"{os.getenv('GITHUB_REPOSITORY_OWNER')}/hz-docs/{branch}/.github/scripts/antora_utils.py"
     if not os.path.exists(target_path):
