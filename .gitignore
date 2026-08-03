@@ -10,3 +10,11 @@
 /build/
 global-antora-playbook.yml
 _redirects
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.pytest_cache/
+.unittest_cache/

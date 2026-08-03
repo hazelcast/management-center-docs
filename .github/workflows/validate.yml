@@ -7,9 +7,9 @@ on:
 
 jobs:
   validate-docs:
-
+    # Ignore automated release PR branches
+    if: ${{ !startsWith(github.head_ref, 'update_antora_') }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v7
