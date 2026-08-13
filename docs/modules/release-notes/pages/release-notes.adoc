@@ -4,6 +4,19 @@
 
 {description}
 
+== 5.11.1
+
+For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
+
+**Release date**: 2026-08-13
+
+=== Security
+
+* **Hardened client deserialization**: Updated Management Center’s Hazelcast Platform dependency to 5.7.1 to address known exploit paths.
+
+* **Resolved security vulnerabilities**: Addressed high and medium severity vulnerabilities, primarily related to Jackson Core and Databind.
+
+
 == 5.11.0
 
 For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
