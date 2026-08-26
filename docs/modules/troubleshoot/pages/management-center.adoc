@@ -13,5 +13,11 @@ link:https://support.apple.com/guide/mac-help/change-general-preferences-mchlp12
 
 == Experience timeout
 
-If you experience a timeout when running scripts or SQL queries, you can increase the timeout value 
+If you experience a timeout when running scripts or SQL queries, you can increase the timeout value
 in the xref:deploy-manage:system-properties.adoc#hazelcast-mc-cluster-operation-timeout[`hazelcast.mc.cluster.operation.timeout.millis`] property.
+
+== Cannot open the configuration for a data structure
+
+If a data structure name contains special characters, Management Center may not be able to display its configuration.
+
+We recommend that you restrict names to letters, digits, and the `-`, `_`, and `.` characters. For more information, see xref:hazelcast:data-structures:distributed-data-structures.adoc#naming-data-structures[Naming Data Structures].
