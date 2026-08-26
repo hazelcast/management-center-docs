@@ -26,6 +26,8 @@ Such parameters are marked in braces (`{` and `}`) in the URL description
 for each endpoint. For example, `name.with/special@chars`
 parameter value would be encoded as `name.with%2Fspecial%40chars`.
 
+IMPORTANT: Encoding does not make every character usable: a name that contains a percent sign (`%`, encoded as `%25`) or a backslash (`\`, encoded as `%5C`) will be rejected with `400 Bad Request`. For guidance on choosing names, see xref:hazelcast:data-structures:distributed-data-structures.adoc#naming-data-structures[Naming Data Structures].
+
 If no data can be
 found for an endpoint, that endpoint returns a 404 HTTP status code.
 
