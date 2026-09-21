@@ -5,7 +5,7 @@
 
 == Set up the OpenID Connect security provider
 
-To set up OpenID Connect, you need to configure settings either in the UI or the `hz-mc conf` tool.
+To set up OpenID Connect, you need to configure settings in the UI, the `hz-mc conf` tool, or a YAML declarative configuration file.
 
 [tabs]
 ====
@@ -30,6 +30,30 @@ hz-mc conf oidc configure
 ```bash
 mc-conf.bat oidc configure
 ```
+--
+YAML (Beta)::
++
+--
+Declare an `oidc` block under `securityProvider` in a xref:declarative-configuration.adoc#openid-connect[YAML declarative configuration file]:
+
+[source,yaml]
+----
+securityProvider:
+  oidc:
+    clientId: "mc-client"
+    clientSecret: "file:/run/secrets/oidc-client-secret"
+    authorizationEndpoint: "https://idp.example.com/authorize"
+    userInfoEndpoint: "https://idp.example.com/userinfo"
+    tokenEndpoint: "https://idp.example.com/token"
+    jwkSetEndpoint: "https://idp.example.com/jwks"
+    issuer: "https://idp.example.com"
+    redirectUrl: "https://mc.example.com/oidc/auth"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
 --
 ====
 
@@ -98,4 +122,4 @@ Use the `-f` / `--force` flag with `oidc configure` to make configuration idempo
 
 == Next steps
 
-For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[]. For details about the YAML declarative configuration file, see xref:declarative-configuration.adoc[].

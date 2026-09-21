@@ -3,6 +3,8 @@
 
 {description}
 
+NOTE: This is a separate mechanism from the `file:<path>` convention used to supply secrets in a xref:declarative-configuration.adoc#secrets-the-file-convention[YAML declarative configuration file (Beta)]. That convention works regardless of which, if any, `ConfigReplacer` is configured on the instance.
+
 A variable to be replaced takes the following form:
 
 ```

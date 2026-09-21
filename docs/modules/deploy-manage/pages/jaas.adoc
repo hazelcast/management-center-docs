@@ -5,9 +5,9 @@
 
 == Set up the JAAS security provider
 
-To set up JAAS, you need to configure settings either in the UI or the `hz-mc conf` tool.
+To set up JAAS, you need to configure settings in the UI, the `hz-mc conf` tool, or a YAML declarative configuration file.
 
-[tabs] 
+[tabs]
 ====
 UI::
 +
@@ -30,8 +30,25 @@ hz-mc conf jaas configure
 
 .Windows
 ```bash
-mc-conf.bat jaas configure 
+mc-conf.bat jaas configure
 ```
+--
+YAML (Beta)::
++
+--
+Declare a `jaas` block under `securityProvider` in a xref:declarative-configuration.adoc#jaas[YAML declarative configuration file]:
+
+[source,yaml]
+----
+securityProvider:
+  jaas:
+    loginModuleClass: "com.example.MyLoginModule"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
 --
 ====
 
@@ -144,4 +161,4 @@ Use the `-f` / `--force` flag with `jaas configure` to make configuration idempo
 
 == Next steps
 
-For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[]. For details about the YAML declarative configuration file, see xref:declarative-configuration.adoc[].

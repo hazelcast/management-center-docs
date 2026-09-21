@@ -62,6 +62,8 @@ mc-conf.bat set prometheus-auth <my-user> <my-pass>
 --
 ====
 
+TIP: You can also set this with the `prometheusAuth` key of a xref:deploy-manage:declarative-configuration.adoc#prometheus-auth[YAML declarative configuration file (Beta)], so Management Center applies it automatically on every start.
+
 Then, add the credentials to the `basic_auth` parameter of the Prometheus YAML file:
 
 [source,yaml]

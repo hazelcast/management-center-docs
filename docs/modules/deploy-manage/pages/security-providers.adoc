@@ -21,4 +21,6 @@ You can select dev mode as a security provider only when you first launch Manage
 
 image:ROOT:SecurityProviders.png[Security Providers tab in Management Center settings]
 
+You can also preconfigure any security provider with xref:mc-conf.adoc[`hz-mc conf`] or a xref:declarative-configuration.adoc#security-provider[YAML declarative configuration file (Beta)], so it's set up automatically before Management Center starts.
+
 If you're looking to switch from one security provider to another, see xref:switching-security-provider.adoc[].

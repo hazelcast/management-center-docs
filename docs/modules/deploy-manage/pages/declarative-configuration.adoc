@@ -1,0 +1,368 @@
+= YAML declarative configuration
+:description: You can declare cluster connections, the security provider, and other settings in a single YAML file that Management Center applies automatically on startup.
+:page-beta: true
+
+{description}
+
+[IMPORTANT]
+====
+*Beta feature.* The YAML declarative configuration file format described on this page may change in a future release without notice.
+====
+
+Today, xref:mc-conf.adoc[`hz-mc conf`] and the UI are the two ways to configure Hazelcast cluster connections, local users, the security provider, sensitive-properties masking, and Prometheus scrape-endpoint authentication. Both are imperative: an operator runs a command or clicks through the UI, against an already-running (UI) or already-stopped (`hz-mc conf`) instance.
+
+A YAML declarative configuration file gives you a third option: declare that same configuration once, as a file, and Management Center applies it automatically every time it starts. This fits cloud-native and GitOps deployments, where the whole identity of an instance should come from a mounted file or a checked-in manifest, and where secrets should be sourced from files (such as Docker or Kubernetes secret mounts) instead of passed as CLI arguments or environment variables.
+
+`hz-mc conf` and the UI are completely unaffected by this feature and remain fully usable. The YAML file only touches whatever it declares; anything configured through `hz-mc conf` or the UI and not mentioned in the file is left alone.
+
+== What you can and can't declare
+
+The YAML file covers the same *persisted entities* that `hz-mc conf` writes to Management Center's database:
+
+[cols="25%m,75%a"]
+|===
+|Key|Covers the same ground as
+
+|`clusters`
+|xref:connecting-to-clusters-mc-conf.adoc[] (the member-addresses form only, see <<clusters>>)
+
+|`sensitiveProperties`
+|The `set sensitive-properties` task, see xref:mc-conf.adoc#hide-sensitive-configuration-in-the-ui[Hide sensitive configuration in the UI]
+
+|`prometheusAuth`
+|xref:integrate:prometheus-monitoring.adoc#authenticate-the-scrape-endpoint[Authenticate the scrape endpoint]
+
+|`securityProvider`
+|xref:security-providers.adoc[] (`local`, `ldap`, `activeDirectory`, `jaas`, `oidc`, `saml`, `devMode`)
+|===
+
+It does *not* cover Management Center's *static/runtime settings* -- ports, TLS, CORS, license, home directory, and so on. Those are still configured exclusively with xref:system-properties.adoc[system properties and environment variables]. It also doesn't cover anything that isn't a one-time configuration write, such as issuing or revoking REST API auth tokens, or resetting the security provider.
+
+== Point Management Center at a configuration file
+
+Set the `hazelcast.mc.config.file` system property (or the `HAZELCAST_MC_CONFIG_FILE` environment variable) to the path of your YAML file before starting Management Center. See xref:system-properties.adoc#hazelcast-mc-config-file[`hazelcast.mc.config.file`].
+
+[tabs]
+====
+Linux and Mac::
++
+--
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.config.file=/path/to/mc-config.yaml
+----
+--
+Windows::
++
+--
+[source,bash,subs="attributes+"]
+----
+mc-start.cmd -Dhazelcast.mc.config.file=C:\path\to\mc-config.yaml
+----
+--
+Docker / Kubernetes::
++
+--
+[source,bash]
+----
+docker run -e HAZELCAST_MC_CONFIG_FILE=/config/mc-config.yaml \
+  -v /host/path/mc-config.yaml:/config/mc-config.yaml \
+  hazelcast/management-center
+----
+--
+====
+
+The file is applied entirely *before* Management Center opens its web server port. If anything in it is invalid, Management Center refuses to start and prints a clear error message -- there's never a window where the server looks "up" with a half-applied configuration.
+
+== `applyMode`: how re-running the file behaves
+
+By default, every entity the file declares must be absent, or Management Center refuses to start. Set `applyMode: upsert` to also allow updating entities that already exist, so it's safe to leave the same file pointed at `hazelcast.mc.config.file` across restarts. See xref:declarative-configuration-apply-mode.adoc[] for the full explanation and mixed-configuration examples.
+
+[[clusters]]
+== Cluster connections
+
+The `clusters` key mirrors the member-addresses form of `hz-mc conf cluster add` -- see xref:connecting-to-clusters-mc-conf.adoc[]. The client-configuration-file form (XML or YAML client config, used for TLS or other advanced client settings) isn't supported here; use xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[the UI] or xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf`] for that instead.
+
+[source,yaml]
+----
+clusters:
+  - name: prod-cluster
+    memberAddresses:
+      - "10.0.0.1:5701"
+      - "10.0.0.2:5701"
+    enabled: true
+----
+
+|===
+|Field|Description
+
+|`name`
+|Cluster name. Required.
+
+|`memberAddresses`
+|List of one or more member addresses. Required.
+
+|`enabled`
+|Whether Management Center tries to connect on startup. Default: `true`.
+|===
+
+Two `clusters` entries sharing the same `name` in the same file are always rejected.
+
+== Sensitive properties
+
+The `sensitiveProperties` key mirrors `hz-mc conf set sensitive-properties`, see xref:mc-conf.adoc#hide-sensitive-configuration-in-the-ui[Hide sensitive configuration in the UI].
+
+[source,yaml]
+----
+sensitiveProperties:
+  hidden:
+    - "some.system.property"
+  maskedConfigXPaths:
+    - "//password"
+----
+
+|===
+|Field|Description
+
+|`hidden`
+|Member properties to hide in the member properties view.
+
+|`maskedConfigXPaths`
+|XPath expressions in the member configuration to mask.
+|===
+
+Omitting one of these two keys leaves the corresponding setting untouched under `applyMode: upsert` -- see xref:declarative-configuration-apply-mode.adoc[].
+
+[[prometheus-auth]]
+== Prometheus scrape-endpoint authentication
+
+The `prometheusAuth` key mirrors `hz-mc conf set prometheus-auth`, see xref:integrate:prometheus-monitoring.adoc#authenticate-the-scrape-endpoint[Authenticate the scrape endpoint].
+
+[source,yaml]
+----
+prometheusAuth:
+  username: prometheus
+  password: "file:/run/secrets/prometheus-password"
+----
+
+== Security provider
+
+The `securityProvider` key mirrors `hz-mc conf <provider> configure`, see xref:security-providers.adoc[]. Exactly one of `ldap`, `activeDirectory`, `jaas`, `oidc`, `saml`, `local`, or `devMode` may be present -- there's no separate `type` field; which provider you're declaring is resolved from which block you write.
+
+[IMPORTANT]
+====
+If a *different* security provider type is already active (however it got there -- the UI, `hz-mc conf`, or a previous declarative run) than the one declared, the whole file is always rejected: run xref:switching-security-provider.adoc[`hz-mc conf security reset`] first, then restart with the file. The one exception is Dev Mode: since it isn't a deliberately-configured provider, a file may declare any other provider type -- including `local` -- while Dev Mode is active, with no reset needed first. See xref:switching-security-provider.adoc[] and xref:declarative-configuration-apply-mode.adoc[].
+====
+
+=== Local
+
+Mirrors xref:local-security-provider.adoc[]. Unlike the other providers, the `local` block holds no connection config, only the users to provision once it's active. `role` is one of `readonly`, `readwrite`, `metricsonly`, or `admin`.
+
+[source,yaml]
+----
+securityProvider:
+  local:
+    users:
+      - username: admin
+        role: admin
+        password: "file:/run/secrets/admin-password"
+----
+
+Omit `users` (or write `local: {}`) to activate the local provider with no users yet. Two `users` entries sharing the same `username` in the same file are always rejected. Passwords must meet the same complexity rules as xref:local-security-provider.adoc[creating a user in the UI or with `hz-mc conf`].
+
+=== LDAP
+
+Mirrors xref:ldap.adoc[].
+
+[source,yaml]
+----
+securityProvider:
+  ldap:
+    url: "ldaps://ldap.example.com"
+    username: "cn=admin,dc=example,dc=com"
+    password: "file:/run/secrets/ldap-bind-password"
+    userDn: "ou=users,dc=example,dc=com"
+    groupDn: "ou=groups,dc=example,dc=com"
+    userSearchFilter: "(uid={0})"
+    groupSearchFilter: "(member={0})"
+    startTls: false
+    nestedGroupSearch: false
+    # Optional - omit entirely to skip keystore setup.
+    keystore:
+      create: false
+      path: "/path/to/keystore.jceks"
+      password: "file:/run/secrets/keystore-password"
+      type: JCEKS
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+The optional `keystore` block mirrors xref:ldap.adoc#password-encryption[LDAP password encryption]. Set `create: true` to have Management Center create and manage a new keystore at `path`, or `create: false` to use an existing one (optionally with `type` and `provider`).
+
+=== Active Directory
+
+Mirrors xref:active-directory.adoc[].
+
+[source,yaml]
+----
+securityProvider:
+  activeDirectory:
+    url: "ldap://ad.example.com"
+    domain: "example.com"
+    userSearchFilter: "(sAMAccountName={0})"
+    nestedGroupSearch: false
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+=== JAAS
+
+Mirrors xref:jaas.adoc[].
+
+[source,yaml]
+----
+securityProvider:
+  jaas:
+    loginModuleClass: "com.example.MyLoginModule"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+=== OpenID Connect
+
+Mirrors xref:openid.adoc[].
+
+[source,yaml]
+----
+securityProvider:
+  oidc:
+    clientId: "mc-client"
+    clientSecret: "file:/run/secrets/oidc-client-secret"
+    authorizationEndpoint: "https://idp.example.com/authorize"
+    userInfoEndpoint: "https://idp.example.com/userinfo"
+    tokenEndpoint: "https://idp.example.com/token"
+    jwkSetEndpoint: "https://idp.example.com/jwks"
+    issuer: "https://idp.example.com"
+    redirectUrl: "https://mc.example.com/oidc/auth"
+    # Optional - defaults shown.
+    scope: "openid"
+    userIdClaimName: "sub"
+    groupsClaimName: "groups"
+    jwsAlgorithm: "RS256"
+    userInfoRequestHttpMethod: "GET"
+    sendClientInfoInTokenRequest: false
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+=== SAML
+
+Mirrors xref:saml.adoc[].
+
+[source,yaml]
+----
+securityProvider:
+  saml:
+    relyingPartyId: "mc"
+    postBackUrl: "https://mc.example.com/saml/sso"
+    groupAttribute: "memberOf"
+    idpMetadata: "https://idp.example.com/metadata"
+    # Optional - default shown.
+    groupNameSeparator: ";"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+=== Dev Mode
+
+Mirrors xref:dev-mode.adoc[]. Dev Mode needs no configuration of its own, so its block is an empty marker -- its mere presence activates it.
+
+[source,yaml]
+----
+securityProvider:
+  devMode: {}
+----
+
+NOTE: A bare `devMode:` with nothing after it parses as YAML `null`, which is indistinguishable from omitting the key entirely -- the empty braces (`{}`) are required, not optional decoration.
+
+[[secrets-the-file-convention]]
+== Secrets: the `file:` convention
+
+Any secret field (`securityProvider.local.users[].password`, `securityProvider.ldap.password`, `securityProvider.ldap.keystore.password`, `securityProvider.oidc.clientSecret`, `prometheusAuth.password`) accepts a `file:<path>` value, which is resolved to the trimmed contents of that file at load time -- the recommended way to supply secrets, for example from a Docker or Kubernetes secret mount. A literal value is also accepted.
+
+[source,yaml]
+----
+prometheusAuth:
+  username: prometheus
+  password: "file:/run/secrets/prometheus-password"
+----
+
+This is a separate mechanism from xref:variable-replacers.adoc[variable replacers] (`$ENC{...}` and friends): it works regardless of which, if any, `ConfigReplacer` is configured on the instance, and only applies to the declarative configuration file.
+
+== A full example
+
+[source,yaml]
+----
+# applyMode governs what happens when a declared entity already exists - see
+# "Declarative configuration apply modes" in the docs. Defaults to createOnly when omitted.
+# applyMode: upsert
+
+clusters:
+  - name: prod-cluster
+    memberAddresses:
+      - "10.0.0.1:5701"
+      - "10.0.0.2:5701"
+    enabled: true
+
+sensitiveProperties:
+  hidden:
+    - "some.system.property"
+  maskedConfigXPaths:
+    - "//password"
+
+prometheusAuth:
+  username: prometheus
+  password: "file:/run/secrets/prometheus-password"
+
+securityProvider:
+  ldap:
+    url: "ldaps://ldap.example.com"
+    username: "cn=admin,dc=example,dc=com"
+    password: "file:/run/secrets/ldap-bind-password"
+    userDn: "ou=users,dc=example,dc=com"
+    groupDn: "ou=groups,dc=example,dc=com"
+    userSearchFilter: "(uid={0})"
+    groupSearchFilter: "(member={0})"
+    startTls: false
+    nestedGroupSearch: false
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+== Validation and errors
+
+Management Center validates the whole file before writing anything: password strength and username format, XPath validity for masked-config properties, and whether declared entities already exist (governed by `applyMode`). The file is either entirely valid and applied in full, or nothing in it is applied -- there's no partial application. Any failure aborts startup with a clear console message; Management Center never starts with a half-applied configuration.
+
+== Next steps
+
+* xref:declarative-configuration-apply-mode.adoc[] -- `createOnly` vs. `upsert`, in depth, with mixed-configuration examples.
+* xref:mc-conf.adoc[] -- the imperative alternative, and the tool this feature reuses under the hood.
+* xref:switching-security-provider.adoc[] -- how to change the active security provider, including the Dev Mode exception.

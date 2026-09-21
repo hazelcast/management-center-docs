@@ -59,6 +59,7 @@ To connect to another cluster, repeat these steps.
 
 == Use a client configuration file
 [[creating-a-cluster-configuration-by-uploading-file]]
+[[using-a-client-configuration-file]]
 
 . Create a client configuration file.
 +
@@ -186,3 +187,5 @@ NOTE: To see the existing configuration file, click the *eye icon* above the box
 == Next steps
 
 Explore the xref:clusters:dashboard.adoc[Clusters dashboard].
+
+You can also preconfigure a cluster connection before Management Center starts, using xref:connecting-to-clusters-mc-conf.adoc[`hz-mc conf`] or a xref:declarative-configuration.adoc[YAML declarative configuration file].

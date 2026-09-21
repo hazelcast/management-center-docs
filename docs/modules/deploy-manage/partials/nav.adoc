@@ -3,6 +3,9 @@
 ** xref:deploy-manage:configuring.adoc[Overview]
 ** xref:deploy-manage:system-properties.adoc[]
 ** xref:deploy-manage:mc-conf.adoc[]
+** YAML Declarative Configuration (Beta)
+*** xref:deploy-manage:declarative-configuration.adoc[Overview]
+*** xref:deploy-manage:declarative-configuration-apply-mode.adoc[Apply Modes]
 ** xref:deploy-manage:variable-replacers.adoc[]
 ** xref:deploy-manage:logging.adoc[]
 * Cluster Connections

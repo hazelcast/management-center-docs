@@ -20,6 +20,10 @@ This task deletes all existing user accounts and auth tokens.
 
 Then, you can configure another local security provider. For help setting one up, see xref:security-providers.adoc[]
 
+== Use a YAML declarative configuration file (Beta)
+
+A xref:declarative-configuration.adoc[YAML declarative configuration file] can never switch an already-active security provider to a different type -- like `hz-mc conf`, it requires you to run `hz-mc conf security reset` first, then restart Management Center with the file. The one exception is dev mode: since it isn't a deliberately-configured provider, a file may declare any other provider type -- including the local provider -- while dev mode is active, and Management Center activates it directly, with no reset needed first. See xref:declarative-configuration-apply-mode.adoc[] for details and examples.
+
 == Fetch the security provider details
 
 You can fetch the configuration details of the security provider to validate if this is set correctly using the `hz-mc conf` tool with the `security get` task.

@@ -1,0 +1,168 @@
+= Declarative configuration apply modes
+:description: applyMode controls whether Management Center's YAML declarative configuration file can update entities that already exist, so you can safely reapply the same file across restarts.
+:page-beta: true
+
+{description}
+
+[IMPORTANT]
+====
+*Beta feature.* This page describes part of the xref:declarative-configuration.adoc[YAML declarative configuration] format, which may change in a future release without notice.
+====
+
+A top-level `applyMode` key, `createOnly` or `upsert`, governs what happens when a declared entity -- a cluster, a user, sensitive properties, Prometheus authentication, or the security provider -- already exists, however it got there: the UI, `hz-mc conf`, or a previous run of the same file. It has no effect on entities the file doesn't declare; those are always left alone, under either mode.
+
+[cols="20%m,80%a"]
+|===
+|applyMode|Behavior when a declared entity already exists
+
+|`createOnly` (default)
+|The *whole file* is rejected and Management Center refuses to start. If the entity is absent, it's created. No partial application, no silent skip, no silent overwrite -- a bad `createOnly` file touches nothing.
+
+|`upsert`
+|The entity is updated in place instead of rejecting the file. If it's absent, it's created, same as `createOnly`. Safe to leave `hazelcast.mc.config.file` pointed at the same file across restarts -- each boot reconciles the database to match whatever the file currently says.
+|===
+
+Omitting `applyMode` entirely defaults to `createOnly`. An explicit `applyMode:` key with nothing after it is rejected outright, rather than silently falling back to the default.
+
+[source,yaml]
+----
+applyMode: upsert
+----
+
+== What `upsert` does and doesn't merge
+
+For most sections, `upsert` is a whole-entity replace: re-declaring a cluster replaces its member addresses outright, it doesn't merge them with what's already there. The one exception is `sensitiveProperties`: omitting one of `hidden` or `maskedConfigXPaths` from an `upsert` file leaves that setting untouched rather than wiping it, because omitting a YAML key and writing it as an empty list (`hidden: []`) are different, distinguishable things. Only a key you actually write replaces its existing value.
+
+== Two things `applyMode` never relaxes
+
+* *Switching security provider types.* If a *different* security provider type is already active than the one declared, the whole file is rejected regardless of `applyMode` -- `upsert` only updates an already-active provider's own configuration in place, it never switches which provider is active. Run `hz-mc conf security reset` first, then restart with the file, to change provider type. The one exception is Dev Mode: since it isn't a deliberately-configured provider, a file may declare any other provider type -- including `local` -- while Dev Mode is active, and it's applied as a first-time activation instead, in either `applyMode`. See xref:switching-security-provider.adoc[].
+* *Two entries in the same file sharing a name or username.* Two `clusters` entries, or two `securityProvider.local.users` entries, declared with the same name or username in one file are always rejected, in either mode -- there's no sensible "update in place" reading of two conflicting declarations arriving at once.
+
+== Mixed-configuration examples
+
+=== First boot: `createOnly`
+
+A fresh instance, provisioned once from a file mounted at first boot. Every entity below is absent, so all of it is created.
+
+[source,yaml]
+----
+# applyMode: createOnly is the default, shown here for clarity.
+applyMode: createOnly
+
+clusters:
+  - name: prod-cluster
+    memberAddresses:
+      - "10.0.0.1:5701"
+      - "10.0.0.2:5701"
+
+prometheusAuth:
+  username: prometheus
+  password: "file:/run/secrets/prometheus-password"
+
+securityProvider:
+  ldap:
+    url: "ldaps://ldap.example.com"
+    username: "cn=admin,dc=example,dc=com"
+    password: "file:/run/secrets/ldap-bind-password"
+    userDn: "ou=users,dc=example,dc=com"
+    groupDn: "ou=groups,dc=example,dc=com"
+    userSearchFilter: "(uid={0})"
+    groupSearchFilter: "(member={0})"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+If Management Center is restarted with this exact same file still pointed at `hazelcast.mc.config.file`, startup fails: the cluster, the Prometheus credentials, and the LDAP provider all already exist, so `createOnly` rejects the whole file. Either unset `hazelcast.mc.config.file` now that the instance is provisioned, or switch to `upsert`.
+
+=== Ongoing reconciliation: `upsert`
+
+The same instance, later. This file is safe to leave pointed at `hazelcast.mc.config.file` permanently: a second cluster and rotated LDAP bind password are picked up on the next restart, and an existing masked-property XPath entry is left alone because it's omitted here.
+
+[source,yaml]
+----
+applyMode: upsert
+
+clusters:
+  - name: prod-cluster
+    memberAddresses:
+      - "10.0.0.1:5701"
+      - "10.0.0.2:5701"
+  - name: dr-cluster
+    memberAddresses:
+      - "10.1.0.1:5701"
+      - "10.1.0.2:5701"
+
+sensitiveProperties:
+  hidden:
+    - "some.system.property"
+    - "another.system.property"
+  # maskedConfigXPaths omitted on purpose - whatever was set previously (e.g. "//password")
+  # is left untouched, not wiped, because upsert only replaces keys you actually write.
+
+prometheusAuth:
+  username: prometheus
+  password: "file:/run/secrets/prometheus-password-v2"
+
+securityProvider:
+  ldap:
+    url: "ldaps://ldap.example.com"
+    username: "cn=admin,dc=example,dc=com"
+    password: "file:/run/secrets/ldap-bind-password-v2" # rotated
+    userDn: "ou=users,dc=example,dc=com"
+    groupDn: "ou=groups,dc=example,dc=com"
+    userSearchFilter: "(uid={0})"
+    groupSearchFilter: "(member={0})"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+What happens on this restart:
+
+* `prod-cluster` is updated in place (a no-op here, since nothing changed); `dr-cluster` didn't exist yet, so it's created.
+* `sensitiveProperties.hidden` is replaced outright with the two entries above; `maskedConfigXPaths` is left exactly as it was, because the key is omitted, not set to an empty list.
+* The Prometheus scrape-endpoint password is rotated.
+* The LDAP provider's bind password is rotated in place, because LDAP is already the active provider -- if a *different* provider had been active instead, this whole file would be rejected regardless of `applyMode`.
+
+=== Switching away from Dev Mode: the one exception
+
+Continuing the GitOps workflow above from a Dev Mode evaluation instance, straight to LDAP, without a manual `hz-mc conf security reset` step:
+
+[source,yaml]
+----
+# First boot - Dev Mode, for quick evaluation.
+securityProvider:
+  devMode: {}
+----
+
+[source,yaml]
+----
+# Next restart - switch straight to LDAP. Works under createOnly or upsert alike,
+# because Dev Mode isn't treated as a deliberately-configured provider.
+securityProvider:
+  ldap:
+    url: "ldaps://ldap.example.com"
+    username: "cn=admin,dc=example,dc=com"
+    password: "file:/run/secrets/ldap-bind-password"
+    userDn: "ou=users,dc=example,dc=com"
+    groupDn: "ou=groups,dc=example,dc=com"
+    userSearchFilter: "(uid={0})"
+    groupSearchFilter: "(member={0})"
+    roles:
+      adminGroups: "mc-admins"
+      readWriteGroups: "mc-writers"
+      readOnlyGroups: "mc-readers"
+      metricsOnlyGroups: "mc-metrics"
+----
+
+Declaring LDAP (or any other provider) while any *other* real provider -- LDAP, Active Directory, JAAS, OIDC, SAML, or local -- is active still requires `hz-mc conf security reset` first; only Dev Mode gets this exception.
+
+== Next steps
+
+* xref:declarative-configuration.adoc[] -- the full file format reference.
+* xref:switching-security-provider.adoc[] -- switching security providers outside the declarative file.
