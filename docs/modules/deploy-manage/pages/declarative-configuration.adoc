@@ -24,7 +24,7 @@ The YAML file covers the same *persisted entities* that `hz-mc conf` writes to M
 |Key|Covers the same ground as
 
 |`clusters`
-|xref:connecting-to-clusters-mc-conf.adoc[] (the member-addresses form only, see <<clusters>>)
+|xref:connecting-to-clusters-mc-conf.adoc[] (both forms, see <<clusters>>)
 
 |`sensitiveProperties`
 |The `set sensitive-properties` task, see xref:mc-conf.adoc#hide-sensitive-configuration-in-the-ui[Hide sensitive configuration in the UI]
@@ -81,7 +81,10 @@ By default, every entity the file declares must be absent, or Management Center 
 [[clusters]]
 == Cluster connections
 
-The `clusters` key mirrors the member-addresses form of `hz-mc conf cluster add` -- see xref:connecting-to-clusters-mc-conf.adoc[]. The client-configuration-file form (XML or YAML client config, used for TLS or other advanced client settings) isn't supported here; use xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[the UI] or xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf`] for that instead.
+The `clusters` key mirrors `hz-mc conf cluster add` -- see xref:connecting-to-clusters-mc-conf.adoc[]. Each entry uses one of two mutually exclusive forms, resolved from which fields are present, the same way `securityProvider` resolves its provider type:
+
+* `name` + `memberAddresses` -- the plain form.
+* `clientConfigFile` -- a path to a Hazelcast client configuration file (XML or YAML), needed for TLS or other advanced client settings. The cluster's *name comes from the file itself* (its own `cluster-name`), not from a field in the YAML.
 
 [source,yaml]
 ----
@@ -91,22 +94,27 @@ clusters:
       - "10.0.0.1:5701"
       - "10.0.0.2:5701"
     enabled: true
+
+  - clientConfigFile: "/etc/mc/tls-cluster-client-config.xml"
 ----
 
 |===
 |Field|Description
 
 |`name`
-|Cluster name. Required.
+|Cluster name. Required with `memberAddresses`; must be omitted with `clientConfigFile`.
 
 |`memberAddresses`
-|List of one or more member addresses. Required.
+|List of one or more member addresses. Required with `name`; must be omitted with `clientConfigFile`.
 
 |`enabled`
 |Whether Management Center tries to connect on startup. Default: `true`.
+
+|`clientConfigFile`
+|Path to a Hazelcast client configuration file (XML or YAML). Mutually exclusive with `name`/`memberAddresses`. See xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[the UI] or xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf`] for help creating one, including TLS setup.
 |===
 
-Two `clusters` entries sharing the same `name` in the same file are always rejected.
+Two `clusters` entries sharing the same `name` (whichever form resolves it) in the same file are always rejected. A `clientConfigFile` whose parsed configuration doesn't use `ALL_MEMBERS` routing mode is rejected too, the same way the UI upload and `hz-mc conf cluster add --client-config` already reject it.
 
 == Sensitive properties
 

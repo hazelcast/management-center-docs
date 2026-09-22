@@ -10,7 +10,7 @@ To connect Management Center to a Hazelcast cluster, using the `hz-mc conf` tool
 +
 NOTE: If you enabled TLS/SSL on a Hazelcast cluster, you must use this option to configure the client TLS settings. For more information about TLS configuration, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc[TLS] in the Platform documentation.
 
-TIP: You can also preconfigure a cluster connection with a xref:declarative-configuration.adoc#clusters[YAML declarative configuration file] instead of `hz-mc conf`, which supports the cluster name and member addresses form only. This lets Management Center apply the connection automatically every time it starts, instead of requiring a one-off `hz-mc conf` run. See xref:declarative-configuration.adoc[].
+TIP: You can also preconfigure a cluster connection with a xref:declarative-configuration.adoc#clusters[YAML declarative configuration file] instead of `hz-mc conf`, which supports both options above -- the cluster name and member addresses, or a path to a client configuration file. This lets Management Center apply the connection automatically every time it starts, instead of requiring a one-off `hz-mc conf` run. See xref:declarative-configuration.adoc[].
 
 == Before you begin
 

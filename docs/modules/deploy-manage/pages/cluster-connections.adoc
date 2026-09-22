@@ -23,7 +23,7 @@ To configure Management Center with a client configuration file, use one of the 
 
 - xref:connecting-to-clusters-mc-conf.adoc[`hz-mc conf` tool]
 
-NOTE: The YAML declarative configuration file doesn't support uploading a client configuration file, so it can't be used to configure TLS for a cluster connection. Use the UI or `hz-mc conf` instead.
+- xref:declarative-configuration.adoc#clusters[YAML declarative configuration file (Beta)], using the `clientConfigFile` key
 
 For more information about configuring a client configuration file for TLS, see xref:{page-latest-supported-hazelcast}@hazelcast:security:tls-ssl.adoc#tlsssl-for-hazelcast-clients[TLS for Hazelcast Clients] in the Platform documentation.
 
