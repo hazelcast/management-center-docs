@@ -111,7 +111,7 @@ clusters:
 |Whether Management Center tries to connect on startup. Default: `true`.
 
 |`clientConfigFile`
-|Path to a Hazelcast client configuration file (XML or YAML). Mutually exclusive with `name`/`memberAddresses`. See xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[the UI] or xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf`] for help creating one, including TLS setup.
+|Path to a Hazelcast client configuration file (XML or YAML). Mutually exclusive with `name`/`memberAddresses`. A relative path is resolved against Management Center's own working directory at startup, not against the declarative configuration file's location -- use an absolute path to avoid ambiguity. See xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[the UI] or xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf`] for help creating one, including TLS setup.
 |===
 
 Two `clusters` entries sharing the same `name` (whichever form resolves it) in the same file are always rejected. A `clientConfigFile` whose parsed configuration doesn't use `ALL_MEMBERS` routing mode is rejected too, the same way the UI upload and `hz-mc conf cluster add --client-config` already reject it.
@@ -176,7 +176,7 @@ securityProvider:
         password: "file:/run/secrets/admin-password"
 ----
 
-Omit `users` (or write `local: {}`) to activate the local provider with no users yet. Two `users` entries sharing the same `username` in the same file are always rejected. Passwords must meet the same complexity rules as xref:local-security-provider.adoc[creating a user in the UI or with `hz-mc conf`].
+Two `users` entries sharing the same `username` in the same file are always rejected. Passwords must meet the same complexity rules as xref:local-security-provider.adoc[creating a user in the UI or with `hz-mc conf`].
 
 === LDAP
 
@@ -320,7 +320,7 @@ prometheusAuth:
   password: "file:/run/secrets/prometheus-password"
 ----
 
-This is a separate mechanism from xref:variable-replacers.adoc[variable replacers] (`$ENC{...}` and friends): it works regardless of which, if any, `ConfigReplacer` is configured on the instance, and only applies to the declarative configuration file.
+This is a separate mechanism from xref:variable-replacers.adoc[variable replacers] (e.g. `$ENC{...}`): it works regardless of which, if any, `ConfigReplacer` is configured on the instance, and only applies to the declarative configuration file.
 
 == A full example
 

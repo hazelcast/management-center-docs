@@ -124,7 +124,7 @@ securityProvider:
 
 What happens on this restart:
 
-* `prod-cluster` is updated in place (a no-op here, since nothing changed); `dr-cluster` didn't exist yet, so it's created.
+* `prod-cluster` is updated in place; `dr-cluster` didn't exist yet, so it's created.
 * `sensitiveProperties.hidden` is replaced outright with the two entries above; `maskedConfigXPaths` is left exactly as it was, because the key is omitted, not set to an empty list.
 * The Prometheus scrape-endpoint password is rotated.
 * The LDAP provider's bind password is rotated in place, because LDAP is already the active provider -- if a *different* provider had been active instead, this whole file would be rejected regardless of `applyMode`.
