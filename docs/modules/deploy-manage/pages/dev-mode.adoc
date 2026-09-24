@@ -7,9 +7,9 @@ Once you have enabled dev mode, you are automatically logged into Management Cen
 
 == Set up dev mode
 
-To set up dev mode, you can use the UI or the `hz-mc conf` tool.
+To set up dev mode, you can use the UI, the `hz-mc conf` tool, or a YAML declarative configuration file.
 
-[tabs] 
+[tabs]
 ====
 UI::
 +
@@ -29,13 +29,24 @@ You can use this task for various scripting purposes, and automatically configur
 
 .Linux and Mac
 ```bash
-hz-mc conf dev-mode configure 
+hz-mc conf dev-mode configure
 ```
 
 .Windows
 [source,bash]
 ----
 mc-conf.bat dev-mode configure
+----
+--
+YAML (Beta)::
++
+--
+To set up dev mode with a xref:declarative-configuration.adoc[YAML declarative configuration file], declare an empty `devMode` block under `securityProvider`:
+
+[source,yaml]
+----
+securityProvider:
+  devMode: {}
 ----
 --
 ====
@@ -50,4 +61,4 @@ Use the `-f` / `--force` flag with `dev-mode configure` to make configuration id
 
 == Next steps
 
-For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[].
+For details about the `hz-mc conf` tool, see xref:mc-conf.adoc[]. For details about the YAML declarative configuration file, including how to switch from dev mode to another provider without a manual reset step, see xref:declarative-configuration.adoc[] and xref:declarative-configuration-apply-mode.adoc[].

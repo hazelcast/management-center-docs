@@ -40,7 +40,10 @@ You can either configure Management Center in the UI while it's running or preco
 - Managing connections to clusters
 - Setting and updating security providers
 - Managing users
-- Setting system properties 
+- Setting system properties
+
+|xref:declarative-configuration.adoc[YAML declarative configuration file] (Beta)
+|Declare cluster connections, the security provider, local users, sensitive-properties masking, and Prometheus authentication in a single file that Management Center applies automatically every time it starts. A GitOps-friendly alternative to `hz-mc conf` for these entities.
 
 |===
 
@@ -52,6 +55,7 @@ Because Management Center connects to Hazelcast clusters as a client, you can co
 ** xref:connecting-to-clusters-ui.adoc#using-a-client-configuration-file[UI]
 ** xref:connecting-to-clusters-mc-conf.adoc#using-a-client-configuration-file[`hz-mc conf` tool]
 - xref:system-properties.adoc#client-config[System properties] (only the client connection strategy)
+- xref:declarative-configuration.adoc#clusters[YAML declarative configuration file] (Beta; either the cluster name and member addresses, or a path to a client configuration file)
 
 However, Management Center does not allow you to override the following settings:
 

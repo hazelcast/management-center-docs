@@ -55,6 +55,16 @@ hz-mc start -Dhazelcast.mc.clusterHealthCheck.exclude=E001,U002 \
 -jar hazelcast-management-center-{full-version}.jar
 ----
 
+|[[hazelcast-mc-config-file]]hazelcast.mc.config.file
+
+HAZELCAST_MC_CONFIG_FILE
+|Path to a YAML declarative configuration file that Management Center applies automatically before it starts. Not set by default. See xref:declarative-configuration.adoc[YAML declarative configuration (Beta)].
+|
+[source,bash,subs="attributes+"]
+----
+hz-mc start -Dhazelcast.mc.config.file=/path/to/mc-config.yaml
+----
+
 |[[hazelcast-mc-configreplacer-class]]hazelcast.mc.configReplacer.class
 |Full class name of a variable replacer to use. See xref:variable-replacers.adoc[].
 |

@@ -6,6 +6,8 @@ The Management Center Configuration Tool (`hz-mc conf`) is a command line tool t
 
 This tool makes changes to the configuration settings in the `hazelcast-mc` directory of the user's home directory. As a result, the tool must be used on the same device as the Management Center web application is deployed on, and Management Center must not be running while using the tool.
 
+TIP: For a fully declarative, GitOps-friendly alternative that reuses the same underlying configuration logic as this tool, see xref:declarative-configuration.adoc[YAML declarative configuration (Beta)].
+
 == Get started
 
 To use the `hz-mc conf` tool, execute the `hz-mc conf` command in the `bin/` directory of the Management Center distribution. This command is available as a shell script (`hz-mc conf`) for Linux and Mac or a batch file (`mc-conf.bat`) for Windows.
@@ -143,6 +145,8 @@ This property can be useful when you run Management Center on Kubernetes, and th
 The `set sensitive-properties` task configures the sensitive properties that must not be shown in plain text in Management Center.
 `--hidden-properties` is a comma-separated list of member properties to be hidden in the member properties.
 `--masked-config-properties` is a comma-separated list of XPath expressions in the member configuration to be masked.
+
+TIP: This can also be set with the `sensitiveProperties` key of a xref:declarative-configuration.adoc#sensitive-properties[YAML declarative configuration file (Beta)].
 
 == Secure interactive prompt for passwords
 
