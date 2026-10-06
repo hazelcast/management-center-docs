@@ -1,9 +1,29 @@
 = Release Notes
 :description: These release notes list any new features, enhancements, fixes, security issues and breaking changes that were made for Hazelcast Management Center.
-:page-aliases: release-notes:releases.adoc
+:page-aliases: release-notes:releases.adoc, release-notes:5-12-0.adoc
 
 {description}
 
+== 5.12.0
+
 For help installing Hazelcast Management Center, see xref:getting-started:install.adoc[].
 
-**Release date**: 
+**Release date**: 2026-10-05
+
+=== Enhancements
+
+* **Added `DurableExecutorService` metrics**: Added support for displaying `DurableExecutorService` statistics and metrics in Management Center when statistics are enabled.
+
+* **Added individual member uptime metrics**: Included each member's runtime uptime in the member statistics response, not just overall cluster uptime.
+
+=== Fixes
+
+* **Prevented streaming query buffer overflow**: Limited streaming query results to the available buffer capacity, instead of attempting to display more rows than the buffer can hold.
+
+* **Fixed Prometheus metric filtering**: Applied Prometheus allowlists and denylists to metrics produced by Management Center.
+
+* **Fixed overlapping Prometheus exports**: Prevented concurrent Prometheus metrics requests from causing excessive CPU and memory usage, extended response times, or failed exports.
+
+* **Fixed missing member metrics**: Improved member metrics collection so that valid numerical metrics are displayed instead of N/A, as seen sometimes in the Members tab.
+
+* **Fixed lenient cluster deletion**: Made `mc-conf` return the expected 0 exit code when attempting to delete a non-existent cluster while using the lenient option.
