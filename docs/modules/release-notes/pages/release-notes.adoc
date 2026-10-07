@@ -14,7 +14,29 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 * **Added `DurableExecutorService` metrics**: Added support for displaying `DurableExecutorService` statistics and metrics in Management Center when statistics are enabled.
 
-* **Added individual member uptime metrics**: Included each member's runtime uptime in the member statistics response, not just overall cluster uptime.
+* **Added REST API support for map configuration**: Added REST API endpoint to update the configuration of a specific map, including max size, max size policy, max idle, TTL, and eviction policy.
+
+* **Enabled REST API in dev mode**: Enabled the REST API by default when Management Center runs in dev mode, although a license is still required to use the Clustered REST API.
+
+* **Exposed the current security provider configuration**: Added a REST API endpoint and a read-only view on the Settings security provider page that show the currently configured security provider, with secrets filtered out.
+
+* **Added YAML-based configuration**: Added support for loading Management Center configuration, including client configuration and the security provider, from a YAML file at startup as a declarative alternative to the `hz-mc conf` tool. This allows users to change the security provider in Helm chart and other cloud-native deployments, where the `hz-mc conf` tool can't be used.
+
+* **Enabled Spring Boot Actuator by default**: Enabled Actuator endpoints that are useful for troubleshooting by default on a separate port, and deprecated the `hazelcast.mc.healthCheck` properties in favor of the Spring Boot management properties.
+
+* **Added warnings for deprecated and unknown properties**: Logged and displayed a one-time warning banner at startup when Management Center is started with deprecated or unknown properties.
+
+* **Clarified license requirements**: Added a note to the license pages and licensed feature promo pages explaining that the cluster license may differ from the Management Center license.
+
+=== Security
+
+* **Fixed exposure of TLS passwords**: Masked `keyStorePassword` and `trustStorePassword` values in Management Center startup output and logs by default, without requiring the `maskOpts` option.
+
+* **Fixed open redirect vulnerability**: Prevented a login parameter from being used to redirect users to arbitrary external websites.
+
+* **Fixed server-side request forgery vulnerability**: Disabled the OIDC configuration discovery endpoint once a security provider is configured.
+
+* **Fixed missing function-level access controls**: Added server-side authorization checks to prevent users from accessing restricted functionality, such as member configuration endpoints, without the required permissions.
 
 === Fixes
 
@@ -22,8 +44,32 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 * **Fixed Prometheus metric filtering**: Applied Prometheus allowlists and denylists to metrics produced by Management Center.
 
+* **Added wildcard support to Prometheus filters**: Supported `*` as a wildcard character in the Prometheus exporter allowlist and denylist, so that all metrics with matching names are included or excluded.
+
 * **Fixed overlapping Prometheus exports**: Prevented concurrent Prometheus metrics requests from causing excessive CPU and memory usage, extended response times, or failed exports.
 
 * **Fixed missing member metrics**: Improved member metrics collection so that valid numerical metrics are displayed instead of N/A, as seen sometimes in the Members tab.
 
 * **Fixed lenient cluster deletion**: Made `mc-conf` return the expected 0 exit code when attempting to delete a non-existent cluster while using the lenient option.
+
+* **Fixed Maps page crash for clusters with many maps**: Fixed an issue where the Maps page failed to load or crashed on clusters with a large number of maps, for example 2,000 maps.
+
+* **Fixed Swagger UI behavior when REST is disabled**: Fixed an issue where the Swagger UI was still available and returned a 403 error when the REST API was disabled.
+
+* **Removed unused CLC binaries**: Removed the unused bundled Hazelcast CLC 6.0.0 binaries from Management Center.
+
+* **Fixed CLC availability when console is disabled**: Made the CLC in Management Center available only when all cluster members have the console enabled.
+
+* **Fixed infinite loading when no security provider is configured**: Now redirecting users to the Security Providers page, instead of loading indefinitely, when they open a cluster page and no security provider is configured.
+
+* **Fixed health check ignore list matching**: Made the health check ignore list take the cluster name into account, so that ignored data structures are ignored only for the specified cluster.
+
+* **Prevented duplicate client filter lists**: Prevented the creation of multiple client filter lists with the same name.
+
+* **Fixed client failure with custom `DataSerializableFactory`**: Fixed an issue where Management Center failed to connect to a cluster when the client configuration included a data serializable factory with factory ID 1.
+
+* **Fixed session handling when leaving dev mode**: Fixed an issue where, after a security provider was configured from dev mode, other open browser sessions were automatically logged in as a non-existent admin user instead of being redirected to the login page.
+
+* **Improved missing SQL module error message**: Updated the error message shown when the hazelcast-sql module is missing, so that it tells users to add the module to the members' classpath.
+
+* **Fixed toast notification styling**: Restored the expected appearance of toast notifications, which had changed after a react-toastify dependency upgrade.
