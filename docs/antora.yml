@@ -4,7 +4,7 @@ title: Management Center
 version: '5.12'
 # Version in the version selector
 display_version: '5.12'
-prerelease: true
+prerelease: false
 asciidoc:
   attributes:
     # product name variables
