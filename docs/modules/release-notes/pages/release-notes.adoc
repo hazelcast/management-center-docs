@@ -12,7 +12,7 @@ For help installing Hazelcast Management Center, see xref:getting-started:instal
 
 === Security
 
-* *Hardened against security issues*: Updated Management Center's Hazelcast Platform dependency to 5.7.2.
+* *Hardened against security issues*: Updated Management Center’s internal Hazelcast Platform library version to 5.7.2.
 
 == 5.12.0
 
